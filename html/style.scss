@@ -1,0 +1,147 @@
+﻿$robotext : Roboto Condensed;
+
+body {
+	padding:0px;
+	margin:0px;
+	min-width:400px;
+	font-family:$robotext;
+	background-color:whiteSmoke;
+}
+
+header {
+	padding:10px 0px;
+	background-color:#3F9FE0;
+	border-bottom: 1px solid #378cc5;
+	box-shadow: rgba(0, 0, 0, 0.247059) 0px 0px 8px 0px;
+	font-family: $robotext;
+	font-size:1.4em;
+	color:white;
+	width:100%;
+	min-width:400px;
+	a {
+		font-weight:bold;
+		color:white;
+		box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
+		margin-left:40px;
+		&:link {
+			text-decoration: none;
+		}
+	}
+
+	ul {
+		padding:0px;
+		margin:0px;
+		float:right;
+		display:inline-block;
+		list-style-type: none;
+		li {
+			margin-right:50px;
+			display:inline-block;
+
+		}
+	}
+}
+
+a {
+	color:#33b5e5
+}
+
+.page-box {
+	margin:0 auto;
+	margin-top:100px;
+	margin-bottom:100px;
+	width:80%;
+	max-height:600px;
+	height:auto;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	border: 1px solid #d8dcea;
+	padding:20px;
+	overflow:auto;
+	h1, h2, h3, h4, h5 {
+		margin: 0 auto;
+	}
+} 
+
+.page-product {
+	h1 {
+		display:inline-block;
+	}
+	h3 {
+		display:inline-block;
+	}
+	div {
+		width:calc(50% - 20px);
+		height:100%;
+		float:left;
+		display:inline-block;
+	}
+	div.info {
+		img {
+			width:300px;
+			margin:0 auto;
+			display:block;
+		}
+		div.user-info {
+			padding:0px 10px;
+			width:calc(100% - 20px);
+			margin:0 auto;
+			outline:0px;
+			div {
+
+			background-color:#f0f0f0;
+			width:calc(100% - 40px);
+			outline:0px;
+			padding:10px 20px;
+				h2 {
+					margin:0px;
+					text-align:left;
+				}
+			}	
+		}
+	}
+	div.product-info {
+		padding:0px 10px;
+		table {
+			border-spacing:0px;
+			tbody {
+				tr {
+					td {
+						padding-right:20px;
+					}
+				}
+			}
+		}
+		a {
+			text-align:center;
+		}
+	}
+}
+
+.button {
+	cursor: default;
+	padding: 14px 63.5px;
+	color: #444;
+	background-color: white;
+	transition: 0.2s all ease;
+	-webkit-transition: 0.2s all ease;
+	border: 1px solid #eee;
+	display:block;
+	&:hover {
+		background-color:#33b5e5;
+		color:white;
+		cursor:pointer;
+	}
+}
+
+
+
+footer {
+	padding:10px 0px;
+	width:100%;
+	text-align:center;
+	background-color:lightgrey;
+	font-family:$robotext;
+	min-width:400px;
+}

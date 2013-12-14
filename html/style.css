@@ -1,0 +1,132 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\000033}}
+body {
+  padding: 0px;
+  margin: 0px;
+  min-width: 400px;
+  font-family: Roboto Condensed;
+  background-color: whiteSmoke; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000311}}
+header {
+  padding: 10px 0px;
+  background-color: #3F9FE0;
+  border-bottom: 1px solid #378cc5;
+  box-shadow: rgba(0, 0, 0, 0.24706) 0px 0px 8px 0px;
+  font-family: Roboto Condensed;
+  font-size: 1.4em;
+  color: white;
+  width: 100%;
+  min-width: 400px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000321}}
+  header a {
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
+    margin-left: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000326}}
+    header a:link {
+      text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000331}}
+  header ul {
+    padding: 0px;
+    margin: 0px;
+    float: right;
+    display: inline-block;
+    list-style-type: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000337}}
+    header ul li {
+      margin-right: 50px;
+      display: inline-block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000345}}
+a {
+  color: #33b5e5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000349}}
+.page-box {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 80%;
+  max-height: 600px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d8dcea;
+  padding: 20px;
+  overflow: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000362}}
+  .page-box h1, .page-box h2, .page-box h3, .page-box h4, .page-box h5 {
+    margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000368}}
+.page-product h1 {
+  display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000371}}
+.page-product h3 {
+  display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000374}}
+.page-product div {
+  width: calc(50% - 20px);
+  height: 100%;
+  float: left;
+  display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000381}}
+.page-product div.info img {
+  width: 300px;
+  margin: 0 auto;
+  display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000386}}
+.page-product div.info div.user-info {
+  padding: 0px 10px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  outline: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000391}}
+  .page-product div.info div.user-info div {
+    background-color: #f0f0f0;
+    width: calc(100% - 40px);
+    outline: 0px;
+    padding: 10px 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\0000397}}
+    .page-product div.info div.user-info div h2 {
+      margin: 0px;
+      text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003104}}
+.page-product div.product-info {
+  padding: 0px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003106}}
+  .page-product div.product-info table {
+    border-spacing: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003110}}
+    .page-product div.product-info table tbody tr td {
+      padding-right: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003116}}
+  .page-product div.product-info a {
+    text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003122}}
+.button {
+  cursor: default;
+  padding: 14px 63.5px;
+  color: #444;
+  background-color: white;
+  transition: 0.2s all ease;
+  -webkit-transition: 0.2s all ease;
+  border: 1px solid #eee;
+  display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003131}}
+  .button:hover {
+    background-color: #33b5e5;
+    color: white;
+    cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003140}}
+footer {
+  padding: 10px 0px;
+  width: 100%;
+  text-align: center;
+  background-color: lightgrey;
+  font-family: Roboto Condensed;
+  min-width: 400px; }
