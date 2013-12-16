@@ -19,14 +19,39 @@
 
     <div class="page-box page-addProduct">
         <div class ="product">
+            <h3>What is your item called?</h3>
+            <input type="text" name="item-title" placeholder ="Item type, brand. condition . . ."/><div class="button">Next</div>
         </div>
-        <h1>Post Item</h1>
-        <input type="text" placeholder="Product Name"/>
-        <input type="text" placeholder="Buy it Now (leave blank if not applicable)"/>
-        <input type="text" placeholder="Item Condition"/>
-        <div id="div for adding image" style="height:300px;width:300px; border:1px solid black;"></div>
-        <textarea></textarea>
-        <div class="button">Submit!</div>
+        <hr />
+        <div class ="product">
+            <h3>Select a category for your item</h3>
+            <input type="radio" name="item-category" value = "cat 1"/></br>
+            <input type="radio" name="item-category" value = "cat 2"/></br>
+            <input type="radio" name="item-category" value = "cat 3"/></br>
+            <div class="button">Next</div>
+        </div>
+        <hr />
+        <div class ="product">
+            <h3>Set the pricing of your item</h3>
+            <center>
+            
+            Starting Offer <span>$</span><input type="number" name="item-so" min="0" step="any"/>
+            Buy it Now <span>$</span><input type="number" name="item-bin" min="0"step="any"/>
+            <div class="button">Next</div>
+            </center>
+        </div>
+        <hr />
+        <div class ="product">
+            <h3>What is the condition of your item?</h3>
+            <center>
+                <select>
+                    <option>New</option>
+                    <option>Used</option>
+                </select>
+                <div class="button">Next</div>
+            </center>
+        </div>
+        <hr />
     </div>
 
     <footer>

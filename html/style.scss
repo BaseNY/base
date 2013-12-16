@@ -1,4 +1,5 @@
 ﻿$robotext : Roboto Condensed;
+$i-pad : 14px;
 
 body {
 	padding:0px;
@@ -43,7 +44,7 @@ header {
 }
 
 a {
-	color:#33b5e5
+	color:#33b5e5;
 }
 
 .page-box {
@@ -125,19 +126,46 @@ a {
 
 .page-addProduct {
 	width:60%;
-	input[type=text] {
-		width:80%;
-		max-width:300px;
-		padding:5px 10px;
-		margin:0 auto;
-		margin-bottom:10px;
-		display:block;
-		outline:2px solid lightgrey;
-		border:0px;
-		font-size:1.2em
+	div {
+		input, select,option {
+			padding:$i-pad;
+			display:inline-block;
+			outline:1px solid #eee;
+			border:0px;
+			font-size:1.2em;
+			
+			&:focus {
+				outline-color:#3F9FE0;
+			}
+		}
+		input[type=text] {
+			width:calc(78% - 28px);
+			margin-bottom:10px;
+		}
+		input[type=number] {
+			width:calc(20% - 30px);
+			padding:10px;
+			margin-right:1.5%;
+		}
+		select,option {
+			width:15%;
+		}
+		span {
+			font-size:1.5em;
+			font-weight:bold;
+			display:inline-block;
+			margin-left:2%;
+		}
+		.button {
+			width:calc(20% - 30px);
+			padding:14px;
+			border-radius:0 0 4px 0;
+		}
 	}
-	h1 {
-		text-align:center;
+	.button {
+		display:inline-block;
+	}
+	h3 {		
 		margin-bottom:10px;
 	}
 }
