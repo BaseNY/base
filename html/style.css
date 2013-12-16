@@ -115,14 +115,14 @@ a {
 .page-addProduct {
   width: 60%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003130}}
-  .page-addProduct div input, .page-addProduct div select, .page-addProduct div option {
+  .page-addProduct div input, .page-addProduct div select, .page-addProduct div option, .page-addProduct div textarea {
     padding: 14px;
     display: inline-block;
     outline: 1px solid #eee;
     border: 0px;
     font-size: 1.2em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003137}}
-    .page-addProduct div input:focus, .page-addProduct div select:focus, .page-addProduct div option:focus {
+    .page-addProduct div input:focus, .page-addProduct div select:focus, .page-addProduct div option:focus, .page-addProduct div textarea:focus {
       outline-color: #3F9FE0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/html\/style\.scss}line{font-family:\00003141}}
   .page-addProduct div input[type=text] {
