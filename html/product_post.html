@@ -1,7 +1,5 @@
 ﻿<template name = "page-addProduct">
 <div class="page-box page-addProduct">
-    <div class ="product">
-    </div>
 </div>
 </template>
 
@@ -9,33 +7,43 @@
 <div class="button">Next</div>
 </template?
 
-<template>
+<template name="title">
 <h3>What is your item called?</h3>
-<input type="text" name="item-title" placeholder ="Item type, brand. condition . . ."/>{{> next-button}}
+<input type="text" id="item-title" name="item-title" placeholder ="Item type, brand. condition . . ."/>{{> next-button}}
 </template>
-<template>
+
+<template name="category">
 <h3>Select a category for your item</h3>
-<input type="radio" name="item-category" value = "cat 1"/></br>
-<input type="radio" name="item-category" value = "cat 2"/></br>
-<input type="radio" name="item-category" value = "cat 3"/></br>
+<input type="radio" name="item-category" value = "shoes"/>Shoes</br>
+<input type="radio" name="item-category" value = "clothes"/>Clothes</br>
+<input type="radio" name="item-category" value = "technology"/>Technology</br>
 {{> next-button}}
 </template>
-<template>
+
+<template name="pricing">
 <h3>Set the pricing of your item</h3>
 <center>
-
-    Starting Offer <span>$</span><input type="number" name="item-so" min="0" step="any"/>
-    Buy it Now <span>$</span><input type="number" name="item-bin" min="0"step="any"/>
+    Starting Offer <span>$</span><input type="number" id= "item-so" name="item-so" min="0" step="any"/>
+    Buy it Now <span>$</span><input type="number" id="item-bin" name="item-bin" min="0"step="any"/>
     {{> next-button}}
 </center>
 </template>
-<template>
+
+<template name="condition">
 <h3>What is the condition of your item?</h3>
 <center>
-    <select>
+    <select id = "condition">
 	<option>New</option>
 	<option>Used</option>
     </select>
 </center>
 {{> next-button}}
+</template>
+
+<template name="description">
+<div class="describe">
+<h3>Describe your item.</h3>
+<div contenteditable="true"></div>
+<div class="button">Next</div>
+</div>
 </template>
