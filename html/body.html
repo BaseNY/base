@@ -5,10 +5,15 @@
     <title>BASE</title>
 </head>
 <body>
-    {{> header}}
-
-    {{> footer}}
+    {{> body}}
 </body>
+
+<template name = "body">
+    {{> header}}
+    {{> pageAddProduct}}
+    {{> footer}}
+
+</template>
 
 <template name = "header" >
 <header>
@@ -24,4 +29,4 @@
 <footer>
 (C)2013 BASE
 </footer>
-<template>
+</template>

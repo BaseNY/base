@@ -126,7 +126,9 @@ a {
 
 .page-addProduct {
 	width:60%;
-	div {
+	overflow-x: hidden;
+	fieldset{
+	    width:auto;
 		input, select,option, div[contenteditable] {
 			padding:$i-pad;
 			display:inline-block;
@@ -151,7 +153,7 @@ a {
 			width:20%;
 		}
 		div[contenteditable] {
-			width:100%;
+			width:calc(100% - $i-pad * 2) ;
 			height:100px;
 			line-height:1.2em;
 			display:block;
@@ -168,7 +170,20 @@ a {
 			width:calc(20% - 30px);
 			padding:14px;
 			border-radius:0 0 4px 0;
+			float:right;
 		}
+
+	}
+	fieldset {
+	    padding:0px;
+	    border:0px;
+	    &:first-child > .button {
+		float:none;
+	    }
+	}
+	div.preview {
+	    border:1px solid;
+	    margin:0 auto;
 	}
 	.button {
 		display:inline-block;
