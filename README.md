@@ -11,6 +11,11 @@ Base website repo
 var variableName;
 ```
 
+* Template names: Camel case
+```html
+<template name="templateName"></template>
+```
+
 * CSS: Hyphens
 ```css
 .class-name { color: black; }
