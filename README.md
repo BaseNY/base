@@ -9,6 +9,7 @@ Base website repo
 * Javascript: Camel case
 ```javascript
 var variableName;
+function functionName() {}
 ```
 
 * Template names: Camel case
@@ -16,12 +17,12 @@ var variableName;
 <template name="templateName"></template>
 ```
 
-* CSS: Hyphens
+* CSS selector: Hyphens
 ```css
 .class-name { color: black; }
 ```
 
 * File names: underscore
 ```
-home_page.html
+file_name.html
 ```
