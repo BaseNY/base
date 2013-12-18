@@ -8,6 +8,10 @@ verifyField = function(a) {
     return (b != undefined && b != '') || Session.get('postState') == 5; 
 }
 
+submitProduct = function() {
+    meteor.cal
+
+
 	    Template.pageAddProduct.rendered = function(){
 		showStep();   
 		$('form').submit(function(e) {
