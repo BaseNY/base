@@ -54,6 +54,7 @@ a {
     margin: 0 auto; }
 
 .page-product {
+  overflow: auto;
   width: 80%; }
   .page-product h1 {
     display: inline-block; }
@@ -94,6 +95,7 @@ a {
   width: 60%;
   overflow-x: hidden; }
   .page-addProduct fieldset {
+    display: none;
     width: auto; }
     .page-addProduct fieldset input, .page-addProduct fieldset select, .page-addProduct fieldset option, .page-addProduct fieldset div[contenteditable] {
       padding: 14px;
@@ -134,6 +136,7 @@ a {
     .page-addProduct fieldset:first-child > .button {
       float: none; }
   .page-addProduct div.preview {
+    padding: 25px;
     border: 1px solid;
     margin: 0 auto; }
   .page-addProduct .button {
@@ -159,6 +162,12 @@ a {
     background-color: #33b5e5;
     color: white;
     cursor: pointer; }
+
+fieldset.show, div.show {
+  display: block; }
+
+.no-show {
+  display: none; }
 
 footer {
   padding: 10px 0px;
