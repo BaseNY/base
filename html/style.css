@@ -94,47 +94,38 @@ a {
 .page-addProduct {
   width: 60%;
   overflow-x: hidden; }
-  .page-addProduct fieldset {
-    display: none;
-    width: auto; }
-    .page-addProduct fieldset input, .page-addProduct fieldset select, .page-addProduct fieldset option, .page-addProduct fieldset div[contenteditable] {
-      padding: 14px;
-      display: inline-block;
-      outline: 1px solid #eee;
-      border: 0px;
-      font-size: 1.2em; }
-      .page-addProduct fieldset input:focus, .page-addProduct fieldset select:focus, .page-addProduct fieldset option:focus, .page-addProduct fieldset div[contenteditable]:focus {
-        outline-color: #3F9FE0; }
-    .page-addProduct fieldset input[type=text] {
-      width: calc(78% - 28px);
-      margin-bottom: 10px; }
-    .page-addProduct fieldset input[type=number] {
-      width: calc(20% - 30px);
-      padding: 10px;
-      margin-right: 1.5%; }
-    .page-addProduct fieldset select, .page-addProduct fieldset option {
-      width: 20%; }
-    .page-addProduct fieldset div[contenteditable] {
-      width: calc(100% - $i-pad * 2);
-      height: 100px;
-      line-height: 1.2em;
-      display: block;
-      overflow-y: scroll; }
-    .page-addProduct fieldset span {
-      font-size: 1.5em;
-      font-weight: bold;
-      display: inline-block;
-      margin-left: 2%; }
-    .page-addProduct fieldset .button {
-      width: calc(20% - 30px);
-      padding: 14px;
-      border-radius: 0 0 4px 0;
-      float: right; }
-  .page-addProduct fieldset {
-    padding: 0px;
-    border: 0px; }
-    .page-addProduct fieldset:first-child > .button {
-      float: none; }
+  .page-addProduct input, .page-addProduct select, .page-addProduct option, .page-addProduct div[contenteditable] {
+    padding: 14px;
+    display: inline-block;
+    outline: 1px solid #eee;
+    border: 0px;
+    font-size: 1.2em; }
+    .page-addProduct input:focus, .page-addProduct select:focus, .page-addProduct option:focus, .page-addProduct div[contenteditable]:focus {
+      outline-color: #3F9FE0; }
+  .page-addProduct input[type=text] {
+    width: calc(78% - 28px);
+    margin-bottom: 10px; }
+  .page-addProduct input[type=number] {
+    width: calc(20% - 30px);
+    padding: 10px;
+    margin-right: 1.5%; }
+  .page-addProduct select, .page-addProduct option {
+    width: 20%; }
+  .page-addProduct div[contenteditable] {
+    width: calc(100% - $i-pad * 2);
+    height: 100px;
+    line-height: 1.2em;
+    display: block;
+    overflow-y: scroll; }
+  .page-addProduct span {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 2%; }
+  .page-addProduct .button {
+    width: calc(20% - 28px);
+    padding: 14px;
+    border-radius: 0 0 4px 0; }
   .page-addProduct div.preview {
     padding: 25px;
     border: 1px solid;

@@ -5,12 +5,15 @@
     <title>BASE</title>
 </head>
 <body>
-    {{> body}}
 </body>
+
+<template name = "home">
+to be made 
+</template>
 
 <template name = "body">
     {{> header}}
-    {{> pageAddProduct}}
+    {{yield 'main'}}
     {{> footer}}
 
 </template>

@@ -1,49 +1,44 @@
 ﻿<template name = "pageAddProduct">
 <div class="page-box page-addProduct">
-    <form method="post" id="product-info">
 	<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
-	{{> addTitle}}
-	{{> addCategory}}
-	{{> addPricing}}
-	{{> addCondition}}
-	{{> addDescription}}
-	{{> postPreview}}
-    </form>
+	{{yield 'sellYield'}}
 </div>
 </template>
 
 <template name = "next-button">
-<div class="button">Next</div>
+<input type="submit" class="button" value="Next">
 </template>
 
 <template name="addTitle">
-<fieldset id="title" class="step">
+<form method="post">
     <h3>What is your item called?</h3>
-    <input type="text" id="item-title" name="title" placeholder ="Item type, brand. condition . . ."/>{{> next-button}} </fieldset> </template>
+    <input type="text" id="item-title" name="title" placeholder ="Item type, brand. condition . . ."/>{{> next-button}} 
+</form>
+</template>
 
 <template name="addCategory">
-<fieldset id="category" class="step">
+<form method="post">
     <h3>Select a category for your item</h3>
     <input type="radio" name="category" value = "shoes" checked/><label for="category"> Shoes</label></br>
     <input type="radio" name="category" value = "clothes"/>Clothes</br>
     <input type="radio" name="category" value = "technology"/>Technology</br>
     {{> next-button}}
-</fieldset>
+</form>
 </template>
 
 <template name="addPricing">
-<fieldset id="pricing" class="step">
+<form method="post">
     <h3>Set the pricing of your item</h3>
     <center>
 	Starting Offer <span>$</span><input type="number" id= "item-so" name="so" min="0" step="any"/>
 	Buy it Now <span>$</span><input type="number" id="item-bin" name="bin" min="0"step="any"/>
 	{{> next-button}}
     </center>
-</fieldset>
+</form>
 </template>
 
 <template name="addCondition">
-<fieldset id="condition" class="step">
+<form method="post">
     <h3>What is the condition of your item?</h3>
     <center>
 	<select name = "condition">
@@ -52,20 +47,19 @@
 	</select>
 	{{> next-button}}
     </center>
-</fieldset>
+</form>
 </template>
 
 <template name="addDescription">
-<fieldset id="description" class="step describe">
+<form method="post">
     <h3>Describe your item.</h3>
     <div id = "itemDescription" name="description" contenteditable="true"></div>
-    <div class="button">Next</div>
-</fieldset>
+    <input type="submit" class="button" value="Next">
+</form>
 </template>
 
 <template name="postPreview">
-<div class="no-show">
-    <h1>Preview your post. This is exactly what it will look like in your dorm</h1>
+    <h1>Preview your post.</h1>
     <div class="page-product preview">
 	<h1>{{title}}</h1> 
 	<h3>status: open</h3>
@@ -101,7 +95,5 @@
 	</div>
     </div>
     <input class="button" type="submit" value = "SUBMIT" />
-
-</div>
 
 </template>

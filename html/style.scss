@@ -128,61 +128,49 @@ a {
 .page-addProduct {
     width:60%;
     overflow-x: hidden;
-    fieldset{
-	display:none;
-	width:auto;
-	input, select,option, div[contenteditable] {
-	    padding:$i-pad;
-	    display:inline-block;
-	    outline:1px solid #eee;
-	    border:0px;
-	    font-size:1.2em;
-
-	    &:focus {
-		outline-color:#3F9FE0;
-	    }
-	}
-	input[type=text] {
-	    width:calc(78% - 28px);
-	    margin-bottom:10px;
-	}
-	input[type=number] {
-	    width:calc(20% - 30px);
-	    padding:10px;
-	    margin-right:1.5%;
-	}
-	select,option {
-	    width:20%;
-	}
-	div[contenteditable] {
-	    width:calc(100% - $i-pad * 2) ;
-	    height:100px;
-	    line-height:1.2em;
-	    display:block;
-	    overflow-y:scroll;
-	}
-
-	span {
-	    font-size:1.5em;
-	    font-weight:bold;
-	    display:inline-block;
-	    margin-left:2%;
-	}
-	.button {
-	    width:calc(20% - 30px);
-	    padding:14px;
-	    border-radius:0 0 4px 0;
-	    float:right;
-	}
-
-    }
-    fieldset {
-	padding:0px;
+    input, select,option, div[contenteditable] {
+	padding:$i-pad;
+	display:inline-block;
+	outline:1px solid #eee;
 	border:0px;
-	&:first-child > .button {
-	    float:none;
+	font-size:1.2em;
+
+	&:focus {
+	    outline-color:#3F9FE0;
 	}
     }
+    input[type=text] {
+	width:calc(78% - 28px);
+	margin-bottom:10px;
+    }
+    input[type=number] {
+	width:calc(20% - 30px);
+	padding:10px;
+	margin-right:1.5%;
+    }
+    select,option {
+	width:20%;
+    }
+    div[contenteditable] {
+	width:calc(100% - $i-pad * 2) ;
+	height:100px;
+	line-height:1.2em;
+	display:block;
+	overflow-y:scroll;
+    }
+
+    span {
+	font-size:1.5em;
+	font-weight:bold;
+	display:inline-block;
+	margin-left:2%;
+    }
+    .button {
+	width:calc(20% - 28px);
+	padding:14px;
+	border-radius:0 0 4px 0;
+    }
+
     div.preview {
 	padding:25px;
 	border:1px solid;

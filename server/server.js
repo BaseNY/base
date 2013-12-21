@@ -1,12 +1,15 @@
 if (Meteor.isServer) {
-    OpenProduct = new Meteor.Collection("open");
-    ClosedProduct = new Meteor.Collection("closed");
+    Items = new Meteor.Collection("items");
+    Meteor.publish('items', function() {
+	return Items.find({});
+    });
 
     Meteor.methods({
 	addProduct: function(p) {
 	    p.user = this.userId;
 	    p.time = new Date();
-	    OpenProduct.insert(p);
+	    Items.insert(p);
+	    console.log(Items);
 	}
     });
 }
