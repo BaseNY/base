@@ -47,6 +47,29 @@ a {
 	color:#33b5e5;
 }
 
+input{
+	padding:$i-pad;
+	display:inline-block;
+	outline:1px solid #eee;
+	border:0px;
+	font-size:1.2em;
+	
+	&:focus {
+		outline-color:#3F9FE0;
+	}
+}
+
+h1.logo{
+	font-size:140px;
+	margin:0 auto;
+	margin-top:30px;
+	margin-bottom:-30px;
+	text-shadow:3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
+	text-align:center;
+	letter-spacing: 15px;
+	color:white;
+}
+
 .page-box {
 	margin:0 auto;
 	margin-top:50px;
@@ -66,6 +89,34 @@ a {
 		margin: 0 auto;
 	}
 } 
+
+.page-home {
+	width:60%;
+	max-width:600px;
+	padding-top:40px;
+	padding-bottom:40px;
+	input {
+		width:80%;
+		margin:0 auto;
+		display:block;
+	}
+	.button-wrapper {
+		width:calc(80% + 30px);
+		margin:0 auto;
+		display: block;
+		text-align: -webkit-center;
+	}
+	.button {
+		width:calc(33.33% - 130px);
+		display:inline-block;
+		&:nth-child(1){
+			border-bottom-left-radius: 8px;
+		}
+		&:nth-child(3){
+			border-bottom-right-radius: 8px;
+		}
+	}
+}
 
 .page-product {
 	width:80%;
@@ -190,7 +241,7 @@ a {
 
 .button {
 	cursor: default;
-	padding: 14px 63.5px;
+	padding: 14px 64px;
 	text-align:center;
 	color: #444;
 	background-color: white;
