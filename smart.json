@@ -1,7 +1,5 @@
 {
   "packages": {
-    "scss": {},
-    "bourbon": {},
     "iron-router": {}
   }
 }
