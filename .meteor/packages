@@ -9,3 +9,6 @@ insecure
 preserve-inputs
 iron-router
 appcache
+accounts-ui
+accounts-password
+accounts-facebook

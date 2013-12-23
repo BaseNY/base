@@ -25,7 +25,11 @@
 		<a href="/">BASE</a>
 		<ul>
 			<li>About</li>
+			{{#if currentUser}}
+			<li>{{name}}</li>
+			{{else}}
 			<li id="login" >Login</li>
+			{{/if}}
 		</ul>
 	</header>
 </template>
