@@ -37,11 +37,12 @@ Router.map(function() {
     this.route('home', {
 	path: '/',
 	template: 'home'
+
     });
     this.route('submit', {
 	path:'/sell/:step',
 	action: function(){
-	    this.render("pageAddProduct", {to: 'main'});
+	    this.render("pageAddProduct");
 	    SH[this.params.step].call(this);
 	}
     });
