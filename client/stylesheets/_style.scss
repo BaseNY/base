@@ -8,42 +8,6 @@ body {
     background-color: whiteSmoke;
 }
 
-header {
-    padding: 10px 0px;
-    background-color: #3F9FE0;
-    border-bottom: 1px solid #378cc5;
-    box-shadow: rgba(0, 0, 0, 0.247059) 0px 0px 8px 0px;
-    font-family: $textFont;
-    font-size: 1.4em;
-    color: white;
-    width: 100%;
-    min-width: 400px;
-    a {
-	font-weight: bold;
-	color: white;
-	box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
-	margin-left: 40px;
-	&:link {
-	    text-decoration: none;
-	}
-    }
-
-    ul {
-	padding: 0px;
-	margin: 0px;
-	float: right;
-	display: inline-block;
-	list-style-type: none;
-	li {
-	    margin-right: 50px;
-	    display: inline-block;
-	    &:hover {
-		cursor:pointer;
-	    }
-	}
-    }
-}
-
 a {
     color: #33b5e5;
 }
