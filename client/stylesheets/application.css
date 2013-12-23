@@ -727,13 +727,3 @@ fieldset.show, div.show {
 .no-show {
   display: none;
 }
-
-/* line 240, _style.scss */
-footer {
-  padding: 10px 0px;
-  width: 100%;
-  text-align: center;
-  background-color: lightgrey;
-  font-family: "Roboto Condensed";
-  min-width: 400px;
-}
