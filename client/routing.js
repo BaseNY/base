@@ -1,5 +1,5 @@
 Router.configure({
-    layoutTemplate: 'body'
+    layoutTemplate: 'layout'
 });
 
 var sellHandler = function() {
