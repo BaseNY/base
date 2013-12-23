@@ -45,6 +45,15 @@ h1.logo {
   letter-spacing: 15px;
   color: white; }
 
+input {
+  padding: 14px;
+  display: inline-block;
+  outline: 1px solid #eee;
+  border: 0px;
+  font-size: 1.2em; }
+  input:focus {
+    outline-color: #3F9FE0; }
+
 .page-box {
   margin: 0 auto;
   margin-top: 50px;
