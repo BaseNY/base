@@ -1,11 +1,10 @@
-﻿$robotext : Roboto Condensed;
-$i-pad : 14px;
+﻿$i-pad : 14px;
 
 body {
     padding:0px;
     margin:0px;
     min-width:400px;
-    font-family:$robotext;
+    font-family:$textFont;
     background-color:whiteSmoke;
 }
 
@@ -14,7 +13,7 @@ header {
     background-color:#3F9FE0;
     border-bottom: 1px solid #378cc5;
     box-shadow: rgba(0, 0, 0, 0.247059) 0px 0px 8px 0px;
-    font-family: $robotext;
+    font-family: $textFont;
     font-size:1.4em;
     color:white;
     width:100%;
@@ -277,6 +276,6 @@ footer {
     width:100%;
     text-align:center;
     background-color:lightgrey;
-    font-family:$robotext;
+    font-family:$textFont;
     min-width:400px;
 }
