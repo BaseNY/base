@@ -1,0 +1,36 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	@viewport {
+		zoom: 1.0;
+		/*width: device-width;*/
+		width: extend-to-zoom;
+	}
+	@-ms-viewport {
+		width: extend-to-zoom;
+		zoom: 1.0;
+	}
+	</style>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<template name="layout">
+	{{> header}}
+	{{yield}}
+	{{> footer}}
+</template>
+
+<template name="header">
+	<header>
+		<a href="/">BASE</a>
+		<ul>
+			<li>About</li>
+			<li>Login</li>
+		</ul>
+	</header>
+</template>
+
+<template name="footer">
+	<footer>(C)2013 BASE</footer>
+</template>
