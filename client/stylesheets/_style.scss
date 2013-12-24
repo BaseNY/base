@@ -2,8 +2,7 @@
 
 h1.logo {
 	margin: 0 auto;
-	margin-top: 30px;
-	margin-bottom: -30px;
+	margin-top: 70px;
 	color: white;
 	text-align: center;
 	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
@@ -16,7 +15,7 @@ h1.logo {
 	margin: 0 auto;
 	margin-top: 50px;
 	margin-bottom: 100px;
-	padding: 20px;
+	padding: 40px;
 	min-width: 400px;
 	max-height: 600px;
 	width: auto;
@@ -37,25 +36,16 @@ h1.logo {
 	max-width: 600px;
 	width: 60%;
 	input {
-		display: block;
-		margin: 0 auto;
-		width: 80%;
+		position: relative;
+		z-index: 1;
+		display: inline-block;
+		width: 100%;
 	}
-	.button-wrapper {
-		display: block;
-		margin: 0 auto;
-		width: calc(80% + 30px);
-		text-align: -webkit-center;
+	.button-group {
+		width: 100%;
 	}
 	.button {
-		display: inline-block;
-		width: calc(33.33% - 130px);
-		&:nth-child(1) {
-			border-bottom-left-radius: 8px;
-		}
-		&:nth-child(3) {
-			border-bottom-right-radius: 8px;
-		}
+		width: (100%) / 3;
 	}
 }
 
@@ -184,23 +174,6 @@ h1.logo {
 		option, div {
 			margin: 0 auto;
 		}
-	}
-}
-
-.button {
-	display: block;
-	padding: 14px 63.5px;
-	border: 1px solid #eee;
-	background-color: white;
-	color: #444;
-	text-align: center;
-	cursor: default;
-	-webkit-transition: 0.2s all ease;
-	transition: 0.2s all ease;
-	&:hover {
-		background-color: #33b5e5;
-		color: white;
-		cursor: pointer;
 	}
 }
 

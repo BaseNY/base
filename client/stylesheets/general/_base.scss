@@ -12,12 +12,43 @@ a {
 }
 
 input {
-	display: inline-block;
-	padding: 14px;
-	outline: 1px solid #eee;
-	border: 0px;
+	@include transition(border-color 0.1s);
+	padding: 0.8em 1em;
+	outline: none;
+	border: 1px solid #eee;
 	font-size: 1.2em;
 	&:focus {
-		outline-color: #3F9FE0;
+		border-color: #3F9FE0;
+	}
+}
+
+.button {
+	@include transition(all 0.2s ease);
+	padding: 1em;
+	border: 1px solid #eee;
+	background-color: white;
+	color: #444;
+	cursor: pointer;
+	text: {
+		align: center;
+		decoration: none;
+	}
+	&:hover {
+		background-color: $primary-color;
+		color: white;
+	}
+}
+
+.button-group {
+	display: inline-block;
+	border: 1px solid #eee;
+	background-color: white;
+	.button {
+		display: inline-block;
+		border-width: 0;
+		border-right-width: 1px;
+		&:last-child {
+			border-width: 0;
+		}
 	}
 }
