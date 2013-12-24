@@ -1,3 +1,11 @@
+// https://github.com/Schepp/box-sizing-polyfill
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+  *behavior: url(/boxsizing.htc);
+}
+
 body {
 	margin: 0px;
 	padding: 0px;

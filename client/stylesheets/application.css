@@ -1385,19 +1385,29 @@ footer {
   width: 100%;
 }
 
-/* line 1, general/_base.scss */
+/* line 4, general/_base.scss */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(/boxsizing.htc);
+}
+
+/* line 9, general/_base.scss */
 body {
   margin: 0px;
   padding: 0px;
   background-color: whiteSmoke;
 }
 
-/* line 8, general/_base.scss */
+/* line 16, general/_base.scss */
 a {
   color: #33b5e5;
 }
 
-/* line 12, general/_base.scss */
+/* line 20, general/_base.scss */
 input {
   display: inline-block;
   padding: 14px;
@@ -1405,7 +1415,7 @@ input {
   border: 0px;
   font-size: 1.2em;
 }
-/* line 18, general/_base.scss */
+/* line 26, general/_base.scss */
 input:focus {
   outline-color: #3F9FE0;
 }
