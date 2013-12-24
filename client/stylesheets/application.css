@@ -463,7 +463,7 @@ body {
 
 /* line 325, foundation/components/_global.scss */
 body {
-  background: white;
+  background: whitesmoke;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -1389,25 +1389,15 @@ footer {
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  *behavior: url('/./general/boxsizing.htc');
+  *behavior: url("../../scripts/boxsizing.htc");
 }
 
-/* line 9, general/_base.scss */
-body {
-  margin: 0px;
-  padding: 0px;
-  background-color: whiteSmoke;
-}
-
-/* line 16, general/_base.scss */
+/* line 10, general/_base.scss */
 a {
   color: #33b5e5;
 }
 
-/* line 20, general/_base.scss */
+/* line 14, general/_base.scss */
 input {
   display: inline-block;
   padding: 14px;
@@ -1415,7 +1405,7 @@ input {
   border: 0px;
   font-size: 1.2em;
 }
-/* line 26, general/_base.scss */
+/* line 20, general/_base.scss */
 input:focus {
   outline-color: #3F9FE0;
 }

@@ -2,15 +2,9 @@
 *,
 *:before,
 *:after {
-  @include box-sizing(border-box);
-  *behavior: stylesheet-url("general/boxsizing.htc");
-}
-
-body {
-	margin: 0px;
-	padding: 0px;
-	background-color: whiteSmoke;
-	//font-family: $textFont;
+	// need to uncomment if not using foundation global
+	// @include box-sizing(border-box);
+	*behavior: url("../../scripts/boxsizing.htc");
 }
 
 a {
