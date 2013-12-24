@@ -1389,7 +1389,7 @@ footer {
 *,
 *:before,
 *:after {
-  *behavior: url("../../scripts/boxsizing.htc");
+  *behavior: url("/scripts/boxsizing.htc");
 }
 
 /* line 10, general/_base.scss */
