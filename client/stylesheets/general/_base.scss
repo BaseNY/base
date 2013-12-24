@@ -13,6 +13,9 @@ a {
 
 input {
 	@include transition(border-color 0.1s);
+	@include input-placeholder {
+		font-weight: 300;
+	}
 	padding: 0.8em 1em;
 	outline: none;
 	border: 1px solid #eee;

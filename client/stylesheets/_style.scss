@@ -1,36 +1,5 @@
 ﻿$i-pad : 14px;
 
-h1.logo {
-	margin: 0 auto;
-	margin-top: 70px;
-	color: white;
-	text-align: center;
-	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
-	letter-spacing: 15px;
-	font-size: 140px;
-}
-
-.page-home {
-	margin: 50px auto 100px;
-	min-width: 400px;
-	max-width: 600px;
-	max-height: 600px;
-	width: 60%;
-	input {
-		position: relative;
-		z-index: 1;
-		display: inline-block;
-		width: 100%;
-	}
-	.button-group {
-		width: 100%;
-	}
-	.button {
-		width: (100%) / 3;
-	}
-}
-
-
 .page-product {
 	margin: 50px auto 100px;
 	overflow: auto;
