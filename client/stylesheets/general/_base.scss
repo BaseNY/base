@@ -3,7 +3,7 @@
 *:before,
 *:after {
   @include box-sizing(border-box);
-  *behavior: url(/boxsizing.htc);
+  *behavior: stylesheet-url("general/boxsizing.htc");
 }
 
 body {

@@ -1392,7 +1392,7 @@ footer {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  *behavior: url(/boxsizing.htc);
+  *behavior: url('/./general/boxsizing.htc');
 }
 
 /* line 9, general/_base.scss */
