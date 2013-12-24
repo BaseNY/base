@@ -1,0 +1,22 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	min-width: 400px;
+	background-color: whiteSmoke;
+	font-family: $textFont;
+}
+
+a {
+	color: #33b5e5;
+}
+
+input {
+	display: inline-block;
+	padding: 14px;
+	outline: 1px solid #eee;
+	border: 0px;
+	font-size: 1.2em;
+	&:focus {
+		outline-color: #3F9FE0;
+	}
+}

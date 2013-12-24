@@ -1,17 +1,5 @@
 ﻿$i-pad : 14px;
 
-body {
-	margin: 0px;
-	padding: 0px;
-	min-width: 400px;
-	background-color: whiteSmoke;
-	font-family: $textFont;
-}
-
-a {
-	color: #33b5e5;
-}
-
 h1.logo {
 	margin: 0 auto;
 	margin-top: 30px;
@@ -21,18 +9,6 @@ h1.logo {
 	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
 	letter-spacing: 15px;
 	font-size: 140px;
-}
-
-input {
-	display: inline-block;
-	padding: $i-pad;
-	outline: 1px solid #eee;
-	border: 0px;
-	font-size: 1.2em;
-
-	&:focus {
-		outline-color: #3F9FE0;
-	}
 }
 
 .page-box {
