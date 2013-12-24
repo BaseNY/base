@@ -11,17 +11,15 @@ a {
 	color: #33b5e5;
 }
 
-input {
-	@include transition(border-color 0.1s);
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
 	@include input-placeholder {
 		font-weight: 300;
-	}
-	padding: 0.8em 1em;
-	outline: none;
-	border: 1px solid #eee;
-	font-size: 1.2em;
-	&:focus {
-		border-color: #3F9FE0;
 	}
 }
 
