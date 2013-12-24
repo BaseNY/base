@@ -415,21 +415,35 @@ table {
   border-spacing: 0;
 }
 
+/* http://mystrd.at/modern-clean-css-sticky-footer/ */
+/* line 3, _sticky-footer.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 12, _sticky-footer.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 /* line 1, general/_base.scss */
 body {
   margin: 0px;
   padding: 0px;
-  min-width: 400px;
   background-color: whiteSmoke;
   font-family: "Roboto Condensed";
 }
 
-/* line 9, general/_base.scss */
+/* line 8, general/_base.scss */
 a {
   color: #33b5e5;
 }
 
-/* line 13, general/_base.scss */
+/* line 12, general/_base.scss */
 input {
   display: inline-block;
   padding: 14px;
@@ -437,7 +451,7 @@ input {
   border: 0px;
   font-size: 1.2em;
 }
-/* line 19, general/_base.scss */
+/* line 18, general/_base.scss */
 input:focus {
   outline-color: #3F9FE0;
 }
