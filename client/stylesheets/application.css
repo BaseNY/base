@@ -1528,11 +1528,9 @@ header li:hover {
 
 /* line 1, general/_footer.scss */
 footer {
-  padding: 10px 0px;
-  min-width: 400px;
+  padding: 14px 40px;
   width: 100%;
-  background-color: lightgrey;
-  text-align: center;
+  border-top: 1px solid #DDD;
 }
 
 /* line 1, pages/_home.scss */
