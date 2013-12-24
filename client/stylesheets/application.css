@@ -416,21 +416,6 @@ table {
   border-spacing: 0;
 }
 
-/* http://mystrd.at/modern-clean-css-sticky-footer/ */
-/* line 3, _sticky-footer.scss */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-/* line 12, _sticky-footer.scss */
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
 /* line 287, foundation/components/_global.scss */
 meta.foundation-mq-small {
   font-family: "/only screen and (max-width: 40em)/";
@@ -459,6 +444,140 @@ meta.foundation-mq-xlarge {
 meta.foundation-mq-xxlarge {
   font-family: "/only screen and (min-width:120.063em)/";
   width: 120.063em;
+}
+
+/* line 317, foundation/components/_global.scss */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 322, foundation/components/_global.scss */
+html,
+body {
+  font-size: 16px;
+}
+
+/* line 325, foundation/components/_global.scss */
+body {
+  background: white;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default;
+}
+
+/* line 338, foundation/components/_global.scss */
+a:hover {
+  cursor: pointer;
+}
+
+/* line 343, foundation/components/_global.scss */
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 346, foundation/components/_global.scss */
+object,
+embed {
+  height: 100%;
+}
+
+/* line 347, foundation/components/_global.scss */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 353, foundation/components/_global.scss */
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
+  max-width: none !important;
+}
+
+/* line 358, foundation/components/_global.scss */
+.left {
+  float: left !important;
+}
+
+/* line 359, foundation/components/_global.scss */
+.right {
+  float: right !important;
+}
+
+/* line 360, foundation/components/_global.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 165, foundation/components/_global.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 166, foundation/components/_global.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 361, foundation/components/_global.scss */
+.text-left {
+  text-align: left !important;
+}
+
+/* line 362, foundation/components/_global.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/* line 363, foundation/components/_global.scss */
+.text-center {
+  text-align: center !important;
+}
+
+/* line 364, foundation/components/_global.scss */
+.text-justify {
+  text-align: justify !important;
+}
+
+/* line 365, foundation/components/_global.scss */
+.hide {
+  display: none;
+}
+
+/* line 371, foundation/components/_global.scss */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 374, foundation/components/_global.scss */
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 384, foundation/components/_global.scss */
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+/* line 387, foundation/components/_global.scss */
+select {
+  width: 100%;
 }
 
 /* line 77, foundation/components/_top-bar.scss */
@@ -663,7 +782,7 @@ meta.foundation-mq-topbar {
   color: white;
   padding: 12px 0 12px 0;
   padding-left: 15px;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 0.8125rem;
   font-weight: normal;
   background: #333333;
@@ -1246,12 +1365,31 @@ ul.off-canvas-list li a {
   left: 250px;
 }
 
+/* http://mystrd.at/modern-clean-css-sticky-footer/ */
+/* line 3, _sticky-footer.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 8, _sticky-footer.scss */
+body {
+  position: static;
+}
+
+/* line 13, _sticky-footer.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 /* line 1, general/_base.scss */
 body {
   margin: 0px;
   padding: 0px;
   background-color: whiteSmoke;
-  font-family: "Roboto Condensed";
 }
 
 /* line 8, general/_base.scss */
@@ -1282,20 +1420,19 @@ header {
   box-shadow: rgba(0, 0, 0, 0.24706) 0px 0px 8px 0px;
   color: white;
   font-size: 1.4em;
-  font-family: "Roboto Condensed";
 }
-/* line 11, general/_header.scss */
+/* line 10, general/_header.scss */
 header a {
   margin-left: 40px;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
   color: white;
   font-weight: bold;
 }
-/* line 16, general/_header.scss */
+/* line 15, general/_header.scss */
 header a:link {
   text-decoration: none;
 }
-/* line 21, general/_header.scss */
+/* line 20, general/_header.scss */
 header ul {
   display: inline-block;
   float: right;
@@ -1303,12 +1440,12 @@ header ul {
   padding: 0px;
   list-style-type: none;
 }
-/* line 28, general/_header.scss */
+/* line 27, general/_header.scss */
 header li {
   display: inline-block;
   margin-right: 50px;
 }
-/* line 31, general/_header.scss */
+/* line 30, general/_header.scss */
 header li:hover {
   cursor: pointer;
 }
@@ -1320,7 +1457,6 @@ footer {
   width: 100%;
   background-color: lightgrey;
   text-align: center;
-  font-family: "Roboto Condensed";
 }
 
 /* line 3, _style.scss */
