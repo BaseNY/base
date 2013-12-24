@@ -1450,6 +1450,22 @@ input:focus {
   border-width: 0;
 }
 
+/* line 56, general/_base.scss */
+.box {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin: 50px auto;
+  padding: 40px;
+  border: 1px solid #d8dcea;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 /* line 1, general/_header.scss */
 header {
   padding: 10px 0px;
@@ -1511,194 +1527,175 @@ h1.logo {
 }
 
 /* line 13, _style.scss */
-.page-box {
-  overflow: auto;
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  padding: 40px;
-  min-width: 400px;
-  max-height: 600px;
-  width: auto;
-  height: auto;
-  border: 1px solid #d8dcea;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all .25s ease-in;
-}
-/* line 28, _style.scss */
-.page-box h1, .page-box h2, .page-box h3, .page-box h4, .page-box h5 {
-  margin: 0 auto;
-}
-
-/* line 33, _style.scss */
 .page-home {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  margin: 50px auto 100px;
+  min-width: 400px;
   max-width: 600px;
+  max-height: 600px;
   width: 60%;
 }
-/* line 38, _style.scss */
+/* line 19, _style.scss */
 .page-home input {
   position: relative;
   z-index: 1;
   display: inline-block;
   width: 100%;
 }
-/* line 44, _style.scss */
+/* line 25, _style.scss */
 .page-home .button-group {
   width: 100%;
 }
-/* line 47, _style.scss */
+/* line 28, _style.scss */
 .page-home .button {
   width: 33.33333%;
 }
 
-/* line 53, _style.scss */
+/* line 34, _style.scss */
 .page-product {
+  margin: 50px auto 100px;
   overflow: auto;
   width: 80%;
 }
-/* line 56, _style.scss */
+/* line 38, _style.scss */
 .page-product h1 {
   display: inline-block;
 }
-/* line 59, _style.scss */
+/* line 41, _style.scss */
 .page-product h3 {
   display: inline-block;
 }
-/* line 62, _style.scss */
+/* line 44, _style.scss */
 .page-product div {
   display: inline-block;
   float: left;
   width: calc(50% - 20px);
   height: 100%;
 }
-/* line 69, _style.scss */
+/* line 51, _style.scss */
 .page-product div.info img {
   display: block;
   margin: 0 auto;
   width: 300px;
 }
-/* line 74, _style.scss */
+/* line 56, _style.scss */
 .page-product div.info div.user-info {
   margin: 0 auto;
   padding: 0px 10px;
   width: calc(100% - 20px);
   outline: 0px;
 }
-/* line 79, _style.scss */
+/* line 61, _style.scss */
 .page-product div.info div.user-info div {
   padding: 10px 20px;
   width: calc(100% - 40px);
   outline: 0px;
   background-color: #f0f0f0;
 }
-/* line 85, _style.scss */
+/* line 67, _style.scss */
 .page-product div.info div.user-info div h2 {
   margin: 0px;
   text-align: left;
 }
-/* line 93, _style.scss */
+/* line 75, _style.scss */
 .page-product div.product-info {
   padding: 0px 10px;
 }
-/* line 95, _style.scss */
+/* line 77, _style.scss */
 .page-product div.product-info table {
   border-spacing: 0px;
 }
-/* line 99, _style.scss */
+/* line 81, _style.scss */
 .page-product div.product-info table tbody tr td {
   padding-right: 20px;
 }
-/* line 105, _style.scss */
+/* line 87, _style.scss */
 .page-product div.product-info a {
   text-align: center;
 }
 
-/* line 111, _style.scss */
-.page-addProduct {
+/* line 93, _style.scss */
+.page-add-product {
+  margin-bottom: 100px;
   overflow-x: hidden;
   width: 60%;
 }
-/* line 114, _style.scss */
-.page-addProduct input, .page-addProduct select, .page-addProduct option, .page-addProduct div[contenteditable] {
+/* line 97, _style.scss */
+.page-add-product input, .page-add-product select, .page-add-product option, .page-add-product div[contenteditable] {
   display: inline-block;
   padding: 14px;
   outline: 1px solid #eee;
   border: 0px;
   font-size: 1.2em;
 }
-/* line 121, _style.scss */
-.page-addProduct input:focus, .page-addProduct select:focus, .page-addProduct option:focus, .page-addProduct div[contenteditable]:focus {
+/* line 104, _style.scss */
+.page-add-product input:focus, .page-add-product select:focus, .page-add-product option:focus, .page-add-product div[contenteditable]:focus {
   outline-color: #3F9FE0;
 }
-/* line 125, _style.scss */
-.page-addProduct input[type=text] {
+/* line 108, _style.scss */
+.page-add-product input[type=text] {
   margin-bottom: 10px;
   width: calc(78% - 28px);
 }
-/* line 129, _style.scss */
-.page-addProduct input[type=number] {
+/* line 112, _style.scss */
+.page-add-product input[type=number] {
   margin-right: 1.5%;
   padding: 10px;
   width: calc(20% - 30px);
 }
-/* line 134, _style.scss */
-.page-addProduct select, .page-addProduct option {
+/* line 117, _style.scss */
+.page-add-product select, .page-add-product option {
   width: 20%;
 }
-/* line 137, _style.scss */
-.page-addProduct div[contenteditable] {
+/* line 120, _style.scss */
+.page-add-product div[contenteditable] {
   display: block;
   overflow-y: scroll;
   width: calc(100% - $i-pad * 2);
   height: 100px;
   line-height: 1.2em;
 }
-/* line 145, _style.scss */
-.page-addProduct span {
+/* line 128, _style.scss */
+.page-add-product span {
   display: inline-block;
   margin-left: 2%;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 151, _style.scss */
-.page-addProduct .button {
+/* line 134, _style.scss */
+.page-add-product .button {
   padding: 14px;
   width: calc(20% - 28px);
   border-radius: 0 0 4px 0;
 }
-/* line 157, _style.scss */
-.page-addProduct div.preview {
+/* line 140, _style.scss */
+.page-add-product div.preview {
   margin: 0 auto;
   padding: 25px;
   border: 1px solid;
 }
-/* line 162, _style.scss */
-.page-addProduct .button {
+/* line 145, _style.scss */
+.page-add-product .button {
   display: inline-block;
 }
-/* line 165, _style.scss */
-.page-addProduct h3 {
+/* line 148, _style.scss */
+.page-add-product h3 {
   margin-bottom: 10px;
 }
-/* line 169, _style.scss */
-.page-addProduct .describe .button {
+/* line 152, _style.scss */
+.page-add-product .describe .button {
   float: right;
 }
-/* line 174, _style.scss */
-.page-addProduct .condition option, .page-addProduct .condition div {
+/* line 157, _style.scss */
+.page-add-product .condition option, .page-add-product .condition div {
   margin: 0 auto;
 }
 
-/* line 180, _style.scss */
+/* line 163, _style.scss */
 fieldset.show, div.show {
   display: block;
 }
 
-/* line 184, _style.scss */
+/* line 167, _style.scss */
 .no-show {
   display: none;
 }

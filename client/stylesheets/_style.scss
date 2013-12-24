@@ -10,30 +10,11 @@ h1.logo {
 	font-size: 140px;
 }
 
-.page-box {
-	overflow: auto;
-	margin: 0 auto;
-	margin-top: 50px;
-	margin-bottom: 100px;
-	padding: 40px;
-	min-width: 400px;
-	max-height: 600px;
-	width: auto;
-	height: auto;
-	border: 1px solid #d8dcea;
-	border-radius: 2px;
-	background-color: rgba(255, 255, 255, 0.6);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-	transition: all .25s ease-in;
-	h1, h2, h3, h4, h5 {
-		margin: 0 auto;
-	}
-}
-
 .page-home {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	margin: 50px auto 100px;
+	min-width: 400px;
 	max-width: 600px;
+	max-height: 600px;
 	width: 60%;
 	input {
 		position: relative;
@@ -51,6 +32,7 @@ h1.logo {
 
 
 .page-product {
+	margin: 50px auto 100px;
 	overflow: auto;
 	width: 80%;
 	h1 {
@@ -108,7 +90,8 @@ h1.logo {
 	}
 }
 
-.page-addProduct {
+.page-add-product {
+	margin-bottom: 100px;
 	overflow-x: hidden;
 	width: 60%;
 	input, select,option, div[contenteditable] {
