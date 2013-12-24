@@ -2147,38 +2147,39 @@ input[type="url"]::-webkit-input-placeholder {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  display: inline-block;
   padding: 1em;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   background-color: white;
   color: #444;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
 }
-/* line 37, general/_base.scss */
+/* line 38, general/_base.scss */
 .button:hover {
   background-color: #3f9fe0;
   color: white;
 }
 
-/* line 43, general/_base.scss */
+/* line 44, general/_base.scss */
 .button-group {
   display: inline-block;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   background-color: white;
 }
-/* line 47, general/_base.scss */
+/* line 48, general/_base.scss */
 .button-group .button {
   display: inline-block;
   border-width: 0;
   border-right-width: 1px;
 }
-/* line 51, general/_base.scss */
+/* line 52, general/_base.scss */
 .button-group .button:last-child {
   border-width: 0;
 }
 
-/* line 57, general/_base.scss */
+/* line 58, general/_base.scss */
 .box {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
