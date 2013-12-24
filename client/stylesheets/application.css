@@ -2239,6 +2239,7 @@ input[type="url"]::-webkit-input-placeholder {
   padding: 14px 40px;
   width: 100%;
   border-top: 1px solid #DDD;
+  color: #33b5e5;
 }
 
 /* line 1, pages/_home.scss */
