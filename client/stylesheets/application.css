@@ -1487,9 +1487,8 @@ input:focus {
 }
 
 /* line 1, general/_header.scss */
-header {
+.header {
   padding: 10px 0px;
-  min-width: 400px;
   width: 100%;
   border-bottom: 1px solid #378cc5;
   background-color: #3F9FE0;
@@ -1497,37 +1496,37 @@ header {
   color: white;
   font-size: 1.4em;
 }
-/* line 10, general/_header.scss */
-header a {
+/* line 9, general/_header.scss */
+.header a {
   margin-left: 40px;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
   color: white;
   font-weight: bold;
 }
-/* line 15, general/_header.scss */
-header a:link {
+/* line 14, general/_header.scss */
+.header a:link {
   text-decoration: none;
 }
-/* line 20, general/_header.scss */
-header ul {
+/* line 19, general/_header.scss */
+.header ul {
   display: inline-block;
   float: right;
   margin: 0px;
   padding: 0px;
   list-style-type: none;
 }
-/* line 27, general/_header.scss */
-header li {
+/* line 26, general/_header.scss */
+.header li {
   display: inline-block;
   margin-right: 50px;
 }
-/* line 30, general/_header.scss */
-header li:hover {
+/* line 29, general/_header.scss */
+.header li:hover {
   cursor: pointer;
 }
 
 /* line 1, general/_footer.scss */
-footer {
+.footer {
   padding: 14px 40px;
   width: 100%;
   border-top: 1px solid #DDD;
