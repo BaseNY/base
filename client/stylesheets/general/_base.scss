@@ -56,10 +56,10 @@ input[type="url"] {
 }
 
 .box {
-	@include border-radius(2px);
-	@include box-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
 	margin: 50px auto;
 	padding: 40px;
 	border: 1px solid $grayblue;
+	border-radius: 2px;
 	background-color: rgba(255, 255, 255, 0.6);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
