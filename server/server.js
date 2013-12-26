@@ -6,10 +6,12 @@ if (Meteor.isServer) {
 
     Meteor.methods({
 	addProduct: function(p) {
+	    console.log('called');
 	    p.user = this.userId;
 	    p.time = new Date();
 	    Items.insert(p);
 	    console.log(Items);
+	    return Items;
 	}
     })
     Meteor.startup(function () {

@@ -62,6 +62,20 @@ Template.addDescription.rendered = function(){
     });
 }
 
+Template.postPreview.rendered = function(){
+    $('#addProdBut').click(function(e) {
+	e.preventDefault();
+	console.log("adding item");
+	Meteor.call('addProduct', Session.get('tempProdForm'),
+	    function(e,r) {
+		if(e)
+	    alert(e);
+		else
+	    console.log(r);
+	    });
+    });
+}
+
 Template.pageAddProduct.rendered = function(){
     if(!Session.get('tempProdForm'))
 	Session.set('tempProdForm',{});
