@@ -1793,6 +1793,9 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
   width: 100%;
   border-top: 1px solid #dddddd;
   color: #33b5e5; }
+  /* line 6, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/general/footer */
+  .footer > span {
+    margin-left: 20px; }
 
 /* line 1, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/home */
 .logo {

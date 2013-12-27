@@ -15,9 +15,7 @@
 </head>
 
 <template name="layout">
-	{{> header}}
-	{{yield}}
-	{{> footer}}
+	{{> header}} {{yield}} {{> footer}}
 </template>
 
 <template name="header">
@@ -27,12 +25,15 @@
 			{{#if currentUser}}
 			<li>{{name}}</li>
 			{{else}}
-			<li id="login" >Login</li>
+			<li id="login">Login</li>
 			{{/if}}
 		</ul>
 	</header>
 </template>
 
 <template name="footer">
-<footer class="footer"><a>About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; 2013 BASE</footer>
+	<footer class="footer">
+		<span><a href="{{pathFor 'about'}}">About</a></span>
+		<span>&copy; 2013 BASE</span>
+	</footer>
 </template>
