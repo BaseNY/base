@@ -66,53 +66,22 @@ Template.postPreview.rendered = function(){
     $('#addProdBut').click(function(e) {
 	e.preventDefault();
 	console.log("adding item");
-	Meteor.call('addProduct', Session.get('tempProdForm'),
-	    function(e,r) {
-		if(e)
-	    alert(e);
-		else
-	    console.log(r);
-	    });
+	Meteor.call('addProduct', Session.get('tempProdForm'), function(e,r) {
+	    console.log("something");
+	    if(e) {
+		alert(e);
+	    }else{
+		console.log("done");
+		Router.go('/post/' + r);
+	    }
+	});
     });
 }
 
 Template.pageAddProduct.rendered = function(){
     if(!Session.get('tempProdForm'))
 	Session.set('tempProdForm',{});
-    /*
-       $('form').submit(function(e) {
-       e.preventDefault();	    
-       });
-       $(document).keypress(function(e) {
-       if(e.which == 13) {
-       $('.show .button').click();
-       }
-       });
-       */
 };
-/*
-   Template.pageAddProduct.events({
-   'click .button' : function() {
-   var s = Session.get('postState');
-   if(!verifyField($('.show'))) {
-   alert('You must fill out the field!');
-   return -1;
-   }
-   if(s == 6) {
-   console.log("adding");
-   var f = $('form').serializeArray();
-   var tempDict = {};
-   for (x in f) {
-   tempDict[f[x].name] = f[x].value;
-   }
-   tempDict['description'] = $('#itemDescription').html();
-   Session.set('tempProdForm', tempDict);
-   }
-   Session.set('postState',++s);
-   showStep();
-   },
-   });
-   */
 
 
 
@@ -121,29 +90,29 @@ Template.postPreview.helpers({
 	if(Session.get('tempProdForm'))
     return Session.get('tempProdForm').title;
     },
-'category': function() {
-    if(Session.get('tempProdForm'))
+    'category': function() {
+	if(Session.get('tempProdForm'))
     return Session.get('tempProdForm').category;
 //return $('[name=category]').val();
-},
-'so': function() {
-    if(Session.get('tempProdForm'))
+    },
+    'so': function() {
+	if(Session.get('tempProdForm'))
     return Session.get('tempProdForm').so;
 //return $('[name=so]').val();
-},
-'bin': function() {
-    if(Session.get('tempProdForm'))
+    },
+    'bin': function() {
+	if(Session.get('tempProdForm'))
     return Session.get('tempProdForm').bin;
 //return $('[name=bin]').val();
-},
-'condition': function() {
-    if(Session.get('tempProdForm'))
-	return Session.get('tempProdForm').condition;
-    //return $('[name=condition]').val();
-},
+    },
+    'condition': function() {
+	if(Session.get('tempProdForm'))
+	    return Session.get('tempProdForm').condition;
+	//return $('[name=condition]').val();
+    },
     'description': function() {
 	if(Session.get('tempProdForm'))
 	    return Session.get('tempProdForm').description;
 	//return $('#itemDescription').html();
     },
-    });
+});

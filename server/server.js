@@ -9,9 +9,9 @@ if (Meteor.isServer) {
 	    console.log('called');
 	    p.user = this.userId;
 	    p.time = new Date();
-	    Items.insert(p);
+	    var temp = Items.insert(p);
 	    console.log(Items);
-	    return Items;
+	    return temp;
 	}
     })
     Meteor.startup(function () {

@@ -14,8 +14,7 @@ var sellHandler = function() {
 		});
 	}
 	function rendPrice() {
-		this.render('addPricing', {
-			to: 'sellYield'
+		this.render('addPricing', { to: 'sellYield'
 		});
 	}
 	function rendCond() {
@@ -56,6 +55,24 @@ Router.map(function() {
 		action: function() {
 			this.render("pageAddProduct");
 			SH[this.params.step].call(this);
+		}
+	});
+	this.route('posts', {
+		path: '/post/:id',
+		action: function() {
+			this.render("product");
+		},
+		data: function() { 
+		    var item = Items.findOne({_id:this.params.id});
+		    return {
+			title: item.title,
+			category: item.category,
+			so: item.so,
+			bin: item.bin,
+			condition: item.condition,
+			description: item.description,
+				    
+		    }
 		}
 	});
 });
