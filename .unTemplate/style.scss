@@ -28,17 +28,25 @@ header {
 			text-decoration: none;
 		}
 	}
-
-	ul {
-		padding:0px;
-		margin:0px;
+	div#user-wrapper {
 		float:right;
-		display:inline-block;
-		list-style-type: none;
+		margin-right:50px;
+	}
+	ul#logDrop {
+		position:absolute;
+		right:0px;
+		top:20px;
+		display:none;
+		border-right:1px solid #3F9FE0;
+		border-left:1px solid #3F9FE0;
+		background-color:white;
+		list-style-type:none;
+		padding:0px;
+		margin-right:50px;
+		color:black;
 		li {
-			margin-right:50px;
-			display:inline-block;
-
+			border-bottom:1px solid #3F9FE0;
+			padding:5px;
 		}
 	}
 }
