@@ -9,6 +9,19 @@ body {
 	background-color:whiteSmoke;
 }
 
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+	&.placeholder {font-weight:300; }
+	&:-moz-placeholder {font-weight:300;}
+	&::-moz-placeholder { font-weight:300;}
+	&:-ms-input-placeholder { font-weight:300;}
+	&::-webkit-input-placeholder { font-weight:300;}
+}
 header {
 	padding:10px 0px;
 	background-color:#3F9FE0;
@@ -274,7 +287,7 @@ h1.logo{
 }
 
 #modal {
-	position:fixed;
+	position:absolute;
 	height:auto;
 	width:350px;
 	/*background-color:#E9E9E9;*/
@@ -285,12 +298,27 @@ h1.logo{
 	border:1px solid #378cc5;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 	background-color:rgba(255,255,255,0.8);
-	input[type=text], input[type=password] {
-		margin:0px;
-		margin-bottom:5px;
-		padding:10px;
-		box-sizing:border-box;
-		width:100%;
+	.modal-login{
+		input[type=text], input[type=password] {
+			margin:0px;
+			margin-bottom:5px;
+			padding:10px;
+			box-sizing:border-box;
+			width:100%;
+		}
+	}
+	.modal-signup{
+		input[type=text], input[type=password],input[type=email] {
+			margin:0px;
+			margin-bottom:5px;
+			padding:10px;
+			box-sizing:border-box;
+			width:100%;
+			
+		}
+		input.halfInput {
+			width:50%;
+		}
 	}
 	.button {
 		margin-top:5px;
