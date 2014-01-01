@@ -39,17 +39,19 @@
     <div id="fb-login">
     </div>
     <h3>or</h3>
+    <form>
     First Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name:<br />
     <input type="text" name="first"class="halfInput" /><input type="text"name="last"class="halfInput" />
     Email:
-    <input type="email"/>
+    <input name="email"type="email"/>
     Password:
-    <input  type="password" /> 
+    <input name="password"  type="password" /> 
     Confirm Password:
     <input type="password"/>
     Birthday (mm/dd/yy):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zip Code:<br />
-    <input type="text" style="width:44px"/><input type="text" style="width:44px"/><input type="text" style="width:44px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width:80px"/>
-    <div class="button">Sign Up!</div>
+    <input type="text" name="mm" style="width:44px"/><input type="text"name="dd" style="width:44px"/><input type="text" name="yy"style="width:44px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="zip" style="width:80px"/>
+</form>
+    <input class="button" type="submit" value="Sign Up!"/>
     Already a member? <a>Log in!</a>
 </div>
 </template>
