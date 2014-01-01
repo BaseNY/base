@@ -9,6 +9,19 @@ body {
 	background-color:whiteSmoke;
 }
 
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+	&.placeholder {font-weight:300; }
+	&:-moz-placeholder {font-weight:300;}
+	&::-moz-placeholder { font-weight:300;}
+	&:-ms-input-placeholder { font-weight:300;}
+	&::-webkit-input-placeholder { font-weight:300;}
+}
 header {
 	padding:10px 0px;
 	background-color:#3F9FE0;
@@ -301,6 +314,7 @@ h1.logo{
 			padding:10px;
 			box-sizing:border-box;
 			width:100%;
+			
 		}
 		input.halfInput {
 			width:50%;
