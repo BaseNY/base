@@ -244,7 +244,65 @@ h1.logo {
     color: white;
     cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003267}}
+#modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003276}}
+#modal {
+  position: fixed;
+  height: auto;
+  width: 350px;
+  /*background-color:#E9E9E9;*/
+  border-radius: 5px;
+  top: 150px;
+  margin-left: -175px;
+  left: 50%;
+  border: 1px solid #378cc5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.8); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003288}}
+  #modal input[type=text], #modal input[type=password] {
+    margin: 0px;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003295}}
+  #modal .button {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003299}}
+  #modal #fb-login {
+    margin-top: 5px;
+    width: 100%;
+    height: 46px;
+    background: url("fb_active.png") center top no-repeat;
+    cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003305}}
+    #modal #fb-login:active {
+      background-image: url("fb_pressed.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003309}}
+  #modal .modal-inner {
+    width: 90%;
+    padding: 5%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003313}}
+  #modal h1, #modal h3 {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003318}}
+  #modal h3 {
+    color: grey;
+    font-size: 1em;
+    margin-top: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003326}}
 footer {
   padding: 10px 0px;
   width: 100%;
