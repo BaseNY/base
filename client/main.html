@@ -16,18 +16,26 @@
 
 <template name="layout">
 	{{> header}} {{yield}} {{> footer}}
+	{{#if currentUser}}
+	{{else}}
+	{{> modalContainer}}
+	{{/if}}
 </template>
 
 <template name="header">
 	<header class="header">
-		<a href="/">BASE</a>
-		<ul>
+    		<a href="/">BASE</a>
+    			<div id="user-wrapper">
 			{{#if currentUser}}
-			<li>{{name}}</li>
+			{{name}}
+                    <ul class="dropdown" id="nameDrop">
+                        <li>My Profile</li>
+                        <li>Account Settings</li>
+                    </ul>
 			{{else}}
-			<li id="login">Login</li>
+			<a id="openLogin">Login</a>
 			{{/if}}
-		</ul>
+                </div>
 	</header>
 </template>
 
