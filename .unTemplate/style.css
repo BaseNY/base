@@ -255,7 +255,7 @@ h1.logo {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003276}}
 #modal {
-  position: fixed;
+  position: absolute;
   height: auto;
   width: 350px;
   /*background-color:#E9E9E9;*/
@@ -266,43 +266,53 @@ h1.logo {
   border: 1px solid #378cc5;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   background-color: rgba(255, 255, 255, 0.8); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003288}}
-  #modal input[type=text], #modal input[type=password] {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003289}}
+  #modal .modal-login input[type=text], #modal .modal-login input[type=password] {
     margin: 0px;
     margin-bottom: 5px;
     padding: 10px;
     box-sizing: border-box;
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003295}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003298}}
+  #modal .modal-signup input[type=text], #modal .modal-signup input[type=password], #modal .modal-signup input[type=email] {
+    margin: 0px;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003305}}
+  #modal .modal-signup input.halfInput {
+    width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003309}}
   #modal .button {
     margin-top: 5px;
     margin-bottom: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003313}}
   #modal #fb-login {
     margin-top: 5px;
     width: 100%;
     height: 46px;
     background: url("fb_active.png") center top no-repeat;
     cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003305}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003319}}
     #modal #fb-login:active {
       background-image: url("fb_pressed.png"); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003323}}
   #modal .modal-inner {
     width: 90%;
     padding: 5%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003327}}
   #modal h1, #modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003332}}
   #modal h3 {
     color: grey;
     font-size: 1em;
     margin-top: 5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Jasper\/Source\/Repos\/base\/\.unTemplate\/style\.scss}line{font-family:\00003340}}
 footer {
   padding: 10px 0px;
   width: 100%;
