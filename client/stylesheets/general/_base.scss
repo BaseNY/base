@@ -1,0 +1,71 @@
+// https://github.com/Schepp/box-sizing-polyfill
+*,
+*:before,
+*:after {
+	// need to uncomment if not using foundation global
+	// @include box-sizing(border-box);
+	*behavior: url("/scripts/boxsizing.htc");
+}
+
+a {
+	color: #33b5e5;
+}
+
+#fbLogin {
+    background-color:#3b5998;
+    color:#FFFFFF;
+    padding:5px 10px 5px 10px !important;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+	@include input-placeholder {
+		font-weight: 300;
+	}
+}
+
+.button {
+	@include transition(all 0.2s ease);
+	display: inline-block;
+	padding: 1em;
+	border: 1px solid $input-border-color;
+	background-color: white;
+	color: #444;
+	cursor: pointer;
+	text: {
+		align: center;
+		decoration: none;
+	}
+	&:hover {
+		background-color: $primary-color;
+		color: white;
+	}
+}
+
+.button-group {
+	display: inline-block;
+	border: 1px solid $input-border-color;
+	background-color: white;
+	.button {
+		display: inline-block;
+		border-width: 0;
+		border-right-width: 1px;
+		&:last-child {
+			border-width: 0;
+		}
+	}
+}
+
+.box {
+	margin: 50px auto;
+	padding: 40px;
+	border: 1px solid $grayblue;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, 0.6);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}

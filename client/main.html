@@ -1,0 +1,47 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	@viewport {
+		zoom: 1.0;
+		width: device-width;
+	}
+	@-ms-viewport {
+		width: device-width;
+		zoom: 1.0;
+	}
+	</style>
+</head>
+
+<template name="layout">
+	{{> header}} {{yield}} {{> footer}}
+	{{#if currentUser}}
+	{{else}}
+	{{> modalContainer}}
+	{{/if}}
+</template>
+
+<template name="header">
+	<header class="header">
+    		<a href="/">BASE</a>
+    			<div id="user-wrapper">
+			{{#if currentUser}}
+			{{name}}
+                    <ul class="dropdown" id="nameDrop">
+                        <li>My Profile</li>
+                        <li>Account Settings</li>
+                    </ul>
+			{{else}}
+			<a id="openLogin">Login</a>
+			{{/if}}
+                </div>
+	</header>
+</template>
+
+<template name="footer">
+	<footer class="footer">
+		<span><a href="{{pathFor 'about'}}">About</a></span>
+		<span>&copy; 2013 BASE</span>
+	</footer>
+</template>
