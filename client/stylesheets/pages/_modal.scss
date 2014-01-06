@@ -1,0 +1,75 @@
+#modal-overlay {
+	background-color:rgba(0,0,0,.5);
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+}
+
+#modal {
+	position:absolute;
+	height:auto;
+	width:350px;
+	/*background-color:#E9E9E9;*/
+	border-radius:5px;
+	top:150px;
+	margin-left:-175px;
+	left:50%;
+	border:1px solid #378cc5;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	background-color:rgba(255,255,255,0.8);
+	font-size:1em;
+	.modal-login{
+		input[type=text], input[type=password] {
+			margin:0px;
+			margin-bottom:5px;
+			padding:10px;
+			box-sizing:border-box;
+			width:100%;
+		}
+	}
+	.modal-signup{
+		input[type=text], input[type=password],input[type=email] {
+			margin:0px;
+			margin-bottom:5px;
+			padding:10px;
+			box-sizing:border-box;
+			width:100%;
+			display:inline-block;
+			
+		}
+		input.halfInput {
+			width:50%;
+		}
+	}
+	.button {
+		margin-top:5px;
+		margin-bottom:5px;
+		width:100%;
+	}
+	#fb-login {
+		margin-top:5px;
+		width:100%;
+		height:46px;
+		background:url('/images/fb_active.png') center top no-repeat;
+		cursor:pointer;
+		&:active {
+			background-image:url('/images/fb_pressed.png');
+		}
+	}
+	.modal-inner {
+	    width:100%;
+		padding:5%;
+	}
+	h1, h3 {
+		margin: 0 auto;
+		text-align:center;
+		font-weight:300;
+	}
+	h3 {
+		color:grey;
+		font-size:1em;
+		margin-top:5px;
+	}
+}

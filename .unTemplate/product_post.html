@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js "></script>
+    <title>Post</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header>
+        <a href="/">BASE</a>
+        <ul>
+            <li>About</li>
+            <li>Login</li>
+        </ul>
+    </header>
+
+    <div class="page-box page-addProduct">
+        <div class ="product">
+            <h3>What is your item called?</h3>
+            <input type="text" id="item-title" name="item-title" placeholder ="Item type, brand. condition . . ."/><div class="button">Next</div>
+        </div>
+        <hr />
+        <div class ="product">
+            <h3>Select a category for your item</h3>
+            <input type="radio" name="item-category" value = "shoes"/>Shoes</br>
+            <input type="radio" name="item-category" value = "clothes"/>Clothes</br>
+            <input type="radio" name="item-category" value = "technology"/>Technology</br>
+            <div class="button">Next</div>
+        </div>
+        <hr />
+        <div class ="product">
+            <h3>Set the pricing of your item</h3>
+            <center>
+            
+            Starting Offer <span>$</span><input type="number" id= "item-so" name="item-so" min="0" step="any"/>
+            Buy it Now <span>$</span><input type="number" id="item-bin" name="item-bin" min="0"step="any"/>
+            <div class="button">Next</div>
+            </center>
+        </div>
+        <hr />
+        <div class ="product">
+            <h3>What is the condition of your item?</h3>
+            <center>
+                <select id = "condition">
+                    <option>New</option>
+                    <option>Used</option>
+                </select>
+                <div class="button">Next</div>
+            </center>
+        </div>
+        <hr />
+        <div class ="product describe">
+            <h3>Describe your item.</h3>
+            <div contenteditable="true"></div>
+            <div class="button">Next</div>
+        </div>
+    </div>
+
+    <footer>
+        (C)2013 BASE
+    </footer>
+
+</body>
+</html>

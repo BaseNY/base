@@ -1,0 +1,117 @@
+﻿<template name="pageAddProduct">
+	<div class="box page-add-product">
+		<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
+		{{yield 'sellYield'}}
+	</div>
+</template>
+
+<template name="next-button">
+	<input type="submit" class="button" value="Next">
+</template>
+
+<template name="addTitle">
+	<form method="post">
+		<h3>What is your item called?</h3>
+		<input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . ." />{{> next-button}}
+	</form>
+</template>
+
+<template name="addCategory">
+	<form method="post">
+		<h3>Select a category for your item</h3>
+		<input type="radio" name="category" value="shoes" checked/>
+		<label for="category">Shoes</label>
+		<br>
+		<input type="radio" name="category" value="clothes" />Clothes
+		<br>
+		<input type="radio" name="category" value="technology" />Technology
+		<br>
+		{{> next-button}}
+	</form>
+</template>
+
+<template name="addPricing">
+	<form method="post">
+		<h3>Set the pricing of your item</h3>
+		<center>
+			Starting Offer
+			<span>$</span>
+			<input type="number" id="item-so" name="so" min="0" step="any" />Buy it Now
+			<span>$</span>
+			<input type="number" id="item-bin" name="bin" min="0" step="any" />{{> next-button}}
+		</center>
+	</form>
+</template>
+
+<template name="addCondition">
+	<form method="post">
+		<h3>What is the condition of your item?</h3>
+		<center>
+			<select name="condition">
+				<option>New</option>
+				<option>Used</option>
+			</select>
+			{{> next-button}}
+		</center>
+	</form>
+</template>
+
+<template name="addDescription">
+	<form method="post">
+		<h3>Describe your item.</h3>
+		<div id="itemDescription" name="description" contenteditable="true"></div>
+		<input type="submit" class="button" value="Next">
+	</form>
+</template>
+
+<template name="postPreview">
+	<h1>Preview your post.</h1>
+	<div class="page-product preview">
+		<h1>{{title}}</h1>
+		<h3>status: open</h3>
+		<br />
+		<span>{{category}}</span>
+		<br />
+		<br />
+		<div class="info">
+			<img src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+			<p>This is the photo carousel</p>
+			<div class="user-info">
+				<div>
+					<h2>Sayanke</h2>
+					<p>Think of to put here and others</p>
+					<p><a href="/">See other items from this seller</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="product-info">
+			<table>
+				<tr>
+					<td>Starting Offer</td>
+					<td><b>{{so}}</b>
+					</td>
+				</tr>
+				<tr>
+					<td>Buy it Now</td>
+					<td><b>{{bin}}</b>
+					</td>
+				</tr>
+				<tr>
+					<td>Item Condition</td>
+					<td><b>{{condition}}</b>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<b>Description</b>
+			<p>
+				{{description}}
+			</p>
+			<a class="button">Place your bid!</a>
+		</div>
+	</div>
+	<div id="addProdBut" class="button">
+	    Submit
+	</div>
+</template>
