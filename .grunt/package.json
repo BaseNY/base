@@ -1,9 +1,0 @@
-{
-	"name": "BASE",
-	"version": "0.0.1",
-	"devDependencies": {
-		"grunt": "~0.4.2",
-		"grunt-contrib-watch": "0.5.3",
-		"grunt-sass": "0.9.0"
-	}
-}
