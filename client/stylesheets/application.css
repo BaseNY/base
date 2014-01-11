@@ -2049,7 +2049,40 @@ fieldset.show, div.show {
 .no-show {
   display: none; }
 
-/* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+/* line 23, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+.items-container {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 165, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/foundation/components/global */
+  .items-container:before, .items-container:after {
+    content: " ";
+    display: table; }
+  /* line 166, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/foundation/components/global */
+  .items-container:after {
+    clear: both; }
+  /* line 25, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  .items-container .categories {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    padding:  1%; }
+    /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/span-columns */
+    .items-container .categories:last-child {
+      margin-right: 0; }
+  /* line 29, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  .items-container .items {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/span-columns */
+    .items-container .items:last-child {
+      margin-right: 0; }
+
+/* line 34, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
 .items {
   *zoom: 1;
   max-width: 68em;
@@ -2066,20 +2099,20 @@ fieldset.show, div.show {
   .items:after {
     clear: both; }
 
-/* line 31, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+/* line 41, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
 .item {
   border-radius: 2px;
   background-color: white;
   box-shadow: 1px 1px 5px -3px gray; }
-  /* line 36, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  /* line 46, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
   .item img {
     width: 100%; }
-  /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  /* line 50, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
   .item .item-desc {
     padding: 2%;
     line-height: 1.4em;
     text-align: center; }
-  /* line 48, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  /* line 58, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
   .item .item-price {
     color: #3f9fe0; }
 
