@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic);
 /* line 2, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/grid */
 * {
   -webkit-box-sizing: border-box;
@@ -2047,3 +2048,105 @@ fieldset.show, div.show {
 /* line 136, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/style */
 .no-show {
   display: none; }
+
+/* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+.items {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding:  3%;
+  max-width: 2000px;
+  font-family: "Droid Serif"; }
+  /* line 165, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/foundation/components/global */
+  .items:before, .items:after {
+    content: " ";
+    display: table; }
+  /* line 166, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/foundation/components/global */
+  .items:after {
+    clear: both; }
+
+/* line 31, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+.item {
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 1px 1px 5px -3px gray; }
+  /* line 36, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  .item img {
+    width: 100%; }
+  /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  .item .item-desc {
+    padding: 2%;
+    line-height: 1.4em;
+    text-align: center; }
+  /* line 48, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+  .item .item-price {
+    color: #3f9fe0; }
+
+/* line 5, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/pages/results/item_grid */
+.item {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-bottom: 2.35765%; }
+  /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/span-columns */
+  .item:last-child {
+    margin-right: 0; }
+  @media all and (min-width: 400px) {
+    .item {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%;
+      margin-bottom: 2.35765%; }
+      /* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat */
+      .item:nth-child(1n) {
+        margin-right: 2.35765%; }
+      /* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat */
+      .item:nth-child(1n+1) {
+        clear: none; }
+      /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/span-columns */
+      .item:last-child {
+        margin-right: 0; }
+      /* line 67, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/omega */
+      .item:nth-child(2n) {
+        margin-right: 0; } }
+  @media all and (min-width: 600px) {
+    .item {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      margin-bottom: 2.35765%; }
+      /* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat */
+      .item:nth-child(2n) {
+        margin-right: 2.35765%; }
+      /* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat */
+      .item:nth-child(2n+1) {
+        clear: none; }
+      /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/span-columns */
+      .item:last-child {
+        margin-right: 0; }
+      /* line 67, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/omega */
+      .item:nth-child(3n) {
+        margin-right: 0; } }
+  @media all and (min-width: 800px) {
+    .item {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      margin-bottom: 2.35765%; }
+      /* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat */
+      .item:nth-child(3n) {
+        margin-right: 2.35765%; }
+      /* line 24, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat */
+      .item:nth-child(3n+1) {
+        clear: none; }
+      /* line 40, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/span-columns */
+      .item:last-child {
+        margin-right: 0; }
+      /* line 67, /Users/steve/Desktop/code/base/.grunt/../client/stylesheets/vendor/neat/grid/omega */
+      .item:nth-child(4n) {
+        margin-right: 0; } }

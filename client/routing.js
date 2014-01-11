@@ -82,4 +82,5 @@ Router.map(function() {
 		path: '/demo',
 		template: 'demo'
 	});
+	this.route('itemGrid');
 });
