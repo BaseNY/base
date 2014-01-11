@@ -15,7 +15,11 @@
 </head>
 
 <template name="layout">
-	{{> header}} {{yield}} {{> footer}}
+	{{> header}}
+	<div class="body">
+		{{yield}}
+	</div>
+	{{> footer}}
 	{{#if currentUser}}
 	{{else}}
 	{{> modalContainer}}
