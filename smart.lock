@@ -2,13 +2,22 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "iron-router": {}
+      "iron-router": {},
+      "jquery": {
+        "git": "https://github.com/nrafter/meteor-jquery.git",
+        "branch": "master"
+      }
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.1",
-        "commit": "4e1ee0581d68bff422a915dacb0bd30eae10fe08"
+        "tag": "v0.6.2",
+        "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
+      },
+      "jquery": {
+        "git": "https://github.com/nrafter/meteor-jquery.git",
+        "branch": "master",
+        "commit": "3edf878d51e6f03eff70e1a7a969a19f42b6f1a1"
       }
     }
   }
