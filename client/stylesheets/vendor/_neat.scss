@@ -19,3 +19,9 @@
 @import "neat/grid/media";
 @import "neat/grid/to-deprecate";
 @import "neat/grid/visual-grid";
+
+
+@mixin omega-reset($nth) {
+	&:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+	&:nth-child(#{$nth}+1) { clear: none; }
+}
