@@ -1,7 +1,7 @@
 @mixin responsive-grid-positioning(
 	$class-name,
 	$max-columns: 4,
-	$min-column-width: 200px
+	$min-column-width: 250px
 ) {
 	.#{$class-name} {
 		@include span-columns(12);
@@ -9,9 +9,9 @@
 
 		@for $i from 2 through $max-columns {
 			@media only screen and (min-width: $min-column-width * $i) {
-				@include reset-omega(#{$i - 1}n);
+				@include reset-omega($i - 1n);
 				@include span-columns(12 / $i);
-				@include omega(#{$i}n);
+				@include omega($i * 1n);
 				@include neat-margin(bottom, 12 / $i);
 			}
 		}
@@ -22,6 +22,7 @@
 	$font: "Droid Serif"
 ) {
 	.items-container {
+		/*
 		@include outer-container;
 		.categories {
 			@include span-columns(3);
@@ -29,13 +30,12 @@
 		}
 		.items {
 			@include span-columns(9);
-		}
+		}*/
 	}
 
 	.items {
 		@include outer-container;
 		@include pad(3%);
-		max-width: 2000px;
 		font-family: $font;
 	}
 
