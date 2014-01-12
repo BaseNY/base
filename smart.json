@@ -3,13 +3,17 @@
     "iron-router": {},
     "fast-render": {},
     "jquery": {
-      "git": "https://github.com/nrafter/meteor-jquery.git"
+      "git": "https://github.com/nrafter/meteor-jquery.git",
+      "tag": "v2.0.31"
     },
     "bourbon": {
-      "git": "https://github.com/stevezhu/meteor-bourbon.git"
+      "git": "https://github.com/stevezhu/meteor-bourbon.git",
+      "tag": "v3.1.8.2"
     },
     "neat": {
-      "git": "https://github.com/stevezhu/meteor-neat.git"
-    }
+      "git": "https://github.com/stevezhu/meteor-neat.git",
+      "tag": "v1.5.0.3"
+    },
+    "nprogress": {}
   }
 }
