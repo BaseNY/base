@@ -2126,7 +2126,7 @@ fieldset.show, div.show {
   /* line 40, ../packages/neat/grid/span-columns */
   .item:last-child {
     margin-right: 0; }
-  @media all and (min-width: 400px) {
+  @media only screen and (min-width: 400px) {
     .item {
       float: left;
       display: block;
@@ -2145,7 +2145,7 @@ fieldset.show, div.show {
       /* line 70, ../packages/neat/grid/omega */
       .item:nth-child(2n) {
         margin-right: 0; } }
-  @media all and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
     .item {
       float: left;
       display: block;
@@ -2164,7 +2164,7 @@ fieldset.show, div.show {
       /* line 70, ../packages/neat/grid/omega */
       .item:nth-child(3n) {
         margin-right: 0; } }
-  @media all and (min-width: 800px) {
+  @media only screen and (min-width: 800px) {
     .item {
       float: left;
       display: block;
