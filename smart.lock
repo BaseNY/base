@@ -6,6 +6,14 @@
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
         "branch": "master"
+      },
+      "bourbon": {
+        "git": "https://github.com/stevezhu/meteor-bourbon.git",
+        "branch": "master"
+      },
+      "neat": {
+        "git": "https://github.com/stevezhu/meteor-neat.git",
+        "branch": "master"
       }
     },
     "packages": {
@@ -18,6 +26,16 @@
         "git": "https://github.com/nrafter/meteor-jquery.git",
         "branch": "master",
         "commit": "3edf878d51e6f03eff70e1a7a969a19f42b6f1a1"
+      },
+      "bourbon": {
+        "git": "https://github.com/stevezhu/meteor-bourbon.git",
+        "branch": "master",
+        "commit": "646296cd13075844c6edb128e934215ab9986b48"
+      },
+      "neat": {
+        "git": "https://github.com/stevezhu/meteor-neat.git",
+        "branch": "master",
+        "commit": "6d791cc3aed5e3d40b112cdbf3f79ea99a242c6f"
       }
     }
   }

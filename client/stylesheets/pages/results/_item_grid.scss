@@ -9,7 +9,7 @@
 
 		@for $i from 2 through $max-columns {
 			@media all and (min-width: $min-column-width * $i) {
-				@include omega-reset(#{$i - 1}n);
+				@include reset-omega(#{$i - 1}n);
 				@include span-columns(12 / $i);
 				@include omega(#{$i}n);
 				@include neat-margin(bottom, 12 / $i);
