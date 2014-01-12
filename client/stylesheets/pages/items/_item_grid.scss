@@ -47,17 +47,27 @@
 		img {
 			width: 100%;
 		}
+	}
 
-		.item-desc {
-			padding: 2%;
-			line-height: 1.4em;
-			//background-color: #353535;
-			//color: white;
-			text-align: center;
-		}
+	.item-desc {
+		padding: 3% 5%;
+		line-height: 1.4em;
+		//background-color: #353535;
+		//color: white;
+	}
 
-		.item-price {
-			color: #3F9FE0;
+	.item-name {
+		text-align: center;
+	}
+
+	.item-price {
+		text-align: center;
+		color: #3F9FE0;
+		.price-retail {
+			font-size: 0.8em;
+			color: gray;
+			text-decoration: line-through;
+			margin-right: 5px;
 		}
 	}
 

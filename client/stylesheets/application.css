@@ -2049,7 +2049,7 @@ fieldset.show, div.show {
 .no-show {
   display: none; }
 
-/* line 24, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+/* line 24, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
 .items-container {
   *zoom: 1;
   max-width: 68em;
@@ -2062,7 +2062,7 @@ fieldset.show, div.show {
   /* line 166, /Users/steve/Desktop/code/base/client/stylesheets/vendor/foundation/components/global */
   .items-container:after {
     clear: both; }
-  /* line 26, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+  /* line 26, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
   .items-container .categories {
     float: left;
     display: block;
@@ -2072,7 +2072,7 @@ fieldset.show, div.show {
     /* line 40, ../packages/neat/grid/span-columns */
     .items-container .categories:last-child {
       margin-right: 0; }
-  /* line 30, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+  /* line 30, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
   .items-container .items {
     float: left;
     display: block;
@@ -2082,7 +2082,7 @@ fieldset.show, div.show {
     .items-container .items:last-child {
       margin-right: 0; }
 
-/* line 35, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+/* line 35, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
 .items {
   *zoom: 1;
   max-width: 68em;
@@ -2099,24 +2099,36 @@ fieldset.show, div.show {
   .items:after {
     clear: both; }
 
-/* line 42, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+/* line 42, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
 .item {
   border-radius: 2px;
   background-color: white;
   box-shadow: 1px 1px 5px -3px gray; }
-  /* line 47, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+  /* line 47, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
   .item img {
     width: 100%; }
-  /* line 51, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
-  .item .item-desc {
-    padding: 2%;
-    line-height: 1.4em;
-    text-align: center; }
-  /* line 59, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
-  .item .item-price {
-    color: #3F9FE0; }
 
-/* line 6, /Users/steve/Desktop/code/base/client/stylesheets/pages/results/item_grid */
+/* line 52, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
+.item-desc {
+  padding: 3% 5%;
+  line-height: 1.4em; }
+
+/* line 59, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
+.item-name {
+  text-align: center; }
+
+/* line 63, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
+.item-price {
+  text-align: center;
+  color: #3F9FE0; }
+  /* line 66, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
+  .item-price .price-retail {
+    font-size: 0.8em;
+    color: gray;
+    text-decoration: line-through;
+    margin-right: 5px; }
+
+/* line 6, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
 .item {
   float: left;
   display: block;

@@ -3,7 +3,14 @@
 		<img src="http://icons.iconarchive.com/icons/danleech/simple/512/github-icon.png" alt="item">
 		<div class="item-desc">
 			<div class="item-name" itemprop="name">{{name}}</div>
-			<div class="item-price">${{price}}</div>
+			<div class="item-price">
+				{{#if pricing.retail}}
+				<span class="price-retail">
+					${{pricing.retail}}
+				</span>
+				{{/if}}
+				${{pricing.list}}
+			</div>
 		</div>
 	</div>
 </template>
