@@ -75,6 +75,7 @@ Router.map(function() {
 		    }
 		}
 	});
+	this.route('itemResults');
 });
 
 Router.map(function() {
@@ -82,5 +83,4 @@ Router.map(function() {
 		path: '/demo',
 		template: 'demo'
 	});
-	this.route('itemResults');
 });
