@@ -3,6 +3,7 @@
   "dependencies": {
     "basePackages": {
       "iron-router": {},
+      "fast-render": {},
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
         "branch": "master"
@@ -21,6 +22,11 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.6.2",
         "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.1.4",
+        "commit": "8d28f77452c02b529dee8abfa672f2b093377f1b"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
