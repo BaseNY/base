@@ -2049,47 +2049,14 @@ fieldset.show, div.show {
 .no-show {
   display: none; }
 
-/* line 24, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
-.items-container {
-  *zoom: 1;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto; }
-  /* line 165, /Users/steve/Desktop/code/base/client/stylesheets/vendor/foundation/components/global */
-  .items-container:before, .items-container:after {
-    content: " ";
-    display: table; }
-  /* line 166, /Users/steve/Desktop/code/base/client/stylesheets/vendor/foundation/components/global */
-  .items-container:after {
-    clear: both; }
-  /* line 26, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
-  .items-container .categories {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%;
-    padding: 1%; }
-    /* line 40, ../packages/neat/grid/span-columns */
-    .items-container .categories:last-child {
-      margin-right: 0; }
-  /* line 30, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
-  .items-container .items {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 74.41059%; }
-    /* line 40, ../packages/neat/grid/span-columns */
-    .items-container .items:last-child {
-      margin-right: 0; }
 
-/* line 35, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
+/* line 36, /Users/steve/Desktop/code/base/client/stylesheets/pages/items/item_grid */
 .items {
   *zoom: 1;
-  max-width: 68em;
+  max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   padding: 3%;
-  max-width: 2000px;
   font-family: "Droid Serif"; }
   /* line 165, /Users/steve/Desktop/code/base/client/stylesheets/vendor/foundation/components/global */
   .items:before, .items:after {
@@ -2138,7 +2105,7 @@ fieldset.show, div.show {
   /* line 40, ../packages/neat/grid/span-columns */
   .item:last-child {
     margin-right: 0; }
-  @media only screen and (min-width: 400px) {
+  @media only screen and (min-width: 500px) {
     .item {
       float: left;
       display: block;
@@ -2156,8 +2123,11 @@ fieldset.show, div.show {
         margin-right: 0; }
       /* line 70, ../packages/neat/grid/omega */
       .item:nth-child(2n) {
-        margin-right: 0; } }
-  @media only screen and (min-width: 600px) {
+        margin-right: 0; }
+      /* line 75, ../packages/neat/grid/omega */
+      .item:nth-child(2n+1) {
+        clear: left; } }
+  @media only screen and (min-width: 750px) {
     .item {
       float: left;
       display: block;
@@ -2175,8 +2145,11 @@ fieldset.show, div.show {
         margin-right: 0; }
       /* line 70, ../packages/neat/grid/omega */
       .item:nth-child(3n) {
-        margin-right: 0; } }
-  @media only screen and (min-width: 800px) {
+        margin-right: 0; }
+      /* line 75, ../packages/neat/grid/omega */
+      .item:nth-child(3n+1) {
+        clear: left; } }
+  @media only screen and (min-width: 1000px) {
     .item {
       float: left;
       display: block;
@@ -2194,4 +2167,7 @@ fieldset.show, div.show {
         margin-right: 0; }
       /* line 70, ../packages/neat/grid/omega */
       .item:nth-child(4n) {
-        margin-right: 0; } }
+        margin-right: 0; }
+      /* line 75, ../packages/neat/grid/omega */
+      .item:nth-child(4n+1) {
+        clear: left; } }
