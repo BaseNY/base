@@ -2,8 +2,8 @@
 	<div class="item">
 		<img src="http://icons.iconarchive.com/icons/danleech/simple/512/github-icon.png" alt="item">
 		<div class="item-desc">
-			<div class="item-name">Item name</div>
-			<div class="item-price">$19.99</div>
+			<div class="item-name" itemprop="name">{{name}}</div>
+			<div class="item-price">${{price}}</div>
 		</div>
 	</div>
 </template>
@@ -14,11 +14,9 @@
 			<h2>Octocats</h2>
 		</div>
 		<div class="items">
-			{{> item}}
-			{{> item}}
-			{{> item}}
-			{{> item}}
-			{{> item}}
+			{{#each items}}
+				{{> item}}
+			{{/each}}
 		</div>
 	</div>
 </template>
