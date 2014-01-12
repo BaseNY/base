@@ -3,6 +3,12 @@
     "iron-router": {},
     "jquery": {
       "git": "https://github.com/nrafter/meteor-jquery.git"
+    },
+    "bourbon": {
+      "git": "https://github.com/stevezhu/meteor-bourbon.git"
+    },
+    "neat": {
+      "git": "https://github.com/stevezhu/meteor-neat.git"
     }
   }
 }
