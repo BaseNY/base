@@ -62,7 +62,7 @@ Router.map(function() {
 		action: function() {
 			this.render("product");
 		},
-		data: function() { 
+		data: function() {
 		    var item = Items.findOne({_id:this.params.id});
 		    return {
 			title: item.title,
@@ -71,7 +71,7 @@ Router.map(function() {
 			bin: item.bin,
 			condition: item.condition,
 			description: item.description,
-				    
+
 		    }
 		}
 	});
@@ -82,5 +82,5 @@ Router.map(function() {
 		path: '/demo',
 		template: 'demo'
 	});
-	this.route('itemGrid');
+	this.route('itemResults');
 });
