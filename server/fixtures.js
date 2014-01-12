@@ -14,4 +14,9 @@ if (Items.find().count() === 0) {
 		seller: 'Github',
 		price: 19.99
 	});
+	Items.insert({
+		name: 'Stuff',
+		seller: 'Somebody',
+		price: 5922
+	});
 }
