@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 					'../client/stylesheets/application.css': '../client/stylesheets/application.scss'
 				},
 				options: {
-					includePaths: ['imports/are/here/'],
+					includePaths: ['../packages/'],
 					outputStyle: 'expanded',
 					sourceComments: 'normal'
 				}
