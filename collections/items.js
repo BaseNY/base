@@ -5,5 +5,5 @@ if (Meteor.isClient) {
 		items: function() {
 			return Items.find();
 		}
-	})
+	});
 }
