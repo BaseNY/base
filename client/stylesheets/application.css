@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic);
-/* line 2, ../packages/neat/grid/grid */
+/* line 2, ../packages/neat-scss/grid/grid */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2102,7 +2102,7 @@ fieldset.show, div.show {
   margin-right: 2.35765%;
   width: 100%;
   margin-bottom: 2.35765%; }
-  /* line 40, ../packages/neat/grid/span-columns */
+  /* line 40, ../packages/neat-scss/grid/span-columns */
   .item:last-child {
     margin-right: 0; }
   @media only screen and (min-width: 500px) {
@@ -2112,19 +2112,19 @@ fieldset.show, div.show {
       margin-right: 2.35765%;
       width: 48.82117%;
       margin-bottom: 2.35765%; }
-      /* line 24, ../packages/neat/neat */
+      /* line 24, ../packages/neat-scss/neat */
       .item:nth-child(1n) {
         margin-right: 2.35765%; }
-      /* line 25, ../packages/neat/neat */
+      /* line 25, ../packages/neat-scss/neat */
       .item:nth-child(1n+1) {
         clear: none; }
-      /* line 40, ../packages/neat/grid/span-columns */
+      /* line 40, ../packages/neat-scss/grid/span-columns */
       .item:last-child {
         margin-right: 0; }
-      /* line 70, ../packages/neat/grid/omega */
+      /* line 70, ../packages/neat-scss/grid/omega */
       .item:nth-child(2n) {
         margin-right: 0; }
-      /* line 75, ../packages/neat/grid/omega */
+      /* line 75, ../packages/neat-scss/grid/omega */
       .item:nth-child(2n+1) {
         clear: left; } }
   @media only screen and (min-width: 750px) {
@@ -2134,19 +2134,19 @@ fieldset.show, div.show {
       margin-right: 2.35765%;
       width: 31.76157%;
       margin-bottom: 2.35765%; }
-      /* line 24, ../packages/neat/neat */
+      /* line 24, ../packages/neat-scss/neat */
       .item:nth-child(2n) {
         margin-right: 2.35765%; }
-      /* line 25, ../packages/neat/neat */
+      /* line 25, ../packages/neat-scss/neat */
       .item:nth-child(2n+1) {
         clear: none; }
-      /* line 40, ../packages/neat/grid/span-columns */
+      /* line 40, ../packages/neat-scss/grid/span-columns */
       .item:last-child {
         margin-right: 0; }
-      /* line 70, ../packages/neat/grid/omega */
+      /* line 70, ../packages/neat-scss/grid/omega */
       .item:nth-child(3n) {
         margin-right: 0; }
-      /* line 75, ../packages/neat/grid/omega */
+      /* line 75, ../packages/neat-scss/grid/omega */
       .item:nth-child(3n+1) {
         clear: left; } }
   @media only screen and (min-width: 1000px) {
@@ -2156,18 +2156,18 @@ fieldset.show, div.show {
       margin-right: 2.35765%;
       width: 23.23176%;
       margin-bottom: 2.35765%; }
-      /* line 24, ../packages/neat/neat */
+      /* line 24, ../packages/neat-scss/neat */
       .item:nth-child(3n) {
         margin-right: 2.35765%; }
-      /* line 25, ../packages/neat/neat */
+      /* line 25, ../packages/neat-scss/neat */
       .item:nth-child(3n+1) {
         clear: none; }
-      /* line 40, ../packages/neat/grid/span-columns */
+      /* line 40, ../packages/neat-scss/grid/span-columns */
       .item:last-child {
         margin-right: 0; }
-      /* line 70, ../packages/neat/grid/omega */
+      /* line 70, ../packages/neat-scss/grid/omega */
       .item:nth-child(4n) {
         margin-right: 0; }
-      /* line 75, ../packages/neat/grid/omega */
+      /* line 75, ../packages/neat-scss/grid/omega */
       .item:nth-child(4n+1) {
         clear: left; } }

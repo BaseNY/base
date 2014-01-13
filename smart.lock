@@ -8,15 +8,9 @@
         "git": "https://github.com/nrafter/meteor-jquery.git",
         "tag": "v2.0.31"
       },
-      "bourbon": {
-        "git": "https://github.com/stevezhu/meteor-bourbon.git",
-        "tag": "v3.1.8.2"
-      },
-      "neat": {
-        "git": "https://github.com/stevezhu/meteor-neat.git",
-        "tag": "v1.5.0.3"
-      },
-      "nprogress": {}
+      "nprogress": {},
+      "bourbon-scss": {},
+      "neat-scss": {}
     },
     "packages": {
       "iron-router": {
@@ -34,20 +28,20 @@
         "tag": "v2.0.31",
         "commit": "3edf878d51e6f03eff70e1a7a969a19f42b6f1a1"
       },
-      "bourbon": {
-        "git": "https://github.com/stevezhu/meteor-bourbon.git",
-        "tag": "v3.1.8.2",
-        "commit": "646296cd13075844c6edb128e934215ab9986b48"
-      },
-      "neat": {
-        "git": "https://github.com/stevezhu/meteor-neat.git",
-        "tag": "v1.5.0.3",
-        "commit": "6d791cc3aed5e3d40b112cdbf3f79ea99a242c6f"
-      },
       "nprogress": {
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
         "tag": "v0.0.3",
         "commit": "ffd1c5dd400af64121197f4e637a215c4b6b1fc7"
+      },
+      "bourbon-scss": {
+        "git": "https://github.com/stevezhu/meteor-bourbon.git",
+        "tag": "v3.1.8.4",
+        "commit": "9c36e7bbc40ab7b8930a45a6bf0b41b0d582eaf1"
+      },
+      "neat-scss": {
+        "git": "https://github.com/stevezhu/meteor-neat.git",
+        "tag": "v1.5.0.7",
+        "commit": "1a3c439a121c1017b50b10d75657837f6cd8298d"
       }
     }
   }
