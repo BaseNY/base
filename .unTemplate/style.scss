@@ -196,8 +196,50 @@ h1.logo{
 	}
 }
 
+
+.steps {
+	margin:0 auto;
+	tbody {
+		tr {
+			td {
+				padding-right:50px;
+				padding-left: 50px;
+			}
+		}
+	}
+	margin-top:10px;
+	margin-bottom:-25px;
+}
+
+.step-circle {
+	width:100px;
+	height:100px;
+	border:10px solid lightgrey;
+	border-radius:100px;
+	display:inline-block;
+	background-color:white;
+	//box-shadow:1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
+	box-shadow:1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px 1px black inset, 1px -1px black inset, -1px 1px black inset, -1px -1px black inset;
+	&.active {
+		border-color:white;
+	}
+	&.complete {
+		border-color:#3F9FE0;
+	}
+	h1 {
+		text-align:center;
+		font-size:4em;
+		margin:0;
+		line-height:100px;
+	}
+}
+
+
+
 .page-addProduct {
 	width:60%;
+	height:auto;
+	overflow:auto;
 	div {
 		input, select,option, div[contenteditable] {
 			padding:$i-pad;
@@ -211,7 +253,7 @@ h1.logo{
 			}
 		}
 		input[type=text] {
-			width:calc(78% - 28px);
+			width:100%;
 			margin-bottom:10px;
 		}
 		input[type=number] {
@@ -223,7 +265,6 @@ h1.logo{
 			width:20%;
 		}
 		div[contenteditable] {
-			width:100%;
 			height:100px;
 			line-height:1.2em;
 			display:block;
@@ -241,7 +282,9 @@ h1.logo{
 			padding:14px;
 			border-radius:0 0 4px 0;
 		}
+
 	}
+
 	.button {
 		display:inline-block;
 	}
@@ -256,6 +299,16 @@ h1.logo{
 	.condition {
 		option, div {
 			margin:0 auto;
+		}
+	}
+	.button {
+		display:inline-block;
+		
+		&.left {
+			float:left;
+		}
+		&.right {
+			float:right;
 		}
 	}
 }
