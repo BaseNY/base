@@ -5,14 +5,10 @@
 </div>
 </template>
 
-<template name="next-button">
-<input type="submit" class="button" value="Next">
-</template>
-
 <template name="addTitle">
 <form method="post">
     <h3>What is your item called?</h3>
-    <input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . ." />{{> next-button}}
+    <input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . ." /><input type="submit" class="button" value="Next">
 </form>
 </template>
 
@@ -57,7 +53,7 @@
         </div>
         <hr />
         <div class="button left">Prev</div>
-        <div class="button right">Next</div>
+        <input type="submit" class="button right">Next</div>
     </div>
 </form>
 </template>
