@@ -10,18 +10,20 @@ var verifyField = function(a) {
 }
 
 //The following code will take care of verfying and submitting all of the posts, when I care to finish writing it.
-//redo it so that the thing is on one page
 Template.addTitle.rendered = function(){
     $('form').submit(function(e) {
 	e.preventDefault();
-	temp = Session.get('tempProdForm');
+        var temp;
+        if(Session.get('tempProdForm'))
+	    temp = Session.get('tempProdForm');
 	temp.title = $('input[name=title]').val();
-	Session.set('tempProdForm',title);
+	Session.set('tempProdForm',temp);
 	Router.go('/sell/info');
     });
 }
 
-Tempate.addInfo.rendered = function() {
+//should i put all of this code in it's own stuff hm
+Template.addInfo.rendered = function() {
     $('form').submit(function(e) {
         e.preventDefault();
         temp = Session.get('tempProdForm');
@@ -32,6 +34,7 @@ Tempate.addInfo.rendered = function() {
 	temp.condition = $('select[name="condition"]').val();
 	temp.description = $('#itemDescription').html();
         Session.set('tempProdForm', title);
+        Router.go('/post/preview');
     });
 }
 
