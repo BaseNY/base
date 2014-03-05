@@ -8,6 +8,7 @@
     },
     "nprogress": {},
     "bourbon-scss": {},
-    "neat-scss": {}
+    "neat-scss": {},
+    "bourbon": {}
   }
 }

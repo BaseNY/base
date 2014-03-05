@@ -54,6 +54,12 @@ input[type="url"] {
 	}
 }
 
+.search-group {
+    input {
+        width:90%;
+    }
+}
+
 .button-group {
 	display: inline-block;
 	border: 1px solid $input-border-color;
