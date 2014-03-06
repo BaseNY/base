@@ -127,8 +127,10 @@
 	}
 	select,option {
 		width: 20%;
+                background-color:white;
 	}
 	div[contenteditable] {
+            background-color:white;
 		display: block;
 		overflow-y: scroll;
 		width: calc(100% - $i-pad * 2) ;
