@@ -24,15 +24,21 @@ Template.addTitle.rendered = function(){
 
 //should i put all of this code in it's own stuff hm
 Template.addInfo.rendered = function() {
-    $('form').submit(function(e) {
+    //maybe i should take care of this by hiding the div instead of having different routes
+    if(Session.get('tempProdForm')) {
+        temp = Session.get('tempProdForm');
+        //nm use helpers HERE 
+    }
+    $('#b_pNext').click(function(e) {
         e.preventDefault();
         temp = Session.get('tempProdForm');
         temp.title = $('input[name=title]').val();
 	temp.category = $('input[name=category]').val();
 	temp.so = $('input[name=so]').val();
 	temp.bin = $('input[name=bin]').val();
-	temp.condition = $('select[name="condition"]').val();
-	temp.description = $('#itemDescription').html();
+	temp.condition = $('select[name=condition]').val();
+	temp.description = $('#description').html();
+        console.log(temp);
         Session.set('tempProdForm', temp);
         Router.go('/sell/preview');
     });
