@@ -112,6 +112,10 @@
 			outline-color: #3F9FE0;
 		}
 	}
+        input[type=radio] {
+            height:auto;
+            outline:0px;
+        }
 	input[type=text] {
 		margin-bottom: 10px;
 		width: calc(78% - 28px);
