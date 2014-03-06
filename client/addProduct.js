@@ -9,6 +9,12 @@ var verifyField = function(a) {
     return (b != undefined && b != '') || Session.get('postState') == 5; 
 }
 
+var changeStep = function(i) {
+    $('.step-circle')[i-1].removeClass('active');
+    $('.step-circle')[i-1].addClass('complete');
+    $('.step-circle')[i].addClass('active');
+}
+
 //The following code will take care of verfying and submitting all of the posts, when I care to finish writing it.
 Template.addTitle.rendered = function(){
     $('form').submit(function(e) {
@@ -17,6 +23,7 @@ Template.addTitle.rendered = function(){
         if(Session.get('tempProdForm'))
 	    temp = Session.get('tempProdForm');
 	temp.title = $('input[name=title]').val();
+        changeStep(1);
 	Session.set('tempProdForm',temp);
 	Router.go('/sell/info');
     });
@@ -31,6 +38,7 @@ Template.addInfo.rendered = function() {
     }
     $('#b_pNext').click(function(e) {
         e.preventDefault();
+        changeStep(2);
         temp = Session.get('tempProdForm');
         temp.title = $('input[name=title]').val();
 	temp.category = $('input[name=category]').val();
