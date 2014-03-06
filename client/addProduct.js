@@ -9,36 +9,60 @@ var verifyField = function(a) {
     return (b != undefined && b != '') || Session.get('postState') == 5; 
 }
 
-var changeStep = function(i) {
-    $('.step-circle')[i-1].removeClass('active');
-    $('.step-circle')[i-1].addClass('complete');
-    $('.step-circle')[i].addClass('active');
-}
 
 //The following code will take care of verfying and submitting all of the posts, when I care to finish writing it.
 Template.addTitle.rendered = function(){
+    $('.step-circle').removeClass('active complete');
+    $($('.step-circle')[0]).addClass('active');
+
+    if(Session.get('tempProdForm'))
+        $('input[name=title]').val(Session.get('tempProdForm').title);
+
+
     $('form').submit(function(e) {
 	e.preventDefault();
         var temp;
         if(Session.get('tempProdForm'))
 	    temp = Session.get('tempProdForm');
 	temp.title = $('input[name=title]').val();
-        changeStep(1);
 	Session.set('tempProdForm',temp);
 	Router.go('/sell/info');
     });
 }
 
+var populateInfo = function() {
+    temp = Session.get('tempProdForm');
+    $('input[name=title]').val(temp.title);
+    $('input[name=category]').val(temp.category);
+    $('input:radio[name="category"]').filter('[value=' + temp.category + ']').attr('checked', 'checked');
+    $('input[name=so]').val(temp.so);
+    $('input[name=bin]').val(temp.bin);
+    $('select[name=condition]').val(temp.condition);
+    $('#description').html(temp.description);
+}
+
+
 //should i put all of this code in it's own stuff hm
 Template.addInfo.rendered = function() {
     //maybe i should take care of this by hiding the div instead of having different routes
+    $('.step-circle').removeClass('active complete');
+    $($('.step-circle')[0]).addClass('complete');
+    $($('.step-circle')[1]).addClass('active');
+
+    populateInfo();
+
+    //check if it should be here
+    /*
+    if(!Session.get('tempProdForm'))
+        Router.go('/sell/title');
+        */
+
     if(Session.get('tempProdForm')) {
         temp = Session.get('tempProdForm');
         //nm use helpers HERE 
     }
     $('#b_pNext').click(function(e) {
         e.preventDefault();
-        changeStep(2);
         temp = Session.get('tempProdForm');
         temp.title = $('input[name=title]').val();
 	temp.category = $('input[name=category]').val();
@@ -47,12 +71,24 @@ Template.addInfo.rendered = function() {
 	temp.condition = $('select[name=condition]').val();
 	temp.description = $('#description').html();
         console.log(temp);
+
+        //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+
+
+
         Session.set('tempProdForm', temp);
         Router.go('/sell/preview');
+    });
+    $('#back').click(function(e) {
+        Router.go('/sell/title');
     });
 }
 
 Template.postPreview.rendered = function(){
+    $('.step-circle').removeClass('active complete');
+    $($('.step-circle')[0]).addClass('complete');
+    $($('.step-circle')[1]).addClass('complete');
+    $($('.step-circle')[2]).addClass('active');
     $('#addProdBut').click(function(e) {
 	e.preventDefault();
 	console.log("adding item");
@@ -65,6 +101,9 @@ Template.postPreview.rendered = function(){
 		Router.go('/post/' + r);
 	    }
 	});
+    });
+    $('#back').click(function(e) {
+	Router.go('/sell/info');
     });
 }
 
