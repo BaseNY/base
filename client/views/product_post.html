@@ -1,4 +1,12 @@
 ﻿<template name="pageAddProduct">
+<table class = "steps">
+    <tr>
+<td><div class ="step-circle complete"><h1>1</h1></div></td>
+<td><div class ="step-circle active"><h1>2</h1></div></td>
+<td><div class ="step-circle"><h1>3</h1></div></td>
+</tr>
+</table>
+    
 	<div class="box page-add-product">
 		<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
 		{{yield 'sellYield'}}
