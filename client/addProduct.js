@@ -33,8 +33,8 @@ Template.addInfo.rendered = function() {
 	temp.bin = $('input[name=bin]').val();
 	temp.condition = $('select[name="condition"]').val();
 	temp.description = $('#itemDescription').html();
-        Session.set('tempProdForm', title);
-        Router.go('/post/preview');
+        Session.set('tempProdForm', temp);
+        Router.go('/sell/preview');
     });
 }
 
@@ -60,7 +60,6 @@ Template.pageAddProduct.rendered = function(){
 };
 
 
-/*
 Template.postPreview.helpers({
     'title': function() {
 	if(Session.get('tempProdForm'))
@@ -92,4 +91,3 @@ Template.postPreview.helpers({
 	//return $('#itemDescription').html();
     },
 });
-*/
