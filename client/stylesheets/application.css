@@ -1930,6 +1930,188 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
     font-size: 1em;
     margin-top: 5px; }
 
+/* line 3, /home/jasperlu/base/client/stylesheets/pages/product */
+div.product-body {
+  text-align: center; }
+
+/* line 8, /home/jasperlu/base/client/stylesheets/pages/product */
+div.product-header {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px; }
+
+/* line 14, /home/jasperlu/base/client/stylesheets/pages/product */
+td.product-name {
+  font-size: 40px;
+  color: black;
+  padding: 10px; }
+
+/* line 20, /home/jasperlu/base/client/stylesheets/pages/product */
+div.product-info {
+  max-width: 900px;
+  margin: 0 auto; }
+
+/* line 25, /home/jasperlu/base/client/stylesheets/pages/product */
+td.product-table-left {
+  width: 65%;
+  vertical-align: top; }
+
+/* line 29, /home/jasperlu/base/client/stylesheets/pages/product */
+td.product-table-right {
+  width: 35%;
+  padding-bottom: 20px; }
+
+/* line 34, /home/jasperlu/base/client/stylesheets/pages/product */
+div.product-box {
+  text-align: right;
+  background: #3f9fe0;
+  color: white;
+  padding: 12px;
+  margin: 5px;
+  font-size: 20px; }
+
+/* line 43, /home/jasperlu/base/client/stylesheets/pages/product */
+div.product-desc {
+  padding: 10px; }
+
+/* line 45, /home/jasperlu/base/client/stylesheets/pages/product */
+span.product-box-title {
+  color: #D8D8D8;
+  background: #33b5e5;
+  padding: 6px 20px;
+  float: left;
+  margin-top: -6px; }
+
+/* line 53, /home/jasperlu/base/client/stylesheets/pages/product */
+img.product-img {
+  max-width: 500px;
+  max-height: 500px; }
+
+/* line 59, /home/jasperlu/base/client/stylesheets/pages/product */
+button.product-button {
+  padding: 6px 35px;
+  background: #CEECF5;
+  border: 1px solid #013ADF;
+  text-align: center;
+  color: #013ADF;
+  font-size: 20px; }
+
+/* line 67, /home/jasperlu/base/client/stylesheets/pages/product */
+button.product-button:hover {
+  font-weight: bold;
+  background: #A9E2F3; }
+
+/* line 73, /home/jasperlu/base/client/stylesheets/pages/product */
+div.gmap {
+  background: #E0F2F7;
+  border: 2px solid #81F7F3;
+  text-align: center;
+  padding: 5px; }
+  /* line 79, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.gmap div.gmap-map {
+    border: 1px solid white;
+    padding: 0; }
+  /* line 84, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.gmap div.gmap-text {
+    font-size: 14px;
+    padding: 5px; }
+  /* line 88, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.gmap div.gmap-text a {
+    font-weight: bold;
+    font-size: 16px; }
+  /* line 93, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.gmap div.gmap-header {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px; }
+
+/* line 100, /home/jasperlu/base/client/stylesheets/pages/product */
+div.condition-new {
+  background: #0B610B;
+  color: #A9F5A9; }
+
+/* line 104, /home/jasperlu/base/client/stylesheets/pages/product */
+div.condition-new span.product-box-title, span.seller-up {
+  background: #A9F5A9;
+  color: #0B610B;
+  font-weight: bold; }
+
+/* line 110, /home/jasperlu/base/client/stylesheets/pages/product */
+div.condition-med {
+  background: #5E610B;
+  color: #F2F5A9; }
+  /* line 114, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.condition-med span.product-box-title {
+    background: #F2F5A9;
+    color: #5E610B;
+    font-weight: bold; }
+
+/* line 121, /home/jasperlu/base/client/stylesheets/pages/product */
+div.condition-bad {
+  background: #610B0B;
+  color: #F5A9A9; }
+
+/* line 125, /home/jasperlu/base/client/stylesheets/pages/product */
+div.condition-bad span.product-box-title, span.seller-down {
+  background: #F5A9A9;
+  color: #610B0B;
+  font-weight: bold; }
+
+/* line 131, /home/jasperlu/base/client/stylesheets/pages/product */
+div.user-info {
+  background: #D8D8D8;
+  border: 2px solid #8A4B08;
+  color: black; }
+  /* line 136, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.user-info span.seller-name {
+    font-size: 25px; }
+  /* line 138, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.user-info span.product-box-title {
+    background: #8A4B08;
+    color: white; }
+  /* line 143, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.user-info div.prod-info {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 5px; }
+
+/* line 151, /home/jasperlu/base/client/stylesheets/pages/product */
+div.user-rating {
+  margin-top: 10px; }
+  /* line 154, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.user-rating span {
+    margin-right: 8px;
+    padding: 0 8px; }
+
+/* line 160, /home/jasperlu/base/client/stylesheets/pages/product */
+div.related-item-box {
+  margin-top: 50px;
+  height: 250px; }
+
+/* line 165, /home/jasperlu/base/client/stylesheets/pages/product */
+div.related-items-title {
+  font-size: 20px; }
+
+/* line 169, /home/jasperlu/base/client/stylesheets/pages/product */
+div.related-item {
+  background: #E6E6E6;
+  border: 1px solid #3f9fe0;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  float: left; }
+  /* line 177, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.related-item span.related-selling {
+    background: #8A4B08;
+    color: white;
+    font-weight: bold;
+    padding: 0 5px; }
+  /* line 184, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.related-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 10px; }
+
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {
   margin: 50px auto 100px;
