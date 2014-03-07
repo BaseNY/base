@@ -3,36 +3,36 @@
     <div class="product-info">
       <table class="product-table">
 	<tr>
-	  <td class="product-name">Mystical Shoes</td>
+            <td class="product-name">{{title}}</td>
 	  <td>&nbsp;</td>
 	</tr>
 	<tr>
 	  <td rowspan="2" class="product-table-left">
 	    <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
-	    <div class="product-desc">These are the mystical shoes I constantly see in my newsfeed that Keshara keeps bumping.  I've never read the post but see its presence daily.  Will he ever sell them?  The world may never know.</div>
+            <div class="product-desc">{{description}}</div>
 
 	  </td>
 	  <td class="product-table-right">
 	    <div class="product-box user-info">
 	      <span class="product-box-title">SELLER</span> <a href="#">Andrew</a><br />
 	      <div class="user-rating">
-		<span class="seller-up">14</span>
-		<span class="seller-down">3</span>
+		<span class="seller-up">upvotes</span>
+		<span class="seller-down">downvotes</span>
 	      </div>
 	      <div class="prod-info">
-		Posted: <em>3 hours ago</em>
+		Posted: <em>calculate hours here</em>
 		<br />
-		User last active: <em>37 minutes ago</em>
+		User last active: <em>calculate minutes here</em>
 	      </div>
 	    </div>
 	    <div class="product-box condition-new">
-	      <span class="product-box-title">CONDITION</span> NEW
+                <span class="product-box-title">CONDITION</span>{{condition}}
 	    </div>
 	    <div class="product-box">
-	      <span class="product-box-title">CURRENT BID</span> $50.00
+                <span class="product-box-title">CURRENT BID</span> ${{item.so}}
 	    </div>
 	    <div class="product-box">
-	      <span class="product-box-title">BUY IT NOW</span> $75.00
+                <span class="product-box-title">BUY IT NOW</span>${{item.bin}}
 	    </div>
 	    <button class="product-button" style="margin-top:10px;">PLACE BID</button>
 	  </td>
