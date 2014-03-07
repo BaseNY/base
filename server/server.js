@@ -7,6 +7,10 @@ if (Meteor.isServer) {
 			var temp = Items.insert(p);
 			console.log(Items);
 			return temp;
-		}
+		},
+                resetAccounts: function() {
+                    Meteor.users.remove({});
+                    console.log(Meteor.users.find().fetch());
+                }
 	})
 }

@@ -9,23 +9,19 @@
 
 .page-home {
 	margin: 50px auto 100px;
-	min-width: 400px;
-	max-width: 600px;
-	max-height: 600px;
+	min-width: 600px;
 	width: 60%;
 	input {
 		position: relative;
 		display: inline-block;
 		margin: 0;
 		padding: 0.8em 1em;
-		width: 100%;
+		width: 80%;
 		height: auto;
-		font-size: 1.2em;
-	}
-	.button-group {
-		width: 100%;
+		font-size: 1.5em;
 	}
 	.button {
-		width: (100%) / 3;
+            width:20%;
+            display:inline-block;
 	}
 }
