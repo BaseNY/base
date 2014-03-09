@@ -1,49 +1,81 @@
 <template name="product">
-	<div class="box page-product">
-		<h1>{{title}}</h1>
-		<h3>status: open</h3>
+  <div class="product-body">
+    <div class="product-info">
+      <table class="product-table">
+	<tr>
+	  <td class="product-name">Mystical Shoes</td>
+	  <td>&nbsp;</td>
+	</tr>
+	<tr>
+	  <td rowspan="2" class="product-table-left">
+	    <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+	    <div class="product-desc">These are the mystical shoes I constantly see in my newsfeed that Keshara keeps bumping.  I've never read the post but see its presence daily.  Will he ever sell them?  The world may never know.</div>
+
+	  </td>
+	  <td class="product-table-right">
+	    <div class="product-box user-info">
+	      <span class="product-box-title">SELLER</span> <a href="#">Andrew</a><br />
+	      <div class="user-rating">
+		<span class="seller-up">14</span>
+		<span class="seller-down">3</span>
+	      </div>
+	      <div class="prod-info">
+		Posted: <em>3 hours ago</em>
 		<br />
-		<span>{{category}}</span>
+		User last active: <em>37 minutes ago</em>
+	      </div>
+	    </div>
+	    <div class="product-box condition-new">
+	      <span class="product-box-title">CONDITION</span> NEW
+	    </div>
+	    <div class="product-box">
+	      <span class="product-box-title">CURRENT BID</span> $50.00
+	    </div>
+	    <div class="product-box">
+	      <span class="product-box-title">BUY IT NOW</span> $75.00
+	    </div>
+	    <button class="product-button" style="margin-top:10px;">PLACE BID</button>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="product-table-location">
+	    <div class="gmap">
+	      <div class="gmap-header">Preferred Location</div>
+	      <div class="gmap-map">
+		<img src="http://maps.googleapis.com/maps/api/staticmap?center=41%20River%20Terrace,10282&zoom=14&size=300x200&maptype=roadmap&markers=color:red%7C41%20River%20Terrace,10282&sensor=false" />
+	      </div>
+	      <div class="gmap-text">
+		<a href="#">Terry's</a>
 		<br />
-		<br />
-		<div class="info">
-		    {{post}}
-			<img src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
-			<p>This is the photo carousel</p>
-			<div class="user-info">
-				<div>
-					<h2>{{seller}}</h2>
-					<p>Think of to put here and others</p>
-					<p><a href="/">See other items from this seller</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="product-info">
-			<table>
-				<tr>
-					<td>Starting Offer</td>
-					<td><b>{{so}}</b>
-					</td>
-				</tr>
-				<tr>
-					<td>Buy it Now</td>
-					<td><b>{{bin}}</b>
-					</td>
-				</tr>
-				<tr>
-				<tr>
-					<td>Item Condition</td>
-					<td><b>{{condition}}</b>
-					</td>
-				</tr>
-			</table>
-			<br/>
-			<b>Description</b>
-			<p>
-			    {{description}}
-			</p>
-			<a class="button">Place your bid!</a>
-		</div>
-	</div>
+		(41 River Ter, Battery Park City, 10282)
+	      </div>
+	    </div>
+	  </td>
+	</tr>
+      </table>
+
+      <div class="related-item-box">
+	<div class="related-items-title">Related Items</div>
+	
+	{{> related-item}}
+	{{> related-item}}
+	{{> related-item}}
+	{{> related-item}}
+      </div>
+    </div>
+  </div>
+</template>
+
+
+
+<template name="related-item">
+  <div class="related-item">
+    <span class="related-selling">SELLING</span> <a href="#">More Shoes</a>
+    <br />
+    <img src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+    <br />
+    Posted by <a href="#">Andrew</a>
+    <br />
+    (<strong>10282</strong>, Battery Park City)
+  </div>
 </template>
