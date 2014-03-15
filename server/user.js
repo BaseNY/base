@@ -6,11 +6,11 @@ Meteor.startup(function () {
 
 
 	service: "facebook",
-//base	appId: "199242350261474,
-        appId: "581722495207267",
+	appId: "199242350261474",
+       // appId: "581722495207267",
 	//         appId:"1382563015306531",
-	//secret:"dcd13b60204fb657a47ca97da9e8daca"
-        secret:"c756e217e627b5699e96bfef0cfebede"
+	secret:"dcd13b60204fb657a47ca97da9e8daca"
+        //secret:"c756e217e627b5699e96bfef0cfebede"
 	//           secret: "559eaba1052b2bf3e289d5111d1af729"
     });
 }); 

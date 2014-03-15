@@ -25,9 +25,15 @@ Template.header.events({
     }
 });
 
+Template.modalContainer.bid = function() {
+    if(Session.get('bid'))
+        return true;
+}
+
 Template.modalOverlay.events({
     'click': function() {
 	$('#modal-container').css('display','none');
+        Session.set('bid', null);
     }
 });
 
@@ -56,8 +62,8 @@ Template.modalSignup.rendered = function() {
 	email = $('input[name=email]').val();
 	password = $('input[name=password').val();
 	first_name = $('input[name=first]').val();
-	last_name = $('input[name=last]]').val();
-	name = first + " " + last;
+	last_name = $('input[name=last]').val();
+	name = first_name + " " + last_name;
 	birthday = new Date($('input[name=yy]').val(),$('input[name=mm]').val() - 1,$('input[name=dd]').val());
 	zip_code = $('input[name=zip]').val();
 	Accounts.createUser(email, password, {
@@ -67,5 +73,8 @@ Template.modalSignup.rendered = function() {
 	    birthday:birthday,
 	    zip_code:zip_code,
 	});
+    });
+    $('#fb-login').click(function(){
+        tempFBLogCode();
     });
 }
