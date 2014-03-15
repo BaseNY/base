@@ -8,6 +8,11 @@ if (Meteor.isServer) {
 			console.log(Items);
 			return temp;
 		},
+                addBid: function(p) {
+                    console.log('called' + p);
+                    p.buyer = this.userId;
+                    return Bids.insert(p);
+                },
                 resetAccounts: function() {
                     Meteor.users.remove({});
                     console.log(Meteor.users.find().fetch());

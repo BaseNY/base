@@ -1,2 +1,2 @@
 Items = new Meteor.Collection('items');
-Offers = new Meteor.Collection('offers');
+Bid = new Meteor.Collection('bids');
