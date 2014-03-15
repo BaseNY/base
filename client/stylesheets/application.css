@@ -1695,6 +1695,11 @@ li {
   list-style: none; }
 
 /* line 21, /home/jasperlu/base/client/stylesheets/general/base */
+p {
+  line-height: 1.5em;
+  font-size: 1.2em; }
+
+/* line 26, /home/jasperlu/base/client/stylesheets/general/base */
 #fbLogin {
   background-color: #3b5998;
   color: #FFFFFF;
@@ -1716,7 +1721,7 @@ input[type="email"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeh
 input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder {
   font-weight: 300; }
 
-/* line 39, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 44, /home/jasperlu/base/client/stylesheets/general/base */
 .button {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1729,30 +1734,30 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
   cursor: pointer;
   text-align: center;
   text-decoration: none; }
-  /* line 51, /home/jasperlu/base/client/stylesheets/general/base */
+  /* line 56, /home/jasperlu/base/client/stylesheets/general/base */
   .button:hover {
     background-color: #3F9FE0;
     color: white; }
 
-/* line 58, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 63, /home/jasperlu/base/client/stylesheets/general/base */
 .search-group input {
   width: 90%; }
 
-/* line 63, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 68, /home/jasperlu/base/client/stylesheets/general/base */
 .button-group {
   display: inline-block;
   border: 1px solid #EEE;
   background-color: white; }
-  /* line 67, /home/jasperlu/base/client/stylesheets/general/base */
+  /* line 72, /home/jasperlu/base/client/stylesheets/general/base */
   .button-group .button {
     display: inline-block;
     border-width: 0;
     border-right-width: 1px; }
-    /* line 71, /home/jasperlu/base/client/stylesheets/general/base */
+    /* line 76, /home/jasperlu/base/client/stylesheets/general/base */
     .button-group .button:last-child {
       border-width: 0; }
 
-/* line 77, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 82, /home/jasperlu/base/client/stylesheets/general/base */
 .box {
   margin: 50px auto;
   padding: 40px;
@@ -1791,8 +1796,9 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
     margin-right: 50px;
     height: 42px;
     padding-right: 10px;
+    line-height: 42px;
     cursor: pointer; }
-  /* line 33, /home/jasperlu/base/client/stylesheets/general/header */
+  /* line 34, /home/jasperlu/base/client/stylesheets/general/header */
   .header ul#nameDrop {
     position: absolute;
     right: 0px;
@@ -1807,11 +1813,11 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
     font-size: 1em;
     font-weight: 300;
     box-shadow: rgba(0, 0, 0, 0.247059) 1px 1px 8px; }
-    /* line 46, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 47, /home/jasperlu/base/client/stylesheets/general/header */
     .header ul#nameDrop li {
       border-bottom: 1px solid #378cc5;
       padding: 5px; }
-      /* line 49, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 50, /home/jasperlu/base/client/stylesheets/general/header */
       .header ul#nameDrop li:hover {
         background-color: #3F9FE0;
         color: white; }
@@ -1839,25 +1845,21 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
 /* line 10, /home/jasperlu/base/client/stylesheets/pages/home */
 .page-home {
   margin: 50px auto 100px;
-  min-width: 400px;
-  max-width: 600px;
-  max-height: 600px;
+  min-width: 600px;
   width: 60%; }
-  /* line 16, /home/jasperlu/base/client/stylesheets/pages/home */
+  /* line 14, /home/jasperlu/base/client/stylesheets/pages/home */
   .page-home input {
     position: relative;
     display: inline-block;
     margin: 0;
     padding: 0.8em 1em;
-    width: 100%;
+    width: 80%;
     height: auto;
-    font-size: 1.2em; }
-  /* line 25, /home/jasperlu/base/client/stylesheets/pages/home */
-  .page-home .button-group {
-    width: 100%; }
-  /* line 28, /home/jasperlu/base/client/stylesheets/pages/home */
+    font-size: 1.5em; }
+  /* line 23, /home/jasperlu/base/client/stylesheets/pages/home */
   .page-home .button {
-    width: 33.33333%; }
+    width: 20%;
+    display: inline-block; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/modal */
 #modal-overlay {
@@ -1890,41 +1892,59 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
     box-sizing: border-box;
     width: 100%; }
   /* line 33, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal .modal-signup input[type=text], #modal .modal-signup input[type=password], #modal .modal-signup input[type=email] {
+  #modal .modal-bid input[type=text], #modal .modal-bid textarea, #modal .modal-bid input[type=password], #modal .modal-bid input[type=email], #modal .modal-signup input[type=text], #modal .modal-signup textarea, #modal .modal-signup input[type=password], #modal .modal-signup input[type=email] {
     margin: 0px;
     margin-bottom: 5px;
+    font-size: 1.2em;
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
     display: inline-block; }
-  /* line 42, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal .modal-signup input.halfInput {
+  /* line 43, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal .modal-bid textarea, #modal .modal-bid div[contenteditable], #modal .modal-signup textarea, #modal .modal-signup div[contenteditable] {
+    padding: 10px;
+    resize: none;
+    outline: 1px solid #eee;
+    border: 0px;
+    font-weight: 200;
+    font-size: 1.2em;
+    background-color: white;
+    display: block;
+    overflow-y: auto;
+    width: calc(100% - $i-pad * 2);
+    height: 100px;
+    line-height: 1.2em; }
+    /* line 57, /home/jasperlu/base/client/stylesheets/pages/modal */
+    #modal .modal-bid textarea:focus, #modal .modal-bid div[contenteditable]:focus, #modal .modal-signup textarea:focus, #modal .modal-signup div[contenteditable]:focus {
+      outline-color: #3F9FE0; }
+  /* line 61, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal .modal-bid input.halfInput, #modal .modal-signup input.halfInput {
     width: 50%; }
-  /* line 46, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .button {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%; }
-  /* line 51, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 70, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #fb-login {
     margin-top: 5px;
     width: 100%;
     height: 46px;
     background: url('/images/fb_active.png') center top no-repeat;
     cursor: pointer; }
-    /* line 57, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 76, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #fb-login:active {
       background-image: url('/images/fb_pressed.png'); }
-  /* line 61, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 80, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .modal-inner {
     width: 100%;
     padding: 5%; }
-  /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 84, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h1, #modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-  /* line 70, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 89, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h3 {
     color: grey;
     font-size: 1em;
@@ -2111,6 +2131,44 @@ div.related-item {
     max-width: 100px;
     max-height: 100px;
     margin: 10px; }
+
+/* line 3, /home/jasperlu/base/client/stylesheets/pages/about */
+section.pageAbout {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+  /* line 165, /home/jasperlu/base/client/stylesheets/vendor/foundation/components/global */
+  section.pageAbout:before, section.pageAbout:after {
+    content: " ";
+    display: table; }
+  /* line 166, /home/jasperlu/base/client/stylesheets/vendor/foundation/components/global */
+  section.pageAbout:after {
+    clear: both; }
+  /* line 6, /home/jasperlu/base/client/stylesheets/pages/about */
+  section.pageAbout div.trio-wrapper {
+    overflow: hidden;
+    height: auto;
+    padding-bottom: 0px; }
+  /* line 11, /home/jasperlu/base/client/stylesheets/pages/about */
+  section.pageAbout div.trio {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    section.pageAbout div.trio:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 600px) {
+      section.pageAbout div.trio {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        /* line 40, ../packages/neat-scss/grid/span-columns */
+        section.pageAbout div.trio:last-child {
+          margin-right: 0; } }
 
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {

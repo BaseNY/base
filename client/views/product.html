@@ -3,18 +3,18 @@
     <div class="product-info">
       <table class="product-table">
 	<tr>
-            <td class="product-name">{{title}}</td>
+            <td class="product-name">{{item.title}}</td>
 	  <td>&nbsp;</td>
 	</tr>
 	<tr>
 	  <td rowspan="2" class="product-table-left">
 	    <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
-            <div class="product-desc">{{description}}</div>
+            <div class="product-desc">{{item.description}}</div>
 
 	  </td>
 	  <td class="product-table-right">
 	    <div class="product-box user-info">
-	      <span class="product-box-title">SELLER</span> <a href="#">Andrew</a><br />
+                <span class="product-box-title">SELLER</span> <a href="#">{{seller.profile.name}}</a><br />
 	      <div class="user-rating">
 		<span class="seller-up">upvotes</span>
 		<span class="seller-down">downvotes</span>
@@ -26,7 +26,7 @@
 	      </div>
 	    </div>
 	    <div class="product-box condition-new">
-                <span class="product-box-title">CONDITION</span>{{condition}}
+                <span class="product-box-title">CONDITION</span>{{item.condition}}
 	    </div>
 	    <div class="product-box">
                 <span class="product-box-title">CURRENT BID</span> ${{item.so}}
