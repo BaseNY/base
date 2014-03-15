@@ -3,11 +3,27 @@
     {{> modalOverlay}}
 <div id="modal" role="dialog">
     <div class="modal-inner">
+        {{#if bid}}
+        {{> modalBid}}
+        {{else}}
 	{{> modalSignup}}
+        {{/if}}
     </div>
 </div>
 </div>
 
+</template>
+
+<template name="modalBid">
+<div class='modal-bid'>
+    <h2>Make your Offer</h2>
+    <input id="offer" type="text" placeholder="Offer"/> 
+    <input id="location" type="text" placeholder="Location"/> 
+    <!--    <div id="message" contenteditable="true" placeholder="Send a message"></div> -->
+    <textarea id="message" placeholder="Send a message"></textarea>
+    <div id="sendBid" class="button">Send</div>
+    <!--code for this is in bid.js-->
+</div>
 </template>
 
 <template name="modalInner">
