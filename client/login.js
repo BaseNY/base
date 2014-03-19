@@ -30,10 +30,14 @@ Template.modalContainer.bid = function() {
         return true;
 }
 
-Template.modalOverlay.events({
-    'click': function() {
+Template.modalOverlay.close = function() {
 	$('#modal-container').css('display','none');
         Session.set('bid', null);
+}
+
+Template.modalOverlay.events({
+    'click': function() {
+        Template.modalOverlay.close();
     }
 });
 
