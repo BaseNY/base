@@ -24,26 +24,45 @@
 </template>
 
 <template name="header">
-	<header class="header">
-    		<a href="/">BASE</a>
-                <a href="/sell/title">Sell</a>
-    			<div id="user-wrapper">
-			{{#if currentUser}}
-			{{name}}
-                    <ul class="dropdown" id="nameDrop">
-                        <li>My Profile</li>
-                        <li>Account Settings</li>
-                    </ul>
-			{{else}}
-			<a id="openLogin">Login</a>
-			{{/if}}
-                </div>
+	<header>
+		<div class="content">
+			<img src="/images/logo.png" alt="BASE">
+			<form action="/">
+				<input type="text" placeholder="Search...">
+			</form>
+			<div class="right">
+				{{#if currentUser}}
+					{{name}}
+					<ul class="dropdown" id="nameDrop">
+						<li>My Profile</li>
+						<li>Account Settings</li>
+					</ul>
+				{{else}}
+					<button id="openLogin" class="btn-login">Login</button>
+				{{/if}}
+			</div>
+		</div>
 	</header>
+	<!--<header class="header">
+		<a href="/">BASE</a>
+		<a href="/sell/title">Sell</a>
+		<div id="user-wrapper">
+			{{#if currentUser}}
+				{{name}}
+				<ul class="dropdown" id="nameDrop">
+					<li>My Profile</li>
+					<li>Account Settings</li>
+				</ul>
+			{{else}}
+				<a id="openLogin">Login</a>
+			{{/if}}
+		</div>
+	</header>-->
 </template>
 
 <template name="footer">
-	<footer class="footer">
+	<!--<footer class="footer">
 		<span><a href="{{pathFor 'about'}}">About</a></span>
 		<span>&copy; 2013 BASE</span>
-	</footer>
+	</footer>-->
 </template>
