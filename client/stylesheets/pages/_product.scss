@@ -187,3 +187,104 @@ div.related-item {
 		margin:10px;
 	}
 }
+
+
+
+
+
+
+
+table.messenger-table {
+	width:100%;
+	border:2px solid black;
+}
+
+
+td.mes-offer {
+	border-top:2px solid #444444;
+	background:#dddddd;
+	padding:2px;
+}
+td.mes-offer-price {
+	font-weight:bold;
+	font-size:25px;
+}
+td.mes-item {
+	border-right:2px solid #444444;
+	padding:5px;
+	width:162px;
+	background:#BDBDBD;
+	font-size:25px;
+	font-weight:bold;
+	vertical-align:top;
+
+	img {
+		max-width:150px;
+		max-height:150px;
+		margin:5px;
+		border:1px solid #444444;
+	}		
+}
+
+tr.mes-spacer td {
+	font-size:8px;
+	background:black;
+}
+td.mes-item-name {
+	font-size:25px;
+	padding:7px 7px 7px 40px;
+	text-align:left;
+	background:#BDBDBD;
+	
+	a { color:#3C56DA; }
+}
+td.mes-type {
+	font-size:25px;
+	font-weight:bold;
+	padding:7px;
+	text-align:center;
+	border-right:2px solid #444444;
+}
+td.mes-offer-ops {
+	text-align:right;
+}
+
+
+
+table.msgs { width:100%; }
+table.msgs td {
+	padding:5px;
+	border-top:1px solid black;
+}
+
+td.msgs-left {
+	width:120px;
+	text-align:right;
+
+	div.msgs-name {
+		font-weight:bold;
+	}
+
+	div.msgs-date {
+		font-style:italic;
+	}
+}
+
+td.msgs-right {
+	vertical-align:middle;
+	text-align:left;
+}
+	
+
+.box-green, .box-red { padding:5px; }
+.box-green {
+	background:#0B610B;
+	color:#A9F5A9;
+	border:1px solid #A9F5A9;
+}
+
+.box-red {
+	background:#610B0B;
+	color:#F5A9A9;
+	border:1px solid #F5A9A9;
+}
