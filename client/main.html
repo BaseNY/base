@@ -26,10 +26,12 @@
 <template name="header">
 	<header>
 		<div class="content">
-			<img src="/images/logo.png" alt="BASE">
+			<a href="/" class="logo"><img src="/images/logo.png" alt="BASE"></a>
 			<form action="/">
 				<input type="text" placeholder="Search...">
 			</form>
+			<a href="/sell/title" class="link">Sell</a>
+			<a href="{{pathFor 'about'}}" class="link">About</a>
 			<div class="right" id="user-wrapper">
 				{{#if currentUser}}
 					{{name}}

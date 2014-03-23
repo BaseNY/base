@@ -69,6 +69,10 @@ header {
 		> * {
 			vertical-align: middle;
 		}
+		.logo {
+			display: inline-block;
+			height: 100%;
+		}
 		img {
 			height: 100%;
 		}
@@ -117,6 +121,10 @@ header {
 			font-size: 20px;
 			height: 100%;
 			line-height: 100%;
+		}
+		.link {
+			margin-right: 0.8em;
+			font-size: 1.4em;
 		}
 	}
 }
