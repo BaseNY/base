@@ -3,11 +3,8 @@
     {{> modalOverlay}}
 <div id="modal" role="dialog">
     <div class="modal-inner">
-        {{#if bid}}
         {{> modalBid}}
-        {{else}}
 	{{> modalSignup}}
-        {{/if}}
     </div>
 </div>
 </div>
@@ -15,7 +12,7 @@
 </template>
 
 <template name="modalBid">
-<div class='modal-bid'>
+<div id='modal-bid' style = "display:none">
     <h2>Make your Offer</h2>
     <input id="offer" type="text" placeholder="Offer"/> 
     <input id="location" type="text" placeholder="Location"/> 
@@ -50,7 +47,7 @@
 </template>
 
 <template name="modalSignup">
-<div class="modal-signup">
+<div id="modal-signup" style="display:none">
     <h1>Log in with your Facebook account!</h1>
     <div id="fb-login">
     </div>

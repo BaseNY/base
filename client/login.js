@@ -21,7 +21,7 @@ Template.header.events({
 	//else
 	//automatcially go to the profile page
 	$('#modal-container').css('display','block');
-
+        $('#modal-signup').css('display','block');
     }
 });
 
@@ -32,7 +32,8 @@ Template.modalContainer.bid = function() {
 
 Template.modalOverlay.close = function() {
 	$('#modal-container').css('display','none');
-        Session.set('bid', null);
+        $('#modal-bid').css('display','none');
+        $('#modal-signup').css('display','none');
 }
 
 Template.modalOverlay.events({
