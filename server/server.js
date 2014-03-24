@@ -12,6 +12,8 @@ if (Meteor.isServer) {
                 addBid: function(p) {
                     console.log('called' + p);
                     p.buyerId = this.userId;
+                    p.buyer = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
+                    
                     /*
                     if(p.buyer == p.seller) {
                         return -1;
@@ -22,6 +24,12 @@ if (Meteor.isServer) {
                 resetAccounts: function() {
                     Meteor.users.remove({});
                     console.log(Meteor.users.find().fetch());
-                }
+                },
+                resetItems: function() {
+                    Items.remove({});
+                },
+                resetMsg: function() {
+                    Offers.remove({}); 
+                },
 	})
 }
