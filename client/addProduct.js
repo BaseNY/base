@@ -98,6 +98,7 @@ Template.postPreview.rendered = function(){
 		alert(e);
 	    }else{
 		console.log("done");
+                Session.set('tempProdForm',null);
 		Router.go('/post/' + r);
 	    }
 	});
