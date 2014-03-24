@@ -1,7 +1,7 @@
 Template.product.events({
     'click #product-bid' : function() {
         $('#modal-container').css('display','block'); 
-        Session.set('bid', true);
+        $('#modal-bid').css('display','block');
     }
 });
 
@@ -10,11 +10,18 @@ Template.pageItemInbox.user = function() {
 }
 
 Template.pageItemInbox.items = function() {
-    return Items.find({seller: Meteor.userId()}).fetch();
+    return Items.find({sellerId: Meteor.userId()}).fetch();
 }
 
-Template.itemsRow.items = function() {
-    return Offers.find({seller: Meteor.userId(), item: this.post});
+Template.itemsRow.helpers({
+    offers: function() {
+        return Offers.find({sellerId: Meteor.userId(), post: this._id}).fetch();
+    }
+});
+
+
+Template.itemsRow.test = function(e) {
+    return e;
 }
 
 Template.modalBid.events({
@@ -31,7 +38,8 @@ Template.modalBid.events({
         msg.location = $('#location').val();
         msg.text = $('#message').val();
         msg.post = itemObj.item._id;
-        msg.seller = itemObj.seller._id;
+        msg.sellerId = itemObj.seller._id;
+        msg.seller = Meteor.users.findOne({_id: msg.sellerId}).profile.name;
         msg.conversation = [];
         Meteor.call('addBid', msg, function(e,r){
             if(e)

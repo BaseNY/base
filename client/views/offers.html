@@ -1,11 +1,33 @@
 <template name="pageItemInbox">
     <h1>Offers for {{user}}</h1>
-    {{# each items}}
+    {{#each items}}
         {{> itemsRow}}
     {{/each}}
 </template>
 
 <template name="itemsRow">
-something
-    {{this.title}}
+<a href = "/inbox/{{this._id}}">{{this.title}}</a>
+{{this._id}}
+<ul>
+    {{#each offers}}
+    <li><b>{{this.buyer}}</b>: {{this.offer}}</li>
+    {{/each}}
+</ul>
+</template>
+
+<template name="pageOffers">
+<h1>Offers for {{item.title}}</h1>
+<ul>
+    {{#each offers}}
+    <li><b>{{this.buyer}}</b>: {{this.offer}} <a href="/inbox/{{this.post}}/{{this._id}}">See convo</a></li>
+
+    {{/each}}
+</ul>
+</template>
+
+<!--maybe i want to handle this as a pseduo-modal instead-->
+<template name="pageNego">
+<h1>{{item.title}}</h1>
+<h2>{{offer.offer}}</h2>
+
 </template>
