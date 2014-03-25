@@ -15,7 +15,7 @@ Template.pageItemInbox.items = function() {
 
 Template.itemsRow.helpers({
     offers: function() {
-        return Offers.find({sellerId: Meteor.userId(), post: this._id}).fetch();
+        return Offers.find({sellerId: Meteor.userId(), postId: this._id}).fetch();
     }
 });
 
@@ -34,13 +34,15 @@ Template.modalBid.events({
         */
 
         var msg = {};
+        msg.type = 1;
+        msg.text = $('#message').val();
+        msg.toId = itemObj.seller._id;
+        msg.to = Meteor.users.findOne({_id: msg.sellerId}).profile.name;
+
         msg.offer=$('#offer').val();
         msg.location = $('#location').val();
-        msg.text = $('#message').val();
-        msg.post = itemObj.item._id;
-        msg.sellerId = itemObj.seller._id;
-        msg.seller = Meteor.users.findOne({_id: msg.sellerId}).profile.name;
-        msg.conversation = [];
+        msg.postId = itemObj.item._id;
+        msg.public = false;
         Meteor.call('addBid', msg, function(e,r){
             if(e)
                 alert(e);

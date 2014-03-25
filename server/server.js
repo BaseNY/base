@@ -11,15 +11,30 @@ if (Meteor.isServer) {
 		},
                 addBid: function(p) {
                     console.log('called' + p);
-                    p.buyerId = this.userId;
-                    p.buyer = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
+                    p.fromId = this.userId;
+                    p.from = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
+                    p.time = new Date(); 
                     
+                    var offer = {
+                        sellerId: p.toId,
+                        seller: p.to,
+                        buyerId: p.fromId,
+                        buyer: p.from,
+                        time: p.time,
+                        location: p.location,
+                        offer: p.offer,
+                        postId: p.postId
+                    };
+
+                    var oId = Offers.insert(offer);
+                    p.offerId = oId;
+
                     /*
                     if(p.buyer == p.seller) {
                         return -1;
                     }
                     */
-                    return Offers.insert(p);
+                    return Messages.insert(p);
                 },
                 resetAccounts: function() {
                     Meteor.users.remove({});
@@ -29,6 +44,7 @@ if (Meteor.isServer) {
                     Items.remove({});
                 },
                 resetMsg: function() {
+                    Messages.remove({});
                     Offers.remove({}); 
                 },
 	})
