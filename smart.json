@@ -4,6 +4,7 @@
     "fast-render": {},
     "nprogress": {},
     "bourbon-scss": {},
-    "neat-scss": {}
+    "neat-scss": {},
+    "npm": {}
   }
 }
