@@ -12,13 +12,13 @@
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.4",
-        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.1.19",
-        "commit": "9e9a34e51885474c0dd9ed7a64dbff7ee9d4315c"
+        "tag": "v0.1.23",
+        "commit": "933b9d8992f1c7004f9993b1b15dffe3bac672f3"
       },
       "nprogress": {
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
@@ -39,6 +39,11 @@
         "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
         "tag": "v3.1.8.1",
         "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       }
     }
   }
