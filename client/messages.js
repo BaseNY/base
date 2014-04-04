@@ -52,6 +52,8 @@ Template.bidding.events({
         */
 
         var msg = {};
+
+
         msg.toId = itemObj.item._id;
         msg.to = itemObj.item.seller;
 
@@ -67,8 +69,14 @@ Template.pageNego.events({
     'click #sendMsg' : function() {
         var itemObj = Router.current().data();
         var msg = {};
-        msg.toId = itemObj.item.sellerId;
-        msg.to = itemObj.item.seller;
+
+        if(itemObj.item.sellerId == Meteor.userId()) {
+            msg.toId = itemObj.messages[0].fromId;
+            msg.to = itemObj.messages[0].from;
+        }else{
+            msg.toId = itemObj.item.sellerId;
+            msg.to = itemObj.item.seller;
+        }
         Template.bidding.sendMsg(itemObj,msg);
     }
 });

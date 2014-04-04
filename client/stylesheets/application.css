@@ -926,24 +926,23 @@ div.related-item {
     max-height: 100px;
     margin: 10px; }
 
-<<<<<<< HEAD
-/* line 197, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 209, /home/jasperlu/base/client/stylesheets/pages/product */
 table.messenger-table {
   width: 100%;
   border: 2px solid black; }
 
-/* line 203, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 215, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer {
   border-top: 2px solid #444444;
   background: #dddddd;
   padding: 2px; }
 
-/* line 208, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 220, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer-price {
   font-weight: bold;
   font-size: 25px; }
 
-/* line 212, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 224, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-item {
   border-right: 2px solid #444444;
   padding: 5px;
@@ -952,29 +951,29 @@ td.mes-item {
   font-size: 25px;
   font-weight: bold;
   vertical-align: top; }
-  /* line 221, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 233, /home/jasperlu/base/client/stylesheets/pages/product */
   td.mes-item img {
     max-width: 150px;
     max-height: 150px;
     margin: 5px;
     border: 1px solid #444444; }
 
-/* line 229, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 241, /home/jasperlu/base/client/stylesheets/pages/product */
 tr.mes-spacer td {
   font-size: 8px;
   background: black; }
 
-/* line 233, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 245, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-item-name {
   font-size: 25px;
   padding: 7px 7px 7px 40px;
   text-align: left;
   background: #BDBDBD; }
-  /* line 239, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 251, /home/jasperlu/base/client/stylesheets/pages/product */
   td.mes-item-name a {
     color: #3C56DA; }
 
-/* line 241, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 253, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-type {
   font-size: 25px;
   font-weight: bold;
@@ -982,51 +981,51 @@ td.mes-type {
   text-align: center;
   border-right: 2px solid #444444; }
 
-/* line 248, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 260, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer-ops {
   text-align: right; }
 
-/* line 254, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 266, /home/jasperlu/base/client/stylesheets/pages/product */
 table.msgs {
   width: 100%; }
 
-/* line 255, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 267, /home/jasperlu/base/client/stylesheets/pages/product */
 table.msgs td {
   padding: 5px;
   border-top: 1px solid black; }
 
-/* line 260, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 272, /home/jasperlu/base/client/stylesheets/pages/product */
 td.msgs-left {
   width: 120px;
   text-align: right; }
-  /* line 264, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 276, /home/jasperlu/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-name {
     font-weight: bold; }
-  /* line 268, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 280, /home/jasperlu/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-date {
     font-style: italic; }
 
-/* line 273, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 285, /home/jasperlu/base/client/stylesheets/pages/product */
 td.msgs-right {
   vertical-align: middle;
   text-align: left; }
 
-/* line 279, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 291, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-green, .box-red {
   padding: 5px; }
 
-/* line 280, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 292, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-green {
   background: #0B610B;
   color: #A9F5A9;
   border: 1px solid #A9F5A9; }
 
-/* line 286, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 298, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-red {
   background: #610B0B;
   color: #F5A9A9;
   border: 1px solid #F5A9A9; }
-=======
+
 /* line 3, /home/jasperlu/base/client/stylesheets/pages/about */
 section.pageAbout {
   *zoom: 1;
@@ -1074,7 +1073,6 @@ div.pageConverse div[contenteditable] {
   height: 100px;
   line-height: 1.2em;
   padding: 10px; }
->>>>>>> 738fb28b007b7d17685cfe5510a50222f422d99f
 
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {
