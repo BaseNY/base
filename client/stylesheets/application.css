@@ -777,18 +777,24 @@ td.product-table-right {
 
 /* line 46, /home/jasperlu/base/client/stylesheets/pages/product */
 div.product-box {
-  text-align: right;
-  background: #3f9fe0;
-  color: white;
-  padding: 12px;
-  margin: 5px;
-  font-size: 20px; }
+  box-sizing: border-box;
+  background: white;
+  margin-bottom: 10px;
+  text-align: left;
+  color: black;
+  padding: 20px;
+  font-size: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 2px; }
+  /* line 56, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.product-box #message {
+    width: 300px; }
 
-/* line 55, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 61, /home/jasperlu/base/client/stylesheets/pages/product */
 div.product-desc {
   padding: 10px; }
 
-/* line 57, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 63, /home/jasperlu/base/client/stylesheets/pages/product */
 span.product-box-title {
   color: #D8D8D8;
   background: #33b5e5;
@@ -796,12 +802,12 @@ span.product-box-title {
   float: left;
   margin-top: -6px; }
 
-/* line 65, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 72, /home/jasperlu/base/client/stylesheets/pages/product */
 img.product-img {
   max-width: 500px;
   max-height: 500px; }
 
-/* line 71, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 78, /home/jasperlu/base/client/stylesheets/pages/product */
 button.product-button {
   padding: 6px 35px;
   background: #CEECF5;
@@ -810,103 +816,102 @@ button.product-button {
   color: #013ADF;
   font-size: 20px; }
 
-/* line 79, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 86, /home/jasperlu/base/client/stylesheets/pages/product */
 button.product-button:hover {
   font-weight: bold;
   background: #A9E2F3; }
 
-/* line 85, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 92, /home/jasperlu/base/client/stylesheets/pages/product */
 div.gmap {
   background: #E0F2F7;
   border: 2px solid #81F7F3;
   text-align: center;
   padding: 5px; }
-  /* line 91, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 98, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-map {
     border: 1px solid white;
     padding: 0; }
-  /* line 96, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 103, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-text {
     font-size: 14px;
     padding: 5px; }
-  /* line 100, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 107, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-text a {
     font-weight: bold;
     font-size: 16px; }
-  /* line 105, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 112, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-header {
     font-size: 18px;
     font-weight: bold;
     padding: 5px; }
 
-/* line 112, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 119, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-new {
   background: #0B610B;
   color: #A9F5A9; }
 
-/* line 116, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 123, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-new span.product-box-title, span.seller-up {
   background: #A9F5A9;
   color: #0B610B;
   font-weight: bold; }
 
-/* line 122, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 129, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-med {
   background: #5E610B;
   color: #F2F5A9; }
-  /* line 126, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 133, /home/jasperlu/base/client/stylesheets/pages/product */
   div.condition-med span.product-box-title {
     background: #F2F5A9;
     color: #5E610B;
     font-weight: bold; }
 
-/* line 133, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 140, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-bad {
   background: #610B0B;
   color: #F5A9A9; }
 
-/* line 137, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 144, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-bad span.product-box-title, span.seller-down {
   background: #F5A9A9;
   color: #610B0B;
   font-weight: bold; }
 
-/* line 143, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 150, /home/jasperlu/base/client/stylesheets/pages/product */
 div.user-info {
-  background: #D8D8D8;
-  border: 2px solid #8A4B08;
-  color: black; }
-  /* line 148, /home/jasperlu/base/client/stylesheets/pages/product */
+  color: black;
+  text-align: right; }
+  /* line 153, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-info span.seller-name {
     font-size: 25px; }
-  /* line 150, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 155, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-info span.product-box-title {
     background: #8A4B08;
     color: white; }
-  /* line 155, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 160, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-info div.prod-info {
     text-align: left;
     font-size: 14px;
     margin-top: 5px; }
 
-/* line 163, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 168, /home/jasperlu/base/client/stylesheets/pages/product */
 div.user-rating {
   margin-top: 10px; }
-  /* line 166, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 171, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-rating span {
     margin-right: 8px;
     padding: 0 8px; }
 
-/* line 172, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 177, /home/jasperlu/base/client/stylesheets/pages/product */
 div.related-item-box {
   margin-top: 50px;
   height: 250px; }
 
-/* line 177, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 182, /home/jasperlu/base/client/stylesheets/pages/product */
 div.related-items-title {
   font-size: 20px; }
 
-/* line 181, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 186, /home/jasperlu/base/client/stylesheets/pages/product */
 div.related-item {
   background: #E6E6E6;
   border: 1px solid #3f9fe0;
@@ -914,35 +919,35 @@ div.related-item {
   padding: 10px;
   text-align: center;
   float: left; }
-  /* line 189, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 194, /home/jasperlu/base/client/stylesheets/pages/product */
   div.related-item span.related-selling {
     background: #8A4B08;
     color: white;
     font-weight: bold;
     padding: 0 5px; }
-  /* line 196, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 201, /home/jasperlu/base/client/stylesheets/pages/product */
   div.related-item img {
     max-width: 100px;
     max-height: 100px;
     margin: 10px; }
 
-/* line 209, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 214, /home/jasperlu/base/client/stylesheets/pages/product */
 table.messenger-table {
   width: 100%;
   border: 2px solid black; }
 
-/* line 215, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 220, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer {
   border-top: 2px solid #444444;
   background: #dddddd;
   padding: 2px; }
 
-/* line 220, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 225, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer-price {
   font-weight: bold;
   font-size: 25px; }
 
-/* line 224, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 229, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-item {
   border-right: 2px solid #444444;
   padding: 5px;
@@ -951,29 +956,29 @@ td.mes-item {
   font-size: 25px;
   font-weight: bold;
   vertical-align: top; }
-  /* line 233, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 238, /home/jasperlu/base/client/stylesheets/pages/product */
   td.mes-item img {
     max-width: 150px;
     max-height: 150px;
     margin: 5px;
     border: 1px solid #444444; }
 
-/* line 241, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 246, /home/jasperlu/base/client/stylesheets/pages/product */
 tr.mes-spacer td {
   font-size: 8px;
   background: black; }
 
-/* line 245, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 250, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-item-name {
   font-size: 25px;
   padding: 7px 7px 7px 40px;
   text-align: left;
   background: #BDBDBD; }
-  /* line 251, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 256, /home/jasperlu/base/client/stylesheets/pages/product */
   td.mes-item-name a {
     color: #3C56DA; }
 
-/* line 253, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 258, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-type {
   font-size: 25px;
   font-weight: bold;
@@ -981,46 +986,46 @@ td.mes-type {
   text-align: center;
   border-right: 2px solid #444444; }
 
-/* line 260, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 265, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer-ops {
   text-align: right; }
 
-/* line 266, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 271, /home/jasperlu/base/client/stylesheets/pages/product */
 table.msgs {
   width: 100%; }
 
-/* line 267, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 272, /home/jasperlu/base/client/stylesheets/pages/product */
 table.msgs td {
   padding: 5px;
   border-top: 1px solid black; }
 
-/* line 272, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 277, /home/jasperlu/base/client/stylesheets/pages/product */
 td.msgs-left {
   width: 120px;
   text-align: right; }
-  /* line 276, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 281, /home/jasperlu/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-name {
     font-weight: bold; }
-  /* line 280, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 285, /home/jasperlu/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-date {
     font-style: italic; }
 
-/* line 285, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 290, /home/jasperlu/base/client/stylesheets/pages/product */
 td.msgs-right {
   vertical-align: middle;
   text-align: left; }
 
-/* line 291, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 296, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-green, .box-red {
   padding: 5px; }
 
-/* line 292, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 297, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-green {
   background: #0B610B;
   color: #A9F5A9;
   border: 1px solid #A9F5A9; }
 
-/* line 298, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 303, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-red {
   background: #610B0B;
   color: #F5A9A9;
@@ -1064,15 +1069,17 @@ section.pageAbout {
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/pages/messages */
-div.pageConverse div[contenteditable] {
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/messages */
+div#message {
   background-color: white;
   display: block;
   overflow-y: scroll;
   width: 50%;
   height: 100px;
   line-height: 1.2em;
-  padding: 10px; }
+  padding: 10px;
+  border: 1px solid #646464; }
+
 
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {

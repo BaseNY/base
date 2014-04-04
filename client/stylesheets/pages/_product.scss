@@ -44,12 +44,18 @@ td.product-table-right {
 }
 
 div.product-box {
-    text-align:right;
-    background:rgb(63, 159, 224);
-    color:white;
-    padding:12px;
-    margin:5px;
-    font-size:20px;
+    box-sizing: border-box;
+    background: white;
+    margin-bottom: 10px;
+    text-align: left;
+    color: black;
+    padding: 20px;
+    font-size: 1em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    #message {
+        width:300px;
+    }
 }
 
 div.product-desc { padding:10px; }
@@ -60,6 +66,7 @@ span.product-box-title {
     padding:6px 20px;
     float:left;
     margin-top:-6px;
+
 }
 
 img.product-img {
@@ -141,10 +148,8 @@ div.condition-bad span.product-box-title, span.seller-down {
 }
 
 div.user-info {
-    background:#D8D8D8;
-    border:2px solid #8A4B08;
     color:black;
-
+    text-align:right;
     span.seller-name { font-size:25px; }
 
     span.product-box-title {
