@@ -26,7 +26,7 @@ Template.itemsRow.test = function(e) {
 
 Template.modalBid.events({
     'click #sendBid' : function() {
-        var itemObj = Router.current().options.data();
+        var itemObj = Router.current().data();
         /*
         if (itemObj.seller._id == Meteor.userId()) {
             alert('You cannot bid for your own item!'); 
@@ -37,7 +37,7 @@ Template.modalBid.events({
         msg.type = 1;
         msg.text = $('#message').val();
         msg.toId = itemObj.seller._id;
-        msg.to = Meteor.users.findOne({_id: msg.sellerId}).profile.name;
+        msg.to = itemObj.item.seller;
 
         msg.offer=$('#offer').val();
         msg.location = $('#location').val();
