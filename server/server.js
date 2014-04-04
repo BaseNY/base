@@ -15,7 +15,7 @@ if (Meteor.isServer) {
 			var temp = Items.insert(p);
                         //linker. pushes the id of the item, and the id of the category
                         for(x in p.feeds)
-                            OtoI.insert({'feedId': p.feeds[x], 'itemId': temp._id});
+                            FtoI.insert({'feedId': p.feeds[x], 'itemId': temp._id});
 			return temp;
 		},
                 addBid: function(p) {

@@ -33,7 +33,7 @@ Messages = new Meteor.Collection('messages');
 }
 */
 Feeds = new Meteor.Collection('feeds');
-OtoI = new Meteor.Collection('OtoI');
+FtoI = new Meteor.Collection('OtoI');
 /*
  * acts as an intermediary between feeds and items
 {
