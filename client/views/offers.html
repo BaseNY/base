@@ -10,7 +10,7 @@
 {{this._id}}
 <ul>
     {{#each offers}}
-    <li><b>{{this.buyer}}</b>: {{this.offer}}</li>
+    <li><b>{{this.buyer}}</b></li>
     {{/each}}
 </ul>
 </template>
@@ -19,7 +19,7 @@
 <h1>Offers for {{item.title}}</h1>
 <ul>
     {{#each offers}}
-    <li><b>{{this.buyer}}</b>: {{this.offer}} <a href="/inbox/{{this.post}}/{{this._id}}">See convo</a></li>
+    <li><b>{{this.buyer}}</b><a href="/inbox/{{this.postId}}/{{this._id}}">See convo</a></li>
 
     {{/each}}
 </ul>
@@ -30,5 +30,9 @@
 NEEDS to be written so that the messages can be reactive
 <h1>{{item.title}}</h1>
 <h2>{{offer.offer}}</h2>
+
+{{#each messages}}
+<b>{{this.from}}:</b> {{this.text}} <br />
+{{/each}}
 
 </template>

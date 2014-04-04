@@ -27,7 +27,7 @@
 	</table>
 	<div class="box page-add-product">
 		<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
-		{{yield 'sellYield'}}
+                {{> yield region='sellYield'}}
 	</div>
 </template>
 
@@ -57,6 +57,7 @@
 				<br>
 			</div>
 			<hr>
+                        <!--
 			<div class="product">
 				<h3>Set the pricing of your item</h3>
 				Starting Offer
@@ -75,8 +76,9 @@
 
 			</div>
 			<hr>
+                        -->
 			<div class="product describe">
-				<h3>Describe your item.</h3>
+				<h3>Describe your item. Make sure you mention the starting offer/buy it now price. Change the text in this box.</h3>
 				<div id="description" contenteditable="true"></div>
 			</div>
 			<hr>
