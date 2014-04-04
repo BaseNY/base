@@ -80,3 +80,7 @@ Template.pageNego.events({
         Template.bidding.sendMsg(itemObj,msg);
     }
 });
+
+Template.message.text = function() {
+    return new Handlebars.SafeString(this.text);
+}
