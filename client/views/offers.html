@@ -1,18 +1,37 @@
 <template name="pageItemInbox">
-    <h1>Offers for {{user}}</h1>
-    {{#each items}}
+<h1>Offers for {{user}}</h1>
+<div class="product-body">
+    <div class="product-info">
+<table class="messenger-table">
+    <tbody>
+        {{#each items}}
         {{> itemsRow}}
-    {{/each}}
+        {{/each}}
+    </tbody>
+</table>
+</div>
+</div>
 </template>
 
 <template name="itemsRow">
-<a href = "/inbox/{{this._id}}">{{this.title}}</a>
+<tr class="mes-sell">
+    <td class="mes-item" rowspan="9">
+        SELL<br /><br />
+        <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+    </td>
+
+    <td colspan="4" class="mes-item-name">
+        <a href = "/inbox/{{this._id}}">{{this.title}}</a>
+    </td>
+</tr>
 {{this._id}}
 <ul>
     {{#each offers}}
     <li><b>{{this.buyer}}</b></li>
     {{/each}}
 </ul>
+
+  <tr class="mes-spacer"><td colspan="5">&nbsp;</td></tr>
 </template>
 
 <template name="pageOffers">
@@ -28,15 +47,15 @@
 <!--maybe i want to handle this as a pseduo-modal instead-->
 <template name="pageNego">
 <div class="pageConverse">
-<h1>{{item.title}}</h1>
-<h2>{{offer.offer}}</h2>
+    <h1>{{item.title}}</h1>
+    <h2>{{offer.offer}}</h2>
 
-{{#each messages}}
-{{> message}}
-{{/each}}
+    {{#each messages}}
+    {{> message}}
+    {{/each}}
 
-<div id="message" contenteditable="true"></div>
-<div id="sendMsg" class="button">Send</div>
+    <div id="message" contenteditable="true"></div>
+    <div id="sendMsg" class="button">Send</div>
 
 </div>
 </template>
