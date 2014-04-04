@@ -33,7 +33,6 @@ Template.addTitle.rendered = function(){
 var populateInfo = function() {
     temp = Session.get('tempProdForm');
     $('input[name=title]').val(temp.title);
-    $('input[name=category]').val(temp.category);
     $('input:radio[name="category"]').filter('[value=' + temp.category + ']').attr('checked', 'checked');
 /*
     $('input[name=so]').val(temp.so);
