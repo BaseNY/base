@@ -43,6 +43,9 @@ var populateInfo = function() {
     $('#description').html(temp.description);
 }
 
+Template.addInfo.feeds = function() {
+    return Feeds.find().fetch();
+}
 
 //should i put all of this code in it's own stuff hm
 Template.addInfo.rendered = function() {
@@ -65,7 +68,8 @@ Template.addInfo.rendered = function() {
     }
     $('#b_pNext').click(function(e) {
         e.preventDefault(); temp = Session.get('tempProdForm'); temp.title = $('input[name=title]').val();
-	temp.category = $('input[name=category]').val();
+	temp.feeds = [];
+        temp.feeds.push($('input[name=category]').val());
         /*
 	temp.so = $('input[name=so]').val();
 	temp.bin = $('input[name=bin]').val();
