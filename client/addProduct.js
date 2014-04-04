@@ -64,9 +64,7 @@ Template.addInfo.rendered = function() {
         //nm use helpers HERE 
     }
     $('#b_pNext').click(function(e) {
-        e.preventDefault();
-        temp = Session.get('tempProdForm');
-        temp.title = $('input[name=title]').val();
+        e.preventDefault(); temp = Session.get('tempProdForm'); temp.title = $('input[name=title]').val();
 	temp.category = $('input[name=category]').val();
         /*
 	temp.so = $('input[name=so]').val();
@@ -149,3 +147,7 @@ Template.postPreview.helpers({
 	//return $('#itemDescription').html();
     },
 });
+
+Template.product.description = function() {
+    return new Handlebars.SafeString(Router.current().data().item.description);
+}

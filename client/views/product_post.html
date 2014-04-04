@@ -89,50 +89,7 @@
 </template>
 
 <template name="postPreview">
-	<h1>Preview your post.</h1>
-	<div class="page-product preview">
-		<h1>{{title}}</h1>
-		<h3>status: open</h3>
-		<br>
-		<span>{{category}}</span>
-		<br>
-		<br>
-		<div class="info">
-			<img src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg">
-			<p>This is the photo carousel</p>
-			<div class="user-info">
-				<div>
-					<h2>Sayanke</h2>
-					<p>Think of to put here and others</p>
-					<p><a href="/">See other items from this seller</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="product-info">
-			<table>
-				<tr>
-					<td>Starting Offer</td>
-					<td><b>{{so}}</b>
-					</td>
-				</tr>
-				<tr>
-					<td>Buy it Now</td>
-					<td><b>{{bin}}</b>
-					</td>
-				</tr>
-				<tr>
-					<td>Item Condition</td>
-					<td><b>{{condition}}</b>
-					</td>
-				</tr>
-			</table>
-			<br>
-			<b>Description</b>
-			<p>{{item}}</p>
-			<a class="button">Place your bid!</a>
-		</div>
-	</div>
+{{> product}}
 	<div id="back" class="button left">Prev</div>
 	<div id="addProdBut" class="button right">Post</div>
 </template>
