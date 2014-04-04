@@ -48,13 +48,11 @@
 			</div>
 			<hr>
 			<div class="product">
-				<h3>Select a category for your item</h3>
-				<input type="radio" name="category" value="shoes">Shoes
+				<h3>Select a feed to publish your item to</h3>
+                                {{#each feeds}}
+                                <input type="radio" name="category" value={{this._id}}>{{this.name}}
 				<br>
-				<input type="radio" name="category" value="clothes">Clothes
-				<br>
-				<input type="radio" name="category" value="technology">Technology
-				<br>
+                                {{/each}}
 			</div>
 			<hr>
                         <!--

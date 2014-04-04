@@ -32,3 +32,13 @@ Messages = new Meteor.Collection('messages');
     public: 
 }
 */
+Feeds = new Meteor.Collection('feeds');
+OtoI = new Meteor.Collection('OtoI');
+/*
+ * acts as an intermediary between feeds and items
+{
+    _id: id of the intermediary
+    _feedId: id of the feed
+    _itemId: id of the item
+}
+*/
