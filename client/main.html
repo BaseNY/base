@@ -2,6 +2,7 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.min.css">
 	<style>
 	@viewport {
 		zoom: 1.0;
@@ -17,35 +18,55 @@
 <template name="layout">
 	{{> header}}
 	<div class="body">
-		{{yield}}
+		{{> yield}}
 	</div>
 	{{> footer}}
-	{{#if currentUser}}
-	{{else}}
 	{{> modalContainer}}
-	{{/if}}
 </template>
 
 <template name="header">
-	<header class="header">
-    		<a href="/">BASE</a>
-    			<div id="user-wrapper">
-			{{#if currentUser}}
-			{{name}}
-                    <ul class="dropdown" id="nameDrop">
-                        <li>My Profile</li>
-                        <li>Account Settings</li>
-                    </ul>
-			{{else}}
-			<a id="openLogin">Login</a>
-			{{/if}}
-                </div>
+	<header>
+		<div class="content">
+			<a href="/" class="logo"><img src="/images/logo.png" alt="BASE"></a>
+			<form action="/">
+				<input type="text" placeholder="Search...">
+			</form>
+			<a href="/sell/title" class="link">Sell</a>
+                        <a href="/inbox" class="link">Inbox</a>
+			<a href="{{pathFor 'about'}}" class="link">About</a>
+			<div class="right" id="user-wrapper">
+				{{#if currentUser}}
+					{{name}}
+					<ul class="dropdown" id="nameDrop">
+						<li>My Profile</li>
+						<li>Account Settings</li>
+					</ul>
+				{{else}}
+					<button id="openLogin" class="btn-login">Login</button>
+				{{/if}}
+			</div>
+		</div>
 	</header>
+	<!--<header class="header">
+		<a href="/">BASE</a>
+		<a href="/sell/title">Sell</a>
+		<div id="user-wrapper">
+			{{#if currentUser}}
+				{{name}}
+				<ul class="dropdown" id="nameDrop">
+					<li>My Profile</li>
+					<li>Account Settings</li>
+				</ul>
+			{{else}}
+				<a id="openLogin">Login</a>
+			{{/if}}
+		</div>
+	</header>-->
 </template>
 
 <template name="footer">
-	<footer class="footer">
+	<!--<footer class="footer">
 		<span><a href="{{pathFor 'about'}}">About</a></span>
 		<span>&copy; 2013 BASE</span>
-	</footer>
+	</footer>-->
 </template>
