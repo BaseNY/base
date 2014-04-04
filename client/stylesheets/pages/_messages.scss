@@ -1,0 +1,11 @@
+div.pageConverse {
+	div[contenteditable] {
+            background-color:white;
+		display: block;
+		overflow-y: scroll;
+		width: 50%;
+		height: 100px;
+		line-height: 1.2em;
+                padding:10px; 
+	}
+    }

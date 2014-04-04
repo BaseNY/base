@@ -35,9 +35,11 @@ var populateInfo = function() {
     $('input[name=title]').val(temp.title);
     $('input[name=category]').val(temp.category);
     $('input:radio[name="category"]').filter('[value=' + temp.category + ']').attr('checked', 'checked');
+/*
     $('input[name=so]').val(temp.so);
     $('input[name=bin]').val(temp.bin);
     $('select[name=condition]').val(temp.condition);
+    */
     $('#description').html(temp.description);
 }
 
@@ -66,9 +68,11 @@ Template.addInfo.rendered = function() {
         temp = Session.get('tempProdForm');
         temp.title = $('input[name=title]').val();
 	temp.category = $('input[name=category]').val();
+        /*
 	temp.so = $('input[name=so]').val();
 	temp.bin = $('input[name=bin]').val();
 	temp.condition = $('select[name=condition]').val();
+        */
 	temp.description = $('#description').html();
         console.log(temp);
 
@@ -98,6 +102,7 @@ Template.postPreview.rendered = function(){
 		alert(e);
 	    }else{
 		console.log("done");
+                Session.set('tempProdForm',null);
 		Router.go('/post/' + r);
 	    }
 	});

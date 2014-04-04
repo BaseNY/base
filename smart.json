@@ -2,13 +2,9 @@
   "packages": {
     "iron-router": {},
     "fast-render": {},
-    "jquery": {
-      "git": "https://github.com/nrafter/meteor-jquery.git",
-      "tag": "v2.0.31"
-    },
     "nprogress": {},
     "bourbon-scss": {},
     "neat-scss": {},
-    "bourbon": {}
+    "npm": {}
   }
 }

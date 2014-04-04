@@ -3,18 +3,18 @@
     <div class="product-info">
       <table class="product-table">
 	<tr>
-            <td class="product-name">{{title}}</td>
+            <td class="product-name">{{item.title}}</td>
 	  <td>&nbsp;</td>
 	</tr>
 	<tr>
 	  <td rowspan="2" class="product-table-left">
 	    <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
-            <div class="product-desc">{{description}}</div>
+            <div class="product-desc">{{item.description}}</div>
 
 	  </td>
 	  <td class="product-table-right">
 	    <div class="product-box user-info">
-	      <span class="product-box-title">SELLER</span> <a href="#">Andrew</a><br />
+                <span class="product-box-title">SELLER</span> <a href="#">{{seller.profile.name}}</a><br />
 	      <div class="user-rating">
 		<span class="seller-up">upvotes</span>
 		<span class="seller-down">downvotes</span>
@@ -25,8 +25,9 @@
 		User last active: <em>calculate minutes here</em>
 	      </div>
 	    </div>
+            <!--
 	    <div class="product-box condition-new">
-                <span class="product-box-title">CONDITION</span>{{condition}}
+                <span class="product-box-title">CONDITION</span>{{item.condition}}
 	    </div>
 	    <div class="product-box">
                 <span class="product-box-title">CURRENT BID</span> ${{item.so}}
@@ -34,9 +35,15 @@
 	    <div class="product-box">
                 <span class="product-box-title">BUY IT NOW</span>${{item.bin}}
 	    </div>
-	    <button class="product-button" style="margin-top:10px;">PLACE BID</button>
+            -->
+            <!--brings up modal in modal.js backend will be in bid.js-->
+            {{> bidding}}
+            <!--
+	    <div id = "product-bid" class="button" style="margin-top:10px;">Offer</div>
+            -->
 	  </td>
 	</tr>
+        <!--
 	<tr>
 	  <td class="product-table-location">
 	    <div class="gmap">
@@ -52,8 +59,10 @@
 	    </div>
 	  </td>
 	</tr>
+        -->
       </table>
 
+      <!--
       <div class="related-item-box">
 	<div class="related-items-title">Related Items</div>
 	
@@ -62,10 +71,25 @@
 	{{> relatedItem}}
 	{{> relatedItem}}
       </div>
+    -->
     </div>
   </div>
 </template>
 
+<template name="bidding">
+<div id='modal-bid' >
+    <h2>Make your Offer</h2>
+    <!--
+    <input id="offer" type="text" placeholder="Offer"/> 
+    <input id="location" type="text" placeholder="Location"/> 
+    -->
+    <textarea id="message" placeholder="Send a message"></textarea>
+
+    <div id="sendBid" class="button">Send</div>
+    <!--code for this is in bid.js-->
+</div>
+
+</template>
 
 
 <template name="relatedItem">
