@@ -24,7 +24,7 @@ Template.itemsRow.test = function(e) {
     return e;
 }
 
-Template.modalBid.events({
+Template.bidding.events({
     'click #sendBid' : function() {
         var itemObj = Router.current().data();
         /*
@@ -49,7 +49,7 @@ Template.modalBid.events({
             else{
                 if(r==-1)
                     alert('You cannot bid on your own post');
-                Template.modalOverlay.close();
+                alert("your message has been sent");
             }
         });
     }
