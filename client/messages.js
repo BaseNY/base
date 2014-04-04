@@ -24,6 +24,24 @@ Template.itemsRow.test = function(e) {
     return e;
 }
 
+Template.bidding.sendMsg = function(i, m) {
+        m.type = 1;
+        m.text = $('#message').html();
+        m.postId = i.item._id;
+        m.public = false;
+        Meteor.call('addBid', m, function(e,r){
+            if(e)
+                alert(e);
+            else {
+                if(r == -1)
+                    alert('error!');
+                else
+                    alert('youre message has been sent');
+            }
+
+        });
+
+}
 Template.bidding.events({
     'click #sendBid' : function() {
         var itemObj = Router.current().data();
@@ -34,23 +52,23 @@ Template.bidding.events({
         */
 
         var msg = {};
-        msg.type = 1;
-        msg.text = $('#message').val();
-        msg.toId = itemObj.seller._id;
+        msg.toId = itemObj.item._id;
         msg.to = itemObj.item.seller;
 
+        /*
         msg.offer=$('#offer').val();
         msg.location = $('#location').val();
-        msg.postId = itemObj.item._id;
-        msg.public = false;
-        Meteor.call('addBid', msg, function(e,r){
-            if(e)
-                alert(e);
-            else{
-                if(r==-1)
-                    alert('You cannot bid on your own post');
-                alert("your message has been sent");
-            }
-        });
+        */
+        Template.bidding.sendMsg(itemObj, msg);
+    }
+});
+
+Template.pageNego.events({
+    'click #sendMsg' : function() {
+        var itemObj = Router.current().data();
+        var msg = {};
+        msg.toId = itemObj.item.sellerId;
+        msg.to = itemObj.item.seller;
+        Template.bidding.sendMsg(itemObj,msg);
     }
 });

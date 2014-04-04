@@ -17,7 +17,7 @@ var tempFBLogCode = function() {
 }
 
 Template.header.events({
-	'click #user-wrapper': function() {
+	'click #openLogin': function() {
 		//if not logged in 
 		//open the modal screen
 		//login, signup, login with fb
