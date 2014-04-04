@@ -964,6 +964,16 @@ section.pageAbout {
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
+/* line 2, /home/jasperlu/base/client/stylesheets/pages/messages */
+div.pageConverse div[contenteditable] {
+  background-color: white;
+  display: block;
+  overflow-y: scroll;
+  width: 50%;
+  height: 100px;
+  line-height: 1.2em;
+  padding: 10px; }
+
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {
   margin: 50px auto 100px;
