@@ -43,7 +43,7 @@ Template.bidding.sendMsg = function(i, m) {
 
 }
 Template.bidding.events({
-    'click #sendBid' : function() {
+    'click #sendMsg' : function() {
         var itemObj = Router.current().data();
         /*
         if (itemObj.seller._id == Meteor.userId()) {
