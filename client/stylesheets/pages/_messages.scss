@@ -1,12 +1,11 @@
 div#message {
-    background-color:white;
+    background-color:rgb(245,245,250);
     display: block;
     overflow-y: scroll;
     width: 50%;
     height: 100px;
     line-height: 1.2em;
     padding:10px; 
-    border:1px solid rgb(100,100,100);
 }
 div.pageConverse {
     div[contenteditable] {
