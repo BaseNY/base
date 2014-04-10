@@ -28,11 +28,11 @@
 	<header>
 		<div class="content">
 			<a href="/" class="logo"><img src="/images/logo.png" alt="BASE"></a>
-			<form action="/">
+			<form action="/search">
 				<input type="text" placeholder="Search...">
 			</form>
 			<a href="/sell/title" class="link">Sell</a>
-                        <a href="/inbox" class="link">Inbox</a>
+			<a href="/inbox" class="link">Inbox</a>
 			<a href="{{pathFor 'about'}}" class="link">About</a>
 			<div class="right" id="user-wrapper">
 				{{#if currentUser}}
