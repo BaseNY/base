@@ -20,7 +20,7 @@ if (Meteor.isServer) {
 		},
                 addBid: function(p) {
                     console.log('called' + p);
-                    p.fromId = this.userId;
+                p.fromId = Meteor.userId();
                     p.from = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
                     p.time = new Date(); 
                     
