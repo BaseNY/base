@@ -17,13 +17,15 @@ testing code to try to get staggered/ 2 posts per row
 
 <template name = "feedPost">
 <div class = "post">
-    <h1>{{item.title}}</h1>
-    <hr />
-    <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
-    <br />
-    <span class = "description"> {{item.description}}</span>
-    <br />
-    <img src = "{{img}}" />
-
+    <div class = "post-inner">
+        <h1>{{item.title}}</h1>
+        <hr />
+        <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+        <br />
+        <span class = "description"> {{item.description}}</span>
+        <br />
+        <img src = "{{img}}" />
+        {{> bidding}}
+    </div>
 </div>
 </template>

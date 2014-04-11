@@ -1302,14 +1302,10 @@ div#message, div[contenteditable], .post-message {
     clear: both; }
   /* line 4, /home/jasperlu/base/client/stylesheets/pages/feeds */
   .pageFeeds .post {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    margin-bottom: 10px; }
+    width: 50%;
+    padding: 16px;
+    display: inline-block;
+    height: auto; }
     /* line 5, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post h1 {
       font-weight: normal;
@@ -1317,13 +1313,18 @@ div#message, div[contenteditable], .post-message {
       margin-bottom: 0px; }
     /* line 10, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post img {
-      height: 300px; }
+      height: 250px; }
     /* line 13, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post span {
       font-size: 1.5em; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
-    .pageFeeds .post:last-child {
-      margin-right: 0; }
+    /* line 20, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post .post-inner {
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+      width: 100%;
+      height: 100%; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/post */
 .postBox {
