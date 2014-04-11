@@ -1290,6 +1290,10 @@ div#message, div[contenteditable], .post-message {
 .message-box {
   overflow: auto; }
   /* line 69, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .message-box textarea {
+    height: auto;
+    overflow: auto; }
+  /* line 73, /home/jasperlu/base/client/stylesheets/pages/messages */
   .message-box .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;
@@ -1323,7 +1327,7 @@ div#message, div[contenteditable], .post-message {
       margin-bottom: 0px; }
     /* line 10, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post img {
-      height: 250px; }
+      width: 100%; }
     /* line 13, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post span {
       font-size: 1.5em; }
