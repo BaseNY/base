@@ -1327,7 +1327,7 @@ div#message {
         margin-bottom: 0px; }
       /* line 12, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post-container .post img {
-        width: 400px; }
+        width: 100%; }
       /* line 15, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post-container .post span {
         font-size: 1.5em; }
