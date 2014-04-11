@@ -1137,7 +1137,7 @@ div#message {
   background-color: #f5f5fa;
   display: block;
   overflow-y: scroll;
-  width: 50%;
+  width: 100%;
   height: 100px;
   line-height: 1.2em;
   padding: 10px; }
@@ -1170,7 +1170,7 @@ div#message {
     .pageItemInbox .row:after {
       clear: both; }
     /* line 16, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .pageItemInbox .row .thumbnail {
+    .pageItemInbox .row .row-thumbnail {
       padding: 20px;
       background-color: white;
       float: left;
@@ -1180,11 +1180,108 @@ div#message {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       margin-bottom: 5px; }
       /* line 19, /home/jasperlu/base/client/stylesheets/pages/messages */
-      .pageItemInbox .row .thumbnail img {
+      .pageItemInbox .row .row-thumbnail img {
         width: 100%; }
       /* line 40, ../packages/neat-scss/grid/span-columns */
-      .pageItemInbox .row .thumbnail:last-child {
+      .pageItemInbox .row .row-thumbnail:last-child {
         margin-right: 0; }
+    /* line 26, /home/jasperlu/base/client/stylesheets/pages/messages */
+    .pageItemInbox .row .row-details {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 1px; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .pageItemInbox .row .row-details:last-child {
+        margin-right: 0; }
+
+/* line 35, /home/jasperlu/base/client/stylesheets/pages/messages */
+.left-sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1px; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .left-sidebar:last-child {
+    margin-right: 0; }
+
+/* line 40, /home/jasperlu/base/client/stylesheets/pages/messages */
+.pageNego {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .pageNego:before, .pageNego:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .pageNego:after {
+    clear: both; }
+  /* line 43, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message-thumbnail {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 10.43705%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .message-thumbnail:last-child {
+      margin-right: 0; }
+  /* line 46, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message-text {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 87.20529%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .message-text:last-child {
+      margin-right: 0; }
+  /* line 49, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .conversation {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .conversation:last-child {
+      margin-right: 0; }
+  /* line 52, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message {
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .pageNego .message:before, .pageNego .message:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .pageNego .message:after {
+      clear: both; }
+  /* line 55, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .reply-box {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .reply-box:last-child {
+      margin-right: 0; }
+  /* line 59, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .left-sidebar, .pageNego .thumbnail, .pageNego .message, .pageNego .reply-box {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1px; }
 
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {
