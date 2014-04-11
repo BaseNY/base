@@ -1366,18 +1366,23 @@ div#message, div[contenteditable], .post-message {
     font-weight: normal; }
   /* line 26, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox header {
-    background-color: rgba(240, 240, 240, 0.5);
+    background-color: #fafafa;
     padding: 15px 20px 15px 20px;
     border-bottom: 1px solid #33B5E5;
     border-right: 1px solid #33B5E5;
     margin-top: -20px;
-    margin-left: -20px;
-    margin-bottom: 10px; }
-  /* line 35, /home/jasperlu/base/client/stylesheets/pages/post */
+    margin-left: -20px; }
+  /* line 34, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox .button {
-    padding: 0.5em 1em 0.5em 1em; }
+    padding: 0.5em 1em 0.5em 1em;
+    float: right;
+    border-radius: 0px 0px 15px 0px; }
+  /* line 39, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox .sell-container, .postBox .buy-container {
+    padding-top: 10px;
+    display: none; }
 
-/* line 40, /home/jasperlu/base/client/stylesheets/pages/post */
+/* line 45, /home/jasperlu/base/client/stylesheets/pages/post */
 .post-message {
   overflow: auto; }
 

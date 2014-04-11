@@ -1,110 +1,110 @@
 ﻿<template name="pageAddProduct">
-	<table class="steps">
-		<tr>
-			<!-- fix the changing to diff spots later -->
-			<td>
-				<a href="/sell/title">
-					<div class="step-circle active">
-						<h1>1</h1>
-					</div>
-				</a>
-			</td>
-			<td>
-				<a href="/sell/info">
-					<div class="step-circle">
-						<h1>2</h1>
-					</div>
-				</a>
-			</td>
-			<td>
-				<a href="/sell/preview">
-					<div class="step-circle">
-						<h1>3</h1>
-					</div>
-				</a>
-			</td>
-		</tr>
-	</table>
-	<div class="box page-add-product">
-		<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
-                {{> yield region='sellYield'}}
-	</div>
+<table class="steps">
+    <tr>
+        <!-- fix the changing to diff spots later -->
+        <td>
+            <a href="/sell/title">
+                <div class="step-circle active">
+                    <h1>1</h1>
+                </div>
+            </a>
+        </td>
+        <td>
+            <a href="/sell/info">
+                <div class="step-circle">
+                    <h1>2</h1>
+                </div>
+            </a>
+        </td>
+        <td>
+            <a href="/sell/preview">
+                <div class="step-circle">
+                    <h1>3</h1>
+                </div>
+            </a>
+        </td>
+    </tr>
+</table>
+<div class="box page-add-product">
+    <!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
+    {{> yield region='sellYield'}}
+</div>
 </template>
 
 <template name = "postBox">
 <div class = "postBox">
-	<form method="post">
-                            <header>
-                                What would you like to do? <input id = "sell-radio" class = "highlight-radio " type = "radio" name = "type" value = "sell"><label for = "sell-radio" class = "highlight-label rad">Sell</label>
-                                </header>
-                                Pick a feed to publish to:
-                                {{#each feeds}}
-                                <input id="cat-{{this._id}}" class = "highlight-radio cat" type="radio" name="category" value={{this._id}}><label for="cat-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
-                                {{/each}}
-				<input type="text" id="item-title" name="title" placeholder="What is your item called?">
-                                <br />
-                                <textarea id="description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price" class="post-message"></textarea>
-			<div id="post" class="button right">Post</div>
-	</form>
+        <header>
+        What would you like to do? <input id = "sell-radio" class = "highlight-radio " type = "radio" name = "type" value = "sell"><label for = "sell-radio" class = "highlight-label rad">Sell</label>
+        </header>
+        <div class="sell-container">
+            Pick a feed to publish to:
+            {{#each feeds}}
+            <input id="feed-{{this._id}}" class = "highlight-radio cat" type="radio" name="feed" value={{this._id}}><label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
+            {{/each}}
+            <input type="text" id="item-title" name="title" placeholder="What is your item called?">
+            <br />
+            <textarea id="description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price" class="post-message"></textarea>
+            <div id="post" class="button right">Post</div>
+        </div>
     </div>
-</template>
+    </template>
 
-<template name="addTitle">
-	<form method="post">
-		<h3>What is your item called?</h3>
-		<input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . .">
-		<input type="submit" class="button" value="Next">
-	</form>
-</template>
+    <template name="addTitle">
+    <form method="post">
+        <h3>What is your item called?</h3>
+        <input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . .">
+        <input type="submit" class="button" value="Next">
+    </form>
+    </template>
 
-<template name="addInfo">
-	<form method="post">
-		<div class="page-box page-addProduct">
-			<div class="product">
-				<h3>What is your item called?</h3>
-				<input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . .">
-			</div>
-			<hr>
-			<div class="product">
-				<h3>Select a feed to publish your item to</h3>
-                                {{#each feeds}}
-                                <input type="radio" name="category" value={{this._id}}>{{this.name}}
-				<br>
-                                {{/each}}
-			</div>
-			<hr>
-                        <!--
-			<div class="product">
-				<h3>Set the pricing of your item</h3>
-				Starting Offer
-				<span>$</span>
-				<input type="number" id="item-so" name="so" min="0" step="any">Buy it Now
-				<span>$</span>
-				<input type="number" id="item-bin" name="bin" min="0" step="any">
-			</div>
-			<hr>
-			<div class="product">
-				<h3>What is the condition of your item?</h3>
-				<select name="condition" id="condition">
-					<option>New</option>
-					<option>Used</option>
-				</select>
+    <template name="addInfo">
+    <form method="post">
+        <div class="page-box page-addProduct">
+            <div class="product">
+                <h3>What is your item called?</h3>
+                <input type="text" id="item-title" name="title" placeholder="Item type, brand. condition . . .">
+            </div>
+            <hr>
+            <div class="product">
+                <h3>Select a feed to publish your item to</h3>
+                {{#each feeds}}
+                <input type="radio" name="category" value={{this._id}}>{{this.name}}
+                <br>
+                {{/each}}
+            </div>
+            <hr>
+            <!--
+            <div class="product">
+                <h3>Set the pricing of your item</h3>
+                Starting Offer
+                <span>$</span>
+                <input type="number" id="item-so" name="so" min="0" step="any">Buy it Now
+                <span>$</span>
+                <input type="number" id="item-bin" name="bin" min="0" step="any">
+            </div>
+            <hr>
+            <div class="product">
+                <h3>What is the condition of your item?</h3>
+                <select name="condition" id="condition">
+                    <option>New</option>
+                    <option>Used</option>
+                </select>
 
-			</div>
-			<hr>
-                        -->
-			<div class="product describe">
-				<h3>Describe your item. Make sure you mention the starting offer/buy it now price. Change the text in this box.</h3>
-				<div id="description" contenteditable="true"></div>
-			</div>
-			<hr>
-			<div id="back" class="button left">Prev</div>
-			<div id="b_pNext" class="button right">Next</div>
-		</div>
-	</form>
-</template>
+            </div>
+            <hr>
+            -->
+            <div class="product describe">
+                <h3>Describe your item. Make sure you mention the starting offer/buy it now price. Change the text in this box.</h3>
+                <div id="description" contenteditable="true"></div>
+            </div>
+            <hr>
+            <div id="back" class="button left">Prev</div>
+            <div id="b_pNext" class="button right">Next</div>
+        </div>
+    </form>
+    </template>
 
-<template name="postPreview">
-	<div id="back" class="button left">Prev</div>
-	<div id="addProdBut" class="button right">Post</div>
-</template>
+    <template name="postPreview">
+    <div id="back" class="button left">Prev</div>
+    <div id="addProdBut" class="button right">Post</div>
+    </template>
