@@ -66,6 +66,10 @@ div#message, div[contenteditable], .post-message {
 
 .message-box{
     overflow:auto;
+    textarea {
+        height:auto;
+        overflow:auto;
+    }
     .button {
         padding: .5em 1em .5em 1em;
         float:right;
