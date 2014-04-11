@@ -1,37 +1,29 @@
 <template name="pageItemInbox">
+<section class = "pageItemInbox">
 <h1>Offers for {{user}}</h1>
 <div class="product-body">
-    <div class="product-info">
-<table class="messenger-table">
-    <tbody>
         {{#each items}}
         {{> itemsRow}}
         {{/each}}
-    </tbody>
-</table>
 </div>
-</div>
+</section>
 </template>
 
 <template name="itemsRow">
-<tr class="mes-sell">
-    <td class="mes-item" rowspan="9">
+<div class = "row">
+    <div class = "thumbnail">
         SELL<br /><br />
-        <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
-    </td>
-
-    <td colspan="4" class="mes-item-name">
         <a href = "/inbox/{{this._id}}">{{this.title}}</a>
-    </td>
-</tr>
-{{this._id}}
+        <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+    </div>
+
 <ul>
     {{#each offers}}
-    <li><b>{{this.buyer}}</b></li>
+    <li><b><a href = "/inbox/{{this.postId}}/{{this.buyerId}}">{{this.buyer}}</a></b></li>
     {{/each}}
 </ul>
 
-  <tr class="mes-spacer"><td colspan="5">&nbsp;</td></tr>
+</div>
 </template>
 
 <template name="pageOffers">
