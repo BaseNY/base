@@ -1,10 +1,8 @@
 if (Meteor.isServer) {
-        Meteor.startup(function() {
             Feeds.remove({});
             Feeds.insert({name:'Electronics'});
             Feeds.insert({name:'Clothing'});
             Feeds.insert({name:'Sneakers'});
-        });
 
 	Meteor.methods({
 		addProduct: function(p) {
@@ -13,9 +11,10 @@ if (Meteor.isServer) {
                         p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
 			p.time = new Date();
 			var temp = Items.insert(p);
+                        console.log(temp);
                         //linker. pushes the id of the item, and the id of the category
                         for(x in p.feeds)
-                            FtoI.insert({'feedId': p.feeds[x], 'itemId': temp._id});
+                            FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
 			return temp;
 		},
                 addBid: function(p) {
