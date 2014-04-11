@@ -7,7 +7,21 @@ div#message {
     line-height: 1.2em;
     padding:10px; 
 }
-div.pageConverse {
-    div[contenteditable] {
+
+.pageItemInbox {
+    @include outer-container;
+    max-width:1200px;
+    .row {
+        @include outer-container;
+        .thumbnail {
+            padding:20px;
+            background-color:white;
+            img {
+                width:100%;
+            }
+            @include span-columns(3);
+            box-shadow: $boxes;
+            margin-bottom:5px;
+        }
     }
 }

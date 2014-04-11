@@ -1,3 +1,44 @@
+<template name="pageProduct">
+<section class = "pageProduct">
+    <h1> {{item.title}} </h1>
+<div class = "container"> 
+    <div class = "pic">
+        <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+
+    </div>
+
+    <div class = "info">
+        <div class="product-box user-info">
+            <span class="product-box-title">SELLER</span> <a href="#">{{seller.profile.name}}</a><br />
+            <div class="user-rating">
+                <span class="seller-up">upvotes</span>
+                <span class="seller-down">downvotes</span>
+            </div>
+            <div class="prod-info">
+                Posted: <em>calculate hours here</em>
+                <br />
+                User last active: <em>calculate minutes here</em>
+            </div>
+
+        </div>
+
+        <div class="product-box">
+            <b>Seller's Note</b>
+            <br />
+            {{description}}
+
+        </div>
+
+        <div class="product-box">
+            {{> bidding}}
+
+        </div>
+    </div>
+</div>
+</section>
+</template>
+
+
 <template name="product">
 <div class="product-body">
     <div class="product-info">
@@ -80,6 +121,7 @@
         -->
     </div>
 </div>
+{{> pageProduct}}
 </template>
 
 <template name="bidding">

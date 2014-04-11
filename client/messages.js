@@ -38,10 +38,9 @@ Template.bidding.sendMsg = function(i, m) {
                 else
                     alert('youre message has been sent');
             }
-
         });
-
 }
+
 Template.bidding.events({
     'click #sendMsg' : function() {
         var itemObj = Router.current().data();
@@ -54,7 +53,7 @@ Template.bidding.events({
         var msg = {};
 
 
-        msg.toId = itemObj.item._id;
+        msg.toId = itemObj.item.sellerId;
         msg.to = itemObj.item.seller;
 
         /*

@@ -5,10 +5,12 @@
 	&:-ms-input-placeholder { @content; }
 	&::-webkit-input-placeholder { @content; }
 }
+    
 
 @function strip-unit($num) {
 	@return $num / ($num * 0 + 1);
 }
+
 
 @mixin rem-fallback($property, $values...) {
 	$max: length($values);
