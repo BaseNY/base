@@ -1,0 +1,73 @@
+<!----------TO DO : WRITE A FUNCTION TO MAKE THE OFFERS/MSGS ON THE PAGEITEMINBOX SHOW IN ORDER--->
+<template name="pageItemInbox">
+<section class = "pageItemInbox">
+<h1>Offers for {{user}}</h1>
+<div class="product-body">
+    {{#each items}}
+    {{> itemsRow}}
+    {{/each}}
+</div>
+</section>
+</template>
+
+<template name="itemsRow">
+<div class = "row">
+    <a class = "row-thumbnail" href = "/post/{{this._id}}">
+        SELL: {{this.title}}<br /><br />
+        <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+    </a>
+
+    {{#each offers}}
+    <a class = "row-details" href = "/inbox/{{this.postId}}/{{this.buyerId}}">
+        {{this.buyer}}
+    </a>
+    {{/each}}
+
+</div>
+</template>
+
+<template name="pageOffers">
+<h1>Offers for {{item.title}}</h1>
+<ul>
+    {{#each offers}}
+    <li><b>{{this.buyer}}</b><a href="/inbox/{{this.postId}}/{{this._id}}">See convo</a></li>
+    {{/each}}
+</ul>
+</template>
+
+<template name = "offersSidebar">
+<div class = "left-sidebar">
+    Scrollable here, with all the messages for this offer, and a back button to check out the other items. This sidebar should be on the other pages too. Look at previous page.
+</div>
+
+</template>
+<!--maybe i want to handle this as a pseduo-modal instead-->
+<template name="pageNego">
+<div class="pageNego">
+    <h1>{{item.title}}</h1>
+    <h2>{{offer.offer}}</h2>
+    {{> offersSidebar}}
+    <div class = "conversation">
+        {{#each messages}}
+        {{> message}}
+        {{/each}}
+        <div class = "reply-box">
+            write this so that enter sends the message automatically, shift enter indents. i.e facebook messaging
+            <div id="message" contenteditable="true"></div>
+            <div id="sendMsg" class="button">Send</div>
+        </div>
+    </div>
+</div>
+
+</template> 
+<template name = "message">
+<div class = "message">
+    <div class = "message-thumbnail">
+        Img doesn't load bc of async callback
+        <img src="{{img}}" />
+    </div>
+    <div class = "message-text">
+        <b>{{this.from}}:</b> <br />{{text}} <br />
+    </div>
+</div>
+</template>
