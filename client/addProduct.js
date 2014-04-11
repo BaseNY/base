@@ -66,9 +66,11 @@ Template.addInfo.rendered = function() {
         //nm use helpers HERE 
     }
     $('#b_pNext').click(function(e) {
-        e.preventDefault(); temp = Session.get('tempProdForm'); temp.title = $('input[name=title]').val();
+        e.preventDefault(); 
+        temp = Session.get('tempProdForm'); 
+        temp.title = $('input[name=title]').val();
 	temp.feeds = [];
-        temp.feeds.push($('input[name=category]').val());
+        temp.feeds.push($('input[name=category]:checked').val());
         /*
 	temp.so = $('input[name=so]').val();
 	temp.bin = $('input[name=bin]').val();
