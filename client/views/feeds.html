@@ -10,10 +10,7 @@ testing code to try to get staggered/ 2 posts per row
 <template name = "pageFeeds">
 <div class = "pageFeeds">
     {{#each posts}}
-    <div class="post-container"> 
     {{> feedPost}}
-</div>
-
     {{/each}}
 </div>
 </template>
@@ -25,6 +22,7 @@ testing code to try to get staggered/ 2 posts per row
     <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
     <br />
     <span class = "description"> {{item.description}}</span>
+    <br />
     <img src = "{{img}}" />
 
 </div>

@@ -1,8 +1,6 @@
 .pageFeeds {
     @include outer-container;
     width:1000px;
-    .post-container {
-    @include outer-container;
     .post {
         h1 {
             font-weight:normal;
@@ -10,13 +8,12 @@
             margin-bottom:0px;
         }
         img {
-            width:100%;
+            height:300px;
         }
         span {
             font-size:1.5em;
         }
-        @include span-columns(5);
+        @include span-columns(12);
         @include boxes-default(10px);
     }
-}
 }
