@@ -31,6 +31,24 @@
 	</div>
 </template>
 
+<template name = "postBox">
+<div class = "postBox">
+	<form method="post">
+                            <header>
+                                What would you like to do? <input id = "sell-radio" class = "highlight-radio " type = "radio" name = "type" value = "sell"><label for = "sell-radio" class = "highlight-label rad">Sell</label>
+                                </header>
+                                Pick a feed to publish to:
+                                {{#each feeds}}
+                                <input id="cat-{{this._id}}" class = "highlight-radio cat" type="radio" name="category" value={{this._id}}><label for="cat-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
+                                {{/each}}
+				<input type="text" id="item-title" name="title" placeholder="What is your item called?">
+                                <br />
+                                <textarea id="description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price" class="post-message"></textarea>
+			<div id="post" class="button right">Post</div>
+	</form>
+    </div>
+</template>
+
 <template name="addTitle">
 	<form method="post">
 		<h3>What is your item called?</h3>

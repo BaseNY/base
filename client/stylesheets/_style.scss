@@ -187,6 +187,13 @@ fieldset.show , div.show {
 	display: block;
 }
 
-.no-show {
-	display: none;
+.highlight-radio {
+    display:none;
+}
+
+.highlight-label {
+    color:#33B5E5; 
+    &.checked {
+        text-decoration:underline;
+    }
 }
