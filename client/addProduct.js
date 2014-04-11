@@ -153,7 +153,7 @@ Template.postPreview.helpers({
     },
 });
 
-Template.product.description = function() {
+Template.pageProduct.description = function() {
     return new Handlebars.SafeString(Router.current().data().item.description);
 }
 
@@ -166,11 +166,43 @@ Template.postBox.rendered = function() {
         $('.highlight-radio[name=type]').change(function() {
             $('.rad').removeClass('checked');
             $('.highlight-label[for=' + this.id + ']').addClass('checked'); 
+            console.log(this);
+            if(this.value == 'sell') {
+                $('.sell-container').slideDown();
+            }
         });
         $('.cat').change(function() {
             $('.cat').removeClass('checked');
             $('.highlight-label[for=' + this.id + ']').addClass('checked');
         });
+    $('#post').click(function(e) {
+        e.preventDefault(); 
+        temp = {};
+        temp.title = $('input[name=title]').val();
+        temp.feeds = [];
+        temp.feeds.push($('input[name=feed]:checked').val());
+        /*
+           temp.so = $('input[name=so]').val();
+           temp.bin = $('input[name=bin]').val();
+           temp.condition = $('select[name=condition]').val();
+           */
+        temp.description = $('#description').val();
+        console.log(temp);
+
+        //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+        e.preventDefault();
+        console.log("adding item");
+        Meteor.call('addProduct', temp, function(e,r) {
+            console.log("something");
+            if(e) {
+                alert(e);
+            }else{
+                console.log("done");
+                Session.set('tempProdForm',null);
+                Router.go('/post/' + r);
+            }
+        });
+    });
         
     });
 }
