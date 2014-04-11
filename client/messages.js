@@ -80,6 +80,12 @@ Template.pageNego.events({
     }
 });
 
+Template.message.img = function() {
+//    return $.getJSON("https://graph.facebook.com/" + this.fromId + "?fields=picture.width(100).height(100)").responseJSON.picture.data.url;
+      var fbId = Meteor.users.findOne({_id: "Ztg5NuWnTrzsBM8Qu"}).services.facebook.id;
+      return $.getJSON("https://graph.facebook.com/" + fbId + "?fields=picture.width(100).height(100)").responseJSON;
+}
+
 Template.message.text = function() {
     return new Handlebars.SafeString(this.text);
 }
