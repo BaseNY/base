@@ -8,7 +8,7 @@ div#message, div[contenteditable], .post-message {
     font-size:1.2em;
     padding:10px; 
     resize:none;
-        border:1px solid rgb(200,200,200);
+    border:1px solid rgb(200,200,200);
 }
 
 .pageItemInbox {
@@ -35,10 +35,10 @@ div#message, div[contenteditable], .post-message {
         }
     }
 }
-    .left-sidebar {
-        @include span-columns(2);
-        @include boxes-default(1px);
-    }
+.left-sidebar {
+    @include span-columns(2);
+    @include boxes-default(1px);
+}
 
 .pageNego {
     @include outer-container;
@@ -61,5 +61,14 @@ div#message, div[contenteditable], .post-message {
     }
     .left-sidebar, .thumbnail, .message, .reply-box {
         @include boxes-default(1px);
+    }
+}
+
+.message-box{
+    overflow:auto;
+    .button {
+        padding: .5em 1em .5em 1em;
+        float:right;
+        border-radius:0px 0px 15px 0px;
     }
 }

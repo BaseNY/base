@@ -1,6 +1,6 @@
 .pageFeeds {
     @include outer-container;
-    width:1000px;
+    width:1200px;
     .post {
         h1 {
             font-weight:normal;
@@ -13,7 +13,7 @@
         span {
             font-size:1.5em;
         }
-        width:50%;
+        width:33%;
         padding:16px;
         display:inline-block;
         min-width:300px;
