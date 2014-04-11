@@ -1305,6 +1305,7 @@ div#message, div[contenteditable], .post-message {
     width: 50%;
     padding: 16px;
     display: inline-block;
+    min-width: 300px;
     height: auto; }
     /* line 5, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post h1 {
@@ -1317,7 +1318,7 @@ div#message, div[contenteditable], .post-message {
     /* line 13, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post span {
       font-size: 1.5em; }
-    /* line 20, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 21, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .post-inner {
       padding: 20px;
       background-color: white;
