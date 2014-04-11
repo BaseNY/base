@@ -2,13 +2,48 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "iron-router": {}
+      "iron-router": {},
+      "fast-render": {},
+      "nprogress": {},
+      "bourbon-scss": {},
+      "neat-scss": {},
+      "npm": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.1",
-        "commit": "4e1ee0581d68bff422a915dacb0bd30eae10fe08"
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.1.23",
+        "commit": "933b9d8992f1c7004f9993b1b15dffe3bac672f3"
+      },
+      "nprogress": {
+        "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
+        "tag": "v0.0.4",
+        "commit": "8333206b751a24fac1fbd1b03fa37621bcefe50c"
+      },
+      "bourbon-scss": {
+        "git": "https://github.com/stevezhu/meteor-bourbon.git",
+        "tag": "v3.1.8.4",
+        "commit": "9c36e7bbc40ab7b8930a45a6bf0b41b0d582eaf1"
+      },
+      "neat-scss": {
+        "git": "https://github.com/stevezhu/meteor-neat.git",
+        "tag": "v1.5.0.7",
+        "commit": "1a3c439a121c1017b50b10d75657837f6cd8298d"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       }
     }
   }

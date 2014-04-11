@@ -59,9 +59,47 @@
 	}
 }
 
+.steps {
+	margin:0 auto;
+	tbody {
+		tr {
+			td {
+				padding-right:50px;
+				padding-left: 50px;
+			}
+		}
+	}
+	margin-top:10px;
+	margin-bottom:-25px;
+}
+
+.step-circle {
+	width:100px;
+	height:100px;
+        line-height:80px;
+	border:10px solid lightgrey;
+	border-radius:100px;
+	display:inline-block;
+	background-color:white;
+        color:black;
+        text-decoration:none;
+	&.active {
+		border-color:white;
+	}
+	&.complete {
+		border-color:#3F9FE0;
+	}
+	h1 {
+		text-align:center;
+		font-size:4em;
+		margin:0;
+	}
+}
+
 .page-add-product {
 	margin-bottom: 100px;
-	overflow-x: hidden;
+	height:auto;
+	overflow:auto;
 	width: 60%;
 	input, select,option, div[contenteditable] {
 		display: inline-block;
@@ -74,6 +112,10 @@
 			outline-color: #3F9FE0;
 		}
 	}
+        input[type=radio] {
+            height:auto;
+            outline:0px;
+        }
 	input[type=text] {
 		margin-bottom: 10px;
 		width: calc(78% - 28px);
@@ -85,8 +127,10 @@
 	}
 	select,option {
 		width: 20%;
+                background-color:white;
 	}
 	div[contenteditable] {
+            background-color:white;
 		display: block;
 		overflow-y: scroll;
 		width: calc(100% - $i-pad * 2) ;
@@ -127,12 +171,29 @@
 			margin: 0 auto;
 		}
 	}
+	.button {
+		display:inline-block;
+		
+		&.left {
+			float:left;
+		}
+		&.right {
+			float:right;
+		}
+	}
 }
 
 fieldset.show , div.show {
 	display: block;
 }
 
-.no-show {
-	display: none;
+.highlight-radio {
+    display:none;
+}
+
+.highlight-label {
+    color:#33B5E5; 
+    &.checked {
+        text-decoration:underline;
+    }
 }

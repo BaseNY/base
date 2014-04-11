@@ -1,0 +1,95 @@
+<template name="messenger">
+  <div class="product-body">
+    <div class="product-info">
+      <h1>Messenger</h1>
+
+      <table class="messenger-table">
+	<tbody>
+	  {{> messengerItem}}
+	  {{> messengerItem}}
+	  {{> messengerItem}}
+	  {{> messengerItem}}
+	</tbody>
+      </table>
+
+    </div>
+  </div>
+  {{> messengerJS}}
+</template>
+
+
+<template name="messengerItem">
+  <tr class="mes-sell">
+    <td class="mes-item" rowspan="9">
+      SELL<br /><br />
+      <img class="product-img" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-prn2/1472912_392496540884825_988596881_n.jpg" />
+    </td>
+    <td colspan="4" class="mes-item-name"><a href="#">Keshara's Sneakers</a></td>
+  </tr>
+
+  {{> messengerOffer}}
+  {{> messengerOffer}}
+  {{> messengerOffer}}
+  {{> messengerOffer}}
+  <tr class="mes-spacer"><td colspan="5">&nbsp;</td></tr>
+</template>
+
+<template name="messengerOffer">
+  <tr class="mes-sell">
+    <td class="mes-offer mes-offer-price">
+      $50
+    </td>
+    <td class="mes-offer mes-offer-user">
+      <a href="#">Andrew</a>
+    </td>
+    <td class="mes-offer mes-messages">
+      <a href="javascript:void(0)"><strong>2</strong> Messages</a>
+    </td>
+    <td class="mes-offer mes-offer-ops">
+      <button class="box-green">Accept</button>
+      <button class="box-red">Reject</button>
+    </td>
+  </tr>
+
+  <tr class="mes-msg">
+    <td colspan="4">
+      <table class="msgs"> <!--style="display:none;"-->
+	<tbody>
+	  <tr class="msgs-respond">
+	    <td colspan="4">
+	      <form>
+		Reply: 
+		<input style="width:50%" maxlength="255" name="message" />
+		<input type="submit" value="Send" name="submit" />
+	      </form>
+	    </td>
+	  </tr>
+	  {{> messengerMessage}}
+	  {{> messengerMessage}}
+	  {{> messengerMessage}}
+	</tbody>
+      </table>
+    </td>
+  </tr>
+</template>
+
+<template name="messengerMessage">
+  <tr class="msgs-tr">
+    <td class="msgs-left">
+      <div class="msgs-name">Andrew</div>
+      <div class="msgs-date">2 minutes ago</div>
+    </td>
+    <td class="msgs-right">Some text here blah blah?</td>
+  </tr>
+</template>
+  
+
+
+<!-- Why isn't this inserting the javascript into the page correctly?? -->
+<template name="messengerJS">
+  <script type="text/javascript">
+    $("td.mes-messages a").click(function(){
+      $(this).parent().parent().next().children().children().slideToggle("slow");
+    });
+  </script>
+</template>

@@ -3,11 +3,26 @@
     {{> modalOverlay}}
 <div id="modal" role="dialog">
     <div class="modal-inner">
+        {{> modalBid}}
 	{{> modalSignup}}
     </div>
 </div>
 </div>
 
+</template>
+
+<template name="modalBid">
+<div id='modal-bid' style = "display:none">
+    <h2>Make your Offer</h2>
+    <!--
+    <input id="offer" type="text" placeholder="Offer"/> 
+    <input id="location" type="text" placeholder="Location"/> 
+    -->
+    <textarea id="message" placeholder="Send a message"></textarea>
+
+    <div id="sendBid" class="button">Send</div>
+    <!--code for this is in bid.js-->
+</div>
 </template>
 
 <template name="modalInner">
@@ -34,10 +49,10 @@
 </template>
 
 <template name="modalSignup">
-<div class="modal-signup">
-    <h1>Join Our Network</h1>
-    <div id="fb-login">
-    </div>
+<div id="modal-signup" style="display:none">
+    <h1>Log in with your Facebook account!</h1>
+    <div id="fb-login"><i class="fa fa-facebook-square"></i>Login with Facebook</div>
+    <!--
     <h3>or</h3>
     <form>
     First Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name:<br />
@@ -53,5 +68,6 @@
 </form>
     <input class="button" type="submit" value="Sign Up!"/>
     Already a member? <a>Log in!</a>
+    -->
 </div>
 </template>

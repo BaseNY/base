@@ -7,6 +7,10 @@
 	*behavior: url("/scripts/boxsizing.htc");
 	padding: 0;
 	margin: 0;
+	@include box-sizing(border-box);
+	&:focus {
+		outline: none;
+	}
 }
 
 a {
@@ -16,6 +20,11 @@ a {
 
 li {
 	list-style: none;
+}
+
+p {
+    line-height:1.5em;
+    font-size:1.2em;
 }
 
 #fbLogin {
@@ -54,6 +63,12 @@ input[type="url"] {
 	}
 }
 
+.search-group {
+    input {
+        width:90%;
+    }
+}
+
 .button-group {
 	display: inline-block;
 	border: 1px solid $input-border-color;
@@ -75,4 +90,9 @@ input[type="url"] {
 	border-radius: 2px;
 	background-color: rgba(255, 255, 255, 0.6);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+body {
+	background: #F7F7F7;
+	font-family: 'Source Sans Pro', sans-serif;
 }

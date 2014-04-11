@@ -4,11 +4,16 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
-preserve-inputs
 iron-router
-appcache
 accounts-ui
 accounts-password
 accounts-facebook
+jquery
+fast-render
+nprogress
+bourbon-scss
+neat-scss
+autopublish
+blaze-layout
+npm

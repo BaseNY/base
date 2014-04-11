@@ -1,4 +1,4 @@
-.logo {
+/*.logo {
 	margin: 50px auto;
 	color: white;
 	text-align: center;
@@ -9,23 +9,46 @@
 
 .page-home {
 	margin: 50px auto 100px;
-	min-width: 400px;
-	max-width: 600px;
-	max-height: 600px;
+	min-width: 600px;
 	width: 60%;
 	input {
 		position: relative;
 		display: inline-block;
 		margin: 0;
 		padding: 0.8em 1em;
-		width: 100%;
+		width: 80%;
 		height: auto;
-		font-size: 1.2em;
-	}
-	.button-group {
-		width: 100%;
+		font-size: 1.5em;
 	}
 	.button {
-		width: (100%) / 3;
+            width:20%;
+            display:inline-block;
+	}
+}
+*/
+
+.body {
+	.content {
+		max-width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+		padding-bottom: 100px;
+		.title {
+			text-align: center;
+			padding: 0.1em;
+			font-size: 200px;
+			font-weight: 600;
+			-webkit-text-fill-color: white;
+			-webkit-text-stroke: 2px #50A8E7;
+		}
+		input {
+			width: 70%;
+			font-size: 50px;
+			background: white;
+			border: none;
+			padding: 0.1em 0.4em;
+			box-shadow: $input-box-shadow;
+			color: #383838;
+		}
 	}
 }

@@ -1,9 +1,9 @@
-@import "bourbon";
-@import "neat";
+@import "bourbon-scss/bourbon";
+@import "neat-scss/neat";
 
 @import "normalize";
 
 @import "foundation/settings";
-@import "foundation";
+//@import "foundation";
 
 //@import "sticky-footer";
