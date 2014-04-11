@@ -1283,6 +1283,58 @@ div#message {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     margin-bottom: 1px; }
 
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/feeds */
+.pageFeeds {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .pageFeeds:before, .pageFeeds:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .pageFeeds:after {
+    clear: both; }
+  /* line 4, /home/jasperlu/base/client/stylesheets/pages/feeds */
+  .pageFeeds .post-container {
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .pageFeeds .post-container:before, .pageFeeds .post-container:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .pageFeeds .post-container:after {
+      clear: both; }
+    /* line 6, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post-container .post {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 40.29137%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px; }
+      /* line 7, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post-container .post h1 {
+        font-weight: normal;
+        margin-top: 0px;
+        margin-bottom: 0px; }
+      /* line 12, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post-container .post img {
+        width: 400px; }
+      /* line 15, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post-container .post span {
+        font-size: 1.5em; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .pageFeeds .post-container .post:last-child {
+        margin-right: 0; }
+
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {
   margin: 50px auto 100px;
