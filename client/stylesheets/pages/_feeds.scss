@@ -1,0 +1,22 @@
+.pageFeeds {
+    @include outer-container;
+    width:1000px;
+    .post-container {
+    @include outer-container;
+    .post {
+        h1 {
+            font-weight:normal;
+            margin-top:0px;
+            margin-bottom:0px;
+        }
+        img {
+            width:400px;
+        }
+        span {
+            font-size:1.5em;
+        }
+        @include span-columns(5);
+        @include boxes-default(10px);
+    }
+}
+}

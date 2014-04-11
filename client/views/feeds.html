@@ -1,0 +1,31 @@
+<template name="ifEven">
+testing code to try to get staggered/ 2 posts per row
+{{#if isEven value}}
+{{> UI.contentBlock}}
+{{else}}
+{{> UI.elseBlock}}
+{{/if}}
+</template>
+
+<template name = "pageFeeds">
+<div class = "pageFeeds">
+    {{#each posts}}
+    <div class="post-container"> 
+    {{> feedPost}}
+</div>
+
+    {{/each}}
+</div>
+</template>
+
+<template name = "feedPost">
+<div class = "post">
+    <h1>{{item.title}}</h1>
+    <hr />
+    <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+    <br />
+    <span class = "description"> {{item.description}}</span>
+    <img src = "{{img}}" />
+
+</div>
+</template>
