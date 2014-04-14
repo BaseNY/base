@@ -1,3 +1,19 @@
 <template name="search">
-	{{items}}
+	<section class="items-container">
+		<div class="items">
+			{{#each items}}
+				{{> item}}
+			{{/each}}
+		</div>
+	</section>
+</template>
+
+<template name="item">
+	<div class="item">
+		<img src={{image}} alt={{name}}>
+		<div class="item-desc">
+			<div class="name">{{name}}</div>
+			<div class="price">{{price}}</div>
+		</div>
+	</div>
 </template>
