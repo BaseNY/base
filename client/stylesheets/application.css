@@ -1393,7 +1393,7 @@ div#message, div[contenteditable], .post-message {
     float: right;
     border-radius: 0px 0px 15px 0px; }
   /* line 39, /home/jasperlu/base/client/stylesheets/pages/post */
-  .postBox .sell-container, .postBox .buy-container {
+  .postBox #sell-container, .postBox #buy-container {
     padding-top: 10px;
     display: none; }
 
