@@ -17,6 +17,14 @@ if (Meteor.isServer) {
         FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
     return temp;
         },
+    addRequest: function(p) {
+        p.sellerId = this.userId;
+        p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
+        p.time = new Date();
+        var temp = Items.insert(p);
+        for(x in p.feeds) 
+            FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
+    },
     addBid: function(p) {
         console.log('called' + p);
         p.fromId = Meteor.userId();
