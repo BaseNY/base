@@ -24,7 +24,9 @@ testing code to try to get staggered/ 2 posts per row
         <br />
         <span class = "description"> {{item.description}}</span>
         <br />
+        {{#if isSellPost}}
         <img src = "{{img}}" />
+        {{/if}}
         {{> bidding}}
     </div>
 </div>
