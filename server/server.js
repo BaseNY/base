@@ -1,30 +1,31 @@
-if (Meteor.isServer) {
-    if(Feeds.findOne() == undefined) {
-        Feeds.insert({name:'Electronics'});
-        Feeds.insert({name:'Clothing'});
-        Feeds.insert({name:'Sneakers'});
-    }
-    Meteor.methods({
-        addProduct: function(p) {
-            console.log('called');
-            p.sellerId = this.userId;
-            p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
-            p.time = new Date();
-            var temp = Items.insert(p);
-            console.log(temp);
-            //linker. pushes the id of the item, and the id of the category
-            for(x in p.feeds)
-        FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
-    return temp;
-        },
-    addRequest: function(p) {
+s3 = new AWS.S3();
+if(Feeds.findOne() == undefined) {
+    Feeds.insert({name:'Electronics'});
+    Feeds.insert({name:'Clothing'});
+    Feeds.insert({name:'Sneakers'});
+}
+Meteor.methods({
+    addProduct: function(p) {
+        console.log('called');
         p.sellerId = this.userId;
         p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
         p.time = new Date();
+        p.imageUrl = s3ImageUpload(this.userId, p.image);
         var temp = Items.insert(p);
-        for(x in p.feeds) 
-            FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
-    },
+        console.log(temp);
+        //linker. pushes the id of the item, and the id of the category
+        for(x in p.feeds)
+    FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
+return temp;
+},
+addRequest: function(p) {
+    p.sellerId = this.userId;
+    p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
+    p.time = new Date();
+    var temp = Items.insert(p);
+    for(x in p.feeds) 
+        FtoI.insert({'feedId': p.feeds[x], 'itemId': temp});
+},
     addBid: function(p) {
         console.log('called' + p);
         p.fromId = Meteor.userId();
@@ -64,4 +65,3 @@ if (Meteor.isServer) {
         Offers.remove({}); 
     },
     })
-}

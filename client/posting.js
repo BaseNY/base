@@ -36,6 +36,7 @@ Template.postBox.rendered = function() {
                temp.condition = $('select[name=condition]').val();
                */
             temp.description = $('#sell-description').val();
+            temp.image = document.getElementById('image').files[0];
             console.log(temp);
 
             //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
