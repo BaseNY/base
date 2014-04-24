@@ -1,4 +1,3 @@
-s3 = new AWS.S3();
 if(Feeds.findOne() == undefined) {
     Feeds.insert({name:'Electronics'});
     Feeds.insert({name:'Clothing'});
@@ -17,7 +16,8 @@ Meteor.methods({
             type: 'item',
             body: {
                 name: p.title,
-                desc: p.description
+                desc: p.description,
+                image: p.imageUrl
             }
         });
         console.log(temp);
