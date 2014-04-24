@@ -72,4 +72,7 @@ addRequest: function(p) {
         Messages.remove({});
         Offers.remove({}); 
     },
+    resetFeeds: function() {
+        FtoI.remove({});
+    }
     })

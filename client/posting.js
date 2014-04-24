@@ -47,21 +47,24 @@ Template.sellPost.rendered = function() {
                temp.condition = $('select[name=condition]').val();
                */
             temp.description = $('#sell-description').val();
-            temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
+            //temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
             //temp.image = document.getElementById('image').files[0];
             console.log(temp);
 
             //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
             e.preventDefault();
             console.log("adding item");
-            Meteor.call('addProduct', temp, function(e,r) {
-                console.log("something");
-                if(e) {
-                    alert(e);
-                }else{
-                    console.log("done");
-                    Router.go('/post/' + r);
-                }
+
+            s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0],function(temp) {
+                Meteor.call('addProduct', temp, function(e,r) {
+                    console.log("something");
+                    if(e) {
+                        alert(e);
+                    }else{
+                        console.log("done");
+                        Router.go('/post/' + r);
+                    }
+                });
             });
         });
     });
