@@ -1327,11 +1327,19 @@ div#message, div[contenteditable], .post-message {
       margin-bottom: 0px; }
     /* line 10, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post img {
-      width: 100%; }
-    /* line 13, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      width: 100%;
+      overflow: hidden; }
+    /* line 14, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post span {
       font-size: 1.5em; }
-    /* line 21, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 17, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post .image {
+      height: 300px;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%; }
+    /* line 29, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .post-inner {
       padding: 20px;
       background-color: white;
