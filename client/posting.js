@@ -2,7 +2,11 @@ Template.pageProduct.description = function() {
     return new Handlebars.SafeString(Router.current().data().item.description);
 }
 
-Template.postBox.feeds = function() {
+Template.sellPost.feeds = function() {
+    return Feeds.find().fetch();
+}
+
+Template.buyPost.feeds = function() {
     return Feeds.find().fetch();
 }
 
@@ -43,7 +47,7 @@ Template.sellPost.rendered = function() {
                temp.condition = $('select[name=condition]').val();
                */
             temp.description = $('#sell-description').val();
-            temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image')).files[0];
+            temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
             //temp.image = document.getElementById('image').files[0];
             console.log(temp);
 
