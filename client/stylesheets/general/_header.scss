@@ -108,9 +108,20 @@ header {
 				width: 100%;
 			}
 		}
-		.right {
-			float: right;
-			height: 100%;
+		.user-wrapper {
+                        display:inline-block;
+                        h2{
+                            vertical-align:middle;
+                            display:inline-block;
+			color: #50a8e7;
+                        font-weight:normal;
+			font-size: 1.4em;
+                        margin-right:16px;
+                    }
+                    img {
+                        vertical-align:middle;
+                        height:2em;
+                    }
 		}
 		.btn-login {
 			background: #50a8e7;
@@ -123,6 +134,7 @@ header {
 			line-height: 100%;
 		}
 		.link {
+                    vertical-align:middle;
 			margin-right: 0.8em;
 			font-size: 1.4em;
 		}
