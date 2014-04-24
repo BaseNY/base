@@ -67,8 +67,9 @@ Template.feedPost.events({
             text.trimLeft(' ');
             if(text != '') {
                 text.trimRight(' ');
-                Meteor.call('addComment', text, this.itemId, function() {
-alert('comment posted');
+                Meteor.call('addComment', text, this.itemId, function(e,r) {
+                    if(e)
+                        alert(e);
                 });
             }
             $('#commentContent').empty();
