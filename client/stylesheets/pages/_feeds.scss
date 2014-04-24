@@ -35,11 +35,20 @@
             font-size:16px;
             background-color:rgb(235,235,235);
             padding:4px;
-            .comment {
+            .commentSmallContainer {
+                @include outer-container;
+                .left {
+                   @include span-columns(1);
+                }
+                .right {
+                    @include span-columns(11);
+                }
+            }
+            .commentForm {
                 border-color:rgb(205,205,205);
                 height:auto;
                 background-color:white;
-            font-size:16px;
+                font-size:16px;
                 .placeholder{
                     color:rgb(205,205,205);
                     font-size:1em;
