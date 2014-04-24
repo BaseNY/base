@@ -7,6 +7,8 @@ Template.postBox.feeds = function() {
 }
 
 Template.postBox.rendered = function() {
+    //init filepicker input type
+    //js to make the pretty radio buttons
     $(document).ready(function() {
         $('.highlight-radio[name=type]').change(function() {
             $('.rad').removeClass('checked');
@@ -24,6 +26,11 @@ Template.postBox.rendered = function() {
             $('.cat').removeClass('checked');
             $('.highlight-label[for=' + this.id + ']').addClass('checked');
         });
+    });
+}
+
+Template.sellPost.rendered = function() {
+    $(document).ready(function() {
         $('#sell-post').click(function(e) {
             e.preventDefault(); 
             temp = {};
@@ -36,7 +43,8 @@ Template.postBox.rendered = function() {
                temp.condition = $('select[name=condition]').val();
                */
             temp.description = $('#sell-description').val();
-            temp.image = document.getElementById('image').files[0];
+            temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image')).files[0];
+            //temp.image = document.getElementById('image').files[0];
             console.log(temp);
 
             //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
@@ -52,32 +60,37 @@ Template.postBox.rendered = function() {
                 }
             });
         });
-    $('#buy-post').click(function(e) {
-        e.preventDefault(); 
-        temp = {};
-        temp.feeds = [];
-        temp.feeds.push($('input[name=feed]:checked').val());
-        /*
-           temp.so = $('input[name=so]').val();
-           temp.bin = $('input[name=bin]').val();
-           temp.condition = $('select[name=condition]').val();
-           */
-        temp.description = $('#buy-description').val();
-        temp.buy = true;
-        console.log(temp);
-
-        //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
-        e.preventDefault();
-        console.log("adding item");
-        Meteor.call('addRequest', temp, function(e,r) {
-            console.log("something");
-            if(e) {
-                alert(e);
-            }else{
-                console.log("done");
-            }
-        });
     });
+}
+
+Template.buyPost.rendered = function() {
+    $(document).ready(function() {
+        $('#buy-post').click(function(e) {
+            e.preventDefault(); 
+            temp = {};
+            temp.feeds = [];
+            temp.feeds.push($('input[name=feed]:checked').val());
+            /*
+               temp.so = $('input[name=so]').val();
+               temp.bin = $('input[name=bin]').val();
+               temp.condition = $('select[name=condition]').val();
+               */
+            temp.description = $('#buy-description').val();
+            temp.buy = true;
+            console.log(temp);
+
+            //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+            e.preventDefault();
+            console.log("adding item");
+            Meteor.call('addRequest', temp, function(e,r) {
+                console.log("something");
+                if(e) {
+                    alert(e);
+                }else{
+                    console.log("done");
+                }
+            });
+        });
 
     });
 }

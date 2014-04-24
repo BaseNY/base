@@ -5,8 +5,6 @@
     "nprogress": {},
     "bourbon-scss": {},
     "neat-scss": {},
-    "npm": {},
-    "aws-sdk": {},
-    "aws-sdk-npm": {}
+    "npm": {}
   }
 }

@@ -36,6 +36,25 @@
     <header>
     What would you like to do? <input id = "sell-radio" class = "highlight-radio " type = "radio" name = "type" value = "sell"><label for = "sell-radio" class = "highlight-label rad">Sell</label> | <input id = "buy-radio" class = "highlight-radio " type = "radio" name = "type" value = "buy"><label for = "buy-radio" class = "highlight-label rad">Buy</label>
     </header>
+    {{> buyPost}}
+    {{> sellPost}}
+
+</div>
+</template>
+
+<template name="buyPost">
+    <div id="buy-container" class="container">
+        Pick a feed to publish to:
+        {{#each feeds}}
+        <input id="feed-{{this._id}}" class = "highlight-radio cat" type="radio" name="feed" value={{this._id}}><label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
+        {{/each}}
+        <br />
+        <textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
+        <div id="buy-post" class="button right">Post</div>
+    </div>
+</template>
+
+<template name="sellPost">
     <div id="sell-container" class="container">
         Pick a feed to publish to:
         {{#each feeds}}
@@ -47,16 +66,6 @@
         <input id = "image" type = "file"/>
         <div id="sell-post" class="button right">Post</div>
     </div>
-    <div id="buy-container" class="container">
-        Pick a feed to publish to:
-        {{#each feeds}}
-        <input id="feed-{{this._id}}" class = "highlight-radio cat" type="radio" name="feed" value={{this._id}}><label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
-        {{/each}}
-        <br />
-        <textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
-        <div id="buy-post" class="button right">Post</div>
-    </div>
-</div>
 </template>
 
 <template name="addTitle">

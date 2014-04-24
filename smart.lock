@@ -7,9 +7,7 @@
       "nprogress": {},
       "bourbon-scss": {},
       "neat-scss": {},
-      "npm": {},
-      "aws-sdk": {},
-      "aws-sdk-npm": {}
+      "npm": {}
     },
     "packages": {
       "iron-router": {
@@ -42,25 +40,10 @@
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
       },
-      "aws-sdk": {
-        "git": "https://github.com/peerlibrary/meteor-aws-sdk.git",
-        "tag": "v1.5.1.1",
-        "commit": "63efa4ebbe9986bd875f69d5fdf3248c5c44159e"
-      },
-      "aws-sdk-npm": {
-        "git": "https://github.com/nate-strauser/meteor-aws-sdk.git",
-        "tag": "v1.5.0",
-        "commit": "5664b9de919417c5f67eadabdabf0b3325a87e5e"
-      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.4",
         "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
-      },
-      "blocking": {
-        "git": "https://github.com/peerlibrary/meteor-blocking.git",
-        "tag": "v0.4.0",
-        "commit": "e25a0be72e771b317b26d2bb5758c983bdcef23c"
       }
     }
   }

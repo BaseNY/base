@@ -10,8 +10,16 @@ Meteor.methods({
         p.sellerId = this.userId;
         p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
         p.time = new Date();
-        p.imageUrl = s3ImageUpload(this.userId, p.image);
+        //p.imageUrl = s3ImageUpload(this.userId, p.image);
         var temp = Items.insert(p);
+        es.create({
+            index: 'base',
+            type: 'item',
+            body: {
+                name: p.title,
+                desc: p.description
+            }
+        });
         console.log(temp);
         //linker. pushes the id of the item, and the id of the category
         for(x in p.feeds)
