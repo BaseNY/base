@@ -62,6 +62,9 @@ alert('comment posted');
             }
             $('#commentContent').empty();
         }
+    },
+    'click .fa-envelope' : function() {
+        $('.msgContainer').toggleClass('noshow'); 
     }
 });
 

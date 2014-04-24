@@ -16,29 +16,40 @@ testing code to try to get staggered/ 2 posts per row
 <template name = "feedPost">
 <div class = "post">
     <div class = "post-inner">
-        <h1>{{item.title}}</h1>
+        <h1>{{item.title}}<i class="fa fa-envelope"></i></h1>
         <hr />
         <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+        <div class = "msgContainer noshow">
+        {{> bidding}}
+    </div>
         <br />
-        <span class = "description"> {{item.description}}</span>
         <br />
         {{#if isSellPost}}
         <div class = "image" style = "background-image:url('{{item.imageUrl}}')"></div>
         {{/if}}
+        <span class = "description"> {{item.description}}</span>
         <div class = "commentContainer">
             <ul>
-            {{#each comments}}
+                {{#each comments}}
                 <li>
                 {{> comment}}
                 </li>
-            {{/each}}
+                {{/each}}
             </ul>
-            <div contenteditable="true" class = "comment" id="commentContent"><span class="placeholder">Write a comment...</span></div>
+            <div contenteditable="true" class = "commentForm" id="commentContent"><span class="placeholder">Write a comment...</span></div>
         </div>
     </div>
 </div>
 </template>
 
 <template name = "comment">
-<img src = {{imgUrl}}/><a href="/profile/{{this[0]}}"><b>{{name}}</b></a> {{this[1]}}
+<div class = "commentSmallContainer">
+    <div class="left">
+
+        <img src = {{imgUrl}}/>
+    </div>
+    <div class="right">
+        <a href="/profile/{{id}}"><b>{{name}}</b></a> {{text}}
+    </div>
+</div>
 </template>
