@@ -25,13 +25,20 @@ testing code to try to get staggered/ 2 posts per row
         {{#if isSellPost}}
         <div class = "image" style = "background-image:url('{{item.imageUrl}}')"></div>
         {{/if}}
-        {{> commentBox}}
+        <div class = "commentContainer">
+            <ul>
+            {{#each comments}}
+                <li>
+                {{> comment}}
+                </li>
+            {{/each}}
+            </ul>
+            <div contenteditable="true" class = "comment" id="commentContent"><span class="placeholder">Write a comment...</span></div>
+        </div>
     </div>
 </div>
 </template>
 
-<template name = "commentBox">
-<div class = "commentContainer">
-<div contenteditable="true" class = "comment" id="commentContent"><span class="placeholder">Write a comment...</span></div>
-</div>
+<template name = "comment">
+<a href="/profile/{{this[0]}}"><b>{{name}}</b></a> {{this[1]}}
 </template>
