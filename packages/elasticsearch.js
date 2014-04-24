@@ -1,0 +1,1 @@
+elasticsearch = Meteor.require('elasticsearch');
