@@ -27,11 +27,11 @@ Template.feedPost.comments = function() {
 
 Template.feedPost.helpers({
     'imgUrl' : function() {
-        i = Items.findOne({_id: this.itemId});
-        u = Meteor.users.findOne({_id: i.sellerId}).services.facebook;
+        var i = Items.findOne({_id: this.itemId});
+        var u = Meteor.users.findOne({_id: i.sellerId}).services.facebook;
         url = u.img;
         if(url == null)
-            url = 'http://graph.facebook.com/' + u.id + '/picture';
+            url = 'http://graph.facebook.com/' + u.id + '/picture?width=100&height=100';
         return url;
     }
 });

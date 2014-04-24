@@ -561,10 +561,21 @@ header {
         color: #50A8E7;
         width: 100%; }
     /* line 111, /home/jasperlu/base/client/stylesheets/general/header */
-    header > .content .right {
-      float: right;
-      height: 100%; }
-    /* line 115, /home/jasperlu/base/client/stylesheets/general/header */
+    header > .content .user-wrapper {
+      display: inline-block; }
+      /* line 113, /home/jasperlu/base/client/stylesheets/general/header */
+      header > .content .user-wrapper h2 {
+        vertical-align: middle;
+        display: inline-block;
+        color: #50a8e7;
+        font-weight: normal;
+        font-size: 1.4em;
+        margin-right: 16px; }
+      /* line 121, /home/jasperlu/base/client/stylesheets/general/header */
+      header > .content .user-wrapper img {
+        vertical-align: middle;
+        height: 2em; }
+    /* line 126, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .btn-login {
       background: #50a8e7;
       color: white;
@@ -574,8 +585,9 @@ header {
       font-size: 20px;
       height: 100%;
       line-height: 100%; }
-    /* line 125, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 136, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .link {
+      vertical-align: middle;
       margin-right: 0.8em;
       font-size: 1.4em; }
 

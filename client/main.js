@@ -1,8 +1,12 @@
-if (Meteor.isClient) {
-    Session.set('postState',1);
-    //Move this stuff over to routing to make it easier
-}
-
+Template.header.helpers({
+    'imgUrl' : function() {
+        var u = Meteor.user().services.facebook;
+        url = u.img;
+        if(url == null)
+            url = 'http://graph.facebook.com/' + u.id + '/picture';
+        return url;
+    }
+});
 /*
 Meteor.startup(function() {
 	NProgress.start();
