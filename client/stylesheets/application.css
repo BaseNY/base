@@ -1159,7 +1159,7 @@ div#message, div[contenteditable], .post-message, .comment {
   white-space: pre-wrap;
   word-wrap: break-word;
   -webkit-writing-mode: horizontal-tb;
-  font-size: 1.5em; }
+  font-size: 1.2em; }
 
 /* line 16, /home/jasperlu/base/client/stylesheets/pages/messages */
 .pageItemInbox {
@@ -1507,8 +1507,11 @@ div#message, div[contenteditable], .post-message, .comment {
   .postBox #sell-container, .postBox #buy-container {
     padding-top: 10px;
     display: none; }
+  /* line 44, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox textarea {
+    padding: 5px 10px 5px 10px; }
 
-/* line 46, /home/jasperlu/base/client/stylesheets/pages/post */
+/* line 49, /home/jasperlu/base/client/stylesheets/pages/post */
 .post-message {
   overflow: auto; }
 

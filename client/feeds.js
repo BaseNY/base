@@ -60,10 +60,12 @@ Template.feedPost.rendered = function() {
 }
 
 Template.feedPost.events({
-    'keypress #commentContent' : function(e) {
+    'keypress .commentContent' : function(e) {
         if(e.charCode == 13) {
         e.preventDefault();
-            text = $('#commentContent').html();
+        console.log(e);
+        text = $(e.target).html();
+            
             text.trimLeft(' ');
             if(text != '') {
                 text.trimRight(' ');
@@ -72,7 +74,7 @@ Template.feedPost.events({
                         alert(e);
                 });
             }
-            $('#commentContent').empty();
+            $(e.target).empty();
         }
     },
     'click .fa-envelope' : function() {
