@@ -25,6 +25,17 @@ Template.feedPost.comments = function() {
     return Items.findOne({_id: this.itemId}).comments;
 }
 
+Template.feedPost.helpers({
+    'imgUrl' : function() {
+        i = Items.findOne({_id: this.itemId});
+        u = Meteor.users.findOne({_id: i.sellerId}).services.facebook;
+        url = u.img;
+        if(url == null)
+            url = 'http://graph.facebook.com/' + u.id + '/picture';
+        return url;
+    }
+});
+
 Template.feedPost.rendered = function() {
     $('div').on('activate', function() {
         $(this).empty();
