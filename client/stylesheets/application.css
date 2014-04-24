@@ -1355,13 +1355,44 @@ div#message, div[contenteditable], .post-message, .comment {
       background-color: #ebebeb;
       padding: 4px; }
       /* line 38, /home/jasperlu/base/client/stylesheets/pages/feeds */
-      .pageFeeds .post .commentContainer .comment {
+      .pageFeeds .post .commentContainer .commentSmallContainer {
+        *zoom: 1;
+        max-width: em(3000);
+        margin-left: auto;
+        margin-right: auto; }
+        /* line 18, ../packages/bourbon-scss/addons/clearfix */
+        .pageFeeds .post .commentContainer .commentSmallContainer:before, .pageFeeds .post .commentContainer .commentSmallContainer:after {
+          content: " ";
+          display: table; }
+        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        .pageFeeds .post .commentContainer .commentSmallContainer:after {
+          clear: both; }
+        /* line 40, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .commentSmallContainer .left {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 6.17215%; }
+          /* line 40, ../packages/neat-scss/grid/span-columns */
+          .pageFeeds .post .commentContainer .commentSmallContainer .left:last-child {
+            margin-right: 0; }
+        /* line 43, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .commentSmallContainer .right {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 91.4702%; }
+          /* line 40, ../packages/neat-scss/grid/span-columns */
+          .pageFeeds .post .commentContainer .commentSmallContainer .right:last-child {
+            margin-right: 0; }
+      /* line 47, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .commentContainer .commentForm {
         border-color: #cdcdcd;
         height: auto;
         background-color: white;
         font-size: 16px; }
-        /* line 43, /home/jasperlu/base/client/stylesheets/pages/feeds */
-        .pageFeeds .post .commentContainer .comment .placeholder {
+        /* line 52, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .commentForm .placeholder {
           color: #cdcdcd;
           font-size: 1em; }
 

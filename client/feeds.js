@@ -69,6 +69,12 @@ Template.comment.helpers({
     'name' : function() {
         return Meteor.users.findOne({_id: this[0]}).profile.name;
     },
+    'id' : function() {
+        return this[0];
+    },
+    'text' : function() {
+        return this[1];
+    },
     'imgUrl' : function() {
         u = Meteor.users.findOne({_id: this[0]}).services.facebook;
         url = u.img;
