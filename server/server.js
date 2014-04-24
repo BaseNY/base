@@ -61,6 +61,15 @@ addRequest: function(p) {
            */
         return Messages.insert(p);
     },
+    addComment: function(t, id) {
+        comments = Items.findOne({_id: id}).comments;
+        if(comments == undefined)
+            comments = [];
+        toAdd = [this.userId, t];
+        comments.push(toAdd);
+        Items.update({_id:id},{$set:{comments: comments}});
+        return toAdd;
+    },
     resetAccounts: function() {
         Meteor.users.remove({});
         console.log(Meteor.users.find().fetch());

@@ -21,7 +21,11 @@ Template.feedPost.feed = function() {
     return Feeds.findOne({_id: this.feedId});
 }
 
-Template.commentBox.rendered = function() {
+Template.feedPost.comments = function() {
+    return Items.findOne({_id: this.itemId}).comments;
+}
+
+Template.feedPost.rendered = function() {
     $('div').on('activate', function() {
         $(this).empty();
         var range, sel;
@@ -44,17 +48,28 @@ Template.commentBox.rendered = function() {
     });
 }
 
-Template.commentBox.events({
+Template.feedPost.events({
     'keypress #commentContent' : function(e) {
-        e.preventDefault();
         if(e.charCode == 13) {
+        e.preventDefault();
             text = $('#commentContent').html();
             text.trimLeft(' ');
             if(text != '') {
                 text.trimRight(' ');
-                //submit comment
+                Meteor.call('addComment', text, this.itemId, function() {
+alert('comment posted');
+                });
             }
             $('#commentContent').empty();
         }
+    }
+});
+
+Template.comment.helpers({
+    'name' : function() {
+        return Meteor.users.findOne({_id: this[0]}).profile.name;
+    },
+    'imgUrl' : function() {
+        return '';
     }
 });
