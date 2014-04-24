@@ -580,13 +580,14 @@ header {
     header > .content .btn-login {
       background: #50a8e7;
       color: white;
+      float: right;
       padding: 0 1.1em;
       border-radius: 3px;
       border: 1px solid #008FD3;
       font-size: 20px;
       height: 100%;
       line-height: 100%; }
-    /* line 137, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 138, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .link {
       vertical-align: middle;
       margin-right: 0.8em;
