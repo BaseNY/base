@@ -11,6 +11,7 @@ Meteor.methods({
         p.time = new Date();
         //p.imageUrl = s3ImageUpload(this.userId, p.image);
         var temp = Items.insert(p);
+        /*
         es.create({
             index: 'base',
             type: 'item',
@@ -20,6 +21,7 @@ Meteor.methods({
                 image: p.imageUrl
             }
         });
+        */
         console.log(temp);
         //linker. pushes the id of the item, and the id of the category
         for(x in p.feeds)
