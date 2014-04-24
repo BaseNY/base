@@ -26,7 +26,7 @@ Template.itemsRow.test = function(e) {
 
 Template.bidding.sendMsg = function(i, m) {
         m.type = 1;
-        m.text = $('#message').html();
+        m.text = $('#message').val();
         m.postId = i._id;
         console.log(this);
         m.public = false;
