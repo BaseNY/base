@@ -29,7 +29,9 @@ Accounts.onCreateUser(function(options, user) {
 //	options.profile.name = user.profile.name;
 //        console.log(user.profile.find());
 	user.profile = options.profile;
-    }
+        user.services.facebook.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture';
+
+}
 
     return user;
 

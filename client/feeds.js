@@ -70,6 +70,10 @@ Template.comment.helpers({
         return Meteor.users.findOne({_id: this[0]}).profile.name;
     },
     'imgUrl' : function() {
-        return '';
+        u = Meteor.users.findOne({_id: this[0]}).services.facebook;
+        url = u.img;
+        if(url == null)
+            url = 'http://graph.facebook.com/' + u.id + '/picture';
+        return url;
     }
 });
