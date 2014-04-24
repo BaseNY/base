@@ -32,17 +32,17 @@
 			<form action="/search">
 				<input name="q" type="text" placeholder="Search...">
 			</form>
-			<div class="user-wrapper" id="user-wrapper">
 				{{#if currentUser}}
+			<div class="user-wrapper" id="user-wrapper">
                                 <img src = "{{imgUrl}}"/>
                                 <h2>{{name}}</h2>
                                 <a href="/inbox" class="link"><i class="fa fa-envelope"></i></a> 
                                 <a href="/" class="link"><i class="fa fa-sign-out"></i></a> 
+			</div>
 				{{else}}
 					<button id="openLogin" class="btn-login">Login</button>
 				{{/if}}
                                 <!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
-			</div>
 		</div>
 	</header>
 	<!--<header class="header">
