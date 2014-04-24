@@ -7,7 +7,7 @@ Template.pageFeeds.posts = function() {
 }
 
 Template.feedPost.isSellPost = function() {
-    if(Template.feedPost.item() != undefined)
+    if(Items.findOne({_id:this.itemId}) != undefined)
         return Items.findOne({_id: this.itemId}).buy != true;
     else 
         return false;
