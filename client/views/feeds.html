@@ -9,9 +9,7 @@ testing code to try to get staggered/ 2 posts per row
 
 <template name = "pageFeeds">
 <div class = "pageFeeds">
-    {{#each posts}}
-    {{> feedPost}}
-    {{/each}}
+    {{#each posts}}{{> feedPost}}{{/each}}
 </div>
 </template>
 
@@ -25,9 +23,15 @@ testing code to try to get staggered/ 2 posts per row
         <span class = "description"> {{item.description}}</span>
         <br />
         {{#if isSellPost}}
-        <div class = "image" style = "background-image:url('{{item.imageUrl}}')"></div>>
+        <div class = "image" style = "background-image:url('{{item.imageUrl}}')"></div>
         {{/if}}
-        {{> bidding}}
+        {{> commentBox}}
     </div>
+</div>
+</template>
+
+<template name = "commentBox">
+<div class = "commentContainer">
+<div contenteditable="true" class = "comment" id="commentContent"><span class="placeholder">Write a comment...</span></div>
 </div>
 </template>

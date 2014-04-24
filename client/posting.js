@@ -66,6 +66,10 @@ Template.sellPost.rendered = function() {
                     }
                 });
             });
+        $('.cat').change(function() {
+            $('.cat').removeClass('checked');
+            $('.highlight-label[for=' + this.id + ']').addClass('checked');
+        });
         });
     });
 }
@@ -97,6 +101,10 @@ Template.buyPost.rendered = function() {
                     console.log("done");
                 }
             });
+        });
+        $('.cat').change(function() {
+            $('.cat').removeClass('checked');
+            $('.highlight-label[for=' + this.id + ']').addClass('checked');
         });
 
     });

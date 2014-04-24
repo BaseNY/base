@@ -1133,19 +1133,21 @@ section.pageAbout {
           margin-right: 0; } }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/messages */
-div#message, div[contenteditable], .post-message {
+div#message, div[contenteditable], .post-message, .comment {
   background-color: white;
   display: block;
-  overflow-y: scroll;
   width: 100%;
-  height: 100px;
-  line-height: 1.5em;
-  font-size: 1.2em;
-  padding: 10px;
+  height: auto;
+  line-height: 1.25em;
+  padding: 8px 4px 4px 4px;
   resize: none;
-  border: 1px solid #c8c8c8; }
+  border: 1px solid #c8c8c8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  -webkit-writing-mode: horizontal-tb;
+  font-size: 16px; }
 
-/* line 14, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 16, /home/jasperlu/base/client/stylesheets/pages/messages */
 .pageItemInbox {
   *zoom: 1;
   max-width: em(3000);
@@ -1159,7 +1161,7 @@ div#message, div[contenteditable], .post-message {
   /* line 23, ../packages/bourbon-scss/addons/clearfix */
   .pageItemInbox:after {
     clear: both; }
-  /* line 17, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 19, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageItemInbox .row {
     *zoom: 1;
     max-width: em(3000);
@@ -1172,7 +1174,7 @@ div#message, div[contenteditable], .post-message {
     /* line 23, ../packages/bourbon-scss/addons/clearfix */
     .pageItemInbox .row:after {
       clear: both; }
-    /* line 19, /home/jasperlu/base/client/stylesheets/pages/messages */
+    /* line 21, /home/jasperlu/base/client/stylesheets/pages/messages */
     .pageItemInbox .row .row-thumbnail {
       padding: 20px;
       background-color: white;
@@ -1182,13 +1184,13 @@ div#message, div[contenteditable], .post-message {
       width: 23.23176%;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       margin-bottom: 5px; }
-      /* line 22, /home/jasperlu/base/client/stylesheets/pages/messages */
+      /* line 24, /home/jasperlu/base/client/stylesheets/pages/messages */
       .pageItemInbox .row .row-thumbnail img {
         width: 100%; }
       /* line 40, ../packages/neat-scss/grid/span-columns */
       .pageItemInbox .row .row-thumbnail:last-child {
         margin-right: 0; }
-    /* line 29, /home/jasperlu/base/client/stylesheets/pages/messages */
+    /* line 31, /home/jasperlu/base/client/stylesheets/pages/messages */
     .pageItemInbox .row .row-details {
       float: left;
       display: block;
@@ -1202,7 +1204,7 @@ div#message, div[contenteditable], .post-message {
       .pageItemInbox .row .row-details:last-child {
         margin-right: 0; }
 
-/* line 38, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 40, /home/jasperlu/base/client/stylesheets/pages/messages */
 .left-sidebar {
   float: left;
   display: block;
@@ -1216,7 +1218,7 @@ div#message, div[contenteditable], .post-message {
   .left-sidebar:last-child {
     margin-right: 0; }
 
-/* line 43, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 45, /home/jasperlu/base/client/stylesheets/pages/messages */
 .pageNego {
   *zoom: 1;
   max-width: em(3000);
@@ -1230,7 +1232,7 @@ div#message, div[contenteditable], .post-message {
   /* line 23, ../packages/bourbon-scss/addons/clearfix */
   .pageNego:after {
     clear: both; }
-  /* line 46, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 48, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .message-thumbnail {
     float: left;
     display: block;
@@ -1239,7 +1241,7 @@ div#message, div[contenteditable], .post-message {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .message-thumbnail:last-child {
       margin-right: 0; }
-  /* line 49, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 51, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .message-text {
     float: left;
     display: block;
@@ -1248,7 +1250,7 @@ div#message, div[contenteditable], .post-message {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .message-text:last-child {
       margin-right: 0; }
-  /* line 52, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 54, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .conversation {
     float: left;
     display: block;
@@ -1257,7 +1259,7 @@ div#message, div[contenteditable], .post-message {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .conversation:last-child {
       margin-right: 0; }
-  /* line 55, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 57, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .message {
     *zoom: 1;
     max-width: em(3000);
@@ -1270,7 +1272,7 @@ div#message, div[contenteditable], .post-message {
     /* line 23, ../packages/bourbon-scss/addons/clearfix */
     .pageNego .message:after {
       clear: both; }
-  /* line 58, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 60, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .reply-box {
     float: left;
     display: block;
@@ -1279,21 +1281,21 @@ div#message, div[contenteditable], .post-message {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .reply-box:last-child {
       margin-right: 0; }
-  /* line 62, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 64, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .left-sidebar, .pageNego .thumbnail, .pageNego .message, .pageNego .reply-box {
     padding: 20px;
     background-color: white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     margin-bottom: 1px; }
 
-/* line 67, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 69, /home/jasperlu/base/client/stylesheets/pages/messages */
 .message-box {
   overflow: auto; }
-  /* line 69, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 71, /home/jasperlu/base/client/stylesheets/pages/messages */
   .message-box textarea {
     height: auto;
     overflow: auto; }
-  /* line 73, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 75, /home/jasperlu/base/client/stylesheets/pages/messages */
   .message-box .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;
@@ -1305,7 +1307,7 @@ div#message, div[contenteditable], .post-message {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
-  width: 1200px; }
+  width: 900px; }
   /* line 18, ../packages/bourbon-scss/addons/clearfix */
   .pageFeeds:before, .pageFeeds:after {
     content: " ";
@@ -1315,7 +1317,7 @@ div#message, div[contenteditable], .post-message {
     clear: both; }
   /* line 4, /home/jasperlu/base/client/stylesheets/pages/feeds */
   .pageFeeds .post {
-    width: 33%;
+    width: 60%;
     padding: 16px;
     display: inline-block;
     min-width: 300px;
@@ -1347,6 +1349,20 @@ div#message, div[contenteditable], .post-message {
       margin-bottom: 10px;
       width: 100%;
       height: 100%; }
+    /* line 34, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post .commentContainer {
+      font-size: 16px;
+      background-color: #ebebeb;
+      padding: 4px; }
+      /* line 38, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .commentContainer .comment {
+        border-color: #cdcdcd;
+        height: auto;
+        background-color: white; }
+        /* line 42, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .comment .placeholder {
+          color: #cdcdcd;
+          font-size: 1em; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/post */
 .postBox {
