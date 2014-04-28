@@ -60,7 +60,7 @@ Template.feedPost.rendered = function() {
 }
 
 Template.feedPost.events({
-    'keypress .commentContent' : function(e) {
+    'keypress .commentForm' : function(e) {
         if(e.charCode == 13) {
         e.preventDefault();
         console.log(e);
@@ -84,7 +84,10 @@ Template.feedPost.events({
 
 Template.comment.helpers({
     'name' : function() {
-        return Meteor.users.findOne({_id: this[0]}).profile.name;
+        u = Meteor.users.findOne({_id: this[0]});
+        if(u == undefined) 
+            return '';
+        return u.profile.name;
     },
     'id' : function() {
         return this[0];
@@ -93,7 +96,10 @@ Template.comment.helpers({
         return this[1];
     },
     'imgUrl' : function() {
-        u = Meteor.users.findOne({_id: this[0]}).services.facebook;
+        u = Meteor.users.findOne({_id: this[0]});
+        if(u == undefined)
+            return '';
+        u = u.services.facebook;
         url = u.img;
         if(url == null)
             url = 'http://graph.facebook.com/' + u.id + '/picture';
