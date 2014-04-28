@@ -41,7 +41,9 @@ testing code to try to get staggered/ 2 posts per row
                 </li>
                 {{/each}}
             </ul>
+	{{#if currentUser}}
             <div contenteditable="true" class = "commentForm" id="commentContent"><span class="placeholder">Write a comment...</span></div>
+        {{/if}}
         </div>
     </div>
 </div>

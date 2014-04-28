@@ -56,11 +56,17 @@ Template.sellPost.rendered = function() {
             console.log("adding item");
 
             s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0],function(temp) {
-                Meteor.call('addProduct', temp, function(e,r) {
+                Meteor.call('addPost', temp, function(e,r) {
                     console.log("something");
                     if(e) {
                         alert(e);
                     }else{
+                        if(r == -1)
+                            alert('Need an image url!');
+                        else if(r == -2)
+                            alert('Need a title!');
+                        else if(r == -3)
+                            alert('Need a description!');
                         console.log("done");
                         Router.go('/post/' + r);
                     }
