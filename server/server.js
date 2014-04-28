@@ -4,13 +4,19 @@ if(Feeds.findOne() == undefined) {
     Feeds.insert({name:'Sneakers'});
 }
 Meteor.methods({
-    addProduct: function(p) {
+    addPost: function(p) {
         console.log('called');
         p.sellerId = this.userId;
         p.seller = Meteor.users.findOne({_id:Meteor.userId()}).profile.name;
         p.time = new Date();
         //p.imageUrl = s3ImageUpload(this.userId, p.image);
         var temp = Items.insert(p);
+        if(p.imageUrl == null)
+            return -1;
+        else if(p.title == null)
+            return -2;
+        else if(p.description == null)
+            return -3;
         /*
         es.create({
             index: 'base',
@@ -69,6 +75,8 @@ addRequest: function(p) {
             comments = [];
         toAdd = [this.userId, t];
         comments.push(toAdd);
+        if(!this.userId)
+            return -1;
         Items.update({_id:id},{$set:{comments: comments}});
         return toAdd;
     },
