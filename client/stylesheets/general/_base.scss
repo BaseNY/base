@@ -96,3 +96,13 @@ body {
 	background: #F7F7F7;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+section.body {
+    width:85%;
+    max-width:800px;
+@include outer-container;
+}
+
+.right-column {
+    @include span-columns(9)
+}

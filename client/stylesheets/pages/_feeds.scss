@@ -1,6 +1,6 @@
 .pageFeeds {
     @include outer-container;
-    width:900px;
+    width:100%;
     .post {
         h1 {
             font-weight:normal;
@@ -22,8 +22,7 @@
             background-repeat: no-repeat;
             background-size:100%;
         }
-        width:60%;
-        padding:16px;
+        width:100%;
         display:inline-block;
         min-width:300px;
         height:auto;
