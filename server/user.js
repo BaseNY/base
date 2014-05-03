@@ -6,12 +6,12 @@ Meteor.startup(function () {
 
 
 	service: "facebook",
-	//appId: "199242350261474",
-       // appId: "581722495207267",
-        appId:"1382563015306531",
-	//secret:"dcd13b60204fb657a47ca97da9e8daca"
+	appId: "199242350261474",
+      //  appId: "581722495207267",
+        //appId:"1382563015306531",
+	secret:"dcd13b60204fb657a47ca97da9e8daca"
         //secret:"c756e217e627b5699e96bfef0cfebede"
-        secret:"b4adbd910499149cb712ae6e948c2e73"
+        //secret:"b4adbd910499149cb712ae6e948c2e73"
     });
 }); 
 
@@ -26,6 +26,8 @@ Accounts.onCreateUser(function(options, user) {
 	options.profile.first_name = temp.first_name;
 	options.profile.last_name = temp.last_name;
         options.profile.last_online = "soemthing";
+        options.profile.subscribed = defaultFeeds;
+        console.log(defaultFeeds);
 //	options.profile.name = user.profile.name;
 //        console.log(user.profile.find());
 	user.profile = options.profile;

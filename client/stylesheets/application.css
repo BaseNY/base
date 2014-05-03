@@ -454,7 +454,7 @@ body {
 /* line 100, /home/jasperlu/base/client/stylesheets/general/base */
 section.body {
   width: 85%;
-  max-width: 800px;
+  max-width: 900px;
   *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
@@ -475,6 +475,16 @@ section.body {
   width: 74.41059%; }
   /* line 40, ../packages/neat-scss/grid/span-columns */
   .right-column:last-child {
+    margin-right: 0; }
+
+/* line 109, /home/jasperlu/base/client/stylesheets/general/base */
+.left-column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .left-column:last-child {
     margin-right: 0; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/general/header */
@@ -681,6 +691,47 @@ header {
     padding: 0.1em 0.4em;
     box-shadow: 1px 1px 1px #f1e8e8;
     color: #383838; }
+
+/* line 56, /home/jasperlu/base/client/stylesheets/pages/home */
+.sidebar {
+  margin-top: 24px; }
+  /* line 58, /home/jasperlu/base/client/stylesheets/pages/home */
+  .sidebar img {
+    width: 80px; }
+  /* line 62, /home/jasperlu/base/client/stylesheets/pages/home */
+  .sidebar ul li {
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .sidebar ul li:before, .sidebar ul li:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .sidebar ul li:after {
+      clear: both; }
+    /* line 64, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar ul li .left {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 10.43705%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .sidebar ul li .left:last-child {
+        margin-right: 0; }
+    /* line 67, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar ul li .right {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 87.20529%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .sidebar ul li .right:last-child {
+        margin-right: 0; }
+    /* line 70, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar ul li:hover {
+      background-color: white; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/modal */
 #modal-overlay {

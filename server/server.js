@@ -1,7 +1,10 @@
+defaultFeeds = [];
 if(Feeds.findOne() == undefined) {
-    Feeds.insert({name:'Electronics'});
-    Feeds.insert({name:'Clothing'});
-    Feeds.insert({name:'Sneakers'});
+    console.log(defaultFeeds);
+    defaultFeeds.push(Feeds.insert({name:'Electronics'}));
+    defaultFeeds.push(Feeds.insert({name:'Clothing'}));
+    defaultFeeds.push(Feeds.insert({name:'Sneakers'}));
+    console.log(defaultFeeds);
 }
 Meteor.methods({
     addPost: function(p) {
@@ -93,5 +96,6 @@ addRequest: function(p) {
     },
     resetFeeds: function() {
         FtoI.remove({});
+        Feeds.remove({});
     }
     })
