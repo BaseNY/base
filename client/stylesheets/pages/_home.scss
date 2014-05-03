@@ -52,3 +52,24 @@
 		}
 	}
 }
+
+.sidebar {
+    margin-top:24px;
+    img {
+        width:80px;
+    }
+    ul {
+        li {
+            @include outer-container;
+            .left {
+                @include span-columns(1.5);
+            }
+            .right {
+                @include span-columns(10.5);
+            }
+            &:hover {
+                background-color:white;
+            }
+        }
+    }
+}

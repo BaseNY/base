@@ -99,10 +99,13 @@ body {
 
 section.body {
     width:85%;
-    max-width:800px;
+    max-width:900px;
 @include outer-container;
 }
 
 .right-column {
-    @include span-columns(9)
+    @include span-columns(9);
+}
+.left-column {
+    @include span-columns(3);
 }

@@ -1,33 +1,73 @@
 <template name="homeold">
-	<h1 style="letter-spacing:-10px" class="logo">
-		bas<span>e</span>
-	</h1>
-	<!--<div class="box page-home">-->
-	<div class="page-home">
-		<form>
-			<input type="text" placeholder="Buying shoes, selling hats,etc">
-			<input type="submit" class="button" value="Search">
-		</form>
-	</div>
-	<!--<a href="/sell/title" class="button">Sell</a>-->
-	<!--</div>-->
+<h1 style="letter-spacing:-10px" class="logo">
+    bas<span>e</span>
+</h1>
+<!--<div class="box page-home">-->
+    <div class="page-home">
+        <form>
+            <input type="text" placeholder="Buying shoes, selling hats,etc">
+            <input type="submit" class="button" value="Search">
+        </form>
+    </div>
+    <!--<a href="/sell/title" class="button">Sell</a>-->
+    <!--</div>-->
 </template>
 
 <template name="home">
-	<section class="body">
-        <!--
-		<div class="content">
-			<div id="title" style="letter-spacing:-10px" class="title">
-				bas<span>e</span>
-			</div>
-			<form id="search-form" action="/search">
-				<input id="search" name="q" type="text" placeholder="Search...">
-			</form>
-		</div>
-                -->
-            <div class="right-column">
-            {{> postBox}}
-            {{> pageFeeds}}
-        </div>
-	</section>
+<section class="body">
+<!--
+<div class="content">
+    <div id="title" style="letter-spacing:-10px" class="title">
+        bas<span>e</span>
+    </div>
+    <form id="search-form" action="/search">
+        <input id="search" name="q" type="text" placeholder="Search...">
+    </form>
+</div>
+-->
+<div class="left-column">
+    {{#if currentUser}}
+    {{> leftColumn}}
+    {{/if}}
+</div>
+<div class="right-column">
+    {{> postBox}}
+    {{> pageFeeds}}
+</div>
+</section>
+</template>
+
+<template name = "leftColumn">
+<div class="sidebar">
+    <img src={{imgUrl}} />
+    {{name}}
+    <hr />
+    <ul>
+        <li>
+        <div class="left"><i class= "fa fa-globe"></i></div>
+        <div class="right">Everyone</div>
+        </li>
+        <li>
+        <div class="left"><i class= "fa fa-group"></i></div>
+        <div class="right">Friends of friends</div>
+        </li>
+        <li>
+        <div class="left"><i class= "fa fa-user"></i></div>
+        <div class="right">Friends only</div>
+        </li>
+    </ul>
+    <hr />
+    Feeds
+    <hr />
+    <ul>
+    {{#each feeds}}
+        <li>
+        <a href="/feeds/{{this._id}}">{{this.name}}</a>
+        </li>
+    {{/each}}
+    </ul>
+</div>
+</template>
+
+<template name="feedLink">
 </template>
