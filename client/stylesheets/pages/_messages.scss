@@ -1,15 +1,15 @@
 div#message, div[contenteditable], .post-message, .comment {
-    background-color:white;
+    background-color: white;
     display: block;
     width: 100%;
-    height:auto;
+    height: auto;
     line-height: 1.25em;
     padding: 8px 4px 4px 4px;
-    resize:none;
-    border:1px solid rgb(200,200,200);
+    resize: none;
+    border: 1px solid rgb(200,200,200);
     word-wrap: break-word;
     -webkit-writing-mode: horizontal-tb;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
 
 .pageItemInbox {
@@ -18,32 +18,39 @@ div#message, div[contenteditable], .post-message, .comment {
     .row {
         @include outer-container;
         .row-thumbnail {
-            padding:20px;
-            background-color:white;
+            padding: 20px;
+            background-color: white;
             img {
-                width:100%;
+                width: 100%;
             }
             @include span-columns(3);
             box-shadow: $boxes;
-            margin-bottom:5px;
+            margin-bottom: 5px;
         }
         .row-details {
             @include span-columns(9);
-            padding:10px;
-            background-color:white;
+            padding: 10px;
+            background-color: white;
             box-shadow: $boxes;
-            margin-bottom:1px;
+            margin-bottom: 1px;
         }
     }
 }
 .left-sidebar {
     @include span-columns(2);
     @include boxes-default(1px);
+    .row-details {
+    	display: block;
+    	margin-bottom: 0.3em;
+    	&:last-child {
+    		margin-bottom: 0;
+    	}
+    }
 }
 
 .pageNego {
     @include outer-container;
-    max-width:1200px;
+    max-width: 1200px;
     .message-thumbnail {
         @include span-columns(1.5);
     }
@@ -52,6 +59,7 @@ div#message, div[contenteditable], .post-message, .comment {
     }
     .conversation {
         @include span-columns(10);
+        margin-bottom: 50px;
     }
     .message {
         @include outer-container;
@@ -63,9 +71,20 @@ div#message, div[contenteditable], .post-message, .comment {
     .left-sidebar, .thumbnail, .message, .reply-box {
         @include boxes-default(1px);
     }
+    .message {
+    	padding: 10px 15px;
+    }
+    .reply-box {
+    	padding: 0;
+    	#message {
+    		width: 100%;
+    		border: none;
+    		padding: 10px;
+    	}
+    }
 }
 
-.message-box{
+.message-box {
     overflow:auto;
     textarea {
         height:auto;
