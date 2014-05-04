@@ -1368,8 +1368,15 @@ div#message, div[contenteditable], .post-message, .comment {
   /* line 40, ../packages/neat-scss/grid/span-columns */
   .left-sidebar:last-child {
     margin-right: 0; }
+  /* line 42, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .left-sidebar .row-details {
+    display: block;
+    margin-bottom: 0.3em; }
+    /* line 45, /home/jasperlu/base/client/stylesheets/pages/messages */
+    .left-sidebar .row-details:last-child {
+      margin-bottom: 0; }
 
-/* line 44, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 51, /home/jasperlu/base/client/stylesheets/pages/messages */
 .pageNego {
   *zoom: 1;
   max-width: em(3000);
@@ -1383,7 +1390,7 @@ div#message, div[contenteditable], .post-message, .comment {
   /* line 23, ../packages/bourbon-scss/addons/clearfix */
   .pageNego:after {
     clear: both; }
-  /* line 47, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 54, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .message-thumbnail {
     float: left;
     display: block;
@@ -1392,7 +1399,7 @@ div#message, div[contenteditable], .post-message, .comment {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .message-thumbnail:last-child {
       margin-right: 0; }
-  /* line 50, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 57, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .message-text {
     float: left;
     display: block;
@@ -1401,16 +1408,17 @@ div#message, div[contenteditable], .post-message, .comment {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .message-text:last-child {
       margin-right: 0; }
-  /* line 53, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 60, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .conversation {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 82.94039%; }
+    width: 82.94039%;
+    margin-bottom: 50px; }
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .conversation:last-child {
       margin-right: 0; }
-  /* line 56, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 64, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .message {
     *zoom: 1;
     max-width: em(3000);
@@ -1423,7 +1431,7 @@ div#message, div[contenteditable], .post-message, .comment {
     /* line 23, ../packages/bourbon-scss/addons/clearfix */
     .pageNego .message:after {
       clear: both; }
-  /* line 59, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 67, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .reply-box {
     float: left;
     display: block;
@@ -1432,22 +1440,33 @@ div#message, div[contenteditable], .post-message, .comment {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .pageNego .reply-box:last-child {
       margin-right: 0; }
-  /* line 63, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 71, /home/jasperlu/base/client/stylesheets/pages/messages */
   .pageNego .left-sidebar, .pageNego .thumbnail, .pageNego .message, .pageNego .reply-box {
     padding: 20px;
     background-color: white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     margin-bottom: 1px; }
+  /* line 74, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message {
+    padding: 10px 15px; }
+  /* line 77, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .reply-box {
+    padding: 0; }
+    /* line 79, /home/jasperlu/base/client/stylesheets/pages/messages */
+    .pageNego .reply-box #message {
+      width: 100%;
+      border: none;
+      padding: 10px; }
 
-/* line 68, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 87, /home/jasperlu/base/client/stylesheets/pages/messages */
 .message-box {
   overflow: auto; }
-  /* line 70, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 89, /home/jasperlu/base/client/stylesheets/pages/messages */
   .message-box textarea {
     height: auto;
     overflow: auto;
     font-size: 16px; }
-  /* line 75, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 94, /home/jasperlu/base/client/stylesheets/pages/messages */
   .message-box .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;

@@ -13,7 +13,7 @@
 <template name="itemsRow">
 	<div class="row">
 		<a class="row-thumbnail" href="/post/{{this._id}}">
-			SELL: {{this.title}}
+			Selling: {{this.title}}
 			<br><br>
 			<img class="product-img" src="{{this.imageUrl}}" />
 		</a>
@@ -37,7 +37,10 @@
 
 <template name="offersSidebar">
 	<div class="left-sidebar">
-		Scrollable here, with all the messages for this offer, and a back button to check out the other items. This sidebar should be on the other pages too. Look at previous page.
+		<a class="row-details" href="/inbox">All offers</a>
+		{{#each offers}}
+			<a class="row-details" href="/inbox/{{this.postId}}/{{this.buyerId}}">{{this.buyer}}</a>
+		{{/each}}
 	</div>
 </template>
 
@@ -52,9 +55,7 @@
 				{{> message}}
 			{{/each}}
 			<div class="reply-box">
-				write this so that enter sends the message automatically, shift enter indents. i.e facebook messaging
-				<div id="message" contenteditable="true"></div>
-				<div id="sendMsg" class="button">Send</div>
+				<textarea id="message" placeholder="Message..."></textarea>
 			</div>
 		</div>
 	</div>
@@ -68,10 +69,8 @@
 			<img src="{{img}}" />
 		</div>-->
 		<div class="message-text">
-			<b>{{this.from}}:</b> 
-			<br>
+			<b>{{this.from}}:</b>
 			{{text}}
-			<br>
 		</div>
 	</div>
 </template>
