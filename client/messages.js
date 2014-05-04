@@ -26,8 +26,9 @@ Template.itemsRow.test = function(e) {
 
 Template.bidding.sendMsg = function(i, m) {
         m.type = 1;
-        m.text = $('#message').html();
-        m.postId = i.item._id;
+        m.text = $('#message').val();
+        m.postId = i._id;
+        console.log(this);
         m.public = false;
         Meteor.call('addBid', m, function(e,r){
             if(e)
@@ -44,6 +45,8 @@ Template.bidding.sendMsg = function(i, m) {
 Template.bidding.events({
     'click #sendMsg' : function() {
         var itemObj = Router.current().data();
+        if(itemObj == null)
+            itemObj = Items.findOne({_id:this.itemId});
         /*
         if (itemObj.seller._id == Meteor.userId()) {
             alert('You cannot bid for your own item!'); 
@@ -53,8 +56,8 @@ Template.bidding.events({
         var msg = {};
 
 
-        msg.toId = itemObj.item.sellerId;
-        msg.to = itemObj.item.seller;
+        msg.toId = itemObj.sellerId;
+        msg.to = itemObj.seller;
 
         /*
         msg.offer=$('#offer').val();
@@ -81,7 +84,6 @@ Template.pageNego.events({
 });
 
 Template.message.img = function() {
-//    return $.getJSON("https://graph.facebook.com/" + this.fromId + "?fields=picture.width(100).height(100)").responseJSON.picture.data.url;
       var fbId = Meteor.users.findOne({_id: "Ztg5NuWnTrzsBM8Qu"}).services.facebook.id;
       return $.getJSON("https://graph.facebook.com/" + fbId + "?fields=picture.width(100).height(100)").responseJSON;
 }
