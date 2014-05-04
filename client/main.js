@@ -14,6 +14,3 @@ Template.header.events({
     },
 });
 
-Meteor.startup(function() {
-    Meteor.call('updateLast');
-});

@@ -42,7 +42,9 @@
 
 <template name="leftColumn">
 	<div class="sidebar">
-		<img src={{imgUrl}} />{{name}}
+            <div class="top-container">
+                <div class="top-left"><img src={{imgUrl}} /></div><div class="top-right"><h2>{{name}}</h2></div>
+            </div>
 		<ul>
 			<li id="filter-everyone">
 				<div class="left"><i class="fa fa-globe"></i>
