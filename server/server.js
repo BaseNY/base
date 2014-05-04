@@ -12,7 +12,8 @@ if (Feeds.findOne() == undefined) {
 	defaultFeeds.push(Feeds.insert({
 		name: 'Clothing (Men)',
 		icon: 'male'
-	})); defaultFeeds.push(Feeds.insert({
+	}));
+	defaultFeeds.push(Feeds.insert({
 		name: 'Clothing (Women)',
 		icon: 'female'
 	}));
@@ -30,15 +31,13 @@ Meteor.methods({
 	addPost: function(p) {
 		console.log('called');
 		p.sellerId = this.userId;
-		p.seller = Meteor.users.findOne({
-			_id: Meteor.userId()
-		}).profile.name;
+		p.seller = Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
 		p.time = new Date();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
-                if(p.imageUrl == null)
-                    return -1;
-                else if (p.title == null)
+		if (p.imageUrl == null)
+			return -1;
+		else if (p.title == null)
 			return -2;
 		else if (p.description == null)
 			return -3;
@@ -68,65 +67,64 @@ Meteor.methods({
 	},
 	addRequest: function(p) {
 		p.sellerId = this.userId;
-		p.seller = Meteor.users.findOne({
-			_id: Meteor.userId()
-		}).profile.name;
+		p.seller = Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
 		p.time = new Date();
 		var temp = Items.insert(p);
-		for (x in p.feeds)
+		for (x in p.feeds) {
 			FtoI.insert({
 				'feedId': p.feeds[x],
 				'itemId': temp,
                                 'sellerId': p.sellerId,
                                 'time': p.time
 			});
+		}
 	},
-	addBid: function(p) {
-		console.log('called' + p);
-		p.fromId = Meteor.userId();
-		p.from = Meteor.users.findOne({
-			_id: Meteor.userId()
-		}).profile.name;
-		p.time = new Date();
+	addBid: function(message) { // GOOD
+		console.log('called' + message);
 
-		var offer = {
-			sellerId: p.toId,
-			seller: p.to,
-			buyerId: p.fromId,
-			buyer: p.from,
-			time: p.time,
-			location: p.location,
-			offer: p.offer,
-			postId: p.postId
-		};
+		message.fromId = Meteor.userId();
+		message.from = Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
+		message.time = new Date();
 
-		var oId = Offers.insert(offer);
-		p.offerId = oId;
+		var offer = Offers.findOne({postId: message.postId, buyerId: message.fromId});
+
+		if (!offer) {
+			var offer = {
+				sellerId: message.toId,
+				seller: message.to,
+				buyerId: message.fromId,
+				buyer: message.from,
+				time: message.time,
+				location: message.location,
+				offer: message.offer,
+				postId: message.postId
+			};
+			var offerId = Offers.insert(offer);
+			message.offerId = offerId;
+		} else {
+			message.offerId = offer._id;
+		}
 
 		/*
-           if(p.buyer == p.seller) {
-           return -1;
-           }
-           */
-		return Messages.insert(p);
+		if(message.buyer == message.seller) {
+			return -1;
+		}
+		*/
+		return Messages.insert(message);
 	},
 	addComment: function(t, id) {
-		comments = Items.findOne({
-			_id: id
-		}).comments;
+		comments = Items.findOne({_id: id}).comments;
 		if (comments == undefined)
 			comments = [];
 		toAdd = [this.userId, t, new Date()];
 		comments.push(toAdd);
-                console.log(comments);
+		console.log(comments);
 		if (!this.userId)
 			return -1;
 		Items.update({
 			_id: id
 		}, {
-			$set: {
-				comments: comments
-			}
+			$set: {comments: comments}
 		});
 		return toAdd;
 	},
