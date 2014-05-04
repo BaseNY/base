@@ -112,16 +112,17 @@ header {
             display:inline-block;
             float:right;
             h2{
-                vertical-align:middle;
-                display:inline-block;
+                vertical-align: middle;
+                display: inline-block;
                 color: #50a8e7;
-                font-weight:normal;
+                font-weight: normal;
                 font-size: 1.4em;
-                margin-right:16px;
+                margin-right: 16px;
             }
             img {
-                vertical-align:middle;
-                height:2em;
+                vertical-align: middle;
+                height: 2.5em;
+                margin-right: 10px;
             }
         }
         .btn-login {

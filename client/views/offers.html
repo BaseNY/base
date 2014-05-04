@@ -12,14 +12,19 @@
 
 <template name="itemsRow">
 	<div class="row">
-		<a class="row-thumbnail" href="/post/{{_id}}">
-			Selling: {{title}}
-			<br><br>
-			<img class="product-img" src="{{imageUrl}}" />
-		</a>
-		{{#each offers}}
-			<a class="row-details" href="/inbox/{{this.postId}}/{{buyerId}}">{{this.buyer}}</a>
-		{{/each}}
+		<div class="row-left">
+			<a class="row-thumbnail" href="/post/{{_id}}">
+				Selling: {{title}}
+				<br><br>
+				<img class="product-img" src="{{imageUrl}}" />
+			</a>
+			<div id="mark-sold">Mark as sold</div>
+		</div>
+		<div class="row-right">
+			{{#each offers}}
+				<a class="row-details" href="/inbox/{{postId}}/{{buyerId}}">{{buyer}}</a>
+			{{/each}}
+		</div>
 	</div>
 </template>
 
@@ -39,7 +44,7 @@
 	<div class="left-sidebar">
 		<a class="row-details" href="/inbox">All offers</a>
 		{{#each offers}}
-			<a class="row-details" href="/inbox/{{postId}}/{{buyerId}}">{{this.buyer}}</a>
+			<a class="row-details" href="/inbox/{{postId}}/{{buyerId}}">{{buyer}}</a>
 		{{/each}}
 	</div>
 </template>
@@ -51,9 +56,11 @@
 		<!--<h2>{{offer.offer}}</h2>-->
 		{{> offersSidebar}}
 		<div class="conversation">
-			{{#each messages}}
-				{{> message}}
-			{{/each}}
+			<div id="messages-container">
+				{{#each messages}}
+					{{> message}}
+				{{/each}}
+			</div>
 			<div class="reply-box">
 				<textarea id="message" placeholder="Message..."></textarea>
 			</div>
@@ -69,7 +76,7 @@
 			<img src="{{img}}" />
 		</div>-->
 		<div class="message-text">
-			<b>{{this.from}}:</b>
+			<b>{{from}}:</b>
 			{{text}}
 		</div>
 	</div>

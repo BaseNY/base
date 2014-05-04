@@ -1,99 +1,117 @@
 div#message, div[contenteditable], .post-message, .comment {
-    background-color: white;
-    display: block;
-    width: 100%;
-    height: auto;
-    line-height: 1.25em;
-    padding: 8px 4px 4px 4px;
-    resize: none;
-    border: 1px solid rgb(200,200,200);
-    word-wrap: break-word;
-    -webkit-writing-mode: horizontal-tb;
-    font-size: 1.2em;
+	background-color: white;
+	display: block;
+	width: 100%;
+	height: auto;
+	line-height: 1.25em;
+	padding: 8px 4px 4px 4px;
+	resize: none;
+	border: 1px solid rgb(200,200,200);
+	word-wrap: break-word;
+	-webkit-writing-mode: horizontal-tb;
+	font-size: 1.2em;
 }
 
 .pageItemInbox {
-    @include outer-container;
-    max-width:1200px;
-    .row {
-        @include outer-container;
-        .row-thumbnail {
-            padding: 20px;
-            background-color: white;
-            img {
-                width: 100%;
-            }
-            @include span-columns(3);
-            box-shadow: $boxes;
-            margin-bottom: 5px;
-        }
-        .row-details {
-            @include span-columns(9);
-            padding: 10px;
-            background-color: white;
-            box-shadow: $boxes;
-            margin-bottom: 1px;
-        }
-    }
+	@include outer-container;
+	max-width: 1200px;
+	.row {
+		@include outer-container;
+		margin-bottom: 30px;
+		.row-left {
+			@include span-columns(3);
+		}
+		.row-right {
+			@include span-columns(9);
+		}
+		.row-thumbnail {
+			display: block;
+			padding: 20px;
+			background-color: white;
+			box-shadow: $boxes;
+			margin-bottom: 5px;
+			img {
+				width: 100%;
+			}
+		}
+		.row-details {
+			display: block;
+			padding: 10px;
+			background-color: white;
+			box-shadow: $boxes;
+			margin-bottom: 1px;
+		}
+	}
+	#mark-sold {
+		background-color: #33B5E5;
+		color: #FFF;
+		padding: 0.3em 0.4em;
+		box-shadow: $boxes;
+		cursor: pointer;
+	}
 }
 .left-sidebar {
-    @include span-columns(2);
-    @include boxes-default(1px);
-    .row-details {
-    	display: block;
-    	margin-bottom: 0.3em;
-    	&:last-child {
-    		margin-bottom: 0;
-    	}
-    }
+	@include span-columns(2);
+	@include boxes-default(1px);
+	.row-details {
+		display: block;
+		margin-bottom: 0.3em;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .pageNego {
-    @include outer-container;
-    max-width: 1200px;
-    .message-thumbnail {
-        @include span-columns(1.5);
-    }
-    .message-text {
-        @include span-columns(10.5);
-    }
-    .conversation {
-        @include span-columns(10);
-        margin-bottom: 50px;
-    }
-    .message {
-        @include outer-container;
-    }
-    .reply-box {
-        @include span-columns(12);
+	@include outer-container;
+	max-width: 1200px;
+	.message-thumbnail {
+		@include span-columns(1.5);
+	}
+	.message-text {
+		@include span-columns(10.5);
+	}
+	.conversation {
+		@include span-columns(10);
+		margin-bottom: 50px;
+	}
+	.message {
+		@include outer-container;
+	}
+	.reply-box {
+		@include span-columns(12);
 
-    }
-    .left-sidebar, .thumbnail, .message, .reply-box {
-        @include boxes-default(1px);
-    }
-    .message {
-    	padding: 10px 15px;
-    }
-    .reply-box {
-    	padding: 0;
-    	#message {
-    		width: 100%;
-    		border: none;
-    		padding: 10px;
-    	}
-    }
+	}
+	.left-sidebar, .thumbnail, .message, .reply-box {
+		@include boxes-default(1px);
+	}
+	#messages-container {
+		//height: calc(100vh - 350px);
+		//overflow: auto;
+	}
+	.message {
+		padding: 10px 15px;
+	}
+	.reply-box {
+		padding: 0;
+		#message {
+			width: 100%;
+			border: none;
+			padding: 10px;
+		}
+	}
 }
 
 .message-box {
-    overflow:auto;
-    textarea {
-        height:auto;
-        overflow:auto;
-        font-size:16px;
-    }
-    .button {
-        padding: .5em 1em .5em 1em;
-        float:right;
-        border-radius:0px 0px 15px 0px;
-    }
+	overflow:auto;
+	textarea {
+		height:auto;
+		overflow:auto;
+		font-size:16px;
+	}
+	.button {
+		padding: .5em 1em .5em 1em;
+		float:right;
+		border-radius:0px 0px 15px 0px;
+	}
 }
