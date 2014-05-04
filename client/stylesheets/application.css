@@ -629,6 +629,15 @@ header {
       margin-right: 0.8em;
       font-size: 1.4em; }
 
+/* line 146, /home/jasperlu/base/client/stylesheets/general/header */
+.header-notice {
+  width: 100%;
+  background-color: #f39c12;
+  border-bottom: 2px solid #E6E6E6;
+  text-align: center;
+  padding: 8px;
+  color: white; }
+
 /* line 1, /home/jasperlu/base/client/stylesheets/general/footer */
 .footer {
   padding: 14px 40px;
