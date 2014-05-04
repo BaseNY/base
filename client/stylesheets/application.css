@@ -1677,31 +1677,51 @@ div#message, div[contenteditable], .post-message, .comment {
   .postBox .post-message {
     font-weight: 200; }
   /* line 28, /home/jasperlu/base/client/stylesheets/pages/post */
-  .postBox .post-inner {
-    padding: 16px; }
-  /* line 31, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox h3 {
     font-weight: normal; }
-  /* line 34, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 31, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox header {
     background-color: #fafafa;
     padding: 15px 20px 15px 20px;
     border-bottom: 1px solid #33B5E5; }
-  /* line 39, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 36, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;
     border-radius: 0px 0px 15px 0px; }
-  /* line 44, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 41, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox #sell-container, .postBox #buy-container {
     padding-top: 10px;
-    padding: 16px;
-    display: none; }
-  /* line 49, /home/jasperlu/base/client/stylesheets/pages/post */
+    display: none;
+    padding: 20px; }
+    /* line 45, /home/jasperlu/base/client/stylesheets/pages/post */
+    .postBox #sell-container .feedsList, .postBox #buy-container .feedsList {
+      font-size: 0.8em; }
+    /* line 48, /home/jasperlu/base/client/stylesheets/pages/post */
+    .postBox #sell-container textarea, .postBox #buy-container textarea {
+      font-size: 1em; }
+    /* line 51, /home/jasperlu/base/client/stylesheets/pages/post */
+    .postBox #sell-container label, .postBox #buy-container label {
+      padding: 4px;
+      border-radius: 2px; }
+      /* line 54, /home/jasperlu/base/client/stylesheets/pages/post */
+      .postBox #sell-container label:hover, .postBox #buy-container label:hover {
+        background-color: #EEE; }
+      /* line 57, /home/jasperlu/base/client/stylesheets/pages/post */
+      .postBox #sell-container label.checked, .postBox #buy-container label.checked {
+        background-color: #D6DCD8;
+        font-weight: bold; }
+    /* line 62, /home/jasperlu/base/client/stylesheets/pages/post */
+    .postBox #sell-container input[type=image], .postBox #buy-container input[type=image] {
+      font-size: 0.7em; }
+    /* line 65, /home/jasperlu/base/client/stylesheets/pages/post */
+    .postBox #sell-container .button, .postBox #buy-container .button {
+      font-size: 0.8em; }
+  /* line 69, /home/jasperlu/base/client/stylesheets/pages/post */
   .postBox textarea {
     padding: 5px 10px 5px 10px; }
 
-/* line 54, /home/jasperlu/base/client/stylesheets/pages/post */
+/* line 74, /home/jasperlu/base/client/stylesheets/pages/post */
 .post-message {
   overflow: auto; }
 

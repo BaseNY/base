@@ -26,7 +26,8 @@ Template.postBox.rendered = function() {
                 $('#buy-container').slideDown();
             }
         });
-        $('.cat').change(function() {
+        $('.highlight-radio[name=feed]').change(function() {
+            console.log('changed');
             $('.cat').removeClass('checked');
             $('.highlight-label[for=' + this.id + ']').addClass('checked');
         });
@@ -67,6 +68,7 @@ Template.sellPost.rendered = function() {
                     if(e) {
                         alert(e);
                     }else{
+                        $(this).css('pointer-events','auto');
                         if(r == -1)
                             alert('Need an image url!');
                         else if(r == -2)
