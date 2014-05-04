@@ -60,7 +60,7 @@
     }
     ul {
         li {
-            padding:0px 2px;
+            padding:4px;
             @include outer-container;
             .left {
                 @include span-columns(1.5);

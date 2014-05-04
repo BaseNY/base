@@ -9,11 +9,8 @@ Template.pageFeeds.posts = function() {
 Template.feedPost.helpers({
     'imgUrl' : function() {
         var i = Items.findOne({_id: this.itemId});
-        var u = Meteor.users.findOne({_id: i.sellerId}).services.facebook;
-        url = u.img;
-        if(url == null)
-    url = 'http://graph.facebook.com/' + u.id + '/picture?width=100&height=100';
-return url;
+        var url = Meteor.users.findOne({_id: i.sellerId}).profile.img;
+        return url;
     },
 'isSellPost': function() {
     if(Items.findOne({_id:this.itemId}) != undefined)
@@ -21,13 +18,13 @@ return url;
     else 
     return false;
 },
-'item' = function(){
+'item' : function(){
     return Items.findOne({_id: this.itemId});
 },
-'feed' = function() {
+'feed' : function() {
     return Feeds.findOne({_id: this.feedId});
 },
-    'comments' = function() {
+    'comments': function() {
         return Items.findOne({_id: this.itemId}).comments;
     }
 });
