@@ -45,11 +45,9 @@
 <template name="buyPost">
     <div id="buy-container" class="container">
         Pick a feed to publish to:
-        <!--
         {{#each feeds}}
         <input id="feed-{{this._id}}" class = "highlight-radio cat" type="radio" name="feed" value={{this._id}}><label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
         {{/each}}
-        -->
         <br />
         <textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
         <div id="buy-post" class="button right">Post</div>
@@ -60,10 +58,9 @@
     <div id="sell-container" class="container">
         Pick a feed to publish to:
         
-       <!-- {{#each feeds}}
+       {{#each feeds}}
         <input id="feed-{{this._id}}" class = "highlight-radio cat" type="radio" name="feed" value={{this._id}}><label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
         {{/each}}
-        -->
         <input type="text" id="item-title" name="title" placeholder="What is your item called?">
         <br />
         <textarea id="sell-description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price" class="post-message"></textarea>

@@ -1431,12 +1431,13 @@ div#message, div[contenteditable], .post-message, .comment {
     /* line 17, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .image {
       height: 300px;
-      width: 100%;
+      width: 400px;
+      margin: 0 auto;
       margin-top: 4px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: 100%; }
-    /* line 29, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 30, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .post-inner {
       padding: 20px;
       background-color: white;
@@ -1444,7 +1445,7 @@ div#message, div[contenteditable], .post-message, .comment {
       margin-bottom: 10px;
       width: 100%;
       height: 100%; }
-      /* line 31, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 32, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .container {
         *zoom: 1;
         max-width: em(3000);
@@ -1457,7 +1458,7 @@ div#message, div[contenteditable], .post-message, .comment {
         /* line 23, ../packages/bourbon-scss/addons/clearfix */
         .pageFeeds .post .post-inner .container:after {
           clear: both; }
-        /* line 33, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 34, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .post-inner .container .left {
           float: left;
           display: block;
@@ -1466,7 +1467,7 @@ div#message, div[contenteditable], .post-message, .comment {
           /* line 40, ../packages/neat-scss/grid/span-columns */
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
-        /* line 36, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 37, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .post-inner .container .right {
           float: left;
           display: block;
@@ -1475,19 +1476,19 @@ div#message, div[contenteditable], .post-message, .comment {
           /* line 40, ../packages/neat-scss/grid/span-columns */
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
-      /* line 42, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 43, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner i {
         cursor: pointer;
         float: right; }
-      /* line 47, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 48, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .msgContainer.noshow {
         display: none; }
-    /* line 52, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 53, /home/jasperlu/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .commentContainer {
       font-size: 16px;
       background-color: #ebebeb;
       padding: 4px; }
-      /* line 56, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 57, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .commentSmallContainer {
         *zoom: 1;
         max-width: em(3000);
@@ -1500,7 +1501,7 @@ div#message, div[contenteditable], .post-message, .comment {
         /* line 23, ../packages/bourbon-scss/addons/clearfix */
         .pageFeeds .post .commentContainer .commentSmallContainer:after {
           clear: both; }
-        /* line 58, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 59, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .commentContainer .commentSmallContainer .left {
           float: left;
           display: block;
@@ -1509,7 +1510,7 @@ div#message, div[contenteditable], .post-message, .comment {
           /* line 40, ../packages/neat-scss/grid/span-columns */
           .pageFeeds .post .commentContainer .commentSmallContainer .left:last-child {
             margin-right: 0; }
-        /* line 61, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 62, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .commentContainer .commentSmallContainer .right {
           float: left;
           display: block;
@@ -1518,13 +1519,13 @@ div#message, div[contenteditable], .post-message, .comment {
           /* line 40, ../packages/neat-scss/grid/span-columns */
           .pageFeeds .post .commentContainer .commentSmallContainer .right:last-child {
             margin-right: 0; }
-      /* line 65, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 66, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .commentForm {
         border-color: #cdcdcd;
         height: auto;
         background-color: white;
         font-size: 16px; }
-        /* line 70, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 71, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .commentContainer .commentForm .placeholder {
           color: #cdcdcd;
           font-size: 1em; }
