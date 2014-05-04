@@ -650,33 +650,33 @@ header {
     margin-left: 20px; }
 
 /*.logo {
-	margin: 50px auto;
-	color: white;
-	text-align: center;
-	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
-	letter-spacing: 15px;
-	font-size: 140px;
+margin: 50px auto;
+color: white;
+text-align: center;
+text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
+letter-spacing: 15px;
+font-size: 140px;
 }
 
 .page-home {
-	margin: 50px auto 100px;
-	min-width: 600px;
-	width: 60%;
-	input {
-		position: relative;
-		display: inline-block;
-		margin: 0;
-		padding: 0.8em 1em;
-		width: 80%;
-		height: auto;
-		font-size: 1.5em;
-	}
-	.button {
-            width:20%;
-            display:inline-block;
-	}
+margin: 50px auto 100px;
+min-width: 600px;
+width: 60%;
+input {
+position: relative;
+display: inline-block;
+margin: 0;
+padding: 0.8em 1em;
+width: 80%;
+height: auto;
+font-size: 1.5em;
 }
-*/
+.button {
+width:20%;
+display:inline-block;
+}
+}
+ */
 /* line 31, /home/jasperlu/base/client/stylesheets/pages/home */
 .body .content {
   max-width: 1000px;
@@ -705,14 +705,50 @@ header {
 .sidebar {
   margin-top: 24px; }
   /* line 58, /home/jasperlu/base/client/stylesheets/pages/home */
-  .sidebar img {
-    width: 80px; }
-  /* line 61, /home/jasperlu/base/client/stylesheets/pages/home */
+  .sidebar .top-container {
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .sidebar .top-container:before, .sidebar .top-container:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .sidebar .top-container:after {
+      clear: both; }
+    /* line 60, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar .top-container .top-left {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .sidebar .top-container .top-left:last-child {
+        margin-right: 0; }
+      /* line 62, /home/jasperlu/base/client/stylesheets/pages/home */
+      .sidebar .top-container .top-left img {
+        width: 100%; }
+    /* line 66, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar .top-container .top-right {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .sidebar .top-container .top-right:last-child {
+        margin-right: 0; }
+      /* line 68, /home/jasperlu/base/client/stylesheets/pages/home */
+      .sidebar .top-container .top-right h2 {
+        font-weight: normal;
+        margin-top: 8px;
+        margin-left: 4px; }
+  /* line 75, /home/jasperlu/base/client/stylesheets/pages/home */
   .sidebar h3 {
     color: grey;
     font-weight: bold;
     margin: 8px 0px 2px; }
-  /* line 67, /home/jasperlu/base/client/stylesheets/pages/home */
+  /* line 81, /home/jasperlu/base/client/stylesheets/pages/home */
   .sidebar ul li {
     padding: 4px;
     *zoom: 1;
@@ -727,7 +763,7 @@ header {
     /* line 23, ../packages/bourbon-scss/addons/clearfix */
     .sidebar ul li:after {
       clear: both; }
-    /* line 70, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 84, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li .left {
       float: left;
       display: block;
@@ -736,7 +772,7 @@ header {
       /* line 40, ../packages/neat-scss/grid/span-columns */
       .sidebar ul li .left:last-child {
         margin-right: 0; }
-    /* line 73, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 87, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li .right {
       float: left;
       display: block;
@@ -745,7 +781,7 @@ header {
       /* line 40, ../packages/neat-scss/grid/span-columns */
       .sidebar ul li .right:last-child {
         margin-right: 0; }
-    /* line 76, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 90, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li:hover {
       background-color: lightgrey;
       cursor: pointer; }
