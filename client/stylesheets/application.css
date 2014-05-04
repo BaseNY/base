@@ -1682,64 +1682,75 @@ div#message, div[contenteditable], .post-message, .comment {
     line-height: 1.5em;
     font-size: 1em; }
   /* line 18, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  .post-box .highlight-radio {
+    display: none; }
+  /* line 21, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box .highlight-label {
     display: inline-block;
-    cursor: pointer; }
-    /* line 21, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    cursor: pointer;
+    color: #33B5E5; }
+    /* line 25, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
     .post-box .highlight-label.checked {
       font-weight: bold; }
-  /* line 25, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 29, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box .post-message {
     font-weight: 200; }
-  /* line 28, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 32, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box h3 {
     font-weight: normal; }
-  /* line 31, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 35, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box header {
     background-color: #fafafa;
     padding: 15px 20px 15px 20px;
     border-bottom: 1px solid #33B5E5; }
-  /* line 36, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 40, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;
     border-radius: 0px 0px 15px 0px; }
-  /* line 41, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 45, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box #sell-container, .post-box #buy-container {
     padding-top: 10px;
     display: none;
     padding: 20px; }
-    /* line 45, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    /* line 49, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
     .post-box #sell-container .feedsList, .post-box #buy-container .feedsList {
       font-size: 0.8em; }
-    /* line 48, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    /* line 52, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
     .post-box #sell-container textarea, .post-box #buy-container textarea {
       font-size: 1em; }
-    /* line 51, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    /* line 55, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    .post-box #sell-container form, .post-box #buy-container form {
+      margin-bottom: 10px; }
+    /* line 58, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
     .post-box #sell-container label, .post-box #buy-container label {
       padding: 4px;
       border-radius: 2px; }
-      /* line 54, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+      /* line 61, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
       .post-box #sell-container label:hover, .post-box #buy-container label:hover {
         background-color: #EEE; }
-      /* line 57, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+      /* line 64, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
       .post-box #sell-container label.checked, .post-box #buy-container label.checked {
-        background-color: #D6DCD8;
-        font-weight: bold; }
-    /* line 62, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+        font-weight: normal;
+        background-color: #33B5E5;
+        color: white; }
+    /* line 70, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
     .post-box #sell-container input[type=file], .post-box #buy-container input[type=file] {
       font-size: 0.7em; }
-    /* line 65, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    /* line 73, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+    .post-box #sell-container #item-title, .post-box #buy-container #item-title {
+      margin-top: 10px; }
+    /* line 76, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
     .post-box #sell-container .button, .post-box #buy-container .button {
       font-size: 0.8em; }
-  /* line 69, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 80, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box textarea {
     padding: 5px 10px 5px 10px; }
-  /* line 72, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+  /* line 83, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
   .post-box form {
     display: inline; }
 
-/* line 77, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
+/* line 88, /Users/steve/Desktop/code/base/client/stylesheets/pages/post */
 .post-message {
   overflow: auto; }
 
@@ -1910,17 +1921,6 @@ div#message, div[contenteditable], .post-message, .comment {
 /* line 186, /Users/steve/Desktop/code/base/client/stylesheets/style */
 fieldset.show, div.show {
   display: block; }
-
-/* line 190, /Users/steve/Desktop/code/base/client/stylesheets/style */
-.highlight-radio {
-  display: none; }
-
-/* line 194, /Users/steve/Desktop/code/base/client/stylesheets/style */
-.highlight-label {
-  color: #33B5E5; }
-  /* line 196, /Users/steve/Desktop/code/base/client/stylesheets/style */
-  .highlight-label.checked {
-    font-weight: bold; }
 
 /* line 2, /Users/steve/Desktop/code/base/client/stylesheets/pages/search */
 .categories-container {
