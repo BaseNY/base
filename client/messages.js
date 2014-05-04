@@ -7,7 +7,11 @@ Template.product.events({
 
 Template.itemsRow.events({
 	'click #mark-sold': function(e) {
-		console.log(this);
+		Meteor.call('markSold', this, function(e) {
+			if (e) {
+				console.log(e);
+			}
+		});
 	}
 })
 
