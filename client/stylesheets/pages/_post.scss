@@ -18,9 +18,15 @@
     .highlight-label {
         display:inline-block;
         cursor:pointer;
+        &.checked {
+            font-weight:bold;
+        }
     }
     .post-message {
         font-weight:200;
+    }
+    .post-inner {
+        padding:16px;
     }
     h3 {
         font-weight:normal;
@@ -37,7 +43,7 @@
     }
     #sell-container, #buy-container {
         padding-top:10px;
-        padding:10px;
+        padding:16px;
         display:none;
     }
     textarea {

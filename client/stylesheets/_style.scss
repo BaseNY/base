@@ -194,6 +194,6 @@ fieldset.show , div.show {
 .highlight-label {
     color:#33B5E5; 
     &.checked {
-        text-decoration:underline;
+        font-weight:bold;
     }
 }
