@@ -29,7 +29,7 @@ div#message, div[contenteditable], .post-message, .comment {
         }
         .row-details {
             @include span-columns(9);
-            padding:20px;
+            padding:10px;
             background-color:white;
             box-shadow: $boxes;
             margin-bottom:1px;
