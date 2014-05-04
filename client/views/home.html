@@ -1,21 +1,21 @@
 <template name="homeold">
-<h1 style="letter-spacing:-10px" class="logo">
-    bas<span>e</span>
-</h1>
-<!--<div class="box page-home">-->
-    <div class="page-home">
-        <form>
-            <input type="text" placeholder="Buying shoes, selling hats,etc">
-            <input type="submit" class="button" value="Search">
-        </form>
-    </div>
-    <!--<a href="/sell/title" class="button">Sell</a>-->
-    <!--</div>-->
+	<h1 style="letter-spacing:-10px" class="logo">
+		bas<span>e</span>
+	</h1>
+	<!--<div class="box page-home">-->
+	<div class="page-home">
+		<form>
+			<input type="text" placeholder="Buying shoes, selling hats,etc">
+			<input type="submit" class="button" value="Search">
+		</form>
+	</div>
+	<!--<a href="/sell/title" class="button">Sell</a>-->
+	<!--</div>-->
 </template>
 
 <template name="home">
-<section class="body">
-<!--
+	<section class="body">
+		<!--
 <div class="content">
     <div id="title" style="letter-spacing:-10px" class="title">
         bas<span>e</span>
@@ -25,51 +25,54 @@
     </form>
 </div>
 -->
-<div class="left-column">
-    {{#if currentUser}}
-    {{> leftColumn}}
-    {{/if}}
-</div>
-<div class="right-column">
-    {{#if feed}}
-    <h1>{{feed.name}}</h1>
-    {{/if}}
-    {{> postBox}}
-    {{> pageFeeds}}
-</div>
-</section>
+		<div class="left-column">
+			{{#if currentUser}}
+				{{> leftColumn}}
+			{{/if}}
+		</div>
+		<div class="right-column">
+			{{#if feed}}
+			<h1>{{feed.name}}</h1>
+			{{/if}}
+			{{> postBox}}
+			{{> pageFeeds}}
+		</div>
+	</section>
 </template>
 
-<template name = "leftColumn">
-<div class="sidebar">
-    <img src={{imgUrl}} />
-    {{name}}
-    <ul>
-        <li id="filter-everyone">
-        <div class="left"><i class= "fa fa-globe"></i></div>
-        <div class="right">Everyone</div>
-        </li>
-        <li id="filter-friends">
-        <div class="left"><i class= "fa fa-group"></i></div>
-        <div class="right">Friends</div>
-        </li>
-    </ul>
-    <h3>Feeds</h3>
-    <ul>
-        <a href="/">
-        <li>
-        <div class="left"><i class= "fa fa-sun-o"></i></div>
-        <div class="right">All</div>
-        </li>
-    </a>
-    {{#each feeds}}
-        <a href="/feeds/{{this._id}}">
-        <li>
-        <div class="left"><i class= "fa fa-{{this.icon}}"></i></div>
-        <div class="right">{{this.name}}</div>
-        </li>
-    </a>
-    {{/each}}
-    </ul>
-</div>
+<template name="leftColumn">
+	<div class="sidebar">
+		<img src={{imgUrl}} />{{name}}
+		<ul>
+			<li id="filter-everyone">
+				<div class="left"><i class="fa fa-globe"></i>
+				</div>
+				<div class="right">Everyone</div>
+			</li>
+			<li id="filter-friends">
+				<div class="left"><i class="fa fa-group"></i>
+				</div>
+				<div class="right">Friends</div>
+			</li>
+		</ul>
+		<h3>Feeds</h3>
+		<ul>
+			<a href="/">
+				<li>
+					<div class="left"><i class="fa fa-sun-o"></i>
+					</div>
+					<div class="right">All</div>
+				</li>
+			</a>
+			{{#each feeds}}
+			<a href="/feeds/{{this._id}}">
+				<li>
+					<div class="left"><i class="fa fa-{{this.icon}}"></i>
+					</div>
+					<div class="right">{{this.name}}</div>
+				</li>
+			</a>
+			{{/each}}
+		</ul>
+	</div>
 </template>
