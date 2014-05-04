@@ -32,7 +32,7 @@ Accounts.onCreateUser(function(options, user) {
 //        console.log(user.profile.find());
 	user.profile = options.profile;
         user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
-
+        user.profile.fbId = user.services.facebook.id;
 }
 
     return user;

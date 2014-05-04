@@ -1551,6 +1551,26 @@ div#message, div[contenteditable], .post-message, .comment {
           color: #cdcdcd;
           font-size: 1em; }
 
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/profile */
+.userInfo {
+  margin-top: 24px; }
+  /* line 3, /home/jasperlu/base/client/stylesheets/pages/profile */
+  .userInfo img {
+    width: 100%; }
+  /* line 6, /home/jasperlu/base/client/stylesheets/pages/profile */
+  .userInfo h2 {
+    font-size: 2em;
+    font-weight: normal; }
+  /* line 11, /home/jasperlu/base/client/stylesheets/pages/profile */
+  .userInfo ul li {
+    background-color: #3b5998;
+    padding: 4px;
+    color: white;
+    border-radius: 4px; }
+    /* line 16, /home/jasperlu/base/client/stylesheets/pages/profile */
+    .userInfo ul li.fb {
+      padding: 6px 8px; }
+
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/post */
 .postBox {
   *zoom: 1;
