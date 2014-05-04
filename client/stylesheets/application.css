@@ -834,6 +834,11 @@ display:inline-block;
     width: 100%;
     display: inline-block; }
   /* line 51, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid h5, #modal #modal-signup h5, #modal #modal-feedback h5 {
+    text-align: center;
+    font-weight: normal;
+    margin-top: 8px; }
+  /* line 56, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable], #modal #modal-feedback textarea, #modal #modal-feedback div[contenteditable] {
     padding: 10px;
     resize: none;
@@ -847,18 +852,18 @@ display:inline-block;
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-    /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 70, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus, #modal #modal-feedback textarea:focus, #modal #modal-feedback div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 69, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 74, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput, #modal #modal-feedback input.halfInput {
     width: 50%; }
-  /* line 73, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 78, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .button {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%; }
-  /* line 78, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 83, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #fb-login {
     background-color: #3E5C96;
     text-align: center;
@@ -868,19 +873,19 @@ display:inline-block;
     color: #FFF;
     padding: 0.8em;
     border-radius: 3px; }
-    /* line 87, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 92, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #fb-login:active {
       background-image: url('/images/fb_pressed.png'); }
-  /* line 91, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 96, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .modal-inner {
     width: 100%;
     padding: 10%; }
-  /* line 95, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 100, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h1, #modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-  /* line 100, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 105, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h3 {
     color: grey;
     font-size: 1em;
