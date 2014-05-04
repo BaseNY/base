@@ -14,8 +14,6 @@ Template.header.events({
     },
 });
 
-/*
 Meteor.startup(function() {
-	NProgress.start();
+    Meteor.call('updateLast');
 });
-*/

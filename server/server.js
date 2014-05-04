@@ -130,6 +130,11 @@ Meteor.methods({
 		});
 		return toAdd;
 	},
+        updateLast: function() {
+            var temp = Meteor.users.findOne({_id:Meteor.userId()}).profile;
+            temp.last_online = new Date();
+            Meteor.users.update({_id:Meteor.userId()}, {profile: temp});
+        },
 	resetAccounts: function() {
 		Meteor.users.remove({});
 		console.log(Meteor.users.find().fetch());

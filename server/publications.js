@@ -8,9 +8,12 @@ Meteor.publish('messages', function() {
     return Messages.find();
 });
 Meteor.publish('ftoi', function(limit, id) {
-    if(id)
-        return FtoI.find({feedId: id},{sort: {time: -1},limit:limit});
-    else
+    if(id){
+        if(id[0] == '@')
+            return FtoI.find({sellerId: id.substring(1)},{sort: {time: -1}, limit: limit});
+        else
+            return FtoI.find({feedId: id},{sort: {time: -1},limit:limit});
+    }else
         return FtoI.find({},{sort: {time: -1}, limit:limit});
 });
 Meteor.publish('feeds',function() {
