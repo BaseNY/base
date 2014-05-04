@@ -12,13 +12,13 @@
 
 <template name="itemsRow">
 	<div class="row">
-		<a class="row-thumbnail" href="/post/{{this._id}}">
-			Selling: {{this.title}}
+		<a class="row-thumbnail" href="/post/{{_id}}">
+			Selling: {{title}}
 			<br><br>
-			<img class="product-img" src="{{this.imageUrl}}" />
+			<img class="product-img" src="{{imageUrl}}" />
 		</a>
 		{{#each offers}}
-			<a class="row-details" href="/inbox/{{this.postId}}/{{this.buyerId}}">{{this.buyer}}</a>
+			<a class="row-details" href="/inbox/{{this.postId}}/{{buyerId}}">{{this.buyer}}</a>
 		{{/each}}
 	</div>
 </template>
@@ -29,7 +29,7 @@
 		{{#each offers}}
 		<li>
 			<b>{{this.buyer}}</b>
-			<a href="/inbox/{{this.postId}}/{{this._id}}">See convo</a>
+			<a href="/inbox/{{this.postId}}/{{_id}}">See convo</a>
 		</li>
 		{{/each}}
 	</ul>
@@ -39,7 +39,7 @@
 	<div class="left-sidebar">
 		<a class="row-details" href="/inbox">All offers</a>
 		{{#each offers}}
-			<a class="row-details" href="/inbox/{{this.postId}}/{{this.buyerId}}">{{this.buyer}}</a>
+			<a class="row-details" href="/inbox/{{postId}}/{{buyerId}}">{{this.buyer}}</a>
 		{{/each}}
 	</div>
 </template>
