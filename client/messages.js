@@ -37,12 +37,12 @@ Template.bidding.sendMsg = function(item, message) {
 	message.public = false;
 	Meteor.call('addBid', message, function(e, r) {
 		if (e) {
-			alert(e);
+			console.log(e);
 		} else {
 			if (r == -1)
-				alert('error!');
+				console.log('error!');
 			else
-				alert('your message has been sent');
+				console.log('your message has been sent');
 		}
 	});
 }
@@ -61,7 +61,6 @@ Template.bidding.events({
         */
 
 		var msg = {};
-
 		msg.toId = itemObj.sellerId;
 		msg.to = itemObj.seller;
 
@@ -70,25 +69,40 @@ Template.bidding.events({
         msg.location = $('#location').val();
         */
 		Template.bidding.sendMsg(itemObj, msg);
+		alert('your message has been sent');
 	}
 });
 
 Template.pageNego.events({
 	'click #sendMsg': function() {
 		var itemObj = Router.current().data();
-		var msg = {};
 
-		msg.buyerId = itemObj.messages[0].buyerId;
-		if (itemObj.item.sellerId == Meteor.userId()) {
-			msg.toId = itemObj.messages[0].fromId;
-			msg.to = itemObj.messages[0].from;
-		} else {
+		var msg = {};
+		msg.toId = itemObj.item.sellerId;
+		msg.to = itemObj.item.seller;
+
+		Template.bidding.sendMsg(itemObj.item, msg);
+	},
+	'keyup #message': function(e) {
+		var $message = $("#message");
+		if ($message.val() && e.which === 13) {
+			var itemObj = Router.current().data();
+
+			var msg = {};
 			msg.toId = itemObj.item.sellerId;
 			msg.to = itemObj.item.seller;
+
+			Template.bidding.sendMsg(itemObj.item, msg);
+
+			$message.val("");
 		}
-		Template.bidding.sendMsg(itemObj, msg);
+		return true;
 	}
 });
+
+Template.pageNego.rendered = function() {
+	$("textarea").autosize();
+}
 
 Template.message.img = function() {
 	var fbId = Meteor.users.findOne({_id: "Ztg5NuWnTrzsBM8Qu"}).services.facebook.id;
