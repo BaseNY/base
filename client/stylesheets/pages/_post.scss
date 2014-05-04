@@ -25,9 +25,6 @@
     .post-message {
         font-weight:200;
     }
-    .post-inner {
-        padding:16px;
-    }
     h3 {
         font-weight:normal;
     }
@@ -43,8 +40,31 @@
     }
     #sell-container, #buy-container {
         padding-top:10px;
-        padding:16px;
         display:none;
+        padding:20px;
+        .feedsList {
+            font-size:.8em;
+        }
+        textarea {
+            font-size:1em;
+        }
+        label {
+            padding:4px;
+            border-radius:2px;
+            &:hover {
+                background-color:$lightgray;
+            }
+            &.checked {
+                background-color:#D6DCD8;
+                font-weight:bold;
+            }
+        }
+        input[type=image] {
+            font-size:.7em;
+        }
+        .button {
+            font-size:.8em;
+        }
     }
     textarea {
         padding:5px 10px 5px 10px;

@@ -36,9 +36,9 @@
 		<header>
 			What would you like to do?
 			<input id="sell-radio" class="highlight-radio " type="radio" name="type" value="sell">
-			<label for="sell-radio" class="highlight-label rad">Sell</label>|
+                        <label for="sell-radio" class="highlight-label rad"><i class="fa fa-money"></i> Sell</label> |
 			<input id="buy-radio" class="highlight-radio " type="radio" name="type" value="buy">
-			<label for="buy-radio" class="highlight-label rad">Buy</label>
+                        <label for="buy-radio" class="highlight-label rad"><i class="fa fa-shopping-cart"></i> Buy</label>
 		</header>
 		{{> buyPost}}
 		{{> sellPost}}
@@ -49,11 +49,13 @@
 	<div id="buy-container" class="container">
 		{{#if feed}}
 		{{else}}
+                <div class="feedsList">
 			Pick a feed to publish to:
 			{{#each feeds}}
-				<input id="feed-{{this._id}}" class="highlight-radio cat" type="radio" name="feed" value={{this._id}}>
-				<label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
+				<input id="feed-{{this._id}}" class="highlight-radio" type="radio" name="feed" value={{this._id}}>
+				<label for="feed-{{this._id}}" class="highlight-label rad">{{this.name}}</label>
 			{{/each}}
+            </div>
 		{{/if}}
 		<br />
 		<textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
@@ -65,11 +67,13 @@
 	<div id="sell-container" class="container">
 		{{#if feed}}
 		{{else}}
+                <div class="feedsList">
 			Pick a feed to publish to:
 			{{#each feeds}}
 				<input id="feed-{{this._id}}" class="highlight-radio cat" type="radio" name="feed" value={{this._id}}>
-				<label for="feed-{{this._id}}" class="highlight-label cat">{{this.name}}</label>
+                                <label for="feed-{{this._id}}" class="highlight-label cat"><i class="fa fa-{{this.icon}}"></i> {{this.name}}</label>
 			{{/each}}
+            </div>
 		{{/if}}
 		<input type="text" id="item-title" name="title" placeholder="What is your item called?">
 		<br />
