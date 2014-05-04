@@ -1,14 +1,16 @@
-div#message, div[contenteditable], .post-message {
+div#message, div[contenteditable], .post-message, .comment {
     background-color:white;
     display: block;
-    overflow-y: scroll;
     width: 100%;
-    height: 100px;
-    line-height: 1.5em;
-    font-size:1.2em;
-    padding:10px; 
+    height:auto;
+    line-height: 1.25em;
+    padding: 8px 4px 4px 4px;
     resize:none;
     border:1px solid rgb(200,200,200);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    -webkit-writing-mode: horizontal-tb;
+    font-size:1.2em;
 }
 
 .pageItemInbox {
@@ -69,6 +71,7 @@ div#message, div[contenteditable], .post-message {
     textarea {
         height:auto;
         overflow:auto;
+        font-size:16px;
     }
     .button {
         padding: .5em 1em .5em 1em;
