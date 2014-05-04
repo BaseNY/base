@@ -1,0 +1,64 @@
+<template name="ifEven">
+	testing code to try to get staggered/ 2 posts per row
+	{{#if isEven value}}
+		{{> UI.contentBlock}}
+	{{else}}
+		{{> UI.elseBlock}}
+	{{/if}}
+</template>
+
+<template name="pageFeeds">
+	<div class="pageFeeds">
+		{{#each posts}}{{> feedPost}}{{/each}}
+	</div>
+</template>
+
+<template name="feedPost">
+	<div class="post">
+		<div class="post-inner">
+			<div class="container">
+				<div class="left">
+					<img src={{imgUrl}}>
+				</div>
+				<div class="right">
+					<h1><a href="/feeds/item._id">{{item.title}}</a><i class="fa fa-envelope"></i>
+					</h1>
+					<hr />
+					<a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+				</div>
+			</div>
+			<div class="msgContainer noshow">
+				{{> bidding}}
+			</div>
+			{{#if isSellPost}}
+			<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>
+			{{/if}}
+			<span class="description">{{item.description}}</span>
+			<div class="commentContainer">
+				<ul>
+					{{#each comments}}
+					<li>
+						{{> comment}}
+					</li>
+					{{/each}}
+				</ul>
+				{{#if currentUser}}
+				<div contenteditable="true" class="commentForm" id="commentContent">
+					<span class="placeholder">Write a comment...</span>
+				</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="comment">
+	<div class="commentSmallContainer">
+		<div class="left">
+			<img src={{imgUrl}}>
+		</div>
+		<div class="right">
+                    <a href="/profile/{{id}}"><b>{{name}}</b></a> {{text}} <br /> {{timestamp}}
+		</div>
+	</div>
+</template>

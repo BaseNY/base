@@ -451,6 +451,42 @@ body {
   background: #F7F7F7;
   font-family: 'Source Sans Pro', sans-serif; }
 
+/* line 100, /home/jasperlu/base/client/stylesheets/general/base */
+section.body {
+  width: 85%;
+  max-width: 900px;
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  section.body:before, section.body:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  section.body:after {
+    clear: both; }
+
+/* line 106, /home/jasperlu/base/client/stylesheets/general/base */
+.right-column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .right-column:last-child {
+    margin-right: 0; }
+
+/* line 109, /home/jasperlu/base/client/stylesheets/general/base */
+.left-column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .left-column:last-child {
+    margin-right: 0; }
+
 /* line 1, /home/jasperlu/base/client/stylesheets/general/header */
 .header {
   width: 100%;
@@ -561,23 +597,46 @@ header {
         color: #50A8E7;
         width: 100%; }
     /* line 111, /home/jasperlu/base/client/stylesheets/general/header */
-    header > .content .right {
-      float: right;
-      height: 100%; }
-    /* line 115, /home/jasperlu/base/client/stylesheets/general/header */
+    header > .content .user-wrapper {
+      display: inline-block;
+      float: right; }
+      /* line 114, /home/jasperlu/base/client/stylesheets/general/header */
+      header > .content .user-wrapper h2 {
+        vertical-align: middle;
+        display: inline-block;
+        color: #50a8e7;
+        font-weight: normal;
+        font-size: 1.4em;
+        margin-right: 16px; }
+      /* line 122, /home/jasperlu/base/client/stylesheets/general/header */
+      header > .content .user-wrapper img {
+        vertical-align: middle;
+        height: 2em; }
+    /* line 127, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .btn-login {
       background: #50a8e7;
       color: white;
+      float: right;
       padding: 0 1.1em;
       border-radius: 3px;
       border: 1px solid #008FD3;
       font-size: 20px;
       height: 100%;
       line-height: 100%; }
-    /* line 125, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 138, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .link {
+      vertical-align: middle;
       margin-right: 0.8em;
       font-size: 1.4em; }
+
+/* line 146, /home/jasperlu/base/client/stylesheets/general/header */
+.header-notice {
+  width: 100%;
+  background-color: #f39c12;
+  border-bottom: 2px solid #E6E6E6;
+  text-align: center;
+  padding: 8px;
+  color: white; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/general/footer */
 .footer {
@@ -642,6 +701,55 @@ header {
     box-shadow: 1px 1px 1px #f1e8e8;
     color: #383838; }
 
+/* line 56, /home/jasperlu/base/client/stylesheets/pages/home */
+.sidebar {
+  margin-top: 24px; }
+  /* line 58, /home/jasperlu/base/client/stylesheets/pages/home */
+  .sidebar img {
+    width: 80px; }
+  /* line 61, /home/jasperlu/base/client/stylesheets/pages/home */
+  .sidebar h3 {
+    color: grey;
+    font-weight: bold;
+    margin: 8px 0px 2px; }
+  /* line 67, /home/jasperlu/base/client/stylesheets/pages/home */
+  .sidebar ul li {
+    padding: 4px;
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .sidebar ul li:before, .sidebar ul li:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .sidebar ul li:after {
+      clear: both; }
+    /* line 70, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar ul li .left {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 10.43705%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .sidebar ul li .left:last-child {
+        margin-right: 0; }
+    /* line 73, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar ul li .right {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 87.20529%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .sidebar ul li .right:last-child {
+        margin-right: 0; }
+    /* line 76, /home/jasperlu/base/client/stylesheets/pages/home */
+    .sidebar ul li:hover {
+      background-color: lightgrey;
+      cursor: pointer; }
+
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/modal */
 #modal-overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -672,8 +780,16 @@ header {
     padding: 10px;
     box-sizing: border-box;
     width: 100%; }
-  /* line 33, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal #modal-bid input[type=text], #modal #modal-bid textarea, #modal #modal-bid input[type=password], #modal #modal-bid input[type=email], #modal #modal-signup input[type=text], #modal #modal-signup textarea, #modal #modal-signup input[type=password], #modal #modal-signup input[type=email] {
+  /* line 32, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-feedback {
+    width: 70%;
+    min-width: 500px; }
+    /* line 35, /home/jasperlu/base/client/stylesheets/pages/modal */
+    #modal #modal-feedback .button {
+      width: 40px;
+      float: right; }
+  /* line 41, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid input[type=text], #modal #modal-bid textarea, #modal #modal-bid input[type=password], #modal #modal-bid input[type=email], #modal #modal-signup input[type=text], #modal #modal-signup textarea, #modal #modal-signup input[type=password], #modal #modal-signup input[type=email], #modal #modal-feedback input[type=text], #modal #modal-feedback textarea, #modal #modal-feedback input[type=password], #modal #modal-feedback input[type=email] {
     margin: 0px;
     margin-bottom: 5px;
     font-size: 1.2em;
@@ -681,8 +797,8 @@ header {
     box-sizing: border-box;
     width: 100%;
     display: inline-block; }
-  /* line 43, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable] {
+  /* line 51, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable], #modal #modal-feedback textarea, #modal #modal-feedback div[contenteditable] {
     padding: 10px;
     resize: none;
     outline: 1px solid #eee;
@@ -695,18 +811,18 @@ header {
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-    /* line 57, /home/jasperlu/base/client/stylesheets/pages/modal */
-    #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus {
+    /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
+    #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus, #modal #modal-feedback textarea:focus, #modal #modal-feedback div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 61, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput {
+  /* line 69, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput, #modal #modal-feedback input.halfInput {
     width: 50%; }
-  /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 73, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .button {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%; }
-  /* line 70, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 78, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #fb-login {
     background-color: #3E5C96;
     text-align: center;
@@ -716,19 +832,19 @@ header {
     color: #FFF;
     padding: 0.8em;
     border-radius: 3px; }
-    /* line 79, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 87, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #fb-login:active {
       background-image: url('/images/fb_pressed.png'); }
-  /* line 83, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 91, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .modal-inner {
     width: 100%;
     padding: 10%; }
-  /* line 87, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 95, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h1, #modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-  /* line 92, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 100, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h3 {
     color: grey;
     font-size: 1em;
@@ -777,18 +893,24 @@ td.product-table-right {
 
 /* line 46, /home/jasperlu/base/client/stylesheets/pages/product */
 div.product-box {
-  text-align: right;
-  background: #3f9fe0;
-  color: white;
-  padding: 12px;
-  margin: 5px;
-  font-size: 20px; }
+  box-sizing: border-box;
+  background: white;
+  margin-bottom: 10px;
+  text-align: left;
+  color: black;
+  padding: 20px;
+  font-size: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 2px; }
+  /* line 56, /home/jasperlu/base/client/stylesheets/pages/product */
+  div.product-box #message {
+    width: 300px; }
 
-/* line 55, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 61, /home/jasperlu/base/client/stylesheets/pages/product */
 div.product-desc {
   padding: 10px; }
 
-/* line 57, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 63, /home/jasperlu/base/client/stylesheets/pages/product */
 span.product-box-title {
   color: #D8D8D8;
   background: #33b5e5;
@@ -796,12 +918,11 @@ span.product-box-title {
   float: left;
   margin-top: -6px; }
 
-/* line 65, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 72, /home/jasperlu/base/client/stylesheets/pages/product */
 img.product-img {
-  max-width: 500px;
-  max-height: 500px; }
+  width: 100%; }
 
-/* line 71, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 77, /home/jasperlu/base/client/stylesheets/pages/product */
 button.product-button {
   padding: 6px 35px;
   background: #CEECF5;
@@ -810,103 +931,102 @@ button.product-button {
   color: #013ADF;
   font-size: 20px; }
 
-/* line 79, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 85, /home/jasperlu/base/client/stylesheets/pages/product */
 button.product-button:hover {
   font-weight: bold;
   background: #A9E2F3; }
 
-/* line 85, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 91, /home/jasperlu/base/client/stylesheets/pages/product */
 div.gmap {
   background: #E0F2F7;
   border: 2px solid #81F7F3;
   text-align: center;
   padding: 5px; }
-  /* line 91, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 97, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-map {
     border: 1px solid white;
     padding: 0; }
-  /* line 96, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 102, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-text {
     font-size: 14px;
     padding: 5px; }
-  /* line 100, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 106, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-text a {
     font-weight: bold;
     font-size: 16px; }
-  /* line 105, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 111, /home/jasperlu/base/client/stylesheets/pages/product */
   div.gmap div.gmap-header {
     font-size: 18px;
     font-weight: bold;
     padding: 5px; }
 
-/* line 112, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 118, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-new {
   background: #0B610B;
   color: #A9F5A9; }
 
-/* line 116, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 122, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-new span.product-box-title, span.seller-up {
   background: #A9F5A9;
   color: #0B610B;
   font-weight: bold; }
 
-/* line 122, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 128, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-med {
   background: #5E610B;
   color: #F2F5A9; }
-  /* line 126, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 132, /home/jasperlu/base/client/stylesheets/pages/product */
   div.condition-med span.product-box-title {
     background: #F2F5A9;
     color: #5E610B;
     font-weight: bold; }
 
-/* line 133, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 139, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-bad {
   background: #610B0B;
   color: #F5A9A9; }
 
-/* line 137, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 143, /home/jasperlu/base/client/stylesheets/pages/product */
 div.condition-bad span.product-box-title, span.seller-down {
   background: #F5A9A9;
   color: #610B0B;
   font-weight: bold; }
 
-/* line 143, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 149, /home/jasperlu/base/client/stylesheets/pages/product */
 div.user-info {
-  background: #D8D8D8;
-  border: 2px solid #8A4B08;
-  color: black; }
-  /* line 148, /home/jasperlu/base/client/stylesheets/pages/product */
+  color: black;
+  text-align: right; }
+  /* line 152, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-info span.seller-name {
     font-size: 25px; }
-  /* line 150, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 154, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-info span.product-box-title {
     background: #8A4B08;
     color: white; }
-  /* line 155, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 159, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-info div.prod-info {
     text-align: left;
     font-size: 14px;
     margin-top: 5px; }
 
-/* line 163, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 167, /home/jasperlu/base/client/stylesheets/pages/product */
 div.user-rating {
   margin-top: 10px; }
-  /* line 166, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 170, /home/jasperlu/base/client/stylesheets/pages/product */
   div.user-rating span {
     margin-right: 8px;
     padding: 0 8px; }
 
-/* line 172, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 176, /home/jasperlu/base/client/stylesheets/pages/product */
 div.related-item-box {
   margin-top: 50px;
   height: 250px; }
 
-/* line 177, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 181, /home/jasperlu/base/client/stylesheets/pages/product */
 div.related-items-title {
   font-size: 20px; }
 
-/* line 181, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 185, /home/jasperlu/base/client/stylesheets/pages/product */
 div.related-item {
   background: #E6E6E6;
   border: 1px solid #3f9fe0;
@@ -914,35 +1034,35 @@ div.related-item {
   padding: 10px;
   text-align: center;
   float: left; }
-  /* line 189, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 193, /home/jasperlu/base/client/stylesheets/pages/product */
   div.related-item span.related-selling {
     background: #8A4B08;
     color: white;
     font-weight: bold;
     padding: 0 5px; }
-  /* line 196, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 200, /home/jasperlu/base/client/stylesheets/pages/product */
   div.related-item img {
     max-width: 100px;
     max-height: 100px;
     margin: 10px; }
 
-/* line 209, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 213, /home/jasperlu/base/client/stylesheets/pages/product */
 table.messenger-table {
   width: 100%;
   border: 2px solid black; }
 
-/* line 215, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 219, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer {
   border-top: 2px solid #444444;
   background: #dddddd;
   padding: 2px; }
 
-/* line 220, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 224, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer-price {
   font-weight: bold;
   font-size: 25px; }
 
-/* line 224, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 228, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-item {
   border-right: 2px solid #444444;
   padding: 5px;
@@ -951,29 +1071,29 @@ td.mes-item {
   font-size: 25px;
   font-weight: bold;
   vertical-align: top; }
-  /* line 233, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 237, /home/jasperlu/base/client/stylesheets/pages/product */
   td.mes-item img {
     max-width: 150px;
     max-height: 150px;
     margin: 5px;
     border: 1px solid #444444; }
 
-/* line 241, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 245, /home/jasperlu/base/client/stylesheets/pages/product */
 tr.mes-spacer td {
   font-size: 8px;
   background: black; }
 
-/* line 245, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 249, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-item-name {
   font-size: 25px;
   padding: 7px 7px 7px 40px;
   text-align: left;
   background: #BDBDBD; }
-  /* line 251, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 255, /home/jasperlu/base/client/stylesheets/pages/product */
   td.mes-item-name a {
     color: #3C56DA; }
 
-/* line 253, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 257, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-type {
   font-size: 25px;
   font-weight: bold;
@@ -981,50 +1101,114 @@ td.mes-type {
   text-align: center;
   border-right: 2px solid #444444; }
 
-/* line 260, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 264, /home/jasperlu/base/client/stylesheets/pages/product */
 td.mes-offer-ops {
   text-align: right; }
 
-/* line 266, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 270, /home/jasperlu/base/client/stylesheets/pages/product */
 table.msgs {
   width: 100%; }
 
-/* line 267, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 271, /home/jasperlu/base/client/stylesheets/pages/product */
 table.msgs td {
   padding: 5px;
   border-top: 1px solid black; }
 
-/* line 272, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 276, /home/jasperlu/base/client/stylesheets/pages/product */
 td.msgs-left {
   width: 120px;
   text-align: right; }
-  /* line 276, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 280, /home/jasperlu/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-name {
     font-weight: bold; }
-  /* line 280, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 284, /home/jasperlu/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-date {
     font-style: italic; }
 
-/* line 285, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 289, /home/jasperlu/base/client/stylesheets/pages/product */
 td.msgs-right {
   vertical-align: middle;
   text-align: left; }
 
-/* line 291, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 295, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-green, .box-red {
   padding: 5px; }
 
-/* line 292, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 296, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-green {
   background: #0B610B;
   color: #A9F5A9;
   border: 1px solid #A9F5A9; }
 
-/* line 298, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 302, /home/jasperlu/base/client/stylesheets/pages/product */
 .box-red {
   background: #610B0B;
   color: #F5A9A9;
   border: 1px solid #F5A9A9; }
+
+/* line 308, /home/jasperlu/base/client/stylesheets/pages/product */
+.pageProduct {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.3em;
+  max-width: 1200px;
+  font-weight: 300; }
+  /* line 309, /home/jasperlu/base/client/stylesheets/pages/product */
+  .pageProduct h1 {
+    font-weight: normal; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .pageProduct:before, .pageProduct:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .pageProduct:after {
+    clear: both; }
+  /* line 316, /home/jasperlu/base/client/stylesheets/pages/product */
+  .pageProduct .container {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageProduct .container:last-child {
+      margin-right: 0; }
+    /* line 318, /home/jasperlu/base/client/stylesheets/pages/product */
+    .pageProduct .container .pic {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 57.35098%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .pageProduct .container .pic:last-child {
+        margin-right: 0; }
+    /* line 321, /home/jasperlu/base/client/stylesheets/pages/product */
+    .pageProduct .container .info {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 40.29137%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .pageProduct .container .info:last-child {
+        margin-right: 0; }
+    /* line 324, /home/jasperlu/base/client/stylesheets/pages/product */
+    .pageProduct .container .product-box {
+      box-sizing: border-box;
+      background: white;
+      margin-bottom: 10px;
+      text-align: left;
+      color: black;
+      padding: 20px;
+      font-size: 1em;
+      border-radius: 2px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+      /* line 325, /home/jasperlu/base/client/stylesheets/pages/product */
+      .pageProduct .container .product-box b {
+        font-weight: normal; }
+      /* line 336, /home/jasperlu/base/client/stylesheets/pages/product */
+      .pageProduct .container .product-box #message {
+        width: 100%; }
 
 /* line 3, /home/jasperlu/base/client/stylesheets/pages/about */
 section.pageAbout {
@@ -1064,15 +1248,378 @@ section.pageAbout {
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/pages/messages */
-div.pageConverse div[contenteditable] {
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/messages */
+div#message, div[contenteditable], .post-message, .comment {
   background-color: white;
   display: block;
-  overflow-y: scroll;
-  width: 50%;
-  height: 100px;
-  line-height: 1.2em;
-  padding: 10px; }
+  width: 100%;
+  height: auto;
+  line-height: 1.25em;
+  padding: 8px 4px 4px 4px;
+  resize: none;
+  border: 1px solid #c8c8c8;
+  word-wrap: break-word;
+  -webkit-writing-mode: horizontal-tb;
+  font-size: 1.2em; }
+
+/* line 15, /home/jasperlu/base/client/stylesheets/pages/messages */
+.pageItemInbox {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .pageItemInbox:before, .pageItemInbox:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .pageItemInbox:after {
+    clear: both; }
+  /* line 18, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageItemInbox .row {
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .pageItemInbox .row:before, .pageItemInbox .row:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .pageItemInbox .row:after {
+      clear: both; }
+    /* line 20, /home/jasperlu/base/client/stylesheets/pages/messages */
+    .pageItemInbox .row .row-thumbnail {
+      padding: 20px;
+      background-color: white;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 5px; }
+      /* line 23, /home/jasperlu/base/client/stylesheets/pages/messages */
+      .pageItemInbox .row .row-thumbnail img {
+        width: 100%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .pageItemInbox .row .row-thumbnail:last-child {
+        margin-right: 0; }
+    /* line 30, /home/jasperlu/base/client/stylesheets/pages/messages */
+    .pageItemInbox .row .row-details {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 1px; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .pageItemInbox .row .row-details:last-child {
+        margin-right: 0; }
+
+/* line 39, /home/jasperlu/base/client/stylesheets/pages/messages */
+.left-sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1px; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .left-sidebar:last-child {
+    margin-right: 0; }
+
+/* line 44, /home/jasperlu/base/client/stylesheets/pages/messages */
+.pageNego {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .pageNego:before, .pageNego:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .pageNego:after {
+    clear: both; }
+  /* line 47, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message-thumbnail {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 10.43705%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .message-thumbnail:last-child {
+      margin-right: 0; }
+  /* line 50, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message-text {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 87.20529%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .message-text:last-child {
+      margin-right: 0; }
+  /* line 53, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .conversation {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .conversation:last-child {
+      margin-right: 0; }
+  /* line 56, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .message {
+    *zoom: 1;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 18, ../packages/bourbon-scss/addons/clearfix */
+    .pageNego .message:before, .pageNego .message:after {
+      content: " ";
+      display: table; }
+    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    .pageNego .message:after {
+      clear: both; }
+  /* line 59, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .reply-box {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .pageNego .reply-box:last-child {
+      margin-right: 0; }
+  /* line 63, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .pageNego .left-sidebar, .pageNego .thumbnail, .pageNego .message, .pageNego .reply-box {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1px; }
+
+/* line 68, /home/jasperlu/base/client/stylesheets/pages/messages */
+.message-box {
+  overflow: auto; }
+  /* line 70, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .message-box textarea {
+    height: auto;
+    overflow: auto;
+    font-size: 16px; }
+  /* line 75, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .message-box .button {
+    padding: 0.5em 1em 0.5em 1em;
+    float: right;
+    border-radius: 0px 0px 15px 0px; }
+
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/feeds */
+.pageFeeds {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .pageFeeds:before, .pageFeeds:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .pageFeeds:after {
+    clear: both; }
+  /* line 4, /home/jasperlu/base/client/stylesheets/pages/feeds */
+  .pageFeeds .post {
+    width: 100%;
+    display: inline-block;
+    min-width: 300px;
+    height: auto; }
+    /* line 5, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post h1 {
+      font-weight: normal;
+      margin-top: 0px;
+      margin-bottom: 0px; }
+    /* line 10, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post img {
+      width: 100%;
+      overflow: hidden; }
+    /* line 14, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post span {
+      font-size: 1.5em; }
+    /* line 17, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post .image {
+      height: 300px;
+      width: 400px;
+      margin: 0 auto;
+      margin-top: 4px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%; }
+    /* line 30, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post .post-inner {
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+      width: 100%;
+      height: 100%; }
+      /* line 32, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .post-inner .container {
+        *zoom: 1;
+        max-width: em(3000);
+        margin-left: auto;
+        margin-right: auto; }
+        /* line 18, ../packages/bourbon-scss/addons/clearfix */
+        .pageFeeds .post .post-inner .container:before, .pageFeeds .post .post-inner .container:after {
+          content: " ";
+          display: table; }
+        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        .pageFeeds .post .post-inner .container:after {
+          clear: both; }
+        /* line 34, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .post-inner .container .left {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 14.70196%; }
+          /* line 40, ../packages/neat-scss/grid/span-columns */
+          .pageFeeds .post .post-inner .container .left:last-child {
+            margin-right: 0; }
+        /* line 37, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .post-inner .container .right {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 82.94039%; }
+          /* line 40, ../packages/neat-scss/grid/span-columns */
+          .pageFeeds .post .post-inner .container .right:last-child {
+            margin-right: 0; }
+      /* line 43, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .post-inner i {
+        cursor: pointer;
+        float: right; }
+      /* line 48, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .post-inner .msgContainer.noshow {
+        display: none; }
+    /* line 53, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    .pageFeeds .post .commentContainer {
+      font-size: 16px;
+      background-color: #ebebeb;
+      padding: 4px; }
+      /* line 57, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .commentContainer .commentSmallContainer {
+        *zoom: 1;
+        max-width: em(3000);
+        margin-left: auto;
+        margin-right: auto; }
+        /* line 18, ../packages/bourbon-scss/addons/clearfix */
+        .pageFeeds .post .commentContainer .commentSmallContainer:before, .pageFeeds .post .commentContainer .commentSmallContainer:after {
+          content: " ";
+          display: table; }
+        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        .pageFeeds .post .commentContainer .commentSmallContainer:after {
+          clear: both; }
+        /* line 59, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .commentSmallContainer .left {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 6.17215%; }
+          /* line 40, ../packages/neat-scss/grid/span-columns */
+          .pageFeeds .post .commentContainer .commentSmallContainer .left:last-child {
+            margin-right: 0; }
+        /* line 62, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .commentSmallContainer .right {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 91.4702%; }
+          /* line 40, ../packages/neat-scss/grid/span-columns */
+          .pageFeeds .post .commentContainer .commentSmallContainer .right:last-child {
+            margin-right: 0; }
+      /* line 66, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      .pageFeeds .post .commentContainer .commentForm {
+        border-color: #cdcdcd;
+        height: auto;
+        background-color: white;
+        font-size: 16px; }
+        /* line 71, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        .pageFeeds .post .commentContainer .commentForm .placeholder {
+          color: #cdcdcd;
+          font-size: 1em; }
+
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/post */
+.postBox {
+  *zoom: 1;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 1.5em;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 0px; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .postBox:before, .postBox:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .postBox:after {
+    clear: both; }
+  /* line 9, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox input[type=text] {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #c8c8c8;
+    font-weight: 200;
+    line-height: 1.5em;
+    font-size: 1em; }
+  /* line 18, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox .highlight-label {
+    display: inline-block;
+    cursor: pointer; }
+    /* line 21, /home/jasperlu/base/client/stylesheets/pages/post */
+    .postBox .highlight-label.checked {
+      font-weight: bold; }
+  /* line 25, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox .post-message {
+    font-weight: 200; }
+  /* line 28, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox .post-inner {
+    padding: 16px; }
+  /* line 31, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox h3 {
+    font-weight: normal; }
+  /* line 34, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox header {
+    background-color: #fafafa;
+    padding: 15px 20px 15px 20px;
+    border-bottom: 1px solid #33B5E5; }
+  /* line 39, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox .button {
+    padding: 0.5em 1em 0.5em 1em;
+    float: right;
+    border-radius: 0px 0px 15px 0px; }
+  /* line 44, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox #sell-container, .postBox #buy-container {
+    padding-top: 10px;
+    padding: 16px;
+    display: none; }
+  /* line 49, /home/jasperlu/base/client/stylesheets/pages/post */
+  .postBox textarea {
+    padding: 5px 10px 5px 10px; }
+
+/* line 54, /home/jasperlu/base/client/stylesheets/pages/post */
+.post-message {
+  overflow: auto; }
 
 /* line 3, /home/jasperlu/base/client/stylesheets/style */
 .page-product {
@@ -1145,27 +1692,26 @@ div.pageConverse div[contenteditable] {
   display: inline-block;
   background-color: white;
   color: black;
-  text-decoration: none;
-  box-shadow: 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px 1px black inset, 1px -1px black inset, -1px 1px black inset, -1px -1px black inset; }
-  /* line 88, /home/jasperlu/base/client/stylesheets/style */
+  text-decoration: none; }
+  /* line 86, /home/jasperlu/base/client/stylesheets/style */
   .step-circle.active {
     border-color: white; }
-  /* line 91, /home/jasperlu/base/client/stylesheets/style */
+  /* line 89, /home/jasperlu/base/client/stylesheets/style */
   .step-circle.complete {
     border-color: #3F9FE0; }
-  /* line 94, /home/jasperlu/base/client/stylesheets/style */
+  /* line 92, /home/jasperlu/base/client/stylesheets/style */
   .step-circle h1 {
     text-align: center;
     font-size: 4em;
     margin: 0; }
 
-/* line 101, /home/jasperlu/base/client/stylesheets/style */
+/* line 99, /home/jasperlu/base/client/stylesheets/style */
 .page-add-product {
   margin-bottom: 100px;
   height: auto;
   overflow: auto;
   width: 60%; }
-  /* line 106, /home/jasperlu/base/client/stylesheets/style */
+  /* line 104, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product input, .page-add-product select, .page-add-product option, .page-add-product div[contenteditable] {
     display: inline-block;
     padding: 14px;
@@ -1173,27 +1719,27 @@ div.pageConverse div[contenteditable] {
     border: 0px;
     font-size: 1.2em;
     height: 53px; }
-    /* line 113, /home/jasperlu/base/client/stylesheets/style */
+    /* line 111, /home/jasperlu/base/client/stylesheets/style */
     .page-add-product input:focus, .page-add-product select:focus, .page-add-product option:focus, .page-add-product div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 117, /home/jasperlu/base/client/stylesheets/style */
+  /* line 115, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product input[type=radio] {
     height: auto;
     outline: 0px; }
-  /* line 121, /home/jasperlu/base/client/stylesheets/style */
+  /* line 119, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product input[type=text] {
     margin-bottom: 10px;
     width: calc(78% - 28px); }
-  /* line 125, /home/jasperlu/base/client/stylesheets/style */
+  /* line 123, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product input[type=number] {
     margin-right: 1.5%;
     padding: 10px;
     width: calc(20% - 30px); }
-  /* line 130, /home/jasperlu/base/client/stylesheets/style */
+  /* line 128, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product select, .page-add-product option {
     width: 20%;
     background-color: white; }
-  /* line 134, /home/jasperlu/base/client/stylesheets/style */
+  /* line 132, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product div[contenteditable] {
     background-color: white;
     display: block;
@@ -1201,171 +1747,134 @@ div.pageConverse div[contenteditable] {
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-  /* line 143, /home/jasperlu/base/client/stylesheets/style */
+  /* line 141, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product span {
     display: inline-block;
     margin-left: 2%;
     font-weight: bold;
     font-size: 1.5em; }
-  /* line 149, /home/jasperlu/base/client/stylesheets/style */
+  /* line 147, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product .button {
     padding: 14px;
     width: calc(20% - 28px);
     border-radius: 0 0 4px 0; }
-  /* line 155, /home/jasperlu/base/client/stylesheets/style */
+  /* line 153, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product div.preview {
     margin: 0 auto;
     padding: 25px;
     border: 1px solid; }
-  /* line 160, /home/jasperlu/base/client/stylesheets/style */
+  /* line 158, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product .button {
     display: inline-block; }
-  /* line 163, /home/jasperlu/base/client/stylesheets/style */
+  /* line 161, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product h3 {
     margin-bottom: 10px; }
-  /* line 167, /home/jasperlu/base/client/stylesheets/style */
+  /* line 165, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product .describe .button {
     float: right; }
-  /* line 172, /home/jasperlu/base/client/stylesheets/style */
+  /* line 170, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product .condition option, .page-add-product .condition div {
     margin: 0 auto; }
-  /* line 176, /home/jasperlu/base/client/stylesheets/style */
+  /* line 174, /home/jasperlu/base/client/stylesheets/style */
   .page-add-product .button {
     display: inline-block; }
-    /* line 179, /home/jasperlu/base/client/stylesheets/style */
+    /* line 177, /home/jasperlu/base/client/stylesheets/style */
     .page-add-product .button.left {
       float: left; }
-    /* line 182, /home/jasperlu/base/client/stylesheets/style */
+    /* line 180, /home/jasperlu/base/client/stylesheets/style */
     .page-add-product .button.right {
       float: right; }
 
-/* line 188, /home/jasperlu/base/client/stylesheets/style */
+/* line 186, /home/jasperlu/base/client/stylesheets/style */
 fieldset.show, div.show {
   display: block; }
 
-/* line 192, /home/jasperlu/base/client/stylesheets/style */
-.no-show {
+/* line 190, /home/jasperlu/base/client/stylesheets/style */
+.highlight-radio {
   display: none; }
 
+/* line 194, /home/jasperlu/base/client/stylesheets/style */
+.highlight-label {
+  color: #33B5E5; }
+  /* line 196, /home/jasperlu/base/client/stylesheets/style */
+  .highlight-label.checked {
+    font-weight: bold; }
 
-/* line 36, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-.items {
+/* line 2, /home/jasperlu/base/client/stylesheets/pages/search */
+.categories-container {
+  height: 1000px;
+  background-color: #00F; }
+
+/* line 7, /home/jasperlu/base/client/stylesheets/pages/search */
+.browse-container {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  *zoom: 1; }
+  /* line 18, ../packages/bourbon-scss/addons/clearfix */
+  .browse-container:before, .browse-container:after {
+    content: " ";
+    display: table; }
+  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  .browse-container:after {
+    clear: both; }
+
+/* line 13, /home/jasperlu/base/client/stylesheets/pages/search */
+.categories-container, .items-container {
+  padding: 10px; }
+
+/* line 17, /home/jasperlu/base/client/stylesheets/pages/search */
+.categories-container {
+  width: 250px;
+  margin-left: 30px;
+  float: left;
+  background-color: white;
+  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.1); }
+
+/* line 25, /home/jasperlu/base/client/stylesheets/pages/search */
+.items-container {
   *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
-  padding: 3%;
-  font-family: "Droid Serif"; }
+  max-width: 1000px;
+  overflow: hidden; }
   /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .items:before, .items:after {
+  .items-container:before, .items-container:after {
     content: " ";
     display: table; }
   /* line 23, ../packages/bourbon-scss/addons/clearfix */
-  .items:after {
+  .items-container:after {
     clear: both; }
+  /* line 29, /home/jasperlu/base/client/stylesheets/pages/search */
+  .items-container .item {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    margin-bottom: 2.35765%;
+    padding: 10px; }
+    /* line 40, ../packages/neat-scss/grid/span-columns */
+    .items-container .item:last-child {
+      margin-right: 0; }
+    /* line 70, ../packages/neat-scss/grid/omega */
+    .items-container .item:nth-child(3n) {
+      margin-right: 0; }
+    /* line 75, ../packages/neat-scss/grid/omega */
+    .items-container .item:nth-child(3n+1) {
+      clear: left; }
 
-/* line 42, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-.item {
-  border-radius: 2px;
+/* line 38, /home/jasperlu/base/client/stylesheets/pages/search */
+.items-container .item {
   background-color: white;
-  box-shadow: 1px 1px 5px -3px gray; }
-  /* line 47, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-  .item img {
+  border-radius: 2px;
+  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.1); }
+  /* line 42, /home/jasperlu/base/client/stylesheets/pages/search */
+  .items-container .item img {
     width: 100%; }
-
-/* line 52, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-.item-desc {
-  padding: 3% 5%;
-  line-height: 1.4em; }
-
-/* line 59, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-.item-name {
-  text-align: center; }
-
-/* line 63, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-.item-price {
-  text-align: center;
-  color: #3F9FE0; }
-  /* line 66, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-  .item-price .price-retail {
-    font-size: 0.8em;
-    color: gray;
-    text-decoration: line-through;
-    margin-right: 5px; }
-
-/* line 6, /home/jasperlu/base/client/stylesheets/pages/items/item_grid */
-.item {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
-  margin-bottom: 2.35765%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
-  .item:last-child {
-    margin-right: 0; }
-  @media only screen and (min-width: 500px) {
-    .item {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
-      margin-bottom: 2.35765%; }
-      /* line 24, ../packages/neat-scss/neat */
-      .item:nth-child(1n) {
-        margin-right: 2.35765%; }
-      /* line 25, ../packages/neat-scss/neat */
-      .item:nth-child(1n+1) {
-        clear: none; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
-      .item:last-child {
-        margin-right: 0; }
-      /* line 70, ../packages/neat-scss/grid/omega */
-      .item:nth-child(2n) {
-        margin-right: 0; }
-      /* line 75, ../packages/neat-scss/grid/omega */
-      .item:nth-child(2n+1) {
-        clear: left; } }
-  @media only screen and (min-width: 750px) {
-    .item {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%;
-      margin-bottom: 2.35765%; }
-      /* line 24, ../packages/neat-scss/neat */
-      .item:nth-child(2n) {
-        margin-right: 2.35765%; }
-      /* line 25, ../packages/neat-scss/neat */
-      .item:nth-child(2n+1) {
-        clear: none; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
-      .item:last-child {
-        margin-right: 0; }
-      /* line 70, ../packages/neat-scss/grid/omega */
-      .item:nth-child(3n) {
-        margin-right: 0; }
-      /* line 75, ../packages/neat-scss/grid/omega */
-      .item:nth-child(3n+1) {
-        clear: left; } }
-  @media only screen and (min-width: 1000px) {
-    .item {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%;
-      margin-bottom: 2.35765%; }
-      /* line 24, ../packages/neat-scss/neat */
-      .item:nth-child(3n) {
-        margin-right: 2.35765%; }
-      /* line 25, ../packages/neat-scss/neat */
-      .item:nth-child(3n+1) {
-        clear: none; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
-      .item:last-child {
-        margin-right: 0; }
-      /* line 70, ../packages/neat-scss/grid/omega */
-      .item:nth-child(4n) {
-        margin-right: 0; }
-      /* line 75, ../packages/neat-scss/grid/omega */
-      .item:nth-child(4n+1) {
-        clear: left; } }
+  /* line 45, /home/jasperlu/base/client/stylesheets/pages/search */
+  .items-container .item .name {
+    font-size: 19px;
+    color: #494949; }
+  /* line 49, /home/jasperlu/base/client/stylesheets/pages/search */
+  .items-container .item .price {
+    color: #50A8E7; }

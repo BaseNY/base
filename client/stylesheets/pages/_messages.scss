@@ -1,11 +1,80 @@
-div.pageConverse {
-	div[contenteditable] {
+div#message, div[contenteditable], .post-message, .comment {
+    background-color:white;
+    display: block;
+    width: 100%;
+    height:auto;
+    line-height: 1.25em;
+    padding: 8px 4px 4px 4px;
+    resize:none;
+    border:1px solid rgb(200,200,200);
+    word-wrap: break-word;
+    -webkit-writing-mode: horizontal-tb;
+    font-size:1.2em;
+}
+
+.pageItemInbox {
+    @include outer-container;
+    max-width:1200px;
+    .row {
+        @include outer-container;
+        .row-thumbnail {
+            padding:20px;
             background-color:white;
-		display: block;
-		overflow-y: scroll;
-		width: 50%;
-		height: 100px;
-		line-height: 1.2em;
-                padding:10px; 
-	}
+            img {
+                width:100%;
+            }
+            @include span-columns(3);
+            box-shadow: $boxes;
+            margin-bottom:5px;
+        }
+        .row-details {
+            @include span-columns(9);
+            padding:20px;
+            background-color:white;
+            box-shadow: $boxes;
+            margin-bottom:1px;
+        }
     }
+}
+.left-sidebar {
+    @include span-columns(2);
+    @include boxes-default(1px);
+}
+
+.pageNego {
+    @include outer-container;
+    max-width:1200px;
+    .message-thumbnail {
+        @include span-columns(1.5);
+    }
+    .message-text {
+        @include span-columns(10.5);
+    }
+    .conversation {
+        @include span-columns(10);
+    }
+    .message {
+        @include outer-container;
+    }
+    .reply-box {
+        @include span-columns(12);
+
+    }
+    .left-sidebar, .thumbnail, .message, .reply-box {
+        @include boxes-default(1px);
+    }
+}
+
+.message-box{
+    overflow:auto;
+    textarea {
+        height:auto;
+        overflow:auto;
+        font-size:16px;
+    }
+    .button {
+        padding: .5em 1em .5em 1em;
+        float:right;
+        border-radius:0px 0px 15px 0px;
+    }
+}
