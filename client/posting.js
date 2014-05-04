@@ -36,6 +36,7 @@ Template.postBox.rendered = function() {
 Template.sellPost.rendered = function() {
     $(document).ready(function() {
         $('#sell-post').click(function(e) {
+            $(this).css('pointer-events','none');
             e.preventDefault(); 
             temp = {};
             temp.title = $('input[name=title]').val();
