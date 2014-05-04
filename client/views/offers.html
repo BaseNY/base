@@ -4,7 +4,9 @@
 		<h1>Offers for {{user}}</h1>
 		<div class="product-body">
 			{{#each items}}
-				{{> itemsRow}}
+				{{#unless sold}}
+					{{> itemsRow}}
+				{{/unless}}
 			{{/each}}
 		</div>
 	</section>
