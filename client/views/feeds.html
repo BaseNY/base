@@ -24,7 +24,7 @@
 					<h1><a href="/feeds/item._id">{{item.title}}</a><i class="fa fa-envelope"></i>
 					</h1>
 					<hr />
-					<a href="/profile/{{item.sellerId}}">{{item.seller}}</a> > <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+                                        <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> <i class="fa fa-angle-right"></i> <a href="/feeds/{{feed._id}}">{{feed.name}}</a> <span class="faded">{{timestamp}}</span>
 				</div>
 			</div>
 			<div class="msgContainer noshow">
@@ -33,7 +33,7 @@
 			{{#if isSellPost}}
 			<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>
 			{{/if}}
-			<span class="description">{{item.description}}</span>
+			<p class="description">{{item.description}}</p>
 			<div class="commentContainer">
 				<ul>
 					{{#each comments}}
@@ -58,7 +58,7 @@
 			<img src={{imgUrl}}>
 		</div>
 		<div class="right">
-                    <a href="/profile/{{id}}"><b>{{name}}</b></a> {{text}} <br /> {{timestamp}}
+                    <a href="/profile/{{id}}"><b>{{name}}</b></a> {{text}} <br /> <span class="faded">{{timestamp}}</span>
 		</div>
 	</div>
 </template>

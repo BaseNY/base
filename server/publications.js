@@ -10,11 +10,11 @@ Meteor.publish('messages', function() {
 Meteor.publish('ftoi', function(limit, id) {
     if(id){
         if(id[0] == '@')
-            return FtoI.find({sellerId: id.substring(1)},{sort: {time: -1}, limit: limit});
+            return FtoI.find({sellerId: id.substring(1)},{sort: {score: -1}, limit: limit});
         else
-            return FtoI.find({feedId: id},{sort: {time: -1},limit:limit});
+            return FtoI.find({feedId: id},{sort: {score: -1},limit:limit});
     }else
-        return FtoI.find({},{sort: {time: -1}, limit:limit});
+        return FtoI.find({},{sort: {score: -1}, limit:limit});
 });
 Meteor.publish('feeds',function() {
     return Feeds.find();

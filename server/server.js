@@ -33,6 +33,7 @@ Meteor.methods({
 		p.sellerId = this.userId;
 		p.seller = Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
 		p.time = new Date();
+                p.score = p.time.getTime();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
 		if (p.imageUrl == null)
@@ -61,7 +62,7 @@ Meteor.methods({
 				'feedId': p.feeds[x],
 				'itemId': temp,
                                 'sellerId': p.sellerId,
-                                'time': p.time
+                                'score': p.time.getTime()
 			});
 		return temp;
 	},
@@ -69,13 +70,14 @@ Meteor.methods({
 		p.sellerId = this.userId;
 		p.seller = Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
 		p.time = new Date();
+                p.score = p.time.getTime();
 		var temp = Items.insert(p);
 		for (x in p.feeds) {
 			FtoI.insert({
 				'feedId': p.feeds[x],
 				'itemId': temp,
                                 'sellerId': p.sellerId,
-                                'time': p.time
+                                'score': p.time.getTime()
 			});
 		}
 	},
@@ -113,10 +115,12 @@ Meteor.methods({
 		return Messages.insert(message);
 	},
 	addComment: function(t, id) {
-		comments = Items.findOne({_id: id}).comments;
+                item = Items.findOne({_id:id});
+		comments = item.comments;
 		if (comments == undefined)
 			comments = [];
-		toAdd = [this.userId, t, new Date()];
+                url = Meteor.users.findOne({_id: this.userId}).profile.img;
+		toAdd = [this.userId, t, url, new Date()];
 		comments.push(toAdd);
 		console.log(comments);
 		if (!this.userId)
@@ -126,6 +130,12 @@ Meteor.methods({
 		}, {
 			$set: {comments: comments}
 		});
+                var ret = FtoI.update({
+                    itemId: id, feedId: item.feeds[0]
+                }, {
+                    $set: {score: toAdd[3].getTime()}
+                });
+                console.log(ret);
 		return toAdd;
 	},
         updateLast: function() {

@@ -12,6 +12,9 @@ Template.feedPost.helpers({
         var url = Meteor.users.findOne({_id: i.sellerId}).profile.img;
         return url;
     },
+    'timestamp' : function() {
+        return timify(Items.findOne({_id: this.itemId}).time);
+    },
 'isSellPost': function() {
     if(Items.findOne({_id:this.itemId}) != undefined)
     return Items.findOne({_id: this.itemId}).buy != true;
@@ -89,17 +92,9 @@ return u.profile.name;
         return this[1];
     },
     'timestamp': function() {
-        h = this[2].getHours();
-        m = this[2].getMinutes();
-        if(h > 12) {
-            return (h-12)+':'+m+' PM';
-        }else if(m < 10){
-            return h + ':' + '0' + m + ' AM';
-        }else{
-            return h + ':' + m + 'AM';
-        }
+        return timify(this[3]);
     },
     'imgUrl' : function() {
-        return Meteor.users.findOne({_id: this[0]}).profile.img;
+        return this[2];
     }
 });
