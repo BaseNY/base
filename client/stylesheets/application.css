@@ -700,10 +700,12 @@ header {
     width: 80px; }
   /* line 62, /home/jasperlu/base/client/stylesheets/pages/home */
   .sidebar ul li {
+    padding: 0px 2px;
     *zoom: 1;
     max-width: em(3000);
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin-bottom: 4px; }
     /* line 18, ../packages/bourbon-scss/addons/clearfix */
     .sidebar ul li:before, .sidebar ul li:after {
       content: " ";
@@ -711,7 +713,7 @@ header {
     /* line 23, ../packages/bourbon-scss/addons/clearfix */
     .sidebar ul li:after {
       clear: both; }
-    /* line 64, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 65, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li .left {
       float: left;
       display: block;
@@ -720,7 +722,7 @@ header {
       /* line 40, ../packages/neat-scss/grid/span-columns */
       .sidebar ul li .left:last-child {
         margin-right: 0; }
-    /* line 67, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 68, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li .right {
       float: left;
       display: block;
@@ -729,9 +731,10 @@ header {
       /* line 40, ../packages/neat-scss/grid/span-columns */
       .sidebar ul li .right:last-child {
         margin-right: 0; }
-    /* line 70, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 71, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li:hover {
-      background-color: white; }
+      background-color: lightgrey;
+      cursor: pointer; }
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/modal */
 #modal-overlay {

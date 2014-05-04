@@ -6,33 +6,29 @@ Template.pageFeeds.posts = function() {
     return FtoI.find({},{sort:{_id:1}, limit:10}).fetch();
 }
 
-Template.feedPost.isSellPost = function() {
-    if(Items.findOne({_id:this.itemId}) != undefined)
-        return Items.findOne({_id: this.itemId}).buy != true;
-    else 
-        return false;
-}
-
-Template.feedPost.item = function(){
-    return Items.findOne({_id: this.itemId});
-}
-
-Template.feedPost.feed = function() {
-    return Feeds.findOne({_id: this.feedId});
-}
-
-Template.feedPost.comments = function() {
-    return Items.findOne({_id: this.itemId}).comments;
-}
-
 Template.feedPost.helpers({
     'imgUrl' : function() {
         var i = Items.findOne({_id: this.itemId});
         var u = Meteor.users.findOne({_id: i.sellerId}).services.facebook;
         url = u.img;
         if(url == null)
-            url = 'http://graph.facebook.com/' + u.id + '/picture?width=100&height=100';
-        return url;
+    url = 'http://graph.facebook.com/' + u.id + '/picture?width=100&height=100';
+return url;
+    },
+'isSellPost': function() {
+    if(Items.findOne({_id:this.itemId}) != undefined)
+    return Items.findOne({_id: this.itemId}).buy != true;
+    else 
+    return false;
+},
+'item' = function(){
+    return Items.findOne({_id: this.itemId});
+},
+'feed' = function() {
+    return Feeds.findOne({_id: this.feedId});
+},
+    'comments' = function() {
+        return Items.findOne({_id: this.itemId}).comments;
     }
 });
 
@@ -62,32 +58,32 @@ Template.feedPost.rendered = function() {
 Template.feedPost.events({
     'keypress .commentForm' : function(e) {
         if(e.charCode == 13) {
-        e.preventDefault();
-        console.log(e);
-        text = $(e.target).html();
-            
+            e.preventDefault();
+            console.log(e);
+            text = $(e.target).html();
+
             text.trimLeft(' ');
             if(text != '') {
                 text.trimRight(' ');
                 Meteor.call('addComment', text, this.itemId, function(e,r) {
                     if(e)
-                        alert(e);
+                    alert(e);
                 });
             }
             $(e.target).empty();
         }
     },
-    'click .fa-envelope' : function() {
-        $('.msgContainer').toggleClass('noshow'); 
-    }
+'click .fa-envelope' : function() {
+    $('.msgContainer').toggleClass('noshow'); 
+}
 });
 
 Template.comment.helpers({
     'name' : function() {
         u = Meteor.users.findOne({_id: this[0]});
         if(u == undefined) 
-            return '';
-        return u.profile.name;
+    return '';
+return u.profile.name;
     },
     'id' : function() {
         return this[0];
@@ -98,11 +94,11 @@ Template.comment.helpers({
     'imgUrl' : function() {
         u = Meteor.users.findOne({_id: this[0]});
         if(u == undefined)
-            return '';
-        u = u.services.facebook;
-        url = u.img;
-        if(url == null)
-            url = 'http://graph.facebook.com/' + u.id + '/picture';
-        return url;
+    return '';
+u = u.services.facebook;
+url = u.img;
+if(url == null)
+    url = 'http://graph.facebook.com/' + u.id + '/picture';
+return url;
     }
 });

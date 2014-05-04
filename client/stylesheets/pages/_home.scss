@@ -60,6 +60,7 @@
     }
     ul {
         li {
+            padding:0px 2px;
             @include outer-container;
             .left {
                 @include span-columns(1.5);
@@ -68,8 +69,10 @@
                 @include span-columns(10.5);
             }
             &:hover {
-                background-color:white;
+                background-color:lightgrey;
+                cursor:pointer;
             }
+            margin-bottom:4px;
         }
     }
 }
