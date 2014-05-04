@@ -58,6 +58,8 @@ Template.sellPost.rendered = function() {
             //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
             e.preventDefault();
             console.log("adding item");
+            if(!document.getElementById('image').files[0])
+                alert('Need an image!');
 
             s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0],function(temp) {
                 Meteor.call('addPost', temp, function(e,r) {

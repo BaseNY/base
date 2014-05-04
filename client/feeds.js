@@ -3,7 +3,7 @@ Template.ifEven.isEven = function(i) {
 }
 
 Template.pageFeeds.posts = function() {
-    return FtoI.find({},{sort:{'_id':-1}, limit:10}).fetch();
+    return FtoI.find().fetch();
 }
 
 Template.feedPost.helpers({
@@ -88,14 +88,18 @@ return u.profile.name;
     'text' : function() {
         return this[1];
     },
+    'timestamp': function() {
+        h = this[2].getHours();
+        m = this[2].getMinutes();
+        if(h > 12) {
+            return (h-12)+':'+m+' PM';
+        }else if(m < 10){
+            return h + ':' + '0' + m + ' AM';
+        }else{
+            return h + ':' + m + 'AM';
+        }
+    },
     'imgUrl' : function() {
-        u = Meteor.users.findOne({_id: this[0]});
-        if(u == undefined)
-    return '';
-u = u.services.facebook;
-url = u.img;
-if(url == null)
-    url = 'http://graph.facebook.com/' + u.id + '/picture';
-return url;
+        return Meteor.users.findOne({_id: this[0]}).profile.img;
     }
 });

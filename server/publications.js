@@ -9,9 +9,9 @@ Meteor.publish('messages', function() {
 });
 Meteor.publish('ftoi', function(limit, id) {
     if(id)
-        return FtoI.find({feedId: id},{limit:limit});
+        return FtoI.find({feedId: id},{sort: {time: -1},limit:limit});
     else
-        return FtoI.find({},{limit:limit});
+        return FtoI.find({},{sort: {time: -1}, limit:limit});
 });
 Meteor.publish('feeds',function() {
     return Feeds.find();
