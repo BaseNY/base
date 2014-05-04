@@ -780,8 +780,16 @@ header {
     padding: 10px;
     box-sizing: border-box;
     width: 100%; }
-  /* line 33, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal #modal-bid input[type=text], #modal #modal-bid textarea, #modal #modal-bid input[type=password], #modal #modal-bid input[type=email], #modal #modal-signup input[type=text], #modal #modal-signup textarea, #modal #modal-signup input[type=password], #modal #modal-signup input[type=email] {
+  /* line 32, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-feedback {
+    width: 70%;
+    min-width: 500px; }
+    /* line 35, /home/jasperlu/base/client/stylesheets/pages/modal */
+    #modal #modal-feedback .button {
+      width: 40px;
+      float: right; }
+  /* line 41, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid input[type=text], #modal #modal-bid textarea, #modal #modal-bid input[type=password], #modal #modal-bid input[type=email], #modal #modal-signup input[type=text], #modal #modal-signup textarea, #modal #modal-signup input[type=password], #modal #modal-signup input[type=email], #modal #modal-feedback input[type=text], #modal #modal-feedback textarea, #modal #modal-feedback input[type=password], #modal #modal-feedback input[type=email] {
     margin: 0px;
     margin-bottom: 5px;
     font-size: 1.2em;
@@ -789,8 +797,8 @@ header {
     box-sizing: border-box;
     width: 100%;
     display: inline-block; }
-  /* line 43, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable] {
+  /* line 51, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable], #modal #modal-feedback textarea, #modal #modal-feedback div[contenteditable] {
     padding: 10px;
     resize: none;
     outline: 1px solid #eee;
@@ -803,18 +811,18 @@ header {
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-    /* line 57, /home/jasperlu/base/client/stylesheets/pages/modal */
-    #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus {
+    /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
+    #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus, #modal #modal-feedback textarea:focus, #modal #modal-feedback div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 61, /home/jasperlu/base/client/stylesheets/pages/modal */
-  #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput {
+  /* line 69, /home/jasperlu/base/client/stylesheets/pages/modal */
+  #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput, #modal #modal-feedback input.halfInput {
     width: 50%; }
-  /* line 65, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 73, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .button {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%; }
-  /* line 70, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 78, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #fb-login {
     background-color: #3E5C96;
     text-align: center;
@@ -824,19 +832,19 @@ header {
     color: #FFF;
     padding: 0.8em;
     border-radius: 3px; }
-    /* line 79, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 87, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #fb-login:active {
       background-image: url('/images/fb_pressed.png'); }
-  /* line 83, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 91, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .modal-inner {
     width: 100%;
     padding: 10%; }
-  /* line 87, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 95, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h1, #modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-  /* line 92, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 100, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h3 {
     color: grey;
     font-size: 1em;

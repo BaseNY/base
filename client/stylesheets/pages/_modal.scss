@@ -29,7 +29,15 @@
             width: 100%;
         }
     }
-    #modal-bid, #modal-signup,  {
+    #modal-feedback {
+        width:70%;
+        min-width:500px;
+        .button {
+            width:40px;
+            float:right;
+        }
+    }
+    #modal-bid, #modal-signup, #modal-feedback {
         input[type=text], textarea, input[type=password],input[type=email] {
             margin: 0px;
             margin-bottom: 5px;

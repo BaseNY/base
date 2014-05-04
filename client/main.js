@@ -11,8 +11,9 @@ Template.header.helpers({
 Template.header.events({
     'click .fa-sign-out' : function() {
         Meteor.logout();
-    }
+    },
 });
+
 /*
 Meteor.startup(function() {
 	NProgress.start();
