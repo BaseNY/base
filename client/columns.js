@@ -13,6 +13,13 @@ Template.leftColumn.helpers({
         }
         return temp;
     },
+    'currentFeed': function() {
+        if(Router.current().data())
+            return Router.current().data().feed._id == this._id;
+    },
+    'allFeed': function() {
+        return !Router.current().data();
+    }
 });
 
 Template.leftColumn.events({
