@@ -61,6 +61,7 @@ Meteor.methods({
 			FtoI.insert({
 				'feedId': p.feeds[x],
 				'itemId': temp,
+                                'sellerId': p.sellerId,
                                 'time': p.time
 			});
 		return temp;
@@ -76,6 +77,7 @@ Meteor.methods({
 			FtoI.insert({
 				'feedId': p.feeds[x],
 				'itemId': temp,
+                                'sellerId': p.sellerId,
                                 'time': p.time
 			});
 	},
