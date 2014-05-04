@@ -7,10 +7,13 @@ Meteor.publish('offers', function() {
 Meteor.publish('messages', function() {
     return Messages.find();
 });
-Meteor.publish('ftoi', function() {
-    return FtoI.find();
+Meteor.publish('ftoi', function(limit, id) {
+    if(id)
+        return FtoI.find({feedId: id},{limit:limit});
+    else
+        return FtoI.find({},{limit:limit});
 });
-Meteor.publish('feeds', function() {
+Meteor.publish('feeds',function() {
     return Feeds.find();
 });
 Meteor.publish('userData', function() {
