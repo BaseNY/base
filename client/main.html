@@ -2,9 +2,9 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc13.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.7/jquery.autosize.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc13.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.7/jquery.autosize.min.js"></script>
 	<style>
 	@viewport {
 		zoom: 1.0;
@@ -29,26 +29,28 @@
 <template name="header">
 	<header>
 		<div class="content">
-			<a href="/" class="logo"><img src="/images/logo.png" alt="BASE"></a>
-			<form action="/search">
+			<a href="/" class="logo">
+				<img src="/images/logo.png" alt="BASE">
+			</a>
+			<!--<form action="/search">
 				<input name="q" type="text" placeholder="Search...">
-			</form>
-				{{#if currentUser}}
-			<div class="user-wrapper" id="user-wrapper">
-                                <img src = "{{imgUrl}}"/>
-                                <h2>{{name}}</h2>
-                                <a href="/inbox" class="link"><i class="fa fa-envelope"></i></a> 
-                                <a href="/" class="link"><i class="fa fa-sign-out"></i></a> 
-			</div>
-				{{else}}
-					<button id="openLogin" class="btn-login">Login</button>
-				{{/if}}
-                                <!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
+			</form>-->
+			{{#if currentUser}}
+				<div class="user-wrapper" id="user-wrapper">
+					<img src="{{imgUrl}}">
+					<h2>{{name}}</h2>
+					<a href="/inbox" class="link"><i class="fa fa-envelope"></i></a>
+					<a href="/" class="link"><i class="fa fa-sign-out"></i></a>
+				</div>
+			{{else}}
+				<button id="openLogin" class="btn-login">Login</button>
+			{{/if}}
+			<!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
 		</div>
 	</header>
-        <div class="header-notice">
-            You are awesome. Thank you for helping out in the Base closed alpha! Please submit feedback <a style = "color:white" target="_blank" href="https://baseus.typeform.com/to/tSnBhQ"><b>here</b></a>
-    </div>
+	<div class="header-notice">
+		You are awesome. Thank you for helping out in the Base closed alpha! Please submit feedback <a style="color:white" target="_blank" href="https://baseus.typeform.com/to/tSnBhQ"><b>here</b></a>
+	</div>
 	<!--<header class="header">
 		<a href="/">BASE</a>
 		<a href="/sell/title">Sell</a>
