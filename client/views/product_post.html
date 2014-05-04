@@ -53,7 +53,7 @@
 			Pick a feed to publish to:
 			{{#each feeds}}
 				<input id="feed-{{this._id}}" class="highlight-radio" type="radio" name="feed" value={{this._id}}>
-				<label for="feed-{{this._id}}" class="highlight-label rad">{{this.name}}</label>
+                                <label for="feed-{{this._id}}" class="highlight-label cat"><i class="fa fa-{{this.icon}}"></i> {{this.name}}</label>
 			{{/each}}
             </div>
 		{{/if}}
@@ -70,7 +70,7 @@
                 <div class="feedsList">
 			Pick a feed to publish to:
 			{{#each feeds}}
-				<input id="feed-{{this._id}}" class="highlight-radio cat" type="radio" name="feed" value={{this._id}}>
+				<input id="feed-{{this._id}}" class="highlight-radio" type="radio" name="feed" value={{this._id}}>
                                 <label for="feed-{{this._id}}" class="highlight-label cat"><i class="fa fa-{{this.icon}}"></i> {{this.name}}</label>
 			{{/each}}
             </div>

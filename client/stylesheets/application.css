@@ -1712,7 +1712,7 @@ div#message, div[contenteditable], .post-message, .comment {
         background-color: #D6DCD8;
         font-weight: bold; }
     /* line 62, /home/jasperlu/base/client/stylesheets/pages/post */
-    .postBox #sell-container input[type=image], .postBox #buy-container input[type=image] {
+    .postBox #sell-container input[type=file], .postBox #buy-container input[type=file] {
       font-size: 0.7em; }
     /* line 65, /home/jasperlu/base/client/stylesheets/pages/post */
     .postBox #sell-container .button, .postBox #buy-container .button {

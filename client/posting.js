@@ -26,11 +26,6 @@ Template.postBox.rendered = function() {
                 $('#buy-container').slideDown();
             }
         });
-        $('.highlight-radio[name=feed]').change(function() {
-            console.log('changed');
-            $('.cat').removeClass('checked');
-            $('.highlight-label[for=' + this.id + ']').addClass('checked');
-        });
     });
 }
 
@@ -43,49 +38,50 @@ Template.sellPost.rendered = function() {
             temp.title = $('input[name=title]').val();
             temp.feeds = [];
             if(Router.current().data())
-                temp.feeds.push(Router.current().data().feed._id);
+            temp.feeds.push(Router.current().data().feed._id);
             else
-                temp.feeds.push($('input[name=feed]:checked').val());
-            /*
-               temp.so = $('input[name=so]').val();
-               temp.bin = $('input[name=bin]').val();
-               temp.condition = $('select[name=condition]').val();
-               */
-            temp.description = $('#sell-description').val();
-            //temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
-            //temp.image = document.getElementById('image').files[0];
-            console.log(temp);
+            temp.feeds.push($('input[name=feed]:checked').val());
+        /*
+           temp.so = $('input[name=so]').val();
+           temp.bin = $('input[name=bin]').val();
+           temp.condition = $('select[name=condition]').val();
+           */
+        temp.description = $('#sell-description').val();
+        //temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
+        //temp.image = document.getElementById('image').files[0];
+        console.log(temp);
 
-            //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
-            e.preventDefault();
-            console.log("adding item");
-            if(!document.getElementById('image').files[0])
-                alert('Need an image!');
+        //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+        e.preventDefault();
+        console.log("adding item");
+        if(!document.getElementById('image').files[0])
+            alert('Need an image!');
 
-            s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0],function(temp) {
-                Meteor.call('addPost', temp, function(e,r) {
-                    console.log("something");
-                    if(e) {
-                        alert(e);
-                    }else{
-                        $(this).css('pointer-events','auto');
-                        if(r == -1)
-                            alert('Need an image url!');
-                        else if(r == -2)
-                            alert('Need a title!');
-                        else if(r == -3)
-                            alert('Need a description!');
-                        else if(r == -4)
-                            alert('Pick a feed!');
-                        console.log("done");
-                        Router.go('/post/' + r);
-                    }
-                });
+        s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0],function(temp) {
+            Meteor.call('addPost', temp, function(e,r) {
+                console.log("something");
+                if(e) {
+                    alert(e);
+                }else{
+                    $(this).css('pointer-events','auto');
+                    if(r == -1)
+                alert('Need an image url!');
+                    else if(r == -2)
+                alert('Need a title!');
+                    else if(r == -3)
+                alert('Need a description!');
+                    else if(r == -4)
+                alert('Pick a feed!');
+            console.log("done");
+            Router.go('/post/' + r);
+                }
             });
-        $('.cat').change(function() {
+        });
+        });
+        $('.highlight-radio[name=feed]').change(function() {
+            console.log('changed');
             $('.cat').removeClass('checked');
             $('.highlight-label[for=' + this.id + ']').addClass('checked');
-        });
         });
     });
 }
@@ -97,31 +93,32 @@ Template.buyPost.rendered = function() {
             temp = {};
             temp.feeds = [];
             if(Router.current().data())
-                temp.feeds.push(Router.current().data().feed._id);
+            temp.feeds.push(Router.current().data().feed._id);
             else
-                temp.feeds.push($('input[name=feed]:checked').val());
-            /*
-               temp.so = $('input[name=so]').val();
-               temp.bin = $('input[name=bin]').val();
-               temp.condition = $('select[name=condition]').val();
-               */
-            temp.description = $('#buy-description').val();
-            temp.buy = true;
-            console.log(temp);
+            temp.feeds.push($('input[name=feed]:checked').val());
+        /*
+           temp.so = $('input[name=so]').val();
+           temp.bin = $('input[name=bin]').val();
+           temp.condition = $('select[name=condition]').val();
+           */
+        temp.description = $('#buy-description').val();
+        temp.buy = true;
+        console.log(temp);
 
-            //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
-            e.preventDefault();
-            console.log("adding item");
-            Meteor.call('addRequest', temp, function(e,r) {
-                console.log("something");
-                if(e) {
-                    alert(e);
-                }else{
-                    console.log("done");
-                }
-            });
+        //NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+        e.preventDefault();
+        console.log("adding item");
+        Meteor.call('addRequest', temp, function(e,r) {
+            console.log("something");
+            if(e) {
+                alert(e);
+            }else{
+                console.log("done");
+            }
         });
-        $('.cat').change(function() {
+        });
+        $('.highlight-radio[name=feed]').change(function() {
+            console.log('changed');
             $('.cat').removeClass('checked');
             $('.highlight-label[for=' + this.id + ']').addClass('checked');
         });
