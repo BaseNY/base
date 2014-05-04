@@ -1,0 +1,19 @@
+<template name="search">
+	<section class="items-container">
+		<div class="items">
+			{{#each items}}
+				{{> item}}
+			{{/each}}
+		</div>
+	</section>
+</template>
+
+<template name="item">
+	<div class="item">
+		<img src={{_source.image}} alt={{_source.name}}>
+		<div class="item-desc">
+			<div class="name">{{_source.name}}</div>
+			<div class="price">${{_source.price}}</div>
+		</div>
+	</div>
+</template>

@@ -1,38 +1,46 @@
 @mixin input-placeholder {
-	&.placeholder { @content; }
-	&:-moz-placeholder { @content; }
-	&::-moz-placeholder { @content; }
-	&:-ms-input-placeholder { @content; }
-	&::-webkit-input-placeholder { @content; }
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
 }
 
+
 @function strip-unit($num) {
-	@return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
+}
+
+@mixin boxes-default($margin-bot) {
+    padding:20px;
+    background-color:white;
+    box-shadow: $boxes;
+    margin-bottom: $margin-bot; 
 }
 
 @mixin rem-fallback($property, $values...) {
-	$max: length($values);
-	$pxValues: '';
-	$remValues: '';
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
 
-	@for $i from 1 through $max {
-		$value: strip-unit(nth($values, $i));
-		$pxValues: #{$pxValues + $value*16}px;
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*16}px;
 
-		@if $i < $max {
-			$pxValues: #{$pxValues + " "};
-		}
-	}
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
 
-	@for $i from 1 through $max {
-		$value: strip-unit(nth($values, $i));
-		$remValues: #{$remValues + $value}rem;
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
 
-		@if $i < $max {
-			$remValues: #{$remValues + " "};
-		}
-	}
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
 
-	#{$property}: $pxValues;
-	#{$property}: $remValues;
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
 }

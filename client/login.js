@@ -57,11 +57,6 @@ Template.header.rendered = function() {
 		});
 }
 
-Template.header.helpers({
-	'name': function() {
-		return Meteor.user().services.facebook.first_name;
-	}
-});
 
 //---------------------Stuff in the modal, i.e. account creation-------------------//
 //note: Probably want to convert this into server-side code later on for security reasons
