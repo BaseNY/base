@@ -5,6 +5,7 @@ Template.product.events({
 	}
 });
 
+/*
 Template.pageItemInbox.user = function() {
 	return Meteor.user().profile.name;
 }
@@ -14,7 +15,7 @@ Template.pageItemInbox.items = function() {
 		sellerId: Meteor.userId()
 	}).fetch();
 }
-
+*/
 Template.itemsRow.helpers({
 	offers: function() {
 		return Offers.find({
@@ -74,15 +75,6 @@ Template.bidding.events({
 });
 
 Template.pageNego.events({
-	'click #sendMsg': function() {
-		var itemObj = Router.current().data();
-
-		var msg = {};
-		msg.toId = itemObj.item.sellerId;
-		msg.to = itemObj.item.seller;
-
-		Template.bidding.sendMsg(itemObj.item, msg);
-	},
 	'keyup #message': function(e) {
 		var $message = $("#message");
 		if ($message.val() && e.which === 13) {
