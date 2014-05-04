@@ -41,7 +41,7 @@ Template.sellPost.rendered = function() {
             temp = {};
             temp.title = $('input[name=title]').val();
             temp.feeds = [];
-            if(Router.current().data().feed)
+            if(Router.current().data())
                 temp.feeds.push(Router.current().data().feed._id);
             else
                 temp.feeds.push($('input[name=feed]:checked').val());
@@ -92,7 +92,7 @@ Template.buyPost.rendered = function() {
             e.preventDefault(); 
             temp = {};
             temp.feeds = [];
-            if(Router.current().data().feed)
+            if(Router.current().data())
                 temp.feeds.push(Router.current().data().feed._id);
             else
                 temp.feeds.push($('input[name=feed]:checked').val());
