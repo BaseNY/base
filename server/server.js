@@ -12,8 +12,7 @@ if (Feeds.findOne() == undefined) {
 	defaultFeeds.push(Feeds.insert({
 		name: 'Clothing (Men)',
 		icon: 'male'
-	}));
-	defaultFeeds.push(Feeds.insert({
+	})); defaultFeeds.push(Feeds.insert({
 		name: 'Clothing (Women)',
 		icon: 'female'
 	}));
@@ -37,9 +36,9 @@ Meteor.methods({
 		p.time = new Date();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
-		if (p.imageUrl == null)
-			return -1;
-		else if (p.title == null)
+                if(p.imageUrl == null)
+                    return -1;
+                else if (p.title == null)
 			return -2;
 		else if (p.description == null)
 			return -3;
@@ -61,7 +60,8 @@ Meteor.methods({
 		for (x in p.feeds)
 			FtoI.insert({
 				'feedId': p.feeds[x],
-				'itemId': temp
+				'itemId': temp,
+                                'time': p.time
 			});
 		return temp;
 	},
@@ -75,7 +75,8 @@ Meteor.methods({
 		for (x in p.feeds)
 			FtoI.insert({
 				'feedId': p.feeds[x],
-				'itemId': temp
+				'itemId': temp,
+                                'time': p.time
 			});
 	},
 	addBid: function(p) {
@@ -113,8 +114,9 @@ Meteor.methods({
 		}).comments;
 		if (comments == undefined)
 			comments = [];
-		toAdd = [this.userId, t];
+		toAdd = [this.userId, t, new Date()];
 		comments.push(toAdd);
+                console.log(comments);
 		if (!this.userId)
 			return -1;
 		Items.update({
