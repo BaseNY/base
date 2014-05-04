@@ -41,7 +41,10 @@ Template.sellPost.rendered = function() {
             temp = {};
             temp.title = $('input[name=title]').val();
             temp.feeds = [];
-            temp.feeds.push($('input[name=feed]:checked').val());
+            if(Router.current().data().feed)
+                temp.feeds.push(Router.current().data().feed._id);
+            else
+                temp.feeds.push($('input[name=feed]:checked').val());
             /*
                temp.so = $('input[name=so]').val();
                temp.bin = $('input[name=bin]').val();
@@ -89,7 +92,10 @@ Template.buyPost.rendered = function() {
             e.preventDefault(); 
             temp = {};
             temp.feeds = [];
-            temp.feeds.push($('input[name=feed]:checked').val());
+            if(Router.current().data().feed)
+                temp.feeds.push(Router.current().data().feed._id);
+            else
+                temp.feeds.push($('input[name=feed]:checked').val());
             /*
                temp.so = $('input[name=so]').val();
                temp.bin = $('input[name=bin]').val();

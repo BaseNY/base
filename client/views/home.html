@@ -31,6 +31,9 @@
     {{/if}}
 </div>
 <div class="right-column">
+    {{#if feed}}
+    <h1>{{feed.name}}</h1>
+    {{/if}}
     {{> postBox}}
     {{> pageFeeds}}
 </div>
@@ -51,14 +54,21 @@
         <div class="right">Friends</div>
         </li>
     </ul>
-    <hr />
-    Feeds
-    <hr />
+    <h3>Feeds</h3>
     <ul>
-    {{#each feeds}}
+        <a href="/">
         <li>
-        <a href="/feeds/{{this._id}}">{{this.name}}</a>
+        <div class="left"><i class= "fa fa-sun-o"></i></div>
+        <div class="right">All</div>
         </li>
+    </a>
+    {{#each feeds}}
+        <a href="/feeds/{{this._id}}">
+        <li>
+        <div class="left"><i class= "fa fa-{{this.icon}}"></i></div>
+        <div class="right">{{this.name}}</div>
+        </li>
+    </a>
     {{/each}}
     </ul>
 </div>
