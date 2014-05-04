@@ -3,7 +3,7 @@ Template.ifEven.isEven = function(i) {
 }
 
 Template.pageFeeds.posts = function() {
-    return FtoI.find({},{sort:{_id:1}, limit:10}).fetch();
+    return FtoI.find({},{sort:{'_id':-1}, limit:10}).fetch();
 }
 
 Template.feedPost.helpers({

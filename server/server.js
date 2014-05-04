@@ -1,9 +1,12 @@
 defaultFeeds = [];
 if(Feeds.findOne() == undefined) {
     console.log(defaultFeeds);
-    defaultFeeds.push(Feeds.insert({name:'Electronics'}));
-    defaultFeeds.push(Feeds.insert({name:'Clothing'}));
-    defaultFeeds.push(Feeds.insert({name:'Sneakers'}));
+    defaultFeeds.push(Feeds.insert({name:'Sneakers', icon: 'money'}));
+    defaultFeeds.push(Feeds.insert({name:'Electronics', icon: 'laptop'}));
+    defaultFeeds.push(Feeds.insert({name:'Clothing (Men)', icon: 'male'}));
+    defaultFeeds.push(Feeds.insert({name:'Clothing (Women)', icon: 'female'}));
+    defaultFeeds.push(Feeds.insert({name:'Books', icon: 'book'}));
+    defaultFeeds.push(Feeds.insert({name:'Others', icon: 'random'}));
     console.log(defaultFeeds);
 }
 Meteor.methods({
@@ -20,6 +23,8 @@ Meteor.methods({
             return -2;
         else if(p.description == null)
             return -3;
+        else if(p.feeds == null) 
+            return -4;
         /*
         es.create({
             index: 'base',

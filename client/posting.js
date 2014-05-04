@@ -68,6 +68,8 @@ Template.sellPost.rendered = function() {
                             alert('Need a title!');
                         else if(r == -3)
                             alert('Need a description!');
+                        else if(r == -4)
+                            alert('Pick a feed!');
                         console.log("done");
                         Router.go('/post/' + r);
                     }
