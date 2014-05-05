@@ -3,7 +3,8 @@ Template.ifEven.isEven = function(i) {
 }
 
 Template.pageFeeds.posts = function() {
-    return FtoI.find({},{reactive: false, sort: {score:1}}).fetch();
+    return FtoI.find({}).fetch();
+//    return FtoI.find({},{sort: {score:1}}).fetch();
 }
 
 Template.feedPost.helpers({
