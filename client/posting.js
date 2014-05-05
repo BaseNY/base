@@ -34,6 +34,12 @@ Template.postBox.events({
 
 Template.sellPost.events({
 	'click #sell-post': function(e) {
+                if(!Meteor.user()) {
+		    $('#modal-container').css('display', 'block');
+		    $('#modal-signup').css('display', 'block');
+                    return -1;
+                }
+                    
 		$(this).css('pointer-events', 'none');
 		e.preventDefault();
 		temp = {};
@@ -100,6 +106,11 @@ Template.sellPost.events({
 
 Template.buyPost.events({
 	'click #buy-post': function(e) {
+                if(!Meteor.user()) {
+		    $('#modal-container').css('display', 'block');
+		    $('#modal-signup').css('display', 'block');
+                    return -1;
+                }
 		$(e.target).css('pointer-events', 'none');
                 setInterval(function() {
                     $(e.target).css('pointer-events','auto');
