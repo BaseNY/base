@@ -39,9 +39,9 @@ Meteor.methods({
 		p.score = p.time.getTime();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
-		if (p.imageUrl == null)
-			return -1;
-		else if (p.title == null)
+	//	if (p.imageUrl == null)
+	//		return -1;
+		if (p.title == null)
 			return -2;
 		else if (p.description == null)
 			return -3;
