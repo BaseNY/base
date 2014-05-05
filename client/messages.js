@@ -112,7 +112,7 @@ Template.message.text = function() {
 	return new Handlebars.SafeString(this.text);
 }
 
-Template.pageItemInbox.rendered(function() {
+Template.pageItemInbox.rendered = function() {
     if(Meteor.user().new_message)
         Meteor.call('clearMessages');
-});
+};
