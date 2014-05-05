@@ -1,3 +1,7 @@
+UI.registerHelper('json', function(context) {
+	return JSON.stringify(context);
+});
+
 Template.header.helpers({
     'imgUrl' : function() {
         var url = Meteor.user().profile.img;
@@ -19,8 +23,4 @@ Template.header.events({
     'click .fa-sign-out' : function() {
         Meteor.logout();
     },
-});
-
-UI.registerHelper('json', function(context) {
-	return JSON.stringify(context);
 });
