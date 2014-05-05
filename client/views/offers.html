@@ -24,7 +24,7 @@
 		</div>
 		<div class="row-right">
 			{{#each offers}}
-				<a class="row-details" href="/inbox/{{postId}}/{{buyerId}}">{{buyer}}</a>
+				<a class="row-details" href="/inbox/{{_id}}">{{buyer}}</a>
 			{{/each}}
 		</div>
 	</div>
@@ -35,7 +35,7 @@
 	<ul>
 		{{#each offers}}
 		<li>
-			<b>{{this.buyer}}</b>
+			<b>{{buyer}}</b>
 			<a href="/inbox/{{this.postId}}/{{_id}}">See convo</a>
 		</li>
 		{{/each}}
@@ -46,7 +46,7 @@
 	<div class="left-sidebar">
 		<a class="row-details" href="/inbox">All offers</a>
 		{{#each offers}}
-			<a class="row-details" href="/inbox/{{postId}}/{{buyerId}}">{{buyer}}</a>
+			<a class="row-details" href="/inbox/{{_id}}">{{buyer}}</a>
 		{{/each}}
 	</div>
 </template>
@@ -78,7 +78,7 @@
 			<img src="{{img}}" />
 		</div>-->
 		<div class="message-text">
-			<b>{{from}}:</b>
+			<b>{{poster}}:</b>
 			{{text}}
 		</div>
 	</div>

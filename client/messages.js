@@ -18,8 +18,7 @@ Template.itemsRow.events({
 Template.itemsRow.helpers({
 	offers: function() {
 		return Offers.find({
-			sellerId: Meteor.userId(),
-			postId: this._id
+			itemId: this._id
 		}).fetch();
 	}
 });
@@ -28,68 +27,70 @@ Template.itemsRow.test = function(e) {
 	return e;
 }
 
-Template.bidding.sendMsg = function(item, message) {
-	message.type = 1;
-	message.text = $('#message').val();
-	message.postId = item._id;
-	console.log(this);
-	message.public = false;
-	Meteor.call('addBid', message, function(e, r) {
-		if (e) {
-			console.log(e);
-		} else {
-			if (r == -1) {
-				console.log('error!');
-			} else {
-				console.log('your message has been sent');
-			}
-		}
-	});
-}
-
 Template.bidding.events({
 	'click #sendMsg': function() {
-		var itemObj = Items.findOne({
+		var item = Items.findOne({
 			_id: this.itemId
 		});
 		console.log("bidding item:");
-		console.log(itemObj);
+		console.log(item);
 		console.log();
 
+		var msg = {
+			text: $('#message').val(),
+			type: 1,
+			isPublic: false,
+			posterId: Meteor.userId(),
+			poster: Meteor.user().profile.name
+		};
+
+		Meteor.call("createOffer", item, msg, function(err, data) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(data);
+				alert('your message has been sent');
+			}
+		});
+
 		/*
-		if (itemObj.seller._id == Meteor.userId()) {
+		if (item.seller._id == Meteor.userId()) {
 			alert('You cannot bid for your own item!');
 		}
 		*/
-
-		var msg = {};
-		msg.toId = itemObj.sellerId;
-		msg.to = itemObj.seller;
-
 		/*
 		msg.offer=$('#offer').val();
 		msg.location = $('#location').val();
 		*/
-		Template.bidding.sendMsg(itemObj, msg);
-		alert('your message has been sent');
 	}
 });
 
 Template.pageNego.events({
-	'keyup #message': function(e) {
+	'keydown #message': function(e) {
 		var $message = $("#message");
-		if ($message.val() && e.which === 13) {
-			var itemObj = Router.current().data();
+		if (e.which === 13) {
+			e.preventDefault();
+			if ($message.val()) {
+				var data = Router.current().data();
 
-			var msg = {};
-			msg.toId = itemObj.item.sellerId;
-			msg.to = itemObj.item.seller;
+				var msg = {
+					text: $message.val(),
+					type: 1,
+					isPublic: false,
+					offerId: data.offerId,
+					posterId: Meteor.userId(),
+					poster: Meteor.user().profile.name
+				};
 
-			Template.bidding.sendMsg(itemObj.item, msg);
-
-			$message.val("");
+				Meteor.call("sendMessage", msg, function(err) {
+					if (err) {
+						console.log(err);
+					} else {
+						$message.val("");
+					}
+				});
+			}
 		}
-		return true;
 	}
 });
 
