@@ -39,8 +39,8 @@ Meteor.methods({
 		p.score = p.time.getTime();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
-	//	if (p.imageUrl == null)
-	//		return -1;
+		//	if (p.imageUrl == null)
+		//		return -1;
 		if (p.title == null)
 			return -2;
 		else if (p.description == null)
@@ -48,16 +48,16 @@ Meteor.methods({
 		else if (p.feeds == null)
 			return -4;
 		/*
-        es.create({
-            index: 'base',
-            type: 'item',
-            body: {
-                name: p.title,
-                desc: p.description,
-                image: p.imageUrl
-            }
-        });
-        */
+		es.create({
+			index: 'base',
+			type: 'item',
+			body: {
+				name: p.title,
+				desc: p.description,
+				image: p.imageUrl
+			}
+		});
+		*/
 		console.log(temp);
 		//linker. pushes the id of the item, and the id of the category
 		for (x in p.feeds)
@@ -86,56 +86,42 @@ Meteor.methods({
 			});
 		}
 	},
-	addBid: function(message) { // GOOD
-		console.log('called' + message);
-
-
-		message.fromId = Meteor.userId();
-		message.from = Meteor.users.findOne({
-			_id: Meteor.userId()
-		}).profile.name;
-		message.time = new Date();
-
-		var offer = Offers.findOne({
-			postId: message.postId,
-			buyerId: message.fromId
+	// creates offer and first message
+	createOffer: function(item, message) {
+		var offerDoc = Offers.findOne({
+			itemId: item._id,
+			buyerId: Meteor.userId()
 		});
 
-		if (!offer) {
-			var offer = {
-				sellerId: message.toId,
-				seller: message.to,
-				buyerId: message.fromId,
-				buyer: message.from,
-				time: message.time,
-				location: message.location,
-				offer: message.offer,
-				postId: message.postId
-			};
-			var offerId = Offers.insert(offer);
-			message.offerId = offerId;
+		var offerId;
+		if (offerDoc) {
+			offerId = offerDoc._id;
 		} else {
-			message.offerId = offer._id;
+			var offer = {
+				time: new Date(),
+				itemId: item._id,
+				sellerId: item.sellerId,
+				seller: item.seller,
+				buyerId: Meteor.userId(),
+				buyer: Meteor.user().profile.name
+				//,location: message.location
+				//,offer: message.offer
+			};
+			offerId = Offers.insert(offer);
 		}
 
-		/*
-		if(message.buyer == message.seller) {
-			return -1;
-		}
-		*/
-
-		var im =Messages.insert(message);
-                if(im) {
-                    if(!Meteor.users.findOne({_id: message.toId}).new_message)
-                        Meteor.users.update({_id: message.toId}, {$set: {new_message: 1}});
-                    else{
-                        n = Meteor.users.update({_id: message.toId}, {$inc: {new_message: 1}});
-                    }
-                }
-                return true;
+		message.offerId = offerId;
+		Meteor.call('sendMessage', message);
+		return offerId;
+	},
+	sendMessage: function(message) {
+		message.time = new Date();
+		return Messages.insert(message);
 	},
 	addComment: function(t, id) {
-                item = Items.findOne({_id:id});
+		item = Items.findOne({
+			_id: id
+		});
 		comments = item.comments;
 		if (comments == undefined)
 			comments = [];
@@ -165,9 +151,15 @@ Meteor.methods({
 		console.log(ret);
 		return toAdd;
 	},
-        clearMessages: function() {
-            return Meteor.users.update({_id:Meteor.userId()},{$set:{new_message: 0}});
-        },
+	clearMessages: function() {
+		return Meteor.users.update({
+			_id: Meteor.userId()
+		}, {
+			$set: {
+				new_message: 0
+			}
+		});
+	},
 	updateLast: function() {
 		var temp = Meteor.users.findOne({
 			_id: Meteor.userId()
@@ -179,7 +171,7 @@ Meteor.methods({
 			profile: temp
 		});
 	},
-        /*
+	/*
 	resetAccounts: function() {
 		Meteor.users.remove({});
 		console.log(Meteor.users.find().fetch());
@@ -195,12 +187,14 @@ Meteor.methods({
 		FtoI.remove({});
 		Feeds.remove({});
 	},
-        */
+		*/
 	markSold: function(item) {
 		Items.update({
 			_id: item._id
 		}, {
-			sold: true
+			$set: {
+				sold: true
+			}
 		});
 	}
 });
