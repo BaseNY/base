@@ -9,6 +9,14 @@
 				{{/unless}}
 			{{/each}}
 		</div>
+		<h1>Buying offers</h1>
+		<div class="buying-offers-container">
+			{{#each buying}}
+				{{#unless sold}}
+					{{> itemsRowBuying}}
+				{{/unless}}
+			{{/each}}
+		</div>
 	</section>
 </template>
 
@@ -30,7 +38,24 @@
 	</div>
 </template>
 
-<template name="pageOffers">
+<template name="itemsRowBuying">
+	<div class="row">
+		<div class="row-left">
+			{{#with item}}
+				<a class="row-thumbnail" href="/post/{{_id}}">
+					Buying: {{title}}
+					<br><br>
+					<img class="product-img" src="{{imageUrl}}" />
+				</a>
+			{{/with}}
+		</div>
+		<div class="row-right">
+			<a class="row-details" href="/inbox/{{_id}}">{{seller}}</a>
+		</div>
+	</div>
+</template>
+
+<!--<template name="pageOffers">
 	<h1>Offers for {{item.title}}</h1>
 	<ul>
 		{{#each offers}}
@@ -40,7 +65,7 @@
 		</li>
 		{{/each}}
 	</ul>
-</template>
+</template>-->
 
 <template name="offersSidebar">
 	<div class="left-sidebar">

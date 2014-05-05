@@ -17,9 +17,18 @@ Template.itemsRow.events({
 
 Template.itemsRow.helpers({
 	offers: function() {
+		console.log(Meteor.userId());
 		return Offers.find({
 			itemId: this._id
 		}).fetch();
+	}
+});
+
+Template.itemsRowBuying.helpers({
+	item: function() {
+		return Items.findOne({
+			_id: this.itemId
+		});
 	}
 });
 

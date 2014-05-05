@@ -62,6 +62,10 @@ div#message, div[contenteditable], .post-message, .comment {
 	}
 }
 
+.buying-offers-container {
+	text-align: center;
+}
+
 .pageNego {
 	@include outer-container;
 	max-width: 1200px;
