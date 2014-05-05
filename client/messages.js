@@ -25,12 +25,10 @@ Template.itemsRow.helpers({
 });
 
 Template.itemsRowBuying.helpers({
-	offers: function() {
-		console.log(Meteor.userId());
-		return Offers.find({
-			itemId: this._id,
-			buyerId: Meteor.userId()
-		}).fetch();
+	item: function() {
+		return Items.findOne({
+			_id: this.itemId
+		});
 	}
 });
 
