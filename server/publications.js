@@ -20,5 +20,8 @@ Meteor.publish('feeds',function() {
     return Feeds.find();
 });
 Meteor.publish('userData', function() {
+    return Meteor.users.find({_id: this.userId}, {fields: {'profile': 1, '_id': 1, 'new_message': 1}});
+});
+Meteor.publish('allUserData', function() {
     return Meteor.users.find({},{fields: {'profile': 1, '_id':1}});
 });

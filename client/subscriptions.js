@@ -7,4 +7,5 @@ Deps.autorun(function(){
     Meteor.subscribe('offers');
     Meteor.subscribe('items');
     Meteor.subscribe('userData');
+    Meteor.subscribe('allUserData');
 });

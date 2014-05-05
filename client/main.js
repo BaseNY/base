@@ -5,7 +5,14 @@ Template.header.helpers({
     },
 	'name': function() {
     	return Meteor.user().profile.name;
-	}
+	},
+    'newMsgs': function() {
+        var num = Meteor.user().new_message;
+        if(num)
+            return num;
+        else
+            return '';
+    }
 });
 
 Template.header.events({

@@ -613,7 +613,10 @@ header {
         vertical-align: middle;
         height: 2.5em;
         margin-right: 10px; }
-    /* line 128, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 127, /home/jasperlu/base/client/stylesheets/general/header */
+      header > .content .user-wrapper span {
+        color: #f39c12; }
+    /* line 131, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .btn-login {
       background: #50a8e7;
       color: white;
@@ -624,13 +627,13 @@ header {
       font-size: 20px;
       height: 100%;
       line-height: 100%; }
-    /* line 139, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 142, /home/jasperlu/base/client/stylesheets/general/header */
     header > .content .link {
       vertical-align: middle;
       margin-right: 0.8em;
       font-size: 1.4em; }
 
-/* line 147, /home/jasperlu/base/client/stylesheets/general/header */
+/* line 150, /home/jasperlu/base/client/stylesheets/general/header */
 .header-notice {
   width: 100%;
   background-color: #f39c12;

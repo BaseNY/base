@@ -89,6 +89,7 @@ Meteor.methods({
 	addBid: function(message) { // GOOD
 		console.log('called' + message);
 
+
 		message.fromId = Meteor.userId();
 		message.from = Meteor.users.findOne({
 			_id: Meteor.userId()
@@ -122,7 +123,16 @@ Meteor.methods({
 			return -1;
 		}
 		*/
-		return Messages.insert(message);
+
+		var im =Messages.insert(message);
+                if(im) {
+                    if(!Meteor.users.findOne({_id: message.toId}).new_message)
+                        Meteor.users.update({_id: message.toId}, {$set: {new_message: 1}});
+                    else{
+                        n = Meteor.users.update({_id: message.toId}, {$inc: {new_message: 1}});
+                    }
+                }
+                return true;
 	},
 	addComment: function(t, id) {
                 item = Items.findOne({_id:id});
@@ -155,6 +165,9 @@ Meteor.methods({
 		console.log(ret);
 		return toAdd;
 	},
+        clearMessages: function() {
+            return Meteor.users.update({_id:Meteor.userId()},{$set:{new_message: 0}});
+        },
 	updateLast: function() {
 		var temp = Meteor.users.findOne({
 			_id: Meteor.userId()
@@ -166,6 +179,7 @@ Meteor.methods({
 			profile: temp
 		});
 	},
+        /*
 	resetAccounts: function() {
 		Meteor.users.remove({});
 		console.log(Meteor.users.find().fetch());
@@ -181,6 +195,7 @@ Meteor.methods({
 		FtoI.remove({});
 		Feeds.remove({});
 	},
+        */
 	markSold: function(item) {
 		Items.update({
 			_id: item._id
