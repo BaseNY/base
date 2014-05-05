@@ -6,10 +6,13 @@
 
 Template.inboxSelling.helpers({
 	offers: function() {
-		console.log(Meteor.userId());
-		return Offers.find({
-			itemId: this._id
-		}).fetch();
+		return Offers.find({itemId: this._id});
+	}
+});
+
+Template.inboxBuying.helpers({
+	item: function() {
+		return Items.findOne({_id: this.itemId});
 	}
 });
 
@@ -20,14 +23,6 @@ Template.inboxSelling.events({
 			if (err) {
 				console.log(err);
 			}
-		});
-	}
-});
-
-Template.inboxBuying.helpers({
-	item: function() {
-		return Items.findOne({
-			_id: this.itemId
 		});
 	}
 });
