@@ -1,4 +1,4 @@
-if (Items.find().count() === 0) {
+/*if (Items.find().count() === 0) {
 	Items.insert({
 		name: 'Jesus Toaster',
 		seller: 'Jesus',
@@ -56,4 +56,4 @@ if (Items.find().count() === 0) {
 			list: 3400
 		}
 	});
-}
+}*/
