@@ -56,8 +56,24 @@ Template.sellPost.events({
 		//NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
 		e.preventDefault();
 		console.log("adding item");
-		if (!document.getElementById('image').files[0])
-			alert('Need an image!');
+		if (!document.getElementById('image').files[0]) {
+			Meteor.call('addPost', temp, function(e, r) {
+				console.log("something");
+				if (e) {
+					alert(e);
+				} else {
+					if (r == -2)
+						alert('Need a title!');
+					else if (r == -3)
+						alert('Need a description!');
+					else if (r == -4)
+						alert('Pick a feed!');
+					console.log("done");
+					Router.go('/post/' + r);
+				}
+			});
+
+                }else{
 
 		s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0], function(temp) {
 			Meteor.call('addPost', temp, function(e, r) {
@@ -78,12 +94,18 @@ Template.sellPost.events({
 				}
 			});
 		});
+                }
 	}
 });
 
 Template.buyPost.events({
 	'click #buy-post': function(e) {
+		$(e.target).css('pointer-events', 'none');
+                setInterval(function() {
+                    $(e.target).css('pointer-events','auto');
+                }, 1000);
 		e.preventDefault();
+
 		temp = {};
 		temp.feeds = [];
 		if (Router.current().data())
@@ -108,8 +130,10 @@ Template.buyPost.events({
 				alert(e);
 			} else {
 				console.log("done");
+                                Router.go('/');
 			}
 		});
+                $(e.target).slideUp();
 	}
 });
 
