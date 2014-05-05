@@ -114,8 +114,16 @@ Meteor.methods({
 		Meteor.call('sendMessage', message);
 		return offerId;
 	},
-	sendMessage: function(message) {
-		message.time = new Date();
+	sendMessage: function(data) {
+		var message = {
+			time: new Date(),
+			type: 1,
+			isPublic: false,
+			offerId: data.offerId,
+			text: data.text,
+			posterId: Meteor.userId(),
+			poster: Meteor.user().profile.name
+		};
 		return Messages.insert(message);
 	},
 	addComment: function(t, id) {
