@@ -81,7 +81,7 @@ Meteor.methods({
 				'feedId': p.feeds[x],
 				'itemId': temp,
 				'sellerId': p.sellerId,
-				'time': p.time
+				'score': p.score
 			});
 		}
 	},
@@ -124,9 +124,8 @@ Meteor.methods({
 		return Messages.insert(message);
 	},
 	addComment: function(t, id) {
-		comments = Items.findOne({
-			_id: id
-		}).comments;
+                item = Items.findOne({_id:id});
+		comments = item.comments;
 		if (comments == undefined)
 			comments = [];
                 url = Meteor.users.findOne({_id: this.userId}).profile.img;
