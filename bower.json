@@ -1,0 +1,22 @@
+{
+  "name": "base",
+  "version": "0.0.1",
+  "authors": [
+    "Steve Zhu <st.zhu1@gmail.com>"
+  ],
+  "main": "client/stylesheets/application.css",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "spec"
+  ],
+  "dependencies": {
+    "bourbon": "~3.2.0",
+    "neat": "~1.5.1"
+  }
+}
