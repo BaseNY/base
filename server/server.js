@@ -1,5 +1,5 @@
 defaultFeeds = [];
-if (Feeds.findOne() == undefined) {
+if (!Feeds.findOne()) {
 	console.log(defaultFeeds);
 	defaultFeeds.push(Feeds.insert({
 		name: 'Sneakers',
@@ -117,12 +117,12 @@ Meteor.methods({
 	sendMessage: function(data) {
 		var message = {
 			time: new Date(),
-			type: 1,
-			isPublic: false,
+			posterId: Meteor.userId(),
+			poster: Meteor.user().profile.name,
 			offerId: data.offerId,
 			text: data.text,
-			posterId: Meteor.userId(),
-			poster: Meteor.user().profile.name
+			type: 1,
+			isPublic: false
 		};
 		return Messages.insert(message);
 	},
