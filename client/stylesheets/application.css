@@ -347,7 +347,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 2, ../packages/neat-scss/grid/grid */
+/* line 2, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/grid */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -455,16 +455,13 @@ body {
 section.body {
   width: 85%;
   max-width: 900px;
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  section.body:before, section.body:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   section.body:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 106, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/general/base */
@@ -473,7 +470,7 @@ section.body {
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .right-column:last-child {
     margin-right: 0; }
 
@@ -483,7 +480,7 @@ section.body {
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .left-column:last-child {
     margin-right: 0; }
 
@@ -710,16 +707,13 @@ display:inline-block;
   margin-top: 24px; }
   /* line 58, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
   .sidebar .top-container {
-    *zoom: 1;
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto; }
-    /* line 18, ../packages/bourbon-scss/addons/clearfix */
-    .sidebar .top-container:before, .sidebar .top-container:after {
-      content: " ";
-      display: table; }
-    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
     .sidebar .top-container:after {
+      content: "";
+      display: table;
       clear: both; }
     /* line 60, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
     .sidebar .top-container .top-left {
@@ -727,7 +721,7 @@ display:inline-block;
       display: block;
       margin-right: 2.35765%;
       width: 31.76157%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar .top-container .top-left:last-child {
         margin-right: 0; }
       /* line 62, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
@@ -739,7 +733,7 @@ display:inline-block;
       display: block;
       margin-right: 2.35765%;
       width: 65.88078%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar .top-container .top-right:last-child {
         margin-right: 0; }
       /* line 68, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
@@ -757,17 +751,14 @@ display:inline-block;
   /* line 83, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
   .sidebar ul li {
     padding: 4px;
-    *zoom: 1;
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4px; }
-    /* line 18, ../packages/bourbon-scss/addons/clearfix */
-    .sidebar ul li:before, .sidebar ul li:after {
-      content: " ";
-      display: table; }
-    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
     .sidebar ul li:after {
+      content: "";
+      display: table;
       clear: both; }
     /* line 86, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
     .sidebar ul li .left {
@@ -775,7 +766,7 @@ display:inline-block;
       display: block;
       margin-right: 2.35765%;
       width: 10.43705%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar ul li .left:last-child {
         margin-right: 0; }
     /* line 89, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
@@ -784,7 +775,7 @@ display:inline-block;
       display: block;
       margin-right: 2.35765%;
       width: 87.20529%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar ul li .right:last-child {
         margin-right: 0; }
     /* line 92, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/home */
@@ -1195,7 +1186,6 @@ td.msgs-right {
 
 /* line 308, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/product */
 .pageProduct {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1205,12 +1195,10 @@ td.msgs-right {
   /* line 309, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/product */
   .pageProduct h1 {
     font-weight: normal; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .pageProduct:before, .pageProduct:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .pageProduct:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 316, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/product */
   .pageProduct .container {
@@ -1218,7 +1206,7 @@ td.msgs-right {
     display: block;
     margin-right: 2.35765%;
     width: 100%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .pageProduct .container:last-child {
       margin-right: 0; }
     /* line 318, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/product */
@@ -1227,7 +1215,7 @@ td.msgs-right {
       display: block;
       margin-right: 2.35765%;
       width: 57.35098%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .pageProduct .container .pic:last-child {
         margin-right: 0; }
     /* line 321, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/product */
@@ -1236,7 +1224,7 @@ td.msgs-right {
       display: block;
       margin-right: 2.35765%;
       width: 40.29137%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .pageProduct .container .info:last-child {
         margin-right: 0; }
     /* line 324, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/product */
@@ -1259,17 +1247,14 @@ td.msgs-right {
 
 /* line 3, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/about */
 section.pageAbout {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  section.pageAbout:before, section.pageAbout:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   section.pageAbout:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 6, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/about */
   section.pageAbout div.trio-wrapper {
@@ -1282,16 +1267,16 @@ section.pageAbout {
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     section.pageAbout div.trio:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px)  {
       section.pageAbout div.trio {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        /* line 40, ../packages/neat-scss/grid/span-columns */
+        /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
@@ -1311,17 +1296,14 @@ div#message, div[contenteditable], .post-message, .comment {
 
 /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
 .inbox-container {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .inbox-container:before, .inbox-container:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .inbox-container:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 18, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
   .inbox-container #mark-sold {
@@ -1333,17 +1315,14 @@ div#message, div[contenteditable], .post-message, .comment {
 
 /* line 26, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
 .inbox-row {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .inbox-row:before, .inbox-row:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .inbox-row:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 30, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
@@ -1352,7 +1331,7 @@ div#message, div[contenteditable], .post-message, .comment {
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .inbox-left:last-child {
     margin-right: 0; }
 
@@ -1362,7 +1341,7 @@ div#message, div[contenteditable], .post-message, .comment {
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .inbox-right:last-child {
     margin-right: 0; }
 
@@ -1395,7 +1374,7 @@ div#message, div[contenteditable], .post-message, .comment {
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 1px; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .messages-sidebar:last-child {
     margin-right: 0; }
   /* line 56, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
@@ -1412,17 +1391,14 @@ div#message, div[contenteditable], .post-message, .comment {
 
 /* line 69, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
 .messages-container {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .messages-container:before, .messages-container:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .messages-container:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 74, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
@@ -1431,7 +1407,7 @@ div#message, div[contenteditable], .post-message, .comment {
   display: block;
   margin-right: 2.35765%;
   width: 10.43705%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .message-thumbnail:last-child {
     margin-right: 0; }
 
@@ -1441,7 +1417,7 @@ div#message, div[contenteditable], .post-message, .comment {
   display: block;
   margin-right: 2.35765%;
   width: 87.20529%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .message-text:last-child {
     margin-right: 0; }
 
@@ -1452,22 +1428,19 @@ div#message, div[contenteditable], .post-message, .comment {
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-bottom: 50px; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .messages-conversation:last-child {
     margin-right: 0; }
 
 /* line 84, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
 .message {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .message:before, .message:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .message:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 87, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/messages */
@@ -1476,7 +1449,7 @@ div#message, div[contenteditable], .post-message, .comment {
   display: block;
   margin-right: 2.35765%;
   width: 100%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .messages-reply-container:last-child {
     margin-right: 0; }
 
@@ -1511,7 +1484,6 @@ div#message, div[contenteditable], .post-message, .comment {
 
 /* line 1, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
 .pageFeeds {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1520,12 +1492,10 @@ div#message, div[contenteditable], .post-message, .comment {
   .pageFeeds .faded {
     color: grey;
     font-size: 1em; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .pageFeeds:before, .pageFeeds:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .pageFeeds:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 8, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
   .pageFeeds .post {
@@ -1564,16 +1534,13 @@ div#message, div[contenteditable], .post-message, .comment {
       height: 100%; }
       /* line 36, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .container {
-        *zoom: 1;
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 18, ../packages/bourbon-scss/addons/clearfix */
-        .pageFeeds .post .post-inner .container:before, .pageFeeds .post .post-inner .container:after {
-          content: " ";
-          display: table; }
-        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .post-inner .container:after {
+          content: "";
+          display: table;
           clear: both; }
         /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
         .pageFeeds .post .post-inner .container .left {
@@ -1581,7 +1548,7 @@ div#message, div[contenteditable], .post-message, .comment {
           display: block;
           margin-right: 2.35765%;
           width: 14.70196%; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
         /* line 41, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
@@ -1590,7 +1557,7 @@ div#message, div[contenteditable], .post-message, .comment {
           display: block;
           margin-right: 2.35765%;
           width: 82.94039%; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
       /* line 47, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
@@ -1607,16 +1574,13 @@ div#message, div[contenteditable], .post-message, .comment {
       padding: 4px; }
       /* line 61, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .commentSmallContainer {
-        *zoom: 1;
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 18, ../packages/bourbon-scss/addons/clearfix */
-        .pageFeeds .post .commentContainer .commentSmallContainer:before, .pageFeeds .post .commentContainer .commentSmallContainer:after {
-          content: " ";
-          display: table; }
-        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .commentContainer .commentSmallContainer:after {
+          content: "";
+          display: table;
           clear: both; }
         /* line 63, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
         .pageFeeds .post .commentContainer .commentSmallContainer .left {
@@ -1624,7 +1588,7 @@ div#message, div[contenteditable], .post-message, .comment {
           display: block;
           margin-right: 2.35765%;
           width: 6.17215%; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .commentContainer .commentSmallContainer .left:last-child {
             margin-right: 0; }
         /* line 66, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
@@ -1633,7 +1597,7 @@ div#message, div[contenteditable], .post-message, .comment {
           display: block;
           margin-right: 2.35765%;
           width: 91.4702%; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .commentContainer .commentSmallContainer .right:last-child {
             margin-right: 0; }
       /* line 70, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/feeds */
@@ -1669,7 +1633,6 @@ div#message, div[contenteditable], .post-message, .comment {
 
 /* line 1, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/post */
 .post-box {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1682,12 +1645,10 @@ div#message, div[contenteditable], .post-message, .comment {
   margin-top: 24px;
   margin-bottom: 24px;
   padding: 0px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .post-box:before, .post-box:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .post-box:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 9, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/post */
   .post-box input[type=text] {
@@ -1947,14 +1908,11 @@ fieldset.show, div.show {
 /* line 7, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/search */
 .browse-container {
   margin-top: 40px;
-  margin-bottom: 50px;
-  *zoom: 1; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .browse-container:before, .browse-container:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  margin-bottom: 50px; }
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .browse-container:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 13, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/search */
@@ -1971,18 +1929,15 @@ fieldset.show, div.show {
 
 /* line 25, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/search */
 .items-container {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
   overflow: hidden; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .items-container:before, .items-container:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .items-container:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 29, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/pages/search */
   .items-container .item {
@@ -1992,13 +1947,13 @@ fieldset.show, div.show {
     width: 31.76157%;
     margin-bottom: 2.35765%;
     padding: 10px; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .items-container .item:last-child {
       margin-right: 0; }
-    /* line 70, ../packages/neat-scss/grid/omega */
+    /* line 52, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
     .items-container .item:nth-child(3n) {
       margin-right: 0; }
-    /* line 75, ../packages/neat-scss/grid/omega */
+    /* line 57, /Users/stevezhu/Desktop/base-rewrite/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
     .items-container .item:nth-child(3n+1) {
       clear: left; }
 

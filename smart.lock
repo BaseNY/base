@@ -5,8 +5,6 @@
       "iron-router": {},
       "fast-render": {},
       "nprogress": {},
-      "bourbon-scss": {},
-      "neat-scss": {},
       "npm": {}
     },
     "packages": {
@@ -24,16 +22,6 @@
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
         "tag": "v0.0.4",
         "commit": "8333206b751a24fac1fbd1b03fa37621bcefe50c"
-      },
-      "bourbon-scss": {
-        "git": "https://github.com/stevezhu/meteor-bourbon.git",
-        "tag": "v3.1.8.4",
-        "commit": "9c36e7bbc40ab7b8930a45a6bf0b41b0d582eaf1"
-      },
-      "neat-scss": {
-        "git": "https://github.com/stevezhu/meteor-neat.git",
-        "tag": "v1.5.0.7",
-        "commit": "1a3c439a121c1017b50b10d75657837f6cd8298d"
       },
       "npm": {
         "git": "https://github.com/arunoda/meteor-npm.git",
