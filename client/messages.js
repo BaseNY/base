@@ -17,8 +17,19 @@ Template.itemsRow.events({
 
 Template.itemsRow.helpers({
 	offers: function() {
+		console.log(Meteor.userId());
 		return Offers.find({
 			itemId: this._id
+		}).fetch();
+	}
+});
+
+Template.itemsRowBuying.helpers({
+	offers: function() {
+		console.log(Meteor.userId());
+		return Offers.find({
+			itemId: this._id,
+			buyerId: Meteor.userId()
 		}).fetch();
 	}
 });
