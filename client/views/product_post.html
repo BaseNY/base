@@ -52,13 +52,15 @@
 	<div id="buy-container" class="container">
 		{{#if feed}}
 		{{else}}
+                <div class="feedsList">
 			Pick a feed to publish to:
 			<form>
 				{{#each feeds}}
 					<input id="buy-{{_id}}" class="highlight-radio" type="radio" name="feed" value={{_id}}>
-					<label for="buy-{{_id}}" class="highlight-label">{{name}}</label>
+                                        <label for="buy-{{_id}}" class="highlight-label"><i class="fa fa-{{this.icon}}"></i> {{name}}</label>
 				{{/each}}
 			</form>
+                    </div>
 		{{/if}}
 		<br />
 		<textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
@@ -70,13 +72,15 @@
 	<div id="sell-container" class="container">
 		{{#if feed}}
 		{{else}}
+                <div class="feedsList">
 			Pick a feed to publish to:
 			<form>
 				{{#each feeds}}
 					<input id="sell-{{_id}}" class="highlight-radio" type="radio" name="feed" value={{_id}}>
-					<label for="sell-{{_id}}" class="highlight-label">{{name}}</label>
+                                        <label for="sell-{{_id}}" class="highlight-label"><i class="fa fa-{{this.icon}}"></i> {{name}}</label>
 				{{/each}}
 			</form>
+                    </div>
 		{{/if}}
 		<input type="text" id="item-title" name="title" placeholder="What is your item called?">
 		<br />
