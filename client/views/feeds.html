@@ -15,13 +15,13 @@
 
 <template name="feedPost">
 	<div class="post">
-		<div class="post-inner">
+            <div style="border-left: 4px solid{{#if isSellPost}}#f39c12{{else}}#50a8e7{{/if}}" class="post-inner">
 			<div class="container">
 				<div class="left">
 					<img src={{imgUrl}}>
 				</div>
 				<div class="right">
-					<h1><a href="/feeds/item._id">{{item.title}}</a><i class="fa fa-envelope"></i>
+                                    <h1><a href="/feeds/item._id">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{item.title}}</a><i class="fa fa-envelope"></i>
 					</h1>
 					<hr />
                                         <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> <i class="fa fa-angle-right"></i> <a href="/feeds/{{feed._id}}">{{feed.name}}</a> <span class="faded">{{timestamp}}</span>
