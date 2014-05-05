@@ -1,0 +1,55 @@
+<template name="inbox">
+	<section class="inbox-container">
+		<h1>Offers for {{user}}</h1>
+		<div class="inbox-offer-container">
+			{{#each items}}
+				{{#unless sold}}
+					{{> inboxSelling}}
+				{{/unless}}
+			{{/each}}
+		</div>
+		<h1>Buying offers</h1>
+		<div class="inbox-offer-container">
+			{{#each buyingOffers}}
+				{{#unless sold}}
+					{{> inboxBuying}}
+				{{/unless}}
+			{{/each}}
+		</div>
+	</section>
+</template>
+
+<template name="inboxSelling">
+	<div class="inbox-row">
+		<div class="inbox-left">
+			<a class="inbox-thumbnail" href="/post/{{_id}}">
+				Selling: {{title}}
+				<br><br>
+				<img class="inbox-img" src="{{imageUrl}}">
+			</a>
+			<div class="inbox-sold-button">Mark as sold</div>
+		</div>
+		<div class="inbox-right">
+			{{#each offers}}
+				<a class="inbox-offer" href="/inbox/{{_id}}">{{buyer}}</a>
+			{{/each}}
+		</div>
+	</div>
+</template>
+
+<template name="inboxBuying">
+	<div class="inbox-row">
+		<div class="inbox-left">
+			{{#with item}}
+				<a class="inbox-thumbnail" href="/post/{{_id}}">
+					Buying: {{title}}
+					<br><br>
+					<img class="inbox-img" src="{{imageUrl}}">
+				</a>
+			{{/with}}
+		</div>
+		<div class="inbox-right">
+			<a class="inbox-offer" href="/inbox/{{_id}}">{{seller}}</a>
+		</div>
+	</div>
+</template>
