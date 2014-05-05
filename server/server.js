@@ -65,7 +65,7 @@ Meteor.methods({
 				'feedId': p.feeds[x],
 				'itemId': temp,
 				'sellerId': p.sellerId,
-				'time': p.time
+				'score': p.score
 			});
 		return temp;
 	},
