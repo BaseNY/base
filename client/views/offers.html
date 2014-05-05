@@ -10,7 +10,7 @@
 			{{/each}}
 		</div>
 		<h1>Buying offers</h1>
-		<div>
+		<div class="buying-offers-container">
 			{{#each buying}}
 				{{#unless sold}}
 					{{> itemsRowBuying}}
@@ -41,16 +41,16 @@
 <template name="itemsRowBuying">
 	<div class="row">
 		<div class="row-left">
-			<a class="row-thumbnail" href="/post/{{_id}}">
-				Buying: {{title}}
-				<br><br>
-				<img class="product-img" src="{{imageUrl}}" />
-			</a>
+			{{#with item}}
+				<a class="row-thumbnail" href="/post/{{_id}}">
+					Buying: {{title}}
+					<br><br>
+					<img class="product-img" src="{{imageUrl}}" />
+				</a>
+			{{/with}}
 		</div>
 		<div class="row-right">
-			{{#each offers}}
-				<a class="row-details" href="/inbox/{{_id}}">{{seller}}</a>
-			{{/each}}
+			<a class="row-details" href="/inbox/{{_id}}">{{seller}}</a>
 		</div>
 	</div>
 </template>
