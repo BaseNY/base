@@ -34,8 +34,9 @@ Meteor.methods({
 		p.seller = Meteor.users.findOne({
 			_id: Meteor.userId()
 		}).profile.name;
+		p.sold = false;
 		p.time = new Date();
-                p.score = p.time.getTime();
+		p.score = p.time.getTime();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
 		if (p.imageUrl == null)
@@ -74,7 +75,7 @@ Meteor.methods({
 			_id: Meteor.userId()
 		}).profile.name;
 		p.time = new Date();
-                p.score = p.time.getTime();
+		p.score = p.time.getTime();
 		var temp = Items.insert(p);
 		for (x in p.feeds) {
 			FtoI.insert({
@@ -128,7 +129,9 @@ Meteor.methods({
 		comments = item.comments;
 		if (comments == undefined)
 			comments = [];
-                url = Meteor.users.findOne({_id: this.userId}).profile.img;
+		url = Meteor.users.findOne({
+			_id: this.userId
+		}).profile.img;
 		toAdd = [this.userId, t, url, new Date()];
 		comments.push(toAdd);
 		console.log(comments);
@@ -141,12 +144,15 @@ Meteor.methods({
 				comments: comments
 			}
 		});
-                var ret = FtoI.update({
-                    itemId: id, feedId: item.feeds[0]
-                }, {
-                    $set: {score: toAdd[3].getTime()}
-                });
-                console.log(ret);
+		var ret = FtoI.update({
+			itemId: id,
+			feedId: item.feeds[0]
+		}, {
+			$set: {
+				score: toAdd[3].getTime()
+			}
+		});
+		console.log(ret);
 		return toAdd;
 	},
 	updateLast: function() {
@@ -174,5 +180,12 @@ Meteor.methods({
 	resetFeeds: function() {
 		FtoI.remove({});
 		Feeds.remove({});
+	},
+	markSold: function(item) {
+		Items.update({
+			_id: item._id
+		}, {
+			sold: true
+		});
 	}
 });
