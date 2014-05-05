@@ -1,21 +1,15 @@
 Template.messages.events({
-	'keydown #message': function(e) {
+	'keydown #messages-reply': function(e) {
 		var $message = $("#messages-reply");
-		if (e.which === 13) { // if is enter key
+		// if is enter key and shift key is not held down
+		if (e.which === 13 && !e.shiftKey) {
 			e.preventDefault();
 			if ($message.val()) {
-				var data = Router.current().data();
-
-				var msg = {
+				var data = {
 					text: $message.val(),
-					type: 1,
-					isPublic: false,
-					offerId: data.offerId,
-					posterId: Meteor.userId(),
-					poster: Meteor.user().profile.name
+					offerId: this.offerId
 				};
-
-				Meteor.call("sendMessage", msg, function(err) {
+				Meteor.call("sendMessage", data, function(err) {
 					if (err) {
 						console.log(err);
 					} else {
