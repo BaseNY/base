@@ -651,83 +651,83 @@ header {
     margin-left: 20px; }
 
 /* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-.sidebar {
+.home-sidebar-content {
   margin-top: 24px; }
   /* line 3, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-  .sidebar .top-container {
+  .home-sidebar-content .top-container {
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto; }
     /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
-    .sidebar .top-container:after {
+    .home-sidebar-content .top-container:after {
       content: "";
       display: table;
       clear: both; }
     /* line 5, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .sidebar .top-container .top-left {
+    .home-sidebar-content .top-container .top-left {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 31.76157%; }
       /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .sidebar .top-container .top-left:last-child {
+      .home-sidebar-content .top-container .top-left:last-child {
         margin-right: 0; }
       /* line 7, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-      .sidebar .top-container .top-left img {
+      .home-sidebar-content .top-container .top-left img {
         width: 100%; }
     /* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .sidebar .top-container .top-right {
+    .home-sidebar-content .top-container .top-right {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 65.88078%; }
       /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .sidebar .top-container .top-right:last-child {
+      .home-sidebar-content .top-container .top-right:last-child {
         margin-right: 0; }
       /* line 13, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-      .sidebar .top-container .top-right h2 {
+      .home-sidebar-content .top-container .top-right h2 {
         font-weight: normal;
         margin-top: 8px;
         margin-left: 4px;
         text-overflow: ellipsis;
         overflow: hidden; }
   /* line 22, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-  .sidebar h3 {
+  .home-sidebar-content h3 {
     color: grey;
     font-weight: bold;
     margin: 8px 0px 2px; }
   /* line 28, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-  .sidebar ul li {
+  .home-sidebar-content ul li {
     padding: 4px;
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4px; }
     /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
-    .sidebar ul li:after {
+    .home-sidebar-content ul li:after {
       content: "";
       display: table;
       clear: both; }
     /* line 31, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .sidebar ul li .left {
+    .home-sidebar-content ul li .left {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 10.43705%; }
       /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .sidebar ul li .left:last-child {
+      .home-sidebar-content ul li .left:last-child {
         margin-right: 0; }
     /* line 34, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .sidebar ul li .right {
+    .home-sidebar-content ul li .right {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 87.20529%; }
       /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .sidebar ul li .right:last-child {
+      .home-sidebar-content ul li .right:last-child {
         margin-right: 0; }
     /* line 37, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .sidebar ul li:hover {
+    .home-sidebar-content ul li:hover {
       background-color: #E6E6E6;
       cursor: pointer; }
 
