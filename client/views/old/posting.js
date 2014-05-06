@@ -34,12 +34,12 @@ Template.postBox.events({
 
 Template.sellPost.events({
 	'click #sell-post': function(e) {
-                if(!Meteor.user()) {
-		    $('#modal-container').css('display', 'block');
-		    $('#modal-signup').css('display', 'block');
-                    return -1;
-                }
-                    
+		if (!Meteor.user()) {
+			$('#modal-container').css('display', 'block');
+			$('#modal-signup').css('display', 'block');
+			return -1;
+		}
+
 		$(this).css('pointer-events', 'none');
 		e.preventDefault();
 		temp = {};
@@ -79,42 +79,42 @@ Template.sellPost.events({
 				}
 			});
 
-                }else{
+		} else {
 
-		s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0], function(temp) {
-			Meteor.call('addPost', temp, function(e, r) {
-				console.log("something");
-				if (e) {
-					alert(e);
-				} else {
-					if (r == -1)
-						alert('Need an image url!');
-					else if (r == -2)
-						alert('Need a title!');
-					else if (r == -3)
-						alert('Need a description!');
-					else if (r == -4)
-						alert('Pick a feed!');
-					console.log("done");
-					Router.go('/post/' + r);
-				}
+			s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0], function(temp) {
+				Meteor.call('addPost', temp, function(e, r) {
+					console.log("something");
+					if (e) {
+						alert(e);
+					} else {
+						if (r == -1)
+							alert('Need an image url!');
+						else if (r == -2)
+							alert('Need a title!');
+						else if (r == -3)
+							alert('Need a description!');
+						else if (r == -4)
+							alert('Pick a feed!');
+						console.log("done");
+						Router.go('/post/' + r);
+					}
+				});
 			});
-		});
-                }
+		}
 	}
 });
 
 Template.buyPost.events({
 	'click #buy-post': function(e) {
-                if(!Meteor.user()) {
-		    $('#modal-container').css('display', 'block');
-		    $('#modal-signup').css('display', 'block');
-                    return -1;
-                }
+		if (!Meteor.user()) {
+			$('#modal-container').css('display', 'block');
+			$('#modal-signup').css('display', 'block');
+			return -1;
+		}
 		$(e.target).css('pointer-events', 'none');
-                setInterval(function() {
-                    $(e.target).css('pointer-events','auto');
-                }, 1000);
+		setInterval(function() {
+			$(e.target).css('pointer-events', 'auto');
+		}, 1000);
 		e.preventDefault();
 
 		temp = {};
@@ -141,10 +141,10 @@ Template.buyPost.events({
 				alert(e);
 			} else {
 				console.log("done");
-                                Router.go('/');
+				Router.go('/');
 			}
 		});
-                $(e.target).slideUp();
+		$(e.target).slideUp();
 	}
 });
 

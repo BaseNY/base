@@ -11,7 +11,7 @@ var tempFBLogCode = function() {
 			alert(e)
 		} else {
 			console.log("You have logged in!");
-                        Template.modalOverlay.close();
+			Template.modalOverlay.close();
 		}
 	})
 }
