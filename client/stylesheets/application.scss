@@ -14,7 +14,6 @@
 @import "pages/modal";
 @import "pages/product";
 @import "pages/about";
-@import "pages/messages";
 @import "pages/feeds";
 @import "pages/profile";
 @import "pages/post";
@@ -22,5 +21,5 @@
 
 @import "pages/search";
 
-
-//@import "pages/items/item_grid";
+@import "pages/inbox";
+@import "pages/messages";

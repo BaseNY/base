@@ -1,55 +1,17 @@
 div#message, div[contenteditable], .post-message, .comment {
-	background-color: white;
 	display: block;
+	padding: 8px 4px 4px 4px;
 	width: 100%;
 	height: auto;
-	line-height: 1.25em;
-	padding: 8px 4px 4px 4px;
-	resize: none;
-	border: 1px solid rgb(200,200,200);
+	border: 1px solid rgb(200, 200, 200);
+	background-color: white;
 	word-wrap: break-word;
-	-webkit-writing-mode: horizontal-tb;
 	font-size: 1.2em;
+	line-height: 1.25em;
+	resize: none;
+	-webkit-writing-mode: horizontal-tb;
 }
 
-.inbox-container {
-	@include outer-container;
-	max-width: 1200px;
-	#mark-sold {
-		background-color: #33B5E5;
-		color: #FFF;
-		padding: 0.3em 0.4em;
-		box-shadow: $boxes;
-		cursor: pointer;
-	}
-}
-.inbox-row {
-	@include outer-container;
-	margin-bottom: 30px;
-}
-.inbox-left {
-	@include span-columns(3);
-}
-.inbox-right {
-	@include span-columns(9);
-}
-.inbox-thumbnail {
-	display: block;
-	padding: 20px;
-	background-color: white;
-	box-shadow: $boxes;
-	margin-bottom: 5px;
-	img {
-		width: 100%;
-	}
-}
-.inbox-offer {
-	display: block;
-	padding: 10px;
-	background-color: white;
-	box-shadow: $boxes;
-	margin-bottom: 1px;
-}
 .messages-sidebar {
 	@include span-columns(2);
 	@include boxes-default(1px);
@@ -62,10 +24,6 @@ div#message, div[contenteditable], .post-message, .comment {
 	}
 }
 
-.inbox-offer-container {
-	text-align: center;
-}
-
 .messages-container {
 	@include outer-container;
 	max-width: 1200px;
@@ -74,33 +32,40 @@ div#message, div[contenteditable], .post-message, .comment {
 .message-thumbnail {
 	@include span-columns(1.5);
 }
+
 .message-text {
 	@include span-columns(10.5);
 }
+
 .messages-conversation {
 	@include span-columns(10);
 	margin-bottom: 50px;
 }
+
 .message {
 	@include outer-container;
 }
+
 .messages-reply-container {
 	@include span-columns(12);
-
 }
+
 .messages-sidebar, .message, .messages-reply-container {
 	@include boxes-default(1px);
 }
+
 .message {
 	padding: 10px 15px;
 }
+
 .messages-reply-container {
 	padding: 0;
 }
+
 #messages-reply {
+	padding: 10px;
 	width: 100%;
 	border: none;
-	padding: 10px;
 }
 
 .messages-sidebar-item {
