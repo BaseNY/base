@@ -1,10 +1,4 @@
-Template.leftColumn.helpers({
-	'imgUrl': function() {
-		return Meteor.user().profile.img;
-	},
-	'name': function() {
-		return Meteor.user().profile.name;
-	},
+Template.homeSidebar.helpers({
 	'feeds': function() {
 		var temp = [];
 		var l = Meteor.user().profile.subscribed;
@@ -24,7 +18,7 @@ Template.leftColumn.helpers({
 	}
 });
 
-Template.leftColumn.events({
+Template.homeSidebar.events({
 	'click #filter-everyone': function() {
 		Session.set('degrees', 0);
 	},

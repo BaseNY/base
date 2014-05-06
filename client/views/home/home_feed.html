@@ -1,11 +1,17 @@
-<template name="pageFeeds">
-	{{#if showImage}}
-		{{> modalPic}}
-	{{/if}}
-	<div class="pageFeeds">
-		{{#each posts}}
-			{{> feedPost}}
-		{{/each}}
+<template name="homeFeed">
+	<div class="home-feed">
+		{{#if feed}}
+			<h1>{{feed.name}}</h1>
+		{{/if}}
+		{{> homePost}}
+		{{#if showImage}}
+			{{> modalPic}}
+		{{/if}}
+		<div class="pageFeeds">
+			{{#each posts}}
+				{{> feedPost}}
+			{{/each}}
+		</div>
 	</div>
 </template>
 

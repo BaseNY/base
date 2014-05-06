@@ -11,12 +11,6 @@
 		</div>
 		-->
 		{{> homeSidebar}}
-		<div class="home-feed">
-			{{#if feed}}
-				<h1>{{feed.name}}</h1>
-			{{/if}}
-			{{> postBox}}
-			{{> pageFeeds}}
-		</div>
+		{{> homeFeed}}
 	</section>
 </template>

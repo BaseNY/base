@@ -4,15 +4,6 @@ Template.ifEven.isEven = function(i) {
 }
 */
 
-Template.pageFeeds.posts = function() {
-	return FtoI.find({}).fetch();
-	//    return FtoI.find({},{sort: {score:1}}).fetch();
-}
-
-Template.pageFeeds.showImage = function() {
-	return Session.get('imgUrl');
-}
-
 Template.modalPic.imgUrl = function() {
 	return Session.get('imgUrl');
 }

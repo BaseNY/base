@@ -1,54 +1,49 @@
-Template.pageProduct.description = function() {
-	return new Handlebars.SafeString(Router.current().data().item.description);
-}
+Template.homePost.events({
+	'change .home-post-header input:radio': function(e) {
+		var $target = $(e.currentTarget),
+			$label = $(".home-post-header label[for=" + $target.attr('id') + "]"),
+			$buy = $("#home-buy-container"),
+			$sell = $("#home-sell-container");
 
-Template.sellPost.feeds = function() {
-	return Feeds.find().fetch();
-}
-
-Template.buyPost.feeds = function() {
-	return Feeds.find().fetch();
-}
-
-Template.postBox.events({
-	'change #transaction-form .highlight-radio': function(e) {
-		$('#transaction-form .highlight-label').removeClass('checked');
-		var $target = $(e.currentTarget);
-		var $label = $(".highlight-label[for=" + $target.attr('id') + "]")
+		$('.home-post-header label').removeClass('checked');
 		$label.addClass('checked');
+
 		if ($target.val() == 'sell') {
-			$('#buy-container').slideUp();
-			$('#sell-container').slideDown();
+			$buy.slideUp();
+			$sell.slideDown();
 		} else {
-			$('#sell-container').slideUp();
-			$('#buy-container').slideDown();
+			$sell.slideUp();
+			$buy.slideDown();
 		}
 	},
-	'change .container .highlight-radio': function(e) {
-		$(".container .highlight-label").removeClass('checked');
-		var $target = $(e.currentTarget);
-		var $label = $(".highlight-label[for=" + $target.attr('id') + "]");
+	'change .home-post-body input:radio': function(e) {
+		var $target = $(e.currentTarget),
+			$label = $(".highlight-label[for=" + $target.attr('id') + "]");
+
+		$(".home-post-body label").removeClass('checked');
 		$label.addClass("checked");
 	}
 });
 
-Template.sellPost.events({
+Template.homeSellPost.events({
 	'click #sell-post': function(e) {
+		e.preventDefault();
+
 		if (!Meteor.user()) {
 			$('#modal-container').css('display', 'block');
 			$('#modal-signup').css('display', 'block');
 			return -1;
 		}
-
 		$(this).css('pointer-events', 'none');
-		e.preventDefault();
+
 		temp = {};
 		temp.title = $('input[name=title]').val();
 		temp.feeds = [];
-		if (Router.current().data())
+		if (Router.current().data()) {
 			temp.feeds.push(Router.current().data().feed._id);
-		else
+		} else {
 			temp.feeds.push($('input[name=feed]:checked').val());
+		}
 		/*
 		   temp.so = $('input[name=so]').val();
 		   temp.bin = $('input[name=bin]').val();
@@ -59,8 +54,7 @@ Template.sellPost.events({
 		//temp.image = document.getElementById('image').files[0];
 		console.log(temp);
 
-		//NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
-		e.preventDefault();
+		// NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
 		console.log("adding item");
 		if (!document.getElementById('image').files[0]) {
 			Meteor.call('addPost', temp, function(e, r) {
@@ -80,7 +74,6 @@ Template.sellPost.events({
 			});
 
 		} else {
-
 			s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0], function(temp) {
 				Meteor.call('addPost', temp, function(e, r) {
 					console.log("something");
@@ -104,7 +97,7 @@ Template.sellPost.events({
 	}
 });
 
-Template.buyPost.events({
+Template.homeBuyPost.events({
 	'click #buy-post': function(e) {
 		if (!Meteor.user()) {
 			$('#modal-container').css('display', 'block');
@@ -147,12 +140,3 @@ Template.buyPost.events({
 		$(e.target).slideUp();
 	}
 });
-
-/*
-   Template.postBox.events({
-   'change .highlight-radio' : function(e) {
-   console.log(e.target.id);
-   $('.highlight-label[for=' + e.target.id + ']').toggleClass('checked')
-   }
-   });
-   */
