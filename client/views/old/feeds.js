@@ -1,6 +1,8 @@
+/*
 Template.ifEven.isEven = function(i) {
 	return i % 2 == 0;
 }
+*/
 
 Template.pageFeeds.posts = function() {
 	return FtoI.find({}).fetch();
