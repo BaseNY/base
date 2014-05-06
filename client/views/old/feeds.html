@@ -12,7 +12,7 @@
             <div style="border-left: 4px solid{{#if isSellPost}}#f39c12{{else}}#50a8e7{{/if}}" id = "post-{{this._id}}" class="post-inner">
 			<div class="container">
 				<div class="left">
-					<img src={{imgUrl}}>
+					<img src="{{profile.img}}">
 				</div>
 				<div class="right">
                                     <h1><a href="/feeds/{{item._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{item.title}}</a>
@@ -45,7 +45,7 @@
 					{{/each}}
 				</ul>
 				{{#if currentUser}}
-			    	<div class="left"><img src={{imgUrl}} /></div>
+			    	<div class="left"><img src={{profile.img}} /></div>
                                 <div class="comment-inner-container">
 				<div contenteditable="true" class="commentForm" id="commentContent">
 					<span class="placeholder">Write a comment...</span>
@@ -60,7 +60,7 @@
 <template name="comment">
 	<div class="commentSmallContainer">
 		<div class="left">
-			<img src={{imgUrl}}>
+			<img src={{profile.img}}>
 		</div>
 		<div class="right">
                     <a href="/profile/{{id}}"><b>{{name}}</b></a> {{text}} <br /> <span class="faded">{{timestamp}}</span>

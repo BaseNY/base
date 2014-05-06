@@ -1,15 +1,19 @@
-UI.registerHelper('json', function(context) {
-	return JSON.stringify(context);
+UI.helpers = function(helpers) {
+	_.each(helpers, function(func, name) {
+		UI.registerHelper(name, func);
+	});
+};
+
+UI.helpers({
+	'json': function(context) {
+		return JSON.stringify(context);
+	},
+	'profile': function() {
+		return Meteor.user().profile;
+	}
 });
 
 Template.header.helpers({
-	'imgUrl': function() {
-		var url = Meteor.user().profile.img;
-		return url;
-	},
-	'name': function() {
-		return Meteor.user().profile.name;
-	},
 	'newMsgs': function() {
 		var num = Meteor.user().new_message;
 		if (num)
