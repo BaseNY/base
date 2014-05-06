@@ -39,7 +39,9 @@
 				<div class="user-wrapper" id="user-wrapper">
 					<img src="{{imgUrl}}">
 					<h2>{{name}}</h2>
-                                        <a href="/inbox" class="link"><i class="fa fa-envelope"><span>{{newMsgs}}</span></i></a>
+					<a href="/inbox" class="link">
+						<i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
+					</a>
 					<a href="/" class="link"><i class="fa fa-sign-out"></i></a>
 				</div>
 			{{else}}
@@ -51,21 +53,6 @@
 	<div class="header-notice">
 		You are awesome. Thank you for helping out in the Base closed alpha! Please submit feedback <a style="color:white" target="_blank" href="https://baseus.typeform.com/to/tSnBhQ"><b>here</b></a>
 	</div>
-	<!--<header class="header">
-		<a href="/">BASE</a>
-		<a href="/sell/title">Sell</a>
-		<div id="user-wrapper">
-			{{#if currentUser}}
-				{{name}}
-				<ul class="dropdown" id="nameDrop">
-					<li>My Profile</li>
-					<li>Account Settings</li>
-				</ul>
-			{{else}}
-				<a id="openLogin">Login</a>
-			{{/if}}
-		</div>
-	</header>-->
 </template>
 
 <template name="footer">
