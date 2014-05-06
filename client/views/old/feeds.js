@@ -7,6 +7,14 @@ Template.pageFeeds.posts = function() {
 	//    return FtoI.find({},{sort: {score:1}}).fetch();
 }
 
+Template.pageFeeds.showImage = function() {
+    return Session.get('imgUrl');
+}
+
+Template.modalPic.imgUrl = function() {
+    return Session.get('imgUrl');
+}
+
 Template.feedPost.helpers({
 	'imgUrl': function() {
 		var i = Items.findOne({
@@ -92,7 +100,13 @@ Template.feedPost.events({
 	},
 	'click .fa-envelope': function() {
 		$('.msgContainer').toggleClass('noshow');
-	}
+	},
+        'click .fa-angle-down': function() {
+                    
+        },
+        'click img': function(e) {
+            Session.set('imgUrl', $(e.target).attr('src'));
+        }
 });
 
 Template.comment.helpers({

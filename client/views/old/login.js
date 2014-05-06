@@ -41,6 +41,7 @@ Template.modalOverlay.close = function() {
 
 Template.modalOverlay.events({
 	'click': function() {
+            Session.set('imgUrl',null);
 		Template.modalOverlay.close();
 	}
 });
