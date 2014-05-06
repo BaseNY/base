@@ -10,7 +10,7 @@ section.pageAbout {
     }
     div.trio{
         @include span-columns(4);
-        @include breakpoint($mobile) {
+        @include media($mobile) {
             @include span-columns(4);
         }
     }

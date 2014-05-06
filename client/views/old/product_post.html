@@ -1,0 +1,91 @@
+﻿<template name="pageAddProduct">
+	<table class="steps">
+		<tr>
+			<!-- fix the changing to diff spots later -->
+			<td>
+				<a href="/sell/title">
+					<div class="step-circle active">
+						<h1>1</h1>
+					</div>
+				</a>
+			</td>
+			<td>
+				<a href="/sell/info">
+					<div class="step-circle">
+						<h1>2</h1>
+					</div>
+				</a>
+			</td>
+			<td>
+				<a href="/sell/preview">
+					<div class="step-circle">
+						<h1>3</h1>
+					</div>
+				</a>
+			</td>
+		</tr>
+	</table>
+	<div class="box page-add-product">
+		<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
+		{{> yield region='sellYield'}}
+	</div>
+</template>
+
+<template name="postBox">
+	<div class="post-box">
+		<header>
+			What would you like to do?
+			<form id="transaction-form">
+				<input id="sell-radio" class="highlight-radio" type="radio" name="type" value="sell">
+				<label for="sell-radio" class="highlight-label"><i class="fa fa-money"></i> Sell</label>
+				|
+				<input id="buy-radio" class="highlight-radio" type="radio" name="type" value="buy">
+				<label for="buy-radio" class="highlight-label"><i class="fa fa-shopping-cart"></i> Buy</label>
+			</form>
+		</header>
+		{{> buyPost}}
+		{{> sellPost}}
+	</div>
+</template>
+
+<template name="buyPost">
+	<div id="buy-container" class="container">
+		{{#if feed}}
+		{{else}}
+			<div class="feedsList">
+				Pick a feed to publish to:
+				<form>
+					{{#each feeds}}
+					<input id="buy-{{_id}}" class="highlight-radio" type="radio" name="feed" value={{_id}}>
+					<label for="buy-{{_id}}" class="highlight-label"><i class="fa fa-{{icon}}"></i> {{name}}</label>
+					{{/each}}
+				</form>
+			</div>
+		{{/if}}
+		<br />
+		<textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
+		<div id="buy-post" class="button right">Post</div>
+	</div>
+</template>
+
+<template name="sellPost">
+	<div id="sell-container" class="container">
+		{{#if feed}}
+		{{else}}
+			<div class="feedsList">
+				Pick a feed to publish to:
+				<form>
+					{{#each feeds}}
+						<input id="sell-{{_id}}" class="highlight-radio" type="radio" name="feed" value={{_id}}>
+						<label for="sell-{{_id}}" class="highlight-label"><i class="fa fa-{{this.icon}}"></i> {{name}}</label>
+					{{/each}}
+				</form>
+			</div>
+		{{/if}}
+		<input type="text" id="item-title" name="title" placeholder="What is your item called?">
+		<br />
+		<textarea id="sell-description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price" class="post-message"></textarea>
+		<input id="image" type="file" />
+		<div id="sell-post" class="button right">Post</div>
+	</div>
+</template>

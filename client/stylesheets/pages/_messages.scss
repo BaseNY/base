@@ -1,56 +1,18 @@
 div#message, div[contenteditable], .post-message, .comment {
-	background-color: white;
 	display: block;
+	padding: 8px 4px 4px 4px;
 	width: 100%;
 	height: auto;
-	line-height: 1.25em;
-	padding: 8px 4px 4px 4px;
-	resize: none;
-	border: 1px solid rgb(200,200,200);
+	border: 1px solid rgb(200, 200, 200);
+	background-color: white;
 	word-wrap: break-word;
-	-webkit-writing-mode: horizontal-tb;
 	font-size: 1.2em;
+	line-height: 1.25em;
+	resize: none;
+	-webkit-writing-mode: horizontal-tb;
 }
 
-.pageItemInbox {
-	@include outer-container;
-	max-width: 1200px;
-	.row {
-		@include outer-container;
-		margin-bottom: 30px;
-		.row-left {
-			@include span-columns(3);
-		}
-		.row-right {
-			@include span-columns(9);
-		}
-		.row-thumbnail {
-			display: block;
-			padding: 20px;
-			background-color: white;
-			box-shadow: $boxes;
-			margin-bottom: 5px;
-			img {
-				width: 100%;
-			}
-		}
-		.row-details {
-			display: block;
-			padding: 10px;
-			background-color: white;
-			box-shadow: $boxes;
-			margin-bottom: 1px;
-		}
-	}
-	#mark-sold {
-		background-color: #33B5E5;
-		color: #FFF;
-		padding: 0.3em 0.4em;
-		box-shadow: $boxes;
-		cursor: pointer;
-	}
-}
-.left-sidebar {
+.messages-sidebar {
 	@include span-columns(2);
 	@include boxes-default(1px);
 	.row-details {
@@ -62,60 +24,54 @@ div#message, div[contenteditable], .post-message, .comment {
 	}
 }
 
-.buying-offers-container {
-	text-align: center;
-}
-
-.pageNego {
+.messages-container {
 	@include outer-container;
 	max-width: 1200px;
-	.message-thumbnail {
-		@include span-columns(1.5);
-	}
-	.message-text {
-		@include span-columns(10.5);
-	}
-	.conversation {
-		@include span-columns(10);
-		margin-bottom: 50px;
-	}
-	.message {
-		@include outer-container;
-	}
-	.reply-box {
-		@include span-columns(12);
-
-	}
-	.left-sidebar, .thumbnail, .message, .reply-box {
-		@include boxes-default(1px);
-	}
-	#messages-container {
-		//height: calc(100vh - 350px);
-		//overflow: auto;
-	}
-	.message {
-		padding: 10px 15px;
-	}
-	.reply-box {
-		padding: 0;
-		#message {
-			width: 100%;
-			border: none;
-			padding: 10px;
-		}
-	}
 }
 
-.message-box {
-	overflow:auto;
-	textarea {
-		height:auto;
-		overflow:auto;
-		font-size:16px;
-	}
-	.button {
-		padding: .5em 1em .5em 1em;
-		float:right;
-		border-radius:0px 0px 15px 0px;
+.message-thumbnail {
+	@include span-columns(1.5);
+}
+
+.message-text {
+	@include span-columns(10.5);
+}
+
+.messages-conversation {
+	@include span-columns(10);
+	margin-bottom: 50px;
+}
+
+.message {
+	@include outer-container;
+}
+
+.messages-reply-container {
+	@include span-columns(12);
+}
+
+.messages-sidebar, .message, .messages-reply-container {
+	@include boxes-default(1px);
+}
+
+.message {
+	padding: 10px 15px;
+}
+
+.messages-reply-container {
+	padding: 0;
+}
+
+#messages-reply {
+	padding: 10px;
+	width: 100%;
+	border: none;
+}
+
+.messages-sidebar-item {
+	display: block;
+	margin-bottom: 0.5em;
+	&:last-child {
+		margin-bottom: 0;
 	}
 }

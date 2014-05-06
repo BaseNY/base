@@ -1,12 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-/* line 2, ../packages/neat-scss/grid/grid */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -353,6 +347,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* line 2, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/grid */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 /* line 4, /home/jasperlu/base/client/stylesheets/general/base */
 *, *:before, *:after {
   *behavior: url("/scripts/boxsizing.htc");
@@ -455,16 +455,13 @@ body {
 section.body {
   width: 85%;
   max-width: 900px;
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  section.body:before, section.body:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   section.body:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 106, /home/jasperlu/base/client/stylesheets/general/base */
@@ -473,7 +470,7 @@ section.body {
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .right-column:last-child {
     margin-right: 0; }
 
@@ -483,7 +480,7 @@ section.body {
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .left-column:last-child {
     margin-right: 0; }
 
@@ -710,16 +707,13 @@ display:inline-block;
   margin-top: 24px; }
   /* line 58, /home/jasperlu/base/client/stylesheets/pages/home */
   .sidebar .top-container {
-    *zoom: 1;
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto; }
-    /* line 18, ../packages/bourbon-scss/addons/clearfix */
-    .sidebar .top-container:before, .sidebar .top-container:after {
-      content: " ";
-      display: table; }
-    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
     .sidebar .top-container:after {
+      content: "";
+      display: table;
       clear: both; }
     /* line 60, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar .top-container .top-left {
@@ -727,7 +721,7 @@ display:inline-block;
       display: block;
       margin-right: 2.35765%;
       width: 31.76157%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar .top-container .top-left:last-child {
         margin-right: 0; }
       /* line 62, /home/jasperlu/base/client/stylesheets/pages/home */
@@ -739,53 +733,52 @@ display:inline-block;
       display: block;
       margin-right: 2.35765%;
       width: 65.88078%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar .top-container .top-right:last-child {
         margin-right: 0; }
       /* line 68, /home/jasperlu/base/client/stylesheets/pages/home */
       .sidebar .top-container .top-right h2 {
         font-weight: normal;
         margin-top: 8px;
-        margin-left: 4px; }
-  /* line 75, /home/jasperlu/base/client/stylesheets/pages/home */
+        margin-left: 4px;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+  /* line 77, /home/jasperlu/base/client/stylesheets/pages/home */
   .sidebar h3 {
     color: grey;
     font-weight: bold;
     margin: 8px 0px 2px; }
-  /* line 81, /home/jasperlu/base/client/stylesheets/pages/home */
+  /* line 83, /home/jasperlu/base/client/stylesheets/pages/home */
   .sidebar ul li {
     padding: 4px;
-    *zoom: 1;
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4px; }
-    /* line 18, ../packages/bourbon-scss/addons/clearfix */
-    .sidebar ul li:before, .sidebar ul li:after {
-      content: " ";
-      display: table; }
-    /* line 23, ../packages/bourbon-scss/addons/clearfix */
+    /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
     .sidebar ul li:after {
+      content: "";
+      display: table;
       clear: both; }
-    /* line 84, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 86, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li .left {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 10.43705%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar ul li .left:last-child {
         margin-right: 0; }
-    /* line 87, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 89, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li .right {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 87.20529%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .sidebar ul li .right:last-child {
         margin-right: 0; }
-    /* line 90, /home/jasperlu/base/client/stylesheets/pages/home */
+    /* line 92, /home/jasperlu/base/client/stylesheets/pages/home */
     .sidebar ul li:hover {
       background-color: lightgrey;
       cursor: pointer; }
@@ -1193,7 +1186,6 @@ td.msgs-right {
 
 /* line 308, /home/jasperlu/base/client/stylesheets/pages/product */
 .pageProduct {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1203,12 +1195,10 @@ td.msgs-right {
   /* line 309, /home/jasperlu/base/client/stylesheets/pages/product */
   .pageProduct h1 {
     font-weight: normal; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .pageProduct:before, .pageProduct:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .pageProduct:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 316, /home/jasperlu/base/client/stylesheets/pages/product */
   .pageProduct .container {
@@ -1216,7 +1206,7 @@ td.msgs-right {
     display: block;
     margin-right: 2.35765%;
     width: 100%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
+    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .pageProduct .container:last-child {
       margin-right: 0; }
     /* line 318, /home/jasperlu/base/client/stylesheets/pages/product */
@@ -1225,7 +1215,7 @@ td.msgs-right {
       display: block;
       margin-right: 2.35765%;
       width: 57.35098%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .pageProduct .container .pic:last-child {
         margin-right: 0; }
     /* line 321, /home/jasperlu/base/client/stylesheets/pages/product */
@@ -1234,7 +1224,7 @@ td.msgs-right {
       display: block;
       margin-right: 2.35765%;
       width: 40.29137%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
+      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .pageProduct .container .info:last-child {
         margin-right: 0; }
     /* line 324, /home/jasperlu/base/client/stylesheets/pages/product */
@@ -1257,17 +1247,14 @@ td.msgs-right {
 
 /* line 3, /home/jasperlu/base/client/stylesheets/pages/about */
 section.pageAbout {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  section.pageAbout:before, section.pageAbout:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   section.pageAbout:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 6, /home/jasperlu/base/client/stylesheets/pages/about */
   section.pageAbout div.trio-wrapper {
@@ -1280,228 +1267,21 @@ section.pageAbout {
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
+    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     section.pageAbout div.trio:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px)  {
       section.pageAbout div.trio {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        /* line 40, ../packages/neat-scss/grid/span-columns */
+        /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/messages */
-div#message, div[contenteditable], .post-message, .comment {
-  background-color: white;
-  display: block;
-  width: 100%;
-  height: auto;
-  line-height: 1.25em;
-  padding: 8px 4px 4px 4px;
-  resize: none;
-  border: 1px solid #c8c8c8;
-  word-wrap: break-word;
-  -webkit-writing-mode: horizontal-tb;
-  font-size: 1.2em; }
-
-/* line 15, /home/jasperlu/base/client/stylesheets/pages/messages */
-.pageItemInbox {
-  *zoom: 1;
-  max-width: em(3000);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .pageItemInbox:before, .pageItemInbox:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
-  .pageItemInbox:after {
-    clear: both; }
-  /* line 18, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageItemInbox .row {
-    *zoom: 1;
-    max-width: em(3000);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px; }
-    /* line 18, ../packages/bourbon-scss/addons/clearfix */
-    .pageItemInbox .row:before, .pageItemInbox .row:after {
-      content: " ";
-      display: table; }
-    /* line 23, ../packages/bourbon-scss/addons/clearfix */
-    .pageItemInbox .row:after {
-      clear: both; }
-    /* line 21, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .pageItemInbox .row .row-left {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
-      .pageItemInbox .row .row-left:last-child {
-        margin-right: 0; }
-    /* line 24, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .pageItemInbox .row .row-right {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 74.41059%; }
-      /* line 40, ../packages/neat-scss/grid/span-columns */
-      .pageItemInbox .row .row-right:last-child {
-        margin-right: 0; }
-    /* line 27, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .pageItemInbox .row .row-thumbnail {
-      display: block;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      margin-bottom: 5px; }
-      /* line 33, /home/jasperlu/base/client/stylesheets/pages/messages */
-      .pageItemInbox .row .row-thumbnail img {
-        width: 100%; }
-    /* line 37, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .pageItemInbox .row .row-details {
-      display: block;
-      padding: 10px;
-      background-color: white;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      margin-bottom: 1px; }
-  /* line 45, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageItemInbox #mark-sold {
-    background-color: #33B5E5;
-    color: #FFF;
-    padding: 0.3em 0.4em;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    cursor: pointer; }
-
-/* line 53, /home/jasperlu/base/client/stylesheets/pages/messages */
-.left-sidebar {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 14.70196%;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1px; }
-  /* line 40, ../packages/neat-scss/grid/span-columns */
-  .left-sidebar:last-child {
-    margin-right: 0; }
-  /* line 56, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .left-sidebar .row-details {
-    display: block;
-    margin-bottom: 0.3em; }
-    /* line 59, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .left-sidebar .row-details:last-child {
-      margin-bottom: 0; }
-
-/* line 65, /home/jasperlu/base/client/stylesheets/pages/messages */
-.buying-offers-container {
-  text-align: center; }
-
-/* line 69, /home/jasperlu/base/client/stylesheets/pages/messages */
-.pageNego {
-  *zoom: 1;
-  max-width: em(3000);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .pageNego:before, .pageNego:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
-  .pageNego:after {
-    clear: both; }
-  /* line 72, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .message-thumbnail {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 10.43705%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
-    .pageNego .message-thumbnail:last-child {
-      margin-right: 0; }
-  /* line 75, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .message-text {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 87.20529%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
-    .pageNego .message-text:last-child {
-      margin-right: 0; }
-  /* line 78, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .conversation {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    margin-bottom: 50px; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
-    .pageNego .conversation:last-child {
-      margin-right: 0; }
-  /* line 82, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .message {
-    *zoom: 1;
-    max-width: em(3000);
-    margin-left: auto;
-    margin-right: auto; }
-    /* line 18, ../packages/bourbon-scss/addons/clearfix */
-    .pageNego .message:before, .pageNego .message:after {
-      content: " ";
-      display: table; }
-    /* line 23, ../packages/bourbon-scss/addons/clearfix */
-    .pageNego .message:after {
-      clear: both; }
-  /* line 85, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .reply-box {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
-    .pageNego .reply-box:last-child {
-      margin-right: 0; }
-  /* line 89, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .left-sidebar, .pageNego .thumbnail, .pageNego .message, .pageNego .reply-box {
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    margin-bottom: 1px; }
-  /* line 96, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .message {
-    padding: 10px 15px; }
-  /* line 99, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .pageNego .reply-box {
-    padding: 0; }
-    /* line 101, /home/jasperlu/base/client/stylesheets/pages/messages */
-    .pageNego .reply-box #message {
-      width: 100%;
-      border: none;
-      padding: 10px; }
-
-/* line 109, /home/jasperlu/base/client/stylesheets/pages/messages */
-.message-box {
-  overflow: auto; }
-  /* line 111, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .message-box textarea {
-    height: auto;
-    overflow: auto;
-    font-size: 16px; }
-  /* line 116, /home/jasperlu/base/client/stylesheets/pages/messages */
-  .message-box .button {
-    padding: 0.5em 1em 0.5em 1em;
-    float: right;
-    border-radius: 0px 0px 15px 0px; }
-
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/feeds */
 .pageFeeds {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1510,12 +1290,10 @@ div#message, div[contenteditable], .post-message, .comment {
   .pageFeeds .faded {
     color: grey;
     font-size: 1em; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .pageFeeds:before, .pageFeeds:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .pageFeeds:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 8, /home/jasperlu/base/client/stylesheets/pages/feeds */
   .pageFeeds .post {
@@ -1558,16 +1336,13 @@ div#message, div[contenteditable], .post-message, .comment {
       float: right; }
       /* line 37, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .container {
-        *zoom: 1;
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 18, ../packages/bourbon-scss/addons/clearfix */
-        .pageFeeds .post .post-inner .container:before, .pageFeeds .post .post-inner .container:after {
-          content: " ";
-          display: table; }
-        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .post-inner .container:after {
+          content: "";
+          display: table;
           clear: both; }
         /* line 39, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .post-inner .container .left {
@@ -1575,7 +1350,7 @@ div#message, div[contenteditable], .post-message, .comment {
           display: block;
           margin-right: 2.35765%;
           width: 14.70196%; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
         /* line 42, /home/jasperlu/base/client/stylesheets/pages/feeds */
@@ -1584,7 +1359,7 @@ div#message, div[contenteditable], .post-message, .comment {
           display: block;
           margin-right: 2.35765%;
           width: 82.94039%; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
       /* line 53, /home/jasperlu/base/client/stylesheets/pages/feeds */
@@ -1607,7 +1382,7 @@ div#message, div[contenteditable], .post-message, .comment {
         display: block;
         margin-right: 2.35765%;
         width: 6.17215%; }
-        /* line 40, ../packages/neat-scss/grid/span-columns */
+        /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         .pageFeeds .post .commentContainer .left:last-child {
           margin-right: 0; }
       /* line 72, /home/jasperlu/base/client/stylesheets/pages/feeds */
@@ -1616,34 +1391,28 @@ div#message, div[contenteditable], .post-message, .comment {
         display: block;
         margin-right: 2.35765%;
         width: 91.4702%; }
-        /* line 40, ../packages/neat-scss/grid/span-columns */
+        /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         .pageFeeds .post .commentContainer .right:last-child {
           margin-right: 0; }
       /* line 75, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .commentSmallContainer {
-        *zoom: 1;
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 18, ../packages/bourbon-scss/addons/clearfix */
-        .pageFeeds .post .commentContainer .commentSmallContainer:before, .pageFeeds .post .commentContainer .commentSmallContainer:after {
-          content: " ";
-          display: table; }
-        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .commentContainer .commentSmallContainer:after {
+          content: "";
+          display: table;
           clear: both; }
       /* line 78, /home/jasperlu/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .comment-inner-container {
-        *zoom: 1;
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 18, ../packages/bourbon-scss/addons/clearfix */
-        .pageFeeds .post .commentContainer .comment-inner-container:before, .pageFeeds .post .commentContainer .comment-inner-container:after {
-          content: " ";
-          display: table; }
-        /* line 23, ../packages/bourbon-scss/addons/clearfix */
+        /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .commentContainer .comment-inner-container:after {
+          content: "";
+          display: table;
           clear: both; }
         /* line 80, /home/jasperlu/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .commentContainer .comment-inner-container .commentForm {
@@ -1655,7 +1424,7 @@ div#message, div[contenteditable], .post-message, .comment {
           height: auto;
           background-color: white;
           margin-right: 0px; }
-          /* line 40, ../packages/neat-scss/grid/span-columns */
+          /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .commentContainer .comment-inner-container .commentForm:last-child {
             margin-right: 0; }
           /* line 86, /home/jasperlu/base/client/stylesheets/pages/feeds */
@@ -1685,7 +1454,6 @@ div#message, div[contenteditable], .post-message, .comment {
 
 /* line 1, /home/jasperlu/base/client/stylesheets/pages/post */
 .post-box {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1698,12 +1466,10 @@ div#message, div[contenteditable], .post-message, .comment {
   margin-top: 24px;
   margin-bottom: 24px;
   padding: 0px; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .post-box:before, .post-box:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .post-box:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 9, /home/jasperlu/base/client/stylesheets/pages/post */
   .post-box input[type=text] {
@@ -1963,14 +1729,11 @@ fieldset.show, div.show {
 /* line 7, /home/jasperlu/base/client/stylesheets/pages/search */
 .browse-container {
   margin-top: 40px;
-  margin-bottom: 50px;
-  *zoom: 1; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .browse-container:before, .browse-container:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  margin-bottom: 50px; }
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .browse-container:after {
+    content: "";
+    display: table;
     clear: both; }
 
 /* line 13, /home/jasperlu/base/client/stylesheets/pages/search */
@@ -1987,18 +1750,15 @@ fieldset.show, div.show {
 
 /* line 25, /home/jasperlu/base/client/stylesheets/pages/search */
 .items-container {
-  *zoom: 1;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
   overflow: hidden; }
-  /* line 18, ../packages/bourbon-scss/addons/clearfix */
-  .items-container:before, .items-container:after {
-    content: " ";
-    display: table; }
-  /* line 23, ../packages/bourbon-scss/addons/clearfix */
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .items-container:after {
+    content: "";
+    display: table;
     clear: both; }
   /* line 29, /home/jasperlu/base/client/stylesheets/pages/search */
   .items-container .item {
@@ -2008,13 +1768,13 @@ fieldset.show, div.show {
     width: 31.76157%;
     margin-bottom: 2.35765%;
     padding: 10px; }
-    /* line 40, ../packages/neat-scss/grid/span-columns */
+    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .items-container .item:last-child {
       margin-right: 0; }
-    /* line 70, ../packages/neat-scss/grid/omega */
+    /* line 52, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
     .items-container .item:nth-child(3n) {
       margin-right: 0; }
-    /* line 75, ../packages/neat-scss/grid/omega */
+    /* line 57, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
     .items-container .item:nth-child(3n+1) {
       clear: left; }
 
@@ -2033,3 +1793,206 @@ fieldset.show, div.show {
   /* line 49, /home/jasperlu/base/client/stylesheets/pages/search */
   .items-container .item .price {
     color: #50A8E7; }
+
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-container {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  .inbox-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 6, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-row {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px; }
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  .inbox-row:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 11, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-left {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .inbox-left:last-child {
+    margin-right: 0; }
+
+/* line 15, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-right {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .inbox-right:last-child {
+    margin-right: 0; }
+
+/* line 19, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-offer-container {
+  text-align: center; }
+
+/* line 23, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-thumbnail {
+  display: block;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5px; }
+  /* line 29, /home/jasperlu/base/client/stylesheets/pages/inbox */
+  .inbox-thumbnail img {
+    width: 100%; }
+
+/* line 34, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-offer {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1px; }
+
+/* line 42, /home/jasperlu/base/client/stylesheets/pages/inbox */
+.inbox-sold-button {
+  background-color: #33B5E5;
+  color: #FFF;
+  padding: 0.3em 0.4em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer; }
+
+/* line 1, /home/jasperlu/base/client/stylesheets/pages/messages */
+div#message, div[contenteditable], .post-message, .comment {
+  display: block;
+  padding: 8px 4px 4px 4px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #c8c8c8;
+  background-color: white;
+  word-wrap: break-word;
+  font-size: 1.2em;
+  line-height: 1.25em;
+  resize: none;
+  -webkit-writing-mode: horizontal-tb; }
+
+/* line 15, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1px; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .messages-sidebar:last-child {
+    margin-right: 0; }
+  /* line 18, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .messages-sidebar .row-details {
+    display: block;
+    margin-bottom: 0.3em; }
+    /* line 21, /home/jasperlu/base/client/stylesheets/pages/messages */
+    .messages-sidebar .row-details:last-child {
+      margin-bottom: 0; }
+
+/* line 27, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-container {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  .messages-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 32, /home/jasperlu/base/client/stylesheets/pages/messages */
+.message-thumbnail {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 10.43705%; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .message-thumbnail:last-child {
+    margin-right: 0; }
+
+/* line 36, /home/jasperlu/base/client/stylesheets/pages/messages */
+.message-text {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 87.20529%; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .message-text:last-child {
+    margin-right: 0; }
+
+/* line 40, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-conversation {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-bottom: 50px; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .messages-conversation:last-child {
+    margin-right: 0; }
+
+/* line 45, /home/jasperlu/base/client/stylesheets/pages/messages */
+.message {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  .message:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 49, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-reply-container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .messages-reply-container:last-child {
+    margin-right: 0; }
+
+/* line 53, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-sidebar, .message, .messages-reply-container {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1px; }
+
+/* line 57, /home/jasperlu/base/client/stylesheets/pages/messages */
+.message {
+  padding: 10px 15px; }
+
+/* line 61, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-reply-container {
+  padding: 0; }
+
+/* line 65, /home/jasperlu/base/client/stylesheets/pages/messages */
+#messages-reply {
+  padding: 10px;
+  width: 100%;
+  border: none; }
+
+/* line 71, /home/jasperlu/base/client/stylesheets/pages/messages */
+.messages-sidebar-item {
+  display: block;
+  margin-bottom: 0.5em; }
+  /* line 74, /home/jasperlu/base/client/stylesheets/pages/messages */
+  .messages-sidebar-item:last-child {
+    margin-bottom: 0; }
