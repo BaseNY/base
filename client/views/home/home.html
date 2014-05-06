@@ -10,11 +10,7 @@
 		    </form>
 		</div>
 		-->
-		<div class="home-sidebar">
-			{{#if currentUser}}
-				{{> homeSidebar}}
-			{{/if}}
-		</div>
+		{{> homeSidebar}}
 		<div class="home-feed">
 			{{#if feed}}
 				<h1>{{feed.name}}</h1>
@@ -23,48 +19,4 @@
 			{{> pageFeeds}}
 		</div>
 	</section>
-</template>
-
-<template name="homeSidebar">
-	<div class="sidebar">
-		<div class="top-container">
-			<div class="top-left">
-				<img src="{{profile.img}}">
-			</div>
-			<div class="top-right">
-				<h2>{{profile.name}}</h2>
-			</div>
-		</div>
-		<ul>
-			<li id="filter-everyone">
-				<div class="left"><i class="fa fa-globe"></i>
-				</div>
-				<div class="right">Everyone</div>
-			</li>
-			<li id="filter-friends">
-				<div class="left"><i class="fa fa-group"></i>
-				</div>
-				<div class="right">Friends</div>
-			</li>
-		</ul>
-		<h3>Feeds</h3>
-		<ul>
-			<a href="/">
-				<li style="{{#if allFeed}}background-color:white; font-weight:bold{{/if}}">
-					<div class="left"><i class="fa fa-sun-o"></i>
-					</div>
-					<div class="right">All</div>
-				</li>
-			</a>
-			{{#each feeds}}
-				<a href="/feeds/{{this._id}}">
-					<li style="{{#if currentFeed}}background-color:white; font-weight:bold{{/if}}">
-						<div class="left"><i class="fa fa-{{this.icon}}"></i>
-						</div>
-						<div class="right">{{this.name}}</div>
-					</li>
-				</a>
-			{{/each}}
-		</ul>
-	</div>
 </template>
