@@ -1,24 +1,4 @@
 .home-sidebar-content {
-	margin-top:24px;
-	.top-container {
-		@include outer-container;
-		.top-left {
-			@include span-columns(4);
-			img {
-				width:100%;
-			}
-		}
-		.top-right {
-			@include span-columns(8);
-			h2 {
-				font-weight:normal;
-				margin-top:8px;
-				margin-left:4px;
-				text-overflow: ellipsis;
-				overflow: hidden;
-			}
-		}
-	}
 	h3 {
 		color:grey;
 		font-weight:bold;
@@ -50,8 +30,15 @@
 
 .home-sidebar {
 	@include span-columns(3);
+	padding-top: 24px;
 }
 
 .home-feed {
 	@include span-columns(9);
+}
+
+.home-profile-name h2 {
+	font-weight:normal;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }

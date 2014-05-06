@@ -650,88 +650,47 @@ header {
   .footer > span {
     margin-left: 20px; }
 
-/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-.home-sidebar-content {
-  margin-top: 24px; }
-  /* line 3, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-  .home-sidebar-content .top-container {
-    max-width: em(3000);
-    margin-left: auto;
-    margin-right: auto; }
-    /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
-    .home-sidebar-content .top-container:after {
-      content: "";
-      display: table;
-      clear: both; }
-    /* line 5, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .home-sidebar-content .top-container .top-left {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%; }
-      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .home-sidebar-content .top-container .top-left:last-child {
-        margin-right: 0; }
-      /* line 7, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-      .home-sidebar-content .top-container .top-left img {
-        width: 100%; }
-    /* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .home-sidebar-content .top-container .top-right {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 65.88078%; }
-      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .home-sidebar-content .top-container .top-right:last-child {
-        margin-right: 0; }
-      /* line 13, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-      .home-sidebar-content .top-container .top-right h2 {
-        font-weight: normal;
-        margin-top: 8px;
-        margin-left: 4px;
-        text-overflow: ellipsis;
-        overflow: hidden; }
-  /* line 22, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-  .home-sidebar-content h3 {
-    color: grey;
-    font-weight: bold;
-    margin: 8px 0px 2px; }
-  /* line 28, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-  .home-sidebar-content ul li {
-    padding: 4px;
-    max-width: em(3000);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4px; }
-    /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
-    .home-sidebar-content ul li:after {
-      content: "";
-      display: table;
-      clear: both; }
-    /* line 31, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .home-sidebar-content ul li .left {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 10.43705%; }
-      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .home-sidebar-content ul li .left:last-child {
-        margin-right: 0; }
-    /* line 34, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .home-sidebar-content ul li .right {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 87.20529%; }
-      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
-      .home-sidebar-content ul li .right:last-child {
-        margin-right: 0; }
-    /* line 37, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
-    .home-sidebar-content ul li:hover {
-      background-color: #E6E6E6;
-      cursor: pointer; }
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+.home-sidebar-content h3 {
+  color: grey;
+  font-weight: bold;
+  margin: 8px 0px 2px; }
+/* line 8, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+.home-sidebar-content ul li {
+  padding: 4px;
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4px; }
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  .home-sidebar-content ul li:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+  .home-sidebar-content ul li .left {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 10.43705%; }
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    .home-sidebar-content ul li .left:last-child {
+      margin-right: 0; }
+  /* line 14, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+  .home-sidebar-content ul li .right {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 87.20529%; }
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    .home-sidebar-content ul li .right:last-child {
+      margin-right: 0; }
+  /* line 17, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+  .home-sidebar-content ul li:hover {
+    background-color: #E6E6E6;
+    cursor: pointer; }
 
-/* line 46, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+/* line 26, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-container {
   max-width: em(3000);
   margin-left: auto;
@@ -743,17 +702,18 @@ header {
     display: table;
     clear: both; }
 
-/* line 51, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+/* line 31, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-sidebar {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 23.23176%; }
+  width: 23.23176%;
+  padding-top: 24px; }
   /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .home-sidebar:last-child {
     margin-right: 0; }
 
-/* line 55, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+/* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-feed {
   float: left;
   display: block;
@@ -762,6 +722,12 @@ header {
   /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .home-feed:last-child {
     margin-right: 0; }
+
+/* line 40, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
+.home-profile-name h2 {
+  font-weight: normal;
+  text-overflow: ellipsis;
+  overflow: hidden; }
 
 /* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
 .modal-overlay {
@@ -1452,7 +1418,7 @@ section.pageAbout {
       padding: 6px 8px; }
 
 /* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-.post-box {
+.home-post-container {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
@@ -1466,12 +1432,15 @@ section.pageAbout {
   margin-bottom: 24px;
   padding: 0px; }
   /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
-  .post-box:after {
+  .home-post-container:after {
     content: "";
     display: table;
     clear: both; }
   /* line 9, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box input[type=text] {
+  .home-post-container input[type=radio] {
+    display: none; }
+  /* line 12, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-container input[type=text] {
     width: 100%;
     height: auto;
     padding: 5px 10px 5px 10px;
@@ -1479,73 +1448,71 @@ section.pageAbout {
     font-weight: 200;
     line-height: 1.5em;
     font-size: 1em; }
-  /* line 18, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box .highlight-radio {
-    display: none; }
   /* line 21, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box .highlight-label {
-    display: inline-block;
-    cursor: pointer;
-    color: #33B5E5; }
-    /* line 25, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box .highlight-label.checked {
-      font-weight: bold; }
-  /* line 29, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box .post-message {
+  .home-post-container .post-message {
     font-weight: 200; }
-  /* line 32, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box h3 {
+  /* line 24, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-container h3 {
     font-weight: normal; }
-  /* line 35, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box header {
-    padding: 15px 20px 15px 20px;
-    border-bottom: 2px solid #33B5E5; }
-  /* line 40, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box .button {
+  /* line 27, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-container .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;
     border-radius: 0px 0px 15px 0px; }
-  /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box #sell-container, .post-box #buy-container {
+  /* line 32, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-container .home-post-body {
     padding-top: 10px;
     display: none;
     padding: 20px; }
-    /* line 49, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container .feedsList, .post-box #buy-container .feedsList {
+    /* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body .home-feeds-list {
       font-size: 0.8em; }
-    /* line 52, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container textarea, .post-box #buy-container textarea {
+    /* line 39, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body textarea {
       font-size: 1em; }
-    /* line 55, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container form, .post-box #buy-container form {
+    /* line 42, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body form {
       margin-bottom: 10px; }
-    /* line 58, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container label, .post-box #buy-container label {
+    /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body label {
       padding: 4px;
       border-radius: 2px; }
-      /* line 61, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-      .post-box #sell-container label:hover, .post-box #buy-container label:hover {
+      /* line 48, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+      .home-post-container .home-post-body label:hover {
         background-color: #EEE; }
-      /* line 64, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-      .post-box #sell-container label.checked, .post-box #buy-container label.checked {
+      /* line 51, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+      .home-post-container .home-post-body label.checked {
         font-weight: normal;
         background-color: #33B5E5;
         color: white; }
-    /* line 70, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container input[type=file], .post-box #buy-container input[type=file] {
+    /* line 57, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body input[type=file] {
       font-size: 0.7em; }
-    /* line 73, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container #item-title, .post-box #buy-container #item-title {
+    /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body #item-title {
       margin-top: 10px; }
-    /* line 76, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-    .post-box #sell-container .button, .post-box #buy-container .button {
+    /* line 63, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-container .home-post-body .button {
       font-size: 0.8em; }
-  /* line 80, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box textarea {
+  /* line 67, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-container textarea {
     padding: 5px 10px 5px 10px; }
-  /* line 83, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
-  .post-box form {
+  /* line 70, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-container form {
     display: inline; }
+
+/* line 75, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+.home-post-header {
+  padding: 15px 20px 15px 20px;
+  border-bottom: 2px solid #33B5E5; }
+  /* line 78, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  .home-post-header label {
+    display: inline-block;
+    cursor: pointer;
+    color: #33B5E5; }
+    /* line 82, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    .home-post-header label.checked {
+      font-weight: bold; }
 
 /* line 88, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
 .post-message {
