@@ -1,6 +1,7 @@
 <template name="homeold">
 	<h1 style="letter-spacing:-10px" class="logo">
-		bas<span>e</span>
+		bas
+		<span>e</span>
 	</h1>
 	<!--<div class="box page-home">-->
 	<div class="page-home">
@@ -16,15 +17,15 @@
 <template name="home">
 	<section class="body">
 		<!--
-<div class="content">
-    <div id="title" style="letter-spacing:-10px" class="title">
-        bas<span>e</span>
-    </div>
-    <form id="search-form" action="/search">
-        <input id="search" name="q" type="text" placeholder="Search...">
-    </form>
-</div>
--->
+		<div class="content">
+		    <div id="title" style="letter-spacing:-10px" class="title">
+		        bas<span>e</span>
+		    </div>
+		    <form id="search-form" action="/search">
+		        <input id="search" name="q" type="text" placeholder="Search...">
+		    </form>
+		</div>
+		-->
 		<div class="left-column">
 			{{#if currentUser}}
 				{{> leftColumn}}
@@ -32,7 +33,7 @@
 		</div>
 		<div class="right-column">
 			{{#if feed}}
-			<h1>{{feed.name}}</h1>
+				<h1>{{feed.name}}</h1>
 			{{/if}}
 			{{> postBox}}
 			{{> pageFeeds}}
@@ -42,9 +43,14 @@
 
 <template name="leftColumn">
 	<div class="sidebar">
-            <div class="top-container">
-                <div class="top-left"><img src={{imgUrl}} /></div><div class="top-right"><h2>{{name}}</h2></div>
-            </div>
+		<div class="top-container">
+			<div class="top-left">
+				<img src="{{imgUrl}}">
+			</div>
+			<div class="top-right">
+				<h2>{{name}}</h2>
+			</div>
+		</div>
 		<ul>
 			<li id="filter-everyone">
 				<div class="left"><i class="fa fa-globe"></i>
@@ -60,20 +66,20 @@
 		<h3>Feeds</h3>
 		<ul>
 			<a href="/">
-                            <li style = "{{#if allFeed}}background-color:white; font-weight:bold{{/if}}">
+				<li style="{{#if allFeed}}background-color:white; font-weight:bold{{/if}}">
 					<div class="left"><i class="fa fa-sun-o"></i>
 					</div>
 					<div class="right">All</div>
 				</li>
 			</a>
 			{{#each feeds}}
-			<a href="/feeds/{{this._id}}">
-                            <li style="{{#if currentFeed}}background-color:white; font-weight:bold{{/if}}">
-					<div class="left"><i class="fa fa-{{this.icon}}"></i>
-					</div>
-					<div class="right">{{this.name}}</div>
-				</li>
-			</a>
+				<a href="/feeds/{{this._id}}">
+					<li style="{{#if currentFeed}}background-color:white; font-weight:bold{{/if}}">
+						<div class="left"><i class="fa fa-{{this.icon}}"></i>
+						</div>
+						<div class="right">{{name}}</div>
+					</li>
+				</a>
 			{{/each}}
 		</ul>
 	</div>
