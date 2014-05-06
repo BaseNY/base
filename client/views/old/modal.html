@@ -11,6 +11,15 @@
 
 </template>
 
+<template name="modalPic">
+    <div class="modal-container">
+        {{> modalOverlay}}
+        <div class="modal pic" role="dialog">
+            <img src={{imgUrl}} />
+        </div>
+    </div>
+</template>
+
 <template name="modalBid">
 	<div id='modal-bid' style="display:none">
 		<h2>Make your Offer</h2>
@@ -29,7 +38,7 @@
 </template>
 
 <template name="modalOverlay">
-	<div id="modal-overlay"></div>
+	<div class="modal-overlay"></div>
 </template>
 
 <template name="modalLogin">
