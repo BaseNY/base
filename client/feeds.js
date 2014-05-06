@@ -3,7 +3,7 @@ Template.ifEven.isEven = function(i) {
 }
 
 Template.pageFeeds.posts = function() {
-    return FtoI.find({}).fetch();
+    return FtoI.find().fetch();
 //    return FtoI.find({},{sort: {score:1}}).fetch();
 }
 
@@ -74,8 +74,9 @@ Template.feedPost.events({
             $(e.target).empty();
         }
     },
-'click .fa-envelope' : function() {
-    $('.msgContainer').toggleClass('noshow'); 
+'click .fa-envelope-o' : function() {
+    console.log(this);
+    $('#msgCont-' + this._id).toggleClass('noshow'); 
 }
 });
 
