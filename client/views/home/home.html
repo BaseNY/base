@@ -1,21 +1,5 @@
-<template name="homeold">
-	<h1 style="letter-spacing:-10px" class="logo">
-		bas
-		<span>e</span>
-	</h1>
-	<!--<div class="box page-home">-->
-	<div class="page-home">
-		<form>
-			<input type="text" placeholder="Buying shoes, selling hats,etc">
-			<input type="submit" class="button" value="Search">
-		</form>
-	</div>
-	<!--<a href="/sell/title" class="button">Sell</a>-->
-	<!--</div>-->
-</template>
-
 <template name="home">
-	<section class="body">
+	<section class="home-container">
 		<!--
 		<div class="content">
 		    <div id="title" style="letter-spacing:-10px" class="title">
@@ -26,12 +10,12 @@
 		    </form>
 		</div>
 		-->
-		<div class="left-column">
+		<div class="home-sidebar">
 			{{#if currentUser}}
-				{{> leftColumn}}
+				{{> homeSidebar}}
 			{{/if}}
 		</div>
-		<div class="right-column">
+		<div class="home-feed">
 			{{#if feed}}
 				<h1>{{feed.name}}</h1>
 			{{/if}}
@@ -41,14 +25,14 @@
 	</section>
 </template>
 
-<template name="leftColumn">
+<template name="homeSidebar">
 	<div class="sidebar">
 		<div class="top-container">
 			<div class="top-left">
-				<img src="{{imgUrl}}">
+				<img src="{{profile.img}}">
 			</div>
 			<div class="top-right">
-				<h2>{{name}}</h2>
+				<h2>{{profile.name}}</h2>
 			</div>
 		</div>
 		<ul>
