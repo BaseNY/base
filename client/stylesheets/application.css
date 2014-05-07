@@ -713,8 +713,17 @@ header {
   .home-sidebar:last-child {
     margin-right: 0; }
 
+/* line 36, /home/jasperlu/base/client/stylesheets/pages/home */
+.home-feed {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%; }
+  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  .home-feed:last-child {
+    margin-right: 0; }
 
-/* line 39, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 40, /home/jasperlu/base/client/stylesheets/pages/home */
 .home-profile-name h2 {
   font-weight: normal;
   text-overflow: ellipsis;
