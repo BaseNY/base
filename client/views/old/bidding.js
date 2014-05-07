@@ -1,10 +1,3 @@
-Template.product.events({
-	'click #product-bid': function() {
-		$('#modal-container').css('display', 'block');
-		$('#modal-bid').css('display', 'block');
-	}
-});
-
 Template.bidding.events({
 	'click #sendMsg': function() {
 		var item = Items.findOne({
