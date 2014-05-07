@@ -1,0 +1,57 @@
+<template name="homeSidebar">
+	<div class="home-sidebar">
+		<div class="home-sidebar-content">
+			{{> homeSidebarUser}}
+			{{> homeSidebarFeeds}}
+		</div>
+	</div>
+</template>
+
+<template name="homeSidebarUser">
+	{{#if currentUser}}
+		{{#with profile}}
+			<div class="home-profile-container">
+				<div class="home-profile-image">
+					<img src="{{img}}">
+				</div>
+				<div class="home-profile-name">
+					<h2>{{name}}</h2>
+				</div>
+			</div>
+		{{/with}}
+		<ul>
+			<li id="filter-everyone">
+				<div class="left"><i class="fa fa-globe"></i>
+				</div>
+				<div class="right">Everyone</div>
+			</li>
+			<li id="filter-friends">
+				<div class="left"><i class="fa fa-group"></i>
+				</div>
+				<div class="right">Friends</div>
+			</li>
+		</ul>
+	{{/if}}
+</template>
+
+<template name="homeSidebarFeeds">
+	<h3>Feeds</h3>
+	<ul>
+		<a href="/">
+			<li style="{{#if allFeed}}background-color:white; font-weight:bold{{/if}}">
+				<div class="left"><i class="fa fa-sun-o"></i>
+				</div>
+				<div class="right">All</div>
+			</li>
+		</a>
+		{{#each feeds}}
+			<a href="/feeds/{{this._id}}">
+				<li style="{{#if currentFeed}}background-color:white; font-weight:bold{{/if}}">
+					<div class="left"><i class="fa fa-{{this.icon}}"></i>
+					</div>
+					<div class="right">{{this.name}}</div>
+				</li>
+			</a>
+		{{/each}}
+	</ul>
+</template>

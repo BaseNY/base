@@ -1,0 +1,66 @@
+<template name="feedPost">
+	<div class="post">
+		<div style="border-left: 4px solid{{#if isSellPost}}#f39c12{{else}}#50a8e7{{/if}}" id="post-{{this._id}}" class="post-inner">
+			<div class="container">
+				<div class="left">
+					<img src={{imgUrl}}>
+				</div>
+				<div class="right">
+					<h1><a href="/feeds/{{item._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{item.title}}</a>
+					</h1>
+					<hr />
+					<a href="/profile/{{item.sellerId}}">{{item.seller}}</a>  <i class="fa fa-angle-right"></i>  <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+					<span class="faded">{{timestamp}}</span>
+				</div>
+			</div>
+			{{#if currentUser}}
+				<div class="icons-container">
+					<i class="fa fa-envelope-o"></i>
+					<i class="fa fa-angle-down"></i>
+				</div>
+			{{/if}}
+			<div id="msgCont-{{this._id}}" class="msgContainer noshow">
+				{{> bidding}}
+			</div>
+			<p class="description">{{item.description}}</p>
+			{{#if isSellPost}}
+				<!--<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>-->
+                                <a href="{{item.imageUrl}}" data-lightbox="image-{{item._id}}" data-title="{{item.title}}: {{item.description}}">
+                                                <img class="image" src={{item.imageUrl}} />
+                                                                        </a>
+			{{/if}}
+			<div class="commentContainer">
+				<ul>
+					{{#each comments}}
+						<li>
+							{{> comment}}
+						</li>
+					{{/each}}
+				</ul>
+				{{#if currentUser}}
+					<div class="left">
+						<img src={{imgUrl}} />
+					</div>
+					<div class="comment-inner-container">
+						<div contenteditable="true" class="commentForm" id="commentContent">
+							<span class="placeholder">Write a comment...</span>
+						</div>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="comment">
+	<div class="commentSmallContainer">
+		<div class="left">
+			<img src="{{imgUrl}}">
+		</div>
+		<div class="right">
+			<a href="/profile/{{id}}"><b>{{name}}</b></a> {{text}}
+			<br />
+			<span class="faded">{{timestamp}}</span>
+		</div>
+	</div>
+</template>

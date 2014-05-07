@@ -1,39 +1,35 @@
 Items = new Meteor.Collection('items');
-Offers = new Meteor.Collection('offers');
-/*
+
+/* Offer
 {
-    sellerId: -id-
-    seller:
-    buyerId: -id-
-    buyer:
-    time: 
-    location: -location-
-    offer: -moneh-
-    postId: -that-
+	time:
+	itemId:
+	sellerId:
+	seller:
+	buyerId:
+	buyer:
+	//location:
+	//offer:
+}
+*/
+Offers = new Meteor.Collection('offers');
+
+/* Message
+{
+	time:
+	posterId:
+	poster:
+	offerId:
+	text:
+	type: - 1 is an offer, 0 is a regular message -
+	isPublic:
 }
 */
 Messages = new Meteor.Collection('messages');
-/*
- {
-    type: (offer message or regular message)
-    //1 is an offer, 0 s a regular message
-    text: ...
-    time: dateObj
-    fromId: -id-
-    from: -sender name-
-    toId: -id-
-    to: -receiver name-
 
-    //if offer message
-    offerId:
-    offer:
-    location:
-    postId:
-    public: 
-}
-*/
 Feeds = new Meteor.Collection('feeds');
-FtoI = new Meteor.Collection('OtoI');
+
+FtoI = new Meteor.Collection('ftoi');
 /*
  * acts as an intermediary between feeds and items
 {

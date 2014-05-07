@@ -1,0 +1,142 @@
+Template.homePost.events({
+	'change .home-post-header input:radio': function(e) {
+		var $target = $(e.currentTarget),
+			$label = $(".home-post-header label[for=" + $target.attr('id') + "]"),
+			$buy = $("#home-buy-container"),
+			$sell = $("#home-sell-container");
+
+		$('.home-post-header label').removeClass('checked');
+		$label.addClass('checked');
+
+		if ($target.val() == 'sell') {
+			$buy.slideUp();
+			$sell.slideDown();
+		} else {
+			$sell.slideUp();
+			$buy.slideDown();
+		}
+	},
+	'change .home-post-body input:radio': function(e) {
+		var $target = $(e.currentTarget),
+			$label = $(".highlight-label[for=" + $target.attr('id') + "]");
+
+		$(".home-post-body label").removeClass('checked');
+		$label.addClass("checked");
+	}
+});
+
+Template.homeSellPost.events({
+	'click #sell-post': function(e) {
+		e.preventDefault();
+
+		if (!Meteor.user()) {
+			$('#modal-container').css('display', 'block');
+			$('#modal-signup').css('display', 'block');
+			return -1;
+		}
+		$(this).css('pointer-events', 'none');
+
+		temp = {};
+		temp.title = $('input[name=title]').val();
+		temp.feeds = [];
+		if (Router.current().data()) {
+			temp.feeds.push(Router.current().data().feed._id);
+		} else {
+			temp.feeds.push($('input[name=feed]:checked').val());
+		}
+		/*
+		   temp.so = $('input[name=so]').val();
+		   temp.bin = $('input[name=bin]').val();
+		   temp.condition = $('select[name=condition]').val();
+		   */
+		temp.description = $('#sell-description').val();
+		//temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
+		//temp.image = document.getElementById('image').files[0];
+		console.log(temp);
+
+		// NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+		console.log("adding item");
+		if (!document.getElementById('image').files[0]) {
+			Meteor.call('addPost', temp, function(e, r) {
+				console.log("something");
+				if (e) {
+					alert(e);
+				} else {
+					if (r == -2)
+						alert('Need a title!');
+					else if (r == -3)
+						alert('Need a description!');
+					else if (r == -4)
+						alert('Pick a feed!');
+					console.log("done");
+					Router.go('/post/' + r);
+				}
+			});
+
+		} else {
+			s3ImageUpload(Meteor.userId(), temp, document.getElementById('image').files[0], function(temp) {
+				Meteor.call('addPost', temp, function(e, r) {
+					console.log("something");
+					if (e) {
+						alert(e);
+					} else {
+						if (r == -1)
+							alert('Need an image url!');
+						else if (r == -2)
+							alert('Need a title!');
+						else if (r == -3)
+							alert('Need a description!');
+						else if (r == -4)
+							alert('Pick a feed!');
+						console.log("done");
+						Router.go('/post/' + r);
+					}
+				});
+			});
+		}
+	}
+});
+
+Template.homeBuyPost.events({
+	'click #buy-post': function(e) {
+		if (!Meteor.user()) {
+			$('#modal-container').css('display', 'block');
+			$('#modal-signup').css('display', 'block');
+			return -1;
+		}
+		$(e.target).css('pointer-events', 'none');
+		setInterval(function() {
+			$(e.target).css('pointer-events', 'auto');
+		}, 1000);
+		e.preventDefault();
+
+		temp = {};
+		temp.feeds = [];
+		if (Router.current().data())
+			temp.feeds.push(Router.current().data().feed._id);
+		else
+			temp.feeds.push($('input[name=feed]:checked').val());
+		/*
+		   temp.so = $('input[name=so]').val();
+		   temp.bin = $('input[name=bin]').val();
+		   temp.condition = $('select[name=condition]').val();
+		   */
+		temp.description = $('#buy-description').val();
+		temp.buy = true;
+		console.log(temp);
+
+		//NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
+		e.preventDefault();
+		console.log("adding item");
+		Meteor.call('addRequest', temp, function(e, r) {
+			console.log("something");
+			if (e) {
+				alert(e);
+			} else {
+				console.log("done");
+				Router.go('/');
+			}
+		});
+		$(e.target).slideUp();
+	}
+});

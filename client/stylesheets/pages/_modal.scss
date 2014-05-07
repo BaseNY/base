@@ -1,33 +1,38 @@
-#modal-overlay {
-    background-color: rgba(0,0,0,.5);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+.modal-overlay {
+	background-color: rgba(0,0,0,.5);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+        z-index:1;
+	top: 0;
+	left: 0;
 }
 
-#modal {
-    position: absolute;
-    height: auto;
-    width: 350px;
-    border-radius: 5px;
-    top: 150px;
-    margin-left: -175px;
-    left: 50%;
-    border: 1px solid #378cc5;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    background-color: white;
-    border-radius: 3px;
-    font-size: 1em;
-    .modal-login{
-        input[type=text], input[type=password] {
-            margin: 0px;
-            margin-bottom: 5px;
-            padding: 10px;
-            box-sizing: border-box;
-            width: 100%;
+#modal, .modal {
+	position: absolute;
+	height: auto;
+        z-index:2;
+	width: 350px;
+	border-radius: 5px;
+	top: 150px;
+	margin-left: -175px;
+	left: 50%;
+	border: 1px solid #378cc5;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	background-color: white;
+	border-radius: 3px;
+	font-size: 1em;
+        &.pic {
+            width:auto;
+             top: 50%; left: 50%; 
+             transform:translate(-50%,-50%); 
+             -moz-transform:translate(-50%,-50%); 
+             -webkit-transform:translate(-50%,-50%); 
+             margin-left:0px;
+             position:fixed;
+             max-width:70%;
         }
+<<<<<<< HEAD
     }
     #modal-feedback {
         width:70%;
@@ -46,60 +51,96 @@
             box-sizing: border-box;
             width: 100%;
             display: inline-block;
+=======
+	.modal-login{
+		input[type=text], input[type=password] {
+			margin: 0px;
+			margin-bottom: 5px;
+			padding: 10px;
+			box-sizing: border-box;
+			width: 100%;
+		}
+	}
+	#modal-bid, #modal-signup, #modal-feedback, .modal-bid, .modal-signup{
+		input[type=text], textarea, input[type=password],input[type=email] {
+			margin: 0px;
+			margin-bottom: 5px;
+			font-size: 1.2em;
+			padding: 10px;
+			box-sizing: border-box;
+			width: 100%;
+			display: inline-block;
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a
 
-        }
-         textarea, div[contenteditable] {
-            padding: 10px;
-            resize:none;
-            outline: 1px solid #eee;
-            border: 0px;
-            font-weight: 200;
-            font-size: 1.2em;
-            background-color: white;
-            display: block;
-            overflow-y: auto;
-            width: calc(100% - $i-pad * 2) ;
-            height: 100px;
-            line-height: 1.2em;
+		}
+		h5 {
+			text-align:center;
+			font-weight:normal;
+			margin-top:8px;
+		}
+		 textarea, div[contenteditable] {
+			padding: 10px;
+			resize:none;
+			outline: 1px solid #eee;
+			border: 0px;
+			font-weight: 200;
+			font-size: 1.2em;
+			background-color: white;
+			display: block;
+			overflow-y: auto;
+			width: calc(100% - $i-pad * 2) ;
+			height: 100px;
+			line-height: 1.2em;
 
-            &:focus {
-                outline-color: #3F9FE0;
-            }
+			&:focus {
+				outline-color: #3F9FE0;
+			}
+		}
+		input.halfInput {
+			width: 50%;
+		}
+	}
+        .image {
+            max-height:700px;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size:100%;
+            border:1px solid lightgrey;
+            margin-top:8px;
+            width:auto;
+            max-width:100%;
+            margin-bottom:8px;
         }
-        input.halfInput {
-            width: 50%;
-        }
-    }
-    .button {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        width: 100%;
-    }
-    #fb-login {
-        background-color: #3E5C96;
-        text-align: center;
-        margin-top: 9%;
-        width: 100%;
-        cursor: pointer;
-        color: #FFF;
-        padding: 0.8em;
-        border-radius: 3px;
-        &:active {
-            background-image: url('/images/fb_pressed.png');
-        }
-    }
-    .modal-inner {
-        width: 100%;
-        padding: 10%;
-    }
-    h1, h3 {
-        margin: 0 auto;
-        text-align: center;
-        font-weight: 300;
-    }
-    h3 {
-        color: grey;
-        font-size: 1em;
-        margin-top: 5px;
-    }
+	.button {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		width: 100%;
+	}
+	#fb-login {
+		background-color: #3E5C96;
+		text-align: center;
+		margin-top: 9%;
+		width: 100%;
+		cursor: pointer;
+		color: #FFF;
+		padding: 0.8em;
+		border-radius: 3px;
+		.fa {
+			margin-right: 0.5em;
+		}
+	}
+	.modal-inner {
+		width: 100%;
+		padding: 10%;
+	}
+	h1, h3 {
+		margin: 0 auto;
+		text-align: center;
+		font-weight: 300;
+	}
+	h3 {
+		color: grey;
+		font-size: 1em;
+		margin-top: 5px;
+	}
 }
