@@ -11,7 +11,7 @@
 	<div class="messages-sidebar">
 		<a class="messages-sidebar-item" href="/inbox">All offers</a>
 		{{#each offers}}
-			<a class="messages-sidebar-item" href="/inbox/{{_id}}">{{buyer}}</a>
+			<a class="messages-sidebar-item" href="/inbox/{{_id}}">{{this.buyer}}</a>
 		{{/each}}
 	</div>
 </template>
@@ -32,7 +32,7 @@
 <template name="message">
 	<div class="message">
 		<div class="message-text">
-			<b>{{poster}}:</b> {{text}}
+			<b>{{this.poster}}:</b> {{this.text}}
 		</div>
 	</div>
 </template>
