@@ -15,6 +15,8 @@ Template.feedPost.helpers({
 		var i = Items.findOne({
 			_id: this.itemId
 		});
+                if(!i)
+                    return '';
 		var url = Meteor.users.findOne({
 			_id: i.sellerId
 		}).profile.img;

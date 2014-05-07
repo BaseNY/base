@@ -34,6 +34,7 @@
 }
 
 .home-feed {
+    @include span-columns(9);
 }
 
 .home-profile-name h2 {
