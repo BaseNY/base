@@ -817,19 +817,16 @@ display:inline-block;
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     margin-left: 0px;
-    position: fixed; }
-    /* line 33, /home/jasperlu/base/client/stylesheets/pages/modal */
-    #modal.pic img, .modal.pic img {
-      max-width: 60%;
-      max-height: 600px; }
-  /* line 39, /home/jasperlu/base/client/stylesheets/pages/modal */
+    position: fixed;
+    max-width: 70%; }
+  /* line 36, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .modal-login input[type=text], #modal .modal-login input[type=password], .modal .modal-login input[type=text], .modal .modal-login input[type=password] {
     margin: 0px;
     margin-bottom: 5px;
     padding: 10px;
     box-sizing: border-box;
     width: 100%; }
-  /* line 48, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 45, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #modal-bid input[type=text], #modal #modal-bid textarea, #modal #modal-bid input[type=password], #modal #modal-bid input[type=email], #modal #modal-signup input[type=text], #modal #modal-signup textarea, #modal #modal-signup input[type=password], #modal #modal-signup input[type=email], #modal #modal-feedback input[type=text], #modal #modal-feedback textarea, #modal #modal-feedback input[type=password], #modal #modal-feedback input[type=email], #modal .modal-bid input[type=text], #modal .modal-bid textarea, #modal .modal-bid input[type=password], #modal .modal-bid input[type=email], #modal .modal-signup input[type=text], #modal .modal-signup textarea, #modal .modal-signup input[type=password], #modal .modal-signup input[type=email], .modal #modal-bid input[type=text], .modal #modal-bid textarea, .modal #modal-bid input[type=password], .modal #modal-bid input[type=email], .modal #modal-signup input[type=text], .modal #modal-signup textarea, .modal #modal-signup input[type=password], .modal #modal-signup input[type=email], .modal #modal-feedback input[type=text], .modal #modal-feedback textarea, .modal #modal-feedback input[type=password], .modal #modal-feedback input[type=email], .modal .modal-bid input[type=text], .modal .modal-bid textarea, .modal .modal-bid input[type=password], .modal .modal-bid input[type=email], .modal .modal-signup input[type=text], .modal .modal-signup textarea, .modal .modal-signup input[type=password], .modal .modal-signup input[type=email] {
     margin: 0px;
     margin-bottom: 5px;
@@ -838,12 +835,12 @@ display:inline-block;
     box-sizing: border-box;
     width: 100%;
     display: inline-block; }
-  /* line 58, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 55, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #modal-bid h5, #modal #modal-signup h5, #modal #modal-feedback h5, #modal .modal-bid h5, #modal .modal-signup h5, .modal #modal-bid h5, .modal #modal-signup h5, .modal #modal-feedback h5, .modal .modal-bid h5, .modal .modal-signup h5 {
     text-align: center;
     font-weight: normal;
     margin-top: 8px; }
-  /* line 63, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 60, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable], #modal #modal-feedback textarea, #modal #modal-feedback div[contenteditable], #modal .modal-bid textarea, #modal .modal-bid div[contenteditable], #modal .modal-signup textarea, #modal .modal-signup div[contenteditable], .modal #modal-bid textarea, .modal #modal-bid div[contenteditable], .modal #modal-signup textarea, .modal #modal-signup div[contenteditable], .modal #modal-feedback textarea, .modal #modal-feedback div[contenteditable], .modal .modal-bid textarea, .modal .modal-bid div[contenteditable], .modal .modal-signup textarea, .modal .modal-signup div[contenteditable] {
     padding: 10px;
     resize: none;
@@ -857,13 +854,13 @@ display:inline-block;
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-    /* line 77, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 74, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus, #modal #modal-feedback textarea:focus, #modal #modal-feedback div[contenteditable]:focus, #modal .modal-bid textarea:focus, #modal .modal-bid div[contenteditable]:focus, #modal .modal-signup textarea:focus, #modal .modal-signup div[contenteditable]:focus, .modal #modal-bid textarea:focus, .modal #modal-bid div[contenteditable]:focus, .modal #modal-signup textarea:focus, .modal #modal-signup div[contenteditable]:focus, .modal #modal-feedback textarea:focus, .modal #modal-feedback div[contenteditable]:focus, .modal .modal-bid textarea:focus, .modal .modal-bid div[contenteditable]:focus, .modal .modal-signup textarea:focus, .modal .modal-signup div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 81, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 78, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput, #modal #modal-feedback input.halfInput, #modal .modal-bid input.halfInput, #modal .modal-signup input.halfInput, .modal #modal-bid input.halfInput, .modal #modal-signup input.halfInput, .modal #modal-feedback input.halfInput, .modal .modal-bid input.halfInput, .modal .modal-signup input.halfInput {
     width: 50%; }
-  /* line 85, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 82, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .image, .modal .image {
     max-height: 700px;
     background-position: center;
@@ -872,13 +869,14 @@ display:inline-block;
     border: 1px solid lightgrey;
     margin-top: 8px;
     width: auto;
+    max-width: 100%;
     margin-bottom: 8px; }
-  /* line 95, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 93, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .button, .modal .button {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%; }
-  /* line 100, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 98, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal #fb-login, .modal #fb-login {
     background-color: #3E5C96;
     text-align: center;
@@ -888,19 +886,19 @@ display:inline-block;
     color: #FFF;
     padding: 0.8em;
     border-radius: 3px; }
-    /* line 109, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 107, /home/jasperlu/base/client/stylesheets/pages/modal */
     #modal #fb-login .fa, .modal #fb-login .fa {
       margin-right: 0.5em; }
-  /* line 113, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 111, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal .modal-inner, .modal .modal-inner {
     width: 100%;
     padding: 10%; }
-  /* line 117, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 115, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h1, #modal h3, .modal h1, .modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-  /* line 122, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 120, /home/jasperlu/base/client/stylesheets/pages/modal */
   #modal h3, .modal h3 {
     color: grey;
     font-size: 1em;
