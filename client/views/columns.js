@@ -21,6 +21,8 @@ Template.homeSidebar.helpers({
 Template.homeSidebarFeeds.helpers({
 	'feeds': function() {
 		var temp = [];
+                if(!Meteor.user())
+                    return temp;
 		var l = Meteor.user().profile.subscribed;
 		for (x in l) {
 			temp.push(Feeds.findOne({
@@ -30,8 +32,9 @@ Template.homeSidebarFeeds.helpers({
 		return temp;
 	},
 	'currentFeed': function() {
-		if (Router.current().data())
-			return Router.current().data().feed._id == this._id;
+		if (Router.current().data()) {
+		    return Router.current().data().feed._id == this._id;
+                }
         },
 	'allFeed': function() {
 		return !Router.current().data();

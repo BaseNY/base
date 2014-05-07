@@ -25,7 +25,9 @@
 			<p class="description">{{item.description}}</p>
 			{{#if isSellPost}}
 				<!--<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>-->
-				<img class="image" src={{item.imageUrl}} />
+                                <a href="{{item.imageUrl}}" data-lightbox="image-{{item._id}}" data-title="{{item.title}}: {{item.description}}">
+                                                <img class="image" src={{item.imageUrl}} />
+                                                                        </a>
 			{{/if}}
 			<div class="commentContainer">
 				<ul>
