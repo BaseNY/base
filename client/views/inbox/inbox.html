@@ -16,11 +16,11 @@
 </template>
 
 <template name="inboxSelling">
-	{{#unless sold}}
+	{{#unless this.sold}}
 		<div class="inbox-row">
 			<div class="inbox-left">
 				<a class="inbox-thumbnail" href="/post/{{_id}}">
-					Selling: {{title}}
+					Selling: {{this.title}}
 					<br><br>
 					<img class="inbox-img" src="{{imageUrl}}">
 				</a>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="inbox-right">
 				{{#each offers}}
-					<a class="inbox-offer" href="/inbox/{{_id}}">{{buyer}}</a>
+					<a class="inbox-offer" href="/inbox/{{_id}}">{{this.buyer}}</a>
 				{{/each}}
 			</div>
 		</div>
@@ -41,14 +41,14 @@
 			<div class="inbox-left">
 				{{#with item}}
 					<a class="inbox-thumbnail" href="/post/{{_id}}">
-						Buying: {{title}}
+						Buying: {{this.title}}
 						<br><br>
 						<img class="inbox-img" src="{{imageUrl}}">
 					</a>
 				{{/with}}
 			</div>
 			<div class="inbox-right">
-				<a class="inbox-offer" href="/inbox/{{_id}}">{{seller}}</a>
+				<a class="inbox-offer" href="/inbox/{{_id}}">{{this.seller}}</a>
 			</div>
 		</div>
 	{{/unless}}
