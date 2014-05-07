@@ -1477,46 +1477,49 @@ section.pageAbout {
       margin-bottom: 10px; }
     /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body label {
+      display: inline-block;
       padding: 4px;
-      border-radius: 2px; }
-      /* line 48, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+      border-radius: 2px;
+      cursor: pointer;
+      color: #33B5E5; }
+      /* line 51, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
       .home-post-container .home-post-body label:hover {
         background-color: #EEE; }
-      /* line 51, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+      /* line 54, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
       .home-post-container .home-post-body label.checked {
         font-weight: normal;
         background-color: #33B5E5;
         color: white; }
-    /* line 57, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body input[type=file] {
       font-size: 0.7em; }
-    /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    /* line 63, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body #item-title {
       margin-top: 10px; }
-    /* line 63, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    /* line 66, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body .button {
       font-size: 0.8em; }
-  /* line 67, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  /* line 70, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container textarea {
     padding: 5px 10px 5px 10px; }
-  /* line 70, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  /* line 73, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container form {
     display: inline; }
 
-/* line 75, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+/* line 78, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
 .home-post-header {
   padding: 15px 20px 15px 20px;
   border-bottom: 2px solid #33B5E5; }
-  /* line 78, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+  /* line 81, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-header label {
     display: inline-block;
     cursor: pointer;
     color: #33B5E5; }
-    /* line 82, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+    /* line 85, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-header label.checked {
       font-weight: bold; }
 
-/* line 88, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
+/* line 91, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
 .post-message {
   overflow: auto; }
 
