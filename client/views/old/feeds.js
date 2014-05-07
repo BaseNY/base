@@ -95,8 +95,8 @@ Template.feedPost.events({
 			$(e.target).empty();
 		}
 	},
-	'click .fa-envelope': function() {
-		$('.msgContainer').toggleClass('noshow');
+	'click .fa-envelope-o': function() {
+		$('#msgCont-' + this._id).toggleClass('noshow');
 	},
 	'click .fa-angle-down': function() {
 
