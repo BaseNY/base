@@ -8,14 +8,14 @@
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-/* line 22, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 22, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
-/* line 32, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 32, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 audio, canvas, video {
   display: inline-block; }
 
@@ -23,7 +23,7 @@ audio, canvas, video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 41, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 41, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -32,7 +32,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9.
  * Hide the `template` element in IE, Safari, and Firefox < 22.
  */
-/* line 52, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 52, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 [hidden], template {
   display: none; }
 
@@ -44,7 +44,7 @@ audio:not([controls]) {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 66, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 66, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -56,7 +56,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 76, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 76, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 body {
   margin: 0; }
 
@@ -66,21 +66,21 @@ body {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 88, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 88, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 a {
   background: transparent; }
 
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-/* line 96, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 96, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 a:focus {
   outline: thin dotted; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 105, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 105, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 a:active, a:hover {
   outline: 0; }
 
@@ -91,7 +91,7 @@ a:active, a:hover {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 118, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 118, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -99,28 +99,28 @@ h1 {
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
-/* line 127, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 127, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 136, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 136, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 b, strong {
   font-weight: bold; }
 
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
-/* line 144, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 144, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 dfn {
   font-style: italic; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 152, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 152, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -129,7 +129,7 @@ hr {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 162, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 162, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 mark {
   background: #ff0;
   color: #000; }
@@ -137,7 +137,7 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
-/* line 174, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 174, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 code, kbd, pre, samp {
   font-family: monospace, serif;
   font-size: 1em; }
@@ -145,39 +145,39 @@ code, kbd, pre, samp {
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
-/* line 183, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 183, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 pre {
   white-space: pre-wrap; }
 
 /**
  * Set consistent quote types.
  */
-/* line 191, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 191, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 199, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 199, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 208, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 208, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
-/* line 215, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 215, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 sup {
   top: -0.5em; }
 
-/* line 219, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 219, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 sub {
   bottom: -0.25em; }
 
@@ -187,14 +187,14 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
-/* line 231, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 231, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 img {
   border: 0; }
 
 /**
  * Correct overflow displayed oddly in IE 9.
  */
-/* line 239, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 239, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -204,7 +204,7 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
-/* line 251, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 251, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 figure {
   margin: 0; }
 
@@ -214,7 +214,7 @@ figure {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 263, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 263, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -224,7 +224,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 274, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 274, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 legend {
   border: 0;
   /* 1 */
@@ -236,7 +236,7 @@ legend {
  * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 288, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 288, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 button, input, select, textarea {
   font-family: inherit;
   /* 1 */
@@ -249,7 +249,7 @@ button, input, select, textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 300, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 300, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 button, input {
   line-height: normal; }
 
@@ -259,7 +259,7 @@ button, input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-/* line 312, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 312, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 button, select {
   text-transform: none; }
 
@@ -270,7 +270,7 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 327, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 327, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -280,7 +280,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 337, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 337, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 button[disabled], html input[disabled] {
   cursor: default; }
 
@@ -288,7 +288,7 @@ button[disabled], html input[disabled] {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 347, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 347, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
@@ -300,7 +300,7 @@ input[type="checkbox"], input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 358, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 358, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -313,14 +313,14 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 371, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 371, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 380, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 380, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -329,7 +329,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-/* line 390, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 390, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 textarea {
   overflow: auto;
   /* 1 */
@@ -342,18 +342,18 @@ textarea {
 /**
  * Remove most spacing between table cells.
  */
-/* line 403, /home/jasperlu/base/client/stylesheets/vendor/normalize */
+/* line 403, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/normalize */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/grid */
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/grid */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 4, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 4, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 *, *:before, *:after {
   *behavior: url("/scripts/boxsizing.htc");
   padding: 0;
@@ -361,47 +361,47 @@ table {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  /* line 11, /home/jasperlu/base/client/stylesheets/general/base */
+  /* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
   *:focus, *:before:focus, *:after:focus {
     outline: none; }
 
-/* line 16, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 16, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 a {
   color: #33B5E5;
   text-decoration: none; }
 
-/* line 21, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 21, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 li {
   list-style: none; }
 
-/* line 25, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 25, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 p {
   line-height: 1.5em;
   font-size: 1.2em; }
 
-/* line 30, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 30, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 #fbLogin {
   background-color: #3b5998;
   color: #FFFFFF;
   padding: 5px 10px 5px 10px !important; }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/global/mixins */
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/global/mixins */
 input[type="email"].placeholder, input[type="number"].placeholder, input[type="password"].placeholder, input[type="search"].placeholder, input[type="tel"].placeholder, input[type="text"].placeholder, input[type="url"].placeholder {
   font-weight: 300; }
-/* line 3, /home/jasperlu/base/client/stylesheets/global/mixins */
+/* line 3, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/global/mixins */
 input[type="email"]:-moz-placeholder, input[type="number"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="search"]:-moz-placeholder, input[type="tel"]:-moz-placeholder, input[type="text"]:-moz-placeholder, input[type="url"]:-moz-placeholder {
   font-weight: 300; }
-/* line 4, /home/jasperlu/base/client/stylesheets/global/mixins */
+/* line 4, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/global/mixins */
 input[type="email"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="url"]::-moz-placeholder {
   font-weight: 300; }
-/* line 5, /home/jasperlu/base/client/stylesheets/global/mixins */
+/* line 5, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/global/mixins */
 input[type="email"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder {
   font-weight: 300; }
-/* line 6, /home/jasperlu/base/client/stylesheets/global/mixins */
+/* line 6, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/global/mixins */
 input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder {
   font-weight: 300; }
 
-/* line 48, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 48, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 .button {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -414,30 +414,30 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
   cursor: pointer;
   text-align: center;
   text-decoration: none; }
-  /* line 60, /home/jasperlu/base/client/stylesheets/general/base */
+  /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
   .button:hover {
     background-color: #3F9FE0;
     color: white; }
 
-/* line 67, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 67, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 .search-group input {
   width: 90%; }
 
-/* line 72, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 72, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 .button-group {
   display: inline-block;
   border: 1px solid #EEE;
   background-color: white; }
-  /* line 76, /home/jasperlu/base/client/stylesheets/general/base */
+  /* line 76, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
   .button-group .button {
     display: inline-block;
     border-width: 0;
     border-right-width: 1px; }
-    /* line 80, /home/jasperlu/base/client/stylesheets/general/base */
+    /* line 80, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
     .button-group .button:last-child {
       border-width: 0; }
 
-/* line 86, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 86, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 .box {
   margin: 50px auto;
   padding: 40px;
@@ -446,45 +446,45 @@ input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-in
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
 
-/* line 95, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 95, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 body {
   background: #F7F7F7;
   font-family: 'Source Sans Pro', sans-serif; }
 
-/* line 100, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 100, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 section.body {
   width: 85%;
   max-width: 900px;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   section.body:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 106, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 106, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 .right-column {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .right-column:last-child {
     margin-right: 0; }
 
-/* line 109, /home/jasperlu/base/client/stylesheets/general/base */
+/* line 109, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/base */
 .left-column {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .left-column:last-child {
     margin-right: 0; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/general/header */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
 .header {
   width: 100%;
   height: 42px;
@@ -493,7 +493,7 @@ section.body {
   box-shadow: rgba(0, 0, 0, 0.247059) 0px 0px 8px 0px;
   color: white;
   font-size: 1.4em; }
-  /* line 9, /home/jasperlu/base/client/stylesheets/general/header */
+  /* line 9, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
   .header a {
     margin-left: 40px;
     box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
@@ -502,13 +502,13 @@ section.body {
     display: inline-block;
     height: 22px;
     padding: 10px 0px; }
-    /* line 17, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 17, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     .header a:link {
       text-decoration: none; }
-  /* line 22, /home/jasperlu/base/client/stylesheets/general/header */
+  /* line 22, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
   .header ul.dropdown {
     display: none; }
-  /* line 26, /home/jasperlu/base/client/stylesheets/general/header */
+  /* line 26, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
   .header div#user-wrapper {
     float: right;
     margin-right: 50px;
@@ -516,7 +516,7 @@ section.body {
     padding-right: 10px;
     line-height: 42px;
     cursor: pointer; }
-  /* line 34, /home/jasperlu/base/client/stylesheets/general/header */
+  /* line 34, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
   .header ul#nameDrop {
     position: absolute;
     right: 0px;
@@ -531,43 +531,43 @@ section.body {
     font-size: 1em;
     font-weight: 300;
     box-shadow: rgba(0, 0, 0, 0.247059) 1px 1px 8px; }
-    /* line 47, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 47, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     .header ul#nameDrop li {
       border-bottom: 1px solid #378cc5;
       padding: 5px; }
-      /* line 50, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 50, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
       .header ul#nameDrop li:hover {
         background-color: #3F9FE0;
         color: white; }
 
-/* line 60, /home/jasperlu/base/client/stylesheets/general/header */
+/* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
 header {
   background: white;
   color: black;
   padding: 0.5em 1em;
   border-bottom: 2px solid #E6E6E6; }
-  /* line 65, /home/jasperlu/base/client/stylesheets/general/header */
+  /* line 65, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
   header > .content {
     max-width: 1000px;
     height: 40px;
     margin: 0 auto; }
-    /* line 69, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 69, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content > * {
       vertical-align: middle; }
-    /* line 72, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 72, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content .logo {
       display: inline-block;
       height: 100%; }
-    /* line 76, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 76, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content img {
       height: 100%; }
-    /* line 79, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 79, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content form {
       display: inline-block;
       margin-left: 1em;
       height: 100%;
       width: 60%; }
-    /* line 86, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 86, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content input {
       -webkit-transition: border 0.3s, color 0.3s, width 0.3s;
       -moz-transition: border 0.3s, color 0.3s, width 0.3s;
@@ -584,20 +584,20 @@ header {
       background-color: #FCFCFC;
       border: none;
       box-shadow: 1px 1px 1px #f1e8e8; }
-      /* line 101, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 101, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
       header > .content input:hover, header > .content input:focus {
         box-shadow: 0px 0px 2px rgba(52, 91, 119, 0.3); }
-      /* line 104, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 104, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
       header > .content input:focus {
         outline: none;
         border: 1px solid #50A8E7;
         color: #50A8E7;
         width: 100%; }
-    /* line 111, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 111, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content .user-wrapper {
       display: inline-block;
       float: right; }
-      /* line 114, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 114, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
       header > .content .user-wrapper h2 {
         vertical-align: middle;
         display: inline-block;
@@ -605,15 +605,15 @@ header {
         font-weight: normal;
         font-size: 1.4em;
         margin-right: 16px; }
-      /* line 122, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 122, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
       header > .content .user-wrapper img {
         vertical-align: middle;
         height: 2.5em;
         margin-right: 10px; }
-      /* line 127, /home/jasperlu/base/client/stylesheets/general/header */
+      /* line 127, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
       header > .content .user-wrapper span {
         color: #f39c12; }
-    /* line 131, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 131, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content .btn-login {
       background: #50a8e7;
       color: white;
@@ -624,13 +624,13 @@ header {
       font-size: 20px;
       height: 100%;
       line-height: 100%; }
-    /* line 142, /home/jasperlu/base/client/stylesheets/general/header */
+    /* line 142, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
     header > .content .link {
       vertical-align: middle;
       margin-right: 0.8em;
       font-size: 1.4em; }
 
-/* line 150, /home/jasperlu/base/client/stylesheets/general/header */
+/* line 150, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/header */
 .header-notice {
   width: 100%;
   background-color: #f39c12;
@@ -639,97 +639,97 @@ header {
   padding: 8px;
   color: white; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/general/footer */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/footer */
 .footer {
   padding: 14px 40px;
   width: 100%;
   border-top: 1px solid #DDD;
   background-color: whitesmoke;
   color: #33B5E5; }
-  /* line 8, /home/jasperlu/base/client/stylesheets/general/footer */
+  /* line 8, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/general/footer */
   .footer > span {
     margin-left: 20px; }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-sidebar-content h3 {
   color: grey;
   font-weight: bold;
   margin: 8px 0px 2px; }
-/* line 8, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 8, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-sidebar-content ul li {
   padding: 4px;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .home-sidebar-content ul li:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 11, /home/jasperlu/base/client/stylesheets/pages/home */
+  /* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
   .home-sidebar-content ul li .left {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 10.43705%; }
-    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .home-sidebar-content ul li .left:last-child {
       margin-right: 0; }
-  /* line 14, /home/jasperlu/base/client/stylesheets/pages/home */
+  /* line 14, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
   .home-sidebar-content ul li .right {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 87.20529%; }
-    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .home-sidebar-content ul li .right:last-child {
       margin-right: 0; }
-  /* line 17, /home/jasperlu/base/client/stylesheets/pages/home */
+  /* line 17, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
   .home-sidebar-content ul li:hover {
     background-color: #E6E6E6;
     cursor: pointer; }
 
-/* line 26, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 26, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-container {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 900px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .home-container:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 31, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 31, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-sidebar {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%;
   padding-top: 24px; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .home-sidebar:last-child {
     margin-right: 0; }
 
-/* line 36, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-feed {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .home-feed:last-child {
     margin-right: 0; }
 
-/* line 40, /home/jasperlu/base/client/stylesheets/pages/home */
+/* line 40, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/home */
 .home-profile-name h2 {
   font-weight: normal;
   text-overflow: ellipsis;
   overflow: hidden; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/modal */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
 .modal-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -739,7 +739,7 @@ header {
   top: 0;
   left: 0; }
 
-/* line 11, /home/jasperlu/base/client/stylesheets/pages/modal */
+/* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
 #modal, .modal {
   position: absolute;
   height: auto;
@@ -754,7 +754,7 @@ header {
   background-color: white;
   border-radius: 3px;
   font-size: 1em; }
-  /* line 25, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 25, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal.pic, .modal.pic {
     width: auto;
     top: 50%;
@@ -765,14 +765,14 @@ header {
     margin-left: 0px;
     position: fixed;
     max-width: 70%; }
-  /* line 36, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal .modal-login input[type=text], #modal .modal-login input[type=password], .modal .modal-login input[type=text], .modal .modal-login input[type=password] {
     margin: 0px;
     margin-bottom: 5px;
     padding: 10px;
     box-sizing: border-box;
     width: 100%; }
-  /* line 45, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal #modal-bid input[type=text], #modal #modal-bid textarea, #modal #modal-bid input[type=password], #modal #modal-bid input[type=email], #modal #modal-signup input[type=text], #modal #modal-signup textarea, #modal #modal-signup input[type=password], #modal #modal-signup input[type=email], #modal #modal-feedback input[type=text], #modal #modal-feedback textarea, #modal #modal-feedback input[type=password], #modal #modal-feedback input[type=email], #modal .modal-bid input[type=text], #modal .modal-bid textarea, #modal .modal-bid input[type=password], #modal .modal-bid input[type=email], #modal .modal-signup input[type=text], #modal .modal-signup textarea, #modal .modal-signup input[type=password], #modal .modal-signup input[type=email], .modal #modal-bid input[type=text], .modal #modal-bid textarea, .modal #modal-bid input[type=password], .modal #modal-bid input[type=email], .modal #modal-signup input[type=text], .modal #modal-signup textarea, .modal #modal-signup input[type=password], .modal #modal-signup input[type=email], .modal #modal-feedback input[type=text], .modal #modal-feedback textarea, .modal #modal-feedback input[type=password], .modal #modal-feedback input[type=email], .modal .modal-bid input[type=text], .modal .modal-bid textarea, .modal .modal-bid input[type=password], .modal .modal-bid input[type=email], .modal .modal-signup input[type=text], .modal .modal-signup textarea, .modal .modal-signup input[type=password], .modal .modal-signup input[type=email] {
     margin: 0px;
     margin-bottom: 5px;
@@ -781,12 +781,12 @@ header {
     box-sizing: border-box;
     width: 100%;
     display: inline-block; }
-  /* line 55, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 55, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal #modal-bid h5, #modal #modal-signup h5, #modal #modal-feedback h5, #modal .modal-bid h5, #modal .modal-signup h5, .modal #modal-bid h5, .modal #modal-signup h5, .modal #modal-feedback h5, .modal .modal-bid h5, .modal .modal-signup h5 {
     text-align: center;
     font-weight: normal;
     margin-top: 8px; }
-  /* line 60, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal #modal-bid textarea, #modal #modal-bid div[contenteditable], #modal #modal-signup textarea, #modal #modal-signup div[contenteditable], #modal #modal-feedback textarea, #modal #modal-feedback div[contenteditable], #modal .modal-bid textarea, #modal .modal-bid div[contenteditable], #modal .modal-signup textarea, #modal .modal-signup div[contenteditable], .modal #modal-bid textarea, .modal #modal-bid div[contenteditable], .modal #modal-signup textarea, .modal #modal-signup div[contenteditable], .modal #modal-feedback textarea, .modal #modal-feedback div[contenteditable], .modal .modal-bid textarea, .modal .modal-bid div[contenteditable], .modal .modal-signup textarea, .modal .modal-signup div[contenteditable] {
     padding: 10px;
     resize: none;
@@ -800,13 +800,13 @@ header {
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-    /* line 74, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 74, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
     #modal #modal-bid textarea:focus, #modal #modal-bid div[contenteditable]:focus, #modal #modal-signup textarea:focus, #modal #modal-signup div[contenteditable]:focus, #modal #modal-feedback textarea:focus, #modal #modal-feedback div[contenteditable]:focus, #modal .modal-bid textarea:focus, #modal .modal-bid div[contenteditable]:focus, #modal .modal-signup textarea:focus, #modal .modal-signup div[contenteditable]:focus, .modal #modal-bid textarea:focus, .modal #modal-bid div[contenteditable]:focus, .modal #modal-signup textarea:focus, .modal #modal-signup div[contenteditable]:focus, .modal #modal-feedback textarea:focus, .modal #modal-feedback div[contenteditable]:focus, .modal .modal-bid textarea:focus, .modal .modal-bid div[contenteditable]:focus, .modal .modal-signup textarea:focus, .modal .modal-signup div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 78, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 78, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal #modal-bid input.halfInput, #modal #modal-signup input.halfInput, #modal #modal-feedback input.halfInput, #modal .modal-bid input.halfInput, #modal .modal-signup input.halfInput, .modal #modal-bid input.halfInput, .modal #modal-signup input.halfInput, .modal #modal-feedback input.halfInput, .modal .modal-bid input.halfInput, .modal .modal-signup input.halfInput {
     width: 50%; }
-  /* line 82, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 82, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal .image, .modal .image {
     max-height: 700px;
     background-position: center;
@@ -817,12 +817,12 @@ header {
     width: auto;
     max-width: 100%;
     margin-bottom: 8px; }
-  /* line 93, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 93, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal .button, .modal .button {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%; }
-  /* line 98, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 98, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal #fb-login, .modal #fb-login {
     background-color: #3E5C96;
     text-align: center;
@@ -832,29 +832,29 @@ header {
     color: #FFF;
     padding: 0.8em;
     border-radius: 3px; }
-    /* line 107, /home/jasperlu/base/client/stylesheets/pages/modal */
+    /* line 107, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
     #modal #fb-login .fa, .modal #fb-login .fa {
       margin-right: 0.5em; }
-  /* line 111, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 111, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal .modal-inner, .modal .modal-inner {
     width: 100%;
     padding: 10%; }
-  /* line 115, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 115, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal h1, #modal h3, .modal h1, .modal h3 {
     margin: 0 auto;
     text-align: center;
     font-weight: 300; }
-  /* line 120, /home/jasperlu/base/client/stylesheets/pages/modal */
+  /* line 120, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/modal */
   #modal h3, .modal h3 {
     color: grey;
     font-size: 1em;
     margin-top: 5px; }
 
-/* line 3, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 3, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.product-body {
   text-align: center; }
 
-/* line 9, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 9, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div#product-bid textarea {
   margin: 0px;
   margin-bottom: 5px;
@@ -864,34 +864,34 @@ div#product-bid textarea {
   width: 100%;
   display: inline-block; }
 
-/* line 20, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 20, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.product-header {
   font-size: 20px;
   text-align: center;
   padding: 10px; }
 
-/* line 26, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 26, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.product-name {
   font-size: 40px;
   color: black;
   padding: 10px; }
 
-/* line 32, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 32, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.product-info {
   max-width: 900px;
   margin: 0 auto; }
 
-/* line 37, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 37, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.product-table-left {
   width: 65%;
   vertical-align: top; }
 
-/* line 41, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 41, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.product-table-right {
   width: 35%;
   padding-bottom: 20px; }
 
-/* line 46, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 46, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.product-box {
   box-sizing: border-box;
   background: white;
@@ -902,15 +902,15 @@ div.product-box {
   font-size: 1em;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   border-radius: 2px; }
-  /* line 56, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 56, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.product-box #message {
     width: 300px; }
 
-/* line 61, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 61, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.product-desc {
   padding: 10px; }
 
-/* line 63, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 63, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 span.product-box-title {
   color: #D8D8D8;
   background: #33b5e5;
@@ -918,11 +918,11 @@ span.product-box-title {
   float: left;
   margin-top: -6px; }
 
-/* line 72, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 72, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 img.product-img {
   width: 100%; }
 
-/* line 77, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 77, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 button.product-button {
   padding: 6px 35px;
   background: #CEECF5;
@@ -931,102 +931,102 @@ button.product-button {
   color: #013ADF;
   font-size: 20px; }
 
-/* line 85, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 85, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 button.product-button:hover {
   font-weight: bold;
   background: #A9E2F3; }
 
-/* line 91, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 91, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.gmap {
   background: #E0F2F7;
   border: 2px solid #81F7F3;
   text-align: center;
   padding: 5px; }
-  /* line 97, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 97, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.gmap div.gmap-map {
     border: 1px solid white;
     padding: 0; }
-  /* line 102, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 102, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.gmap div.gmap-text {
     font-size: 14px;
     padding: 5px; }
-  /* line 106, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 106, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.gmap div.gmap-text a {
     font-weight: bold;
     font-size: 16px; }
-  /* line 111, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 111, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.gmap div.gmap-header {
     font-size: 18px;
     font-weight: bold;
     padding: 5px; }
 
-/* line 118, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 118, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.condition-new {
   background: #0B610B;
   color: #A9F5A9; }
 
-/* line 122, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 122, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.condition-new span.product-box-title, span.seller-up {
   background: #A9F5A9;
   color: #0B610B;
   font-weight: bold; }
 
-/* line 128, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 128, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.condition-med {
   background: #5E610B;
   color: #F2F5A9; }
-  /* line 132, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 132, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.condition-med span.product-box-title {
     background: #F2F5A9;
     color: #5E610B;
     font-weight: bold; }
 
-/* line 139, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 139, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.condition-bad {
   background: #610B0B;
   color: #F5A9A9; }
 
-/* line 143, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 143, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.condition-bad span.product-box-title, span.seller-down {
   background: #F5A9A9;
   color: #610B0B;
   font-weight: bold; }
 
-/* line 149, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 149, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.user-info {
   color: black;
   text-align: right; }
-  /* line 152, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 152, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.user-info span.seller-name {
     font-size: 25px; }
-  /* line 154, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 154, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.user-info span.product-box-title {
     background: #8A4B08;
     color: white; }
-  /* line 159, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 159, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.user-info div.prod-info {
     text-align: left;
     font-size: 14px;
     margin-top: 5px; }
 
-/* line 167, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 167, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.user-rating {
   margin-top: 10px; }
-  /* line 170, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 170, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.user-rating span {
     margin-right: 8px;
     padding: 0 8px; }
 
-/* line 176, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 176, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.related-item-box {
   margin-top: 50px;
   height: 250px; }
 
-/* line 181, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 181, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.related-items-title {
   font-size: 20px; }
 
-/* line 185, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 185, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 div.related-item {
   background: #E6E6E6;
   border: 1px solid #3f9fe0;
@@ -1034,35 +1034,35 @@ div.related-item {
   padding: 10px;
   text-align: center;
   float: left; }
-  /* line 193, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 193, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.related-item span.related-selling {
     background: #8A4B08;
     color: white;
     font-weight: bold;
     padding: 0 5px; }
-  /* line 200, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 200, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   div.related-item img {
     max-width: 100px;
     max-height: 100px;
     margin: 10px; }
 
-/* line 213, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 213, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 table.messenger-table {
   width: 100%;
   border: 2px solid black; }
 
-/* line 219, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 219, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.mes-offer {
   border-top: 2px solid #444444;
   background: #dddddd;
   padding: 2px; }
 
-/* line 224, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 224, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.mes-offer-price {
   font-weight: bold;
   font-size: 25px; }
 
-/* line 228, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 228, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.mes-item {
   border-right: 2px solid #444444;
   padding: 5px;
@@ -1071,29 +1071,29 @@ td.mes-item {
   font-size: 25px;
   font-weight: bold;
   vertical-align: top; }
-  /* line 237, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 237, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   td.mes-item img {
     max-width: 150px;
     max-height: 150px;
     margin: 5px;
     border: 1px solid #444444; }
 
-/* line 245, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 245, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 tr.mes-spacer td {
   font-size: 8px;
   background: black; }
 
-/* line 249, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 249, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.mes-item-name {
   font-size: 25px;
   padding: 7px 7px 7px 40px;
   text-align: left;
   background: #BDBDBD; }
-  /* line 255, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 255, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   td.mes-item-name a {
     color: #3C56DA; }
 
-/* line 257, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 257, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.mes-type {
   font-size: 25px;
   font-weight: bold;
@@ -1101,52 +1101,52 @@ td.mes-type {
   text-align: center;
   border-right: 2px solid #444444; }
 
-/* line 264, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 264, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.mes-offer-ops {
   text-align: right; }
 
-/* line 270, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 270, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 table.msgs {
   width: 100%; }
 
-/* line 271, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 271, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 table.msgs td {
   padding: 5px;
   border-top: 1px solid black; }
 
-/* line 276, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 276, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.msgs-left {
   width: 120px;
   text-align: right; }
-  /* line 280, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 280, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-name {
     font-weight: bold; }
-  /* line 284, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 284, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   td.msgs-left div.msgs-date {
     font-style: italic; }
 
-/* line 289, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 289, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 td.msgs-right {
   vertical-align: middle;
   text-align: left; }
 
-/* line 295, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 295, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 .box-green, .box-red {
   padding: 5px; }
 
-/* line 296, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 296, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 .box-green {
   background: #0B610B;
   color: #A9F5A9;
   border: 1px solid #A9F5A9; }
 
-/* line 302, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 302, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 .box-red {
   background: #610B0B;
   color: #F5A9A9;
   border: 1px solid #F5A9A9; }
 
-/* line 308, /home/jasperlu/base/client/stylesheets/pages/product */
+/* line 308, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
 .pageProduct {
   max-width: em(3000);
   margin-left: auto;
@@ -1154,42 +1154,42 @@ td.msgs-right {
   font-size: 1.3em;
   max-width: 1200px;
   font-weight: 300; }
-  /* line 309, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 309, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   .pageProduct h1 {
     font-weight: normal; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .pageProduct:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 316, /home/jasperlu/base/client/stylesheets/pages/product */
+  /* line 316, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
   .pageProduct .container {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 100%; }
-    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .pageProduct .container:last-child {
       margin-right: 0; }
-    /* line 318, /home/jasperlu/base/client/stylesheets/pages/product */
+    /* line 318, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
     .pageProduct .container .pic {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 57.35098%; }
-      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .pageProduct .container .pic:last-child {
         margin-right: 0; }
-    /* line 321, /home/jasperlu/base/client/stylesheets/pages/product */
+    /* line 321, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
     .pageProduct .container .info {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 40.29137%; }
-      /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
       .pageProduct .container .info:last-child {
         margin-right: 0; }
-    /* line 324, /home/jasperlu/base/client/stylesheets/pages/product */
+    /* line 324, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
     .pageProduct .container .product-box {
       box-sizing: border-box;
       background: white;
@@ -1200,36 +1200,36 @@ td.msgs-right {
       font-size: 1em;
       border-radius: 2px;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
-      /* line 325, /home/jasperlu/base/client/stylesheets/pages/product */
+      /* line 325, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
       .pageProduct .container .product-box b {
         font-weight: normal; }
-      /* line 336, /home/jasperlu/base/client/stylesheets/pages/product */
+      /* line 336, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/product */
       .pageProduct .container .product-box #message {
         width: 100%; }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/pages/about */
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/about */
 section.pageAbout {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   section.pageAbout:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 5, /home/jasperlu/base/client/stylesheets/pages/about */
+  /* line 5, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/about */
   section.pageAbout div.trio-wrapper {
     overflow: hidden;
     height: auto;
     padding-bottom: 0px; }
-  /* line 10, /home/jasperlu/base/client/stylesheets/pages/about */
+  /* line 10, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/about */
   section.pageAbout div.trio {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%; }
-    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     section.pageAbout div.trio:last-child {
       margin-right: 0; }
     @media screen and (max-width: 600px)  {
@@ -1238,44 +1238,44 @@ section.pageAbout {
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+        /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/feeds */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
 .pageFeeds {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
-  /* line 2, /home/jasperlu/base/client/stylesheets/pages/feeds */
+  /* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
   .pageFeeds .faded {
     color: grey;
     font-size: 1em; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .pageFeeds:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 8, /home/jasperlu/base/client/stylesheets/pages/feeds */
+  /* line 8, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
   .pageFeeds .post {
     width: 100%;
     display: inline-block;
     min-width: 300px;
     heigt: auto; }
-    /* line 9, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 9, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
     .pageFeeds .post h1 {
       font-weight: normal;
       margin-top: 0px;
       margin-bottom: 0px; }
-    /* line 14, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 14, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
     .pageFeeds .post img {
       width: 100%;
       overflow: hidden; }
-    /* line 18, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 18, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
     .pageFeeds .post p {
       font-size: 1em; }
-    /* line 21, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 21, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .image {
       max-height: 300px;
       max-width: 100%;
@@ -1286,7 +1286,7 @@ section.pageAbout {
       margin-top: 8px;
       width: auto;
       margin-bottom: 8px; }
-    /* line 36, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .post-inner {
       padding: 20px;
       background-color: white;
@@ -1295,93 +1295,93 @@ section.pageAbout {
       width: 100%;
       height: 100%;
       position: relative; }
-      /* line 38, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .container {
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+        /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .post-inner .container:after {
           content: "";
           display: table;
           clear: both; }
-        /* line 40, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 40, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .post-inner .container .left {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 14.70196%; }
-          /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
-        /* line 43, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 43, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .post-inner .container .right {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 82.94039%; }
-          /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
-      /* line 47, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 47, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .actions {
         cursor: pointer; }
-      /* line 53, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 53, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .icons-container {
         position: absolute;
         top: 8px;
         right: 16px;
         font-size: 1.3em; }
-      /* line 60, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .msgContainer textarea {
         font-size: 1em; }
-      /* line 63, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 63, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .post-inner .msgContainer.noshow {
         display: none; }
-    /* line 68, /home/jasperlu/base/client/stylesheets/pages/feeds */
+    /* line 68, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
     .pageFeeds .post .commentContainer {
       font-size: 0.95em;
       background-color: #ebebeb;
       padding: 4px; }
-      /* line 72, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 72, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .left {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 6.17215%; }
-        /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+        /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         .pageFeeds .post .commentContainer .left:last-child {
           margin-right: 0; }
-      /* line 75, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 75, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .right {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 91.4702%; }
-        /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+        /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
         .pageFeeds .post .commentContainer .right:last-child {
           margin-right: 0; }
-      /* line 78, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 78, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .commentSmallContainer {
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+        /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .commentContainer .commentSmallContainer:after {
           content: "";
           display: table;
           clear: both; }
-      /* line 81, /home/jasperlu/base/client/stylesheets/pages/feeds */
+      /* line 81, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
       .pageFeeds .post .commentContainer .comment-inner-container {
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+        /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
         .pageFeeds .post .commentContainer .comment-inner-container:after {
           content: "";
           display: table;
           clear: both; }
-        /* line 83, /home/jasperlu/base/client/stylesheets/pages/feeds */
+        /* line 83, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
         .pageFeeds .post .commentContainer .comment-inner-container .commentForm {
           float: left;
           display: block;
@@ -1391,35 +1391,35 @@ section.pageAbout {
           height: auto;
           background-color: white;
           margin-right: 0px; }
-          /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+          /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
           .pageFeeds .post .commentContainer .comment-inner-container .commentForm:last-child {
             margin-right: 0; }
-          /* line 89, /home/jasperlu/base/client/stylesheets/pages/feeds */
+          /* line 89, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/feeds */
           .pageFeeds .post .commentContainer .comment-inner-container .commentForm .placeholder {
             color: #cdcdcd;
             font-size: 0.95em; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/profile */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/profile */
 .userInfo {
   margin-top: 24px; }
-  /* line 3, /home/jasperlu/base/client/stylesheets/pages/profile */
+  /* line 3, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/profile */
   .userInfo img {
     width: 100%; }
-  /* line 6, /home/jasperlu/base/client/stylesheets/pages/profile */
+  /* line 6, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/profile */
   .userInfo h2 {
     font-size: 2em;
     font-weight: normal; }
-  /* line 11, /home/jasperlu/base/client/stylesheets/pages/profile */
+  /* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/profile */
   .userInfo ul li {
     background-color: #3b5998;
     padding: 4px;
     color: white;
     border-radius: 4px; }
-    /* line 16, /home/jasperlu/base/client/stylesheets/pages/profile */
+    /* line 16, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/profile */
     .userInfo ul li.fb {
       padding: 6px 8px; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/post */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
 .home-post-container {
   max-width: em(3000);
   margin-left: auto;
@@ -1433,15 +1433,15 @@ section.pageAbout {
   margin-top: 24px;
   margin-bottom: 24px;
   padding: 0px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .home-post-container:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 9, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 9, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container input[type=radio] {
     display: none; }
-  /* line 12, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 12, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container input[type=text] {
     width: 100%;
     height: auto;
@@ -1450,138 +1450,138 @@ section.pageAbout {
     font-weight: 200;
     line-height: 1.5em;
     font-size: 1em; }
-  /* line 21, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 21, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container .post-message {
     font-weight: 200; }
-  /* line 24, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 24, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container h3 {
     font-weight: normal; }
-  /* line 27, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 27, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container .button {
     padding: 0.5em 1em 0.5em 1em;
     float: right;
     border-radius: 0px 0px 15px 0px; }
-  /* line 32, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 32, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container .home-post-body {
     padding-top: 10px;
     display: none;
     padding: 20px; }
-    /* line 36, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body .home-feeds-list {
       font-size: 0.8em; }
-    /* line 39, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 39, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body textarea {
       font-size: 1em; }
-    /* line 42, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 42, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body form {
       margin-bottom: 10px; }
-    /* line 45, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body label {
       padding: 4px;
       border-radius: 2px; }
-      /* line 48, /home/jasperlu/base/client/stylesheets/pages/post */
+      /* line 48, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
       .home-post-container .home-post-body label:hover {
         background-color: #EEE; }
-      /* line 51, /home/jasperlu/base/client/stylesheets/pages/post */
+      /* line 51, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
       .home-post-container .home-post-body label.checked {
         font-weight: normal;
         background-color: #33B5E5;
         color: white; }
-    /* line 57, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 57, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body input[type=file] {
       font-size: 0.7em; }
-    /* line 60, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 60, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body #item-title {
       margin-top: 10px; }
-    /* line 63, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 63, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-container .home-post-body .button {
       font-size: 0.8em; }
-  /* line 67, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 67, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container textarea {
     padding: 5px 10px 5px 10px; }
-  /* line 70, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 70, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-container form {
     display: inline; }
 
-/* line 75, /home/jasperlu/base/client/stylesheets/pages/post */
+/* line 75, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
 .home-post-header {
   padding: 15px 20px 15px 20px;
   border-bottom: 2px solid #33B5E5; }
-  /* line 78, /home/jasperlu/base/client/stylesheets/pages/post */
+  /* line 78, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
   .home-post-header label {
     display: inline-block;
     cursor: pointer;
     color: #33B5E5; }
-    /* line 82, /home/jasperlu/base/client/stylesheets/pages/post */
+    /* line 82, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
     .home-post-header label.checked {
       font-weight: bold; }
 
-/* line 88, /home/jasperlu/base/client/stylesheets/pages/post */
+/* line 88, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/post */
 .post-message {
   overflow: auto; }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/style */
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
 .page-product {
   margin: 50px auto 100px;
   overflow: auto;
   width: 80%; }
-  /* line 6, /home/jasperlu/base/client/stylesheets/style */
+  /* line 6, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-product h1 {
     display: inline-block; }
-  /* line 9, /home/jasperlu/base/client/stylesheets/style */
+  /* line 9, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-product h3 {
     display: inline-block; }
-  /* line 12, /home/jasperlu/base/client/stylesheets/style */
+  /* line 12, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-product div {
     display: inline-block;
     float: left;
     width: calc(50% - 20px);
     height: 100%; }
-  /* line 19, /home/jasperlu/base/client/stylesheets/style */
+  /* line 19, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-product div.info img {
     display: block;
     margin: 0 auto;
     width: 300px; }
-  /* line 24, /home/jasperlu/base/client/stylesheets/style */
+  /* line 24, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-product div.info div.user-info {
     margin: 0 auto;
     padding: 0px 10px;
     width: calc(100% - 20px);
     outline: 0px; }
-    /* line 29, /home/jasperlu/base/client/stylesheets/style */
+    /* line 29, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
     .page-product div.info div.user-info div {
       padding: 10px 20px;
       width: calc(100% - 40px);
       outline: 0px;
       background-color: #f0f0f0; }
-      /* line 35, /home/jasperlu/base/client/stylesheets/style */
+      /* line 35, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
       .page-product div.info div.user-info div h2 {
         margin: 0px;
         text-align: left; }
-  /* line 43, /home/jasperlu/base/client/stylesheets/style */
+  /* line 43, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-product div.product-info {
     padding: 0px 10px; }
-    /* line 45, /home/jasperlu/base/client/stylesheets/style */
+    /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
     .page-product div.product-info table {
       border-spacing: 0px; }
-      /* line 49, /home/jasperlu/base/client/stylesheets/style */
+      /* line 49, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
       .page-product div.product-info table tbody tr td {
         padding-right: 20px; }
-    /* line 55, /home/jasperlu/base/client/stylesheets/style */
+    /* line 55, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
     .page-product div.product-info a {
       text-align: center; }
 
-/* line 61, /home/jasperlu/base/client/stylesheets/style */
+/* line 61, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
 .steps {
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: -25px; }
-  /* line 65, /home/jasperlu/base/client/stylesheets/style */
+  /* line 65, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .steps tbody tr td {
     padding-right: 50px;
     padding-left: 50px; }
 
-/* line 75, /home/jasperlu/base/client/stylesheets/style */
+/* line 75, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
 .step-circle {
   width: 100px;
   height: 100px;
@@ -1592,25 +1592,25 @@ section.pageAbout {
   background-color: white;
   color: black;
   text-decoration: none; }
-  /* line 85, /home/jasperlu/base/client/stylesheets/style */
+  /* line 85, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .step-circle.active {
     border-color: white; }
-  /* line 88, /home/jasperlu/base/client/stylesheets/style */
+  /* line 88, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .step-circle.complete {
     border-color: #3F9FE0; }
-  /* line 91, /home/jasperlu/base/client/stylesheets/style */
+  /* line 91, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .step-circle h1 {
     text-align: center;
     font-size: 4em;
     margin: 0; }
 
-/* line 98, /home/jasperlu/base/client/stylesheets/style */
+/* line 98, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
 .page-add-product {
   margin-bottom: 100px;
   height: auto;
   overflow: auto;
   width: 60%; }
-  /* line 103, /home/jasperlu/base/client/stylesheets/style */
+  /* line 103, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product input, .page-add-product select, .page-add-product option, .page-add-product div[contenteditable] {
     display: inline-block;
     padding: 14px;
@@ -1618,27 +1618,27 @@ section.pageAbout {
     border: 0px;
     font-size: 1.2em;
     height: 53px; }
-    /* line 110, /home/jasperlu/base/client/stylesheets/style */
+    /* line 110, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
     .page-add-product input:focus, .page-add-product select:focus, .page-add-product option:focus, .page-add-product div[contenteditable]:focus {
       outline-color: #3F9FE0; }
-  /* line 114, /home/jasperlu/base/client/stylesheets/style */
+  /* line 114, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product input[type=radio] {
     height: auto;
     outline: 0px; }
-  /* line 118, /home/jasperlu/base/client/stylesheets/style */
+  /* line 118, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product input[type=text] {
     margin-bottom: 10px;
     width: calc(78% - 28px); }
-  /* line 122, /home/jasperlu/base/client/stylesheets/style */
+  /* line 122, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product input[type=number] {
     margin-right: 1.5%;
     padding: 10px;
     width: calc(20% - 30px); }
-  /* line 127, /home/jasperlu/base/client/stylesheets/style */
+  /* line 127, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product select, .page-add-product option {
     width: 20%;
     background-color: white; }
-  /* line 131, /home/jasperlu/base/client/stylesheets/style */
+  /* line 131, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product div[contenteditable] {
     background-color: white;
     display: block;
@@ -1646,68 +1646,68 @@ section.pageAbout {
     width: calc(100% - $i-pad * 2);
     height: 100px;
     line-height: 1.2em; }
-  /* line 140, /home/jasperlu/base/client/stylesheets/style */
+  /* line 140, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product span {
     display: inline-block;
     margin-left: 2%;
     font-weight: bold;
     font-size: 1.5em; }
-  /* line 146, /home/jasperlu/base/client/stylesheets/style */
+  /* line 146, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product .button {
     padding: 14px;
     width: calc(20% - 28px);
     border-radius: 0 0 4px 0; }
-  /* line 152, /home/jasperlu/base/client/stylesheets/style */
+  /* line 152, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product div.preview {
     margin: 0 auto;
     padding: 25px;
     border: 1px solid; }
-  /* line 157, /home/jasperlu/base/client/stylesheets/style */
+  /* line 157, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product .button {
     display: inline-block; }
-  /* line 160, /home/jasperlu/base/client/stylesheets/style */
+  /* line 160, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product h3 {
     margin-bottom: 10px; }
-  /* line 164, /home/jasperlu/base/client/stylesheets/style */
+  /* line 164, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product .describe .button {
     float: right; }
-  /* line 169, /home/jasperlu/base/client/stylesheets/style */
+  /* line 169, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product .condition option, .page-add-product .condition div {
     margin: 0 auto; }
-  /* line 173, /home/jasperlu/base/client/stylesheets/style */
+  /* line 173, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
   .page-add-product .button {
     display: inline-block; }
-    /* line 176, /home/jasperlu/base/client/stylesheets/style */
+    /* line 176, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
     .page-add-product .button.left {
       float: left; }
-    /* line 179, /home/jasperlu/base/client/stylesheets/style */
+    /* line 179, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
     .page-add-product .button.right {
       float: right; }
 
-/* line 185, /home/jasperlu/base/client/stylesheets/style */
+/* line 185, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/style */
 fieldset.show, div.show {
   display: block; }
 
-/* line 2, /home/jasperlu/base/client/stylesheets/pages/search */
+/* line 2, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
 .categories-container {
   height: 1000px;
   background-color: #00F; }
 
-/* line 7, /home/jasperlu/base/client/stylesheets/pages/search */
+/* line 7, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
 .browse-container {
   margin-top: 40px;
   margin-bottom: 50px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .browse-container:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 13, /home/jasperlu/base/client/stylesheets/pages/search */
+/* line 13, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
 .categories-container, .items-container {
   padding: 10px; }
 
-/* line 17, /home/jasperlu/base/client/stylesheets/pages/search */
+/* line 17, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
 .categories-container {
   width: 250px;
   margin-left: 30px;
@@ -1715,19 +1715,19 @@ fieldset.show, div.show {
   background-color: white;
   box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.1); }
 
-/* line 25, /home/jasperlu/base/client/stylesheets/pages/search */
+/* line 25, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
 .items-container {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
   overflow: hidden; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .items-container:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 29, /home/jasperlu/base/client/stylesheets/pages/search */
+  /* line 29, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
   .items-container .item {
     float: left;
     display: block;
@@ -1735,92 +1735,92 @@ fieldset.show, div.show {
     width: 31.76157%;
     margin-bottom: 2.35765%;
     padding: 10px; }
-    /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+    /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
     .items-container .item:last-child {
       margin-right: 0; }
-    /* line 52, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
+    /* line 52, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
     .items-container .item:nth-child(3n) {
       margin-right: 0; }
-    /* line 57, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
+    /* line 57, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/omega */
     .items-container .item:nth-child(3n+1) {
       clear: left; }
 
-/* line 38, /home/jasperlu/base/client/stylesheets/pages/search */
+/* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
 .items-container .item {
   background-color: white;
   border-radius: 2px;
   box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.1); }
-  /* line 42, /home/jasperlu/base/client/stylesheets/pages/search */
+  /* line 42, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
   .items-container .item img {
     width: 100%; }
-  /* line 45, /home/jasperlu/base/client/stylesheets/pages/search */
+  /* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
   .items-container .item .name {
     font-size: 19px;
     color: #494949; }
-  /* line 49, /home/jasperlu/base/client/stylesheets/pages/search */
+  /* line 49, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/search */
   .items-container .item .price {
     color: #50A8E7; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-container {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .inbox-container:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 6, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 6, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-row {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .inbox-row:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 11, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 11, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-left {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .inbox-left:last-child {
     margin-right: 0; }
 
-/* line 15, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-right {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 74.41059%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .inbox-right:last-child {
     margin-right: 0; }
 
-/* line 19, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 19, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-offer-container {
   text-align: center; }
 
-/* line 23, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 23, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-thumbnail {
   display: block;
   padding: 20px;
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 5px; }
-  /* line 29, /home/jasperlu/base/client/stylesheets/pages/inbox */
+  /* line 29, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
   .inbox-thumbnail img {
     width: 100%; }
 
-/* line 34, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 34, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-offer {
   display: block;
   padding: 10px;
@@ -1828,7 +1828,7 @@ fieldset.show, div.show {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 1px; }
 
-/* line 42, /home/jasperlu/base/client/stylesheets/pages/inbox */
+/* line 42, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/inbox */
 .inbox-sold-button {
   background-color: #33B5E5;
   color: #FFF;
@@ -1836,7 +1836,7 @@ fieldset.show, div.show {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer; }
 
-/* line 1, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 1, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 div#message, div[contenteditable], .post-message, .comment {
   display: block;
   padding: 8px 4px 4px 4px;
@@ -1850,7 +1850,7 @@ div#message, div[contenteditable], .post-message, .comment {
   resize: none;
   -webkit-writing-mode: horizontal-tb; }
 
-/* line 15, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-sidebar {
   float: left;
   display: block;
@@ -1860,106 +1860,106 @@ div#message, div[contenteditable], .post-message, .comment {
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 1px; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .messages-sidebar:last-child {
     margin-right: 0; }
-  /* line 18, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 18, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
   .messages-sidebar .row-details {
     display: block;
     margin-bottom: 0.3em; }
-    /* line 21, /home/jasperlu/base/client/stylesheets/pages/messages */
+    /* line 21, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
     .messages-sidebar .row-details:last-child {
       margin-bottom: 0; }
 
-/* line 27, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 27, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-container {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .messages-container:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 32, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 32, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .message-thumbnail {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 10.43705%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .message-thumbnail:last-child {
     margin-right: 0; }
 
-/* line 36, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 36, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .message-text {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 87.20529%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .message-text:last-child {
     margin-right: 0; }
 
-/* line 40, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 40, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-conversation {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-bottom: 50px; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .messages-conversation:last-child {
     margin-right: 0; }
 
-/* line 45, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 45, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .message {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto; }
-  /* line 15, /home/jasperlu/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
+  /* line 15, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/bourbon/dist/addons/clearfix */
   .message:after {
     content: "";
     display: table;
     clear: both; }
 
-/* line 49, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 49, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-reply-container {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%; }
-  /* line 38, /home/jasperlu/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
+  /* line 38, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/vendor/neat/app/assets/stylesheets/grid/span-columns */
   .messages-reply-container:last-child {
     margin-right: 0; }
 
-/* line 53, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 53, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-sidebar, .message, .messages-reply-container {
   padding: 20px;
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 1px; }
 
-/* line 57, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 57, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .message {
   padding: 10px 15px; }
 
-/* line 61, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 61, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-reply-container {
   padding: 0; }
 
-/* line 65, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 65, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 #messages-reply {
   padding: 10px;
   width: 100%;
   border: none; }
 
-/* line 71, /home/jasperlu/base/client/stylesheets/pages/messages */
+/* line 71, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
 .messages-sidebar-item {
   display: block;
   margin-bottom: 0.5em; }
-  /* line 74, /home/jasperlu/base/client/stylesheets/pages/messages */
+  /* line 74, /Users/stevezhu/Desktop/programming/code/base/client/stylesheets/pages/messages */
   .messages-sidebar-item:last-child {
     margin-bottom: 0; }

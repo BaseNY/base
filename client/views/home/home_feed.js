@@ -4,6 +4,5 @@ Template.homeFeed.helpers({
     },
     posts: function() {
         return FtoI.find().fetch();
-    },
-    
+    }
 });
