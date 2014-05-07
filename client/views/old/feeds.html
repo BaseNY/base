@@ -36,6 +36,7 @@
 			<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>
                         -->
 			<img class="image" src={{item.imageUrl}} />
+                        <a href="{{item.imageUrl}}" data-lightbox="image-{{item._id}}" data-title="My caption">Image #1</a>
 			{{/if}}
 			<div class="commentContainer"> <ul>
 					{{#each comments}}
