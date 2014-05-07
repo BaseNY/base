@@ -3,6 +3,7 @@
     "iron-router": {},
     "fast-render": {},
     "nprogress": {},
-    "npm": {}
+    "npm": {},
+    "publish-with-relations": {}
   }
 }

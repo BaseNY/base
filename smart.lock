@@ -5,7 +5,8 @@
       "iron-router": {},
       "fast-render": {},
       "nprogress": {},
-      "npm": {}
+      "npm": {},
+      "publish-with-relations": {}
     },
     "packages": {
       "iron-router": {
@@ -15,8 +16,8 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.4",
-        "commit": "160a64bd61792f53a7c8848c5e979a953be13564"
+        "tag": "v0.2.5",
+        "commit": "93e2fb334e55fbe9b5ebb2a2e65964018658f43e"
       },
       "nprogress": {
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
@@ -27,6 +28,11 @@
         "git": "https://github.com/arunoda/meteor-npm.git",
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "publish-with-relations": {
+        "git": "https://github.com/erundook/meteor-publish-with-relations.git",
+        "tag": "v0.1.5",
+        "commit": "98213e9f056b139597c99fb9ec2884ae6be76d91"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

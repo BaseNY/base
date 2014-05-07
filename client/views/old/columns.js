@@ -1,10 +1,4 @@
-Template.leftColumn.helpers({
-	'imgUrl': function() {
-		return Meteor.user().profile.img;
-	},
-	'name': function() {
-		return Meteor.user().profile.name;
-	},
+Template.homeSidebar.helpers({
 	'feeds': function() {
 		var temp = [];
 		var l = Meteor.user().profile.subscribed;
@@ -24,7 +18,27 @@ Template.leftColumn.helpers({
 	}
 });
 
-Template.leftColumn.events({
+Template.homeSidebarFeeds.helpers({
+	'feeds': function() {
+		var temp = [];
+		var l = Meteor.user().profile.subscribed;
+		for (x in l) {
+			temp.push(Feeds.findOne({
+				_id: l[x]
+			}));
+		}
+		return temp;
+	},
+	'currentFeed': function() {
+		if (Router.current().data())
+			return Router.current().data().feed._id == this._id;
+        },
+	'allFeed': function() {
+		return !Router.current().data();
+	}
+});
+
+Template.homeSidebar.events({
 	'click #filter-everyone': function() {
 		Session.set('degrees', 0);
 	},

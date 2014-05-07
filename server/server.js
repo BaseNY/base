@@ -1,32 +1,3 @@
-defaultFeeds = [];
-if (!Feeds.findOne()) {
-	console.log(defaultFeeds);
-	defaultFeeds.push(Feeds.insert({
-		name: 'Sneakers',
-		icon: 'money'
-	}));
-	defaultFeeds.push(Feeds.insert({
-		name: 'Electronics',
-		icon: 'laptop'
-	}));
-	defaultFeeds.push(Feeds.insert({
-		name: 'Clothing (Men)',
-		icon: 'male'
-	}));
-	defaultFeeds.push(Feeds.insert({
-		name: 'Clothing (Women)',
-		icon: 'female'
-	}));
-	defaultFeeds.push(Feeds.insert({
-		name: 'Books',
-		icon: 'book'
-	}));
-	defaultFeeds.push(Feeds.insert({
-		name: 'Others',
-		icon: 'random'
-	}));
-	console.log(defaultFeeds);
-}
 Meteor.methods({
 	addPost: function(p) {
 		console.log('called');

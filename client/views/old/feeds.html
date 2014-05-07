@@ -1,7 +1,4 @@
 <template name="pageFeeds">
-{{#if showImage}}
-{{> modalPic}}
-{{/if}}
 	<div class="pageFeeds">
 		{{#each posts}}{{> feedPost}}{{/each}}
 	</div>
@@ -15,7 +12,7 @@
 					<img src={{imgUrl}}>
 				</div>
 				<div class="right">
-                                    <h1><a href="/feeds/{{item._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{item.title}}</a>
+                                    <h1><a href="/post/{{item._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{item.title}}</a>
 					</h1>
 					<hr />
                                         <a href="/profile/{{item.sellerId}}">{{item.seller}}</a> <i class="fa fa-angle-right"></i> <a href="/feeds/{{feed._id}}">{{feed.name}}</a> <span class="faded">{{timestamp}}</span>
@@ -35,8 +32,9 @@
                         <!--
 			<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>
                         -->
+                        <a href="{{item.imageUrl}}" data-lightbox="image-{{item._id}}" data-title="{{item.title}}: {{item.description}}">
 			<img class="image" src={{item.imageUrl}} />
-                        <a href="{{item.imageUrl}}" data-lightbox="image-{{item._id}}" data-title="My caption">Image #1</a>
+                        </a>
 			{{/if}}
 			<div class="commentContainer"> <ul>
 					{{#each comments}}
