@@ -1,22 +1,8 @@
-/*
-Template.ifEven.isEven = function(i) {
-	return i % 2 == 0;
-}
-*/
-
-/*
-Template.modalPic.imgUrl = function() {
-	return Session.get('imgUrl');
-}
-*/
-
 Template.feedPost.helpers({
 	'imgUrl': function() {
 		var i = Items.findOne({
 			_id: this.itemId
 		});
-                if(!i)
-                    return '';
 		var url = Meteor.users.findOne({
 			_id: i.sellerId
 		}).profile.img;
@@ -96,16 +82,9 @@ Template.feedPost.events({
 		}
 	},
 	'click .fa-envelope-o': function() {
+		console.log(this);
 		$('#msgCont-' + this._id).toggleClass('noshow');
-	},
-	'click .fa-angle-down': function() {
-
-	},
-        /*
-	'click img': function(e) {
-		Session.set('imgUrl', $(e.target).attr('src'));
 	}
-        */
 });
 
 Template.comment.helpers({
