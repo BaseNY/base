@@ -1,5 +1,4 @@
 $mobile: max-width 600px 4;
-
 section.pageAbout {
     @include outer-container;
     max-width:1200px;
@@ -10,7 +9,7 @@ section.pageAbout {
     }
     div.trio{
         @include span-columns(4);
-        @include breakpoint($mobile) {
+        @include media($mobile) {
             @include span-columns(4);
         }
     }

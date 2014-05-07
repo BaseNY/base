@@ -1,0 +1,21 @@
+.userInfo {
+    margin-top:24px;
+    img {
+        width:100%;
+    }
+    h2 {
+        font-size:2em;
+        font-weight:normal;
+    }
+    ul {
+         li {
+            background-color:#3b5998;
+            padding: 4px;
+            color:white;
+            border-radius:4px;
+            &.fb {
+                padding:6px 8px;
+            }
+         }
+    }
+}

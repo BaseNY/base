@@ -1,0 +1,9 @@
+<template name="homeFeed">
+	<div class="home-feed">
+		{{#if feed}}
+			<h1>{{feed.name}}</h1>
+		{{/if}}
+		{{> homePost}}
+		{{> feed}}
+	</div>
+</template>

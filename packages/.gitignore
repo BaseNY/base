@@ -14,8 +14,20 @@
 /blaze-layout
 /iron-router
 /fast-render
+<<<<<<< HEAD
 /nprogress
 /bourbon-scss
 /neat-scss
 /npm
 /blaze-layout
+=======
+/aws-sdk
+/blaze-layout
+/blocking
+/aws-sdk-npm
+/filepicker
+/fast-render
+/fast-render
+/fast-render
+/publish-with-relations
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a

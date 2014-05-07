@@ -1,4 +1,5 @@
 ﻿<template name="pageAddProduct">
+<<<<<<< HEAD
 <table class = "steps">
     <tr>
         <td><div class ="step-circle complete"><h1>1</h1></div></td>
@@ -121,3 +122,36 @@
 <div id="back" class="button left">Prev</div>
 <div id="addProdBut" class="button right">Post</div>
 </template>
+=======
+	<table class="steps">
+		<tr>
+			<!-- fix the changing to diff spots later -->
+			<td>
+				<a href="/sell/title">
+					<div class="step-circle active">
+						<h1>1</h1>
+					</div>
+				</a>
+			</td>
+			<td>
+				<a href="/sell/info">
+					<div class="step-circle">
+						<h1>2</h1>
+					</div>
+				</a>
+			</td>
+			<td>
+				<a href="/sell/preview">
+					<div class="step-circle">
+						<h1>3</h1>
+					</div>
+				</a>
+			</td>
+		</tr>
+	</table>
+	<div class="box page-add-product">
+		<!--This stuff will probably be moved to routing to make the code cleaner or some other, more effcient way-->
+		{{> yield region='sellYield'}}
+	</div>
+</template>
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a

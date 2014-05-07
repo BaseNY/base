@@ -2,8 +2,14 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc13.min.js"></script>
+=======
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc13.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.7/jquery.autosize.min.js"></script>
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a
 	<style>
 	@viewport {
 		zoom: 1.0;
@@ -28,9 +34,12 @@
 <template name="header">
 	<header>
 		<div class="content">
-			<a href="/" class="logo"><img src="/images/logo.png" alt="BASE"></a>
-			<form action="/search">
+			<a href="/" class="logo">
+				<img src="/images/logo.png" alt="BASE">
+			</a>
+			<!--<form action="/search">
 				<input name="q" type="text" placeholder="Search...">
+<<<<<<< HEAD
 			</form>
 				{{#if currentUser}}
 			<div class="user-wrapper" id="user-wrapper">
@@ -52,17 +61,27 @@
 		<a href="/">BASE</a>
 		<a href="/sell/title">Sell</a>
 		<div id="user-wrapper">
+=======
+			</form>-->
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a
 			{{#if currentUser}}
-				{{name}}
-				<ul class="dropdown" id="nameDrop">
-					<li>My Profile</li>
-					<li>Account Settings</li>
-				</ul>
+				<div class="user-wrapper" id="user-wrapper">
+					<img src="{{profile.img}}">
+					<h2>{{user.name}}</h2>
+					<a href="/inbox" class="link">
+						<i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
+					</a>
+					<a href="/" class="link"><i class="fa fa-sign-out"></i></a>
+				</div>
 			{{else}}
-				<a id="openLogin">Login</a>
+				<button id="openLogin" class="btn-login">Login</button>
 			{{/if}}
+			<!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
 		</div>
-	</header>-->
+	</header>
+	<div class="header-notice">
+		You are awesome. Thank you for helping out in the Base closed alpha! Please submit feedback <a style="color:white" target="_blank" href="https://baseus.typeform.com/to/tSnBhQ"><b>here</b></a>
+	</div>
 </template>
 
 <template name="footer">

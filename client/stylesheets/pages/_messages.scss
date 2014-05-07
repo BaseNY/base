@@ -1,4 +1,5 @@
 div#message, div[contenteditable], .post-message, .comment {
+<<<<<<< HEAD
     background-color:white;
     display: block;
     width: 100%;
@@ -11,61 +12,78 @@ div#message, div[contenteditable], .post-message, .comment {
     word-wrap: break-word;
     -webkit-writing-mode: horizontal-tb;
     font-size:1.2em;
+=======
+	display: block;
+	padding: 8px 4px 4px 4px;
+	width: 100%;
+	height: auto;
+	border: 1px solid rgb(200, 200, 200);
+	background-color: white;
+	word-wrap: break-word;
+	font-size: 1.2em;
+	line-height: 1.25em;
+	resize: none;
+	-webkit-writing-mode: horizontal-tb;
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a
 }
 
-.pageItemInbox {
-    @include outer-container;
-    max-width:1200px;
-    .row {
-        @include outer-container;
-        .row-thumbnail {
-            padding:20px;
-            background-color:white;
-            img {
-                width:100%;
-            }
-            @include span-columns(3);
-            box-shadow: $boxes;
-            margin-bottom:5px;
-        }
-        .row-details {
-            @include span-columns(9);
-            padding:20px;
-            background-color:white;
-            box-shadow: $boxes;
-            margin-bottom:1px;
-        }
-    }
-}
-.left-sidebar {
-    @include span-columns(2);
-    @include boxes-default(1px);
+.messages-sidebar {
+	@include span-columns(2);
+	@include boxes-default(1px);
+	.row-details {
+		display: block;
+		margin-bottom: 0.3em;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
-.pageNego {
-    @include outer-container;
-    max-width:1200px;
-    .message-thumbnail {
-        @include span-columns(1.5);
-    }
-    .message-text {
-        @include span-columns(10.5);
-    }
-    .conversation {
-        @include span-columns(10);
-    }
-    .message {
-        @include outer-container;
-    }
-    .reply-box {
-        @include span-columns(12);
-
-    }
-    .left-sidebar, .thumbnail, .message, .reply-box {
-        @include boxes-default(1px);
-    }
+.messages-container {
+	@include outer-container;
+	max-width: 1200px;
 }
 
+.message-thumbnail {
+	@include span-columns(1.5);
+}
+
+.message-text {
+	@include span-columns(10.5);
+}
+
+.messages-conversation {
+	@include span-columns(10);
+	margin-bottom: 50px;
+}
+
+.message {
+	@include outer-container;
+}
+
+.messages-reply-container {
+	@include span-columns(12);
+}
+
+.messages-sidebar, .message, .messages-reply-container {
+	@include boxes-default(1px);
+}
+
+.message {
+	padding: 10px 15px;
+}
+
+.messages-reply-container {
+	padding: 0;
+}
+
+#messages-reply {
+	padding: 10px;
+	width: 100%;
+	border: none;
+}
+
+<<<<<<< HEAD
 .message-box{
     overflow:auto;
     textarea {
@@ -78,4 +96,12 @@ div#message, div[contenteditable], .post-message, .comment {
         float:right;
         border-radius:0px 0px 15px 0px;
     }
+=======
+.messages-sidebar-item {
+	display: block;
+	margin-bottom: 0.5em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a
 }

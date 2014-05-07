@@ -1,32 +1,29 @@
-/*.logo {
-	margin: 50px auto;
-	color: white;
-	text-align: center;
-	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72, 1px -1px black, 1px 1px black, -1px -1px black, -1px 1px black;
-	letter-spacing: 15px;
-	font-size: 140px;
-}
-
-.page-home {
-	margin: 50px auto 100px;
-	min-width: 600px;
-	width: 60%;
-	input {
-		position: relative;
-		display: inline-block;
-		margin: 0;
-		padding: 0.8em 1em;
-		width: 80%;
-		height: auto;
-		font-size: 1.5em;
+.home-sidebar-content {
+	h3 {
+		color:grey;
+		font-weight:bold;
+		margin:8px 0px 2px;
 	}
-	.button {
-            width:20%;
-            display:inline-block;
+	ul {
+		li {
+			padding:4px;
+			@include outer-container;
+			.left {
+				@include span-columns(1.5);
+			}
+			.right {
+				@include span-columns(10.5);
+			}
+			&:hover {
+				background-color: #E6E6E6;
+				cursor:pointer;
+			}
+			margin-bottom:4px;
+		}
 	}
 }
-*/
 
+<<<<<<< HEAD
 .body {
 	.content {
 		max-width: 1000px;
@@ -80,4 +77,24 @@
             margin-bottom:4px;
         }
     }
+=======
+.home-container {
+	@include outer-container;
+        max-width:900px;
+}
+
+.home-sidebar {
+	@include span-columns(3);
+	padding-top: 24px;
+}
+
+.home-feed {
+    @include span-columns(9);
+}
+
+.home-profile-name h2 {
+	font-weight:normal;
+	text-overflow: ellipsis;
+	overflow: hidden;
+>>>>>>> 97daf934619db66abded280b25fd62b533d9fd3a
 }
