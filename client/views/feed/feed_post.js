@@ -12,8 +12,9 @@ Template.feedPost.helpers({
 			return this.buy != true;
 	},
 	'feed': function() {
+            console.log(this);
 		return Feeds.findOne({
-			_id: this.feedId
+                    _id:  {$in: this.feeds}
 		});
 	},
 	'comments': function() {
@@ -54,7 +55,7 @@ Template.feedPost.events({
 			text.trimLeft(' ');
 			if (text != '') {
 				text.trimRight(' ');
-				Meteor.call('addComment', text, this.itemId, function(e, r) {
+				Meteor.call('addComment', text, this._id, function(e, r) {
 					if (e)
 						alert(e);
 				});

@@ -24,5 +24,5 @@ if (!Feeds.findOne()) {
 	_.each(defaultFeeds, function(feed) {
 		defaultFeedIds.push(Feeds.insert(feed));
 	});
-	console.log(defaultFeeds);
+	console.log(defaultFeedIds);
 }

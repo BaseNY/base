@@ -25,6 +25,15 @@ Template.homePost.events({
 	}
 });
 
+
+Template.homeSellPost.feeds = function(){
+    return Feeds.find().fetch();
+}
+
+Template.homeBuyPost.feeds = function(){
+    return Feeds.find().fetch();
+}
+
 Template.homeSellPost.events({
 	'click #sell-post': function(e) {
 		e.preventDefault();

@@ -17,6 +17,8 @@
         }
         p {
             font-size:1em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         .image {
             max-height:300px;
@@ -33,6 +35,12 @@
         display:inline-block;
         min-width:300px;
         heigt:auto;
+        .fa-envelope-o {
+            cursor:pointer;
+        }
+        .fa-angle-down {
+            cursor:pointer;
+        }
         .post-inner {
             @include boxes-default(10px);
             .container {
