@@ -6,7 +6,8 @@
       "fast-render": {},
       "nprogress": {},
       "npm": {},
-      "publish-with-relations": {}
+      "publish-with-relations": {},
+      "easy-search": {}
     },
     "packages": {
       "iron-router": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/erundook/meteor-publish-with-relations.git",
         "tag": "v0.1.5",
         "commit": "98213e9f056b139597c99fb9ec2884ae6be76d91"
+      },
+      "easy-search": {
+        "git": "https://github.com/matteodem/meteor-easy-search.git",
+        "tag": "v0.4.0",
+        "commit": "6ab16e6c4b505d6d02de8be7e1633f6561af971f"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
