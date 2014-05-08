@@ -1,21 +1,31 @@
-Template.homeSidebarFeeds.helpers({
+Template.homeSidebar.helpers({
 	'feeds': function() {
-		var temp = [];
-                if(!Meteor.user())
-                    return temp;
-		var l = Meteor.user().profile.subscribed;
-		for (x in l) {
-			temp.push(Feeds.findOne({
-				_id: l[x]
-			}));
-		}
-		return temp;
+		var subscribed = Meteor.user().profile.subscribed;
+		return Feeds.find({_id: {$in: subscribed}});
 	},
 	'currentFeed': function() {
 		if (Router.current().data()) {
-		    return Router.current().data().feed._id == this._id;
-                }
-        },
+			return Router.current().data().feed._id == this._id;
+		}
+	},
+	'allFeed': function() {
+		return !Router.current().data();
+	}
+});
+
+Template.homeSidebarFeeds.helpers({
+	'feeds': function() {
+		if(!Meteor.user()) {
+		    return [];
+		}
+		var subscribed = Meteor.user().profile.subscribed;
+		return Feeds.find({_id: {$in: subscribed}});
+	},
+	'currentFeed': function() {
+		if (Router.current().data()) {
+			return Router.current().data().feed._id == this._id;
+		}
+	},
 	'allFeed': function() {
 		return !Router.current().data();
 	}

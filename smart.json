@@ -4,6 +4,7 @@
     "fast-render": {},
     "nprogress": {},
     "npm": {},
-    "publish-with-relations": {}
+    "publish-with-relations": {},
+    "easy-search": {}
   }
 }
