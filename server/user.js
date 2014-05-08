@@ -26,7 +26,7 @@ Accounts.onCreateUser(function(options, user) {
 	options.profile.first_name = temp.first_name;
 	options.profile.last_name = temp.last_name;
         options.profile.last_online = "soemthing";
-        options.profile.subscribed = defaultFeeds;
+        options.profile.subscribed = defaultFeedIds;
         console.log(defaultFeeds);
 //	options.profile.name = user.profile.name;
 //        console.log(user.profile.find());

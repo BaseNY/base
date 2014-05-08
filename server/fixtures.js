@@ -1,3 +1,5 @@
+defaultFeedIds = [];
+
 defaultFeeds = [{
 	name: 'Sneakers',
 	icon: 'money'
@@ -20,7 +22,7 @@ defaultFeeds = [{
 
 if (!Feeds.findOne()) {
 	_.each(defaultFeeds, function(feed) {
-		Feeds.insert(feed);
+		defaultFeedIds.push(Feeds.insert(feed));
 	});
 	console.log(defaultFeeds);
 }

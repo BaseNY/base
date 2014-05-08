@@ -1,32 +1,15 @@
 Template.feedPost.helpers({
 	'imgUrl': function() {
-		var i = Items.findOne({
-			_id: this.itemId
-		});
 		var url = Meteor.users.findOne({
-			_id: i.sellerId
+			_id: this.sellerId
 		}).profile.img;
 		return url;
 	},
 	'timestamp': function() {
-		return timify(Items.findOne({
-			_id: this.itemId
-		}).time);
+		return timify(this.time);
 	},
 	'isSellPost': function() {
-		if (Items.findOne({
-			_id: this.itemId
-		}) != undefined)
-			return Items.findOne({
-				_id: this.itemId
-			}).buy != true;
-		else
-			return false;
-	},
-	'item': function() {
-		return Items.findOne({
-			_id: this.itemId
-		});
+			return this.buy != true;
 	},
 	'feed': function() {
 		return Feeds.findOne({
@@ -34,9 +17,7 @@ Template.feedPost.helpers({
 		});
 	},
 	'comments': function() {
-		return Items.findOne({
-			_id: this.itemId
-		}).comments;
+		this.comments;
 	}
 });
 
