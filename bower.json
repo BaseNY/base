@@ -16,6 +16,7 @@
     "spec"
   ],
   "dependencies": {
+  	"normalize": "BaseNY/normalize.css",
     "bourbon": "~3.2.0",
     "neat": "~1.5.1"
   }
