@@ -31,6 +31,9 @@ Meteor.methods({
 		*/
 		console.log(temp);
 		//linker. pushes the id of the item, and the id of the category
+                _.each(p.feeds, function(feed) {
+                    Feeds.update({_id: feed}, {$push: {items: temp}});
+                });
 		for (x in p.feeds)
 			FtoI.insert({
 				'feedId': p.feeds[x],
