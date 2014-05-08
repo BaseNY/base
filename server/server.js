@@ -34,13 +34,6 @@ Meteor.methods({
                 _.each(p.feeds, function(feed) {
                     Feeds.update({_id: feed}, {$push: {items: temp}});
                 });
-		for (x in p.feeds)
-			FtoI.insert({
-				'feedId': p.feeds[x],
-				'itemId': temp,
-				'sellerId': p.sellerId,
-				'score': p.score
-			});
 		return temp;
 	},
 	addRequest: function(p) {
@@ -50,15 +43,11 @@ Meteor.methods({
 		}).profile.name;
 		p.time = new Date();
 		p.score = p.time.getTime();
+		if (p.description == null)
+			return -3;
+		else if (p.feeds == null)
+			return -4;
 		var temp = Items.insert(p);
-		for (x in p.feeds) {
-			FtoI.insert({
-				'feedId': p.feeds[x],
-				'itemId': temp,
-				'sellerId': p.sellerId,
-				'score': p.score
-			});
-		}
 	},
 	// creates offer and first message
 	createOffer: function(item, message) {
@@ -119,15 +108,8 @@ Meteor.methods({
 			_id: id
 		}, {
 			$set: {
-				comments: comments
-			}
-		});
-		var ret = FtoI.update({
-			itemId: id,
-			feedId: item.feeds[0]
-		}, {
-			$set: {
-				score: toAdd[3].getTime()
+				comments: comments,
+                                score: toAdd[3].getTime()
 			}
 		});
 		console.log(ret);
