@@ -1,36 +1,41 @@
 .home-sidebar-content {
-	h3 {
-		color:grey;
-		font-weight:bold;
-		margin:8px 0px 2px;
-	}
-	ul {
-		li {
-			padding:4px;
-			@include outer-container;
-			.left {
-				@include span-columns(1.5);
-			}
-			.right {
-				@include span-columns(10.5);
-			}
-			&:hover {
-				background-color: #E6E6E6;
-				cursor:pointer;
-			}
-			margin-bottom:4px;
-		}
-	}
+    h3 {
+        color:grey;
+        font-weight:bold;
+        margin:8px 0px 2px;
+    }
+    ul {
+        li {
+            padding:4px;
+            @include outer-container;
+            .left {
+                @include span-columns(1.5);
+            }
+            .right {
+                @include span-columns(10.5);
+            }
+            &:hover {
+                background-color: #E6E6E6;
+                cursor:pointer;
+            }
+            &.checked {
+                background-color:#33B5E5;
+                font-weight:bold;
+                color:white;
+            }
+            margin-bottom:4px;
+        }
+    }
 }
 
 .home-container {
-	@include outer-container;
-        max-width:900px;
+    @include outer-container;
+    max-width:900px;
 }
 
 .home-sidebar {
-	@include span-columns(3);
-	padding-top: 24px;
+    @include span-columns(3);
+    padding-top: 24px;
 }
 
 .home-feed {
@@ -38,7 +43,7 @@
 }
 
 .home-profile-name h2 {
-	font-weight:normal;
-	text-overflow: ellipsis;
-	overflow: hidden;
+    font-weight:normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

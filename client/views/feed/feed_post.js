@@ -12,7 +12,6 @@ Template.feedPost.helpers({
 			return this.buy != true;
 	},
 	'feed': function() {
-            console.log(this);
 		return Feeds.findOne({
                     _id:  {$in: this.feeds}
 		});

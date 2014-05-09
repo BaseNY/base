@@ -1,57 +1,75 @@
 <template name="homeSidebar">
-	<div class="home-sidebar">
-		<div class="home-sidebar-content">
-			{{> homeSidebarUser}}
-			{{> homeSidebarFeeds}}
-		</div>
-	</div>
+<div class="home-sidebar">
+    <div class="home-sidebar-content">
+        {{> homeSidebarUser}}
+        {{> homeSidebarFilters}}
+        {{> homeSidebarFeeds}}
+    </div>
+</div>
 </template>
 
 <template name="homeSidebarUser">
-	{{#if currentUser}}
-		{{#with profile}}
-			<div class="home-profile-container">
-				<div class="home-profile-image">
-					<img src="{{img}}">
-				</div>
-				<div class="home-profile-name">
-					<h2>{{name}}</h2>
-				</div>
-			</div>
-		{{/with}}
-		<ul>
-			<li id="filter-everyone">
-				<div class="left"><i class="fa fa-globe"></i>
-				</div>
-				<div class="right">Everyone</div>
-			</li>
-			<li id="filter-friends">
-				<div class="left"><i class="fa fa-group"></i>
-				</div>
-				<div class="right">Friends</div>
-			</li>
-		</ul>
-	{{/if}}
+{{#if currentUser}}
+{{#with profile}}
+<div class="home-profile-container">
+    <div class="home-profile-image">
+        <img src="{{img}}">
+    </div>
+    <div class="home-profile-name">
+        <h2>{{name}}</h2>
+    </div>
+</div>
+{{/with}}
+<ul>
+    <li id="filter-everyone">
+    <div class="left"><i class="fa fa-globe"></i>
+    </div>
+    <div class="right">Everyone</div>
+    </li>
+    <li id="filter-friends">
+    <div class="left"><i class="fa fa-group"></i>
+    </div>
+    <div class="right">Friends</div>
+    </li>
+</ul>
+{{/if}}
+</template>
+<template name="homeSidebarFilters">
+<h3>Filters</h3>
+<ul>
+    <a href="">
+        <li id="filter-buy" class="{{#if buyOn}} checked {{/if}}">
+        <div class = "left"><i class = "fa fa-shopping-cart"></i></div>
+        <div class = "right">Buy{{#if buyOn}}<i class= "fa fa-angle-right"></i>{{/if}}</div>
+        </li>
+    </a>
+    <a href="">
+        <li id="filter-sell" class="{{#if sellOn}} checked {{/if}}">
+        <div class = "left"><i class = "fa fa-money"></i></div>
+        <div class = "right">Sell{{#if sellOn}}<i class="fa fa-angle-right"></i>{{/if}}</div>
+        </li>
+    </a>
+</ul>
 </template>
 
 <template name="homeSidebarFeeds">
-	<h3>Feeds</h3>
-	<ul>
-		<a href="/">
-			<li style="{{#if allFeed}}background-color:white; font-weight:bold{{/if}}">
-				<div class="left"><i class="fa fa-sun-o"></i>
-				</div>
-				<div class="right">All</div>
-			</li>
-		</a>
-		{{#each feeds}}
-			<a href="/feeds/{{this._id}}">
-				<li style="{{#if currentFeed}}background-color:white; font-weight:bold{{/if}}">
-					<div class="left"><i class="fa fa-{{this.icon}}"></i>
-					</div>
-					<div class="right">{{this.name}}</div>
-				</li>
-			</a>
-		{{/each}}
-	</ul>
+<h3>Feeds</h3>
+<ul>
+    <a href="/">
+        <li class="{{#if allFeed}}checked{{/if}}">
+        <div class="left"><i class="fa fa-sun-o"></i>
+        </div>
+        <div class="right">All</div>
+        </li>
+    </a>
+    {{#each feeds}}
+    <a href="/feeds/{{this._id}}">
+        <li class="{{#if currentFeed}}checked{{/if}}">
+        <div class="left"><i class="fa fa-{{this.icon}}"></i>
+        </div>
+        <div class="right">{{this.name}}</div>
+        </li>
+    </a>
+    {{/each}}
+</ul>
 </template>
