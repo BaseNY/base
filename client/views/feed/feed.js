@@ -1,6 +1,6 @@
 Template.feed.posts = function() {
 	//return FtoI.find().fetch();
-        return Items.find().fetch();
+        return Items.find({},{sort: {score: -1}}).fetch();
 	// return FtoI.find({},{sort: {score:1}}).fetch();
 }
 /*
