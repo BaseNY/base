@@ -36,6 +36,10 @@ Template.homeBuyPost.feeds = function(){
 
 Template.homeSellPost.events({
 	'click #sell-post': function(e) {
+		$(e.target).css('pointer-events', 'none');
+		setInterval(function() {
+			$(e.target).css('pointer-events', 'auto');
+		}, 1000);
 		e.preventDefault();
 
 		if (!Meteor.user()) {
@@ -65,6 +69,7 @@ Template.homeSellPost.events({
 
 		// NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
 		console.log("adding item");
+		$('#home-sell-container').slideUp();
 		if (!document.getElementById('image').files[0]) {
 			Meteor.call('addPost', temp, function(e, r) {
 				console.log("something");
