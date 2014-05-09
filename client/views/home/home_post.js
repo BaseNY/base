@@ -78,14 +78,14 @@ Template.homeSellPost.events({
 					else if (r == -4)
 						alert('Pick a feed!');
 					console.log("done");
-					Router.go('/post/' + r);
+					//Router.go('/post/' + r);
 				}
 			});
 
 		} else {
                     //img parsing & resize
-                    /*
                         var file = document.getElementById('image').files[0]; 
+                    /*
                         var img = document.createElement('img');
                         var reader = new FileReader();
                         img.src = e.target.result;
@@ -118,7 +118,7 @@ Template.homeSellPost.events({
                         console.log(dataurl);
                         */
 
-	    		s3ImageUpload(Meteor.userId(), temp, dataurl, function(temp) {
+	    		s3ImageUpload(Meteor.userId(), temp, file, function(temp) {
 				Meteor.call('addPost', temp, function(e, r) {
 					console.log("something");
 					if (e) {
@@ -133,7 +133,7 @@ Template.homeSellPost.events({
 						else if (r == -4)
 							alert('Pick a feed!');
 						console.log("done");
-						Router.go('/post/' + r);
+					//	Router.go('/post/' + r);
 					}
 				});
 			});
