@@ -9,7 +9,7 @@ Template.messages.events({
 					text: $message.val(),
 					offerId: this.offerId
 				};
-				Meteor.call("sendMessage", data, function(err) {
+				Meteor.call("createMessage", data, function(err) {
 					if (err) {
 						console.log(err);
 					} else {
