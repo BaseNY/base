@@ -1,0 +1,14 @@
+{
+  "name": "normalize",
+  "version": "3.0.1",
+  "main": "normalize",
+  "author": "Nicolas Gallagher",
+  "ignore": [
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "component.json",
+    "package.json",
+    "test.html"
+  ]
+}
