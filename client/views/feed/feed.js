@@ -1,7 +1,11 @@
 Template.feed.posts = function() {
+<<<<<<< HEAD
 	//return FtoI.find().fetch();
         return Items.find({},{sort: {score: -1}}).fetch();
 	// return FtoI.find({},{sort: {score:1}}).fetch();
+=======
+	return Items.find().fetch();
+>>>>>>> 2fc43abc3ffa5749c79f87f3f8de4d42eb7b19a8
 }
 /*
  * _id: "Ej9kjZRLTmuBMvaih"
@@ -15,4 +19,4 @@ Template.feed.posts = function() {
  * sold: false
  * time: Sun May 04 2014 22:45:04 GMT-0400 (EDT)
  * title: "sdfadsfs"
-*/
+ */
