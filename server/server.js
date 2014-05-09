@@ -36,6 +36,9 @@ Meteor.methods({
                 });
 		return temp;
 	},
+        addPostImage: function(id, url) {
+            return Items.update({_id: feed}, {$set: {imageUrl: url}}); 
+        },
 	addRequest: function(p) {
 		p.sellerId = this.userId;
 		p.seller = Meteor.users.findOne({
