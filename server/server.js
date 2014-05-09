@@ -51,6 +51,10 @@ Meteor.methods({
 		else if (p.feeds == null)
 			return -4;
 		var temp = Items.insert(p);
+                _.each(p.feeds, function(feed) {
+                    Feeds.update({_id: feed}, {$push: {items: temp}});
+                });
+		return temp;
 	},
 	// creates offer and first message
 	createOffer: function(item, message) {

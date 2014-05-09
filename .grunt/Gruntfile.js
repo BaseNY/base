@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 				options: {
 					includePaths: ['../packages/'],
 					outputStyle: 'expanded',
-					sourceComments: 'normal'
+					sourceComments: 'none'
 				}
 			}
 		}
