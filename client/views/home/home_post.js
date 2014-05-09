@@ -181,6 +181,7 @@ Template.homeBuyPost.events({
 				Router.go('/');
 			}
 		});
-		$(e.target).slideUp();
+                $('#buy-description').val('');
+		$('#home-buy-container').slideUp();
 	}
 });
