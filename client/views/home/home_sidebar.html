@@ -59,7 +59,7 @@
         <li class="{{#if allFeed}}checked{{/if}}">
         <div class="left"><i class="fa fa-sun-o"></i>
         </div>
-        <div class="right">All</div>
+        <div class="right">All{{#if allFeed}}<i class="fa fa-arrow-circle-o-right"></i>{{/if}}</div>
         </li>
     </a>
     {{#each feeds}}
@@ -67,7 +67,7 @@
         <li class="{{#if currentFeed}}checked{{/if}}">
         <div class="left"><i class="fa fa-{{this.icon}}"></i>
         </div>
-        <div class="right">{{this.name}}</div>
+        <div class="right">{{this.name}}{{#if currentFeed}}<i class="fa fa-arrow-circle-o-right"></i>{{/if}}</div>
         </li>
     </a>
     {{/each}}
