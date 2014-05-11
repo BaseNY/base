@@ -8,6 +8,7 @@ Meteor.methods({
 			_id: Meteor.userId()
 		}).profile.name;
 		p.sold = false;
+                p.fbId = Meteor.user().services.facebook.id;
 		p.time = new Date();
 		p.score = p.time.getTime();
 		//p.imageUrl = s3ImageUpload(this.userId, p.image);
@@ -60,6 +61,7 @@ Meteor.methods({
 		}).profile.name;
 		p.time = new Date();
 		p.score = p.time.getTime();
+                p.fbId = Meteor.user().services.facebook.id;
 		if (p.description == null)
 			return -3;
 		else if (p.feeds == null)
