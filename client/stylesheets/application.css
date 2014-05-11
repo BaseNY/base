@@ -573,43 +573,45 @@ header {
   .footer > span {
     margin-left: 20px; }
 
-.home-sidebar-content h3 {
-  color: grey;
-  font-weight: bold;
-  margin: 8px 0px 2px; }
-.home-sidebar-content ul li {
-  padding: 4px;
-  max-width: em(3000);
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4px; }
-  .home-sidebar-content ul li:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .home-sidebar-content ul li .left {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 10.43705%; }
-    .home-sidebar-content ul li .left:last-child {
-      margin-right: 0; }
-  .home-sidebar-content ul li .right {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 87.20529%; }
-    .home-sidebar-content ul li .right:last-child {
-      margin-right: 0; }
-    .home-sidebar-content ul li .right i {
-      float: right; }
-  .home-sidebar-content ul li:hover {
-    background-color: #E6E6E6;
-    cursor: pointer; }
-  .home-sidebar-content ul li.checked {
-    background-color: #33B5E5;
+.home-sidebar-content {
+  width: 85%; }
+  .home-sidebar-content h3 {
+    color: grey;
     font-weight: bold;
-    color: white; }
+    margin: 8px 0px 2px; }
+  .home-sidebar-content ul li {
+    padding: 4px;
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px; }
+    .home-sidebar-content ul li:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .home-sidebar-content ul li .left {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 10.43705%; }
+      .home-sidebar-content ul li .left:last-child {
+        margin-right: 0; }
+    .home-sidebar-content ul li .right {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 87.20529%; }
+      .home-sidebar-content ul li .right:last-child {
+        margin-right: 0; }
+      .home-sidebar-content ul li .right i {
+        float: right; }
+    .home-sidebar-content ul li:hover {
+      background-color: #E6E6E6;
+      cursor: pointer; }
+    .home-sidebar-content ul li.checked {
+      background-color: #33B5E5;
+      font-weight: bold;
+      color: white; }
 
 .home-container {
   max-width: em(3000);

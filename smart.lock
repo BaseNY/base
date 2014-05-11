@@ -7,7 +7,8 @@
       "nprogress": {},
       "npm": {},
       "publish-with-relations": {},
-      "easy-search": {}
+      "easy-search": {},
+      "facebook-sdk": {}
     },
     "packages": {
       "iron-router": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/matteodem/meteor-easy-search.git",
         "tag": "v0.4.0",
         "commit": "6ab16e6c4b505d6d02de8be7e1633f6561af971f"
+      },
+      "facebook-sdk": {
+        "git": "https://github.com/hugesuccess/facebook-sdk.git",
+        "tag": "v0.0.44",
+        "commit": "cb71b860085ec6453b61644b31f6351e7de2c1b0"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
