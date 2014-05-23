@@ -101,7 +101,6 @@ Meteor.methods({
 				score: toAdd[3].getTime()
 			}
 		});
-		console.log(ret);
 		return toAdd;
 	},
 	markSold: function(item) {
