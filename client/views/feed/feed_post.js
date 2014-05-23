@@ -17,7 +17,7 @@ Template.feedPost.helpers({
 		});
 	},
 	'comments': function() {
-		this.comments;
+		return this.comments;
 	}
 });
 
