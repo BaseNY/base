@@ -1,5 +1,5 @@
 Template.feed.posts = function() {
-	return Items.find({}, {sort: {score: -1}}).fetch();
+	return Items.find({}).fetch();
 }
 /*
  * _id: "Ej9kjZRLTmuBMvaih"
