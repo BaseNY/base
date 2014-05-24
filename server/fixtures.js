@@ -21,8 +21,8 @@ defaultFeeds = [{
 }];
 
 if (!Feeds.findOne()) {
-	_.each(defaultFeeds, function(feed) {
-		defaultFeedIds.push(Feeds.insert(feed));
+	defaultFeedIds = _.map(defaultFeeds, function(feed) {
+		return Feeds.insert(feed);
 	});
 	console.log(defaultFeedIds);
 }

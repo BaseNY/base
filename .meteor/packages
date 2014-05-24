@@ -16,4 +16,6 @@ npm
 fast-render
 publish-with-relations
 easy-search
+spiderable
+collection-behaviours
 facebook-sdk

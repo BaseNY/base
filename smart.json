@@ -6,6 +6,7 @@
     "npm": {},
     "publish-with-relations": {},
     "easy-search": {},
-    "facebook-sdk": {}
+    "facebook-sdk": {},
+    "collection-behaviours": {}
   }
 }
