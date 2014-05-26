@@ -6,7 +6,7 @@
 					<img src={{imgUrl}}>
 				</div>
 				<div class="right">
-					<h1><a href="/feeds/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
+					<h1><a href="/post/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
 					</h1>
 					<hr />
 					<a href="/profile/{{this.sellerId}}">{{this.seller}}</a>  <i class="fa fa-angle-right"></i>  <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
@@ -16,7 +16,9 @@
 			{{#if currentUser}}
 				<div class="icons-container">
 					<i class="fa fa-envelope-o"></i>
+					{{#if ownPost}}
 					<i class="fa fa-angle-down"></i>
+					{{/if}}
 				</div>
 			{{/if}}
 			<div id="msgCont-{{this._id}}" class="msgContainer noshow">

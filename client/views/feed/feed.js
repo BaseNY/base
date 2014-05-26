@@ -1,5 +1,10 @@
+ITEMS_INCREMENT = 10;
+Session.setDefault('itemsLimit', ITEMS_INCREMENT);
 Template.feed.posts = function() {
-	return Items.find({}).fetch();
+	return Items.find({},{limit: Session.get('itemsLimit')}).fetch();
+}
+Template.feed.moreResults = function() {
+	return Items.find().count() >= Session.get('itemsLimit');
 }
 /*
  * _id: "Ej9kjZRLTmuBMvaih"

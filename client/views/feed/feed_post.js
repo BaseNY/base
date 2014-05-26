@@ -18,11 +18,14 @@ Template.feedPost.helpers({
 	},
 	'comments': function() {
 		return this.comments;
+	},
+	'ownPost': function() {
+		return this.sellerId == Meteor.userId();
 	}
 });
 
 Template.feedPost.rendered = function() {
-	$('div').on('activate', function() {
+	$('#commentContent').on('activate', function() {
 		$(this).empty();
 		var range, sel;
 		if ((sel = document.selection) && document.body.createTextRange) {
@@ -32,7 +35,7 @@ Template.feedPost.rendered = function() {
 		}
 	});
 
-	$('div').focus(function() {
+	$('#commentContent').focus(function() {
 		if (this.hasChildNodes() && document.createRange && window.getSelection) {
 			$(this).empty();
 			var range = document.createRange();
