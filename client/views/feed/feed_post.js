@@ -68,6 +68,13 @@ Template.feedPost.events({
 	'click .fa-envelope-o': function() {
 		console.log(this);
 		$('#msgCont-' + this._id).toggleClass('noshow');
+	},
+	'click .fa-trash-o': function() {
+		Meteor.call('deletePost', this._id, function(e, r) {
+			if (e) {
+				alert(e);
+			}
+		});
 	}
 });
 
