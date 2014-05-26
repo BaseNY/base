@@ -25,7 +25,7 @@ Template.feedPost.helpers({
 });
 
 Template.feedPost.rendered = function() {
-	$('#commentContent').on('activate', function() {
+	$('.commentForm').on('activate', function() {
 		$(this).empty();
 		var range, sel;
 		if ((sel = document.selection) && document.body.createTextRange) {
@@ -35,7 +35,7 @@ Template.feedPost.rendered = function() {
 		}
 	});
 
-	$('#commentContent').focus(function() {
+	$('.commentForm').focus(function() {
 		if (this.hasChildNodes() && document.createRange && window.getSelection) {
 			$(this).empty();
 			var range = document.createRange();
