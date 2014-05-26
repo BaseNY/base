@@ -24,6 +24,10 @@ Meteor.startup(function() {
 		defaultFeedIds = _.map(defaultFeeds, function(feed) {
 			return Feeds.insert(feed);
 		});
-		console.log(defaultFeedIds);
+	} else {
+		defaultFeedIds = _.map(defaultFeeds, function(feed) {
+			return Feeds.findOne({name: feed.name})._id;
+		});
 	}
+	console.log(defaultFeedIds);
 });

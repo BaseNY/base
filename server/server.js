@@ -20,8 +20,8 @@ var admins = Meteor.users.find({
 	}
 }).fetch();
 _.each(admins, function(admin) {
-	if (!Roles.userIsInRole(admin, 'admin')) {
+	//if (!Roles.userIsInRole(admin, 'admin')) {
 		Roles.addUsersToRoles(admin, 'admin');
 		console.log("Added " + admin.profile.name + " as admin.");
-	}
+	//}
 });
