@@ -1,5 +1,5 @@
 Template.feed.posts = function() {
-	return Items.find({}).fetch();
+	return Items.find({}, {sort: {time: -1}}).fetch();
 }
 /*
  * _id: "Ej9kjZRLTmuBMvaih"
