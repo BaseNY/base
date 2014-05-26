@@ -17,6 +17,9 @@
 				<div class="icons-container">
 					<i class="fa fa-envelope-o"></i>
 					<i class="fa fa-angle-down"></i>
+					{{#if isInRole 'admin'}}
+						<i class="fa fa-trash-o"></i>
+					{{/if}}
 				</div>
 			{{/if}}
 			<div id="msgCont-{{this._id}}" class="msgContainer noshow">

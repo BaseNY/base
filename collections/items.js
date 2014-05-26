@@ -103,6 +103,13 @@ Meteor.methods({
 		});
 		return toAdd;
 	},
+	deletePost: function(id) {
+		var user = Meteor.user();
+		if (!loggedInUser || !Roles.userIsInRole(user, 'admin', group)) {
+		  throw new Meteor.Error(403, "Access denied");
+		}
+		Items.remove({_id: id});
+	},
 	markSold: function(item) {
 		Items.update({
 			_id: item._id
