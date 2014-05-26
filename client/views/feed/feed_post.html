@@ -17,7 +17,10 @@
 				<div class="icons-container">
 					<i class="fa fa-envelope-o"></i>
 					{{#if ownPost}}
-					<i class="fa fa-angle-down"></i>
+						<i class="fa fa-trash-o"></i>
+					{{/if}}
+					{{#if isInRole 'admin'}}
+						<i class="fa fa-trash-o"></i>
 					{{/if}}
 				</div>
 			{{/if}}
