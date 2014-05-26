@@ -25,8 +25,8 @@ Meteor.startup(function() {
 			return Feeds.insert(feed);
 		});
 	} else {
-		defaultFeedIds = _.map(Feeds.find().fetch(), function(feed) {
-			return feed._id;
+		defaultFeedIds = _.map(defaultFeeds, function(feed) {
+			return Feeds.findOne({name: feed.name})._id;
 		});
 	}
 	console.log(defaultFeedIds);
