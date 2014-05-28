@@ -10,7 +10,8 @@
       "easy-search": {},
       "facebook-sdk": {},
       "collection-behaviours": {},
-      "roles": {}
+      "roles": {},
+      "moment": {}
     },
     "packages": {
       "iron-router": {
@@ -57,6 +58,11 @@
         "git": "https://github.com/alanning/meteor-roles.git",
         "tag": "v1.2.9",
         "commit": "969b17fac5dfec66b6b12bfce4e37471d1a241d4"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
