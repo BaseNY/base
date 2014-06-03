@@ -41,6 +41,9 @@
         .fa-angle-down {
             cursor:pointer;
         }
+        .fa-trash-o {
+        	cursor: pointer;
+        }
         .post-inner {
             @include boxes-default(10px);
             .container {

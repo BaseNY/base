@@ -15,6 +15,7 @@ Template.homePost.events({
 			$sell.slideUp();
 			$buy.slideDown();
 		}
+		console.log("wot");
 	},
 	'change .home-post-body input:radio': function(e) {
 		var $target = $(e.currentTarget),
@@ -26,12 +27,12 @@ Template.homePost.events({
 });
 
 
-Template.homeSellPost.feeds = function(){
-    return Feeds.find().fetch();
+Template.homeSellPost.feeds = function() {
+	return Feeds.find().fetch();
 }
 
-Template.homeBuyPost.feeds = function(){
-    return Feeds.find().fetch();
+Template.homeBuyPost.feeds = function() {
+	return Feeds.find().fetch();
 }
 
 Template.homeSellPost.events({
@@ -88,42 +89,42 @@ Template.homeSellPost.events({
 			});
 
 		} else {
-                    //img parsing & resize
-                        var file = document.getElementById('image').files[0]; 
-                    /*
-                        var img = document.createElement('img');
-                        var reader = new FileReader();
-                        img.src = e.target.result;
-                        reader.readAsDataURL(file);
+			//img parsing & resize
+			var file = document.getElementById('image').files[0];
+			/*
+            var img = document.createElement('img');
+            var reader = new FileReader();
+            img.src = e.target.result;
+            reader.readAsDataURL(file);
 
-                        var canvas = document.createElement('canvas');
-                        var ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0);
-                        var MAX_WIDTH = 1280;
-                        var MAX_HEIGHT = 720;
-                        var width = img.width;
-                        var height = img.eight;
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            var MAX_WIDTH = 1280;
+            var MAX_HEIGHT = 720;
+            var width = img.width;
+            var height = img.eight;
 
-                        if( width > height) {
-                            if(width > MAX_WIDTH) {
-                                height *= MAX_WIDTH / width;
-                                width = MAX_WIDTH;
-                            }
-                        }else if(height > MAX_HEIGHT) {
-                            width *= MAX_HEIGHT / height;
-                            height = MAX_HEIGHT;
-                        }
+            if( width > height) {
+                if(width > MAX_WIDTH) {
+                    height *= MAX_WIDTH / width;
+                    width = MAX_WIDTH;
+                }
+            }else if(height > MAX_HEIGHT) {
+                width *= MAX_HEIGHT / height;
+                height = MAX_HEIGHT;
+            }
 
-                        canvas.width = width;
-                        canvas.height = height;
-                        var ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0, width, height);
+            canvas.width = width;
+            canvas.height = height;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
 
-                        var dataurl = canvas.toDataUrl("image/png");
-                        console.log(dataurl);
-                        */
+            var dataurl = canvas.toDataUrl("image/png");
+            console.log(dataurl);
+            */
 
-	    		s3ImageUpload(Meteor.userId(), temp, file, function(temp) {
+			s3ImageUpload(Meteor.userId(), temp, file, function(temp) {
 				Meteor.call('addPost', temp, function(e, r) {
 					console.log("something");
 					if (e) {
@@ -138,7 +139,7 @@ Template.homeSellPost.events({
 						else if (r == -4)
 							alert('Pick a feed!');
 						console.log("done");
-					//	Router.go('/post/' + r);
+						//	Router.go('/post/' + r);
 					}
 				});
 			});
@@ -186,7 +187,9 @@ Template.homeBuyPost.events({
 				Router.go('/');
 			}
 		});
-                $('#buy-description').val('');
+		$('#buy-description').val('');
 		$('#home-buy-container').slideUp();
+		$('.home-post-header label').removeClass('checked');
+		$('#home-buy-radio').prop('checked', false);
 	}
 });
