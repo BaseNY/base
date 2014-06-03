@@ -1111,6 +1111,8 @@ section.pageAbout {
       cursor: pointer; }
     .pageFeeds .post .fa-angle-down {
       cursor: pointer; }
+    .pageFeeds .post .fa-trash-o {
+      cursor: pointer; }
     .pageFeeds .post .post-inner {
       padding: 20px;
       background-color: white;

@@ -18,11 +18,14 @@ Template.feedPost.helpers({
 	},
 	'comments': function() {
 		return this.comments;
+	},
+	'ownPost': function() {
+		return this.sellerId == Meteor.userId();
 	}
 });
 
 Template.feedPost.rendered = function() {
-	$('div').on('activate', function() {
+	$('.commentForm').on('activate', function() {
 		$(this).empty();
 		var range, sel;
 		if ((sel = document.selection) && document.body.createTextRange) {
@@ -32,7 +35,7 @@ Template.feedPost.rendered = function() {
 		}
 	});
 
-	$('div').focus(function() {
+	$('.commentForm').focus(function() {
 		if (this.hasChildNodes() && document.createRange && window.getSelection) {
 			$(this).empty();
 			var range = document.createRange();
@@ -65,6 +68,13 @@ Template.feedPost.events({
 	'click .fa-envelope-o': function() {
 		console.log(this);
 		$('#msgCont-' + this._id).toggleClass('noshow');
+	},
+	'click .fa-trash-o': function() {
+		Meteor.call('deletePost', this._id, function(e, r) {
+			if (e) {
+				alert(e);
+			}
+		});
 	}
 });
 
