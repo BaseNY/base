@@ -48,7 +48,7 @@ Meteor.methods({
 				//,offer: message.offer
 			};
 			offerId = Offers.insert(offer);
-		}
+		}																																																																																																																																																																																													
 
 		// create the message
 		message.offerId = offerId;

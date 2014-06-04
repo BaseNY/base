@@ -26,6 +26,32 @@ Template.homePost.events({
 	}
 });
 
+Template.homePost.readUrl = function(input, name) {
+	 if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+        	$('#' + name).attr('src', e.target.result);
+
+			Session.set('uploading',true);
+			s3ImageUpload(Meteor.userId(), input.files[0], function(r) {
+				$('#sell-preview').toggleClass('uploading');
+				Session.set('uploading', false);
+				Session.set('uploadUrl', r);
+			});
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+Template.homeSellPost.rendered = function(){
+	$('#sell-image').change(function(){
+		console.log("changed");
+		Template.homePost.readUrl(this, 'sell-preview');
+		$('#sell-preview').toggleClass('filled uploading');
+		console.log('uploading now');
+	});
+};
 
 Template.homeSellPost.feeds = function() {
 	return Feeds.find().fetch();
@@ -35,8 +61,11 @@ Template.homeBuyPost.feeds = function() {
 	return Feeds.find().fetch();
 }
 
-Template.homeSellPost.events({
-	'click #sell-post': function(e) {
+//whoops defining a function here...shoot me
+Template.homeSellPost.upload = function(e) {
+	if(Session.get('uploading') == true) {
+		setInterval(Template.homeSellPost.upload(e), 100);
+	}else {
 		$(e.target).css('pointer-events', 'none');
 		setInterval(function() {
 			$(e.target).css('pointer-events', 'auto');
@@ -53,6 +82,8 @@ Template.homeSellPost.events({
 		temp = {};
 		temp.title = $('input[name=title]').val();
 		temp.feeds = [];
+		if(Session.get('uploadUrl'))
+			temp.imageUrl = 'https://s3.amazonaws.com/Basel/' + Session.get('uploadUrl');
 		if (Router.current().data()) {
 			temp.feeds.push(Router.current().data().feed._id);
 		} else {
@@ -71,26 +102,31 @@ Template.homeSellPost.events({
 		// NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
 		console.log("adding item");
 		$('#home-sell-container').slideUp();
-		if (!document.getElementById('image').files[0]) {
-			Meteor.call('addPost', temp, function(e, r) {
+		Meteor.call('addPost', temp, function(e, r) {
 				console.log("something");
 				if (e) {
 					alert(e);
 				} else {
-					if (r == -2)
+					if (r == -1)
+						alert('Need an image url!');
+					else if (r == -2)
 						alert('Need a title!');
 					else if (r == -3)
 						alert('Need a description!');
 					else if (r == -4)
 						alert('Pick a feed!');
 					console.log("done");
-					//Router.go('/post/' + r);
+					//	Router.go('/post/' + r);
 				}
 			});
+	}
+	return 0;
+}
 
-		} else {
+Template.homeSellPost.events({
+	'click #sell-post': function(e) {
+		Template.homeSellPost.upload(e);
 			//img parsing & resize
-			var file = document.getElementById('image').files[0];
 			/*
             var img = document.createElement('img');
             var reader = new FileReader();
@@ -124,26 +160,9 @@ Template.homeSellPost.events({
             console.log(dataurl);
             */
 
-			s3ImageUpload(Meteor.userId(), temp, file, function(temp) {
-				Meteor.call('addPost', temp, function(e, r) {
-					console.log("something");
-					if (e) {
-						alert(e);
-					} else {
-						if (r == -1)
-							alert('Need an image url!');
-						else if (r == -2)
-							alert('Need a title!');
-						else if (r == -3)
-							alert('Need a description!');
-						else if (r == -4)
-							alert('Pick a feed!');
-						console.log("done");
-						//	Router.go('/post/' + r);
-					}
-				});
-			});
-		}
+				
+			
+		
 	}
 });
 
