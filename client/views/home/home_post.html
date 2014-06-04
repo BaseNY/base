@@ -7,6 +7,14 @@
 	</div>
 </template>
 
+<template name="temp">
+	<div class="home-post-container">
+		<input id="sell-image" class="image-input" type="file" />
+		<label for="sell-image"><i class="fa fa-camera"></i></label>
+		</div>
+</template>
+
+
 <template name="homePostHeader">
 	<div class="home-post-header">
 		What would you like to do?
@@ -36,8 +44,11 @@
 		<input type="text" id="item-title" name="title" placeholder="What is your item called?">
 		<br />
 		<textarea id="sell-description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price" class="post-message"></textarea>
-		<input id="image" type="file" />
+		<input id="sell-image" class="image-input" type="file" />
+		<label for="sell-image"><i class="fa fa-camera"></i></label>
 		<div id="sell-post" class="button right">Post</div>
+		<br />
+		<img id="sell-preview" class = 'image-preview' src=""/>
 	</div>
 </template>
 
