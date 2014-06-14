@@ -8,11 +8,7 @@ Template.bidding.events({
 		console.log();
 
 		var msg = {
-			text: $('#message').val(),
-			type: 1,
-			isPublic: false,
-			posterId: Meteor.userId(),
-			poster: Meteor.user().profile.name
+			text: $('#message').val()
 		};
 
 		Meteor.call("createOffer", item, msg, function(err, data) {
