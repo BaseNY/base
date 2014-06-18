@@ -3,7 +3,7 @@ base
 
 Base website repo
 
-Temporary Website: http://basel.meteor.com/
+Temporary Website: http://basel.meteor.com/  
 Video: https://www.dropbox.com/s/3660gcv8tkilh5z/Softdev%20Proj.mp4
 
 ## Naming Convention
