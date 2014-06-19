@@ -6,12 +6,17 @@ Meteor.startup(function () {
 
 
 	service: "facebook",
-	appId: "199242350261474",
+	//appId: "199242350261474",
+
       //  appId: "581722495207267",
         //appId:"1382563015306531",
-	secret:"dcd13b60204fb657a47ca97da9e8daca"
+        //base2
+        appId:"655164321229763",
+	//secret:"dcd13b60204fb657a47ca97da9e8daca"
         //secret:"c756e217e627b5699e96bfef0cfebede"
         //secret:"b4adbd910499149cb712ae6e948c2e73"
+        //base2
+        secret: "8f0efa53e0417109a6d9f28226df89c0"
     });
 }); 
 
@@ -34,6 +39,15 @@ Accounts.onCreateUser(function(options, user) {
         user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
         user.profile.fbId = user.services.facebook.id;
 }
+
+    var graph = Meteor.require('fbgraph');
+    if(user.services.facebook.accessToken) {
+        graph.setAccessToken(user.services.facebook.accessToken);
+        //Async Meteor (help from : https://gist.github.com/possibilities/3443021
+        graph.get('/me/friends', function(err,result) {
+            console.log(result);
+        });
+    }
 
     return user;
 
