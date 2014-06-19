@@ -8,7 +8,6 @@
       "npm": {},
       "publish-with-relations": {},
       "easy-search": {},
-      "facebook-sdk": {},
       "collection-behaviours": {},
       "roles": {},
       "moment": {}
@@ -21,8 +20,8 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.5",
-        "commit": "93e2fb334e55fbe9b5ebb2a2e65964018658f43e"
+        "tag": "v0.2.8",
+        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
       },
       "nprogress": {
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
@@ -41,13 +40,8 @@
       },
       "easy-search": {
         "git": "https://github.com/matteodem/meteor-easy-search.git",
-        "tag": "v0.4.0",
-        "commit": "6ab16e6c4b505d6d02de8be7e1633f6561af971f"
-      },
-      "facebook-sdk": {
-        "git": "https://github.com/hugesuccess/facebook-sdk.git",
-        "tag": "v0.0.44",
-        "commit": "cb71b860085ec6453b61644b31f6351e7de2c1b0"
+        "tag": "v0.4.5",
+        "commit": "bcd8f108f8089a430612e88864b7a2fd26965846"
       },
       "collection-behaviours": {
         "git": "https://github.com/Sewdn/meteor-collection-behaviours.git",

@@ -9,6 +9,22 @@ Meteor.methods({
 		}, {
 			profile: temp
 		});
+	},
+	tempFB: function() {
+		var graph = Meteor.require('fbgraph');
+        if(Meteor.user().services.facebook.accessToken) {
+          graph.setAccessToken(Meteor.user().services.facebook.accessToken);
+          //Async Meteor (help from : https://gist.github.com/possibilities/3443021
+          var ret;
+          graph.get('/me/friends', function(err,result) {
+              ret = result;
+          });
+          return ret;
+        }
+	},
+	fbUpdate: function(s) {
+		Meteor.users.update({_id:this._id},{$set: {"profile.blah": s}});
+		console.log(s);
 	}
 });
 
