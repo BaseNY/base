@@ -3,7 +3,8 @@ var tempFBLogCode = function() {
 		requestPermissions: ['email',
 			'user_about_me',
 			'user_birthday',
-			'user_location'
+			'user_location',
+			'user_friends'
 		]
 	}, function(e) {
 		if (e) {

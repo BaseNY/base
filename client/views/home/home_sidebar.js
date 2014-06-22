@@ -69,6 +69,7 @@ Template.homeSidebar.events({
         Session.set('degrees', 0);
     },
     'click #filter-friends': function() {
+	Meteor.call('updateFriends');
         Session.set('degrees', 1);
     },
     'click #filter-fof': function() {
