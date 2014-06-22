@@ -44,9 +44,16 @@ Accounts.onCreateUser(function(options, user) {
     if(user.services.facebook.accessToken) {
         graph.setAccessToken(user.services.facebook.accessToken);
         //Async Meteor (help from : https://gist.github.com/possibilities/3443021
-        graph.get('/me/friends', function(err,result) {
-            console.log(result);
-        });
+	console.log(user._id);
+          graph.get('/' + user.services.facebook.id + '/friends', Meteor.bindEnvironment(function(err,result) {
+		console.log(result);
+		console.log(Meteor.userId());
+		var ids = [];
+		_.each(result.data, function(obj) {
+			ids.push(obj.id);
+		});
+		Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.friends': ids}});
+          }, function(err){console.log("couldn't wrap callback");}));
     }
 
     return user;

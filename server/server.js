@@ -10,21 +10,39 @@ Meteor.methods({
 			profile: temp
 		});
 	},
-	tempFB: function() {
+	updateFriends: function() {
 		var graph = Meteor.require('fbgraph');
         if(Meteor.user().services.facebook.accessToken) {
           graph.setAccessToken(Meteor.user().services.facebook.accessToken);
           //Async Meteor (help from : https://gist.github.com/possibilities/3443021
           var ret;
-          graph.get('/me/friends', function(err,result) {
-              ret = result;
-          });
-          return ret;
+	  var str = '/' + Meteor.user().services.facebook.id + '/friends';
+          graph.get(str, Meteor.bindEnvironment(function(err,result) {
+		console.log(result);
+		console.log(Meteor.userId());
+		ids = [];
+		_.each(result.data, function(obj) {
+			ids.push(obj.id);
+		});
+		console.log(ids);
+		Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.friends': ids}});
+          }, function(err){console.log("couldn't wrap callback");}));
         }
 	},
 	fbUpdate: function(s) {
 		Meteor.users.update({_id:this._id},{$set: {"profile.blah": s}});
 		console.log(s);
+	},
+	resetUsers: function() {
+		Meteor.users.remove({});
+	},
+	checkFriends: function() {
+		var graph = Meteor.require('fbgraph');
+          	graph.setAccessToken(Meteor.user().services.facebook.accessToken);
+	  	var str = '/' + Meteor.user().services.facebook.id + '/friends';
+		graph.get('/' + Meteor.user().services.facebook.id, function(e,r) {
+			console.log(r);
+		});
 	}
 });
 
