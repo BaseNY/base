@@ -45,6 +45,21 @@ Template.homeSidebarFilters.helpers({
     }
 });
 
+Template.homeSidebarUser.helpers({
+    'everyoneFilter': function() {
+	if(Session.get('degrees'))
+		return Session.get('degrees') == 0;
+	else
+		return true;
+    },
+    'friendsFilter': function() {
+	if(Session.get('degrees'))
+		return Session.get('degrees') == 1;
+	else
+		return false;
+}
+});
+
 Template.homeSidebarFilters.events({
     'click #filter-buy' : function() {
         var b = Session.get('buyOn');
