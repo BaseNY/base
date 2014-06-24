@@ -21,15 +21,15 @@
 </div>
 {{/with}}
 <ul>
-    <li id="filter-everyone">
+    <li id="filter-everyone" class="{{#if everyoneOn}} checked {{/if}}">
     <div class="left"><i class="fa fa-globe"></i>
     </div>
-    <div class="right">Everyone</div>
+    <div class="right">Everyone{{#if everyoneOn}}<i class="fa fa-arrow-circle-o-right"></i>{{/if}}</div>
     </li>
-    <li id="filter-friends">
+    <li id="filter-friends" class="{{#if friendsOn}} checked {{/if}}">
     <div class="left"><i class="fa fa-group"></i>
     </div>
-    <div class="right">Friends</div>
+    <div class="right">Friends{{#if friendsOn}}<i class="fa fa-arrow-circle-o-right"></i>{{/if}}</div>
     </li>
 </ul>
 {{/if}}

@@ -20,7 +20,19 @@ Template.header.helpers({
 			return num;
 		else
 			return '';
-	}
+	},
+    'newNotifs': function() {
+        return Notifications.find().count();
+    },
+    'notifs': function() {
+        return Notifications.find().fetch();
+    },
+    'unread': function() {
+        return !this.read;
+    },
+    'text': function() {
+        return formatNotif(this);
+    }
 });
 
 Template.header.events({

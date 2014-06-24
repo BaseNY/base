@@ -46,13 +46,13 @@ Template.homeSidebarFilters.helpers({
 });
 
 Template.homeSidebarUser.helpers({
-    'everyoneFilter': function() {
+    'everyoneOn': function() {
 	if(Session.get('degrees'))
 		return Session.get('degrees') == 0;
 	else
 		return true;
     },
-    'friendsFilter': function() {
+    'friendsOn': function() {
 	if(Session.get('degrees'))
 		return Session.get('degrees') == 1;
 	else

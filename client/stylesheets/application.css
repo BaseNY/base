@@ -554,7 +554,22 @@ header {
     header > .content .link {
       vertical-align: middle;
       margin-right: 0.8em;
-      font-size: 1.4em; }
+      font-size: 1.4em;
+      position: relative; }
+    header > .content .dropdown {
+      position: absolute;
+      width: 300px;
+      border: 1px solid #50A8E7;
+      right: 0px;
+      margin-top: 8px;
+      background: white;
+      opacity: 0.9;
+      z-index: 999; }
+      header > .content .dropdown li {
+        height: 48px;
+        color: black; }
+        header > .content .dropdown li.unread {
+          background-color: #ebebeb; }
 
 .header-notice {
   width: 100%;

@@ -45,3 +45,11 @@ Meteor.publish('allUserData', function() {
 		}
 	});
 });
+
+Meteor.publish('notifs', function() {
+    return Notifications.find({
+        'userId': this.userId
+    },{
+        'limit': 10
+    });
+});
