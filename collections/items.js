@@ -103,7 +103,8 @@ return temp;
         });
 
         //gives notification to the poster
-        if(this.userId != item.sellerId) {
+        //if(this.userId != item.sellerId) {
+        if(this.userId) {
             var postNotif = Notifications.findOne({
                 userId: item.sellerId,
                 postId: id, 
@@ -115,8 +116,11 @@ return temp;
                 Notifications.update({
                     _id: postNotif._id
                 }, {
-                    commenters: postNotif.commenters,
-                    read: false
+                    $set: {
+                        read: false,
+                        actorId: this.userId,
+                        commenters: postNotif.commenters
+                    }
                 });
             }else{
                 var tempNotif = {
@@ -124,6 +128,7 @@ return temp;
                     userId: item.sellerId,
                     postId: item._id,
                     postName: item.title,
+                    actorId: this.userId;
                     read: false,
                     commenters: [Meteor.user().profile.name]
                 }
