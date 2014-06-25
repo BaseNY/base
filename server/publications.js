@@ -47,12 +47,10 @@ Meteor.publish('allUserData', function() {
 });
 
 Meteor.publish('notifs', function() {
-    /*
     return Notifications.find({
         'userId': this.userId
     },{
         'limit': 10
     });
-    */
-    return Notifications.find();
+//    return Notifications.find();
 });

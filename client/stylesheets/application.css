@@ -558,18 +558,47 @@ header {
       position: relative; }
     header > .content .dropdown {
       position: absolute;
-      width: 300px;
+      width: 400px;
+      font-size: 1em;
       border: 1px solid #50A8E7;
       right: 0px;
       margin-top: 8px;
       background: white;
       opacity: 0.9;
       z-index: 999; }
+      header > .content .dropdown.hide {
+        display: none; }
+      header > .content .dropdown.show {
+        display: block; }
       header > .content .dropdown li {
-        height: 48px;
+        max-width: em(3000);
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 48px;
+        border-top: 1px solid lightgrey;
         color: black; }
+        header > .content .dropdown li:after {
+          content: "";
+          display: table;
+          clear: both; }
         header > .content .dropdown li.unread {
           background-color: #ebebeb; }
+        header > .content .dropdown li .icon {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 14.70196%; }
+          header > .content .dropdown li .icon:last-child {
+            margin-right: 0; }
+        header > .content .dropdown li .text {
+          font-size: 16px;
+          padding: 4px;
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 82.94039%; }
+          header > .content .dropdown li .text:last-child {
+            margin-right: 0; }
 
 .header-notice {
   width: 100%;

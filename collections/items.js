@@ -128,7 +128,7 @@ return temp;
                     userId: item.sellerId,
                     postId: item._id,
                     postName: item.title,
-                    actorId: this.userId;
+                    actorId: this.userId,
                     read: false,
                     commenters: [Meteor.user().profile.name]
                 }

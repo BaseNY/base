@@ -1,12 +1,15 @@
 Notifications = new Meteor.Collection('notifs');
 
-Meteor.method({
+Meteor.methods({
     clearNotif: function(filter) {
-       Notifications.update(filter, {
-           $set: {
+        if(!filter)
+            filter = {};
+        filter.userId = this.userId;
+        Notifications.update(filter, {
+            $set: {
                 read: true,
-           }
-       });
+            }
+        });
     }
 });
 /*
