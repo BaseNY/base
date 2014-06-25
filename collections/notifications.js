@@ -1,5 +1,14 @@
 Notifications = new Meteor.Collection('notifs');
 
+Meteor.method({
+    clearNotif: function(filter) {
+       Notifications.update(filter, {
+           $set: {
+                read: true,
+           }
+       });
+    }
+});
 /*
  * prototypes
  *
