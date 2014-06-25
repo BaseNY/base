@@ -42,13 +42,20 @@
 					<a href="/inbox" class="link">
 						<i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
 					</a>
-                    <a href="" class="link">
+                    <a id="show-notifs" href="" class="link">
                         <i class="fa fa-bell" target="notif-dropdown"><span>{{newNotifs}}</span></i>
-                        <ul class="dropdown" id="notif-dropdown">
+                        <ul class="dropdown hide {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
                             {{#each notifs}}
+                            <a href="/post/{{this.postId}}">
                             <li class="{{#if unread}}unread{{/if}}">
-                                {{text}}
+                                <div class= "icon">
+                                    <img src="{{notifImage}}" />
+                                </div>
+                                <div class= "text">
+                                    {{text}}
+                                </div>
                             </li>
+                            </a>
                             {{/each}}
                         </ul>
                     </a>
