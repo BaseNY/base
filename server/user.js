@@ -11,12 +11,12 @@ Meteor.startup(function () {
       //  appId: "581722495207267",
         //appId:"1382563015306531",
         //base2
-        appId:"655164321229763",
+        appId:"1423364661284723",
 	//secret:"dcd13b60204fb657a47ca97da9e8daca"
         //secret:"c756e217e627b5699e96bfef0cfebede"
         //secret:"b4adbd910499149cb712ae6e948c2e73"
         //base2
-        secret: "8f0efa53e0417109a6d9f28226df89c0"
+        secret: "940d8ca3eb8615602879739ade1201d4"
     });
 }); 
 
