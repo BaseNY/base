@@ -5,7 +5,7 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
-	api.add_files('fbgraph.js', ['client', 'server']);
+	api.add_files('fbgraph.js', 'server');
 
 	api.export('fbgraph');
 });
