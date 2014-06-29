@@ -1,1 +1,1 @@
-var fbgraph = Npm.require('fbgraph');
+fbgraph = Npm.require('fbgraph');
