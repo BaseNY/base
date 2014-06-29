@@ -1,4 +1,4 @@
-Template.messages.events({
+Template.messaging.events({
 	'keydown #messages-reply': function(e) {
 		var $message = $("#messages-reply");
 		// if is enter key and shift key is not held down
@@ -9,7 +9,7 @@ Template.messages.events({
 					text: $message.val(),
 					offerId: this.offerId
 				};
-				Meteor.call("createMessage", data, function(err) {
+				Messages.insert(data, function(err) {
 					if (err) {
 						console.log(err);
 					} else {
@@ -21,6 +21,6 @@ Template.messages.events({
 	}
 });
 
-Template.messages.rendered = function() {
-	$("textarea").autosize();
+Template.messaging.rendered = function() {
+	//$("textarea").autosize();
 };
