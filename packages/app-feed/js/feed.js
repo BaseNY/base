@@ -1,7 +1,12 @@
 ITEMS_INCREMENT = 10;
 Session.setDefault('itemsLimit', ITEMS_INCREMENT);
 Template.feed.posts = function() {
-	return Items.find({},{sort: {time: -1}, limit: Session.get('itemsLimit')}).fetch();
+	return Items.find({}, {
+		sort: {
+			time: -1
+		},
+		limit: Session.get('itemsLimit')
+	}).fetch();
 }
 Template.feed.moreResults = function() {
 	return Items.find().count() >= Session.get('itemsLimit');

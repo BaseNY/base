@@ -9,11 +9,13 @@ Template.feedPost.helpers({
 		return timify(this.time);
 	},
 	'isSellPost': function() {
-			return this.buy != true;
+		return this.buy != true;
 	},
 	'feed': function() {
 		return Feeds.findOne({
-                    _id:  {$in: this.feeds}
+			_id: {
+				$in: this.feeds
+			}
 		});
 	},
 	'comments': function() {
