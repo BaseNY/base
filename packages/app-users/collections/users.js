@@ -1,3 +1,5 @@
+// TODO check middle name
+
 Schemas.UserProfile = new SimpleSchema({
 	email: {
 		type: String
@@ -55,9 +57,9 @@ Accounts.onCreateUser(function(options, user) {
 		email: facebook.email,
 		gender: facebook.gender,
 		firstName: facebook.first_name,
-		lastName: facebook.last_name
-	}
-	user.profile.name = user.profile.firstName + ' ' + user.profile.lastName;
+		lastName: facebook.last_name,
+		name: facebook.name
+	};
 	user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
 	//user.lastOnline = new Date();
 	user.subscribed = Feeds.defaultIds;
