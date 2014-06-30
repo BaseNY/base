@@ -21,6 +21,7 @@ collection-behaviours
 roles
 moment
 collection2
+simple-schema
 
 app-schemas
 app-messaging

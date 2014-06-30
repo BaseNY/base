@@ -82,7 +82,9 @@ Accounts.onCreateUser(function(options, user) {
 		});
 	});
 
-	//console.logObj("Created User", user);
+	if (Meteor.settings.public.debug) {
+		console.logObj("Created User", user);
+	}
 
 	check(user, Schemas.User);
 	return user;

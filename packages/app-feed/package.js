@@ -5,11 +5,17 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'underscore',
+		'jquery',
+
+		'meteor',
 		'session',
+
 		'templating',
 		'blaze-layout',
-		'jquery',
+
+		'collection-hooks',
 		'simple-schema',
+		'check',
 
 		'app-schemas'
 	]);
