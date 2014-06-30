@@ -23,7 +23,7 @@ Template.homeSidebarFeeds.helpers({
         if(!Meteor.user()) {
             return [];
         }
-        var subscribed = Meteor.user().profile.subscribed;
+        var subscribed = Meteor.user().subscribed;
         return Feeds.find({_id: {$in: subscribed}});
     },
     'currentFeed': function() {
