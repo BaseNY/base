@@ -10,7 +10,8 @@ Schemas.ConversationUser = new SimpleSchema({
 
 Schemas.Conversation = new SimpleSchema({
 	_id: {
-		type: String
+		type: String,
+		optional: true // TODO fix this
 	},
 	name: {
 		type: String,
@@ -21,7 +22,8 @@ Schemas.Conversation = new SimpleSchema({
 		optional: true
 	},
 	users: {
-		type: [Schemas.ConversationUser]
+		type: [Schemas.ConversationUser],
+		minCount: 2
 	},
 	createdAt: {
 		type: Date
@@ -105,7 +107,8 @@ Conversations.before.insert(function(userId, doc) {
 	if (Meteor.settings.public.debug) {
 		console.logObj('Conversation', doc);
 	}
-	//check(doc, Schemas.Conversation);
+
+	check(doc, Schemas.Conversation);
 });
 
 // userIds is either the recipient or the group of users
