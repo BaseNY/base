@@ -8,7 +8,10 @@ Package.on_use(function(api) {
 		'session',
 		'templating',
 		'blaze-layout',
-		'jquery'
+		'jquery',
+		'simple-schema',
+
+		'app-schemas'
 	]);
 
 	api.add_files('collections/feeds.js', ['client', 'server']);
