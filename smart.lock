@@ -11,7 +11,8 @@
       "collection-behaviours": {},
       "roles": {},
       "moment": {},
-      "collection2": {}
+      "collection2": {},
+      "lodash": {}
     },
     "packages": {
       "iron-router": {
@@ -63,6 +64,11 @@
         "git": "https://github.com/aldeed/meteor-collection2.git",
         "tag": "v0.4.2",
         "commit": "4ff4b707bec8be434919730bf101325adb215444"
+      },
+      "lodash": {
+        "git": "https://github.com/alethes/meteor-lodash.git",
+        "tag": "v0.7.1",
+        "commit": "57bbeb3e21c31b64641f9885bb2f390b84f8b925"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

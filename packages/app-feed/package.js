@@ -4,7 +4,7 @@ Package.describe({
 
 Package.on_use(function(api) {
 	api.use([
-		'underscore',
+		'lodash',
 		'jquery',
 
 		'meteor',
