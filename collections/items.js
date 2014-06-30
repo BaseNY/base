@@ -152,7 +152,7 @@ return temp;
         for(x in itemCommenters) {
             if(itemCommenters[x] != this.userId) {
                 var uId = itemCommenters[x];
-                var postNotif = NoficationsfindOne({
+                var postNotif = Notifications.findOne({
                     userId: uId,
                     postId: id 
                 });
@@ -180,7 +180,7 @@ return temp;
                         actorId: this.userId,
                         read: false,
                         seen: false,
-                        commetners: [Meteor.user().profile.name]
+                        commenters: [Meteor.user().profile.name]
                     }
                     Notifications.insert(tempNotif);
                 }
