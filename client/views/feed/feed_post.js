@@ -21,7 +21,10 @@ Template.feedPost.helpers({
 	},
 	'ownPost': function() {
 		return this.sellerId == Meteor.userId();
-	}
+	},
+        'myImgUrl': function() {
+            return Meteor.user().profile.img;
+        }
 });
 
 Template.feedPost.rendered = function() {
