@@ -16,10 +16,13 @@ Package.on_use(function(api) {
 		'roles',
 		'collection-hooks',
 		'simple-schema',
-		'check'
+		'check',
+
+		'app-main',
+		'app-utils',
+		'app-schemas'
 	]);
 	//api.use(['iron-router', 'fast-render']);
-	api.use(['app-utils', 'app-schemas']);
 
 	//api.add_files('js/controller.js', ['client', 'server']);
 	api.add_files([
