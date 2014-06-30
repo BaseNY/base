@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
-	api.use(['underscore']);
+	api.use(['lodash']);
 
 	api.add_files('main.js', ['client', 'server']);
 });
