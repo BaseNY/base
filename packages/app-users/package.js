@@ -9,6 +9,7 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'npm',
+		'underscore',
 
 		'accounts-base',
 		'service-configuration',
@@ -23,4 +24,5 @@ Package.on_use(function(api) {
 
 	api.add_files('js/config.js', 'server');
 	api.add_files('collections/users.js', 'server');
+	api.add_files('fixtures.js', 'server');
 });
