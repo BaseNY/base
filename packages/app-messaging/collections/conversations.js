@@ -1,5 +1,5 @@
 Schemas.ConversationUser = new SimpleSchema({
-	id: {
+	_id: {
 		type: String
 	},
 	// the name of the conversation for the user designated by the id
@@ -32,7 +32,16 @@ Conversations = new Meteor.Collection('conversations');
 
 Conversations.allow({
 	insert: function(userId, doc) {
-		return userId && (_.contains(doc.users, userId) || Roles.userIsInRole(userId, 'admin'));
+		if (userId) {
+			if (Roles.userIsInRole(userId, 'admin')) {
+				return true;
+			} else {
+				return _.some(doc.users, function(user) {
+					return user._id === userId;
+				});
+			}
+		}
+		return false;
 	},
 	update: function(userId, doc, fieldNames, modifier) {
 		return userId && Roles.userIsInRole(userId, 'admin');
@@ -46,48 +55,28 @@ Conversations.before.insert(function(userId, doc) {
 	if (Meteor.isClient && !Meteor.isLoggedIn()) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
 	}
-	// the document shouldn't be named if there are two people
-	// if there are only 2 people in the conversation and the given doc has a name and the name is not an empty string
-	if (doc.users.length < 2) {
-		throw new Meteor.Error(400, "A conversation must have more than one person");
+
+	if ((doc.processUsers && doc.users.length === 0) || (!doc.processUsers && doc.users.length === 1)) {
+		throw new Meteor.Error(400, "A conversation must have at least two people");
+	} else if (doc.users.length === 1 && doc.users[0] === userId) {
+		throw new Meteor.Error(400, "You cannot send a message to yourself");
 	}
 
-	/*
-	// add the current user
-	if (!_.contains(doc.users, userId)) {
-		doc.users.push(userId);
-	}*/
+	if (!_.has(doc, 'createdAt')) {
+		doc.createdAt = new Date();
+	}
 	// processed user array to match the format of the ConversationUser schema
 	var convUsers = [];
 	// doc.users should be an array of userIds if doc.processUsers is true
 	if (doc.processUsers) {
 		if (doc.users.length === 1) { // if there is only 1 recipient
-			var recipientId = doc.users[0];
-			if (recipientId === userId) {
-				throw new Meteor.Error(400, "You cannot send a message to yourself");
-			}
-			var recipient = Meteor.users.findOne({
-				_id: recipientId
-			}, {
-				'profile.name': true
-			});
-			convUsers.push({
-				id: recipientId,
-				conversationName: Meteor.user().profile.name
-			});
-			convUsers.push({
-				id: userId,
-				conversationName: recipient.profile.name
-			});
+			var recipientId = doc.users[0],
+				recipient = Meteor.users.findOne({_id: recipientId}, {'profile.name': true});
+			convUsers.push({_id: recipientId, conversationName: Meteor.user().profile.name});
+			convUsers.push({_id: userId, conversationName: recipient.profile.name});
 		} else if (doc.user.length > 1) { // if a group of people
 			// all the users in the chat
-			var recipients = Meteor.users.find({
-				_id: {
-					$in: recipientIds
-				}
-			}, {
-				'profile.firstName': true
-			}).fetch();
+			var recipients = Meteor.users.find({_id: {$in: recipientIds}}, {'profile.firstName': true}).fetch();
 			// add the current user to the list
 			recipients.push(Meteor.user());
 			_.each(recipients, function(user) {
@@ -104,20 +93,19 @@ Conversations.before.insert(function(userId, doc) {
 						return memo + ', ' + firstName;
 					}
 				}, '');
-				convUsers.push({
-					id: user._id,
-					conversationName: name
-				});
+				convUsers.push({_id: user._id, conversationName: name});
 			});
 		} else {
 			throw new Meteor.Error(400, "Users array is invalid");
 		}
-	}
-	if (!_.has(doc, 'createdAt')) {
-		doc.createdAt = new Date();
+		doc.users = convUsers;
+		delete doc.processUsers;
 	}
 
-	check(doc, Schemas.Conversation);
+	if (Meteor.settings.public.debug) {
+		console.logObj('Conversation', doc);
+	}
+	//check(doc, Schemas.Conversation);
 });
 
 // userIds is either the recipient or the group of users

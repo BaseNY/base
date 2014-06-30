@@ -7,15 +7,17 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'underscore',
+
+		'meteor',
+
 		'templating',
-		'blaze-layout'
-	]);
-	//api.use(['iron-router', 'fast-render']);
-	api.use([
+		'blaze-layout',
+
 		'roles',
 		'collection-hooks',
 		'simple-schema'
 	]);
+	//api.use(['iron-router', 'fast-render']);
 	api.use(['app-utils', 'app-schemas']);
 
 	//api.add_files('js/controller.js', ['client', 'server']);
