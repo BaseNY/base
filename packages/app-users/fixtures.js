@@ -1,5 +1,4 @@
-if (Meteor.settings.testing) {
-	console.log("Creating user fixtures");
+if (Meteor.settings.public.debug) {
 	var users = [{
 		"_id": "vcyDEte8PWYTrHSbP",
 		"createdAt": new Date("2014-06-29T23:38:11.664Z"),
@@ -157,7 +156,6 @@ if (Meteor.settings.testing) {
 		},
 		"subscribed": ["X8abhsXvM3kwqiZhr", "GmatyKWkHG3oSc3KG", "5TWzrf4KZ6oDZpA58", "65iTyBjmBTvHddEuR", "2oAymQbhBsTSm4Nmd", "mJMxzo3dShtGQAiaT"]
 	}];
-
 
 	if (!Meteor.users.findOne()) {
 		_.each(users, function(user) {

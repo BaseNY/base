@@ -11,6 +11,8 @@ Package.on_use(function(api) {
 		'npm',
 		'underscore',
 
+		'meteor',
+
 		'accounts-base',
 		'service-configuration',
 
