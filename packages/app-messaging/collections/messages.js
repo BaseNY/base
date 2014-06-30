@@ -47,7 +47,7 @@ Messages.allow({
 });
 
 Messages.before.insert(function(userId, doc) {
-	if (!Meteor.isLoggedIn()) {
+	if (Meteor.isClient && !Meteor.isLoggedIn()) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
 	}
 
