@@ -148,9 +148,5 @@ Conversations.create = function(userIds) {
 		callback = arguments[1];
 	}
 
-	if (callback) {
-		Conversations.insert(conv, callback);
-	} else {
-		Conversations.insert(conv);
-	}
+	Conversations.insert(conv, callback);
 };
