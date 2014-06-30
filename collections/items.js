@@ -91,14 +91,25 @@ return temp;
         toAdd = [this.userId, t, url, new Date()];
         comments.push(toAdd);
         console.log(comments);
+
+        var itemCommenters;
+        if(item.commenters)
+            itemCommenters = item.commenters;
+        else
+            itemCommenters = [];
+
+        if(itemCommenters.indexOf(this.userId) == -1)
+            itemCommenters.push(this.userId);
+
         if (!this.userId)
             return -1;
         Items.update({
             _id: id
         }, {
             $set: {
+                commenters: itemCommenters,
                 comments: comments,
-            score: toAdd[3].getTime()
+                score: toAdd[3].getTime()
             }
         });
 
@@ -118,6 +129,7 @@ return temp;
                 }, {
                     $set: {
                         read: false,
+                        seen: false,
                         actorId: this.userId,
                         commenters: postNotif.commenters
                     }
@@ -130,11 +142,51 @@ return temp;
                     postName: item.title,
                     actorId: this.userId,
                     read: false,
+                    seen: false,
                     commenters: [Meteor.user().profile.name]
                 }
                 Notifications.insert(tempNotif);
             }
         }
+        //gives notifications to the commenters
+        for(x in itemCommenters) {
+            if(itemCommenters[x] != this.userId) {
+                var uId = itemCommenters[x];
+                var postNotif = NoficationsfindOne({
+                    userId: uId,
+                    postId: id 
+                });
+                if(postNotif) {
+                    var dupIndx = postNotif.commenters.indexOf(Meteor.user().profile.name);
+                    postNotif.commenters.splice(dupIndex, 1);
+                    postNotif.commenters.push(Meteor.user().profile.name);
+                    Notifications.update({
+                        _id: postNotif._id
+                    }, {
+                        $set: {
+                            read: false,
+                            seen: false,
+                            actorId: this.userId,
+                            commenters: postNotif.commenters
+                        }
+                    });
+
+                }else{
+                    var tempNotif = {
+                        type: 2,
+                        userId: uId,
+                        postId: id,
+                        postName: item.title,
+                        actorId: this.userId,
+                        read: false,
+                        seen: false,
+                        commetners: [Meteor.user().profile.name]
+                    }
+                    Notifications.insert(tempNotif);
+                }
+            }
+        }
+
         return toAdd;
     },
     deletePost: function(id) {

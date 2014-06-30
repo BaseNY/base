@@ -18,7 +18,8 @@ Template.header.events({
         if(Session.get('showNotifs'))
             Session.set('showNotifs', false);
         else {
-            Meteor.call('clearNotif', {});
+            if(Notifications.find({seen:false}))
+                Meteor.call('glossedNotifs');
             Session.set('showNotifs', true);
         }
     }
@@ -38,7 +39,7 @@ Template.header.helpers({
             return false;
     },
     'newNotifs': function() {
-        var num = Notifications.find({read: false}).count();
+        var num = Notifications.find({seen: false}).count();
         if(num)
             return num;
         else
@@ -62,4 +63,8 @@ Template.header.events({
 	'click .fa-sign-out': function() {
 		Meteor.logout();
 	},
+        'click .notif-link': function(e) {
+            Session.set('showNotifs', false);
+            Meteor.call(clearNotif, this._id);
+        }
 });

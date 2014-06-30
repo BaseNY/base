@@ -1,6 +1,15 @@
 Notifications = new Meteor.Collection('notifs');
 
 Meteor.methods({
+    glossedNotifs: function(filter) {
+        Notifications.update({
+            userId: this.userId
+        }, {
+            $set: {
+                seen: true,
+            }
+        });
+    },
     clearNotif: function(filter) {
         if(!filter)
             filter = {};
@@ -20,8 +29,10 @@ Meteor.methods({
  * commenters: [name1, name2, name3, ...]
  * userId: _id
  * postId: _id
+ * actorId: _id
  * postName: -name-
  * read: false
+ * seen: false
  * "Name1, Name2 and -x- others commented on your post: Really Cool Shoes"
  *
  * |someone comments on a post you commented on|
@@ -29,4 +40,5 @@ Meteor.methods({
  * commenters: [name1, name2, name3, ...]
  * postID: _id
  * read: false
+ * seen: false
  */
