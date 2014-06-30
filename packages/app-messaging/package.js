@@ -15,7 +15,8 @@ Package.on_use(function(api) {
 
 		'roles',
 		'collection-hooks',
-		'simple-schema'
+		'simple-schema',
+		'check'
 	]);
 	//api.use(['iron-router', 'fast-render']);
 	api.use(['app-utils', 'app-schemas']);
