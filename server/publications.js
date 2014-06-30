@@ -40,8 +40,11 @@ Meteor.publish('userData', function() {
 Meteor.publish('allUserData', function() {
 	return Meteor.users.find({}, {
 		fields: {
-			'profile': 1,
-			'_id': 1
+			'_id': true,
+			'profile': true,
+			'subscribed': true,
+			'createdAt': true,
+			'friends': true
 		}
 	});
 });
