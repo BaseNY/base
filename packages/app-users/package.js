@@ -18,6 +18,7 @@ Package.on_use(function(api) {
 
 		'simple-schema',
 
+		'app-main',
 		'app-fbgraph',
 		'app-utils',
 		'app-schemas',

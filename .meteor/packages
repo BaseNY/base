@@ -23,6 +23,7 @@ moment
 collection2
 simple-schema
 
+app-main
 app-schemas
 app-messaging
 app-fbgraph
