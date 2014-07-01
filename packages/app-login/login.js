@@ -65,5 +65,27 @@ Template.feedSelectModal.rendered = function() {
 		});
 		Meteor.users.update(Meteor.userId(), {$set: {'subscribed': feedIds}});
 		RModal.closeModal($('#feed-select-modal'));
+                Rmodal.openModal($('#feed-select-modal'));
 	});
 };
+
+Template.zipSelectModal.rendered = function() {
+    $('#zip-select-modal .button').click(function() {
+        var zip = $('#zipInput').val();
+        var l = zip.length;
+        if(!(zip > 10000 && zip < 15000)) {
+            Session.set('zipError', 'Sorry, but you live in an area not supported by base yet. Be sure to check back in the future when we launch elsewhere!');
+        }
+        var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip);
+        if(isValidZip)
+            Meteor.users.update(Meteor.userId(), {$set: {'profile.zip': zip}});
+        else
+            Session.set('zipError', 'The zip code you have entered is not valid!');
+    });
+}
+
+Template.zipSelectModal.error = function() {
+    if(Session.get('zipError'))
+        return Session.get('zipError');
+    return false;
+}
