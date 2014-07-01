@@ -22,7 +22,6 @@ Meteor.startup(function () {
 
 Accounts.onCreateUser(function(options, user) {
     //this part isn't working at all..find out why
-    console.log(user);
     if(user.services.facebook) {
 	//something's odd about this -- not getting user_birthdays for some reason through facebook api
 	temp = user.services.facebook;
@@ -36,10 +35,25 @@ Accounts.onCreateUser(function(options, user) {
 //	options.profile.name = user.profile.name;
 //        console.log(user.profile.find());
 	user.profile = options.profile;
+        user.new = 2;
         user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
         user.profile.fbId = user.services.facebook.id;
 }
 
+Accounts.onLogin(function() {
+    console.log(Meteor.user());
+    if(Meteor.user().new) {
+    Meteor.users.update({
+        _id: Meteor.userId()
+    }, {
+        $inc: {
+            new: -1
+        }
+    });
+    }
+    console.log(Meteor.user().new);
+});
+/*
     var graph = Meteor.require('fbgraph');
     if(user.services.facebook.accessToken) {
         graph.setAccessToken(user.services.facebook.accessToken);
@@ -56,6 +70,7 @@ Accounts.onCreateUser(function(options, user) {
           }, function(err){console.log("couldn't wrap callback");}));
     }
 
+    */
     return user;
 
 });
