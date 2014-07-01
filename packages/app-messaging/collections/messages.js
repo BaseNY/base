@@ -46,6 +46,7 @@ Messages.allow({
 	}
 });
 
+// doc should be given text
 Messages.before.insert(function(userId, doc) {
 	if (Meteor.isClient && !Meteor.isLoggedIn()) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
@@ -56,4 +57,6 @@ Messages.before.insert(function(userId, doc) {
 		posterId: userId,
 		posterName: Meteor.user().profile.name
 	});
+
+	check(doc, Schemas.Message);
 });
