@@ -1,7 +1,7 @@
 Template.pageSignup.helpers({
     'ref': function() {
-        if(this.data)
-            return Meteor.users.find({_id: this.data.ref});
+        if(this)
+            return Meteor.users.findOne({_id: this.refId});
         else
             return null;
     }
