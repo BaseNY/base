@@ -1380,6 +1380,10 @@ section.pageAbout {
     min-width: 400px;
     width: 30%;
     margin: 0 auto; }
+  .page-signup .refBox img {
+    border: 1px solid lightgrey;
+    margin: 0 auto;
+    display: block; }
 
 .page-product {
   margin: 50px auto 100px;
