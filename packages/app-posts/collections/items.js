@@ -2,6 +2,8 @@ Items = new Meteor.Collection('items');
 
 Meteor.methods({
 	addPost: function(p) {
+                if(!Meteor.user())
+                    return -1;
 		console.log('called');
 		p.sellerId = this.userId;
 		p.seller = Meteor.users.findOne({
@@ -79,6 +81,8 @@ Meteor.methods({
 		return temp;
 	},
 	addComment: function(t, id) {
+                if(!Meteor.user())
+                    return -1;
 		item = Items.findOne({
 			_id: id
 		});
