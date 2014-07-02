@@ -18,22 +18,25 @@ Package.on_use(function(api) {
 		'simple-schema',
 		'check',
 
+		'fast-render',
+
 		'app-main',
 		'app-utils',
 		'app-schemas'
 	]);
 	//api.use(['iron-router', 'fast-render']);
 
-	//api.add_files('js/controller.js', ['client', 'server']);
 	api.add_files([
 		'collections/conversations.js',
-		'collections/messages.js'
+		'collections/messages.js',
 	], both);
-	api.add_files(['messaging.html'], 'client');
-	api.add_files('messaging.js', 'client');
+	api.add_files('publications.js', 'server');
+	api.add_files('controller.js', both);
+	api.add_files(['messaging.html', 'messaging.js'], 'client');
 
 	api.export('Messages');
 	api.export('Conversations');
+	api.export('MessagingController');
 });
 
 Package.on_test(function(api) {
