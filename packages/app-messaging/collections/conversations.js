@@ -51,12 +51,32 @@ Conversations.allow({
 	}
 });
 
+// if the users are already processed (doc.processUsers is not present)
+// then that means that the current user (Meteor.user()) is already in doc.users
+// and that the users are already in the form specified by Schemas.ConversationUser
+
+// if doc.processUsers is true
+// that means that the doc.users array is a list of user ids
+// which may or may not include the id of the current user
 Conversations.before.insert(function(userId, doc) {
 	if (Meteor.isClient && !Meteor.isLoggedIn()) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
 	}
 
-	if ((doc.processUsers && doc.users.length === 0) || (!doc.processUsers && doc.users.length === 1)) {
+	// add current user if not in the doc.users array
+	if (doc.processUsers && !_.contains(doc.users, userId)) {
+		doc.users.push(userId);
+	}
+
+	if (doc.users.length === 2) {
+		var userIds = doc.users;
+		if (!doc.processUsers) {
+			userIds = _.pluck(userIds, '_id');
+		}
+		if (Conversations.find({'users._id': {$all: userIds}}, {limit: 1}).count() === 1) {
+			throw new Meteor.Error(400, "You are already in a conversation with this person");
+		}
+	} else if (numUsers < 2) {
 		throw new Meteor.Error(400, "A conversation must have at least two people");
 	} else if (doc.users.length === 1 && doc.users[0] === userId) {
 		throw new Meteor.Error(400, "You cannot send a message to yourself");
@@ -74,21 +94,22 @@ Conversations.before.insert(function(userId, doc) {
 			// processed user array to match the format of the ConversationUser schema
 			var convUsers = [];
 
-			if (doc.users.length === 1) { // if there is only 1 recipient
-				var recipientId = doc.users[0],
-					recipient = Meteor.users.findOne({_id: recipientId}, {'profile.name': true});
-				convUsers.push({_id: recipientId, conversationName: Meteor.user().profile.name});
-				convUsers.push({_id: userId, conversationName: recipient.profile.name});
-			} else if (doc.user.length > 1) { // if a group of people
-				// all the users in the chat
-				var recipients = Meteor.users.find({_id: {$in: recipientIds}}, {'profile.firstName': true}).fetch();
-				// add the current user to the list
-				recipients.push(Meteor.user());
-				_.each(recipients, function(user) {
-					var otherUsers = _.filter(recipients, function(recipient) {
-						return recipient._id !== user._id;
-					});
-					var name = _.reduce(otherUsers, function(memo, user, index, list) {
+			var recipientIds = doc.users;
+			var users = Meteor.users.find({
+				_id: {$in: recipientIds}
+			}, {
+				'profile.name': true,
+				'profile.firstName': true
+			}).fetch();
+			_.each(users, function(user) {
+				var otherUsers = _.filter(users, function(recipient) {
+					return user._id !== recipient._id;
+				});
+				var name;
+				if (users.length == 2) {
+					name = otherUsers[0].profile.name;
+				} else {
+					name = _.reduce(otherUsers, function(memo, user, index, list) {
 						var firstName = user.profile.firstName;
 						if (index === 0) {
 							return memo + firstName;
@@ -98,14 +119,12 @@ Conversations.before.insert(function(userId, doc) {
 							return memo + ', ' + firstName;
 						}
 					}, '');
-					convUsers.push({_id: user._id, conversationName: name});
-				});
-			} else {
-				throw new Meteor.Error(400, "Users array is invalid");
-			}
+				}
+				convUsers.push({_id: user._id, conversationName: name});
+			});
 			doc.users = convUsers;
-			delete doc.processUsers;
 		})();
+		delete doc.processUsers;
 	}
 
 	if (Meteor.settings.public.debug) {
