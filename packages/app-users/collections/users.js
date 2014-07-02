@@ -37,6 +37,9 @@ Schemas.User = new SimpleSchema({
 	subscribed: {
 		type: [String]
 	},
+	conversations: {
+		type: [String]
+	},
 	createdAt: {
 		type: Date
 	},
@@ -65,6 +68,7 @@ Accounts.onCreateUser(function(options, user) {
 	user.subscribed = Feeds.defaultIds;
 	user.createdAt = new Date();
 	user.friends = [];
+	user.conversations = [];
 
 	// getting friends
 	// only adds the friends that have also authorized this app

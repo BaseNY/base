@@ -15,13 +15,6 @@ Meteor.publish('offers', function(selector, options) {
 	return Offers.find(selector);
 });
 
-Meteor.publish('messages', function(selector, options) {
-	if (!selector) {
-		selector = {};
-	}
-	return Messages.find(selector);
-});
-
 Meteor.publish('feeds', function() {
 	return Feeds.find();
 });
