@@ -420,16 +420,16 @@ section.body {
 .right-column {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 74.41059%; }
+  margin-right: 2.3576515979%;
+  width: 74.4105871005%; }
   .right-column:last-child {
     margin-right: 0; }
 
 .left-column {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%; }
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
   .left-column:last-child {
     margin-right: 0; }
 
@@ -586,8 +586,8 @@ header {
         header > .content .dropdown li .icon {
           float: left;
           display: block;
-          margin-right: 2.35765%;
-          width: 14.70196%; }
+          margin-right: 2.3576515979%;
+          width: 14.7019570017%; }
           header > .content .dropdown li .icon:last-child {
             margin-right: 0; }
         header > .content .dropdown li .text {
@@ -595,8 +595,8 @@ header {
           padding: 4px;
           float: left;
           display: block;
-          margin-right: 2.35765%;
-          width: 82.94039%; }
+          margin-right: 2.3576515979%;
+          width: 82.9403914003%; }
           header > .content .dropdown li .text:last-child {
             margin-right: 0; }
 
@@ -636,15 +636,15 @@ header {
     .home-sidebar-content ul li .left {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 10.43705%; }
+      margin-right: 2.3576515979%;
+      width: 10.4370548518%; }
       .home-sidebar-content ul li .left:last-child {
         margin-right: 0; }
     .home-sidebar-content ul li .right {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 87.20529%; }
+      margin-right: 2.3576515979%;
+      width: 87.2052935503%; }
       .home-sidebar-content ul li .right:last-child {
         margin-right: 0; }
       .home-sidebar-content ul li .right i {
@@ -670,8 +670,8 @@ header {
 .home-sidebar {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%;
   padding-top: 24px; }
   .home-sidebar:last-child {
     margin-right: 0; }
@@ -679,8 +679,8 @@ header {
 .home-feed {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 74.41059%; }
+  margin-right: 2.3576515979%;
+  width: 74.4105871005%; }
   .home-feed:last-child {
     margin-right: 0; }
 
@@ -1051,22 +1051,22 @@ td.msgs-right {
   .pageProduct .container {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .pageProduct .container:last-child {
       margin-right: 0; }
     .pageProduct .container .pic {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%; }
+      margin-right: 2.3576515979%;
+      width: 57.3509785009%; }
       .pageProduct .container .pic:last-child {
         margin-right: 0; }
     .pageProduct .container .info {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 40.29137%; }
+      margin-right: 2.3576515979%;
+      width: 40.2913699012%; }
       .pageProduct .container .info:last-child {
         margin-right: 0; }
     .pageProduct .container .product-box {
@@ -1100,15 +1100,15 @@ section.pageAbout {
   section.pageAbout div.trio {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
     section.pageAbout div.trio:last-child {
       margin-right: 0; }
     @media screen and (max-width: 600px)  {
       section.pageAbout div.trio {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
@@ -1176,15 +1176,15 @@ section.pageAbout {
         .pageFeeds .post .post-inner .container .left {
           float: left;
           display: block;
-          margin-right: 2.35765%;
-          width: 14.70196%; }
+          margin-right: 2.3576515979%;
+          width: 14.7019570017%; }
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
         .pageFeeds .post .post-inner .container .right {
           float: left;
           display: block;
-          margin-right: 2.35765%;
-          width: 82.94039%; }
+          margin-right: 2.3576515979%;
+          width: 82.9403914003%; }
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
       .pageFeeds .post .post-inner .actions {
@@ -1205,15 +1205,15 @@ section.pageAbout {
       .pageFeeds .post .commentContainer .left {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 6.17215%; }
+        margin-right: 2.3576515979%;
+        width: 6.1721527019%; }
         .pageFeeds .post .commentContainer .left:last-child {
           margin-right: 0; }
       .pageFeeds .post .commentContainer .right {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 91.4702%; }
+        margin-right: 2.3576515979%;
+        width: 91.4701957002%; }
         .pageFeeds .post .commentContainer .right:last-child {
           margin-right: 0; }
       .pageFeeds .post .commentContainer .commentSmallContainer {
@@ -1235,8 +1235,8 @@ section.pageAbout {
         .pageFeeds .post .commentContainer .comment-inner-container .commentForm {
           float: left;
           display: block;
-          margin-right: 2.35765%;
-          width: 91.4702%;
+          margin-right: 2.3576515979%;
+          width: 91.4701957002%;
           border-color: #cdcdcd;
           height: auto;
           background-color: white;
@@ -1519,8 +1519,8 @@ fieldset.show, div.show {
   .items-container .item {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
     margin-bottom: 2.35765%;
     padding: 10px; }
     .items-container .item:last-child {
@@ -1565,16 +1565,16 @@ fieldset.show, div.show {
 .inbox-left {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%; }
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
   .inbox-left:last-child {
     margin-right: 0; }
 
 .inbox-right {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 74.41059%; }
+  margin-right: 2.3576515979%;
+  width: 74.4105871005%; }
   .inbox-right:last-child {
     margin-right: 0; }
 
@@ -1603,3 +1603,32 @@ fieldset.show, div.show {
   padding: 0.3em 0.4em;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer; }
+
+.messaging-sidebar-item {
+  border: 1px solid gray; }
+
+.messages-container {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px; }
+  .messages-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.messaging-sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
+  .messaging-sidebar:last-child {
+    margin-right: 0; }
+
+.messaging-conversation {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 74.4105871005%; }
+  .messaging-conversation:last-child {
+    margin-right: 0; }
