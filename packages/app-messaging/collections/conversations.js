@@ -108,15 +108,17 @@ Conversations.before.insert(function(userId, doc) {
 		})();
 	}
 
-	// add conversation to users
-	var userIds = _.pluck(doc.users, '_id');
-	Meteor.call('updateUsersConversations', userIds, function(err, recipients) {
-		console.log(err ? err : 'updated users conversations');
-	});
-
 	if (Meteor.settings.public.debug) {
 		console.logObj('Conversation', doc);
 	}
+});
+
+Conversations.after.insert(function(userId, doc) {
+	// add conversation to users
+	var userIds = _.pluck(doc.users, '_id');
+	Meteor.call('updateUsersConversations', userIds, doc._id, function(err, res) {
+		console.log(err ? err : 'updated users conversations');
+	});
 });
 
 // TODO test this
@@ -157,6 +159,6 @@ Conversations.create = function(userIds) {
 
 Meteor.methods({
 	updateUsersConversations: function(userIds, conversationId) {
-		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}});
+		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}}, {multi: true});
 	}
 });
