@@ -8,23 +8,26 @@
 <template name="messagingSidebar">
 	<div class="messaging-sidebar">
 		{{#each conversations}}
-			<div class="messaging-sidebar-item">
+			<a href="/messages/{{this._id}}" class="messaging-sidebar-item">
 				<div class="messaging-sidebar-img">
 					<img src="{{this.otherUser.profile.img}}">
 				</div>
 				<div class="messaging-sidebar-name">{{this.name}}</div>
 				<!--{{json this}}-->
-			</div>
+			</a>
 		{{/each}}
 	</div>
 </template>
 
 <template name="messagingConversation">
 	<div class="messaging-conversation">
-		<div class="messaging-messages">
-			{{#each messages}}
-				{{> message}}
-			{{/each}}
+		{{> messagingInfo}}
+		<div class="messaging-messages-container">
+			<div class="messaging-messages">
+				{{#each messages}}
+					{{> message}}
+				{{/each}}
+			</div>
 		</div>
 		<div class="messaging-reply-container">
 			<textarea id="messaging-reply" placeholder="Message..."></textarea>
@@ -34,6 +37,25 @@
 
 <template name="message">
 	<div class="message">
+		<!--<div class="message-header">
+			<div class="message-poster-name">{{this.posterName}}</div>
+			<div class="message-time"></div>
+		</div>
+		<div class="message-text">{{this.text}}</div>-->
 		{{this.posterName}}: {{this.text}}
+	</div>
+</template>
+
+<template name="messagingInfo">
+	<div class="messaging-info">
+		{{#with conversation}}
+			{{#if this.isGroup}}
+				roflcopter
+			{{else}}
+				<a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
+					{{this.otherUser.profile.name}}
+				</a>
+			{{/if}}
+		{{/with}}
 	</div>
 </template>

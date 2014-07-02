@@ -7,6 +7,7 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'lodash',
+		'velocityjs',
 
 		'meteor',
 		'templating',
@@ -16,6 +17,7 @@ Package.on_use(function(api) {
 		'simple-schema',
 		'collection2',
 		'collection-hooks',
+		'collection-helpers',
 
 		'iron-router',
 		'fast-render',

@@ -28,6 +28,12 @@ Schemas.Conversation = new SimpleSchema({
 
 Conversations = new Meteor.Collection('conversations');
 
+Conversations.helpers({
+	isGroup: function() {
+		return this.users.length > 2;
+	}
+});
+
 Conversations.attachSchema(Schemas.Conversation);
 
 Conversations.allow({

@@ -1,12 +1,33 @@
-.messaging-messages {
+.messaging-info, .messaging-messages-container, .messaging-reply-container {
 	border: 1px solid rgba(0, 0, 0, 0.25);
-	height: 500px;
-	background-color: #FAFAFA;
-	padding: 10px;
+}
+
+.messaging-info {
+	background-color: white;
+	padding: 1em;
+}
+
+.messaging-info-name {
+	font-weight: 600;
+	font-size: 20px;
+	color: #191919;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.messaging-messages-container {
+	border-top: none;
+	height: 400px;
+	background-color: white;
+	overflow: scroll;
+}
+
+.messaging-messages {
+	padding: 1em;
 }
 
 .messaging-reply-container {
-	border: 1px solid rgba(0, 0, 0, 0.25);
 	border-top: none;
 	background-color: #F2F2F2;
 	padding: 10px;
@@ -14,4 +35,5 @@
 
 #messaging-reply {
 	width: 100%;
+	padding: 0.3em;
 }
