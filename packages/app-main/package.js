@@ -3,7 +3,14 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
-	api.use(['lodash']);
+	api.use([
+		'lodash',
 
-	api.add_files('main.js', ['client', 'server']);
+		'iron-router'
+	]);
+
+	api.add_files([
+		'main.js',
+		'routing.js'
+	], ['client', 'server']);
 });

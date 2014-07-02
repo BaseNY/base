@@ -43,7 +43,7 @@ MessagingController = FastRender.RouteController.extend({
 });
 
 Router.map(function() {
-	this.route('messagesredirect', {
+	this.route('messages', {
 		path: '/messages',
 		waitOn: function() {
 			if (Meteor.user().conversationIds.length > 0) {
@@ -55,11 +55,13 @@ Router.map(function() {
 		action: function() {
 			if (this.ready()) {
 				var conversation = Conversations.findOne({_id: {$in: Meteor.user().conversationIds}});
-				this.redirect('/messages/' + conversation._id);
+				if (conversation) {
+					this.redirect('/messages/' + conversation._id);
+				}
 			}
 		}
 	});
-	this.route('messages', {
+	this.route('message', {
 		path: '/messages/:conversationId',
 		controller: MessagingController
 	});
