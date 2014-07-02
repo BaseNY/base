@@ -37,7 +37,8 @@ Meteor.publish('allUserData', function() {
 			'profile': true,
 			'subscribed': true,
 			'createdAt': true,
-			'friends': true
+			'friends': true,
+			'conversationIds': true
 		}
 	});
 });
