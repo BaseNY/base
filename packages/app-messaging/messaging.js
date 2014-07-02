@@ -1,15 +1,15 @@
 Template.messaging.events({
-	'keydown #messages-reply': function(e) {
-		var $message = $("#messages-reply");
+	'keydown #messaging-reply': function(e) {
+		var $message = $("#messaging-reply");
 		// if is enter key and shift key is not held down
 		if (e.which === 13 && !e.shiftKey) {
 			e.preventDefault();
 			if ($message.val()) {
-				var data = {
+				var doc = {
 					text: $message.val(),
-					offerId: this.offerId
+					conversationId: this.conversationId
 				};
-				Messages.insert(data, function(err) {
+				Messages.insert(doc, function(err) {
 					if (err) {
 						console.log(err);
 					} else {

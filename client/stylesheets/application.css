@@ -1604,8 +1604,55 @@ fieldset.show, div.show {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer; }
 
+.messaging-messages {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  height: 500px;
+  background-color: #FAFAFA;
+  padding: 10px; }
+
+.messaging-reply-container {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: none;
+  background-color: #F2F2F2;
+  padding: 10px; }
+
+#messaging-reply {
+  width: 100%; }
+
 .messaging-sidebar-item {
-  border: 1px solid gray; }
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: none;
+  border-right: none;
+  background-color: #FAFAFA;
+  padding: 0.4em; }
+  .messaging-sidebar-item:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .messaging-sidebar-item:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.25); }
+
+.messaging-sidebar-img {
+  float: left;
+  display: block;
+  width: 36.7161326647%; }
+  .messaging-sidebar-img:last-child {
+    width: 26.5677346705%; }
+  .messaging-sidebar-img img {
+    display: block;
+    width: 90%;
+    height: 90%; }
+
+.messaging-sidebar-name {
+  float: left;
+  display: block;
+  width: 73.4322653295%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .messaging-sidebar-name:last-child {
+    width: 63.2838673353%; }
 
 .messages-container {
   max-width: em(3000);
@@ -1620,15 +1667,13 @@ fieldset.show, div.show {
 .messaging-sidebar {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%; }
+  width: 25.5894128995%; }
   .messaging-sidebar:last-child {
-    margin-right: 0; }
+    width: 23.2317613015%; }
 
 .messaging-conversation {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 74.4105871005%; }
+  width: 76.7682386985%; }
   .messaging-conversation:last-child {
-    margin-right: 0; }
+    width: 74.4105871005%; }

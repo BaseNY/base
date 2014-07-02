@@ -1,0 +1,17 @@
+.messaging-messages {
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	height: 500px;
+	background-color: #FAFAFA;
+	padding: 10px;
+}
+
+.messaging-reply-container {
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	border-top: none;
+	background-color: #F2F2F2;
+	padding: 10px;
+}
+
+#messaging-reply {
+	width: 100%;
+}
