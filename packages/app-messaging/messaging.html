@@ -7,17 +7,33 @@
 
 <template name="messagingSidebar">
 	<div class="messaging-sidebar">
-
+		{{#each conversations}}
+			<div class="messaging-sidebar-item">
+				<div class="messaging-sidebar-img">
+					<img src="{{this.otherUser.profile.img}}">
+				</div>
+				<div class="messaging-sidebar-name">{{this.name}}</div>
+				<!--{{json this}}-->
+			</div>
+		{{/each}}
 	</div>
 </template>
 
 <template name="messagingConversation">
 	<div class="messaging-conversation">
-
+		<div class="messaging-messages">
+			{{#each messages}}
+				{{> message}}
+			{{/each}}
+		</div>
+		<div class="messaging-reply-container">
+			<textarea id="messaging-reply" placeholder="Message..."></textarea>
+		</div>
 	</div>
 </template>
 
 <template name="message">
 	<div class="message">
+		{{this.posterName}}: {{this.text}}
 	</div>
 </template>

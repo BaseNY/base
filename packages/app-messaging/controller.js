@@ -24,6 +24,8 @@ MessagingController = FastRender.RouteController.extend({
 						_.each(doc.users, function(user) {
 							if (Meteor.userId() === user._id) {
 								doc.name = user.conversationName;
+							} else if (!doc.otherUser) {
+								doc.otherUser = Meteor.users.findOne(user._id);
 							}
 						});
 						return doc;
@@ -34,7 +36,8 @@ MessagingController = FastRender.RouteController.extend({
 		}
 		return {
 			conversations: conversations,
-			messages: messages
+			messages: messages,
+			conversationId: this.params.conversationId
 		};
 	}
 });

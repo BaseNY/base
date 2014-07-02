@@ -26,7 +26,8 @@ Meteor.publish('userData', function() {
 		fields: {
 			'profile': 1,
 			'_id': 1,
-			'new_message': 1
+			'new_message': 1,
+			'conversationIds': true
 		}
 	});
 });

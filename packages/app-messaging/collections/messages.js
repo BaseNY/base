@@ -11,9 +11,6 @@
 }
 */
 Schemas.Message = new SimpleSchema({
-	_id: {
-		type: String
-	},
 	posterId: {
 		type: String
 	},
@@ -32,6 +29,8 @@ Schemas.Message = new SimpleSchema({
 });
 
 Messages = new Meteor.Collection('messages');
+
+Messages.attachSchema(Schemas.Message);
 
 // TODO update this to allow user to edit their own messages?
 Messages.allow({
@@ -57,6 +56,4 @@ Messages.before.insert(function(userId, doc) {
 		posterId: userId,
 		posterName: Meteor.user().profile.name
 	});
-
-	check(doc, Schemas.Message);
 });

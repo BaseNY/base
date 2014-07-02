@@ -1,0 +1,28 @@
+.messaging-sidebar-item {
+	@include row();
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	border-top: none;
+	border-right: none;
+	background-color: #FAFAFA;
+	padding: 0.4em;
+	&:first-child {
+		border-top: 1px solid rgba(0, 0, 0, 0.25);
+	}
+}
+
+.messaging-sidebar-img {
+	@include span-columns(1 of 3, block-collapse);
+	img {
+		display: block;
+		width: 90%;
+		height: 90%;
+	}
+}
+
+.messaging-sidebar-name {
+	@include span-columns(2 of 3, block-collapse);
+	@include reset-display();
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

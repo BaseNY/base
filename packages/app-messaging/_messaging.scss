@@ -1,2 +1,16 @@
 @import "stylesheets/conversation";
 @import "stylesheets/sidebar";
+
+.messages-container {
+	@include outer-container;
+	max-width: 1000px;
+}
+
+.messaging-sidebar {
+	@include span-columns(3, block-collapse);
+}
+
+.messaging-conversation {
+	@include span-columns(9, block-collapse);
+	@include reset-display;
+}
