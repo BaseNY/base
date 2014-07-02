@@ -18,7 +18,8 @@ Package.on_use(function(api) {
 		'check',
 
 		'app-main',
-		'app-schemas'
+		'app-schemas',
+		'app-utils'
 	]);
 
 	api.add_files('collections/feeds.js', ['client', 'server']);
