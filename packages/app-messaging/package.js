@@ -16,6 +16,7 @@ Package.on_use(function(api) {
 		'roles',
 		'collection-hooks',
 		'simple-schema',
+		'collection2',
 		'check',
 
 		'fast-render',

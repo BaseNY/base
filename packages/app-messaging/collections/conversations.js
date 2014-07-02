@@ -9,9 +9,6 @@ Schemas.ConversationUser = new SimpleSchema({
 });
 
 Schemas.Conversation = new SimpleSchema({
-	_id: {
-		type: String,
-	},
 	name: {
 		type: String,
 		optional: true
@@ -30,6 +27,8 @@ Schemas.Conversation = new SimpleSchema({
 });
 
 Conversations = new Meteor.Collection('conversations');
+
+Conversations.attachSchema(Schemas.Conversation);
 
 Conversations.allow({
 	insert: function(userId, doc) {
@@ -66,9 +65,7 @@ Conversations.before.insert(function(userId, doc) {
 	if (!_.has(doc, 'createdAt')) {
 		doc.createdAt = new Date();
 	}
-	if (!_.has(doc, '_id')) {
-		doc._id = new Meteor.Collection.ObjectID();
-	}
+
 	// doc.users should be an array of userIds if doc.processUsers is true
 	// after processing the results are added to convUsers
 	// which is an array of users according to Schema.ConversationUser
@@ -113,18 +110,18 @@ Conversations.before.insert(function(userId, doc) {
 
 	// add conversation to users
 	var userIds = _.pluck(doc.users, '_id');
-	Meteor.users.update({_id: {$in: userIds}}, {$push: {conversations: doc._id}});
+	Meteor.call('updateUsersConversations', userIds, function(err, recipients) {
+		console.log(err ? err : 'updated users conversations');
+	});
 
 	if (Meteor.settings.public.debug) {
 		console.logObj('Conversation', doc);
 	}
-
-	check(doc, Schemas.Conversation);
 });
 
 // TODO test this
 Conversations.before.remove(function(userId, doc) {
-	Meteor.users.update(userId, {$pull: {conversations: doc._id}});
+	Meteor.users.update(userId, {$pull: {conversationIds: doc._id}});
 });
 
 // userIds is either the recipient or the group of users
@@ -157,3 +154,9 @@ Conversations.create = function(userIds) {
 
 	Conversations.insert(conv, callback);
 };
+
+Meteor.methods({
+	updateUsersConversations: function(userIds, conversationId) {
+		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}});
+	}
+});
