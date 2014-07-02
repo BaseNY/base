@@ -41,3 +41,26 @@ MessagingController = FastRender.RouteController.extend({
 		};
 	}
 });
+
+Router.map(function() {
+	this.route('messagesredirect', {
+		path: '/messages',
+		waitOn: function() {
+			if (Meteor.user().conversationIds.length > 0) {
+				return Meteor.subscribe('conversations', {
+					_id: {$in: Meteor.user().conversationIds}
+				});
+			}
+		},
+		action: function() {
+			if (this.ready()) {
+				var conversation = Conversations.findOne({_id: {$in: Meteor.user().conversationIds}});
+				this.redirect('/messages/' + conversation._id);
+			}
+		}
+	});
+	this.route('messages', {
+		path: '/messages/:conversationId',
+		controller: MessagingController
+	});
+});

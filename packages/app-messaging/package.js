@@ -9,34 +9,36 @@ Package.on_use(function(api) {
 		'lodash',
 
 		'meteor',
-
 		'templating',
 		'blaze-layout',
 
 		'roles',
-		'collection-hooks',
 		'simple-schema',
 		'collection2',
-		'check',
+		'collection-hooks',
 
+		'iron-router',
 		'fast-render',
 
 		'app-main',
 		'app-utils',
 		'app-schemas'
 	]);
-	//api.use(['iron-router', 'fast-render']);
 
 	api.add_files([
 		'collections/conversations.js',
 		'collections/messages.js',
 	], both);
-	api.add_files('publications.js', 'server');
-	api.add_files('controller.js', both);
-	api.add_files(['messaging.html', 'messaging.js'], 'client');
+	api.add_files('server/publications.js', 'server');
+	api.add_files('both/routing.js', both);
+	api.add_files([
+		'views/messaging.html',
+		'views/messaging.js'
+	], 'client');
 
 	api.export('Messages');
 	api.export('Conversations');
+
 	api.export('MessagingController');
 });
 
