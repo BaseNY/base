@@ -13,7 +13,8 @@
       "moment": {},
       "collection2": {},
       "lodash": {},
-      "kadira": {}
+      "kadira": {},
+      "collection-helpers": {}
     },
     "packages": {
       "iron-router": {
@@ -75,6 +76,11 @@
         "git": "https://github.com/meteorhacks/kadira.git",
         "tag": "v2.4.5",
         "commit": "fa9a6446f6efb576953f99c01c03474f56f3852e"
+      },
+      "collection-helpers": {
+        "git": "https://github.com/dburles/meteor-collection-helpers.git",
+        "tag": "v0.2.9",
+        "commit": "912be6d15a59b9ee4519bf73000be70dd141b655"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
