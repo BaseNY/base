@@ -22,6 +22,10 @@ roles
 moment
 collection2
 simple-schema
+lodash
+kadira
+collection-helpers
+velocityjs
 
 app-main
 app-schemas
@@ -29,5 +33,3 @@ app-messaging
 app-fbgraph
 app-feed
 app-users
-lodash
-kadira

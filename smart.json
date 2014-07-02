@@ -11,6 +11,7 @@
     "moment": {},
     "collection2": {},
     "lodash": {},
-    "kadira": {}
+    "kadira": {},
+    "collection-helpers": {}
   }
 }
