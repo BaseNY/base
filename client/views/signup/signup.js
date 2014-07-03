@@ -36,3 +36,18 @@ Template.pageSignup.rendered = function() {
     });
     console.log(this);
 }
+
+Template.pageReferralCenter.helpers({
+    'refCount': function() {
+        if(Meteor.user().profile.referrals)
+            return Meteor.user().profile.referrals.length;
+        else
+            return 0;
+    },
+    'referrals': function() {
+        if(Meteor.user().profile.referrals)
+            return Meteor.users.find({_id: {$in: Meteor.user().profile.referrals}});
+        else 
+            return null;
+    }
+});

@@ -1366,7 +1366,10 @@ section.pageAbout {
   width: 70%;
   margin: 0 auto; }
   .page-signup hr {
-    border: 1px solid lightgrey; }
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 0px;
+    border-bottom: 1px solid lightgrey; }
   .page-signup h1, .page-signup h3 {
     margin: 0 auto;
     text-align: center;
@@ -1374,6 +1377,12 @@ section.pageAbout {
     font-size: 1.5em;
     margin-bottom: 16px;
     width: auto; }
+  .page-signup h2 {
+    font-size: 2em;
+    font-weight: normal;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 16px; }
   .page-signup h1 {
     font-weight: 300;
     margin-top: 24px;
@@ -1392,6 +1401,10 @@ section.pageAbout {
     border: 1px solid lightgrey;
     margin: 0 auto;
     display: block; }
+  .page-signup .refBoxMulti img {
+    border: 1px solid lightgrey;
+    margin: 0 auto;
+    display: inline-block; }
 
 .page-product {
   margin: 50px auto 100px;
