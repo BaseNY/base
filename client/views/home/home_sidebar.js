@@ -5,7 +5,7 @@ Template.homeSidebar.rendered = function() {
 
 Template.homeSidebar.helpers({
     'feeds': function() {
-        var subscribed = Meteor.user().profile.subscribed;
+        var subscribed = Meteor.user().subscribed;
         return Feeds.find({_id: {$in: subscribed}});
     },
 'currentFeed': function() {

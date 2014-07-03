@@ -12,8 +12,12 @@ var tempFBLogCode = function() {
 			alert(e)
 		} else {
 			console.log("You have logged in!");
+            if(Meteor.user().new) {
             $('#modal-signup').css('display','none');
             $('#modal-feeds').css('display','block');
+            } else {
+                Template.modalOverlay.close();  
+            }
 		}
 	})
 }
@@ -32,7 +36,7 @@ Template.header.events({
 
 Template.modalFeeds.feeds = function() {
     if(Meteor.user()) {
-        var subscribed = Meteor.user().profile.subscribed;
+        var subscribed = Meteor.user().subscribed;
         return Feeds.find({_id: {$in: subscribed}});
     }else{
         return null;
