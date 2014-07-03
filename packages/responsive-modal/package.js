@@ -11,7 +11,9 @@ Package.on_use(function(api, where) {
 
 		'velocityjs'
 	]);
+
 	api.add_files([
+		'responsive-modal.css',
 		'responsive-modal.js',
 	], 'client');
 });
