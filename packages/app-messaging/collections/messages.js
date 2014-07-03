@@ -51,10 +51,6 @@ Messages.before.insert(function(userId, doc) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
 	}
 
-	if (!_.has(doc, 'conversationId')) {
-		doc.conversationId = Conversations.insert
-	}
-
 	_.defaults(doc, {
 		createdAt: new Date(),
 		posterId: userId,
@@ -63,15 +59,35 @@ Messages.before.insert(function(userId, doc) {
 });
 
 Messages.send = function(text, recipientId, callback) {
-	Conversations.create(recipientId, function(err, res) {
-		if (err) {
-			console.log(err);
-		} else {
+	try {
+		Conversations.create(recipientId, function(err, res) {
+			if (err) {
+				console.log(err);
+			} else {
+				var doc = {
+					text: text,
+					conversationId: res
+				};
+				Messages.insert(doc, function(err, res) {
+					if (err) {
+						console.log(err);
+					}
+				});
+			}
+		});
+	} catch(err) {
+		if (err.error === 410) {
+			var userIds = [recipientId, Meteor.userId()];
+			var conv = Conversations.findOne({'users._id': {$all: userIds}});
 			var doc = {
 				text: text,
-				conversationId: res
+				conversationId: conv._id
 			};
-			Messages.insert(doc, callback);
+			Messages.insert(doc, function(err, res) {
+				if (err) {
+					console.log(err);
+				}
+			});
 		}
-	});
+	}
 }
