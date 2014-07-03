@@ -80,16 +80,6 @@ updateFriends: function() {
 	resetUsers: function() {
 		Meteor.users.remove({});
 	},
-    updateSubs: function(l) {
-        console.log(l);
-        Meteor.users.update({
-            _id: Meteor.userId()
-        }, {
-            $set: {
-                'profile.subscribed': l
-            }
-        });
-    },
 	checkFriends: function() {
 		var graph = Meteor.require('fbgraph');
           	graph.setAccessToken(Meteor.user().services.facebook.accessToken);
