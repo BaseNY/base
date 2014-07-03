@@ -1,0 +1,141 @@
+@import '../bourbon/bourbon';
+
+@mixin rmodal-close(
+	$size,
+	$width: 2px,
+	$margin: 10px,
+	$color: #707070,
+	$hover-color: darken($color, 15%),
+	$background-color: transparent,
+	$color-with-background: #707070
+) {
+	@include transition(background-color 0.2s);
+	@if $background-color != transparent {
+		$size: $size * (3/5);
+	}
+	@if $size % 2 == 1 {
+		$size: $size + 1;
+	}
+	@if $background-color != transparent {
+		padding: round($size / 4);
+	}
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: $size;
+	height: $size;
+	margin: $margin;
+	margin-bottom: 0;
+	cursor: pointer;
+	color: $color;
+	background-color: $background-color;
+	&:before, &:after {
+		@include transition(background-color 0.2s);
+		display: block;
+		content:'';
+		@if $background-color == transparent {
+			background: $color;
+		} @else {
+			background: $color-with-background;
+		}
+	}
+	&:hover {
+		@if $background-color != transparent {
+			background-color: darken($color-with-background, 20%);
+		}
+		&:before, &:after {
+			@if $background-color == transparent {
+				background: $hover-color;
+			} @else {
+				background: $color-with-background;
+			}
+		}
+	}
+	// horizontal
+	&:before {
+		@include transform(translateY(-50%) rotateZ(45deg));
+		width: $size;
+		height: $width;
+		margin-top: 50%;
+	}
+	// vertical
+	&:after {
+		@include transform(translateX(-50%) translateY(-$width) rotateZ(45deg));
+		width: $width;
+		height: $size;
+		margin-top: -50%;
+		margin-left: 50%;
+	}
+}
+@mixin rmodal-breakpoint($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		.rmodal-window {
+			@include transform(none);
+			width: auto;
+			height: auto;
+			margin: 0;
+			border-radius: 0;
+		}
+	}
+}
+@mixin rmodal(
+	$border-radius: 4px,
+	$modal-z: 1000,
+	$modal-background-color: #2c3e50, // transparent rgba(0, 0, 0, 0.35)
+	$window-z: 1010,
+	$window-margin-vertical: 50px,
+	$window-width: 500px,
+	$window-height: auto,
+	$close-size: 20px,
+	$header-background-color: #C9C9C9,
+	$padding: 1.5em
+) {
+	.rmodal {
+		@include transform-style(preserve-3d);
+		display: none;
+		position: fixed;
+		z-index: $modal-z;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: auto;
+		background-color: $modal-background-color;
+	}
+	.rmodal-window {
+		@include transform(translateX(-50%));
+		position: relative;
+		z-index: $window-z;
+		overflow: hidden;
+		width: $window-width;
+		height: $window-height;
+		margin-top: $window-margin-vertical;
+		margin-bottom: $window-margin-vertical;
+		margin-left: 50%;
+		padding: $padding;
+		border-radius: $border-radius;
+		//display: none;
+		background-color: white;
+		box-shadow: rgba(0, 0, 0, 0.2) 0 0 45px 5px;
+	}
+	.rmodal-header {
+		@include clearfix;
+		height: auto;
+		background-color: $header-background-color;
+		.rmodal-close {
+			float: right;
+		}
+	}
+	.rmodal-title {
+		float: left;
+		margin: 0;
+	}
+	.rmodal-close {
+		@include rmodal-close($size: $close-size);
+	}
+	.rmodal-close.rmodal-circle {
+		@include rmodal-close($size: $close-size, $background-color: #AAA, $color-with-background: $header-background-color);
+		border-radius: 50%;
+	}
+}
+@include rmodal();

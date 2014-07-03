@@ -1,0 +1,153 @@
+.rmodal {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background-color: #2c3e50; }
+
+.rmodal-window {
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: relative;
+  z-index: 1010;
+  overflow: hidden;
+  width: 500px;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 50%;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 45px 5px; }
+
+.rmodal-header {
+  height: auto;
+  background-color: #c9c9c9; }
+  .rmodal-header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .rmodal-header .rmodal-close {
+    float: right; }
+
+.rmodal-title {
+  float: left;
+  margin: 0;
+  padding: 0.8em; }
+
+.rmodal-close {
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  margin-bottom: 0;
+  cursor: pointer;
+  color: #707070;
+  background-color: transparent; }
+  .rmodal-close:before, .rmodal-close:after {
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    display: block;
+    content: '';
+    background: #707070; }
+  .rmodal-close:hover:before, .rmodal-close:hover:after {
+    background: #4a4a4a; }
+  .rmodal-close:before {
+    -webkit-transform: translateY(-50%) rotateZ(45deg);
+    -moz-transform: translateY(-50%) rotateZ(45deg);
+    -ms-transform: translateY(-50%) rotateZ(45deg);
+    -o-transform: translateY(-50%) rotateZ(45deg);
+    transform: translateY(-50%) rotateZ(45deg);
+    width: 20px;
+    height: 2px;
+    margin-top: 50%; }
+  .rmodal-close:after {
+    -webkit-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    -moz-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    -ms-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    -o-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    width: 2px;
+    height: 20px;
+    margin-top: -50%;
+    margin-left: 50%; }
+
+.rmodal-close.rmodal-circle {
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  padding: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  margin-bottom: 0;
+  cursor: pointer;
+  color: #707070;
+  background-color: #aaaaaa;
+  border-radius: 50%; }
+  .rmodal-close.rmodal-circle:before, .rmodal-close.rmodal-circle:after {
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    display: block;
+    content: '';
+    background: #c9c9c9; }
+  .rmodal-close.rmodal-circle:hover {
+    background-color: #969696; }
+    .rmodal-close.rmodal-circle:hover:before, .rmodal-close.rmodal-circle:hover:after {
+      background: #c9c9c9; }
+  .rmodal-close.rmodal-circle:before {
+    -webkit-transform: translateY(-50%) rotateZ(45deg);
+    -moz-transform: translateY(-50%) rotateZ(45deg);
+    -ms-transform: translateY(-50%) rotateZ(45deg);
+    -o-transform: translateY(-50%) rotateZ(45deg);
+    transform: translateY(-50%) rotateZ(45deg);
+    width: 12px;
+    height: 2px;
+    margin-top: 50%; }
+  .rmodal-close.rmodal-circle:after {
+    -webkit-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    -moz-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    -ms-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    -o-transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    transform: translateX(-50%) translateY(-2px) rotateZ(45deg);
+    width: 2px;
+    height: 12px;
+    margin-top: -50%;
+    margin-left: 50%; }
+
+.rmodal-body {
+  padding: 1.5em; }
+
+@media screen and (max-width: 500px) {
+  .rmodal-window {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 0; } }
