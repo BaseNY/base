@@ -60,7 +60,7 @@ Messages.before.insert(function(userId, doc) {
 
 Messages.send = function(text, recipientId, callback) {
 	try {
-		Conversations.create(recipientId, function(err, res) {
+		return Conversations.create(recipientId, function(err, res) {
 			if (err) {
 				console.log(err);
 			} else {
