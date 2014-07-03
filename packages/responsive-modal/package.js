@@ -13,7 +13,6 @@ Package.on_use(function(api, where) {
 	]);
 
 	api.add_files([
-		'responsive-modal.css',
-		'responsive-modal.js',
+		'responsive-modal.js'
 	], 'client');
 });
