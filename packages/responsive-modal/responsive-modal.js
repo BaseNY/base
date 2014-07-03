@@ -51,7 +51,7 @@
 		});
 	};
 
-	window.responsiveModal = function(options) {
+	window.RModal = function(options) {
 		// set default options
 		if (!options) {
 			options = {};
@@ -87,6 +87,6 @@
 		});
 	};
 
-	responsiveModal.closeModal = closeModal;
-	responsiveModal.openModal = openModal;
+	RModal.closeModal = closeModal;
+	RModal.openModal = openModal;
 })();

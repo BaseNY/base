@@ -81,13 +81,13 @@
 @mixin rmodal(
 	$border-radius: 4px,
 	$modal-z: 1000,
-	$modal-background-color: #2c3e50, // transparent rgba(0, 0, 0, 0.35)
+	$modal-background-color: rgba(0, 0, 0, .5),
 	$window-z: 1010,
 	$window-margin-vertical: 50px,
 	$window-width: 500px,
 	$window-height: auto,
 	$close-size: 20px,
-	$header-background-color: #C9C9C9,
+	$header-background-color: white,
 	$padding: 1.5em
 ) {
 	.rmodal {
@@ -129,6 +129,7 @@
 	.rmodal-title {
 		float: left;
 		margin: 0;
+		width: 100%;
 	}
 	.rmodal-close {
 		@include rmodal-close($size: $close-size);
