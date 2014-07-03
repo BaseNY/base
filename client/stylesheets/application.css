@@ -617,42 +617,42 @@ header {
   .footer > span {
     margin-left: 20px; }
 
-.home-sidebar-content {
+.home-sidebar-content, .modal-feeds {
   width: 85%; }
-  .home-sidebar-content h3 {
+  .home-sidebar-content h3, .modal-feeds h3 {
     color: grey;
     font-weight: bold;
     margin: 8px 0px 2px; }
-  .home-sidebar-content ul li {
+  .home-sidebar-content ul li, .modal-feeds ul li {
     padding: 4px;
     max-width: em(3000);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4px; }
-    .home-sidebar-content ul li:after {
+    .home-sidebar-content ul li:after, .modal-feeds ul li:after {
       content: "";
       display: table;
       clear: both; }
-    .home-sidebar-content ul li .left {
+    .home-sidebar-content ul li .left, .modal-feeds ul li .left {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 10.43705%; }
-      .home-sidebar-content ul li .left:last-child {
+      .home-sidebar-content ul li .left:last-child, .modal-feeds ul li .left:last-child {
         margin-right: 0; }
-    .home-sidebar-content ul li .right {
+    .home-sidebar-content ul li .right, .modal-feeds ul li .right {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 87.20529%; }
-      .home-sidebar-content ul li .right:last-child {
+      .home-sidebar-content ul li .right:last-child, .modal-feeds ul li .right:last-child {
         margin-right: 0; }
-      .home-sidebar-content ul li .right i {
+      .home-sidebar-content ul li .right i, .modal-feeds ul li .right i {
         float: right; }
-    .home-sidebar-content ul li:hover {
+    .home-sidebar-content ul li:hover, .modal-feeds ul li:hover {
       background-color: #E6E6E6;
       cursor: pointer; }
-    .home-sidebar-content ul li.checked {
+    .home-sidebar-content ul li.checked, .modal-feeds ul li.checked {
       background-color: #33B5E5;
       font-weight: bold;
       color: white; }

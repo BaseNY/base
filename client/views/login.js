@@ -12,7 +12,8 @@ var tempFBLogCode = function() {
 			alert(e)
 		} else {
 			console.log("You have logged in!");
-			Template.modalOverlay.close();
+            $('#modal-signup').css('display','none');
+            $('#modal-feeds').css('display','block');
 		}
 	})
 }
@@ -29,6 +30,31 @@ Template.header.events({
 	}
 });
 
+Template.modalFeeds.feeds = function() {
+    if(Meteor.user()) {
+        var subscribed = Meteor.user().profile.subscribed;
+        return Feeds.find({_id: {$in: subscribed}});
+    }else{
+        return null;
+    }
+}
+
+Template.modalFeeds.events({
+    'click li': function(e) {
+        $(e.currentTarget).toggleClass('checked');
+    },
+    'click .button': function() {
+        var feeds = $('#modalFeedsList').children().children('.checked');
+        var feedIds = [];
+        _.each(feeds, function(x) {
+            feedIds.push($(x).attr('name'));
+        });
+        Meteor.call('updateSubs', feedIds, function(e,r) {
+           Template.modalOverlay.close();  
+        });
+    }
+});
+
 Template.modalContainer.bid = function() {
 	if (Session.get('bid'))
 		return true;
@@ -38,6 +64,7 @@ Template.modalOverlay.close = function() {
 	$('#modal-container').css('display', 'none');
 	$('#modal-bid').css('display', 'none');
 	$('#modal-signup').css('display', 'none');
+    $('#modal-feeds').css('display', 'none');
 }
 
 Template.modalOverlay.events({
