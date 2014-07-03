@@ -49,5 +49,8 @@ Template.pageReferralCenter.helpers({
             return Meteor.users.find({_id: {$in: Meteor.user().profile.referrals}});
         else 
             return null;
+    },
+    'refUrl': function() {
+        return window.location.host + "/signup?ref=" + Meteor.userId();
     }
 });
