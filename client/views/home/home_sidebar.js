@@ -33,6 +33,9 @@ Template.homeSidebarFeeds.helpers({
     },
     'allFeed': function() {
         return !Router.current().data();
+    },
+    'myId': function() {
+        return Meteor.user()._id;
     }
 });
 
