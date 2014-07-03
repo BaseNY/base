@@ -9,6 +9,10 @@ Schemas.ConversationUser = new SimpleSchema({
 });
 
 Schemas.Conversation = new SimpleSchema({
+	_id: {
+		type: String,
+		optional: true
+	},
 	name: {
 		type: String,
 		optional: true
@@ -34,7 +38,7 @@ Conversations.helpers({
 	}
 });
 
-Conversations.attachSchema(Schemas.Conversation);
+//Conversations.attachSchema(Schemas.Conversation);
 
 Conversations.allow({
 	insert: function(userId, doc) {
@@ -136,6 +140,9 @@ Conversations.before.insert(function(userId, doc) {
 	if (Meteor.settings.public.debug) {
 		console.logObj('Conversation', doc);
 	}
+	console.logObj('Conversation', doc);
+
+	check(doc, Schemas.Conversation);
 });
 
 Conversations.after.insert(function(userId, doc) {

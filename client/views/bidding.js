@@ -1,16 +1,19 @@
 Template.bidding.events({
 	'click #sendMsg': function() {
-		var item = Items.findOne({
-			_id: this._id
-		});
+		var item = Items.findOne({_id: this._id});
 		console.log("bidding item:");
 		console.log(item);
 		console.log();
 
-		var msg = {
-			text: $('#message').val()
-		};
+		Messages.send($('#message').val(), item.sellerId, function(err, res) {
+			if (err) {
+				console.log(err);
+			} else {
+				alert('Your message has been sent.');
+			}
+		});
 
+		/*
 		Meteor.call("createOffer", item, msg, function(err, data) {
 			if (err) {
 				console.log(err);
@@ -18,7 +21,7 @@ Template.bidding.events({
 				console.log(data);
 				alert('your message has been sent');
 			}
-		});
+		});*/
 
 		/*
 		if (item.seller._id == Meteor.userId()) {
