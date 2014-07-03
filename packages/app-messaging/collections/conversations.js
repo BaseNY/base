@@ -84,12 +84,12 @@ Conversations.before.insert(function(userId, doc) {
 			userIds = _.pluck(userIds, '_id');
 		}
 		if (Conversations.find({'users._id': {$all: userIds}}, {limit: 1}).count() === 1) {
-			throw new Meteor.Error(400, "You are already in a conversation with this person");
+			throw new Meteor.Error(410, "You are already in a conversation with this person");
 		}
 	} else if (numUsers < 2) {
-		throw new Meteor.Error(400, "A conversation must have at least two people");
+		throw new Meteor.Error(411, "A conversation must have at least two people");
 	} else if (doc.users.length === 1 && doc.users[0] === userId) {
-		throw new Meteor.Error(400, "You cannot send a message to yourself");
+		throw new Meteor.Error(412, "You cannot send a message to yourself");
 	}
 
 	if (!_.has(doc, 'createdAt')) {
