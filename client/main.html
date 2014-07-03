@@ -45,7 +45,7 @@
 					</a>
                     <a id="show-notifs" href="" class="link">
                         <i class="fa fa-bell" target="notif-dropdown"><span>{{newNotifs}}</span></i>
-                        <ul class="dropdown hidse {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
+                        <ul class="dropdown hide {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
                             {{#if notifs}}
                             {{#each notifs}}
                             <a id = "{{this._id}}" class = "notif-link" href="/post/{{this.postId}}">
