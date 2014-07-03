@@ -34,9 +34,6 @@ Template.homeSidebarFeeds.helpers({
     'allFeed': function() {
         return !Router.current().data();
     },
-    'myId': function() {
-        return Meteor.user()._id;
-    }
 });
 
 Template.homeSidebarFilters.helpers({
@@ -60,7 +57,10 @@ Template.homeSidebarUser.helpers({
 		return Session.get('degrees') == 1;
 	else
 		return false;
-}
+    },
+    'myId': function() {
+        return Meteor.user()._id;
+    }
 });
 
 Template.homeSidebarFilters.events({
