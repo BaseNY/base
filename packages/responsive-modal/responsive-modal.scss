@@ -67,6 +67,17 @@
 		margin-left: 50%;
 	}
 }
+@mixin rmodal-breakpoint($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		.rmodal-window {
+			@include transform(none);
+			width: auto;
+			height: auto;
+			margin: 0;
+			border-radius: 0;
+		}
+	}
+}
 @mixin rmodal(
 	$border-radius: 4px,
 	$modal-z: 1000,
@@ -76,9 +87,8 @@
 	$window-width: 500px,
 	$window-height: auto,
 	$close-size: 20px,
-	$title-padding: 0.8em,
 	$header-background-color: #C9C9C9,
-	$body-padding: 1.5em
+	$padding: 1.5em
 ) {
 	.rmodal {
 		@include transform-style(preserve-3d);
@@ -102,17 +112,11 @@
 		margin-top: $window-margin-vertical;
 		margin-bottom: $window-margin-vertical;
 		margin-left: 50%;
+		padding: $padding;
 		border-radius: $border-radius;
 		//display: none;
 		background-color: white;
 		box-shadow: rgba(0, 0, 0, 0.2) 0 0 45px 5px;
-		@media screen and (max-width: $window-width) {
-			@include transform(none);
-			width: auto;
-			height: auto;
-			margin: 0;
-			border-radius: 0;
-		}
 	}
 	.rmodal-header {
 		@include clearfix;
@@ -125,7 +129,6 @@
 	.rmodal-title {
 		float: left;
 		margin: 0;
-		padding: $title-padding;
 	}
 	.rmodal-close {
 		@include rmodal-close($size: $close-size);
@@ -133,9 +136,6 @@
 	.rmodal-close.rmodal-circle {
 		@include rmodal-close($size: $close-size, $background-color: #AAA, $color-with-background: $header-background-color);
 		border-radius: 50%;
-	}
-	.rmodal-body {
-		padding: $body-padding;
 	}
 }
 @include rmodal();

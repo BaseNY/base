@@ -53,6 +53,9 @@
 
 	window.responsiveModal = function(options) {
 		// set default options
+		if (!options) {
+			options = {};
+		}
 		_.defaults(options, {
 			breakpoint: 500 // the width in px at which the modal fills the window
 		});
@@ -83,4 +86,7 @@
 			});
 		});
 	};
+
+	responsiveModal.closeModal = closeModal;
+	responsiveModal.openModal = openModal;
 })();
