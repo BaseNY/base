@@ -1,0 +1,40 @@
+.page-signup {
+    width:70%;
+    margin:0 auto;
+    hr {
+        border:1px solid lightgrey;
+    }
+    h1, h3 {
+        margin: 0 auto;
+        text-align: center;
+        font-weight:300;
+        font-size: 1.5em;
+        margin-bottom:16px;
+        width:auto;
+    }
+    h1 {
+        font-weight: 300;
+        margin-top:24px;
+        margin-bottom:16px;
+        font-size:4em;
+        border-bottom:1px solid lightgrey;
+    }
+    h5 {
+        text-align:center;
+        font-weight:normal;
+        margin-top:8px;
+    }
+    .fb-button {
+        min-width:400px;
+        width:30%;
+        margin:0 auto;
+    }
+    .refBox {
+        img {
+        border: 1px solid lightgrey;
+        margin:0 auto;
+        display:block;
+        
+        }
+    }
+}
