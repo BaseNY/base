@@ -76,7 +76,9 @@ Accounts.onCreateUser(function(options, user) {
 	};
 	user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
 	user.lastOnline = null; //new Date();
+    console.log(Feeds.defaultIds);
 	user.subscribed = Feeds.defaultIds;
+    console.log(user.subscribed);
 	user.createdAt = new Date();
 	user.friendIds = [];
 	user.conversationIds = [];

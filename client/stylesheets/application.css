@@ -407,7 +407,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif; }
 
 section.body {
-  width: 85%;
   max-width: 900px;
   max-width: em(3000);
   margin-left: auto;
@@ -420,16 +419,16 @@ section.body {
 .right-column {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 74.4105871005%; }
+  margin-right: 2.35765%;
+  width: 74.41059%; }
   .right-column:last-child {
     margin-right: 0; }
 
 .left-column {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%; }
+  margin-right: 2.35765%;
+  width: 23.23176%; }
   .left-column:last-child {
     margin-right: 0; }
 
@@ -586,8 +585,8 @@ header {
         header > .content .dropdown li .icon {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 14.7019570017%; }
+          margin-right: 2.35765%;
+          width: 14.70196%; }
           header > .content .dropdown li .icon:last-child {
             margin-right: 0; }
         header > .content .dropdown li .text {
@@ -595,8 +594,8 @@ header {
           padding: 4px;
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 82.9403914003%; }
+          margin-right: 2.35765%;
+          width: 82.94039%; }
           header > .content .dropdown li .text:last-child {
             margin-right: 0; }
 
@@ -636,15 +635,15 @@ header {
     .home-sidebar-content ul li .left, .modal-feeds ul li .left {
       float: left;
       display: block;
-      margin-right: 2.3576515979%;
-      width: 10.4370548518%; }
+      margin-right: 2.35765%;
+      width: 10.43705%; }
       .home-sidebar-content ul li .left:last-child, .modal-feeds ul li .left:last-child {
         margin-right: 0; }
     .home-sidebar-content ul li .right, .modal-feeds ul li .right {
       float: left;
       display: block;
-      margin-right: 2.3576515979%;
-      width: 87.2052935503%; }
+      margin-right: 2.35765%;
+      width: 87.20529%; }
       .home-sidebar-content ul li .right:last-child, .modal-feeds ul li .right:last-child {
         margin-right: 0; }
       .home-sidebar-content ul li .right i, .modal-feeds ul li .right i {
@@ -670,8 +669,8 @@ header {
 .home-sidebar {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%;
+  margin-right: 2.35765%;
+  width: 23.23176%;
   padding-top: 24px; }
   .home-sidebar:last-child {
     margin-right: 0; }
@@ -679,8 +678,8 @@ header {
 .home-feed {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 74.4105871005%; }
+  margin-right: 2.35765%;
+  width: 74.41059%; }
   .home-feed:last-child {
     margin-right: 0; }
 
@@ -1052,22 +1051,22 @@ td.msgs-right {
   .pageProduct .container {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
+    margin-right: 2.35765%;
     width: 100%; }
     .pageProduct .container:last-child {
       margin-right: 0; }
     .pageProduct .container .pic {
       float: left;
       display: block;
-      margin-right: 2.3576515979%;
-      width: 57.3509785009%; }
+      margin-right: 2.35765%;
+      width: 57.35098%; }
       .pageProduct .container .pic:last-child {
         margin-right: 0; }
     .pageProduct .container .info {
       float: left;
       display: block;
-      margin-right: 2.3576515979%;
-      width: 40.2913699012%; }
+      margin-right: 2.35765%;
+      width: 40.29137%; }
       .pageProduct .container .info:last-child {
         margin-right: 0; }
     .pageProduct .container .product-box {
@@ -1101,15 +1100,15 @@ section.pageAbout {
   section.pageAbout div.trio {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%; }
+    margin-right: 2.35765%;
+    width: 31.76157%; }
     section.pageAbout div.trio:last-child {
       margin-right: 0; }
     @media screen and (max-width: 600px)  {
       section.pageAbout div.trio {
         float: left;
         display: block;
-        margin-right: 7.4229703521%;
+        margin-right: 7.42297%;
         width: 100%; }
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
@@ -1177,15 +1176,15 @@ section.pageAbout {
         .pageFeeds .post .post-inner .container .left {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 14.7019570017%; }
+          margin-right: 2.35765%;
+          width: 14.70196%; }
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
         .pageFeeds .post .post-inner .container .right {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 82.9403914003%; }
+          margin-right: 2.35765%;
+          width: 82.94039%; }
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
       .pageFeeds .post .post-inner .actions {
@@ -1206,15 +1205,15 @@ section.pageAbout {
       .pageFeeds .post .commentContainer .left {
         float: left;
         display: block;
-        margin-right: 2.3576515979%;
-        width: 6.1721527019%; }
+        margin-right: 2.35765%;
+        width: 6.17215%; }
         .pageFeeds .post .commentContainer .left:last-child {
           margin-right: 0; }
       .pageFeeds .post .commentContainer .right {
         float: left;
         display: block;
-        margin-right: 2.3576515979%;
-        width: 91.4701957002%; }
+        margin-right: 2.35765%;
+        width: 91.4702%; }
         .pageFeeds .post .commentContainer .right:last-child {
           margin-right: 0; }
       .pageFeeds .post .commentContainer .commentSmallContainer {
@@ -1236,8 +1235,8 @@ section.pageAbout {
         .pageFeeds .post .commentContainer .comment-inner-container .commentForm {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 91.4701957002%;
+          margin-right: 2.35765%;
+          width: 91.4702%;
           border-color: #cdcdcd;
           height: auto;
           background-color: white;
@@ -1249,9 +1248,10 @@ section.pageAbout {
             font-size: 0.95em; }
 
 .userInfo {
+  width: 85%;
   margin-top: 24px; }
   .userInfo img {
-    width: 100%; }
+    border: 1px solid lightgrey; }
   .userInfo h2 {
     font-size: 2em;
     font-weight: normal; }
@@ -1262,6 +1262,14 @@ section.pageAbout {
     border-radius: 4px; }
     .userInfo ul li.fb {
       padding: 6px 8px; }
+
+.profile.right-column .home-feed {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .profile.right-column .home-feed:last-child {
+    margin-right: 0; }
 
 .home-post-container {
   max-width: em(3000);
@@ -1551,8 +1559,8 @@ fieldset.show, div.show {
   .items-container .item {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
+    margin-right: 2.35765%;
+    width: 31.76157%;
     margin-bottom: 2.35765%;
     padding: 10px; }
     .items-container .item:last-child {
@@ -1597,16 +1605,16 @@ fieldset.show, div.show {
 .inbox-left {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%; }
+  margin-right: 2.35765%;
+  width: 23.23176%; }
   .inbox-left:last-child {
     margin-right: 0; }
 
 .inbox-right {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 74.4105871005%; }
+  margin-right: 2.35765%;
+  width: 74.41059%; }
   .inbox-right:last-child {
     margin-right: 0; }
 
@@ -1686,9 +1694,9 @@ fieldset.show, div.show {
 .messaging-sidebar-img {
   float: left;
   display: block;
-  width: 36.7161326647%; }
+  width: 36.71613%; }
   .messaging-sidebar-img:last-child {
-    width: 26.5677346705%; }
+    width: 26.56773%; }
   .messaging-sidebar-img img {
     display: block;
     width: 90%;
@@ -1697,12 +1705,12 @@ fieldset.show, div.show {
 .messaging-sidebar-name {
   float: left;
   display: block;
-  width: 73.4322653295%;
+  width: 73.43227%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
   .messaging-sidebar-name:last-child {
-    width: 63.2838673353%; }
+    width: 63.28387%; }
 
 .messages-container {
   max-width: em(3000);
@@ -1717,13 +1725,13 @@ fieldset.show, div.show {
 .messaging-sidebar {
   float: left;
   display: block;
-  width: 25.5894128995%; }
+  width: 25.58941%; }
   .messaging-sidebar:last-child {
-    width: 23.2317613015%; }
+    width: 23.23176%; }
 
 .messaging-conversation {
   float: left;
   display: block;
-  width: 76.7682386985%; }
+  width: 76.76824%; }
   .messaging-conversation:last-child {
-    width: 74.4105871005%; }
+    width: 74.41059%; }

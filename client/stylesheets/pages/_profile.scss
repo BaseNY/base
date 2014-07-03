@@ -1,7 +1,8 @@
 .userInfo {
+    width:85%;
     margin-top:24px;
     img {
-        width:100%;
+        border:1px solid lightgrey;
     }
     h2 {
         font-size:2em;
@@ -17,5 +18,13 @@
                 padding:6px 8px;
             }
          }
+    }
+}
+
+.profile {
+    &.right-column {
+        .home-feed {
+            @include span-columns(12);
+        }
     }
 }
