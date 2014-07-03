@@ -1,39 +1,74 @@
+.messagingPost {
+    height:auto;
+    width:100%;
+    display:block;
+    position:relative;
+    vertical-align:middle;
+    .messageText, .messageSend {
+        display:inline-block;
+        border:1px solid lightgrey;
+        height:100%;
+    }
+    .messageText {
+        width:95%;
+        padding: 4px 4px 4px 8px;
+        height:auto;
+        overflow:auto;
+        resize:none;
+        font-size:1.2em;
+        vertical-align:middle;
+        line-height:1.2em;
+        word-wrap:break-word;
+    }
+    .messageSend {
+        border-top-right-radius:8px;
+        border-bottom-right-radius:8px;
+        width:5%;
+        height:100%;
+        padding:8px;
+        position:absolute;
+        border:1px solid lightgrey;
+    }
+}
+
+
+
 .messaging-info, .messaging-messages-container, .messaging-reply-container {
-	border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .messaging-info {
-	background-color: white;
-	padding: 1em;
+    background-color: white;
+    padding: 1em;
 }
 
 .messaging-info-name {
-	font-weight: 600;
-	font-size: 20px;
-	color: #191919;
-	&:hover {
-		text-decoration: underline;
-	}
+    font-weight: 600;
+    font-size: 20px;
+    color: #191919;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .messaging-messages-container {
-	border-top: none;
-	height: 400px;
-	background-color: white;
-	overflow: scroll;
+    border-top: none;
+    height: 400px;
+    background-color: white;
+    overflow: scroll;
 }
 
 .messaging-messages {
-	padding: 1em;
+    padding: 1em;
 }
 
 .messaging-reply-container {
-	border-top: none;
-	background-color: #F2F2F2;
-	padding: 10px;
+    border-top: none;
+    background-color: #F2F2F2;
+    padding: 10px;
 }
 
 #messaging-reply {
-	width: 100%;
-	padding: 0.3em;
+    width: 100%;
+    padding: 0.3em;
 }
