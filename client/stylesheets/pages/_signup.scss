@@ -34,6 +34,11 @@
         font-weight:normal;
         margin-top:8px;
     }
+    h4 {
+        margin-top:16px;
+        font-weight:normal;
+        font-size:1.5em;
+    }
     .fb-button {
         min-width:400px;
         width:30%;
@@ -54,7 +59,10 @@
             display:inline-block;
         }
     }
-    .friendsBox {
-
+    
+    input[type=text] {
+        color:grey;
+        padding:8px;
+        width:400px;
     }
 }

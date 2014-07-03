@@ -1393,6 +1393,10 @@ section.pageAbout {
     text-align: center;
     font-weight: normal;
     margin-top: 8px; }
+  .page-signup h4 {
+    margin-top: 16px;
+    font-weight: normal;
+    font-size: 1.5em; }
   .page-signup .fb-button {
     min-width: 400px;
     width: 30%;
@@ -1405,6 +1409,10 @@ section.pageAbout {
     border: 1px solid lightgrey;
     margin: 0 auto;
     display: inline-block; }
+  .page-signup input[type=text] {
+    color: grey;
+    padding: 8px;
+    width: 400px; }
 
 .page-product {
   margin: 50px auto 100px;
