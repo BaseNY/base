@@ -51,9 +51,27 @@ Messages.before.insert(function(userId, doc) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
 	}
 
+	if (!_.has(doc, 'conversationId')) {
+		doc.conversationId = Conversations.insert
+	}
+
 	_.defaults(doc, {
 		createdAt: new Date(),
 		posterId: userId,
 		posterName: Meteor.user().profile.name
 	});
 });
+
+Messages.send = function(text, recipientId, callback) {
+	Conversations.create(recipientId, function(err, res) {
+		if (err) {
+			console.log(err);
+		} else {
+			var doc = {
+				text: text,
+				conversationId: res
+			};
+			Messages.insert(doc, callback);
+		}
+	});
+}

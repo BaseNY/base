@@ -18,6 +18,7 @@ Package.on_use(function(api) {
 		'collection2',
 		'collection-hooks',
 		'collection-helpers',
+		'check',
 
 		'iron-router',
 		'fast-render',
