@@ -9,5 +9,8 @@
 /moment
 /blaze-layout
 /collection-hooks
-/fast-render
-/easy-search
+/collection2
+/simple-schema
+/lodash
+/kadira
+/collection-helpers
