@@ -59,11 +59,6 @@ Messages.before.insert(function(userId, doc) {
 });
 
 Messages.send = function(text, recipientId, callback) {
-	var messageCallback = function(err, res) {
-		if (err) {
-			console.log(err);
-		}
-	};
 	try {
 		Conversations.create(recipientId, function(err, res) {
 			if (err) {
@@ -73,7 +68,7 @@ Messages.send = function(text, recipientId, callback) {
 					text: text,
 					conversationId: res
 				};
-				Messages.insert(doc, messageCallback);
+				Messages.insert(doc, callback);
 			}
 		});
 	} catch(err) {
@@ -84,7 +79,7 @@ Messages.send = function(text, recipientId, callback) {
 				text: text,
 				conversationId: conv._id
 			};
-			Messages.insert(doc, messageCallback);
+			Messages.insert(doc, callback);
 		}
 	}
 }
