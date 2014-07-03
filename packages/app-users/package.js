@@ -12,11 +12,14 @@ Package.on_use(function(api) {
 		'lodash',
 
 		'meteor',
+		'templating',
 
 		'accounts-base',
 		'service-configuration',
 
 		'simple-schema',
+		'check',
+		'collection-helpers',
 
 		'app-main',
 		'app-fbgraph',

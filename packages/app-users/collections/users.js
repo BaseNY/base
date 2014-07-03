@@ -19,9 +19,9 @@ Schemas.UserProfile = new SimpleSchema({
 	img: {
 		type: String
 	},
-	/*lastOnline: {
-		type: Date
-	}*/
+	fbId: {
+		type: String
+	}
 });
 
 Schemas.User = new SimpleSchema({
@@ -31,7 +31,7 @@ Schemas.User = new SimpleSchema({
 	profile: {
 		type: Schemas.UserProfile
 	},
-	friends: {
+	friendIds: {
 		type: [String]
 	},
 	subscribed: {
@@ -43,9 +43,16 @@ Schemas.User = new SimpleSchema({
 	createdAt: {
 		type: Date
 	},
+	lastOnline: {
+		type: Date,
+		optional: true
+	},
 	services: {
 		type: Object,
 		blackbox: true
+	},
+	new: {
+		type: Number
 	}
 });
 
@@ -56,19 +63,25 @@ Accounts.onCreateUser(function(options, user) {
 		throw new Meteor.Error(400, "Create user - no Facebook data");
 	}
 
+	console.logObj('userrrr', user);
+	console.logObj('optionssss', options);
+
 	user.profile = {
 		email: facebook.email,
 		gender: facebook.gender,
 		firstName: facebook.first_name,
 		lastName: facebook.last_name,
-		name: facebook.name
+		name: facebook.name,
+		fbId: user.services.facebook.id // TODO see if this is needed
 	};
 	user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
-	//user.lastOnline = new Date();
+	user.lastOnline = null; //new Date();
 	user.subscribed = Feeds.defaultIds;
 	user.createdAt = new Date();
-	user.friends = [];
+	user.friendIds = [];
 	user.conversationIds = [];
+
+	user.new = 2;
 
 	// getting friends
 	// only adds the friends that have also authorized this app
@@ -80,7 +93,7 @@ Accounts.onCreateUser(function(options, user) {
 	Async.runSync(function(done) {
 		FBGraph.get('/' + user.services.facebook.id + '/friends', fbparams, function(err, result) {
 			_.each(result.data, function(friend) {
-				user.friends.push(friend.id);
+				user.friendIds.push(friend.id);
 			});
 			done(err, result);
 		});
@@ -92,4 +105,12 @@ Accounts.onCreateUser(function(options, user) {
 
 	check(user, Schemas.User);
 	return user;
+});
+
+Accounts.onLogin(function(attempt) {
+	var user = attempt.user;
+	if (user && user.new) {
+		Meteor.users.update(user._id, {$inc: {new: -1}});
+		console.log(user.new);
+	}
 });
