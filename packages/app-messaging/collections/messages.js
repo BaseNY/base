@@ -29,6 +29,9 @@ Schemas.Message = new SimpleSchema({
 	},
 	createdAt: {
 		type: Date
+	},
+	read: {
+		type: Boolean
 	}
 });
 
@@ -54,6 +57,7 @@ Messages.before.insert(function(userId, doc) {
 	}
 
 	doc.createdAt = new Date();
+	doc.read = false;
 
 	check(doc, Schemas.Message);
 });
@@ -72,7 +76,6 @@ Meteor.methods({
 		return Messages.insert(doc);
 	},
 	_sendMessage: function(text, recipientId) {
-		var userIds = [recipientId, this.userId];
 		var doc = {
 			text: text,
 			posterId: this.userId
@@ -81,6 +84,7 @@ Meteor.methods({
 		if (poster) {
 			doc.posterName = poster.profile.name;
 		}
+		var userIds = [recipientId, this.userId];
 		if (Conversations.existsWithUsers(userIds)) {
 			doc.conversationId = Conversations.findOne({'users._id': {$all: userIds}})._id;
 			return Messages.insert(doc);
@@ -94,6 +98,9 @@ Meteor.methods({
 				}
 			})
 		}
+	},
+	_readMessages: function(conversationId) {
+		return Messages.update({conversationId: conversationId}, {$set: {read: true}}, {multi: true});
 	}
 });
 
@@ -103,4 +110,9 @@ Messages.create = function(text, conversationId, callback) {
 
 Messages.send = function(text, recipientId, callback) {
 	return Meteor.call('_sendMessage', text, recipientId, callback);
+};
+
+// Finds messages and sets them as read
+Messages.read = function(conversationId, callback) {
+	return Meteor.call('_readMessages', conversationId, callback);
 };

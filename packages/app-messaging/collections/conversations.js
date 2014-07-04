@@ -182,15 +182,17 @@ Conversations.create = function(userIds) {
 		userIds = [userIds];
 	}
 
+	var args = _.toArray(arguments);
+
 	// set callback
-	var callback = _.last(arguments);
+	var callback = _.last(args);
 	if (!_.isFunction(callback)) {
 		callback = undefined;
 	}
 
 	// if is name
-	if (_.isString(arguments[1])) {
-		conv.name = arguments[1];
+	if (_.isString(args[1])) {
+		conv.name = args[1];
 	}
 
 	return Meteor.call('_createConversation', userIds, callback);

@@ -31,9 +31,9 @@ MessagingController = FastRender.RouteController.extend({
 		};
 
 		conversation = Conversations.findOne(this.params.conversationId, {transform: transform});
+		messages = Messages.find({conversationId: this.params.conversationId}).fetch();
 		if (Meteor.user().conversationIds.length > 0) {
 			conversations = Conversations.find({_id: {$in: Meteor.user().conversationIds}}, {transform: transform}).fetch();
-			messages = Messages.find({conversationId: {$in: Meteor.user().conversationIds}}).fetch();
 		}
 
 		return {
@@ -48,6 +48,7 @@ MessagingController = FastRender.RouteController.extend({
 Router.map(function() {
 	this.route('messages', {
 		path: '/messages',
+		template: 'messaging',
 		waitOn: function() {
 			if (Meteor.user().conversationIds.length > 0) {
 				return Meteor.subscribe('conversations', {
@@ -60,6 +61,8 @@ Router.map(function() {
 				var conversation = Conversations.findOne({_id: {$in: Meteor.user().conversationIds}});
 				if (conversation) {
 					this.redirect('/messages/' + conversation._id);
+				} else{
+					this.render();
 				}
 			}
 		}

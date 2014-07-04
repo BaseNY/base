@@ -13,6 +13,12 @@
 	}
 }
 
+body {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
 a {
 	color: $link-color;
 	text-decoration: none;

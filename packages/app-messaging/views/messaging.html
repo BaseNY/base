@@ -5,7 +5,7 @@
 </template>
 
 <template name="messaging">
-	<section class="messages-container">
+	<section class="messaging-container">
 		{{> messagingSidebar}}
 		{{> messagingConversation}}
 	</section>
@@ -21,6 +21,8 @@
 				<div class="messaging-sidebar-name">{{this.name}}</div>
 				<!--{{json this}}-->
 			</a>
+		{{else}}
+			You don't have any conversations yet.
 		{{/each}}
 	</div>
 </template>
@@ -28,7 +30,7 @@
 <template name="messagingConversation">
 	<div class="messaging-conversation">
 		{{> messagingInfo}}
-		<div class="messaging-messages-container">
+		<div class="messages-container">
 			<div class="messaging-messages">
 				{{#each messages}}
 					{{> message}}
