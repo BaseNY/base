@@ -32,13 +32,26 @@
 		{{> messagingInfo}}
 		<div class="messages-container">
 			<div class="messaging-messages">
-				{{#each messages}}
+				{{#each messageGroups}}
 					{{> message}}
 				{{/each}}
 			</div>
 		</div>
 		<div class="messaging-reply-container">
-			<textarea id="messaging-reply" placeholder="Message..."></textarea>
+            <div class="message-reply-box">
+			<div id="messaging-reply" contenteditable="true" class="message-reply-text" placeholder="Message..."></div>
+            <footer>
+		            <input id= "add-image" class="image-input" type="file" />
+                   <label for="add-image">
+                <div class="photo-upload">
+                    <a href=""><i class="fa fa-camera"></i></a> Add Photos
+                </div>
+            </label>
+            <h4>Press Enter to send</h4>
+
+            </footer>
+            <img id ="add-preview" class="image-preview" src=""/> 
+        </div>
 		</div>
 	</div>
 </template>
@@ -50,7 +63,16 @@
 			<div class="message-time"></div>
 		</div>
 		<div class="message-text">{{this.text}}</div>-->
-		{{this.posterName}}: {{this.text}}
+        <div class="left">
+            <a href="/profile/{{sender._id}}"><img src="{{sender.profile.img}}" /></a>
+        </div><div class="middle">
+            <h4><a href="/profile/{{sender._id}}">{{sender.profile.name}}</a></h4>
+            {{#each this}}
+            <span>{{this.text}}</span>
+            {{/each}}
+        </div><div class="right">
+            {{date}}
+        </div>
 	</div>
 </template>
 

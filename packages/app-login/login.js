@@ -54,7 +54,8 @@ Template.feedSelectModal.helpers({
 });
 
 Template.feedSelectModal.rendered = function() {
-	$('#feed-select-modal li').click(function() {
+	$('#feed-select-list li').click(function() {
+        console.log(this);
 		$(this).toggleClass('checked');
 	});
 	$('#feed-select-modal .button').click(function() {
