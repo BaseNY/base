@@ -9,6 +9,7 @@ Package.on_use(function(api) {
 
 		'meteor',
 		'session',
+		'iron-router',
 
 		'templating',
 		'blaze-layout',
