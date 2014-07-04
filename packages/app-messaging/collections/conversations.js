@@ -83,13 +83,13 @@ Conversations.before.insert(function(userId, doc) {
 		if (!doc.processUsers) {
 			userIds = _.pluck(userIds, '_id');
 		}
-		if (Conversations.find({'users._id': {$all: userIds}}, {limit: 1}).count() === 1) {
-			throw new Meteor.Error(410, "You are already in a conversation with this person");
+		if (Conversations.existsWithUsers(userIds)) {
+			throw new Meteor.Error(610, "You are already in a conversation with this person");
 		}
 	} else if (numUsers < 2) {
-		throw new Meteor.Error(411, "A conversation must have at least two people");
+		throw new Meteor.Error(611, "A conversation must have at least two people");
 	} else if (doc.users.length === 1 && doc.users[0] === userId) {
-		throw new Meteor.Error(412, "You cannot send a message to yourself");
+		throw new Meteor.Error(612, "You cannot send a message to yourself");
 	}
 
 	if (!_.has(doc, 'createdAt')) {
@@ -158,6 +158,20 @@ Conversations.before.remove(function(userId, doc) {
 	Meteor.users.update(userId, {$pull: {conversationIds: doc._id}});
 });
 
+Meteor.methods({
+	updateUsersConversations: function(userIds, conversationId) {
+		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}}, {multi: true});
+	},
+	// must give an array of userIds
+	_createConversation: function(userIds) {
+		var conv = {
+			processUsers: true,
+			users: userIds
+		};
+		return Conversations.insert(conv);
+	}
+});
+
 // userIds is either the recipient or the group of users
 // name is optional
 // (userIds, [name], [callback])
@@ -168,29 +182,21 @@ Conversations.create = function(userIds) {
 		userIds = [userIds];
 	}
 
-	var conv = {
-		processUsers: true,
-		users: userIds
-	};
-	var callback;
-	// the second arg could be the name or the callback
+	// set callback
+	var callback = _.last(arguments);
+	if (!_.isFunction(callback)) {
+		callback = undefined;
+	}
+
 	// if is name
 	if (_.isString(arguments[1])) {
 		conv.name = arguments[1];
-		if (_.isFunction(arguments[2])) {
-			callback = arguments[2];
-		}
-	}
-	// if is callback
-	else if (_.isFunction(arguments[1])) {
-		callback = arguments[1];
 	}
 
-	Conversations.insert(conv, callback);
+	return Meteor.call('_createConversation', userIds, callback);
 };
 
-Meteor.methods({
-	updateUsersConversations: function(userIds, conversationId) {
-		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}}, {multi: true});
-	}
-});
+// function to check whether a conversation already exists with the given users
+Conversations.existsWithUsers = function(userIds) {
+	return Conversations.find({'users._id': {$all: userIds}}, {limit: 1}).count() >= 1;
+};
