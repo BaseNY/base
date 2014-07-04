@@ -63,8 +63,8 @@ Accounts.onCreateUser(function(options, user) {
 		throw new Meteor.Error(400, "Create user - no Facebook data");
 	}
 
-	console.logObj('userrrr', user);
-	console.logObj('optionssss', options);
+	debug('userrrr', user);
+	debug('optionssss', options);
 
 	user.profile = {
 		email: facebook.email,
@@ -101,7 +101,7 @@ Accounts.onCreateUser(function(options, user) {
 		});
 	});
 
-	console.logObj("Created User", user);
+	debug("Created User", user);
 
 	//check(user, Schemas.User);
 	return user;

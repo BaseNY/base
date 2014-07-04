@@ -2,12 +2,6 @@ Meteor.isLoggedIn = function() {
 	return !!Meteor.user();
 };
 
-console.logObj = function(desc, obj) {
-	console.log('[' + desc + ']');
-	console.log(obj);
-	console.log('[' + desc + ' end]');
-};
-
 Utils = {
 	// generates a publish function that simply allows selector and options pass through
 	generatePublishFunction: function(collection) {

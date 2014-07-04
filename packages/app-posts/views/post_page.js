@@ -5,6 +5,6 @@ Template.product.events({
 	}
 });
 
-Template.pageProduct.description = function() {
-	return new Handlebars.SafeString(Router.current().data().item.description);
+Template.postPage.description = function() {
+	return new Spacebars.SafeString(Router.current().data().item.description);
 }

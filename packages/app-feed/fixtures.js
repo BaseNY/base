@@ -30,4 +30,4 @@ if (!Feeds.findOne()) {
 	});
 }
 
-console.logObj('Default Feed Ids', Feeds.defaultIds);
+debug('Default Feed Ids', Feeds.defaultIds);

@@ -138,9 +138,9 @@ Conversations.before.insert(function(userId, doc) {
 	}
 
 	if (Meteor.settings.public.debug) {
-		console.logObj('Conversation', doc);
+		debug('Conversation', doc);
 	}
-	console.logObj('Conversation', doc);
+	debug('Conversation', doc);
 
 	check(doc, Schemas.Conversation);
 });

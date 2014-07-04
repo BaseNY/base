@@ -42,8 +42,6 @@ Package.on_use(function(api) {
 
 	api.export('Messages');
 	api.export('Conversations');
-
-	api.export('MessagingController');
 });
 
 Package.on_test(function(api) {

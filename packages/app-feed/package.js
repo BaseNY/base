@@ -20,7 +20,8 @@ Package.on_use(function(api) {
 
 		'app-setup',
 		'app-schemas',
-		'app-utils'
+		'app-utils',
+		'app-debug'
 	]);
 
 	api.add_files('collections/feeds.js', ['client', 'server']);
