@@ -1,7 +1,3 @@
-Npm.depends({
-	'colors': '0.6.2'
-});
-
 Package.describe({
 	summary: "Debug"
 });

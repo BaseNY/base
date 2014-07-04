@@ -1,5 +1,3 @@
-var colors = Npm.require('colors');
-
 Meteor._ensure(Meteor, 'settings', 'public');
 
 debug = function() {
@@ -7,9 +5,9 @@ debug = function() {
 		if (arguments.length === 2) {
 			var desc = arguments[0],
 				obj = arguments[1];
-			console.log(('[' + desc + ']').red);
+			console.log('[' + desc + ']');
 			console.log(obj);
-			console.log(('[' + desc + ' end]').red);
+			console.log('[' + desc + ' end]');
 		} else {
 			console.log(arguments[0]);
 		}
