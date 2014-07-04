@@ -28,13 +28,12 @@ Template.messagingPost.events({
 Template.messaging.events({
 	'keydown #messaging-reply': function(e) {
 		var $message = $("#messaging-reply"),
-			$messagesContainer = $(".messaging-messages-container");
+			$messagesContainer = $(".messages-container");
 		// if is enter key and shift key is not held down
 		if (e.which === 13 && !e.shiftKey) {
 			e.preventDefault();
 			var text = $message.val();
 			if (text) {
-				console.log(this);
 				Messages.create(text, this.conversationId, function(err) {
 					if (err) {
 						console.log(err);
@@ -49,6 +48,6 @@ Template.messaging.events({
 });
 
 Template.messaging.rendered = function() {
-	scrollDown($(".messaging-messages-container"));
-	//$("textarea").autosize();
+	$('.body').autoFit();
+	scrollDown($(".messages-container"));
 };

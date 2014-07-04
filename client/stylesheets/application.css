@@ -337,6 +337,11 @@ td, th {
   *:focus, *:before:focus, *:after:focus {
     outline: none; }
 
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
 a {
   color: #33B5E5;
   text-decoration: none; }
@@ -1765,8 +1770,8 @@ fieldset.show, div.show {
     position: absolute;
     border: 1px solid lightgrey; }
 
-.messaging-info, .messaging-messages-container, .messaging-reply-container {
-  border: 1px solid rgba(0, 0, 0, 0.25); }
+.messaging-info, .messages-container, .messaging-reply-container {
+  border: 1px solid #E6E6E6; }
 
 .messaging-info {
   background-color: white;
@@ -1779,11 +1784,11 @@ fieldset.show, div.show {
   .messaging-info-name:hover {
     text-decoration: underline; }
 
-.messaging-messages-container {
+.messages-container {
   border-top: none;
   height: 400px;
   background-color: white;
-  overflow: scroll; }
+  overflow: auto; }
 
 .messaging-messages {
   padding: 1em; }
@@ -1833,12 +1838,15 @@ fieldset.show, div.show {
   .messaging-sidebar-name:last-child {
     width: 63.2838673353%; }
 
-.messages-container {
+.messaging-container, .messaging-sidebar, .messaging-conversation {
+  height: 100%; }
+
+.messaging-container {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px; }
-  .messages-container:after {
+  .messaging-container:after {
     content: "";
     display: table;
     clear: both; }

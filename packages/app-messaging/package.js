@@ -7,6 +7,7 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'lodash',
+		'jquery',
 		'velocityjs',
 
 		'meteor',
@@ -33,7 +34,7 @@ Package.on_use(function(api) {
 		'collections/messages.js',
 	], both);
 	api.add_files('server/publications.js', 'server');
-	api.add_files('both/routing.js', both);
+	api.add_files('routing.js', both);
 	api.add_files([
 		'views/messaging.html',
 		'views/messaging.js'

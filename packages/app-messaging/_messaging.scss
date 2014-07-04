@@ -1,7 +1,11 @@
 @import "stylesheets/conversation";
 @import "stylesheets/sidebar";
 
-.messages-container {
+.messaging-container, .messaging-sidebar, .messaging-conversation {
+	height: 100%;
+}
+
+.messaging-container {
 	@include outer-container;
 	max-width: 1000px;
 }
