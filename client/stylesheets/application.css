@@ -1398,6 +1398,21 @@ section.pageAbout {
   .profile.right-column .home-feed:last-child {
     margin-right: 0; }
 
+input[type=file] {
+  display: none; }
+
+input[type=radio] {
+  display: none; }
+
+.image-preview {
+  max-height: 100px;
+  max-width: 100px;
+  display: block; }
+  .image-preview.filled {
+    border: 1px solid grey; }
+  .image-preview.uploading {
+    opacity: 0.7; }
+
 .home-post-container {
   max-width: em(3000);
   margin-left: auto;
@@ -1415,18 +1430,6 @@ section.pageAbout {
     content: "";
     display: table;
     clear: both; }
-  .home-post-container input[type=file] {
-    display: none; }
-  .home-post-container input[type=radio] {
-    display: none; }
-  .home-post-container .image-preview {
-    max-height: 100px;
-    max-width: 100px;
-    display: block; }
-    .home-post-container .image-preview.filled {
-      border: 1px solid grey; }
-    .home-post-container .image-preview.uploading {
-      opacity: 0.7; }
   .home-post-container input[type=text] {
     width: 100%;
     height: auto;
@@ -1772,6 +1775,30 @@ fieldset.show, div.show {
 
 .messaging-info, .messages-container, .messaging-reply-container {
   border: 1px solid #E6E6E6; }
+  .messaging-info .message-reply-box .message-reply-text, .messages-container .message-reply-box .message-reply-text, .messaging-reply-container .message-reply-box .message-reply-text {
+    resize: none;
+    border: 1px solid lightgrey;
+    font-size: 1em;
+    height: 48px; }
+  .messaging-info .message-reply-box footer, .messages-container .message-reply-box footer, .messaging-reply-container .message-reply-box footer {
+    background-color: white;
+    color: grey;
+    height: auto;
+    border: 1px solid lightgrey; }
+    .messaging-info .message-reply-box footer .photo-upload, .messages-container .message-reply-box footer .photo-upload, .messaging-reply-container .message-reply-box footer .photo-upload {
+      border-right: 1px solid lightgrey;
+      height: 100%;
+      padding: 6px 8px;
+      display: inline-block;
+      font-weight: 300; }
+      .messaging-info .message-reply-box footer .photo-upload:hover, .messages-container .message-reply-box footer .photo-upload:hover, .messaging-reply-container .message-reply-box footer .photo-upload:hover {
+        background-color: lightgrey;
+        cursor: pointer; }
+    .messaging-info .message-reply-box footer h4, .messages-container .message-reply-box footer h4, .messaging-reply-container .message-reply-box footer h4 {
+      display: inline-block;
+      float: right;
+      padding: 4px 8px;
+      font-weight: 300; }
 
 .messaging-info {
   background-color: white;
@@ -1801,6 +1828,45 @@ fieldset.show, div.show {
 #messaging-reply {
   width: 100%;
   padding: 0.3em; }
+
+.message {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto; }
+  .message:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .message hr {
+    width: 50%;
+    border: 1px solid lightgrey; }
+  .message .left {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 6.1721527019%; }
+    .message .left img {
+      width: 100%; }
+    .message .left:last-child {
+      margin-right: 0; }
+  .message .middle {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 82.9403914003%;
+    word-wrap: break-word; }
+    .message .middle:last-child {
+      margin-right: 0; }
+    .message .middle span {
+      display: block; }
+  .message .right {
+    color: lightgrey;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 6.1721527019%; }
+    .message .right:last-child {
+      margin-right: 0; }
 
 .messaging-sidebar-item {
   display: block;
