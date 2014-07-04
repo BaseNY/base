@@ -11,6 +11,10 @@
 }
 */
 Schemas.Message = new SimpleSchema({
+	_id: {
+		type: String,
+		optional: true
+	},
 	posterId: {
 		type: String
 	},
@@ -29,8 +33,6 @@ Schemas.Message = new SimpleSchema({
 });
 
 Messages = new Meteor.Collection('messages');
-
-Messages.attachSchema(Schemas.Message);
 
 // TODO update this to allow user to edit their own messages?
 Messages.allow({
@@ -51,35 +53,54 @@ Messages.before.insert(function(userId, doc) {
 		throw new Meteor.Error(403, "Access denied: not logged in");
 	}
 
-	_.defaults(doc, {
-		createdAt: new Date(),
-		posterId: userId,
-		posterName: Meteor.user().profile.name
-	});
+	doc.createdAt = new Date();
+
+	check(doc, Schemas.Message);
 });
 
-Messages.send = function(text, recipientId, callback) {
-	try {
-		return Conversations.create(recipientId, function(err, res) {
-			if (err) {
-				console.log(err);
-			} else {
-				var doc = {
-					text: text,
-					conversationId: res
-				};
-				Messages.insert(doc, callback);
-			}
-		});
-	} catch(err) {
-		if (err.error === 410) {
-			var userIds = [recipientId, Meteor.userId()];
-			var conv = Conversations.findOne({'users._id': {$all: userIds}});
-			var doc = {
-				text: text,
-				conversationId: conv._id
-			};
-			Messages.insert(doc, callback);
+Meteor.methods({
+	_createMessage: function(text, conversationId) {
+		var doc = {
+			text: text,
+			conversationId: conversationId,
+			posterId: this.userId
+		};
+		var poster = Meteor.users.findOne(this.userId);
+		if (poster) {
+			doc.posterName = poster.profile.name;
+		}
+		return Messages.insert(doc);
+	},
+	_sendMessage: function(text, recipientId) {
+		var userIds = [recipientId, this.userId];
+		var doc = {
+			text: text,
+			posterId: this.userId
+		};
+		var poster = Meteor.users.findOne(this.userId);
+		if (poster) {
+			doc.posterName = poster.profile.name;
+		}
+		if (Conversations.existsWithUsers(userIds)) {
+			doc.conversationId = Conversations.findOne({'users._id': {$all: userIds}})._id;
+			return Messages.insert(doc);
+		} else {
+			Conversations.create(recipientId, function(err, res) {
+				if (err) {
+					console.log(err);
+				} else {
+					doc.conversationId = res;
+					return Messages.insert(doc);
+				}
+			})
 		}
 	}
-}
+});
+
+Messages.create = function(text, conversationId, callback) {
+	return Meteor.call('_createMessage', text, conversationId, callback);
+};
+
+Messages.send = function(text, recipientId, callback) {
+	return Meteor.call('_sendMessage', text, recipientId, callback);
+};

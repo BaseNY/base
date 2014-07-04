@@ -1,5 +1,5 @@
 Meteor.isLoggedIn = function() {
-	return !!Meteor.userId();
+	return !!Meteor.user();
 };
 
 console.logObj = function(desc, obj) {
