@@ -34,6 +34,38 @@
 
 .messaging-info, .messages-container, .messaging-reply-container {
     border: 1px solid #E6E6E6;
+    .message-reply-box {
+        .message-reply-text{
+            resize:none;
+            border:1px solid lightgrey;
+            font-size:1em;
+            height:48px;
+        }
+        footer{
+            .photo-upload {
+                border-right:1px solid lightgrey;
+                height:100%;
+                padding:6px 8px;
+                display:inline-block;
+                font-weight:300;
+                &:hover {
+                    background-color:lightgrey;
+                    cursor:pointer;
+                }
+            }
+            h4 {
+                display:inline-block;
+                float:right;
+                padding:4px 8px;
+                font-weight:300;
+            }
+            background-color:white;
+            color:grey;
+            height:auto;
+            border:1px solid lightgrey;
+        }
+    }
+
 }
 
 .messaging-info {
@@ -70,4 +102,31 @@
 #messaging-reply {
     width: 100%;
     padding: 0.3em;
+}
+
+.message {
+    @include outer-container;
+    hr {
+        width:50%;
+        border: 1px solid lightgrey;
+    }
+    h4 {
+    }
+    .left {
+        img {
+            width:100%;
+        }
+        @include span-columns(1);
+    }
+    .middle {
+        @include span-columns(10);
+        word-wrap:break-word;
+        span {
+            display:block;
+        }
+    }
+    .right {
+        color:lightgrey;
+        @include span-columns(1);
+    }
 }
