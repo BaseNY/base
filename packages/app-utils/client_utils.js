@@ -13,6 +13,6 @@ $.fn.siblingHeight = function() {
 $.fn.autoFit = function() {
 	var $this = $(this);
 	$(window).resize(function() {
-		$this.css('height', $this.outerHeight(true) - $this.siblingHeight());
-	});
+		$this.css('height', $this.parent().outerHeight(true) - $this.siblingHeight());
+	}).resize();
 };

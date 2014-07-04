@@ -49,5 +49,7 @@ Template.messaging.events({
 
 Template.messaging.rendered = function() {
 	$('.body').autoFit();
-	scrollDown($(".messages-container"));
+	var $messagesContainer = $(".messages-container");
+	$messagesContainer.autoFit();
+	scrollDown($messagesContainer);
 };
