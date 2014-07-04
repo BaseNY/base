@@ -1779,7 +1779,7 @@ fieldset.show, div.show {
     resize: none;
     border: 1px solid lightgrey;
     font-size: 1em;
-    height: 48px; }
+    height: 72px; }
   .messaging-info .message-reply-box footer, .messages-container .message-reply-box footer, .messaging-reply-container .message-reply-box footer {
     background-color: white;
     color: grey;
