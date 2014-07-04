@@ -24,7 +24,7 @@ Package.on_use(function(api) {
 		'iron-router',
 		'fast-render',
 
-		'app-main',
+		'app-setup',
 		'app-utils',
 		'app-schemas'
 	]);

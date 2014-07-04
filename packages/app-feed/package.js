@@ -17,7 +17,7 @@ Package.on_use(function(api) {
 		'simple-schema',
 		'check',
 
-		'app-main',
+		'app-setup',
 		'app-schemas',
 		'app-utils'
 	]);

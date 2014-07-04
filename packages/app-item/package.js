@@ -6,7 +6,7 @@ Package.on_use(function(api) {
 	api.use([
 		'templating',
 
-		'app-main',
+		'app-setup',
 		'app-utils',
 	]);
 	api.add_files([

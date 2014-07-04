@@ -21,7 +21,7 @@ Package.on_use(function(api) {
 		'check',
 		'collection-helpers',
 
-		'app-main',
+		'app-setup',
 		'app-fbgraph',
 		'app-utils',
 		'app-schemas',
