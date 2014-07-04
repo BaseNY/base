@@ -31,6 +31,7 @@ Package.on_use(function(api) {
 		'js/feed_post.js',
 		'js/infinite.js'
 	], 'client');
+	api.add_files('routing.js', ['client', 'server']);
 
 	api.export('Feeds');
 });
