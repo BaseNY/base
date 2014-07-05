@@ -114,8 +114,8 @@ Meteor.methods({
 		});
 
 		//gives notification to the poster
-		//if(this.userId != item.sellerId) {
-		if (this.userId) {
+		if(this.userId != item.sellerId) {
+		//if (this.userId) {
 			var postNotif = Notifications.findOne({
 				userId: item.sellerId,
 				postId: id,
