@@ -1,6 +1,7 @@
 <template name="feedPost">
 	<div class="post">
-		<div style="border-left: 4px solid{{#if isSellPost}}#f39c12{{else}}#50a8e7{{/if}}" id="post-{{this._id}}" class="post-inner">
+            <div class="left-bar {{#if isSellPost}}sell{{else}}buy{{/if}}"></div>
+		<div id="post-{{this._id}}" class="post-inner">
 			<div class="container">
 				<div class="left">
 					<img src={{imgUrl}}>

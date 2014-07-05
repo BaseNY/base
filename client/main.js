@@ -1,4 +1,4 @@
-var setPlaceholder = function($contenteditable) {
+setPlaceholder = function($contenteditable) {
 	var placeholder = $contenteditable.attr('placeholder');
 	$contenteditable.html('<span class="placeholder">' + placeholder + '</span>');
 };

@@ -34,7 +34,7 @@ Template.feedPost.events({
 		if (e.charCode == 13) {
 			e.preventDefault();
 			console.log(e);
-			text = $(e.target).html();
+			text = $(e.target)[0].innerText;
 
 			text.trimLeft(' ');
 			if (text != '') {
