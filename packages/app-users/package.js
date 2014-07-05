@@ -21,6 +21,7 @@ Package.on_use(function(api) {
 		'check',
 		'collection-helpers',
 
+		'app-debug',
 		'app-setup',
 		'app-fbgraph',
 		'app-utils',
@@ -29,7 +30,8 @@ Package.on_use(function(api) {
 	]);
 
 	api.add_files('config.js', 'server');
-	api.add_files('collections/users.js', ['client', 'server']);
+	// is server because Accounts.onCreateUser is only on server
+	api.add_files('collections/users.js', 'server');
 	api.add_files('publications.js', 'server');
 	//api.add_files('fixtures.js', 'server');
 });
