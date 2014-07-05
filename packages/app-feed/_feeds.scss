@@ -77,10 +77,13 @@
             .container {
                 @include outer-container;
                 .left {
-                    @include span-columns(2);
+                    @include span-columns(1.5);
                 }
                 .right {
-                    @include span-columns(10);
+                    h1 {
+                        font-size:1.5em;
+                    }
+                    @include span-columns(10.5);
                 }
             }
             .actions {
