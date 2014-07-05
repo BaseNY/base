@@ -1,6 +1,5 @@
 var BeforeHooks = {
 	isLoggedIn: function(pause) {
-		console.log("wot");
 		if (Meteor.isClient && !Meteor.isLoggedIn()) {
 			this.redirect('/');
 			pause();
