@@ -194,7 +194,7 @@ Meteor.methods({
 		var sellerId = Items.findOne({
 			_id: id
 		}).sellerId;
-		if (!user || (!Roles.userIsInRole(user, 'admin') && Meteor.userId != sellerId)) {
+		if (!user || (!Roles.userIsInRole(user, 'admin') && Meteor.userId() != sellerId)) {
 			throw new Meteor.Error(403, "Access denied");
 		}
 		Items.remove({

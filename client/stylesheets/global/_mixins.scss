@@ -14,7 +14,8 @@
 @mixin boxes-default($margin-bot) {
     padding:20px;
     background-color:white;
-    box-shadow: $boxes;
+    border:1px solid lightgrey;
+    border-radius:4px;
     margin-bottom: $margin-bot; 
 }
 

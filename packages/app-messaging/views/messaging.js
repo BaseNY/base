@@ -63,7 +63,7 @@ Template.messaging.sendMsg = function(e, cId) {
     // if is enter key and shift key is not held down
     if (e.which === 13 && !e.shiftKey) {
         e.preventDefault();
-        var text = $message.innerText;
+        var text = $message[0].innerText;
         var imgUrl = Session.get('uploadUrl');
         if (text) {
             Messages.create(text, cId, 0, function(err) {
@@ -92,6 +92,7 @@ Template.messaging.sendMsg = function(e, cId) {
 
 Template.messaging.events({
     'keydown #messaging-reply': function(e) {
+        console.log('hello?');
         Template.messaging.sendMsg(e, this.conversationId);
     }
 });
