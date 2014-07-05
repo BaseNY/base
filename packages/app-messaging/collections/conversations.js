@@ -137,10 +137,7 @@ Conversations.before.insert(function(userId, doc) {
 		delete doc.processUsers;
 	}
 
-	if (Meteor.settings.public.debug) {
-		debug('Conversation', doc);
-	}
-	debug('Conversation', doc);
+	Debug.messaging('Conversation', doc);
 
 	check(doc, Schemas.Conversation);
 });

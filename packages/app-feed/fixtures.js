@@ -30,4 +30,4 @@ if (!Feeds.findOne()) {
 	});
 }
 
-debug('Default Feed Ids', Feeds.defaultIds);
+Debug.feed('Default Feed Ids', Feeds.defaultIds);

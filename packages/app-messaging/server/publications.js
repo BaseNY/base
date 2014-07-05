@@ -1,2 +1,2 @@
-Meteor.publish('conversations', Utils.generatePublishFunction(Conversations));
-Meteor.publish('messages', Utils.generatePublishFunction(Messages));
+Meteor.publish('conversations', Utils.defaultPublishFunction(Conversations));
+Meteor.publish('messages', Utils.defaultPublishFunction(Messages));

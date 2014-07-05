@@ -30,5 +30,6 @@ Package.on_use(function(api) {
 
 	api.add_files('config.js', 'server');
 	api.add_files('collections/users.js', ['client', 'server']);
+	api.add_files('publications.js', 'server');
 	//api.add_files('fixtures.js', 'server');
 });

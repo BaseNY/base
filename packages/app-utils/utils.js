@@ -4,7 +4,7 @@ Meteor.isLoggedIn = function() {
 
 Utils = {
 	// generates a publish function that simply allows selector and options pass through
-	generatePublishFunction: function(collection) {
+	defaultPublishFunction: function(collection) {
 		return function(selector, options) {
 			if (!selector) {
 				selector = {};

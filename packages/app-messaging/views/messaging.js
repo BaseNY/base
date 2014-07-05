@@ -8,23 +8,20 @@ Template.messagingPost.messageSent = function(id) {
 
 Template.messagingPost.events({
 	'click .messageSend': function() {
-		item = Items.findOne({
-			_id: this._id
-		});
-
+		item = Items.findOne({_id: this._id});
 		Messages.send($('#message-' + this._id).html(), item.sellerId, function(err, res) {
 			if (err) {
 				console.log(err);
 			} else {
-
 				console.log(this);
                 console.log(res);
 				$('#message-' + item._id).parent().html('Your message has been sent! Click <a href="/messages/">here</a> to view the conversation.');
-
 			}
 		});
 	}
-}); Template.messaging.events({
+});
+
+Template.messaging.events({
 	'keydown #messaging-reply': function(e) {
 		var $message = $("#messaging-reply"),
 			$messagesContainer = $(".messages-container");

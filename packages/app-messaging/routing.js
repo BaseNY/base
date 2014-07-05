@@ -1,16 +1,20 @@
 MessagingController = FastRender.RouteController.extend({
 	template: 'messaging',
 	waitOn: function() {
-		if (Meteor.user().conversationIds.length > 0) {
-			return [
-				Meteor.subscribe('conversations', {
-					_id: {$in: Meteor.user().conversationIds}
-				}),
-				Meteor.subscribe('messages', {
-					conversationId: {$in: Meteor.user().conversationIds}
-				})
-			];
-		}
+		return [
+			Meteor.subscribe('users', this.userId, {
+				fields: {
+					profile: true,
+					conversationIds: true
+				}
+			}),
+			Meteor.subscribe('conversations', {
+				_id: {$in: Meteor.user().conversationIds}
+			}),
+			Meteor.subscribe('messages', {
+				conversationId: {$in: Meteor.user().conversationIds}
+			})
+		];
 	},
 	data: function() {
 		var conversation, conversations, messages;

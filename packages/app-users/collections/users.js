@@ -63,8 +63,8 @@ Accounts.onCreateUser(function(options, user) {
 		throw new Meteor.Error(400, "Create user - no Facebook data");
 	}
 
-	debug('userrrr', user);
-	debug('optionssss', options);
+	Debug.users('user', user);
+	Debug.users('options', options);
 
 	user.profile = {
 		email: facebook.email,
@@ -76,9 +76,9 @@ Accounts.onCreateUser(function(options, user) {
 	};
 	user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
 	user.lastOnline = null; //new Date();
-    console.log(Feeds.defaultIds);
+	console.log(Feeds.defaultIds);
 	user.subscribed = Feeds.defaultIds;
-    console.log(user.subscribed);
+	console.log(user.subscribed);
 	user.createdAt = new Date();
 	user.friendIds = [];
 	user.conversationIds = [];
@@ -101,7 +101,7 @@ Accounts.onCreateUser(function(options, user) {
 		});
 	});
 
-	debug("Created User", user);
+	Debug.users("Created User", user);
 
 	//check(user, Schemas.User);
 	return user;
