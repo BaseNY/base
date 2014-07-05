@@ -114,3 +114,7 @@ section.body {
 .left-column {
     @include span-columns(3);
 }
+
+.placeholder {
+    color: #CDCDCD;
+}

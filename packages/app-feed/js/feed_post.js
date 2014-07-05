@@ -24,33 +24,10 @@ Template.feedPost.helpers({
 	'ownPost': function() {
 		return this.sellerId == Meteor.userId();
 	},
-        'myImgUrl': function() {
-            return Meteor.user().profile.img;
-        }
+	'myImgUrl': function() {
+		return Meteor.user().profile.img;
+	}
 });
-
-Template.feedPost.rendered = function() {
-	$('.commentForm').on('activate', function() {
-		$(this).empty();
-		var range, sel;
-		if ((sel = document.selection) && document.body.createTextRange) {
-			range = document.body.createTextRange();
-			range.moveToElementText(this);
-			range.select();
-		}
-	});
-
-	$('.commentForm').focus(function() {
-		if (this.hasChildNodes() && document.createRange && window.getSelection) {
-			$(this).empty();
-			var range = document.createRange();
-			range.selectNodeContents(this);
-			var sel = window.getSelection();
-			sel.removeAllRanges();
-			sel.addRange(range);
-		}
-	});
-}
 
 Template.feedPost.events({
 	'keypress .commentForm': function(e) {
@@ -63,8 +40,9 @@ Template.feedPost.events({
 			if (text != '') {
 				text.trimRight(' ');
 				Meteor.call('addComment', text, this._id, function(e, r) {
-					if (e)
-						alert(e);
+					if (e) {
+						console.log(e);
+					}
 				});
 			}
 			$(e.target).empty();

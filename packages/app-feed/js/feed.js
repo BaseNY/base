@@ -12,6 +12,7 @@ Template.feed.moreResults = function() {
 	return Items.find().count() >= Session.get('itemsLimit');
 
 }
+
 /*
  * _id: "Ej9kjZRLTmuBMvaih"
  * comments: Array[2]
