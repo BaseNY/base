@@ -13,10 +13,10 @@ var debug = function(namespace) {
 
 			var c = '[';
 			if (namespace) {
-				c += namespace + ' - ';
+				c += namespace;
 			}
 			if (desc) {
-				c += desc;
+				c += ' - ' + desc;
 			}
 
 			console.log(c + ']');
