@@ -1,87 +1,91 @@
 <head>
-	<meta charset="utf-8">
-	<link rel="icon" href="/favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc13.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.7/jquery.autosize.min.js"></script>
-	<style>
-	@viewport {
-		zoom: 1.0;
-		width: device-width;
-	}
-	@-ms-viewport {
-		width: device-width;
-		zoom: 1.0;
-	}
-	</style>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc13.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.7/jquery.autosize.min.js"></script>
+<style>
+@viewport {
+    zoom: 1.0;
+    width: device-width;
+}
+@-ms-viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+</style>
 </head>
 
 <template name="layout">
-	{{> header}}
-	<div class="body">
-		{{> yield}}
-	</div>
-	{{> footer}}
-	{{> loginModal}}
-	{{> feedSelectModal}}
+{{> header}}
+<div class="body">
+    {{> yield}}
+</div>
+{{> footer}}
+{{> loginModal}}
+{{> feedSelectModal}}
 </template>
 
 <template name="header">
-	<header>
-		<div class="content">
-			<a href="/" class="logo">
-				<img src="/images/logo.png" alt="BASE">
-			</a>
-			<!--<form action="/search">
-				<input name="q" type="text" placeholder="Search...">
-			</form>-->
-			{{#if currentUser}}
-				<div class="user-wrapper" id="user-wrapper">
-					<img src="{{profile.img}}">
-					<h2>{{user.name}}</h2>
-					<a href="/messages" class="link">
-						<i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
-					</a>
-                    <a id="show-notifs" href="" class="link">
-                        <i class="fa fa-bell" target="notif-dropdown"><span>{{newNotifs}}</span></i>
-                        <ul class="dropdown hide {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
-                            {{#if notifs}}
-                            {{#each notifs}}
-                            <a id = "{{this._id}}" class = "notif-link" href="/post/{{this.postId}}">
-                            <li class="{{#if unread}}unread{{/if}}">
-                                <div class= "icon">
-                                    <img src="{{notifImage}}" />
-                                </div>
-                                <div class= "text">
-                                    {{text}}
-                                </div>
-                            </li>
-                            </a>
-                            {{/each}}
-                            {{else}}
-                            <li><div class="text">You have no notifications. Do something first.</div></li>
-                            {{/if}}
-                        </ul>
-                    </a>
-					<a href="/" class="link"><i class="fa fa-sign-out"></i></a>
-				</div>
-			{{else}}
-				{{> loginModalButton}}
-			{{/if}}
-			<!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
-		</div>
-	</header>
-    {{#if currentUser}}
-	<div class="header-notice">
-        You are awesome. Thank you for using Base. You can find out about our referral program <a style="color:white" target="_blank" href="/referrals"><b>here</b></a>
-	</div>
-    {{/if}}
+<header>
+    <div class="content">
+        <a href="/" class="logo">
+            <img src="/images/logo.png" alt="BASE">
+        </a>
+        <!--<form action="/search">
+                <input name="q" type="text" placeholder="Search...">
+            </form>-->
+        {{#if currentUser}}
+        <div class="user-wrapper" id="user-wrapper">
+            <img src="{{profile.img}}">
+            <h2>{{user.name}}</h2>
+            <a href="/messages" class="link">
+                <i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
+            </a>
+            <a id="show-notifs" href="" class="link">
+                <i class="fa fa-bell" target="notif-dropdown"><span>{{newNotifs}}</span></i>
+                <ul class="dropdown hide {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
+                    {{#if notifs}}
+                    {{#each notifs}}
+                    {{> notification}}
+                    {{/each}}
+                    {{else}}
+                    <li><div class="text">You have no notifications. Do something first.</div></li>
+                    {{/if}}
+                </ul>
+            </a>
+            <a href="/" class="link"><i class="fa fa-sign-out"></i></a>
+        </div>
+        {{else}}
+        {{> loginModalButton}}
+        {{/if}}
+        <!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
+    </div>
+</header>
+{{#if currentUser}}
+<div class="header-notice">
+    You are awesome. Thank you for using Base. You can find out about our referral program <a style="color:white" target="_blank" href="/referrals"><b>here</b></a>
+</div>
+{{/if}}
+</template>
+
+<template name="notification">
+<a id = "{{this._id}}" class = "notif-link" href="/post/{{this.postId}}">
+    <li class="{{#if unread}}unread{{/if}}">
+    <div class= "icon">
+        <img src="{{notifImage}}" />
+    </div>
+    <div class= "text">
+        {{text}}
+    </div>
+    </li>
+</a>
 </template>
 
 <template name="footer">
-	<!--<footer class="footer">
-		<span><a href="{{pathFor 'about'}}">About</a></span>
-		<span>&copy; 2013 BASE</span>
-	</footer>-->
+<!--<footer class="footer">
+        <span><a href="{{pathFor 'about'}}">About</a></span>
+        <span>&copy; 2013 BASE</span>
+    </footer>-->
 </template>
