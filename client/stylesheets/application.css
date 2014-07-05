@@ -1928,7 +1928,8 @@ fieldset.show, div.show {
   display: block;
   width: 25.58941%;
   border: 1px solid #E6E6E6;
-  border-right: none; }
+  border-right: none;
+  overflow: auto; }
   .messaging-sidebar:last-child {
     width: 23.23176%; }
 
