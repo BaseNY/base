@@ -25,8 +25,10 @@ Package.on_use(function(api) {
 		'fast-render',
 
 		'app-setup',
+		'app-debug',
 		'app-utils',
-		'app-schemas'
+		'app-schemas',
+		'app-offers'
 	]);
 
 	api.add_files([

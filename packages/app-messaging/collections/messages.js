@@ -12,19 +12,24 @@
 */
 Schemas.Message = new SimpleSchema({
 	_id: {
+		label: '_id',
 		type: String,
 		optional: true
 	},
 	senderId: {
+		label: 'Sender Id',
 		type: String
 	},
 	senderName: {
+		label: 'Sender Name',
 		type: String
 	},
 	conversationId: {
+		label: 'Conversation Id',
 		type: String
 	},
     type: {
+    	label: 'Type',
         type: Number,
         optional: true
     /*
@@ -34,13 +39,16 @@ Schemas.Message = new SimpleSchema({
     */
     },
 	text: {
+		label: 'Text',
 		type: String,
         optional: true
 	},
 	createdAt: {
+		label: 'Created At',
 		type: Date
 	},
 	read: {
+		label: 'Read',
 		type: Boolean
 	}
 });
@@ -84,11 +92,11 @@ Meteor.methods({
 			conversationId: conversationId,
 			senderId: this.userId
 		};
-        console.log(doc);
 		var sender = Meteor.users.findOne(this.userId);
 		if (sender) {
 			doc.senderName = sender.profile.name;
 		}
+		Debug.messaging('_createMessage', doc);
 		return Messages.insert(doc);
 	},
 	_sendMessage: function(text, recipientId) {
@@ -101,6 +109,7 @@ Meteor.methods({
 			doc.senderName = sender.profile.name;
 		}
 		var userIds = [recipientId, this.userId];
+		Debug.messaging('_sendMessage', doc);
 		if (Conversations.existsWithUsers(userIds)) {
 			doc.conversationId = Conversations.findOne({'users._id': {$all: userIds}})._id;
 			return Messages.insert(doc);
@@ -112,7 +121,7 @@ Meteor.methods({
 					doc.conversationId = res;
 					return Messages.insert(doc);
 				}
-			})
+			});
 		}
 	},
 	_readMessages: function(conversationId) {

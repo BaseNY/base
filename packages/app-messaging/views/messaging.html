@@ -1,7 +1,11 @@
 <template name="messagingPost">
-    <div class="messagingPost">
-        <div id="message-{{this._id}}" contenteditable="true" class="messageText"></div><a href=""><div class="messageSend"><i class="fa fa-chevron-right"></i></div></a>
-    </div>
+	<div class="messagingPost">
+		<div id="message-{{this._id}}" contenteditable="true" class="messageText"></div>
+		<a href="">
+			<div class="messageSend"><i class="fa fa-chevron-right"></i>
+			</div>
+		</a>
+	</div>
 </template>
 
 <template name="messaging">
@@ -38,22 +42,22 @@
 			</div>
 		</div>
 		<div class="messaging-reply-container">
-            <div class="message-reply-box">
-			<div id="messaging-reply" contenteditable="true" class="message-reply-text" placeholder="Message..."></div>
-            <footer>
-                <div class="add-preview-container">
-                    <img id ="add-preview" class="image-preview" src=""/> 
-                </div>
-		            <input id= "add-image" class="image-input" type="file" />
-                   <label for="add-image">
-                <div class="photo-upload">
-                    <a href=""><i class="fa fa-camera"></i></a> Add Photos
-                </div>
-            </label>
-            <h4>Press Enter to send</h4>
+			<div class="message-reply-box">
+				<div id="messaging-reply" contenteditable="true" class="message-reply-text" placeholder="Message..."></div>
+				<footer>
+					<div class="add-preview-container">
+						<img id="add-preview" class="image-preview" src="" />
+					</div>
+					<input id="add-image" class="image-input" type="file" />
+					<label for="add-image">
+						<div class="photo-upload">
+							<a href=""><i class="fa fa-camera"></i></a> Add Photos
+						</div>
+					</label>
+					<h4>Press Enter to send</h4>
 
-            </footer>
-        </div>
+				</footer>
+			</div>
 		</div>
 	</div>
 </template>
@@ -65,35 +69,36 @@
 			<div class="message-time"></div>
 		</div>
 		<div class="message-text">{{this.text}}</div>-->
-        <div class="left">
-            <a href="/profile/{{sender._id}}"><img src="{{sender.profile.img}}" /></a>
-        </div><div class="middle">
-            <h4><a href="/profile/{{sender._id}}">{{sender.profile.name}}</a></h4>
-            {{#each this}}
-            {{#if isText}}
-            <span>{{this.text}}</span>
-            {{else}}
-            <a href="{{this.text}}" data-lightbox="image-{{this._id}}">
-            <img src="{{this.text}}" />
-        </a>
-            {{/if}}
-            {{/each}}
-        </div><div class="right">
-            {{date}}
-        </div>
+		<div class="left">
+			<a href="/profile/{{sender._id}}">
+				<img src="{{sender.profile.img}}" />
+			</a>
+		</div>
+		<div class="middle">
+			<h4><a href="/profile/{{sender._id}}">{{sender.profile.name}}</a>
+			</h4>
+			{{#each messages}}
+				{{#if isText}}
+					<span>{{this.text}}</span>
+				{{else}}
+					<a href="{{this.text}}" data-lightbox="image-{{this._id}}">
+						<img src="{{this.text}}" />
+					</a>
+				{{/if}}
+			{{/each}}
+		</div>
+		<div class="right">
+			{{date}}
+		</div>
 	</div>
 </template>
 
 <template name="messagingInfo">
 	<div class="messaging-info">
-		{{#with conversation}}
-			{{#if this.isGroup}}
-				roflcopter
-			{{else}}
-				<a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
+		{{#with conversation}} {{#if this.isGroup}} roflcopter {{else}}
+		<a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
 					{{this.otherUser.profile.name}}
 				</a>
-			{{/if}}
-		{{/with}}
+		{{/if}} {{/with}}
 	</div>
 </template>

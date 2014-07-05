@@ -6,7 +6,10 @@ Package.on_use(function(api) {
 	api.use([
 		'simple-schema',
 
-		'collection-hooks'
+		'collection-hooks',
+
+		'app-utils',
+		'app-schemas'
 	]);
 
 	api.add_files('collections/offers.js', ['client', 'server']);

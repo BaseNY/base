@@ -2,6 +2,9 @@
 MessagingController = FastRender.RouteController.extend({
 	template: 'messaging',
 	waitOn: function() {
+		if (Meteor.isClient && !Meteor.isLoggedIn()) {
+			Router.go('/');
+		}
 		// if route has a conversationId
 		return [
 			Meteor.subscribe('conversations', {
@@ -21,11 +24,13 @@ MessagingController = FastRender.RouteController.extend({
 	data: function() {
 		if (!this.params.conversationId) {
 			var conv = Conversations.findOne({_id: {$in: Meteor.user().conversationIds}});
+			Debug.messaging('No conversationId: route is /messages, conv found', conv);
 			if (conv) {
 				window.history.replaceState({conversationId: conv._id}, '', '/messages/' + conv._id);
 				this.params.conversationId = conv._id;
 			}
 		}
+		Debug.messaging('Routing data', {conversationId: this.params.conversationId});
 		if (this.params.conversationId) {
 			var conversation, conversations, messages;
 			var transform = function(doc) {
@@ -45,7 +50,15 @@ MessagingController = FastRender.RouteController.extend({
 			};
 
 			conversation = Conversations.findOne(this.params.conversationId, {transform: transform});
-			messages = Messages.find({conversationId: this.params.conversationId}).fetch();
+			messages = Messages.find({
+				conversationId: this.params.conversationId
+			}, {
+				sort: {createdAt: 1},
+				transform: function(doc) {
+					doc.sender = Meteor.users.findOne(doc.senderId);
+					return doc;
+				}
+			}).fetch();
 			if (Meteor.user().conversationIds.length > 0) {
 				conversations = Conversations.find({_id: {$in: Meteor.user().conversationIds}}, {transform: transform}).fetch();
 			}
