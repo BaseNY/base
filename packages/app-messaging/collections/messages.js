@@ -2,8 +2,8 @@
 {
 	_id:
 	createdAt:
-	posterId:
-	posterName:
+	senderId:
+	senderName:
 	offerId: optional
 	text:
 	type: - 1 is an offer, 0 is a regular message -
@@ -15,10 +15,10 @@ Schemas.Message = new SimpleSchema({
 		type: String,
 		optional: true
 	},
-	posterId: {
+	senderId: {
 		type: String
 	},
-	posterName: {
+	senderName: {
 		type: String
 	},
 	conversationId: {
@@ -50,7 +50,7 @@ Messages = new Meteor.Collection('messages');
 // TODO update this to allow user to edit their own messages?
 Messages.allow({
 	insert: function(userId, doc) {
-		return userId && (userId === doc.posterId || Roles.userIsInRole(userId, 'admin'));
+		return userId && (userId === doc.senderId || Roles.userIsInRole(userId, 'admin'));
 	},
 	update: function(userId, doc, fieldNames, modifier) {
 		return userId && Roles.userIsInRole(userId, 'admin');
@@ -82,23 +82,23 @@ Meteor.methods({
 			text: text,
             type: type,
 			conversationId: conversationId,
-			posterId: this.userId
+			senderId: this.userId
 		};
         console.log(doc);
-		var poster = Meteor.users.findOne(this.userId);
-		if (poster) {
-			doc.posterName = poster.profile.name;
+		var sender = Meteor.users.findOne(this.userId);
+		if (sender) {
+			doc.senderName = sender.profile.name;
 		}
 		return Messages.insert(doc);
 	},
 	_sendMessage: function(text, recipientId) {
 		var doc = {
 			text: text,
-			posterId: this.userId
+			senderId: this.userId
 		};
-		var poster = Meteor.users.findOne(this.userId);
-		if (poster) {
-			doc.posterName = poster.profile.name;
+		var sender = Meteor.users.findOne(this.userId);
+		if (sender) {
+			doc.senderName = sender.profile.name;
 		}
 		var userIds = [recipientId, this.userId];
 		if (Conversations.existsWithUsers(userIds)) {

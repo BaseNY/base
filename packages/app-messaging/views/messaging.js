@@ -97,7 +97,7 @@ Template.message.helpers({
 });
 
 Template.message.sender = function() {
-    return Meteor.users.findOne({_id: this[0].posterId});
+    return Meteor.users.findOne({_id: this[0].senderId});
 };
 
 Template.message.date = function() {
@@ -123,7 +123,7 @@ Template.messagingConversation.messageGroups = function() {
     _.each(this.messages, function(m) {
         if(group.length == 0)
             group.push(m);
-        else if(m.posterId == group[group.length -1].posterId && (m.createdAt.getTime() - group[group.length-1].createdAt.getTime()) < 180000)
+        else if(m.senderId == group[group.length -1].senderId && (m.createdAt.getTime() - group[group.length-1].createdAt.getTime()) < 180000)
             group.push(m);
         else {
             groups.push(group);
