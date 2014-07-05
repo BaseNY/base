@@ -5,6 +5,9 @@ Schemas.ConversationUser = new SimpleSchema({
 	// the name of the conversation for the user designated by the id
 	conversationName: {
 		type: String
+	},
+	read: {
+		type: Boolean
 	}
 });
 
@@ -137,7 +140,12 @@ Conversations.before.insert(function(userId, doc) {
 						}
 					}, '');
 				}
-				convUsers.push({_id: user._id, conversationName: name});
+				convUsers.push({
+					_id: user._id,
+					conversationName: name,
+					// is read for the user who created the conversation
+					read: user._id === userId
+				});
 			});
 			doc.users = convUsers;
 		})();
@@ -179,6 +187,28 @@ Meteor.methods({
 	},
 	_updateConversationTime: function(_id) {
 		return Conversations.update(_id, {$set: {lastMessageAt: new Date()}});
+	},
+	_markRead: function(conversationId, userId) {
+		Debug.messaging('marking read', {conversationId: conversationId, userId: userId});
+		return Conversations.update({
+			_id: conversationId,
+			'users._id': userId
+		}, {
+			$set: {'users.$.read': true}
+		}, {
+			multi: true
+		});
+	},
+	_markUnread: function(conversationId, senderId) {
+		Debug.messaging('marking unread', {conversationId: conversationId, senderId: senderId});
+		return Conversations.update({
+			_id: conversationId,
+			'users': {$elemMatch: {_id: {$ne: senderId}}}
+		}, {
+			$set: {'users.$.read': false}
+		}, {
+			multi: true
+		});
 	}
 });
 
@@ -212,3 +242,11 @@ Conversations.create = function(userIds) {
 Conversations.existsWithUsers = function(userIds) {
 	return Conversations.find({'users._id': {$all: userIds}}, {limit: 1}).count() >= 1;
 };
+
+Conversations.markRead = function(conversationId, userId, callback) {
+	return Meteor.call('_markRead', conversationId, userId, callback);
+};
+
+Conversations.markUnread = function(conversationId, senderId, callback) {
+	return Meteor.call('_markUnread', conversationId, senderId, callback);
+}

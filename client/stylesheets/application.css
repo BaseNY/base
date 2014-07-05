@@ -425,16 +425,16 @@ section.body {
 .right-column {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 74.4105871005%; }
+  margin-right: 2.35765%;
+  width: 74.41059%; }
   .right-column:last-child {
     margin-right: 0; }
 
 .left-column {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%; }
+  margin-right: 2.35765%;
+  width: 23.23176%; }
   .left-column:last-child {
     margin-right: 0; }
 
@@ -596,8 +596,8 @@ header {
         header > .content .dropdown li .icon {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 14.7019570017%; }
+          margin-right: 2.35765%;
+          width: 14.70196%; }
           header > .content .dropdown li .icon:last-child {
             margin-right: 0; }
         header > .content .dropdown li .text {
@@ -605,8 +605,8 @@ header {
           padding: 4px;
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 82.9403914003%; }
+          margin-right: 2.35765%;
+          width: 82.94039%; }
           header > .content .dropdown li .text:last-child {
             margin-right: 0; }
 
@@ -646,15 +646,15 @@ header {
     .home-sidebar-content ul li .left {
       float: left;
       display: block;
-      margin-right: 2.3576515979%;
-      width: 10.4370548518%; }
+      margin-right: 2.35765%;
+      width: 10.43705%; }
       .home-sidebar-content ul li .left:last-child {
         margin-right: 0; }
     .home-sidebar-content ul li .right {
       float: left;
       display: block;
-      margin-right: 2.3576515979%;
-      width: 87.2052935503%;
+      margin-right: 2.35765%;
+      width: 87.20529%;
       position: relative; }
       .home-sidebar-content ul li .right:last-child {
         margin-right: 0; }
@@ -686,8 +686,8 @@ header {
 .home-sidebar {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%;
+  margin-right: 2.35765%;
+  width: 23.23176%;
   padding-top: 24px; }
   .home-sidebar:last-child {
     margin-right: 0; }
@@ -695,8 +695,8 @@ header {
 .home-feed {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
-  width: 74.4105871005%; }
+  margin-right: 2.35765%;
+  width: 74.41059%; }
   .home-feed:last-child {
     margin-right: 0; }
 
@@ -905,15 +905,15 @@ header {
   #feed-select-modal li .left {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 10.4370548518%; }
+    margin-right: 2.35765%;
+    width: 10.43705%; }
     #feed-select-modal li .left:last-child {
       margin-right: 0; }
   #feed-select-modal li .right {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 87.2052935503%; }
+    margin-right: 2.35765%;
+    width: 87.20529%; }
     #feed-select-modal li .right:last-child {
       margin-right: 0; }
     #feed-select-modal li .right i {
@@ -1190,22 +1190,22 @@ td.msgs-right {
   .post-page .container {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
+    margin-right: 2.35765%;
     width: 100%; }
     .post-page .container:last-child {
       margin-right: 0; }
   .post-page .pic {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 57.3509785009%; }
+    margin-right: 2.35765%;
+    width: 57.35098%; }
     .post-page .pic:last-child {
       margin-right: 0; }
   .post-page .info {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 40.2913699012%; }
+    margin-right: 2.35765%;
+    width: 40.29137%; }
     .post-page .info:last-child {
       margin-right: 0; }
   .post-page .product-box {
@@ -1239,15 +1239,15 @@ section.pageAbout {
   section.pageAbout div.trio {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%; }
+    margin-right: 2.35765%;
+    width: 31.76157%; }
     section.pageAbout div.trio:last-child {
       margin-right: 0; }
     @media screen and (max-width: 600px)  {
       section.pageAbout div.trio {
         float: left;
         display: block;
-        margin-right: 7.4229703521%;
+        margin-right: 7.42297%;
         width: 100%; }
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
@@ -1330,15 +1330,15 @@ section.pageAbout {
         .pageFeeds .post .post-inner .container .left {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 14.7019570017%; }
+          margin-right: 2.35765%;
+          width: 14.70196%; }
           .pageFeeds .post .post-inner .container .left:last-child {
             margin-right: 0; }
         .pageFeeds .post .post-inner .container .right {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 82.9403914003%; }
+          margin-right: 2.35765%;
+          width: 82.94039%; }
           .pageFeeds .post .post-inner .container .right:last-child {
             margin-right: 0; }
       .pageFeeds .post .post-inner .actions {
@@ -1359,16 +1359,16 @@ section.pageAbout {
       .pageFeeds .post .commentContainer .left {
         float: left;
         display: block;
-        margin-right: 2.3576515979%;
-        width: 6.1721527019%; }
+        margin-right: 2.35765%;
+        width: 6.17215%; }
         .pageFeeds .post .commentContainer .left:last-child {
           margin-right: 0; }
       .pageFeeds .post .commentContainer .right {
         word-wrap: break-word;
         float: left;
         display: block;
-        margin-right: 2.3576515979%;
-        width: 91.4701957002%; }
+        margin-right: 2.35765%;
+        width: 91.4702%; }
         .pageFeeds .post .commentContainer .right:last-child {
           margin-right: 0; }
       .pageFeeds .post .commentContainer .commentSmallContainer {
@@ -1390,8 +1390,8 @@ section.pageAbout {
         .pageFeeds .post .commentContainer .comment-inner-container .commentForm {
           float: left;
           display: block;
-          margin-right: 2.3576515979%;
-          width: 91.4701957002%;
+          margin-right: 2.35765%;
+          width: 91.4702%;
           border-color: #cdcdcd;
           height: auto;
           background-color: white;
@@ -1418,7 +1418,7 @@ section.pageAbout {
 .profile.right-column .home-feed {
   float: left;
   display: block;
-  margin-right: 2.3576515979%;
+  margin-right: 2.35765%;
   width: 100%; }
   .profile.right-column .home-feed:last-child {
     margin-right: 0; }
@@ -1747,8 +1747,8 @@ fieldset.show, div.show {
   .items-container .item {
     float: left;
     display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
+    margin-right: 2.35765%;
+    width: 31.76157%;
     margin-bottom: 2.35765%;
     padding: 10px; }
     .items-container .item:last-child {
@@ -1868,8 +1868,8 @@ fieldset.show, div.show {
   .message .left {
     float: left;
     display: block;
-    margin-right: 3.1684356888%;
-    width: 8.2947238322%; }
+    margin-right: 3.16844%;
+    width: 8.29472%; }
     .message .left img {
       width: 100%; }
     .message .left:last-child {
@@ -1877,8 +1877,8 @@ fieldset.show, div.show {
   .message .middle {
     float: left;
     display: block;
-    margin-right: 3.1684356888%;
-    width: 77.073680958%;
+    margin-right: 3.16844%;
+    width: 77.07368%;
     word-wrap: break-word; }
     .message .middle:last-child {
       margin-right: 0; }
@@ -1892,8 +1892,8 @@ fieldset.show, div.show {
     color: lightgrey;
     float: left;
     display: block;
-    margin-right: 3.1684356888%;
-    width: 8.2947238322%; }
+    margin-right: 3.16844%;
+    width: 8.29472%; }
     .message .right:last-child {
       margin-right: 0; }
 
@@ -1930,9 +1930,9 @@ fieldset.show, div.show {
 .messaging-sidebar-img {
   float: left;
   display: block;
-  width: 36.7161326647%; }
+  width: 36.71613%; }
   .messaging-sidebar-img:last-child {
-    width: 26.5677346705%; }
+    width: 26.56773%; }
   .messaging-sidebar-img img {
     display: block;
     width: 90%;
@@ -1941,12 +1941,12 @@ fieldset.show, div.show {
 .messaging-sidebar-info {
   float: left;
   display: block;
-  width: 73.4322653295%;
+  width: 73.43227%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
   .messaging-sidebar-info:last-child {
-    width: 63.2838673353%; }
+    width: 63.28387%; }
 
 .messaging-container, .messaging-sidebar, .messaging-conversation {
   height: 100%; }
@@ -1964,16 +1964,16 @@ fieldset.show, div.show {
 .messaging-sidebar {
   float: left;
   display: block;
-  width: 25.5894128995%;
+  width: 25.58941%;
   border: 1px solid #E6E6E6;
   border-right: none;
   overflow: auto; }
   .messaging-sidebar:last-child {
-    width: 23.2317613015%; }
+    width: 23.23176%; }
 
 .messaging-conversation {
   float: left;
   display: block;
-  width: 76.7682386985%; }
+  width: 76.76824%; }
   .messaging-conversation:last-child {
-    width: 74.4105871005%; }
+    width: 74.41059%; }
