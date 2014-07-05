@@ -1783,6 +1783,7 @@ fieldset.show, div.show {
     height: 72px; }
   .messaging-info .message-reply-box footer, .messages-container .message-reply-box footer, .messaging-reply-container .message-reply-box footer {
     background-color: white;
+    border-bottom-right-radius: 8px;
     color: grey;
     height: auto;
     border: 1px solid lightgrey; }
@@ -1861,7 +1862,9 @@ fieldset.show, div.show {
     .message .middle span {
       display: block; }
     .message .middle img {
-      border: 1px solid lightgrey; }
+      border: 1px solid lightgrey;
+      width: auto;
+      max-width: 100%; }
   .message .right {
     color: lightgrey;
     float: left;

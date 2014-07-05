@@ -1,5 +1,12 @@
+var scrollDownVel = function(elemTo, elemCont) {
+    console.log("scrolling");
+    elemTo.velocity('scroll', {container: elemCont, duration: 50});
+};
+
 var scrollDown = function(elem) {
-	elem.velocity({scrollTop: elem[0].scrollHeight}, 50);
+	//elem.animate({scrollTop: elem[0].scrollHeight}, 50);
+    console.log(elem[0].scrollHeight);
+    elem.velocity('scroll', {container: elem, offset: elem[0].scrollHeight, duration: 50});
 };
 
 Template.messagingPost.messageSent = function(id) {
@@ -39,7 +46,7 @@ Template.messaging.sendMsg = function(e, cId) {
 						console.log(err);
 					} else {
 						$message.html("");
-						scrollDown($messagesContainer);
+                        scrollDown($messagesContainer);
 					}
 				});
 			}
@@ -68,7 +75,9 @@ Template.messaging.rendered = function() {
 	$('.body').autoFit();
 	var $messagesContainer = $(".messages-container");
 	$messagesContainer.autoFit();
-	scrollDown($messagesContainer);
+    $(window).bind("load", function() {
+    scrollDown($messagesContainer);
+    });
 };
 
 Template.message.helpers({

@@ -60,6 +60,7 @@
                 font-weight:300;
             }
             background-color:white;
+            border-bottom-right-radius: 8px;
             color:grey;
             height:auto;
             border:1px solid lightgrey;
@@ -126,6 +127,8 @@
         }
         img {
             border: 1px solid lightgrey;
+            width:auto;
+            max-width: 100%;
         }
     }
     .right {
