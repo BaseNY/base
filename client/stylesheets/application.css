@@ -1879,7 +1879,8 @@ fieldset.show, div.show {
   border-right: none;
   background-color: white;
   padding: 0.4em;
-  border-bottom: 1px solid #E6E6E6; }
+  border-bottom: 1px solid #E6E6E6;
+  color: #252525; }
   .messaging-sidebar-item:after {
     content: "";
     display: table;
@@ -1891,6 +1892,10 @@ fieldset.show, div.show {
   .messaging-sidebar-item.current {
     background-color: #33B5E5;
     color: white; }
+    .messaging-sidebar-item.current a {
+      color: white; }
+      .messaging-sidebar-item.current a:hover {
+        text-decoration: underline; }
 
 .messaging-sidebar-img {
   float: left;

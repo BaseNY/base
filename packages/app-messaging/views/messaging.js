@@ -166,3 +166,18 @@ Template.messagingConversation.rendered = function() {
 		scrollDown($messagesContainer);
 	});
 }
+
+/*
+Template.messaging.helpers({
+	offer: function() {
+		if (this.offerId) {
+			return Offers.findOne(this.offerId, {
+				transform: function(doc) {
+					doc.item = Items.findOne(doc.itemId);
+					return doc;
+				}
+			});
+		}
+	}
+});
+*/

@@ -25,7 +25,20 @@
 					<img src="{{this.otherUser.profile.img}}">
 				</div>
 				<div class="messaging-sidebar-info">
-					{{this.name}}
+					<span>{{this.name}}</span>
+					<br>
+					{{#with offer}}
+						<span>
+							Offer for:
+							<a href="/post/{{this.itemId}}">
+								{{#if this.item.title}}
+									{{this.item.title}}
+								{{else}}
+									{{this.item.description}}
+								{{/if}}
+							</a>
+						</span>
+					{{/with}}
 				</div>
 				<!--{{json this}}-->
 			</a>
@@ -103,18 +116,18 @@
 			<a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
 				{{this.otherUser.profile.name}}
 			</a>
-		{{/with}}
-		{{#with offer}}
-			<div>
-				Offer for:
-				<a href="/post/{{this.itemId}}">
-					{{#if this.item.title}}
-						{{this.item.title}}
-					{{else}}
-						{{this.item.description}}
-					{{/if}}
-				</a>
-			</div>
+			{{#with offer}}
+				<div>
+					Offer for:
+					<a href="/post/{{this.itemId}}">
+						{{#if this.item.title}}
+							{{this.item.title}}
+						{{else}}
+							{{this.item.description}}
+						{{/if}}
+					</a>
+				</div>
+			{{/with}}
 		{{/with}}
 	</div>
 </template>

@@ -19,10 +19,8 @@ MessagingController = FastRender.RouteController.extend({
 			Meteor.subscribe('messages', {
 				conversationId: {$in: Meteor.user().conversationIds}
 			}),
-			Meteor.subscribe('offers', {
-				$or: [{sellerId: this.userId}, {buyerId: this.userId}]
-			}),
-			Meteor.subscribe('items', {})
+			Meteor.subscribe('offers'),
+			Meteor.subscribe('items')
 		];
 	},
 	data: function() {
@@ -50,6 +48,15 @@ MessagingController = FastRender.RouteController.extend({
 						doc.otherUsers.push(Meteor.users.findOne(user._id));
 					}
 				});
+				if (doc.offerId) {
+					doc.offer = Offers.findOne(doc.offerId, {
+						transform: function(doc) {
+							doc.item = Items.findOne(doc.itemId);
+							return doc;
+						}
+					});
+					Debug.messaging('conversation offer', Offers.findOne(doc.offerId));
+				}
 				return doc;
 			};
 
@@ -76,22 +83,11 @@ MessagingController = FastRender.RouteController.extend({
 				}).fetch();
 			}
 
-			if (conversation.offerId) {
-				offer = Offers.findOne(conversation.offerId, {
-					transform: function(doc) {
-						doc.item = Items.findOne(doc.itemId);
-						return doc;
-					}
-				});
-				Debug.messaging('Conversation has offerId', offer);
-			}
-
 			return {
 				conversationId: this.params.conversationId,
 				conversation: conversation,
 				conversations: conversations,
-				messages: messages,
-				offer: offer
+				messages: messages
 			};
 		}
 	}

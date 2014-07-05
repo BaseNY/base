@@ -6,6 +6,7 @@
 	background-color: white;
 	padding: 0.4em;
 	border-bottom: 1px solid #E6E6E6;
+	color: #252525;
 	&:first-child {
 		border-top: none;
 	}
@@ -15,6 +16,12 @@
 	&.current {
 		background-color: #33B5E5;
 		color: white;
+		a {
+			color: white;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
