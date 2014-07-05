@@ -19,6 +19,7 @@ var debug = function(namespace) {
 				c += ' - ' + desc;
 			}
 
+			console.log();
 			console.log(c + ']');
 			console.log(obj);
 			console.log(c + ' end]');
