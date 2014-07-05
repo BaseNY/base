@@ -28,7 +28,7 @@ var debug = function(namespace) {
 }
 
 // means debug for the package app-<key>
-var packages = ['feed', 'messaging', 'users', 'utils'];
+var packages = ['feed', 'messaging', 'offers', 'users', 'utils'];
 Debug = {
 	log: debug()
 };

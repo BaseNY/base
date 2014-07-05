@@ -111,7 +111,7 @@ Template.message.date = function() {
 Template.messagingConversation.messageGroups = function() {
     var groups = [];
     var group = [];
-    _.each(Router.current().data().messages, function(m) {
+    _.each(this.messages, function(m) {
         if(group.length == 0)
             group.push(m);
         else if(m.posterId == group[group.length -1].posterId && (m.createdAt.getTime() - group[group.length-1].createdAt.getTime()) < 180000)
