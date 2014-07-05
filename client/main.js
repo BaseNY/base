@@ -19,6 +19,7 @@ Template.layout.events({
 
 Template.header.events({
     'click #show-notifs': function(e) {
+        e.stopPropagation();
         if (Session.get('showNotifs'))
     Session.set('showNotifs', false);
         else {
@@ -32,14 +33,13 @@ Template.header.events({
 });
 
 Template.header.rendered = function(){
-    if(Session.get('showNotifs')) {
-        console.log('conflict?');
-        $("body").click(function(e) {
+    $("body").click(function(e) {
+        if(Session.get('showNotifs')) {
             if (!(e.target.id == "notif-dropdown" || $(e.target).parents("#notif-dropdown").size())) { 
                 Session.set('showNotifs',false);
             }
-        });
-    }
+        }
+    });
 };
 
 Template.header.helpers({

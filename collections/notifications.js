@@ -3,7 +3,7 @@ Notifications = new Meteor.Collection('notifs');
 Meteor.methods({
     glossedNotifs: function(filter) {
         Notifications.update({
-            userId: this.userId
+            userId: Meteor.userId()
         }, {
             $set: {
                 seen: true,
