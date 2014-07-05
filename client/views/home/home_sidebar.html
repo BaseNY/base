@@ -22,6 +22,15 @@
     </div>
 </div>
 {{/with}}
+<h3>Location</h3>
+<ul>
+    <li id="filter-nyc" class="checked">
+    <div class="left"><i class="fa fa-building"></i></div>
+    <div class="right">New York City<i class="fa fa-arrow-circle-o-right"></i></div>
+    </li>
+</ul>
+
+<h3>Degrees</h3>
 <ul>
     <li id="filter-everyone" class="{{#if everyoneOn}} checked {{/if}}">
     <div class="left"><i class="fa fa-globe"></i>
@@ -34,6 +43,7 @@
     <div class="right">Friends{{#if friendsOn}}<i class="fa fa-arrow-circle-o-right"></i>{{/if}}</div>
     </li>
 </ul>
+
 {{/if}}
 </template>
 <template name="homeSidebarFilters">

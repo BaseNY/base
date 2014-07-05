@@ -4,7 +4,9 @@
 		<div id="post-{{this._id}}" class="post-inner">
 			<div class="container">
 				<div class="left">
+                    <a href="/profile/{{this.sellerId}}">
 					<img src={{imgUrl}}>
+                </a>
 				</div>
 				<div class="right">
 					<h1><a href="/post/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
@@ -16,10 +18,11 @@
 			</div>
 			{{#if currentUser}}
 				<div class="icons-container">
-					<i class="fa fa-envelope-o"></i>
 					{{#if ownPost}}
 						<i class="fa fa-trash-o"></i>
 					{{else}}
+                        <span>Interested? Send a message!</span>
+					    <i class="fa fa-envelope-o"></i>
 						{{#if isInRole 'admin'}}
 							<i class="fa fa-trash-o"></i>
 						{{/if}}
@@ -62,7 +65,9 @@
 <template name="comment">
 	<div class="commentSmallContainer">
 		<div class="left">
+            <a href="/profile/{{id}}">
 			<img src="{{imgUrl}}">
+        </a>
 		</div>
 		<div class="right">
 			<a href="/profile/{{id}}"><b>{{name}}</b></a> {{{text}}}
