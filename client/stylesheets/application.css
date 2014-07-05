@@ -1886,6 +1886,11 @@ fieldset.show, div.show {
     clear: both; }
   .messaging-sidebar-item:first-child {
     border-top: none; }
+  .messaging-sidebar-item:hover {
+    background-color: #F3F3F3; }
+  .messaging-sidebar-item.current {
+    background-color: #33B5E5;
+    color: white; }
 
 .messaging-sidebar-img {
   float: left;
@@ -1898,14 +1903,14 @@ fieldset.show, div.show {
     width: 90%;
     height: 90%; }
 
-.messaging-sidebar-name {
+.messaging-sidebar-info {
   float: left;
   display: block;
   width: 73.43227%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
-  .messaging-sidebar-name:last-child {
+  .messaging-sidebar-info:last-child {
     width: 63.28387%; }
 
 .messaging-container, .messaging-sidebar, .messaging-conversation {

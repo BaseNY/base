@@ -1,6 +1,8 @@
 <template name="messagingPost">
 	<div class="messagingPost">
-		<div id="message-{{this._id}}" contenteditable="true" class="messageText"></div>
+		<div id="message-{{this._id}}" contenteditable="true" class="messageText" placeholder="Send a message...">
+			<div class="placeholder">Send a message...</div>
+		</div>
 		<a href="">
 			<div class="messageSend"><i class="fa fa-chevron-right"></i>
 			</div>
@@ -18,11 +20,13 @@
 <template name="messagingSidebar">
 	<div class="messaging-sidebar">
 		{{#each conversations}}
-			<a href="/messages/{{this._id}}" class="messaging-sidebar-item">
+			<a href="/messages/{{this._id}}" class="messaging-sidebar-item {{#if this.current}}current{{/if}}">
 				<div class="messaging-sidebar-img">
 					<img src="{{this.otherUser.profile.img}}">
 				</div>
-				<div class="messaging-sidebar-name">{{this.name}}</div>
+				<div class="messaging-sidebar-info">
+					{{this.name}}
+				</div>
 				<!--{{json this}}-->
 			</a>
 		{{else}}
@@ -95,10 +99,22 @@
 
 <template name="messagingInfo">
 	<div class="messaging-info">
-		{{#with conversation}} {{#if this.isGroup}} roflcopter {{else}}
-		<a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
-					{{this.otherUser.profile.name}}
+		{{#with conversation}}
+			<a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
+				{{this.otherUser.profile.name}}
+			</a>
+		{{/with}}
+		{{#with offer}}
+			<div>
+				Offer for:
+				<a href="/post/{{this.itemId}}">
+					{{#if this.item.title}}
+						{{this.item.title}}
+					{{else}}
+						{{this.item.description}}
+					{{/if}}
 				</a>
-		{{/if}} {{/with}}
+			</div>
+		{{/with}}
 	</div>
 </template>

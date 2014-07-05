@@ -9,6 +9,13 @@
 	&:first-child {
 		border-top: none;
 	}
+	&:hover {
+		background-color: #F3F3F3;
+	}
+	&.current {
+		background-color: #33B5E5;
+		color: white;
+	}
 }
 
 .messaging-sidebar-img {
@@ -20,7 +27,7 @@
 	}
 }
 
-.messaging-sidebar-name {
+.messaging-sidebar-info {
 	@include span-columns(2 of 3, block-collapse);
 	@include reset-display();
 	overflow: hidden;

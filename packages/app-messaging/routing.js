@@ -18,7 +18,11 @@ MessagingController = FastRender.RouteController.extend({
 			}),
 			Meteor.subscribe('messages', {
 				conversationId: {$in: Meteor.user().conversationIds}
-			})
+			}),
+			Meteor.subscribe('offers', {
+				$or: [{sellerId: this.userId}, {buyerId: this.userId}]
+			}),
+			Meteor.subscribe('items', {})
 		];
 	},
 	data: function() {
@@ -32,8 +36,8 @@ MessagingController = FastRender.RouteController.extend({
 		}
 		Debug.messaging('Routing data', {conversationId: this.params.conversationId});
 		if (this.params.conversationId) {
-			var conversation, conversations, messages;
-			var transform = function(doc) {
+			var conversation, conversations, messages, offer;
+			var transformConv = function(doc) {
 				if (doc.users.length > 2) {
 					doc.otherUsers = [];
 				}
@@ -49,7 +53,7 @@ MessagingController = FastRender.RouteController.extend({
 				return doc;
 			};
 
-			conversation = Conversations.findOne(this.params.conversationId, {transform: transform});
+			conversation = Conversations.findOne(this.params.conversationId, {transform: transformConv});
 			messages = Messages.find({
 				conversationId: this.params.conversationId
 			}, {
@@ -60,14 +64,34 @@ MessagingController = FastRender.RouteController.extend({
 				}
 			}).fetch();
 			if (Meteor.user().conversationIds.length > 0) {
-				conversations = Conversations.find({_id: {$in: Meteor.user().conversationIds}}, {transform: transform}).fetch();
+				conversations = Conversations.find({
+					_id: {$in: Meteor.user().conversationIds}
+				}, {
+					transform: function(doc) {
+						if (doc._id === conversation._id) {
+							doc.current = true;
+						}
+						return transformConv(doc);
+					}
+				}).fetch();
+			}
+
+			if (conversation.offerId) {
+				offer = Offers.findOne(conversation.offerId, {
+					transform: function(doc) {
+						doc.item = Items.findOne(doc.itemId);
+						return doc;
+					}
+				});
+				Debug.messaging('Conversation has offerId', offer);
 			}
 
 			return {
+				conversationId: this.params.conversationId,
 				conversation: conversation,
 				conversations: conversations,
 				messages: messages,
-				conversationId: this.params.conversationId
+				offer: offer
 			};
 		}
 	}
