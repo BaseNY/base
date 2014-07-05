@@ -84,6 +84,7 @@
                     @include span-columns(1);
                 }
                 .right {
+                    word-wrap: break-word;
                     @include span-columns(11);
                 }
             .commentSmallContainer {

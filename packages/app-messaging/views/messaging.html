@@ -41,6 +41,9 @@
             <div class="message-reply-box">
 			<div id="messaging-reply" contenteditable="true" class="message-reply-text" placeholder="Message..."></div>
             <footer>
+                <div class="add-preview-container">
+                    <img id ="add-preview" class="image-preview" src=""/> 
+                </div>
 		            <input id= "add-image" class="image-input" type="file" />
                    <label for="add-image">
                 <div class="photo-upload">
@@ -50,7 +53,6 @@
             <h4>Press Enter to send</h4>
 
             </footer>
-            <img id ="add-preview" class="image-preview" src=""/> 
         </div>
 		</div>
 	</div>
@@ -68,7 +70,13 @@
         </div><div class="middle">
             <h4><a href="/profile/{{sender._id}}">{{sender.profile.name}}</a></h4>
             {{#each this}}
+            {{#if isText}}
             <span>{{this.text}}</span>
+            {{else}}
+            <a href="{{this.text}}" data-lightbox="image-{{this._id}}">
+            <img src="{{this.text}}" />
+        </a>
+            {{/if}}
             {{/each}}
         </div><div class="right">
             {{date}}

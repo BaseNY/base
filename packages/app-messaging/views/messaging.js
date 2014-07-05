@@ -21,16 +21,20 @@ Template.messagingPost.events({
 	}
 });
 
-Template.messaging.events({
-	'keydown #messaging-reply': function(e) {
+Template.messaging.sendMsg = function(e, cId) {
+        if(Session.get('uploading')) {
+            setInterval(Template.messaging.sendMsg(e), 100);
+            return -1;
+        }
 		var $message = $("#messaging-reply"),
 			$messagesContainer = $(".messages-container");
 		// if is enter key and shift key is not held down
 		if (e.which === 13 && !e.shiftKey) {
 			e.preventDefault();
 			var text = $message.html();
+            var imgUrl = Session.get('uploadUrl');
 			if (text) {
-				Messages.create(text, this.conversationId, function(err) {
+				Messages.create(text, cId, 0, function(err) {
 					if (err) {
 						console.log(err);
 					} else {
@@ -39,7 +43,24 @@ Template.messaging.events({
 					}
 				});
 			}
+            if(imgUrl) {
+                Messages.create(s3Url + imgUrl, cId, 1, function(err) {
+                    if(err) {
+                        console.log(err);
+                    } else {
+                        $('#add-preview').attr('src','');
+                        $('#add-preview').removeClass('filled');
+						scrollDown($messagesContainer);
+                    }
+
+                });
+            }
 		}
+}
+
+Template.messaging.events({
+	'keydown #messaging-reply': function(e) {
+        Template.messaging.sendMsg(e, this.conversationId);
 	}
 });
 
@@ -49,6 +70,22 @@ Template.messaging.rendered = function() {
 	$messagesContainer.autoFit();
 	scrollDown($messagesContainer);
 };
+
+Template.message.helpers({
+    'isText': function() {
+        return !this.type;
+    },
+    'isPic': function() {
+        if(this.type)
+            return this.type == 1;
+        return false;
+    },
+    'isOffer': function() {
+        if(this.type)
+            return this.type == 2;
+        return false;
+    }
+});
 
 Template.message.sender = function() {
     return Meteor.users.findOne({_id: this[0].posterId});
@@ -87,4 +124,11 @@ Template.messagingConversation.messageGroups = function() {
     });
     groups.push(group);
     return groups;
+}
+
+Template.messagingConversation.rendered = function() {
+    $('#add-image').change(function() {
+        readUrl(this, 'add-preview');
+        $('#add-preview').toggleClass('filled uploading');
+    });
 }

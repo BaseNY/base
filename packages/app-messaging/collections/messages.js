@@ -24,8 +24,18 @@ Schemas.Message = new SimpleSchema({
 	conversationId: {
 		type: String
 	},
+    type: {
+        type: Number,
+        optional: true
+    /*
+     * text = 0
+     * img = 1
+     * offer = 2
+    */
+    },
 	text: {
-		type: String
+		type: String,
+        optional: true
 	},
 	createdAt: {
 		type: Date
@@ -67,12 +77,14 @@ Messages.before.insert(function(userId, doc) {
 });
 
 Meteor.methods({
-	_createMessage: function(text, conversationId) {
+	_createMessage: function(text, conversationId, type) {
 		var doc = {
 			text: text,
+            type: type,
 			conversationId: conversationId,
 			posterId: this.userId
 		};
+        console.log(doc);
 		var poster = Meteor.users.findOne(this.userId);
 		if (poster) {
 			doc.posterName = poster.profile.name;
@@ -108,8 +120,8 @@ Meteor.methods({
 	}
 });
 
-Messages.create = function(text, conversationId, callback) {
-	return Meteor.call('_createMessage', text, conversationId, callback);
+Messages.create = function(text, conversationId, type, callback) {
+	return Meteor.call('_createMessage', text, conversationId, type, callback);
 };
 
 Messages.send = function(text, recipientId, callback) {

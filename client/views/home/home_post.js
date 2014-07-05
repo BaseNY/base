@@ -1,3 +1,6 @@
+s3Url = 'https://s3.amazonaws.com/Basel/'; 
+
+
 Template.homePost.events({
 	'change .home-post-header input:radio': function(e) {
 		var $target = $(e.currentTarget),
@@ -83,7 +86,7 @@ Template.homeSellPost.upload = function(e) {
 		temp.title = $('input[name=title]').val();
 		temp.feeds = [];
 		if(Session.get('uploadUrl'))
-			temp.imageUrl = 'https://s3.amazonaws.com/Basel/' + Session.get('uploadUrl');
+            temp.imageUrl = s3Url + Session.get('uploadUrl');
 		if (Router.current().data()) {
 			temp.feeds.push(Router.current().data().feed._id);
 		} else {
