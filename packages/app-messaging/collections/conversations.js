@@ -27,6 +27,9 @@ Schemas.Conversation = new SimpleSchema({
 	},
 	createdAt: {
 		type: Date
+	},
+	lastMessageAt: {
+		type: Date
 	}
 });
 
@@ -94,6 +97,9 @@ Conversations.before.insert(function(userId, doc) {
 
 	if (!_.has(doc, 'createdAt')) {
 		doc.createdAt = new Date();
+	}
+	if (!_.has(doc, 'lastMessageAt')) {
+		doc.lastMessageAt = new Date();
 	}
 
 	// doc.users should be an array of userIds if doc.processUsers is true

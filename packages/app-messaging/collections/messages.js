@@ -59,6 +59,10 @@ Messages.before.insert(function(userId, doc) {
 	doc.createdAt = new Date();
 	doc.read = false;
 
+	Conversations.update(doc.conversationId, {
+		$set: {lastMessageAt: doc.createdAt}
+	});
+
 	check(doc, Schemas.Message);
 });
 
