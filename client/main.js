@@ -77,6 +77,6 @@ Template.header.events({
 	},
 	'click .notif-link': function(e) {
 		Session.set('showNotifs', false);
-		Meteor.call(clearNotif, this._id);
+		Meteor.call('clearNotif', this._id);
 	}
 });
