@@ -34,6 +34,8 @@ MessagingController = FastRender.RouteController.extend({
 		}
 		Debug.messaging('Routing data', {conversationId: this.params.conversationId});
 		if (this.params.conversationId) {
+			Conversations.markRead(this.params.conversationId, Meteor.userId());
+
 			var conversation, conversations, messages, offer;
 			var transformConv = function(doc) {
 				if (doc.users.length > 2) {
@@ -42,6 +44,7 @@ MessagingController = FastRender.RouteController.extend({
 				_.each(doc.users, function(user) {
 					if (Meteor.userId() === user._id) {
 						doc.name = user.conversationName;
+						doc.read = user.read;
 					} else if (doc.users.length === 2) {
 						doc.otherUser = Meteor.users.findOne(user._id);
 					} else if (doc.users.length > 2) {
@@ -75,7 +78,7 @@ MessagingController = FastRender.RouteController.extend({
 					_id: {$in: Meteor.user().conversationIds}
 				}, {
 					transform: function(doc) {
-						if (doc._id === conversation._id) {
+						if (conversation && doc._id === conversation._id) {
 							doc.current = true;
 						}
 						return transformConv(doc);
@@ -83,6 +86,8 @@ MessagingController = FastRender.RouteController.extend({
 					sort: {lastMessageAt: -1}
 				}).fetch();
 			}
+
+			Debug.messaging('conversations', conversations);
 
 			return {
 				conversationId: this.params.conversationId,

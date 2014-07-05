@@ -26,8 +26,8 @@
 				</div>
 				<div class="messaging-sidebar-info">
 					<span class="name">{{this.name}}</span>
-					<br>
 					{{#with offer}}
+						<br>
 						<span>
 							Offer for:
 							<a href="/post/{{this.itemId}}">
@@ -39,6 +39,10 @@
 							</a>
 						</span>
 					{{/with}}
+					{{#unless this.read}}
+						<br>
+						<span>Unread</span>
+					{{/unless}}
 				</div>
 				<!--{{json this}}-->
 			</a>

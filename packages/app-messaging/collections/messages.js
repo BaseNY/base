@@ -46,10 +46,6 @@ Schemas.Message = new SimpleSchema({
 	createdAt: {
 		label: 'Created At',
 		type: Date
-	},
-	read: {
-		label: 'Read',
-		type: Boolean
 	}
 });
 
@@ -75,7 +71,6 @@ Messages.before.insert(function(userId, doc) {
 	}
 
 	doc.createdAt = new Date();
-	doc.read = false;
 
 	Conversations.update(doc.conversationId, {
 		$set: {lastMessageAt: doc.createdAt}
@@ -96,6 +91,7 @@ Meteor.methods({
 		if (sender) {
 			doc.senderName = sender.profile.name;
 		}
+		Conversations.markUnread(doc.conversationId, doc.senderId);
 		Meteor.call('_updateConversationTime', conversationId);
 		Debug.messaging('_createMessage', doc);
 		return Messages.insert(doc);
@@ -116,14 +112,12 @@ Meteor.methods({
 			doc.conversationId = Conversations.create(recipientId);
 		}
 
+		Conversations.markUnread(doc.conversationId, doc.senderId);
 		Meteor.call('_updateConversationTime', doc.conversationId);
 
 		Debug.messaging('_sendMessage', doc);
 
 		return Messages.insert(doc);
-	},
-	_readMessages: function(conversationId) {
-		return Messages.update({conversationId: conversationId}, {$set: {read: true}}, {multi: true});
 	}
 });
 
@@ -133,9 +127,4 @@ Messages.create = function(text, conversationId, type, callback) {
 
 Messages.send = function(text, recipientId, callback) {
 	return Meteor.call('_sendMessage', text, recipientId, callback);
-};
-
-// Finds messages and sets them as read
-Messages.read = function(conversationId, callback) {
-	return Meteor.call('_readMessages', conversationId, callback);
 };
