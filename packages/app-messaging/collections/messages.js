@@ -96,6 +96,7 @@ Meteor.methods({
 		if (sender) {
 			doc.senderName = sender.profile.name;
 		}
+		Meteor.call('_updateConversationTime', conversationId);
 		Debug.messaging('_createMessage', doc);
 		return Messages.insert(doc);
 	},
@@ -109,20 +110,17 @@ Meteor.methods({
 			doc.senderName = sender.profile.name;
 		}
 		var userIds = [recipientId, this.userId];
-		Debug.messaging('_sendMessage', doc);
 		if (Conversations.existsWithUsers(userIds)) {
 			doc.conversationId = Conversations.findOne({'users._id': {$all: userIds}})._id;
-			return Messages.insert(doc);
 		} else {
-			Conversations.create(recipientId, function(err, res) {
-				if (err) {
-					console.log(err);
-				} else {
-					doc.conversationId = res;
-					return Messages.insert(doc);
-				}
-			});
+			doc.conversationId = Conversations.create(recipientId);
 		}
+
+		Meteor.call('_updateConversationTime', doc.conversationId);
+
+		Debug.messaging('_sendMessage', doc);
+
+		return Messages.insert(doc);
 	},
 	_readMessages: function(conversationId) {
 		return Messages.update({conversationId: conversationId}, {$set: {read: true}}, {multi: true});

@@ -79,7 +79,8 @@ MessagingController = FastRender.RouteController.extend({
 							doc.current = true;
 						}
 						return transformConv(doc);
-					}
+					},
+					sort: {lastMessageAt: -1}
 				}).fetch();
 			}
 

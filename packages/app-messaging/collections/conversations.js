@@ -176,6 +176,9 @@ Meteor.methods({
 			conv.offerId = offerId;
 		}
 		return Conversations.insert(conv);
+	},
+	_updateConversationTime: function(_id) {
+		return Conversations.update(_id, {$set: {lastMessageAt: new Date()}});
 	}
 });
 
