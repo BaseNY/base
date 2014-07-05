@@ -1,3 +1,4 @@
+/*
 Template.product.events({
 	'click #product-bid': function() {
 		$('#modal-container').css('display', 'block');
@@ -8,3 +9,5 @@ Template.product.events({
 Template.postPage.description = function() {
 	return new Spacebars.SafeString(Router.current().data().item.description);
 }
+*/
+

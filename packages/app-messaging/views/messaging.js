@@ -25,6 +25,7 @@ Template.messagingPost.sendMsg = function() {
     });
     var message = $('#message-' + this._id)[0].innerText;
     Debug.messaging('Sending message with item', item);
+    console.log("here");
     Offers.create(item, message, function(err, res) {
         if (err) {
             console.log(err);

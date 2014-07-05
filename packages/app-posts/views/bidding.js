@@ -1,3 +1,4 @@
+/*
 Template.bidding.events({
 	'click #sendMsg': function() {
 		console.log(this);
@@ -33,9 +34,11 @@ Template.bidding.events({
 		msg.offer=$('#offer').val();
 		msg.location = $('#location').val();
 		*/
+/*
 	}
 });
 
+*/
 
 
 /*Template.message.img = function() {

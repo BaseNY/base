@@ -27,7 +27,8 @@ Schemas.Offer = new SimpleSchema({
 		type: String
 	},
 	buyer: {
-		type: String
+		type: String,
+        optional: true
 	}
 });
 
@@ -66,7 +67,10 @@ Meteor.methods({
 
 		doc.sellerId = item.sellerId;
 		doc.seller = item.seller;
+        
+        doc.createdAt = new Date();
 
+        console.log(doc);
 		if (!offer) {
 			offer = Offers.insert(doc);
 		} else {
