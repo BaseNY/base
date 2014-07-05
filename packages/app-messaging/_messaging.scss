@@ -12,6 +12,8 @@
 
 .messaging-sidebar {
 	@include span-columns(3, block-collapse);
+	border: 1px solid #E6E6E6;
+	border-right: none;
 }
 
 .messaging-conversation {

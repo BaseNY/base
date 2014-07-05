@@ -74,7 +74,13 @@ Meteor.methods({
 			offer = offer._id;
 		}
 
-		Meteor.call('_sendMessage', message, doc.sellerId);
+		var conv = Conversations.findOne({offerId: offer, 'users._id': doc.buyerId});
+		if (conv) {
+			Messages.create(message, conv._id, 0);
+		} else {
+			conv = Meteor.call('_createConversation', [doc.sellerId, doc.buyerId], offer);
+			Messages.create(message, conv, 0);
+		}
 
 		return offer;
 	}

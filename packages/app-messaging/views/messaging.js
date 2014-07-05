@@ -82,15 +82,6 @@ Template.messaging.events({
 	}
 });
 
-Template.messaging.rendered = function() {
-	$('.body').autoFit();
-	var $messagesContainer = $(".messages-container");
-	$messagesContainer.autoFit();
-	$(window).bind("load", function() {
-		scrollDown($messagesContainer);
-	});
-};
-
 Template.message.helpers({
 	'isText': function() {
 		return !this.type;
@@ -129,7 +120,6 @@ var formatDate = function(cd) {
 };
 
 Template.messagingConversation.messageGroups = function() {
-	console.log(this.messages);
 	var groups = [];
 	var group = null; // { messages}
 	_.each(this.messages, function(m) {
@@ -166,5 +156,13 @@ Template.messagingConversation.rendered = function() {
 	$('#add-image').change(function() {
 		readUrl(this, 'add-preview');
 		$('#add-preview').toggleClass('filled uploading');
+	});
+
+	$('.body').autoFit();
+	var $messagesContainer = $(".messages-container");
+	$messagesContainer.autoFit();
+	$(window).resize();
+	$(window).bind("load", function() {
+		scrollDown($messagesContainer);
 	});
 }

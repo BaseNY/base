@@ -81,6 +81,7 @@ Conversations.before.insert(function(userId, doc) {
 		doc.users.push(userId);
 	}
 
+	/*
 	if (doc.users.length === 2) {
 		var userIds = doc.users;
 		if (!doc.processUsers) {
@@ -93,7 +94,7 @@ Conversations.before.insert(function(userId, doc) {
 		throw new Meteor.Error(611, "A conversation must have at least two people");
 	} else if (doc.users.length === 1 && doc.users[0] === userId) {
 		throw new Meteor.Error(612, "You cannot send a message to yourself");
-	}
+	}*/
 
 	if (!_.has(doc, 'createdAt')) {
 		doc.createdAt = new Date();
@@ -166,11 +167,14 @@ Meteor.methods({
 		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}}, {multi: true});
 	},
 	// must give an array of userIds
-	_createConversation: function(userIds) {
+	_createConversation: function(userIds, offerId) {
 		var conv = {
 			processUsers: true,
 			users: userIds
 		};
+		if (offerId) {
+			conv.offerId = offerId;
+		}
 		return Conversations.insert(conv);
 	}
 });
@@ -198,7 +202,7 @@ Conversations.create = function(userIds) {
 		conv.name = args[1];
 	}
 
-	return Meteor.call('_createConversation', userIds, callback);
+	return Meteor.call('_createConversation', userIds, null, callback);
 };
 
 // function to check whether a conversation already exists with the given users
