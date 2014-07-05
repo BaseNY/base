@@ -28,7 +28,7 @@ Package.on_use(function(api) {
 		'app-feed'
 	]);
 
-	api.add_files('js/config.js', 'server');
-	api.add_files('collections/users.js', 'server');
-	api.add_files('fixtures.js', 'server');
+	api.add_files('config.js', 'server');
+	api.add_files('collections/users.js', ['client', 'server']);
+	//api.add_files('fixtures.js', 'server');
 });
