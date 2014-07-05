@@ -106,7 +106,7 @@
 }
 
 .message {
-	@include outer-container;
+	@include row;
 	hr {
 		width:50%;
 		border: 1px solid lightgrey;
@@ -117,10 +117,10 @@
 		img {
 			width:100%;
 		}
-		@include span-columns(1);
+		@include span-columns(1 of 9);
 	}
 	.middle {
-		@include span-columns(10);
+		@include span-columns(7 of 9);
 		word-wrap:break-word;
 		span {
 			display:block;
@@ -133,6 +133,6 @@
 	}
 	.right {
 		color:lightgrey;
-		@include span-columns(1);
+		@include span-columns(1 of 9);
 	}
 }

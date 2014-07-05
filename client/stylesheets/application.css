@@ -1832,9 +1832,7 @@ fieldset.show, div.show {
   padding: 0.3em; }
 
 .message {
-  max-width: em(3000);
-  margin-left: auto;
-  margin-right: auto; }
+  display: block; }
   .message:after {
     content: "";
     display: table;
@@ -1845,8 +1843,8 @@ fieldset.show, div.show {
   .message .left {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 6.17215%; }
+    margin-right: 3.16844%;
+    width: 8.29472%; }
     .message .left img {
       width: 100%; }
     .message .left:last-child {
@@ -1854,8 +1852,8 @@ fieldset.show, div.show {
   .message .middle {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
+    margin-right: 3.16844%;
+    width: 77.07368%;
     word-wrap: break-word; }
     .message .middle:last-child {
       margin-right: 0; }
@@ -1869,8 +1867,8 @@ fieldset.show, div.show {
     color: lightgrey;
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 6.17215%; }
+    margin-right: 3.16844%;
+    width: 8.29472%; }
     .message .right:last-child {
       margin-right: 0; }
 
