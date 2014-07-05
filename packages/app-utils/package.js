@@ -6,7 +6,9 @@ Package.on_use(function(api, where) {
 	api.use([
 		'jquery',
 
-		'templating'
+		'templating',
+
+		'app-debug'
 	]);
 
 	api.add_files('utils.js', ['client', 'server']);

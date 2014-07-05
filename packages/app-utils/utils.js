@@ -6,6 +6,7 @@ Utils = {
 	// generates a publish function that simply allows selector and options pass through
 	defaultPublishFunction: function(collection) {
 		return function(selector, options) {
+			Debug.utils('In publish function for' + collection);
 			if (!selector) {
 				selector = {};
 			}
