@@ -1,6 +1,22 @@
+var colors;
+if (Meteor.isServer) {
+	colors = Npm.require('colors');
+	colors.setTheme({
+		debug: 'blue'
+	});
+}
+
 Meteor._ensure(Meteor, 'settings', 'public');
 
-var debug = function(namespace) {
+var log = function(msg, color) {
+	if (msg && color && Meteor.isServer) {
+		msg = msg[color];
+	}
+	console.log(msg || '');
+};
+
+var debug = function(namespace, color) {
+	color = color || 'debug';
 	return function() {
 		if (Meteor.settings.public.debug) {
 			var desc, obj;
@@ -19,10 +35,10 @@ var debug = function(namespace) {
 				c += ' - ' + desc;
 			}
 
-			console.log();
-			console.log(c + ']');
-			console.log(obj);
-			console.log(c + ' end]');
+			log();
+			log(c + ']', color);
+			log(obj);
+			log(c + ' end]', color);
 		}
 	}
 }
@@ -30,8 +46,12 @@ var debug = function(namespace) {
 // means debug for the package app-<key>
 var packages = ['feed', 'messaging', 'offers', 'users', 'utils'];
 Debug = {
-	log: debug()
+	log: debug('debug')
 };
 _.each(packages, function(package) {
 	Debug[package] = debug('app-' + package);
 });
+
+if (Meteor.settings.public.debug) {
+	Debug.log('Debug enabled');
+}

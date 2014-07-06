@@ -1,6 +1,6 @@
 {
 	"name": "base",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"devDependencies": {
 		"grunt": "~0.4.4",
 		"grunt-contrib-watch": "~0.6.1",
