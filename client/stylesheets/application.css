@@ -1296,7 +1296,8 @@ section.pageAbout {
     .pageFeeds .post h1 {
       font-weight: normal;
       margin-top: 0px;
-      margin-bottom: 0px; }
+      margin-bottom: 0px;
+      word-wrap: break-word; }
     .pageFeeds .post img {
       width: 100%;
       overflow: hidden; }
