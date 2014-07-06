@@ -102,7 +102,7 @@
         </a>
     </div>
     <div class="middle">
-        <h4><a href="/profile/{{sender._id}}">{{#with sender}}{{> publicBadges}}{{/with}} {{sender.profile.name}}</a>
+        <h4><a href="/profile/{{sender._id}}">{{sender.profile.name}}</a>
         </h4>
         {{#each messages}}
         {{#if isText}}
