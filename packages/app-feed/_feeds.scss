@@ -13,10 +13,10 @@
         background:white;
         border-left: 2px solid;
             &.sell {
-                color:#f39c12;
+                border-left-color:#f39c12;
             }
             &.buy {
-                color:#50a8e7;
+                border-left-color:#50a8e7;
             }
 
         .left-bar {
@@ -69,7 +69,7 @@
 
 
 
-        .fa-envelope-o {
+        .toggleMessage {
             cursor:pointer;
         }
         .fa-angle-down {

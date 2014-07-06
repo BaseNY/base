@@ -48,7 +48,7 @@ Template.feedPost.events({
 			$(e.target).empty();
 		}
 	},
-	'click .fa-envelope-o': function() {
+	'click .toggleMessage': function() {
 		console.log(this);
 		$('#msgCont-' + this._id).toggleClass('noshow');
 	},

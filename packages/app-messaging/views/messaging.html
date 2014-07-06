@@ -1,7 +1,14 @@
 <template name="messagingPost">
 	<div class="messagingPost">
-		<div id="message-{{this._id}}" contenteditable="true" class="messageText" placeholder="Send a message...">
-			<div class="placeholder">Send a message...</div>
+        <div class = "messageType">
+            <div label="offer" class="typeCurrent">
+                <i class="fa fa-usd"></i>
+                <div class="bottom-right-triangle"></div>
+            </div>
+            <div label="message" class="typeDropdown hide">
+                <i class="fa fa-envelope-o"></i>
+            </div>
+        </div><div id="message-{{this._id}}" contenteditable="true" class="messageText" placeholder="Send an offer...">
 		</div><a href=""><div class="messageSend"><i class="fa fa-chevron-right"></i></div></a>
 	</div>
 </template>
