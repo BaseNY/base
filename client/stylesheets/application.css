@@ -1806,7 +1806,7 @@ fieldset.show, div.show {
     border: 1px solid lightgrey; }
 
 .messaging-info, .messages-container, .messaging-reply-container {
-  border: 1px solid #E6E6E6; }
+  border-bottom: 1px solid #E6E6E6; }
   .messaging-info .message-reply-box .message-reply-text, .messages-container .message-reply-box .message-reply-text, .messaging-reply-container .message-reply-box .message-reply-text {
     resize: none;
     border: 1px solid lightgrey;
@@ -1973,13 +1973,22 @@ fieldset.show, div.show {
   width: 25.5894128995%;
   border: 1px solid #E6E6E6;
   border-right: none;
-  overflow: auto; }
+  border-top: none;
+  overflow: auto;
+  background-color: white; }
   .messaging-sidebar:last-child {
     width: 23.2317613015%; }
 
 .messaging-conversation {
   float: left;
   display: block;
-  width: 76.7682386985%; }
+  width: 76.7682386985%;
+  border: 1px solid #E6E6E6;
+  border-top: none;
+  text-align: center; }
   .messaging-conversation:last-child {
     width: 74.4105871005%; }
+
+.messaging-empty {
+  margin: 20px;
+  text-align: center; }

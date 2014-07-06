@@ -14,10 +14,20 @@
 	@include span-columns(3, block-collapse);
 	border: 1px solid #E6E6E6;
 	border-right: none;
+	border-top: none;
 	overflow: auto;
+	background-color: white;
 }
 
 .messaging-conversation {
 	@include span-columns(9, block-collapse);
 	@include reset-display;
+	border: 1px solid #E6E6E6;
+	border-top: none;
+	text-align: center;
+}
+
+.messaging-empty {
+	margin: 20px;
+	text-align: center;
 }
