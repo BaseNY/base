@@ -33,9 +33,6 @@ updateFriends: function() {
         Meteor.users.update({_id:this._id},{$set: {"profile.blah": s}});
         console.log(s);
     },
-    resetUsers: function() {
-        Meteor.users.remove({});
-    },
     checkFriends: function() {
         var graph = Meteor.require('fbgraph');
         graph.setAccessToken(Meteor.user().services.facebook.accessToken);

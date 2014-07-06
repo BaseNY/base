@@ -28,7 +28,7 @@
             <img src="{{this.otherUser.profile.img}}">
         </div>
         <div class="messaging-sidebar-info">
-            <span class="name">{{this.name}}</span>
+            <span class="name">{{#with this.otherUser}}{{> publicBadges}}{{/with}}{{this.name}}</span>
             {{#with offer}}
             <br>
             <span>
@@ -102,7 +102,7 @@
         </a>
     </div>
     <div class="middle">
-        <h4><a href="/profile/{{sender._id}}">{{sender.profile.name}}</a>
+        <h4><a href="/profile/{{sender._id}}">{{#with sender}}{{> publicBadges}}{{/with}} {{sender.profile.name}}</a>
         </h4>
         {{#each messages}}
         {{#if isText}}
