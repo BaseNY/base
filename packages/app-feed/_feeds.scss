@@ -7,11 +7,17 @@
     width:100%;
     .post {
         border:1px solid lightgrey;
-        border-left:0px;
         border-radius:4px;
         position:relative;
         margin-bottom:10px;
         background:white;
+        border-left: 2px solid;
+            &.sell {
+                color:#f39c12;
+            }
+            &.buy {
+                color:#50a8e7;
+            }
 
         .left-bar {
             position:absolute;

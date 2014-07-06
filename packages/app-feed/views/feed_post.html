@@ -1,7 +1,6 @@
 <template name="feedPost">
-	<div class="post">
-            <div class="left-bar {{#if isSellPost}}sell{{else}}buy{{/if}}"></div>
-		<div id="post-{{this._id}}" class="post-inner">
+<div class="post {{#if isSellPost}}sell{{else}}buy{{/if}}">
+            <div id="post-{{this._id}}" class="post-inner">
 			<div class="container">
 				<div class="left">
                     <a href="/profile/{{this.sellerId}}">

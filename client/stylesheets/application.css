@@ -1268,15 +1268,19 @@ section.pageAbout {
     clear: both; }
   .pageFeeds .post {
     border: 1px solid lightgrey;
-    border-left: 0px;
     border-radius: 4px;
     position: relative;
     margin-bottom: 10px;
     background: white;
+    border-left: 2px solid;
     width: 100%;
     display: inline-block;
     min-width: 300px;
     heigt: auto; }
+    .pageFeeds .post.sell {
+      color: #f39c12; }
+    .pageFeeds .post.buy {
+      color: #50a8e7; }
     .pageFeeds .post .left-bar {
       position: absolute;
       width: 6px;
