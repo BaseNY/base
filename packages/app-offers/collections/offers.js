@@ -51,7 +51,7 @@ Offers.before.insert(function(userId, doc) {
 });
 
 Meteor.methods({
-	_createOffer: function(item, message) {
+	_createOffer: function(item, message, type) {
 		if (!message) {
 			throw new Meteor.Error(600, "Invalid message");
 		}
@@ -80,16 +80,16 @@ Meteor.methods({
 
 		var conv = Conversations.findOne({offerId: offer, 'users._id': doc.buyerId});
 		if (conv) {
-			Messages.create(message, conv._id, 0);
+			Messages.create(message, conv._id, type);
 		} else {
 			conv = Meteor.call('_createConversation', [doc.sellerId, doc.buyerId], offer);
-			Messages.create(message, conv, 0);
+			Messages.create(message, conv, type);
 		}
 
 		return offer;
 	}
 });
 
-Offers.create = function(item, message, callback) {
-	return Meteor.call('_createOffer', item, message, callback);
+Offers.create = function(item, message, type, callback) {
+	return Meteor.call('_createOffer', item, message, type, callback);
 };

@@ -51,6 +51,12 @@ Template.pageReferralCenter.helpers({
             return null;
     },
     'refUrl': function() {
-        return window.location.host + "/signup?ref=" + Meteor.userId();
+        return window.location.protocol + window.location.host + "/signup?ref=" + Meteor.userId();
     }
 });
+
+Template.pageReferralCenter.rendered = function() {
+    $('input[name=referral_link]').click(function() {
+        this.select();
+    });
+}

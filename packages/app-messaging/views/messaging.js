@@ -21,9 +21,13 @@ Template.messagingPost.sendMsg = function() {
     var item = Items.findOne({
         _id: this._id
     });
-    var message = $('#message-' + this._id)[0].innerText;
+    var messageBox = $('#message-' + this._id);
+    var message = messageBox[0].innerText;
+    var type = 0;
+    if (messageBox.parent().children('messageType').children('typeCurrent').attr('label') == 'offer');
+        type = 2;
     Debug.messaging('Sending message with item', item);
-    Offers.create(item, message, function(err, res) {
+    Offers.create(item, message, type, function(err, res) {
         if (err) {
             console.log(err);
         } else {
