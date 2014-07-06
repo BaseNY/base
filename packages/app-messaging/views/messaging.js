@@ -35,7 +35,7 @@ Template.messagingPost.sendMsg = function() {
 }
 
 Template.messagingPost.rendered = function() {
-	setPlaceholder($('div[contenteditable]'));
+	//setPlaceholder($('div[contenteditable]'));
 }
 
 Template.messagingPost.events({
