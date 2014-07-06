@@ -1,5 +1,18 @@
 s3Url = 'https://s3.amazonaws.com/Basel/'; 
 
+Template.homePost.rendered = function() {
+    $("body").click(function(e) {
+        if(!(e.target.id == "home-post-container" || $(e.target).parents("#home-post-container").size())) {
+            $header = $('.home-post-header');
+            $body = $('.home-post-body');
+
+            $header.children().children('input').prop('checked', false); 
+            $header.children().children('label').removeClass('checked');
+
+            $body.slideUp();
+        }
+    });
+}
 
 Template.homePost.events({
 	'change .home-post-header input:radio': function(e) {
@@ -18,6 +31,10 @@ Template.homePost.events({
 			$sell.slideUp();
 			$buy.slideDown();
 		}
+
+        $('.home-feeds-list').children().children('input').prop('checked',false);
+        $('.home-feeds-list').children().children('label').removeClass('checked');
+
 		console.log("wot");
 	},
 	'change .home-post-body input:radio': function(e) {
@@ -129,7 +146,8 @@ Template.homeSellPost.upload = function(e) {
 
 Template.homeSellPost.events({
 	'click #sell-post': function(e) {
-		Template.homeSellPost.upload(e);
+        if($('input[type=feed]:checked') && $('#item-title').val() && $('#sell-description').val())
+		    Template.homeSellPost.upload(e);
 			//img parsing & resize
 			/*
             var img = document.createElement('img');
@@ -172,6 +190,8 @@ Template.homeSellPost.events({
 
 Template.homeBuyPost.events({
 	'click #buy-post': function(e) {
+        if(!($('input[type=feed]:checked') && $('#buy-description').val()))
+            return -1;
 		if (!Meteor.user()) {
 			$('#modal-container').css('display', 'block');
 			$('#modal-signup').css('display', 'block');

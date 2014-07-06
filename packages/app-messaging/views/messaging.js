@@ -39,7 +39,7 @@ Template.messagingPost.sendMsg = function() {
 }
 
 Template.messagingPost.rendered = function() {
-    setPlaceholder($('div[contenteditable]'));
+    $('.messageText').setPlaceholder();
 
     $('.messageType').hover(function() {
         $(this).children('.typeDropdown').removeClass('hide');
@@ -76,10 +76,6 @@ Template.messagingPost.rendered = function() {
     });
     */
 
-}
-
-Template.messagingPost.test = function() {
-    return this;
 }
 
 Template.messagingPost.events({

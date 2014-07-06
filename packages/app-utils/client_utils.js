@@ -16,3 +16,11 @@ $.fn.autoFit = function() {
 		$this.css('height', $this.parent().outerHeight(true) - $this.siblingHeight());
 	}).resize();
 };
+
+$.fn.setPlaceholder = function() {
+	var $this = $(this);
+	var placeholder = $this.attr('placeholder');
+	if (placeholder) {
+		$this.html('<span class="placeholder">' + placeholder + '</span>');
+	}
+};
