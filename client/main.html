@@ -59,12 +59,13 @@
 					<h2>{{user.name}}</h2>
 					<a href="/messages" class="link">
 						{{#if unreadConversations}}
-							<div class="messages-unread">{{unreadConversations}}</div>
+							<div class="notification-count">{{unreadConversations}}</div>
 						{{/if}}
 						<i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
 					</a>
 					<a id="show-notifs" class="link">
-						<i class="fa fa-bell" target="notif-dropdown"><span>{{newNotifs}}</span></i>
+						<span class="notification-count">{{newNotifs}}</span>
+						<i class="fa fa-bell" target="notif-dropdown"></i>
 						<ul class="dropdown hide {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
 							{{#if notifs}}
 								{{#each notifs}}
