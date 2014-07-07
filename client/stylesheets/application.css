@@ -1807,6 +1807,19 @@ fieldset.show, div.show {
   .items-container .item .price {
     color: #50A8E7; }
 
+.messages-unread {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  color: white;
+  background: #33B5E5;
+  font-size: 11px;
+  padding-left: 1px;
+  padding-right: 2px;
+  border-radius: 3px;
+  min-width: 12px;
+  text-align: center; }
+
 .messagingPost {
   height: auto;
   width: 100%;

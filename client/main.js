@@ -64,6 +64,9 @@ Template.header.helpers({
 	'notifs': function() {
 		return Notifications.find().fetch();
 	},
+	'unreadConversations': function() {
+		return Conversations.countUnreadFor(Meteor.userId());
+	}
 });
 
 Template.notification.helpers({

@@ -249,4 +249,15 @@ Conversations.markRead = function(conversationId, userId, callback) {
 
 Conversations.markUnread = function(conversationId, senderId, callback) {
 	return Meteor.call('_markUnread', conversationId, senderId, callback);
-}
+};
+
+Conversations.countUnreadFor = function(userId) {
+	return Conversations.find({
+		users: {
+			$elemMatch: {
+				_id: userId,
+				read: false
+			}
+		}
+	}).count();
+};
