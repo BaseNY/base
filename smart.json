@@ -12,6 +12,7 @@
     "collection2": {},
     "lodash": {},
     "kadira": {},
-    "collection-helpers": {}
+    "collection-helpers": {},
+    "imagemagick": {}
   }
 }

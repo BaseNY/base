@@ -14,7 +14,8 @@
       "collection2": {},
       "lodash": {},
       "kadira": {},
-      "collection-helpers": {}
+      "collection-helpers": {},
+      "imagemagick": {}
     },
     "packages": {
       "iron-router": {
@@ -74,13 +75,18 @@
       },
       "kadira": {
         "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.5",
-        "commit": "fa9a6446f6efb576953f99c01c03474f56f3852e"
+        "tag": "v2.4.8",
+        "commit": "5f4437af113537def34484c7b7a2a5e4d60847a9"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
         "tag": "v0.2.9",
         "commit": "912be6d15a59b9ee4519bf73000be70dd141b655"
+      },
+      "imagemagick": {
+        "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
+        "tag": "v0.1.2",
+        "commit": "d67bb926356d35cdff1a6d6c3c69750f3f54c059"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

@@ -67,7 +67,7 @@ Template.homePost.readUrl = function(input, name) {
 Template.homeSellPost.rendered = function(){
 	$('#sell-image').change(function(){
 		console.log("changed");
-		Template.homePost.readUrl(this, 'sell-preview');
+		readUrl(this, 'sell-preview');
 		$('#sell-preview').toggleClass('filled uploading');
 		console.log('uploading now');
 	});
