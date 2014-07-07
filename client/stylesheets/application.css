@@ -560,8 +560,6 @@ header {
         vertical-align: middle;
         height: 2.5em;
         margin-right: 10px; }
-      header > .content .user-wrapper span {
-        color: #f39c12; }
     header > .content .btn-login {
       background: #50a8e7;
       color: white;
