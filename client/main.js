@@ -16,10 +16,10 @@ Template.layout.events({
 Template.header.events({
 	'click #show-notifs': function(e) {
 		e.stopPropagation();
-		if (Session.get('showNotifs'))
+		if (Session.get('showNotifs')) {
 			Session.set('showNotifs', false);
-		else {
-			if (Notifications.find({seen: false})) {
+		} else {
+			if (Notifications.findOne({seen: false})) {
 				Meteor.call('glossedNotifs');
 			}
 			Session.set('showNotifs', true);
