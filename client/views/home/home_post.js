@@ -1,4 +1,4 @@
-s3Url = 'https://s3.amazonaws.com/Basel/'; 
+s3Url = 'http://d2rru2br826k2g.cloudfront.net/';
 
 Template.homePost.rendered = function() {
     $("body").click(function(e) {
