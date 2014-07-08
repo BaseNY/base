@@ -354,6 +354,16 @@ p {
   line-height: 1.5em;
   font-size: 1.2em; }
 
+.ui-button {
+  border: 1px solid lightgrey;
+  background-color: white; }
+  .ui-button:hover {
+    background-color: #e9e9e9; }
+  .ui-button:active {
+    color: #33B5E5;
+    border-color: #33B5E5;
+    background-color: white; }
+
 #fbLogin {
   background-color: #3b5998;
   color: #FFFFFF;
@@ -1896,19 +1906,20 @@ fieldset.show, div.show {
     font-size: 1em;
     height: 72px; }
   .messaging-info .message-reply-box footer, .messages-container .message-reply-box footer, .messaging-reply-container .message-reply-box footer {
+    overflow: hidden;
     background-color: white;
     border-bottom-right-radius: 8px;
     color: grey;
     height: auto;
     border: 1px solid lightgrey; }
     .messaging-info .message-reply-box footer .footer-button, .messages-container .message-reply-box footer .footer-button, .messaging-reply-container .message-reply-box footer .footer-button {
+      border: 0px;
       border-right: 1px solid lightgrey;
       height: 100%;
       padding: 6px 8px;
       display: inline-block;
       font-weight: 300; }
-      .messaging-info .message-reply-box footer .footer-button:hover, .messages-container .message-reply-box footer .footer-button:hover, .messaging-reply-container .message-reply-box footer .footer-button:hover {
-        background-color: lightgrey;
+      float:left .messaging-info .message-reply-box footer .footer-button:hover, float:left .messages-container .message-reply-box footer .footer-button:hover, float:left .messaging-reply-container .message-reply-box footer .footer-button:hover {
         cursor: pointer; }
     .messaging-info .message-reply-box footer h4, .messages-container .message-reply-box footer h4, .messaging-reply-container .message-reply-box footer h4 {
       display: inline-block;
@@ -2067,8 +2078,7 @@ fieldset.show, div.show {
   display: block;
   width: 76.7682386985%;
   border: 1px solid #E6E6E6;
-  border-top: none;
-  text-align: center; }
+  border-top: none; }
   .messaging-conversation:last-child {
     width: 74.4105871005%; }
 

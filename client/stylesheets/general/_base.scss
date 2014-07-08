@@ -34,6 +34,19 @@ p {
     font-size:1.2em;
 }
 
+.ui-button {
+    border:1px solid lightgrey;
+    background-color:white;
+    &:hover {
+        background-color:#e9e9e9;
+    }
+    &:active {
+        color:#33B5E5;
+        border-color:#33B5E5;
+        background-color:white;
+    }
+}
+
 #fbLogin {
     background-color:#3b5998;
     color:#FFFFFF;

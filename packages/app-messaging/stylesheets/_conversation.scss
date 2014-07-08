@@ -90,14 +90,16 @@
 			height:72px;
 		}
 		footer{
+            overflow:hidden;
             .footer-button {
+                border:0px;
 				border-right:1px solid lightgrey;
 				height:100%;
 				padding:6px 8px;
 				display:inline-block;
 				font-weight:300;
+                float:left
 				&:hover {
-					background-color:lightgrey;
 					cursor:pointer;
 				}
 			}
