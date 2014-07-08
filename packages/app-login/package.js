@@ -10,7 +10,8 @@ Package.on_use(function(api) {
 
 		'responsive-modal',
 
-		'app-utils'
+		'app-utils',
+		'app-users'
 	]);
 
 	api.add_files([

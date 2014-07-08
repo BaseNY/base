@@ -1,5 +1,9 @@
-Template.loginModal.rendered = function() {
-	$('.fb-login').click(function() {
+Template.loginModalButton.rendered = function() {
+	RModal();
+};
+
+Template.loginModal.events({
+	'click .fb-login': function() {
 		/*$('#login-modal form').submit(function() {
 			email = $('input[name=email]').val();
 			password = $('input[name=password').val();
@@ -16,6 +20,7 @@ Template.loginModal.rendered = function() {
 				zip_code: zip_code,
 			});
 		});*/
+
 		Meteor.loginWithFacebook({
 			requestPermissions: [
 				'email',
@@ -35,12 +40,8 @@ Template.loginModal.rendered = function() {
 				}
 			}
 		});
-	});
-};
-
-Template.loginModalButton.rendered = function() {
-	RModal();
-};
+	}
+});
 
 Template.feedSelectModal.helpers({
 	feeds: function() {
@@ -53,40 +54,46 @@ Template.feedSelectModal.helpers({
 	}
 });
 
-Template.feedSelectModal.rendered = function() {
-	$('#feed-select-list li').click(function() {
-        console.log(this);
-		$(this).toggleClass('checked');
-	});
-	$('#feed-select-modal .button').click(function() {
+Template.feedSelectModal.events({
+	'click .feed-select-list-item': function(e) {
+		$(e.currentTarget).toggleClass('checked');
+	},
+	'click .feed-select-button': function(e) {
 		var feeds = $('#feed-select-list').children('.checked');
 		var feedIds = _.map(feeds, function(feed) {
 			return $(feed).attr('name');
 		});
-		Meteor.users.update(Meteor.userId(), {$set: {'subscribed': feedIds}});
-		RModal.closeModal($('#feed-select-modal'));
-                RModal.openModal($('#zip-select-modal'));
-	});
-};
+		Meteor.call('_updateUserFeeds', feedIds, function(err, res) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("Updated feeds: " + res);
+				RModal.closeModal($('#feed-select-modal'));
+				RModal.openModal($('#zip-select-modal'));
+			}
+		});
+	}
+});
 
 Template.zipSelectModal.rendered = function() {
-    $('#zip-select-modal .button').click(function() {
-        var zip = $('#zipInput').val();
-        var l = zip.length;
-        if(!(zip > 10000 && zip < 15000)) {
-            Session.set('zipError', 'Sorry, but you live in an area not supported by base yet. Be sure to check back in the future when we launch elsewhere!');
-        }
-        var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip);
-        if(isValidZip) {
-            Meteor.users.update(Meteor.userId(), {$set: {'profile.zip': zip}});
-		    RModal.closeModal($('#zip-select-modal'));
-        }else
-            Session.set('zipError', 'The zip code you have entered is not valid!');
-    });
+	$('#zip-select-modal .button').click(function() {
+		var zip = $('#zipInput').val();
+		var l = zip.length;
+		if(!(zip > 10000 && zip < 15000)) {
+			Session.set('zipError', 'Sorry, but you live in an area not supported by base yet. Be sure to check back in the future when we launch elsewhere!');
+		}
+		var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip);
+		if (isValidZip) {
+			Meteor.users.update(Meteor.userId(), {$set: {'profile.zip': zip}});
+			RModal.closeModal($('#zip-select-modal'));
+		} else {
+			Session.set('zipError', 'The zip code you have entered is not valid!');
+		}
+	});
 }
 
 Template.zipSelectModal.error = function() {
-    if(Session.get('zipError'))
-        return Session.get('zipError');
-    return false;
-}
+	if(Session.get('zipError'))
+		return Session.get('zipError');
+	return false;
+};
