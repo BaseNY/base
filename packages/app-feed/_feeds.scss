@@ -4,3 +4,15 @@
 	@include outer-container;
 	width: 100%;
 }
+
+.post-header {
+	@include outer-container;
+}
+
+.post-seller-image {
+	@include span-columns(1.5);
+}
+
+.post-header-info {
+	@include span-columns(10.5);
+}

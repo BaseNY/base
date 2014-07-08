@@ -1290,146 +1290,101 @@ section.pageAbout {
     border-left-color: #f39c12; }
   .post-container.post-buy {
     border-left-color: #50a8e7; }
-  .post-container .left-bar {
-    position: absolute;
-    width: 6px;
-    border-left: 1px solid;
-    height: 100%;
-    border-right: 1px solid;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px; }
-    .post-container .left-bar.sell {
-      color: #f39c12; }
-    .post-container .left-bar.buy {
-      color: #50a8e7; }
-  .post-container h1 {
-    font-weight: normal;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    word-wrap: break-word; }
   .post-container img {
-    width: 100%;
-    overflow: hidden; }
-  .post-container p {
-    font-size: 1em;
-    word-wrap: break-word;
-    overflow-wrap: break-word; }
-  .post-container .image {
-    max-height: 300px;
-    max-width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border: 1px solid lightgrey;
-    margin-top: 8px;
-    width: auto;
-    margin-bottom: 8px; }
-  .post-container .toggleMessage {
-    cursor: pointer; }
-  .post-container .fa-angle-down {
-    cursor: pointer; }
-  .post-container .fa-trash-o {
-    cursor: pointer; }
-  .post-container .commentContainer {
-    font-size: 0.95em;
-    background-color: #ebebeb;
-    padding: 4px; }
-    .post-container .commentContainer .left {
-      float: left;
-      display: block;
-      margin-right: 2.3576515979%;
-      width: 6.1721527019%; }
-      .post-container .commentContainer .left:last-child {
-        margin-right: 0; }
-    .post-container .commentContainer .right {
-      word-wrap: break-word;
-      float: left;
-      display: block;
-      margin-right: 2.3576515979%;
-      width: 91.4701957002%; }
-      .post-container .commentContainer .right:last-child {
-        margin-right: 0; }
-    .post-container .commentContainer .commentSmallContainer {
-      max-width: em(3000);
-      margin-left: auto;
-      margin-right: auto; }
-      .post-container .commentContainer .commentSmallContainer:after {
-        content: "";
-        display: table;
-        clear: both; }
-    .post-container .commentContainer .comment-inner-container {
-      max-width: em(3000);
-      margin-left: auto;
-      margin-right: auto; }
-      .post-container .commentContainer .comment-inner-container:after {
-        content: "";
-        display: table;
-        clear: both; }
-      .post-container .commentContainer .comment-inner-container .commentForm {
-        float: left;
-        display: block;
-        margin-right: 2.3576515979%;
-        width: 91.4701957002%;
-        border-color: #cdcdcd;
-        height: auto;
-        background-color: white;
-        margin-right: 0px; }
-        .post-container .commentContainer .comment-inner-container .commentForm:last-child {
-          margin-right: 0; }
+    width: 100%; }
 
 .post-content {
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  position: relative; }
-  .post-content .actions {
-    cursor: pointer; }
-  .post-content .icons-container {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    font-size: 1.3em; }
-    .post-content .icons-container span {
-      vertical-align: top;
-      font-size: 14px; }
+  position: relative;
+  padding: 20px; }
   .post-content .msgContainer textarea {
     font-size: 1em; }
   .post-content .msgContainer.noshow {
     display: none; }
 
-.post-header {
-  max-width: em(3000);
-  margin-left: auto;
-  margin-right: auto; }
-  .post-header:after {
-    content: "";
-    display: table;
-    clear: both; }
-
-.post-header-img {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 10.4370548518%; }
-  .post-header-img:last-child {
-    margin-right: 0; }
-
-.post-header-info {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 87.2052935503%; }
-  .post-header-info h1 {
-    font-size: 1.5em; }
-  .post-header-info:last-child {
-    margin-right: 0; }
+.post-icons-container {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 1.3em; }
+  .post-icons-container span {
+    vertical-align: top;
+    font-size: 14px; }
+  .post-icons-container .fa {
+    cursor: pointer; }
 
 .post-title {
-  border-bottom: 1px solid gray; }
+  margin: 0;
+  border-bottom: 1px solid gray;
+  font-size: 1.5em;
+  font-weight: normal;
+  word-wrap: break-word; }
 
 .post-timestamp {
   color: gray;
   font-size: 1em; }
+
+.post-image {
+  max-height: 300px;
+  max-width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: 1px solid lightgrey;
+  margin-top: 8px;
+  width: auto;
+  margin-bottom: 8px; }
+
+.post-desc {
+  font-size: 1em;
+  word-wrap: break-word;
+  overflow-wrap: break-word; }
+
+.post-comments-container {
+  font-size: 0.95em;
+  background-color: #ebebeb;
+  padding: 4px; }
+  .post-comments-container .left {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 6.1721527019%; }
+    .post-comments-container .left:last-child {
+      margin-right: 0; }
+  .post-comments-container .right {
+    word-wrap: break-word;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 91.4701957002%; }
+    .post-comments-container .right:last-child {
+      margin-right: 0; }
+  .post-comments-container .commentSmallContainer {
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    .post-comments-container .commentSmallContainer:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .post-comments-container .comment-inner-container {
+    max-width: em(3000);
+    margin-left: auto;
+    margin-right: auto; }
+    .post-comments-container .comment-inner-container:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .post-comments-container .comment-inner-container .commentForm {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 91.4701957002%;
+      border-color: #cdcdcd;
+      height: auto;
+      background-color: white;
+      margin-right: 0px; }
+      .post-comments-container .comment-inner-container .commentForm:last-child {
+        margin-right: 0; }
 
 .feed-page {
   max-width: em(3000);
@@ -1440,6 +1395,31 @@ section.pageAbout {
     content: "";
     display: table;
     clear: both; }
+
+.post-header {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto; }
+  .post-header:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.post-seller-image {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 10.4370548518%; }
+  .post-seller-image:last-child {
+    margin-right: 0; }
+
+.post-header-info {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 87.2052935503%; }
+  .post-header-info:last-child {
+    margin-right: 0; }
 
 .userInfo {
   width: 85%;

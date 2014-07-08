@@ -3,7 +3,7 @@
 	<div class="post-container post-{{#if isSellPost}}sell{{else}}buy{{/if}}" data-id="{{this._id}}">
 		<div class="post-content">
 			<div class="post-header">
-				<div class="post-header-img">
+				<div class="post-seller-image">
 					<a href="/profile/{{this.sellerId}}">
 						<img src={{imgUrl}}>
 					</a>
@@ -36,7 +36,7 @@
 			{{#if isSellPost}}
 				{{#if this.imageUrl}}
 					<a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
-						<img class="image" src="{{this.imageUrl}}" />
+						<img class="post-image" src="{{this.imageUrl}}" />
 					</a>
 				{{/if}}
 			{{/if}}
@@ -47,7 +47,7 @@
 
 <template name="feedIcons">
 	{{#if currentUser}}
-		<div class="icons-container">
+		<div class="post-icons-container">
 			<span>Interested? Send a message!</span>
 			<i class="fa fa-envelope-o toggleMessage"></i>
 			{{#if ownPost}}
@@ -62,12 +62,12 @@
 </template>
 
 <template name="postComments">
-	<div class="commentContainer">
+	<div class="post-comments-container">
 		<ul>
 			{{#each comments}}
 				<li>{{> comment}}</li>
 			{{/each}}
-		</ul>
+		</ul>	
 		{{#if currentUser}}
 			<div class="left">
 				<img src="{{currentUser.profile.img}}" />
