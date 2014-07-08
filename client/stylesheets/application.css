@@ -1275,19 +1275,19 @@ section.pageAbout {
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
-.pageFeeds {
+.feed-page {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
-  .pageFeeds .faded {
+  .feed-page .faded {
     color: grey;
     font-size: 1em; }
-  .pageFeeds:after {
+  .feed-page:after {
     content: "";
     display: table;
     clear: both; }
-  .pageFeeds .feed-post {
+  .feed-page .feed-post {
     border: 1px solid lightgrey;
     border-radius: 4px;
     position: relative;
@@ -1298,11 +1298,11 @@ section.pageAbout {
     display: inline-block;
     min-width: 300px;
     heigt: auto; }
-    .pageFeeds .feed-post.sell {
+    .feed-page .feed-post.sell {
       border-left-color: #f39c12; }
-    .pageFeeds .feed-post.buy {
+    .feed-page .feed-post.buy {
       border-left-color: #50a8e7; }
-    .pageFeeds .feed-post .left-bar {
+    .feed-page .feed-post .left-bar {
       position: absolute;
       width: 6px;
       border-left: 1px solid;
@@ -1310,23 +1310,23 @@ section.pageAbout {
       border-right: 1px solid;
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px; }
-      .pageFeeds .feed-post .left-bar.sell {
+      .feed-page .feed-post .left-bar.sell {
         color: #f39c12; }
-      .pageFeeds .feed-post .left-bar.buy {
+      .feed-page .feed-post .left-bar.buy {
         color: #50a8e7; }
-    .pageFeeds .feed-post h1 {
+    .feed-page .feed-post h1 {
       font-weight: normal;
       margin-top: 0px;
       margin-bottom: 0px;
       word-wrap: break-word; }
-    .pageFeeds .feed-post img {
+    .feed-page .feed-post img {
       width: 100%;
       overflow: hidden; }
-    .pageFeeds .feed-post p {
+    .feed-page .feed-post p {
       font-size: 1em;
       word-wrap: break-word;
       overflow-wrap: break-word; }
-    .pageFeeds .feed-post .image {
+    .feed-page .feed-post .image {
       max-height: 300px;
       max-width: 100%;
       background-position: center;
@@ -1336,91 +1336,91 @@ section.pageAbout {
       margin-top: 8px;
       width: auto;
       margin-bottom: 8px; }
-    .pageFeeds .feed-post .toggleMessage {
+    .feed-page .feed-post .toggleMessage {
       cursor: pointer; }
-    .pageFeeds .feed-post .fa-angle-down {
+    .feed-page .feed-post .fa-angle-down {
       cursor: pointer; }
-    .pageFeeds .feed-post .fa-trash-o {
+    .feed-page .feed-post .fa-trash-o {
       cursor: pointer; }
-    .pageFeeds .feed-post .post-inner {
+    .feed-page .feed-post .post-inner {
       padding: 20px;
       width: 100%;
       height: 100%;
       position: relative; }
-      .pageFeeds .feed-post .post-inner .container {
+      .feed-page .feed-post .post-inner .container {
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        .pageFeeds .feed-post .post-inner .container:after {
+        .feed-page .feed-post .post-inner .container:after {
           content: "";
           display: table;
           clear: both; }
-        .pageFeeds .feed-post .post-inner .container .left {
+        .feed-page .feed-post .post-inner .container .left {
           float: left;
           display: block;
           margin-right: 2.3576515979%;
           width: 10.4370548518%; }
-          .pageFeeds .feed-post .post-inner .container .left:last-child {
+          .feed-page .feed-post .post-inner .container .left:last-child {
             margin-right: 0; }
-        .pageFeeds .feed-post .post-inner .container .right {
+        .feed-page .feed-post .post-inner .container .right {
           float: left;
           display: block;
           margin-right: 2.3576515979%;
           width: 87.2052935503%; }
-          .pageFeeds .feed-post .post-inner .container .right h1 {
+          .feed-page .feed-post .post-inner .container .right h1 {
             font-size: 1.5em; }
-          .pageFeeds .feed-post .post-inner .container .right:last-child {
+          .feed-page .feed-post .post-inner .container .right:last-child {
             margin-right: 0; }
-      .pageFeeds .feed-post .post-inner .actions {
+      .feed-page .feed-post .post-inner .actions {
         cursor: pointer; }
-      .pageFeeds .feed-post .post-inner .icons-container {
+      .feed-page .feed-post .post-inner .icons-container {
         position: absolute;
         top: 8px;
         right: 16px;
         font-size: 1.3em; }
-        .pageFeeds .feed-post .post-inner .icons-container span {
+        .feed-page .feed-post .post-inner .icons-container span {
           vertical-align: top;
           font-size: 14px; }
-      .pageFeeds .feed-post .post-inner .msgContainer textarea {
+      .feed-page .feed-post .post-inner .msgContainer textarea {
         font-size: 1em; }
-      .pageFeeds .feed-post .post-inner .msgContainer.noshow {
+      .feed-page .feed-post .post-inner .msgContainer.noshow {
         display: none; }
-    .pageFeeds .feed-post .commentContainer {
+    .feed-page .feed-post .commentContainer {
       font-size: 0.95em;
       background-color: #ebebeb;
       padding: 4px; }
-      .pageFeeds .feed-post .commentContainer .left {
+      .feed-page .feed-post .commentContainer .left {
         float: left;
         display: block;
         margin-right: 2.3576515979%;
         width: 6.1721527019%; }
-        .pageFeeds .feed-post .commentContainer .left:last-child {
+        .feed-page .feed-post .commentContainer .left:last-child {
           margin-right: 0; }
-      .pageFeeds .feed-post .commentContainer .right {
+      .feed-page .feed-post .commentContainer .right {
         word-wrap: break-word;
         float: left;
         display: block;
         margin-right: 2.3576515979%;
         width: 91.4701957002%; }
-        .pageFeeds .feed-post .commentContainer .right:last-child {
+        .feed-page .feed-post .commentContainer .right:last-child {
           margin-right: 0; }
-      .pageFeeds .feed-post .commentContainer .commentSmallContainer {
+      .feed-page .feed-post .commentContainer .commentSmallContainer {
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        .pageFeeds .feed-post .commentContainer .commentSmallContainer:after {
+        .feed-page .feed-post .commentContainer .commentSmallContainer:after {
           content: "";
           display: table;
           clear: both; }
-      .pageFeeds .feed-post .commentContainer .comment-inner-container {
+      .feed-page .feed-post .commentContainer .comment-inner-container {
         max-width: em(3000);
         margin-left: auto;
         margin-right: auto; }
-        .pageFeeds .feed-post .commentContainer .comment-inner-container:after {
+        .feed-page .feed-post .commentContainer .comment-inner-container:after {
           content: "";
           display: table;
           clear: both; }
-        .pageFeeds .feed-post .commentContainer .comment-inner-container .commentForm {
+        .feed-page .feed-post .commentContainer .comment-inner-container .commentForm {
           float: left;
           display: block;
           margin-right: 2.3576515979%;
@@ -1429,7 +1429,7 @@ section.pageAbout {
           height: auto;
           background-color: white;
           margin-right: 0px; }
-          .pageFeeds .feed-post .commentContainer .comment-inner-container .commentForm:last-child {
+          .feed-page .feed-post .commentContainer .comment-inner-container .commentForm:last-child {
             margin-right: 0; }
 
 .userInfo {

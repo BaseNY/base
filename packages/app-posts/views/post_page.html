@@ -1,13 +1,11 @@
-<template name ="postPage">
-<section class="home-container">
-    <div class="home-feed">
-        <div class="pageFeeds">
-            {{#with item}}
-            {{> feedPost}}
-            {{/with}}
-        </div>
-
-    </div>
-</section>
+<template name="postPage">
+	<section class="home-container">
+		<div class="home-feed">
+			<div class="feed-page">
+				{{#with item}}
+					{{> feedPost}}
+				{{/with}}
+			</div>
+		</div>
+	</section>
 </template>
-
