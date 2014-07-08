@@ -1285,7 +1285,7 @@ section.pageAbout {
   width: 100%;
   display: inline-block;
   min-width: 300px;
-  heigt: auto; }
+  height: auto; }
   .post-container.post-sell {
     border-left-color: #f39c12; }
   .post-container.post-buy {
@@ -1424,14 +1424,18 @@ section.pageAbout {
   .post-header-info:last-child {
     margin-right: 0; }
 
+.post-title {
+  border-bottom: 1px solid gray; }
+
+.post-timestamp {
+  color: gray;
+  font-size: 1em; }
+
 .feed-page {
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
-  .feed-page .faded {
-    color: grey;
-    font-size: 1em; }
   .feed-page:after {
     content: "";
     display: table;

@@ -9,23 +9,36 @@
 					</a>
 				</div>
 				<div class="post-header-info">
-					<h1><a href="/post/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
-					</h1>
-					<hr />
-					<a href="/profile/{{this.sellerId}}">{{> postBadges}} {{this.seller}}</a>  <i class="fa fa-angle-right"></i>  <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
-					<span class="faded">{{timestamp}}</span>
+					<a href="/post/{{this._id}}">
+						<h1 class="post-title">
+							{{#if isSellPost}}
+								<i class="fa fa-money"></i>
+							{{else}}
+								<i class="fa fa-shopping-cart"></i>
+							{{/if}}
+							{{this.title}}
+						</h1>
+					</a>
+					<a href="/profile/{{this.sellerId}}">
+						{{> postBadges}}
+						{{this.seller}}
+					</a>
+					<i class="fa fa-angle-right"></i>
+					<a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+					<span class="post-timestamp">{{timestamp}}</span>
 				</div>
 			</div>
 			{{> feedIcons}}
 			<div id="msgCont-{{this._id}}" class="msgContainer noshow">
 				{{> messagingPost}}
 			</div>
-			<p class="description">{{this.description}}</p>
+			<p class="post-desc">{{this.description}}</p>
 			{{#if isSellPost}}
-				<!--<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>-->
-				<a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
-					<img class="image" src={{this.imageUrl}} />
-				</a>
+				{{#if this.imageUrl}}
+					<a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
+						<img class="image" src="{{this.imageUrl}}" />
+					</a>
+				{{/if}}
 			{{/if}}
 			{{> postComments}}
 		</div>

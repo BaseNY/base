@@ -1,10 +1,6 @@
 @import "views/feed_post";
 
 .feed-page {
-	.faded {
-		color: grey;
-		font-size: 1em;
-	}
 	@include outer-container;
 	width: 100%;
 }
