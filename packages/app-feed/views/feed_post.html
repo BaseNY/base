@@ -68,13 +68,13 @@
 				<li>{{> comment}}</li>
 			{{/each}}
 		</ul>	
-		{{#if currentUser}}
-			<div class="left">
-				<img src="{{currentUser.profile.img}}" />
-			</div>
-		{{/if}}
-		<div class="comment-inner-container">
-			<div contenteditable="true" class="commentForm" placeholder="Write a comment...">
+		<div class="post-comments-input-container">
+			{{#if currentUser}}
+				<div class="comment-user-image">
+					<img src="{{currentUser.profile.img}}" />
+				</div>
+			{{/if}}
+			<div contenteditable="true" class="post-comment-input" placeholder="Write a comment...">
 				<span class="placeholder">Write a comment...</span>
 			</div>
 		</div>
@@ -82,12 +82,8 @@
 </template>
 
 <template name="comment">
-	<div class="commentSmallContainer">
-		<div class="left">
-			<a href="/profile/{{id}}">
-				<img src="{{imgUrl}}">
-			</a>
-		</div>
+	<div class="comment-container">
+		<div class="comment-user-image"><a href="/profile/{{id}}"><img src="{{imgUrl}}"></a></div>
 		<div class="right">
 			<a href="/profile/{{id}}"><b>{{name}}</b></a> {{{text}}}
 			<br />

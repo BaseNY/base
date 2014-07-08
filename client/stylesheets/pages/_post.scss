@@ -1,71 +1,72 @@
-	input[type=file] {
-		display:none;
+input[type=file] {
+	display: none;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+.image-preview {
+	max-height: 100px;
+	max-width: 100px;
+	display: block;
+	&.filled {
+		border: 1px solid grey;
 	}
-	input[type=radio] {
-		display:none;
+	&.uploading {
+		opacity: .7;
 	}
-	.image-preview {
-		max-height: 100px;
-		max-width: 100px;
-		display:block;
-		&.filled {
-			border:1px solid grey;
-		}
-		&.uploading {
-			opacity:.7;
-		}
-	}
+}
 
 .home-post-container {
 	@include outer-container;
 	@include boxes-default(10px);
-	width:100%;
-	font-size:1.5em;
-	margin-top:24px;
-	margin-bottom:24px;
-	padding:0px;
+	width: 100%;
+	font-size: 1.5em;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding: 0px;
 	input[type=text] {
-		width:100%;
-		height:auto;
-		padding:5px 10px 5px 10px;
-		border:1px solid rgb(200,200,200);
-		font-weight:200;
-		line-height:1.5em;
-		font-size:1em;
+		width: 100%;
+		height: auto;
+		padding: 5px 10px 5px 10px;
+		border: 1px solid rgb(200, 200, 200);
+		font-weight: 200;
+		line-height: 1.5em;
+		font-size: 1em;
 	}
 	.post-message {
-		font-weight:200;
+		font-weight: 200;
 	}
 	h3 {
-		font-weight:normal;
+		font-weight: normal;
 	}
 	.button {
 		padding: .5em 1em .5em 1em;
-		float:right;
-		border-radius:0px 0px 15px 0px;
+		float: right;
+		border-radius: 0px 0px 15px 0px;
 	}
-
 	.home-post-body {
-		padding-top:10px;
-		display:none;
-		padding:20px;
+		padding-top: 10px;
+		display: none;
+		padding: 20px;
 		.home-feeds-list {
-			font-size:.8em;
+			font-size: .8em;
 		}
 		textarea {
-			font-size:1em;
+			font-size: 1em;
 		}
 		form {
 			margin-bottom: 10px;
 		}
 		label {
 			display: inline-block;
-			padding:4px;
-			border-radius:2px;
+			padding: 4px;
+			border-radius: 2px;
 			cursor: pointer;
 			color: #33B5E5;
 			&:hover {
-				background-color:$lightgray;
+				background-color: $lightgray;
 			}
 			&.checked {
 				font-weight: normal;
@@ -74,17 +75,17 @@
 			}
 		}
 		input[type=file] {
-			font-size:.7em;
+			font-size: .7em;
 		}
 		#item-title {
 			margin-top: 10px;
 		}
 		.button {
-			font-size:.8em;
+			font-size: .8em;
 		}
 	}
 	textarea {
-		padding:5px 10px 5px 10px;
+		padding: 5px 10px 5px 10px;
 	}
 	form {
 		display: inline;
@@ -99,22 +100,22 @@
 		cursor: pointer;
 		color: #33B5E5;
 		&.checked {
-			font-weight:bold;
+			font-weight: bold;
 		}
 	}
 }
 
-.post-message, div[contenteditable] {
-    overflow:auto;
-    display:block;
-        padding: 8px 4px 4px 4px;
-    width:100%;
-    height:auto;
-    border:1px solid rgb(200,200,200);
-    background-color:white;
-    word-wrap:break-word;
-    font-size:1.2em;
-    line-height:1.2em;
-    resize:none;
-    -webkit-writing-mode: horizontal-tb;
+.post-message {
+	overflow: auto;
+	display: block;
+	padding: 8px 4px 4px 4px;
+	width: 100%;
+	height: auto;
+	border: 1px solid #C8C8C8;
+	background-color: white;
+	word-wrap: break-word;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	resize: none;
+	-webkit-writing-mode: horizontal-tb;
 }

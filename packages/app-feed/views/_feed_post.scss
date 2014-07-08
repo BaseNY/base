@@ -82,24 +82,37 @@
 	font-size: .95em;
 	background-color: rgb(235, 235, 235);
 	padding: 4px;
-	.left {
-		@include span-columns(1);
-	}
+}
+
+.post-comments-input-container {
+	@include outer-container;
+}
+
+.post-comment-input {
+	@include span-columns(11);
+	height: auto;
+	background-color: white;
+	margin-right: 0;
+	padding: 8px 4px 4px 4px;
+	border: 1px solid #CDCDCD;
+	word-wrap: break-word;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	resize: none;
+}
+
+.comment-container {
+	@include outer-container;
+	margin-bottom: 4px;
 	.right {
 		word-wrap: break-word;
 		@include span-columns(11);
 	}
-	.commentSmallContainer {
-		@include outer-container;
-	}
-	.comment-inner-container {
-		@include outer-container;
-		.commentForm {
-			@include span-columns(11);
-			border-color: rgb(205, 205, 205);
-			height: auto;
-			background-color: white;
-			margin-right: 0px;
-		}
+}
+
+.comment-user-image {
+	@include span-columns(1);
+	a, img {
+		display: block;
 	}
 }

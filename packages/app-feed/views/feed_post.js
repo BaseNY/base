@@ -31,7 +31,7 @@ Template.feedIcons.helpers({
 });
 
 Template.feedPost.events({
-	'keypress .commentForm': function(e) {
+	'keypress .post-comment-input': function(e) {
 		if (e.charCode == 13) {
 			if (!Meteor.user()) {
 				RModal.openModal($('#login-modal'));
