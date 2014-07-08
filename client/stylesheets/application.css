@@ -1342,7 +1342,7 @@ section.pageAbout {
   background-size: 100%;
   border: 1px solid lightgrey;
   margin-top: 8px;
-  width: auto;
+  width: auto !important;
   margin-bottom: 8px; }
 
 .post-desc {
@@ -1912,32 +1912,34 @@ fieldset.show, div.show {
 
 .messaging-info, .messages-container, .messaging-reply-container {
   border-bottom: 1px solid #E6E6E6; }
-  .messaging-info .message-reply-box .message-reply-text, .messages-container .message-reply-box .message-reply-text, .messaging-reply-container .message-reply-box .message-reply-text {
-    resize: none;
-    border: 1px solid lightgrey;
-    font-size: 1em;
-    height: 72px; }
-  .messaging-info .message-reply-box footer, .messages-container .message-reply-box footer, .messaging-reply-container .message-reply-box footer {
-    overflow: hidden;
-    background-color: white;
-    border-bottom-right-radius: 8px;
-    color: grey;
-    height: auto;
-    border: 1px solid lightgrey; }
-    .messaging-info .message-reply-box footer .footer-button, .messages-container .message-reply-box footer .footer-button, .messaging-reply-container .message-reply-box footer .footer-button {
-      border: 0px;
-      border-right: 1px solid lightgrey;
-      height: 100%;
-      padding: 6px 8px;
-      display: inline-block;
-      font-weight: 300; }
-      float:left .messaging-info .message-reply-box footer .footer-button:hover, float:left .messages-container .message-reply-box footer .footer-button:hover, float:left .messaging-reply-container .message-reply-box footer .footer-button:hover {
-        cursor: pointer; }
-    .messaging-info .message-reply-box footer h4, .messages-container .message-reply-box footer h4, .messaging-reply-container .message-reply-box footer h4 {
-      display: inline-block;
-      float: right;
-      padding: 4px 8px;
-      font-weight: 300; }
+  .messaging-info .message-reply-box, .messages-container .message-reply-box, .messaging-reply-container .message-reply-box {
+    background-color: white; }
+    .messaging-info .message-reply-box .message-reply-text, .messages-container .message-reply-box .message-reply-text, .messaging-reply-container .message-reply-box .message-reply-text {
+      resize: none;
+      border: 1px solid lightgrey;
+      font-size: 1em;
+      height: 72px; }
+    .messaging-info .message-reply-box footer, .messages-container .message-reply-box footer, .messaging-reply-container .message-reply-box footer {
+      overflow: hidden;
+      background-color: white;
+      border-bottom-right-radius: 8px;
+      color: grey;
+      height: auto;
+      border: 1px solid lightgrey; }
+      .messaging-info .message-reply-box footer .footer-button, .messages-container .message-reply-box footer .footer-button, .messaging-reply-container .message-reply-box footer .footer-button {
+        border: 0px;
+        border-right: 1px solid lightgrey;
+        height: 100%;
+        padding: 6px 8px;
+        display: inline-block;
+        font-weight: 300; }
+        float:left .messaging-info .message-reply-box footer .footer-button:hover, float:left .messages-container .message-reply-box footer .footer-button:hover, float:left .messaging-reply-container .message-reply-box footer .footer-button:hover {
+          cursor: pointer; }
+      .messaging-info .message-reply-box footer h4, .messages-container .message-reply-box footer h4, .messaging-reply-container .message-reply-box footer h4 {
+        display: inline-block;
+        float: right;
+        padding: 4px 8px;
+        font-weight: 300; }
 
 .messaging-info {
   background-color: white;
