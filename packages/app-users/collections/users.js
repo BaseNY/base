@@ -116,3 +116,9 @@ Accounts.onLogin(function(attempt) {
 		console.log(user.new);
 	}
 });
+
+Meteor.methods({
+	'_updateUserFeeds': function(feedIds) {
+		return Meteor.users.update(this.userId, {$set: {subscribed: feedIds}});
+	}
+});

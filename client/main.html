@@ -25,10 +25,10 @@
 			{{> yield}}
 		</div>
 		{{> footer}}
+		{{> loginModal}}
+		{{> feedSelectModal}}
+		{{> zipSelectModal}}
 	</div>
-	{{> loginModal}}
-	{{> feedSelectModal}}
-    {{> zipSelectModal}}
 	<script>
 	(function(i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;
@@ -54,8 +54,8 @@
 				<img src="/images/logo.png" alt="BASE">
 			</a>
 			<!--<form action="/search">
-                <input name="q" type="text" placeholder="Search...">
-            </form>-->
+				<input name="q" type="text" placeholder="Search...">
+			</form>-->
 			{{#if currentUser}}
 				<div class="user-wrapper" id="user-wrapper">
 					<img src="{{profile.img}}">
@@ -111,7 +111,7 @@
 
 <template name="footer">
 	<!--<footer class="footer">
-        <span><a href="{{pathFor 'about'}}">About</a></span>
-        <span>&copy; 2013 BASE</span>
-    </footer>-->
+		<span><a href="{{pathFor 'about'}}">About</a></span>
+		<span>&copy; 2013 BASE</span>
+	</footer>-->
 </template>

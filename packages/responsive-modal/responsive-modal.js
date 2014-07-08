@@ -66,16 +66,13 @@
 			$closeButtons = $(MODAL_CLOSE);
 
 		// close modal when clicking on the close button or the backdrop
-		var closeModals = function() {
-			closeModal($(this));
+		var closeModals = function(e) {
+			if (e.target === this) {
+				closeModal($(this));
+			}
 		};
 		$modals.click(closeModals);
 		$closeButtons.click(closeModals);
-
-		// stop the modal from closing when clicked on
-		$modalWindows.click(function(e) {
-			e.stopPropagation();
-		});
 
 		// setup buttons for each modal
 		$modals.each(function() {
