@@ -1,17 +1,17 @@
 <template name="feedPost">
-<div class="post {{#if isSellPost}}sell{{else}}buy{{/if}}">
-            <div id="post-{{this._id}}" class="post-inner">
+	<div class="feed-post {{#if isSellPost}}sell{{else}}buy{{/if}}">
+		<div id="post-{{this._id}}" class="post-inner">
 			<div class="container">
 				<div class="left">
-                    <a href="/profile/{{this.sellerId}}">
-					<img src={{imgUrl}}>
-                </a>
+					<a href="/profile/{{this.sellerId}}">
+						<img src={{imgUrl}}>
+					</a>
 				</div>
 				<div class="right">
 					<h1><a href="/post/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
 					</h1>
 					<hr />
-                    <a href="/profile/{{this.sellerId}}">{{> postBadges}} {{this.seller}}</a>  <i class="fa fa-angle-right"></i>  <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+					<a href="/profile/{{this.sellerId}}">{{> postBadges}} {{this.seller}}</a>  <i class="fa fa-angle-right"></i>  <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
 					<span class="faded">{{timestamp}}</span>
 				</div>
 			</div>
@@ -20,8 +20,8 @@
 					{{#if ownPost}}
 						<i class="fa fa-trash-o"></i>
 					{{else}}
-                        <span>Interested? Send a message!</span>
-					    <i class="fa fa-envelope-o toggleMessage"></i>
+						<span>Interested? Send a message!</span>
+						<i class="fa fa-envelope-o toggleMessage"></i>
 						{{#if isInRole 'admin'}}
 							<i class="fa fa-trash-o"></i>
 						{{/if}}
@@ -29,31 +29,29 @@
 				</div>
 			{{/if}}
 			<div id="msgCont-{{this._id}}" class="msgContainer noshow">
-                {{> messagingPost}}
+				{{> messagingPost}}
 			</div>
 			<p class="description">{{this.description}}</p>
 			{{#if isSellPost}}
 				<!--<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>-->
-                                <a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
-                                                <img class="image" src={{this.imageUrl}} />
-                                                                        </a>
+				<a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
+					<img class="image" src={{this.imageUrl}} />
+				</a>
 			{{/if}}
 			<div class="commentContainer">
 				<ul>
 					{{#each comments}}
-						<li>
-							{{> comment}}
-						</li>
+						<li>{{> comment}}</li>
 					{{/each}}
 				</ul>
-					<div class="left">
-						<img src={{myImgUrl}} />
+				<div class="left">
+					<img src={{myImgUrl}} />
+				</div>
+				<div class="comment-inner-container">
+					<div contenteditable="true" class="commentForm" placeholder="Write a comment...">
+						<span class="placeholder">Write a comment...</span>
 					</div>
-					<div class="comment-inner-container">
-						<div contenteditable="true" class="commentForm" placeholder="Write a comment...">
-							<span class="placeholder">Write a comment...</span>
-						</div>
-					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -62,9 +60,9 @@
 <template name="comment">
 	<div class="commentSmallContainer">
 		<div class="left">
-            <a href="/profile/{{id}}">
-			<img src="{{imgUrl}}">
-        </a>
+			<a href="/profile/{{id}}">
+				<img src="{{imgUrl}}">
+			</a>
 		</div>
 		<div class="right">
 			<a href="/profile/{{id}}"><b>{{name}}</b></a> {{{text}}}
