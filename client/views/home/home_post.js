@@ -92,8 +92,7 @@ Template.homeSellPost.upload = function(e) {
 		e.preventDefault();
 
 		if (!Meteor.user()) {
-			$('#modal-container').css('display', 'block');
-			$('#modal-signup').css('display', 'block');
+            RModal.openModal($('#login-modal'));
 			return -1;
 		}
 		$(this).css('pointer-events', 'none');

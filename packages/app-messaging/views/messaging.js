@@ -18,6 +18,11 @@ Template.messagingPost.messageSent = function(id) {
 }
 
 Template.messagingPost.sendMsg = function() {
+    if(!Meteor.user()) {
+        RModal.openModal($('#login-modal'));
+        return -1;
+    }
+
     var item = Items.findOne({
         _id: this._id
     });

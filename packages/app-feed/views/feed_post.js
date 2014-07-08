@@ -33,8 +33,7 @@ Template.feedPost.events({
     'keypress .commentForm': function(e) {
         if (e.charCode == 13) {
             if (!Meteor.user()) {
-                $('#modal-container').css('display', 'block');
-                $('#modal-signup').css('display', 'block');
+                RModal.openModal($('#login-modal'));
                 return -1;
             }
             e.preventDefault();

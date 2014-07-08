@@ -17,6 +17,7 @@ Package.on_use(function(api) {
 		'views/login_modal.html',
 		'views/login_modal_button.html',
 		'views/feed_select_modal.html',
+		'views/zip_select_modal.html',
 		'login.js'
 	], 'client');
 });

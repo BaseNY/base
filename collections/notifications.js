@@ -8,6 +8,8 @@ Meteor.methods({
             $set: {
                 seen: true,
             }
+        }, {
+            multi: true    
         });
     },
     clearNotif: function(filter) {
