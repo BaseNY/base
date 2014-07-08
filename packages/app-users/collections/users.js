@@ -103,6 +103,8 @@ Accounts.onCreateUser(function(options, user) {
 
 	Debug.users("Created User", user);
 
+    console.log(user);
+    sendWelcomeEmail(user);
 	//check(user, Schemas.User);
 	return user;
 });
