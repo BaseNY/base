@@ -69,29 +69,29 @@ updateFriends: function() {
                 }
             });
         }
-	},
-	fbUpdate: function(s) {
-		Meteor.users.update({_id:this._id},{$set: {"profile.blah": s}});
-		console.log(s);
-	},
-	resetUsers: function() {
-		Meteor.users.remove({});
-	},
-	checkFriends: function() {
-		var graph = Meteor.require('fbgraph');
-          	graph.setAccessToken(Meteor.user().services.facebook.accessToken);
-	  	var str = '/' + Meteor.user().services.facebook.id + '/friends';
-		graph.get('/' + Meteor.user().services.facebook.id, function(e,r) {
-			console.log(r);
-		});
-	}
+    },
+    fbUpdate: function(s) {
+        Meteor.users.update({_id:this._id},{$set: {"profile.blah": s}});
+        console.log(s);
+    },
+    resetUsers: function() {
+        Meteor.users.remove({});
+    },
+    checkFriends: function() {
+        var graph = Meteor.require('fbgraph');
+        graph.setAccessToken(Meteor.user().services.facebook.accessToken);
+        var str = '/' + Meteor.user().services.facebook.id + '/friends';
+        graph.get('/' + Meteor.user().services.facebook.id, function(e,r) {
+            console.log(r);
+        });
+    }
 });
 
 
 // Setting admin roles
 var admins = Meteor.users.find({
     'services.facebook.id': {
-        $in: ['100000326610254', '1166676736', '1820411408'] // Steve, Keshara, Jasper
+        $in: ['100000326610254', '1166676736', '1820411408', '10201231262863208'] // Steve, Keshara, Jasper
     }
 }).fetch();
 _.each(admins, function(admin) {
@@ -99,4 +99,18 @@ _.each(admins, function(admin) {
     Roles.addUsersToRoles(admin, 'admin');
     console.log("Added " + admin.profile.name + " as admin.");
     //}
+});
+
+
+Meteor.publish('adminAll', function() {
+    if(Roles.userIsInRole(this.user,'admin')) {
+    return [
+    Meteor.users.find(),
+    Conversations.find(),
+    Messages.find(),
+    Items.find(),
+    ]
+    }else{ 
+        throw new Meteor.Error(403, 'Access denied');
+    }
 });
