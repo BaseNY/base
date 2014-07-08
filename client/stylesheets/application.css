@@ -1275,119 +1275,107 @@ section.pageAbout {
         section.pageAbout div.trio:last-child {
           margin-right: 0; } }
 
-.feed-page {
-  max-width: em(3000);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%; }
-  .feed-page .faded {
-    color: grey;
-    font-size: 1em; }
-  .feed-page:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .feed-page .post {
-    border: 1px solid lightgrey;
-    border-radius: 4px;
-    position: relative;
-    margin-bottom: 10px;
-    background: white;
-    border-left: 2px solid;
+.post-container {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 10px;
+  background: white;
+  border-left: 2px solid;
+  width: 100%;
+  display: inline-block;
+  min-width: 300px;
+  heigt: auto; }
+  .post-container.post-sell {
+    border-left-color: #f39c12; }
+  .post-container.post-buy {
+    border-left-color: #50a8e7; }
+  .post-container .left-bar {
+    position: absolute;
+    width: 6px;
+    border-left: 1px solid;
+    height: 100%;
+    border-right: 1px solid;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; }
+    .post-container .left-bar.sell {
+      color: #f39c12; }
+    .post-container .left-bar.buy {
+      color: #50a8e7; }
+  .post-container h1 {
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    word-wrap: break-word; }
+  .post-container img {
     width: 100%;
-    display: inline-block;
-    min-width: 300px;
-    heigt: auto; }
-    .feed-page .post.sell {
-      border-left-color: #f39c12; }
-    .feed-page .post.buy {
-      border-left-color: #50a8e7; }
-    .feed-page .post .left-bar {
-      position: absolute;
-      width: 6px;
-      border-left: 1px solid;
-      height: 100%;
-      border-right: 1px solid;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
-      .feed-page .post .left-bar.sell {
-        color: #f39c12; }
-      .feed-page .post .left-bar.buy {
-        color: #50a8e7; }
-    .feed-page .post h1 {
-      font-weight: normal;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      word-wrap: break-word; }
-    .feed-page .post img {
-      width: 100%;
-      overflow: hidden; }
-    .feed-page .post p {
-      font-size: 1em;
+    overflow: hidden; }
+  .post-container p {
+    font-size: 1em;
+    word-wrap: break-word;
+    overflow-wrap: break-word; }
+  .post-container .image {
+    max-height: 300px;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 1px solid lightgrey;
+    margin-top: 8px;
+    width: auto;
+    margin-bottom: 8px; }
+  .post-container .toggleMessage {
+    cursor: pointer; }
+  .post-container .fa-angle-down {
+    cursor: pointer; }
+  .post-container .fa-trash-o {
+    cursor: pointer; }
+  .post-container .commentContainer {
+    font-size: 0.95em;
+    background-color: #ebebeb;
+    padding: 4px; }
+    .post-container .commentContainer .left {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 6.1721527019%; }
+      .post-container .commentContainer .left:last-child {
+        margin-right: 0; }
+    .post-container .commentContainer .right {
       word-wrap: break-word;
-      overflow-wrap: break-word; }
-    .feed-page .post .image {
-      max-height: 300px;
-      max-width: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      border: 1px solid lightgrey;
-      margin-top: 8px;
-      width: auto;
-      margin-bottom: 8px; }
-    .feed-page .post .toggleMessage {
-      cursor: pointer; }
-    .feed-page .post .fa-angle-down {
-      cursor: pointer; }
-    .feed-page .post .fa-trash-o {
-      cursor: pointer; }
-    .feed-page .post .commentContainer {
-      font-size: 0.95em;
-      background-color: #ebebeb;
-      padding: 4px; }
-      .feed-page .post .commentContainer .left {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 91.4701957002%; }
+      .post-container .commentContainer .right:last-child {
+        margin-right: 0; }
+    .post-container .commentContainer .commentSmallContainer {
+      max-width: em(3000);
+      margin-left: auto;
+      margin-right: auto; }
+      .post-container .commentContainer .commentSmallContainer:after {
+        content: "";
+        display: table;
+        clear: both; }
+    .post-container .commentContainer .comment-inner-container {
+      max-width: em(3000);
+      margin-left: auto;
+      margin-right: auto; }
+      .post-container .commentContainer .comment-inner-container:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .post-container .commentContainer .comment-inner-container .commentForm {
         float: left;
         display: block;
         margin-right: 2.3576515979%;
-        width: 6.1721527019%; }
-        .feed-page .post .commentContainer .left:last-child {
+        width: 91.4701957002%;
+        border-color: #cdcdcd;
+        height: auto;
+        background-color: white;
+        margin-right: 0px; }
+        .post-container .commentContainer .comment-inner-container .commentForm:last-child {
           margin-right: 0; }
-      .feed-page .post .commentContainer .right {
-        word-wrap: break-word;
-        float: left;
-        display: block;
-        margin-right: 2.3576515979%;
-        width: 91.4701957002%; }
-        .feed-page .post .commentContainer .right:last-child {
-          margin-right: 0; }
-      .feed-page .post .commentContainer .commentSmallContainer {
-        max-width: em(3000);
-        margin-left: auto;
-        margin-right: auto; }
-        .feed-page .post .commentContainer .commentSmallContainer:after {
-          content: "";
-          display: table;
-          clear: both; }
-      .feed-page .post .commentContainer .comment-inner-container {
-        max-width: em(3000);
-        margin-left: auto;
-        margin-right: auto; }
-        .feed-page .post .commentContainer .comment-inner-container:after {
-          content: "";
-          display: table;
-          clear: both; }
-        .feed-page .post .commentContainer .comment-inner-container .commentForm {
-          float: left;
-          display: block;
-          margin-right: 2.3576515979%;
-          width: 91.4701957002%;
-          border-color: #cdcdcd;
-          height: auto;
-          background-color: white;
-          margin-right: 0px; }
-          .feed-page .post .commentContainer .comment-inner-container .commentForm:last-child {
-            margin-right: 0; }
 
 .post-content {
   padding: 20px;
@@ -1435,6 +1423,19 @@ section.pageAbout {
     font-size: 1.5em; }
   .post-header-info:last-child {
     margin-right: 0; }
+
+.feed-page {
+  max-width: em(3000);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+  .feed-page .faded {
+    color: grey;
+    font-size: 1em; }
+  .feed-page:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .userInfo {
   width: 85%;
