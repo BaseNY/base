@@ -19,11 +19,13 @@
 </head>
 
 <template name="layout">
-	{{> header}}
-	<div class="body">
-		{{> yield}}
+	<div class="page">
+		{{> header}}
+		<div class="body">
+			{{> yield}}
+		</div>
+		{{> footer}}
 	</div>
-	{{> footer}}
 	{{> loginModal}}
 	{{> feedSelectModal}}
     {{> zipSelectModal}}

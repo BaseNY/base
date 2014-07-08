@@ -1,71 +1,89 @@
+<!-- change template name to post and move to app-post -->
 <template name="feedPost">
-<div class="post {{#if isSellPost}}sell{{else}}buy{{/if}}">
-            <div id="post-{{this._id}}" class="post-inner">
-			<div class="container">
-				<div class="left">
-                    <a href="/profile/{{this.sellerId}}">
-					<img src={{imgUrl}}>
-                </a>
+	<div class="post-container post-{{#if isSellPost}}sell{{else}}buy{{/if}}" data-id="{{this._id}}">
+		<div class="post-content">
+			<div class="post-header">
+				<div class="post-seller-image">
+					<a href="/profile/{{this.sellerId}}">
+						<img src={{imgUrl}}>
+					</a>
 				</div>
-				<div class="right">
-					<h1><a href="/post/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
-					</h1>
-					<hr />
-                    <a href="/profile/{{this.sellerId}}">{{> postBadges}} {{this.seller}}</a>  <i class="fa fa-angle-right"></i>  <a href="/feeds/{{feed._id}}">{{feed.name}}</a>
-					<span class="faded">{{timestamp}}</span>
+				<div class="post-header-info">
+					<a href="/post/{{this._id}}">
+						<h1 class="post-title">
+							{{#if isSellPost}}
+								<i class="fa fa-money"></i>
+							{{else}}
+								<i class="fa fa-shopping-cart"></i>
+							{{/if}}
+							{{this.title}}
+						</h1>
+					</a>
+					<a href="/profile/{{this.sellerId}}">
+						{{> postBadges}}
+						{{this.seller}}
+					</a>
+					<i class="fa fa-angle-right"></i>
+					<a href="/feeds/{{feed._id}}">{{feed.name}}</a>
+					<span class="post-timestamp">{{timestamp}}</span>
 				</div>
 			</div>
-			{{#if currentUser}}
-				<div class="icons-container">
-					{{#if ownPost}}
-						<i class="fa fa-trash-o"></i>
-					{{else}}
-                        <span>Interested? Send a message!</span>
-					    <i class="fa fa-envelope-o toggleMessage"></i>
-						{{#if isInRole 'admin'}}
-							<i class="fa fa-trash-o"></i>
-						{{/if}}
-					{{/if}}
-				</div>
-			{{/if}}
+			{{> feedIcons}}
 			<div id="msgCont-{{this._id}}" class="msgContainer noshow">
-                {{> messagingPost}}
+				{{> messagingPost}}
 			</div>
-			<p class="description">{{this.description}}</p>
+			<p class="post-desc">{{this.description}}</p>
 			{{#if isSellPost}}
-				<!--<div class="image" style="background-image:url('{{item.imageUrl}}')"></div>-->
-                                <a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
-                                                <img class="image" src={{this.imageUrl}} />
-                                                                        </a>
+				{{#if this.imageUrl}}
+					<a href="{{this.imageUrl}}" data-lightbox="image-{{this._id}}" data-title="{{this.title}}: {{this.description}}">
+						<img class="post-image" src="{{this.imageUrl}}" />
+					</a>
+				{{/if}}
 			{{/if}}
-			<div class="commentContainer">
-				<ul>
-					{{#each comments}}
-						<li>
-							{{> comment}}
-						</li>
-					{{/each}}
-				</ul>
-					<div class="left">
-						<img src={{myImgUrl}} />
-					</div>
-					<div class="comment-inner-container">
-						<div contenteditable="true" class="commentForm" placeholder="Write a comment...">
-							<span class="placeholder">Write a comment...</span>
-						</div>
-					</div>
+			{{> postComments}}
+		</div>
+	</div>
+</template>
+
+<template name="feedIcons">
+	{{#if currentUser}}
+		<div class="post-icons-container">
+			<span>Interested? Send a message!</span>
+			<i class="fa fa-envelope-o toggleMessage"></i>
+			{{#if ownPost}}
+				<i class="fa fa-trash-o"></i>
+			{{else}}
+				{{#if isInRole 'admin'}}
+					<i class="fa fa-trash-o"></i>
+				{{/if}}
+			{{/if}}
+		</div>
+	{{/if}}
+</template>
+
+<template name="postComments">
+	<div class="post-comments-container">
+		<ul>
+			{{#each comments}}
+				<li>{{> comment}}</li>
+			{{/each}}
+		</ul>	
+		<div class="post-comments-input-container">
+			{{#if currentUser}}
+				<div class="comment-user-image">
+					<img src="{{currentUser.profile.img}}" />
+				</div>
+			{{/if}}
+			<div contenteditable="true" class="post-comment-input" placeholder="Write a comment...">
+				<span class="placeholder">Write a comment...</span>
 			</div>
 		</div>
 	</div>
 </template>
 
 <template name="comment">
-	<div class="commentSmallContainer">
-		<div class="left">
-            <a href="/profile/{{id}}">
-			<img src="{{imgUrl}}">
-        </a>
-		</div>
+	<div class="comment-container">
+		<div class="comment-user-image"><a href="/profile/{{id}}"><img src="{{imgUrl}}"></a></div>
 		<div class="right">
 			<a href="/profile/{{id}}"><b>{{name}}</b></a> {{{text}}}
 			<br />

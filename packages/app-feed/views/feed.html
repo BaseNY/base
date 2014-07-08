@@ -1,13 +1,12 @@
 <template name="feed">
-	<div class="pageFeeds">
+	<div class="feed-page">
 		{{#each posts}}
 			{{> feedPost}}
 		{{/each}}
 		{{#if moreResults}}
-		<div id="showMoreResults" style="margin-left: 25px;">
-        <span class="loading">Loading...</span>
-
-    </div>
-    {{/if}}
+			<div id="showMoreResults" style="margin-left: 25px;">
+				<span class="loading">Loading...</span>
+			</div>
+		{{/if}}
 	</div>
 </template>

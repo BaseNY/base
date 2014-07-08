@@ -1,0 +1,118 @@
+.post-container {
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	position: relative;
+	margin-bottom: 10px;
+	background: white;
+	border-left: 2px solid;
+	width: 100%;
+	display: inline-block;
+	min-width: 300px;
+	height: auto;
+	&.post-sell {
+		border-left-color: #f39c12;
+	}
+	&.post-buy {
+		border-left-color: #50a8e7;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+.post-content {
+	position: relative;
+	padding: 20px;
+	.msgContainer {
+		textarea {
+			font-size: 1em;
+		}
+		&.noshow {
+			display: none;
+		}
+	}
+}
+
+.post-icons-container {
+	position: absolute;
+	top: 8px;
+	right: 16px;
+	font-size: 1.3em;
+	span {
+		vertical-align: top;
+		font-size: 14px;
+	}
+	.fa {
+		cursor: pointer;
+	}
+}
+
+.post-title {
+	margin: 0;
+	border-bottom: 1px solid gray;
+	font-size: 1.5em;
+	font-weight: normal;
+	word-wrap: break-word;
+}
+
+.post-timestamp {
+	color: gray;
+	font-size: 1em;
+}
+
+.post-image {
+	max-height: 300px;
+	max-width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: 1px solid lightgrey;
+	margin-top: 8px;
+	width: auto;
+	margin-bottom: 8px;
+}
+
+.post-desc {
+	font-size: 1em;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.post-comments-container {
+	font-size: .95em;
+	background-color: rgb(235, 235, 235);
+	padding: 4px;
+}
+
+.post-comments-input-container {
+	@include outer-container;
+}
+
+.post-comment-input {
+	@include span-columns(11);
+	height: auto;
+	background-color: white;
+	margin-right: 0;
+	padding: 8px 4px 4px 4px;
+	border: 1px solid #CDCDCD;
+	word-wrap: break-word;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	resize: none;
+}
+
+.comment-container {
+	@include outer-container;
+	margin-bottom: 4px;
+	.right {
+		word-wrap: break-word;
+		@include span-columns(11);
+	}
+}
+
+.comment-user-image {
+	@include span-columns(1);
+	a, img {
+		display: block;
+	}
+}
