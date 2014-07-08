@@ -1,13 +1,14 @@
+<!-- change template name to post and move to app-post -->
 <template name="feedPost">
-	<div class="feed-post {{#if isSellPost}}sell{{else}}buy{{/if}}">
-		<div id="post-{{this._id}}" class="post-inner">
-			<div class="container">
-				<div class="left">
+	<div class="post {{#if isSellPost}}sell{{else}}buy{{/if}}" data-id="{{this._id}}">
+		<div class="post-content">
+			<div class="post-header">
+				<div class="post-header-img">
 					<a href="/profile/{{this.sellerId}}">
 						<img src={{imgUrl}}>
 					</a>
 				</div>
-				<div class="right">
+				<div class="post-header-info">
 					<h1><a href="/post/{{this._id}}">{{#if isSellPost}}<i class="fa fa-money"></i>{{else}}<i class="fa fa-shopping-cart"></i>{{/if}} {{this.title}}</a>
 					</h1>
 					<hr />
@@ -38,20 +39,26 @@
 					<img class="image" src={{this.imageUrl}} />
 				</a>
 			{{/if}}
-			<div class="commentContainer">
-				<ul>
-					{{#each comments}}
-						<li>{{> comment}}</li>
-					{{/each}}
-				</ul>
-				<div class="left">
-					<img src={{myImgUrl}} />
-				</div>
-				<div class="comment-inner-container">
-					<div contenteditable="true" class="commentForm" placeholder="Write a comment...">
-						<span class="placeholder">Write a comment...</span>
-					</div>
-				</div>
+			{{> postComments}}
+		</div>
+	</div>
+</template>
+
+<template name="postComments">
+	<div class="commentContainer">
+		<ul>
+			{{#each comments}}
+				<li>{{> comment}}</li>
+			{{/each}}
+		</ul>
+		{{#if currentUser}}
+			<div class="left">
+				<img src="{{currentUser.profile.img}}" />
+			</div>
+		{{/if}}
+		<div class="comment-inner-container">
+			<div contenteditable="true" class="commentForm" placeholder="Write a comment...">
+				<span class="placeholder">Write a comment...</span>
 			</div>
 		</div>
 	</div>
