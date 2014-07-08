@@ -906,55 +906,66 @@ header {
   .fb-login .fa {
     margin-right: 0.5em; }
 
-#feed-select-modal .rmodal-title {
+#feed-select-modal .rmodal-title, #zip-select-modal .rmodal-title {
   text-align: center;
   font-weight: 300;
   margin-bottom: 20px; }
-#feed-select-modal p {
+#feed-select-modal p, #zip-select-modal p {
   font-weight: 300;
   font-size: 17px;
   padding-bottom: 10px; }
-#feed-select-modal li {
+#feed-select-modal li, #zip-select-modal li {
   cursor: pointer;
   padding: 4px;
   margin-bottom: 4px;
   max-width: em(3000);
   margin-left: auto;
   margin-right: auto; }
-  #feed-select-modal li:after {
+  #feed-select-modal li:after, #zip-select-modal li:after {
     content: "";
     display: table;
     clear: both; }
-  #feed-select-modal li .left {
+  #feed-select-modal li .left, #zip-select-modal li .left {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 10.4370548518%; }
-    #feed-select-modal li .left:last-child {
+    #feed-select-modal li .left:last-child, #zip-select-modal li .left:last-child {
       margin-right: 0; }
-  #feed-select-modal li .right {
+  #feed-select-modal li .right, #zip-select-modal li .right {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 87.2052935503%; }
-    #feed-select-modal li .right:last-child {
+    #feed-select-modal li .right:last-child, #zip-select-modal li .right:last-child {
       margin-right: 0; }
-    #feed-select-modal li .right i {
+    #feed-select-modal li .right i, #zip-select-modal li .right i {
       float: right; }
-  #feed-select-modal li:hover {
+  #feed-select-modal li:hover, #zip-select-modal li:hover {
     background-color: #E6E6E6;
     cursor: pointer; }
-  #feed-select-modal li.checked {
+  #feed-select-modal li.checked, #zip-select-modal li.checked {
     background-color: #33B5E5;
     font-weight: bold;
     color: white; }
-#feed-select-modal .button {
+#feed-select-modal .button, #zip-select-modal .button {
   width: 100%;
   border-radius: 3px;
   margin-top: 6px;
   padding: 0.6em; }
-  #feed-select-modal .button:hover {
+  #feed-select-modal .button:hover, #zip-select-modal .button:hover {
     background-color: #33B5E5; }
+#feed-select-modal input[type=text], #zip-select-modal input[type=text] {
+  border: 1px solid lightgrey;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4px;
+  display: block;
+  width: 100px;
+  font-weight: 300;
+  font-size: 1.5em; }
+  #feed-select-modal input[type=text]:active, #zip-select-modal input[type=text]:active {
+    border-color: #33B5E5; }
 
 div.product-body {
   text-align: center; }
