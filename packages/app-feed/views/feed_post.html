@@ -16,19 +16,7 @@
 					<span class="faded">{{timestamp}}</span>
 				</div>
 			</div>
-			{{#if currentUser}}
-				<div class="icons-container">
-					{{#if ownPost}}
-						<i class="fa fa-trash-o"></i>
-					{{else}}
-						<span>Interested? Send a message!</span>
-						<i class="fa fa-envelope-o toggleMessage"></i>
-						{{#if isInRole 'admin'}}
-							<i class="fa fa-trash-o"></i>
-						{{/if}}
-					{{/if}}
-				</div>
-			{{/if}}
+			{{> feedIcons}}
 			<div id="msgCont-{{this._id}}" class="msgContainer noshow">
 				{{> messagingPost}}
 			</div>
@@ -42,6 +30,22 @@
 			{{> postComments}}
 		</div>
 	</div>
+</template>
+
+<template name="feedIcons">
+	{{#if currentUser}}
+		<div class="icons-container">
+			<span>Interested? Send a message!</span>
+			<i class="fa fa-envelope-o toggleMessage"></i>
+			{{#if ownPost}}
+				<i class="fa fa-trash-o"></i>
+			{{else}}
+				{{#if isInRole 'admin'}}
+					<i class="fa fa-trash-o"></i>
+				{{/if}}
+			{{/if}}
+		</div>
+	{{/if}}
 </template>
 
 <template name="postComments">

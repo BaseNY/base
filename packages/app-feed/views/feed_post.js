@@ -20,8 +20,12 @@ Template.feedPost.helpers({
 	},
 	'comments': function() {
 		return this.comments;
-	},
+	}
+});
+
+Template.feedIcons.helpers({
 	'ownPost': function() {
+		console.log('YOOYYO: ' + this.sellerId);
 		return this.sellerId == Meteor.userId();
 	}
 });
