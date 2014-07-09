@@ -15,7 +15,8 @@
       "lodash": {},
       "kadira": {},
       "collection-helpers": {},
-      "imagemagick": {}
+      "imagemagick": {},
+      "phantomjs": {}
     },
     "packages": {
       "iron-router": {
@@ -87,6 +88,11 @@
         "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
         "tag": "v0.1.2",
         "commit": "d67bb926356d35cdff1a6d6c3c69750f3f54c059"
+      },
+      "phantomjs": {
+        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
+        "tag": "v0.0.2",
+        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

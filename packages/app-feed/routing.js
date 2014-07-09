@@ -50,6 +50,9 @@ Router.map(function() {
 			return {
 				feed: feed,
 			};
-		}
+		},
+        onAfterAction: function() {
+            document.title = this.data().feed.name;
+        }
 	});
 });

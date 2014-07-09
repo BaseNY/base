@@ -13,6 +13,7 @@
     "lodash": {},
     "kadira": {},
     "collection-helpers": {},
-    "imagemagick": {}
+    "imagemagick": {},
+    "phantomjs": {}
   }
 }

@@ -120,5 +120,12 @@ Accounts.onLogin(function(attempt) {
 Meteor.methods({
 	'_updateUserFeeds': function(feedIds) {
 		return Meteor.users.update(this.userId, {$set: {subscribed: feedIds}});
-	}
+	},
+    '_fbgraph': function(activity,params) {
+        console.log(Meteor.user());
+        FBGraph.post(activity,params,function(e,r) {
+            if(e)
+                console.log(e);
+        });
+    }
 });

@@ -96,7 +96,10 @@ MessagingController = FastRender.RouteController.extend({
 				messages: messages
 			};
 		}
-	}
+	},
+        onAfterAction: function() {
+            document.title = this.data().conversation.name;
+        }
 });
 
 Router.map(function() {
