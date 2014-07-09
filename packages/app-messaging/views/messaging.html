@@ -128,22 +128,32 @@
 
 <template name="messagingInfo">
 <div class="messaging-info">
-    {{#with conversation}}
-    <a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
-        {{this.otherUser.profile.name}}
-    </a>
-    {{#with offer}}
-    <div>
-        Offer for:
-        <a href="/post/{{this.itemId}}">
-            {{#if this.item.title}}
-            {{this.item.title}}
-            {{else}}
-            {{this.item.description}}
-            {{/if}}
+    <div class="container">
+        {{#with conversation}}
+        <a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
+            {{this.otherUser.profile.name}}
         </a>
+        {{#with offer}}
+        <div>
+            Offer for:
+            <a href="/post/{{this.itemId}}">
+                {{#if this.item.title}}
+                {{this.item.title}}
+                {{else}}
+                {{this.item.description}}
+                {{/if}}
+            </a>
+        </div>
+        {{/with}}
+        {{/with}}
     </div>
-    {{/with}}
+    {{#with conversation}}
+    {{#if showSafety}}
+    <footer>
+        <div id="x{{this._id}}" class="x">x</div>
+        <i class="fa fa-info-circle"></i> For your safety, remember to always set meetups for public areas, and try to bring a friend with you anywhere else.
+    </footer>
+    {{/if}}
     {{/with}}
 </div>
 </template>

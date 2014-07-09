@@ -1942,8 +1942,32 @@ fieldset.show, div.show {
         font-weight: 300; }
 
 .messaging-info {
-  background-color: white;
-  padding: 1em; }
+  background-color: white; }
+  .messaging-info .container {
+    padding: 1em; }
+  .messaging-info footer {
+    background-color: #f39c12;
+    color: white;
+    padding: 8px 16px;
+    position: relative; }
+    .messaging-info footer .x {
+      background-color: rgba(100, 100, 100, 0.5);
+      -moz-user-select: none;
+      cursor: pointer;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+      border-radius: 100px;
+      position: absolute;
+      text-align: center;
+      font-size: 0.8em;
+      line-height: 14px;
+      width: 16px;
+      height: 16px;
+      top: 4px;
+      right: 4px; }
+      .messaging-info footer .x:hover {
+        background-color: rgba(100, 100, 100, 0.8); }
 
 .messaging-info-name {
   font-weight: 600;

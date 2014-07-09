@@ -20,6 +20,10 @@ Schemas.Conversation = new SimpleSchema({
 		type: String,
 		optional: true
 	},
+    safetyMessage: {
+        type: [String],
+        optional: true
+    },
 	offerId: {
 		type: String,
 		optional: true
@@ -171,6 +175,9 @@ Conversations.before.remove(function(userId, doc) {
 });
 
 Meteor.methods({
+    clearSafety: function(conversationId) {
+        Conversations.update({_id: conversationId},{$pull: {safetyMessage: Meteor.userId()}});
+    },
 	updateUsersConversations: function(userIds, conversationId) {
 		Meteor.users.update({_id: {$in: userIds}}, {$push: {conversationIds: conversationId}}, {multi: true});
 	},
@@ -178,7 +185,8 @@ Meteor.methods({
 	_createConversation: function(userIds, offerId) {
 		var conv = {
 			processUsers: true,
-			users: userIds
+			users: userIds,
+            safetyMessage: userIds
 		};
 		if (offerId) {
 			conv.offerId = offerId;

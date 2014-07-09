@@ -1,26 +1,26 @@
 .messagingPost {
-	height: auto;
-	width: 100%;
-	display: block;
-	position: relative;
-	vertical-align: middle;
-	.messageText, .messageSend {
-		display: inline-block;
-		border: 1px solid lightgrey;
-		height: 100%;
-	}
-	.messageText {
-		width: 95%;
-		padding: 4px 4px 4px 8px;
-		height: auto;
-		overflow: auto;
-		resize: none;
-		font-size: 1.2em;
-		vertical-align: middle;
-		line-height: 1.2em;
-		word-wrap: break-word;
+    height: auto;
+    width: 100%;
+    display: block;
+    position: relative;
+    vertical-align: middle;
+    .messageText, .messageSend {
+        display: inline-block;
+        border: 1px solid lightgrey;
+        height: 100%;
+    }
+    .messageText {
+        width: 95%;
+        padding: 4px 4px 4px 8px;
+        height: auto;
+        overflow: auto;
+        resize: none;
+        font-size: 1.2em;
+        vertical-align: middle;
+        line-height: 1.2em;
+        word-wrap: break-word;
         text-indent:5%;
-	}
+    }
     .messageType {
         width: 5%;
         height:100%;
@@ -30,10 +30,10 @@
         .typeCurrent {
             height:100%;
             width:100%;
-        padding:6px 0px;
-        text-align:center;
-        color:#33B5E5;
-    
+            padding:6px 0px;
+            text-align:center;
+            color:#33B5E5;
+
             .bottom-right-triangle {
                 width:0;
                 height:0;
@@ -68,122 +68,150 @@
             }
         }
     }
-	.messageSend {
-		border-top-right-radius: 8px;
-		border-bottom-right-radius: 8px;
-		width: 5%;
-		height: 100%;
-		padding: 8px;
-		position: absolute;
-		border: 1px solid lightgrey;
-	}
+    .messageSend {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        width: 5%;
+        height: 100%;
+        padding: 8px;
+        position: absolute;
+        border: 1px solid lightgrey;
+    }
 }
 
 
 .messaging-info, .messages-container, .messaging-reply-container {
-	border-bottom: 1px solid #E6E6E6;
-	.message-reply-box {
+    border-bottom: 1px solid #E6E6E6;
+    .message-reply-box {
         background-color:white;
-		.message-reply-text{
-			resize:none;
-			border:1px solid lightgrey;
-			font-size:1em;
-			height:72px;
-		}
-		footer{
+        .message-reply-text{
+            resize:none;
+            border:1px solid lightgrey;
+            font-size:1em;
+            height:72px;
+        }
+        footer{
             overflow:hidden;
             .footer-button {
                 border:0px;
-				border-right:1px solid lightgrey;
-				height:100%;
-				padding:6px 8px;
-				display:inline-block;
-				font-weight:300;
+                border-right:1px solid lightgrey;
+                height:100%;
+                padding:6px 8px;
+                display:inline-block;
+                font-weight:300;
                 float:left
-				&:hover {
-					cursor:pointer;
-				}
-			}
-			h4 {
-				display:inline-block;
-				float:right;
-				padding:4px 8px;
-				font-weight:300;
-			}
-			background-color:white;
-			border-bottom-right-radius: 8px;
-			color:grey;
-			height:auto;
-			border:1px solid lightgrey;
-		}
-	}
+                &:hover {
+                    cursor:pointer;
+                }
+            }
+            h4 {
+                display:inline-block;
+                float:right;
+                padding:4px 8px;
+                font-weight:300;
+            }
+            background-color:white;
+            border-bottom-right-radius: 8px;
+            color:grey;
+            height:auto;
+            border:1px solid lightgrey;
+        }
+    }
 
 }
 
 .messaging-info {
-	background-color: white;
-	padding: 1em;
+    background-color: white;
+    .container {
+        padding: 1em;
+    }
+    footer {
+        background-color:#f39c12;
+        color:white;
+        padding:8px 16px;
+        position:relative;
+        .x {
+            background-color: rgba(100,100,100,.5);
+            -moz-user-select: none;
+            cursor:pointer;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            border-radius: 100px;
+            position: absolute;
+            text-align: center;
+            font-size: .8em;
+            line-height: 14px;
+            width: 16px;
+            height: 16px;
+            top:4px;
+            right:4px;
+            &:hover {
+                background-color:rgba(100,100,100,.8);
+            }
+        }
+    }
 }
 
 .messaging-info-name {
-	font-weight: 600;
-	font-size: 20px;
-	color: #191919;
-	&:hover {
-		text-decoration: underline;
-	}
+    font-weight: 600;
+    font-size: 20px;
+    color: #191919;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .messages-container {
-	border-top: none;
-	height: 400px;
-	background-color: white;
-	overflow: auto;
+    border-top: none;
+    height: 400px;
+    background-color: white;
+    overflow: auto;
 }
 
 .messaging-messages {
-	padding: 1em;
+    padding: 1em;
 }
 
 .messaging-reply-container {
-	border-top: none;
-	background-color: #F2F2F2;
-	padding: 10px;
+    border-top: none;
+    background-color: #F2F2F2;
+    padding: 10px;
 }
 
 #messaging-reply {
-	width: 100%;
-	padding: 0.3em;
+    width: 100%;
+    padding: 0.3em;
 }
 
 .message {
-	@include row;
-	hr {
-		width:50%;
-		border: 1px solid lightgrey;
-	}
-	h4 {
-	}
-	.left {
-		img {
-			width:100%;
-		}
-		@include span-columns(1 of 9);
-	}
-	.middle {
-		@include span-columns(7 of 9);
-		word-wrap:break-word;
-		span {
-			display:block;
-		}
-		img {
-			border: 1px solid lightgrey;
-			width:auto;
-			max-width: 100%;
-		}
-	}
-	.right {
-		color:lightgrey;
-		@include span-columns(1 of 9);
-	}
+    @include row;
+    hr {
+        width:50%;
+        border: 1px solid lightgrey;
+    }
+    h4 {
+    }
+    .left {
+        img {
+            width:100%;
+        }
+        @include span-columns(1 of 9);
+    }
+    .middle {
+        @include span-columns(7 of 9);
+        word-wrap:break-word;
+        span {
+            display:block;
+        }
+        img {
+            border: 1px solid lightgrey;
+            width:auto;
+            max-width: 100%;
+        }
+    }
+    .right {
+        color:lightgrey;
+        @include span-columns(1 of 9);
+    }
 }

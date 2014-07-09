@@ -135,7 +135,6 @@ Template.messaging.sendMsg = function(e, cId) {
 
 Template.messaging.events({
     'keydown #messaging-reply': function(e) {
-        console.log('hello?');
         Template.messaging.sendMsg(e, this.conversationId);
     }
 });
@@ -223,6 +222,26 @@ Template.messagingConversation.rendered = function() {
     $(window).bind("load", function() {
         scrollDown($messagesContainer);
     });
+}
+
+Template.messagingInfo.events({
+    'click .x': function(e) {
+        var id = $(e.currentTarget).attr('id').substring(1);
+        Meteor.call('clearSafety',id, function(e,r) {
+            if(e)
+                console.log(e);
+            else
+                console.log(r);
+        });
+    }
+});
+Template.messagingInfo.rendered = function() {
+}
+
+Template.messagingInfo.showSafety = function() {
+    if(this.safetyMessage)
+        return this.safetyMessage.indexOf(Meteor.userId()) + 1;
+    return false;
 }
 
 /*
