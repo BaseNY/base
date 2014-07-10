@@ -338,7 +338,7 @@ td, th {
     outline: none; }
 
 body {
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%; }
 
