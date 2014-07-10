@@ -3,7 +3,6 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
-	api.use('app-setup', {weak: true});
 	api.use('jquery');
 
 	api.add_files('jquery.mmenu.min.all.js', 'client');
