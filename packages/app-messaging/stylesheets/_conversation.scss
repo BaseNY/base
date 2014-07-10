@@ -99,9 +99,24 @@
                 padding:6px 8px;
                 display:inline-block;
                 font-weight:300;
-                float:left
+                float:left;
+                height:100%;
                 &:hover {
-                    cursor:pointer;
+                    cursor:pointer !important;
+                }
+                &.active {
+                    background-color:white;
+                    &:hover {
+                        cursor:auto;
+                        background-color:white;
+                    }
+                }
+            }
+            .offer-button {
+                &.active {
+                    border:1px solid #33B5E5;
+                    border-top:1px solid white;
+                    
                 }
             }
             h4 {
@@ -113,7 +128,7 @@
             background-color:white;
             border-bottom-right-radius: 8px;
             color:grey;
-            height:auto;
+            height:34px;
             border:1px solid lightgrey;
         }
     }
@@ -177,6 +192,9 @@
     border-top: none;
     background-color: #F2F2F2;
     padding: 10px;
+    .offer-style {
+        border: 1px solid #33B5E5 !important;
+    }
 }
 
 #messaging-reply {

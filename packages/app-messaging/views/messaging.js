@@ -244,6 +244,55 @@ Template.messagingInfo.showSafety = function() {
     return false;
 }
 
+Template.messagingConversation.rendered = function() {
+    $('.offer-button').click(function() {
+        if(!Session.get('making-offer')) {
+            console.log('making offer is true rn');
+            $(this).addClass('active');
+            $('#messaging-reply').addClass('offer-style');
+            $('#messaging-reply').attr('placeholder','Offer...');
+            $('#messaging-reply').setPlaceholder();
+            Session.set('making-offer', true);
+        }else{
+            console.log('making offer is true rn');
+            $(this).removeClass('active');
+            $('#messaging-reply').removeClass('offer-style');
+            Session.set('making-offer', false);
+            $('#messaging-reply').attr('placeholder','Message...');
+            $('#messaging-reply').setPlaceholder();
+        }
+    });
+
+        /*
+    $('.offer-button').click(function() {
+        if(!Session.get('making-offer')) {
+            $(this).attr('contenteditable','true');
+            $(this).velocity({width: '+=20%', height: '32px'});
+//            $(this).children().velocity('fadeOut', {duration: 100, complete: function() {
+            //}});
+                Session.set('making-offer', true);    
+            $(this).focus();
+            $(this).addClass('active');
+        }
+    });
+        */
+
+        /*
+    $('body').click(function(e) {
+        $container = $('.offer-button.active');
+        if(!$container.is(e.target) && $container.has(e.target).length==0){
+            Session.set('making-offer',false);
+            $container.children().velocity('reverse');
+            $container.attr('contenteditable',false).velocity("reverse").removeClass('active');
+        }
+    });
+    */
+}
+
+Template.messagingConversation.makingOffer = function() {
+    return Session.get('making-offer');
+}
+
 /*
    Template.messaging.helpers({
    offer: function() {

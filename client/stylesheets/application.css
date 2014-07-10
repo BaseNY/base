@@ -356,7 +356,12 @@ p {
 
 .ui-button {
   border: 1px solid lightgrey;
-  background-color: white; }
+  background-color: white;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   .ui-button:hover {
     background-color: #e9e9e9; }
   .ui-button:active {
@@ -1924,7 +1929,7 @@ fieldset.show, div.show {
       background-color: white;
       border-bottom-right-radius: 8px;
       color: grey;
-      height: auto;
+      height: 34px;
       border: 1px solid lightgrey; }
       .messaging-info .message-reply-box footer .footer-button, .messages-container .message-reply-box footer .footer-button, .messaging-reply-container .message-reply-box footer .footer-button {
         border: 0px;
@@ -1932,9 +1937,19 @@ fieldset.show, div.show {
         height: 100%;
         padding: 6px 8px;
         display: inline-block;
-        font-weight: 300; }
-        float:left .messaging-info .message-reply-box footer .footer-button:hover, float:left .messages-container .message-reply-box footer .footer-button:hover, float:left .messaging-reply-container .message-reply-box footer .footer-button:hover {
-          cursor: pointer; }
+        font-weight: 300;
+        float: left;
+        height: 100%; }
+        .messaging-info .message-reply-box footer .footer-button:hover, .messages-container .message-reply-box footer .footer-button:hover, .messaging-reply-container .message-reply-box footer .footer-button:hover {
+          cursor: pointer !important; }
+        .messaging-info .message-reply-box footer .footer-button.active, .messages-container .message-reply-box footer .footer-button.active, .messaging-reply-container .message-reply-box footer .footer-button.active {
+          background-color: white; }
+          .messaging-info .message-reply-box footer .footer-button.active:hover, .messages-container .message-reply-box footer .footer-button.active:hover, .messaging-reply-container .message-reply-box footer .footer-button.active:hover {
+            cursor: auto;
+            background-color: white; }
+      .messaging-info .message-reply-box footer .offer-button.active, .messages-container .message-reply-box footer .offer-button.active, .messaging-reply-container .message-reply-box footer .offer-button.active {
+        border: 1px solid #33B5E5;
+        border-top: 1px solid white; }
       .messaging-info .message-reply-box footer h4, .messages-container .message-reply-box footer h4, .messaging-reply-container .message-reply-box footer h4 {
         display: inline-block;
         float: right;
@@ -1989,6 +2004,8 @@ fieldset.show, div.show {
   border-top: none;
   background-color: #F2F2F2;
   padding: 10px; }
+  .messaging-reply-container .offer-style {
+    border: 1px solid #33B5E5 !important; }
 
 #messaging-reply {
   width: 100%;
