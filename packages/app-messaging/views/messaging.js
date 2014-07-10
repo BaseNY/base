@@ -214,7 +214,7 @@ return groups;
 
 Template.messagingConversation.rendered = function() {
     $('#add-image').change(function() {
-        readUrl(this, 'add-preview');
+        Utils.readUrl(this, 'add-preview');
         $('#add-preview').toggleClass('filled uploading');
     });
 

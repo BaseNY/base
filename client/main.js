@@ -74,7 +74,7 @@ Template.notification.helpers({
 		return !this.read;
 	},
 	'text': function() {
-		return formatNotif(this);
+		return Utils.formatNotif(this);
 	},
 	'notifImage': function() {
 		return Meteor.users.findOne({

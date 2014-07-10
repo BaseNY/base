@@ -6,7 +6,7 @@ Template.feedPost.helpers({
 		return url;
 	},
 	'timestamp': function() {
-		return timify(this.time);
+		return Utils.timify(this.time);
 	},
 	'isSellPost': function() {
 		return this.buy != true;
@@ -82,7 +82,7 @@ Template.comment.helpers({
 		return this[1];
 	},
 	'timestamp': function() {
-		return timify(this[3]);
+		return Utils.timify(this[3]);
 	},
 	'imgUrl': function() {
 		return this[2];
