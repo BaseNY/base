@@ -108,8 +108,11 @@ Template.messaging.sendMsg = function(e, cId) {
         e.preventDefault();
         var text = $message[0].innerText;
         var imgUrl = Session.get('uploadUrl');
+        var type = 0;
+        if(Session.get('making-offer'))
+            type = 2;
         if (text) {
-            Messages.create(text, cId, 0, function(err) {
+            Messages.create(text, cId, type, function(err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -244,22 +247,33 @@ Template.messagingInfo.showSafety = function() {
     return false;
 }
 
+Template.messagingInfo.currentOffer = function() {
+    retVal = Messages.findOne({_id: this.offer.currentOfferId});
+    if(!retVal)
+        retVal = Messages.find({type:2, conversationId: this._id}).fetch().reverse()[0];
+    return retVal;
+     
+}
+
 Template.messagingConversation.rendered = function() {
     $('.offer-button').click(function() {
+        var $message = $("#messaging-reply");
         if(!Session.get('making-offer')) {
             console.log('making offer is true rn');
             $(this).addClass('active');
-            $('#messaging-reply').addClass('offer-style');
-            $('#messaging-reply').attr('placeholder','Offer...');
-            $('#messaging-reply').setPlaceholder();
+            $message.addClass('offer-style');
+            $message.attr('placeholder','Offer...');
+            $message.setPlaceholder();
+            $message.focus();
             Session.set('making-offer', true);
         }else{
             console.log('making offer is true rn');
             $(this).removeClass('active');
-            $('#messaging-reply').removeClass('offer-style');
+            $message.removeClass('offer-style');
+            $message.attr('placeholder','Message...');
+            $message.setPlaceholder();
+            $message.focus();
             Session.set('making-offer', false);
-            $('#messaging-reply').attr('placeholder','Message...');
-            $('#messaging-reply').setPlaceholder();
         }
     });
 

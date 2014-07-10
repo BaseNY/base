@@ -68,8 +68,7 @@ Meteor.methods({
         doc.sellerId = item.sellerId;
         doc.seller = item.seller;
 
-        doc.createdAt = new Date();
-
+        doc.createdAt = new Date(); 
         console.log(doc);
         if (!offer) {
             offer = Offers.insert(doc);

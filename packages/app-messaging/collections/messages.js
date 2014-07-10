@@ -94,7 +94,11 @@ Meteor.methods({
 		Conversations.markUnread(doc.conversationId, doc.senderId);
 		Meteor.call('_updateConversationTime', conversationId);
 		Debug.messaging('_createMessage', doc);
-		return Messages.insert(doc);
+		return Messages.insert(doc, function(e,r) {
+            if(type==2) {
+                Offers.update({_id: Conversations.findOne({_id: conversationId}).offerId}, {currentOfferId: r});
+            }
+        });
 	},
 	_sendMessage: function(text, recipientId) {
 		var doc = {

@@ -139,8 +139,8 @@
         <a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
             {{this.otherUser.profile.name}}
         </a>
-        {{#with offer}}
         <div>
+        {{#with offer}}
             Offer for:
             <a href="/post/{{this.itemId}}">
                 {{#if this.item.title}}
@@ -149,8 +149,16 @@
                 {{this.item.description}}
                 {{/if}}
             </a>
-        </div>
         {{/with}}
+        <br />
+            {{#if currentOffer}}
+                {{#with currentOffer}}
+            <b>Current offer: {{this.text}}</b>
+            {{/with}}
+            {{else}}
+            <b>No current offer</b>
+            {{/if}}
+        </div>
         {{/with}}
     </div>
     {{#with conversation}}

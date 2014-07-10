@@ -16,7 +16,8 @@
       "kadira": {},
       "collection-helpers": {},
       "imagemagick": {},
-      "phantomjs": {}
+      "phantomjs": {},
+      "ms-seo": {}
     },
     "packages": {
       "iron-router": {
@@ -93,6 +94,11 @@
         "git": "https://github.com/gadicohen/meteor-phantomjs.git",
         "tag": "v0.0.2",
         "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
+      },
+      "ms-seo": {
+        "git": "https://github.com/DerMambo/ms-seo",
+        "tag": "v0.2.6",
+        "commit": "1a4ba31a1f6f29009d3941e9dd883829ff4e4b8b"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
