@@ -247,24 +247,38 @@ Template.messagingInfo.showSafety = function() {
     return false;
 }
 
-Template.messagingInfo.currentOffer = function() {
+Template.offerBar.currentOffer = function() {
     retVal = Messages.findOne({_id: this.offer.currentOfferId});
     if(!retVal)
-        retVal = Messages.find({type:2, conversationId: this._id}).fetch().reverse()[0];
+        retVal = Messages.find({type:2, conversationId: this._id, $or: [{accepted: {$exists: false}, accepted: true}]}).fetch().reverse()[0];
     return retVal;
      
 }
 
 Template.offerBar.rendered = function() {
-    $('.ui-button.left').mousedown(function() {
-        console.log('hi');
+    $accept = $('.ui-button.left');
+    $deny = $('.ui-button.right');
+    $accept.mousedown(function() {
         $('.ui-button.right').addClass('other-active');
     });
-    $('.ui-button.left').mouseup(function() {
+    $accept.mouseup(function() {
+        offerId = Router.current().data().conversation.offer.currentOfferId;
+        if(!offerId)
+            offerId = Messages.find({type:2, conversationId: Router.current().data().conversation._id, accepted: {$exists: false}}).fetch().reverse()[0]._id;
+        Messages.update({_id: offerId}, {$set: {accepted: true}});
         $('.ui-button.right').removeClass('other-active');
-
     });
 }
+
+Template.offerBar.helpers({
+    'isAccepted': function () {
+        console.log(this);
+        return this.accepted;
+    },
+    'isPending': function() {
+        return this.senderId == Meteor.userId();
+    },
+});
 
 Template.messagingConversation.rendered = function() {
     $('.offer-button').click(function() {

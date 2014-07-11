@@ -79,6 +79,11 @@
     }
 }
 
+.messages-container {
+    border-left:1px solid #33B5E5;
+    border-right:1px solid #33B5E5;
+}
+
 
 .messaging-info, .messages-container, .messaging-reply-container {
     border-bottom: 1px solid #E6E6E6;
@@ -136,6 +141,7 @@
 }
 
 .messaging-info {
+    border:1px solid #33B5E5;
     background-color: white;
     .container {
         padding: 1em;
@@ -157,15 +163,22 @@
                 display:inline-block;
                 padding:6px 8px;
                 position:absolute;
-                width:112px;
+                width:135px;
                 height:100%;
+                i {
+                    color: #33B5E5;
+                }
+                &.no-offer {
+                    width:auto;
+                    position:relative;
+                }
             }
             .text-container {
                 padding:6px 8px;
                 float:left;
                 display:block;
                 width:auto;
-                margin-left:112px;
+                margin-left:135px;
                 margin-right:24px;
             }
             .ui-button {
@@ -257,6 +270,7 @@
 }
 
 .messaging-reply-container {
+    border:1px solid #33B5E5;
     border-top: none;
     background-color: #F2F2F2;
     padding: 10px;

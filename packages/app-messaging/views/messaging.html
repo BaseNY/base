@@ -156,19 +156,13 @@
     </div>
     {{#with conversation}}
     <footer>
-            {{#if currentOffer}}
-            {{#with currentOffer}}
-            {{> offerBar}}
-            {{/with}}
-            {{else}}
-            <b>No current offer</b>
-            {{/if}}
-    {{#if showSafety}}
+        {{> offerBar}}
+        {{#if showSafety}}
         <div class="safety">
             <div id="x{{this._id}}" class="x">x</div>
             <i class="fa fa-info-circle"></i> For your safety, remember to always set meetups for public areas, and try to bring a friend with you anywhere else.
         </div>
-    {{/if}}
+        {{/if}}
     </footer>
     {{/with}}
 </div>
@@ -176,8 +170,25 @@
 
 <template name="offerBar">
 <div class="offer-bar">
+    {{#if currentOffer}}
+    {{#with currentOffer}}
+    {{#if isAccepted}}
     <div class="type-container">
-        <b>Current Offer</b>
+        <b><i class="fa fa-check"></i> Accepted Offer</b>
+    </div>
+    <div class="text-container">
+        {{this.text}}
+    </div>
+    {{else}} {{#if isPending}}
+    <div class="type-container">
+        <b><i class="fa fa-spinner"></i> Pending Offer</b>
+    </div>
+    <div class="text-container">
+        {{this.text}}
+    </div>
+    {{else}}
+    <div class="type-container">
+        <b><i class="fa fa-compass"></i> Current Offer</b>
     </div>
     <div class="text-container">
         {{this.text}}
@@ -188,5 +199,11 @@
     <div class="ui-button right">
         <i class="fa fa-ban"></i> 
     </div>
+    {{/if}}
+    {{/if}}
+    {{/with}}
+    {{else}}
+    <div class="type-container no-offer"><b>No current offer</b></div>
+    {{/if}}
 </div>
 </template>
