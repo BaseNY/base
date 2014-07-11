@@ -122,8 +122,14 @@
         <span>Offer: {{this.text}} <i class="fa fa-check"></i><i class="fa fa-ban"></i></span>
         -->
         <span><b>Offer</b>: {{this.text}}</span>
-
         {{/if}}
+        {{#if isAccept}}
+        {{this.name}}{{this.text}} 
+        {{/if}}
+        {{#if isDeny}}
+        {{this.name}}{{this.text}}
+        {{/if}}
+
         {{/each}}
     </div>
     <div class="right">

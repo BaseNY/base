@@ -155,6 +155,16 @@ return false;
         if (this.type)
     return this.type == 2;
 return false;
+    },
+    'isAccept': function() {
+        if (this.type)
+            return this.type == 3;
+        return false;
+    },
+    'isDeny': function() {
+        if (this.type)
+            return this.type == 4;
+        return false;
     }
 });
 
@@ -258,15 +268,31 @@ Template.offerBar.currentOffer = function() {
 Template.offerBar.rendered = function() {
     $accept = $('.ui-button.left');
     $deny = $('.ui-button.right');
+    conv = Router.current().data().conversation;
+
+    //find current offer Id
+    offerId = conv.offer.currentOfferId;
+        if(!offerId)
+            offerId = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0]._id;
+
+
+
     $accept.mousedown(function() {
         $('.ui-button.right').addClass('other-active');
     });
     $accept.mouseup(function() {
-        offerId = Router.current().data().conversation.offer.currentOfferId;
-        if(!offerId)
-            offerId = Messages.find({type:2, conversationId: Router.current().data().conversation._id, accepted: {$exists: false}}).fetch().reverse()[0]._id;
         Messages.update({_id: offerId}, {$set: {accepted: true}});
+        Messages.create(' has accepted your offer: ' + Messages.findOne({_id: offerId}).text, Router().current().data().conversation._id, 3, function(err) {
+            if(err)
+                console.log(err);
+        });
         $('.ui-button.right').removeClass('other-active');
+    });
+    $deny.click(function() {
+        Messages.create(' has declined your offer: ' + Messages.findOne({_id: offerId}).text, conv._id, 4, function(err) {
+            if(err)
+                console.log(err);
+        });
     });
 }
 
