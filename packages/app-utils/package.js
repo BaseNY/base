@@ -5,6 +5,7 @@ Package.describe({
 Package.on_use(function(api, where) {
 	api.use([
 		'jquery',
+		'lodash',
 
 		'templating',
 
@@ -12,7 +13,10 @@ Package.on_use(function(api, where) {
 	]);
 
 	api.add_files('utils.js', ['client', 'server']);
-	api.add_files('client_utils.js', 'client');
+	api.add_files([
+		'ui_helpers.js',
+		'jquery_fns.js'
+	], 'client');
 
 	api.export('Utils');
 });
