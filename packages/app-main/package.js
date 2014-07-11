@@ -24,7 +24,9 @@ Package.on_use(function(api) {
 		'app-schemas',
 		'app-setup',
 		'app-users',
-		'app-utils'
+		'app-utils',
+
+		'app-menu'
 	]);
 
 	api.add_files('collections/notifications.js', ['client', 'server']);

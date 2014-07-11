@@ -1,0 +1,52 @@
+<template name="menu">
+	<nav id="menu">
+		<ul>
+			{{> menuLocation}}
+			{{> menuDegrees}}
+			{{> menuFilters}}
+			{{> menuFeeds}}
+		</ul>
+	</nav>
+</template>
+
+<template name="menuLocation">
+	<li class="menu-label">Location</li>
+	<ul class="menu-list">
+		<li class="menu-checked">
+			<span class="menu-item-icon">
+				<i class="fa fa-building"></i>
+			</span>
+			<span class="menu-item-name">New York City</span>
+		</li>
+	</ul>
+</template>
+
+<template name="menuDegrees">
+	<h3 class="menu-label">Degrees</h3>
+	<ul class="menu-list">
+		<li id="filter-everyone" class="{{#if everyoneOn}}menu-checked{{/if}}">
+			<span class="menu-item-icon">
+				<i class="fa fa-globe"></i>
+			</span>
+			<span class="menu-item-name">Everyone</span>
+		</li>
+		<li id="filter-friends" class="{{#if friendsOn}}menu-checked{{/if}}">
+			<span class="menu-item-icon">
+				<i class="fa fa-group"></i>
+			</span>
+			<span class="menu-item-name">Friends</span>
+		</li>
+	</ul>
+</template>
+
+<template name="menuFilters">
+	<h3 class="menu-label">Filters</h3>
+	<ul class="menu-list">
+	</ul>
+</template>
+
+<template name="menuFeeds">
+	<h3 class="menu-label">Feeds</h3>
+	<ul class="menu-list">
+	</ul>
+</template>

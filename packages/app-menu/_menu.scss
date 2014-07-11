@@ -1,0 +1,27 @@
+.menu-label {
+	color: gray;
+	font-size: 19px;
+	font-weight: normal;
+	padding: 5px;
+}
+
+.menu-list {
+	> li {
+		padding: 4px;
+		border: 1px solid transparent;
+		margin-bottom: 4px;
+		&.menu-checked {
+			background-color: white;
+			font-weight: bold;
+			color: #33B5E5;
+			border-color: #33B5E5;
+			border-radius: 3px;
+		}
+	}
+}
+
+.menu-item-icon {
+	display: inline-block;
+	width: 1.25em;
+	text-align: center;
+}
