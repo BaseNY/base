@@ -1,18 +1,42 @@
 <template name="menu">
 	<nav id="menu">
 		<ul>
-			{{> menuLocation}}
-			{{> menuDegrees}}
-			{{> menuFilters}}
-			{{> menuFeeds}}
+			{{> menuBody}}
 		</ul>
 	</nav>
+</template>
+
+<template name="menuBody">
+	{{> menuProfile}}
+	{{> menuLocation}}
+	{{> menuDegrees}}
+	{{> menuFilters}}
+	{{> menuFeeds}}
+</template>
+
+<template name="menuProfile">
+	{{#with currentUser}}
+		<div class="menu-profile">
+			<div class="menu-profile-image">
+				<a href="/profile/{{this._id}}">
+					<img src="{{this.profile.img}}">
+				</a>
+			</div>
+			<div class="menu-profile-name">
+				<a href="/profile/{{this._id}}">
+					<h2>
+						{{> badges}} {{this.profile.name}}
+					</h2>
+				</a>
+			</div>
+		</div>
+	{{/with}}
 </template>
 
 <template name="menuLocation">
 	<li class="menu-label">Location</li>
 	<ul class="menu-list">
-		<li class="menu-checked">
+		<li class="menu-item menu-checked">
 			<span class="menu-item-icon">
 				<i class="fa fa-building"></i>
 			</span>
@@ -24,24 +48,16 @@
 <template name="menuDegrees">
 	<h3 class="menu-label">Degrees</h3>
 	<ul class="menu-list">
-		<li id="filter-everyone" class="{{#if everyoneOn}}menu-checked{{/if}}">
-			<span class="menu-item-icon">
-				<i class="fa fa-globe"></i>
-			</span>
-			<span class="menu-item-name">Everyone</span>
-		</li>
-		<li id="filter-friends" class="{{#if friendsOn}}menu-checked{{/if}}">
-			<span class="menu-item-icon">
-				<i class="fa fa-group"></i>
-			</span>
-			<span class="menu-item-name">Friends</span>
-		</li>
+		{{> menuItem type='degree' value='everyone' icon='globe' name='Everyone'}}
+		{{> menuItem type='degree' value='friends' icon='group' name='Friends'}}
 	</ul>
 </template>
 
 <template name="menuFilters">
 	<h3 class="menu-label">Filters</h3>
 	<ul class="menu-list">
+		{{> menuItem type='buy' value=true icon='shopping-cart' name='Buy'}}
+		{{> menuItem type='sell' value=true icon='money' name='Sell'}}
 	</ul>
 </template>
 
@@ -49,4 +65,13 @@
 	<h3 class="menu-label">Feeds</h3>
 	<ul class="menu-list">
 	</ul>
+</template>
+
+<template name="menuItem">
+	<li data-filter-type="{{type}}" data-filter-value="{{value}}" class="menu-item {{checked type value}}">
+		<span class="menu-item-icon">
+			<i class="fa fa-{{icon}}"></i>
+		</span>
+		<span class="menu-item-name">{{name}}</span>
+	</li>
 </template>

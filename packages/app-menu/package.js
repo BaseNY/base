@@ -5,8 +5,12 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'templating',
+		'spacebars',
+		'blaze-layout',
 
-		'mmenu-scss'
+		'mmenu-scss',
+
+		'app-utils'
 	]);
 
 	api.add_files([
