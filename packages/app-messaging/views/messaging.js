@@ -255,6 +255,17 @@ Template.messagingInfo.currentOffer = function() {
      
 }
 
+Template.offerBar.rendered = function() {
+    $('.ui-button.left').mousedown(function() {
+        console.log('hi');
+        $('.ui-button.right').addClass('other-active');
+    });
+    $('.ui-button.left').mouseup(function() {
+        $('.ui-button.right').removeClass('other-active');
+
+    });
+}
+
 Template.messagingConversation.rendered = function() {
     $('.offer-button').click(function() {
         var $message = $("#messaging-reply");

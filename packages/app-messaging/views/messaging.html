@@ -140,7 +140,7 @@
             {{this.otherUser.profile.name}}
         </a>
         <div>
-        {{#with offer}}
+            {{#with offer}}
             Offer for:
             <a href="/post/{{this.itemId}}">
                 {{#if this.item.title}}
@@ -149,25 +149,44 @@
                 {{this.item.description}}
                 {{/if}}
             </a>
-        {{/with}}
-        <br />
-            {{#if currentOffer}}
-                {{#with currentOffer}}
-            <b>Current offer: {{this.text}}</b>
             {{/with}}
-            {{else}}
-            <b>No current offer</b>
-            {{/if}}
+            <br />
         </div>
         {{/with}}
     </div>
     {{#with conversation}}
-    {{#if showSafety}}
     <footer>
-        <div id="x{{this._id}}" class="x">x</div>
-        <i class="fa fa-info-circle"></i> For your safety, remember to always set meetups for public areas, and try to bring a friend with you anywhere else.
-    </footer>
+            {{#if currentOffer}}
+            {{#with currentOffer}}
+            {{> offerBar}}
+            {{/with}}
+            {{else}}
+            <b>No current offer</b>
+            {{/if}}
+    {{#if showSafety}}
+        <div class="safety">
+            <div id="x{{this._id}}" class="x">x</div>
+            <i class="fa fa-info-circle"></i> For your safety, remember to always set meetups for public areas, and try to bring a friend with you anywhere else.
+        </div>
     {{/if}}
+    </footer>
     {{/with}}
+</div>
+</template>
+
+<template name="offerBar">
+<div class="offer-bar">
+    <div class="type-container">
+        <b>Current Offer</b>
+    </div>
+    <div class="text-container">
+        {{this.text}}
+    </div>
+    <div class="ui-button left">
+        <i class="fa fa-check"></i>
+    </div>
+    <div class="ui-button right">
+        <i class="fa fa-ban"></i> 
+    </div>
 </div>
 </template>

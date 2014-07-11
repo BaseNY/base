@@ -1959,13 +1959,68 @@ fieldset.show, div.show {
 .messaging-info {
   background-color: white; }
   .messaging-info .container {
-    padding: 1em; }
-  .messaging-info footer {
+    padding: 1em;
+    background-color: #fcfcfc; }
+  .messaging-info footer .offer-bar {
+    position: relative;
+    display: inline-block;
+    border-top: 1px solid #33B5E5;
+    width: 100%;
+    background-color: white;
+    margin-bottom: -4px; }
+    .messaging-info footer .offer-bar .type-container {
+      border-right: 1px solid lightgrey;
+      padding-right: 4px;
+      float: left;
+      display: inline-block;
+      padding: 6px 8px;
+      position: absolute;
+      width: 112px;
+      height: 100%; }
+    .messaging-info footer .offer-bar .text-container {
+      padding: 6px 8px;
+      float: left;
+      display: block;
+      width: auto;
+      margin-left: 112px;
+      margin-right: 24px; }
+    .messaging-info footer .offer-bar .ui-button {
+      position: absolute;
+      float: left;
+      width: auto;
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      height: calc(100% + 1px);
+      top: -1px;
+      width: 24px;
+      border-top-color: #33B5E5;
+      border-bottom: 0px;
+      text-align: center; }
+      .messaging-info footer .offer-bar .ui-button:active {
+        color: #33B5E5 !important; }
+      .messaging-info footer .offer-bar .ui-button i {
+        padding-top: 50%;
+        margin-top: -4px; }
+      .messaging-info footer .offer-bar .ui-button.right {
+        right: 0px;
+        border-right: 0px;
+        border-left: 1px solid lightgrey;
+        color: #CC4219; }
+        .messaging-info footer .offer-bar .ui-button.right:active {
+          border-left-color: #33B5E5; }
+        .messaging-info footer .offer-bar .ui-button.right.other-active {
+          border-left-color: #33B5E5; }
+      .messaging-info footer .offer-bar .ui-button.left {
+        border-right: 0px;
+        color: green;
+        right: 24px; }
+  .messaging-info footer .safety {
     background-color: #f39c12;
     color: white;
     padding: 8px 16px;
     position: relative; }
-    .messaging-info footer .x {
+    .messaging-info footer .safety .x {
       background-color: rgba(100, 100, 100, 0.5);
       -moz-user-select: none;
       cursor: pointer;
@@ -1981,7 +2036,7 @@ fieldset.show, div.show {
       height: 16px;
       top: 4px;
       right: 4px; }
-      .messaging-info footer .x:hover {
+      .messaging-info footer .safety .x:hover {
         background-color: rgba(100, 100, 100, 0.8); }
 
 .messaging-info-name {
