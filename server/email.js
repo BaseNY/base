@@ -55,9 +55,13 @@ sendEmail =  function (to, subject, text, html) {
                 <div style="width:80%;margin:0 auto">\
                 \
                 <p style="font-size:1.2em">' + user.profile.name + ',</p> \
-                <p style="font-size:1.2em">You are now officially a part of our growing community of buyers and sellers. Thank you for your part in helping to expand our community\'s reach.</p>\
-                <p style="font-size:1.2em">It would mean a lot to us if you could spread the word about Base through your referral link: http://base.us/signup?ref=' + user._id +'. We will be giving out Base apparel and other freebies for people who refer at least 5 members. With your help, we can expand our program’s reach throughout the nation and provide quick and easy buying and selling experiences for people like you.</p>\
-                <p style="font-size:1.2em"><!--Be sure to visit our <a href="http://base.us/getting-started">getting started</a> guide to begin your experience with Base and start buying and selling now. --> We hope you enjoy your experience with us and that we can fulfill your buying selling needs!</p>\
+                <p style="font-size:1.2em">Thank you for signing up for Base.You are now officially a part of our growing community of buyers and sellers. We greatly appreciate your part in expanding our community\'s reach.</p>\
+                <p style="font-size:1.2em">Before you start buying and selling, we would recommend you first read Get started with Base: http://base.us/getting-started. Then we encourage you to spread the word about Base through your referral link: http://base.us/signup?ref=' + user._id +'. As a perk for referring at least five new members, we will be rewarding you with Base apparel and other giveaways. With your help, we can expand our program to a larger audience and provide quick and easy buying and selling experiences for everyone.</p>\
+<p style="font-size:1.2em">Resources to help you:<br>Getting Started: http://base.us/getting-started<br>Email: support@base.us<br>Facebook: https://www.facebook.com/base.us</p>\
+<p style="font-size:1.2em"><!--Be sure to visit our <a href="http://base.us/getting-started">getting started</a> guide to begin your experience with Base and start buying and selling now. --> We hope you enjoy your experience with us and that we can fulfill your buying selling needs!</p>\
+<p style="font-size:1.2em;color:grey">This e-mail address has been used for registration at http://base.us.<br>This letter was sent automatically. Please do not reply to it.</p>\
+<p style="font-size:1.2em">Thank you,<br>The Base.us Team</p>\
+<p style="font-size:1.2em"><a href="http://base.us/">Terms of Service</a> | <a href="http://base.us/">Unsubscribe</a> | <a href="http://base.us/">Privacy Policy</a></p>\
                 \
                 </div>\
                 </body>\
