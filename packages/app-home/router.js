@@ -16,16 +16,14 @@ HomeController = FastRender.RouteController.extend({
 			// ===== ITEM SUBSCRIPTION =====
 			var filter = {};
 
-			if (user) {
-				Debug.home('HomeController', {degree: Session.get('degree')});
-				if (Session.equals('degree', 'friends')) {
-					filter.fbId = {$in: user.friendIds};
-				}
+			if (user && Session.equals('degree', 'friends')) {
+				filter.fbId = {$in: user.friendIds};
 			}
 
 			var buy = Session.get('buy'),
 				sell = Session.get('sell');
-			Debug.home('HomeController', {buy: buy, sell: sell});
+
+			Debug.home('router.js', {buy: buy, sell: sell, degree: Session.get('degree')});
 
 			// can't subscribe to items because neither buy nor sell is selected
 			if (!buy && !sell) {

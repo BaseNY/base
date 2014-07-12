@@ -42,9 +42,12 @@ Package.on_use(function(api) {
 		'views/signup/signup.js',
 		'views/profile.html',
 
+		'views/header.html',
 		'views/main.html',
 		'views/main.js'
 	],'client');
+
+	api.add_files('views/google_analytics.js', 'client');
 
 	api.add_files([
 		'lib/aws.js',
