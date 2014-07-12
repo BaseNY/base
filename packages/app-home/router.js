@@ -5,23 +5,27 @@ HomeController = FastRender.RouteController.extend({
 			Meteor.subscribe('feeds')
 		];
 		// have to check if Meteor.isClient because of Session
-		if (Meteor.isClient && Meteor.isLoggedIn()) {
-			// conversations subscription
+		if (Meteor.isClient) {
 			var user = Meteor.user();
-			subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
 
-			// item subscription
+			// ===== CONVERSATIONS SUBSCRIPTION =====
+			if (user) {
+				subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
+			}
+
+			// ===== ITEM SUBSCRIPTION =====
 			var filter = {};
 
-			Debug.home('HomeController', {degree: Session.get('degree')});
-			if (Session.equals('degree', 'friends')) {
-				filter.fbId = {$in: user.friendIds};
+			if (user) {
+				Debug.home('HomeController', {degree: Session.get('degree')});
+				if (Session.equals('degree', 'friends')) {
+					filter.fbId = {$in: user.friendIds};
+				}
 			}
 
 			var buy = Session.get('buy'),
 				sell = Session.get('sell');
 			Debug.home('HomeController', {buy: buy, sell: sell});
-			console.log(!buy && !sell);
 
 			// can't subscribe to items because neither buy nor sell is selected
 			if (!buy && !sell) {
