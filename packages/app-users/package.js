@@ -14,6 +14,9 @@ Package.on_use(function(api) {
 		'meteor',
 		'templating',
 
+		'iron-router',
+		'fast-render',
+
 		'accounts-base',
 		'service-configuration',
 
@@ -29,9 +32,11 @@ Package.on_use(function(api) {
 		'app-feed'
 	]);
 
-	api.add_files('config.js', 'server');
-	// is server because Accounts.onCreateUser is only on server
-	api.add_files('collections/users.js', 'server');
-	api.add_files('publications.js', 'server');
+	api.add_files([
+		'config.js',
+		'collections/users.js', // is server because Accounts.onCreateUser is only on server
+		'publications.js'
+	], 'server');
+	api.add_files('router.js', ['client', 'server']);
 	//api.add_files('fixtures.js', 'server');
 });

@@ -8,10 +8,16 @@ UI.helpers({
 	json: function(context) {
 		return JSON.stringify(context);
 	},
-	profile: function() {
-		return Meteor.user().profile;
-	},
 	isEqual: function(a, b) {
 		return a === b;
+	},
+	profile: function() {
+		var user = Meteor.user();
+		if (user) {
+			return user.profile;
+		}
+	},
+	currentUserId: function() {
+		return Meteor.userId();
 	}
 });
