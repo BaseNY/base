@@ -15,8 +15,8 @@ Meteor.publish('userData', function() {
 			'friendIds': true,
 			'subscribed': true,
 			'new_message': true,
-            'new': true,
-            'roles': true
+			'new': true,
+			'roles': true
 		}
 	});
 });
@@ -35,10 +35,9 @@ Meteor.publish('allUserData', function() {
 });
 
 Meteor.publish('notifs', function() {
-    return Notifications.find({
-        'userId': this.userId
-    },{
-        'limit': 10
-    });
-//    return Notifications.find();
+	return Notifications.find({
+		'userId': this.userId
+	}, {
+		'limit': 10
+	});
 });
