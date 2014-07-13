@@ -2,7 +2,8 @@ var colors;
 if (Meteor.isServer) {
 	colors = Npm.require('colors');
 	colors.setTheme({
-		debug: 'blue'
+		debug: 'blue',
+		order: 'magenta'
 	});
 }
 
@@ -15,7 +16,7 @@ var log = function(msg, color) {
 	console.log(msg || '');
 };
 
-var debug = function(namespace, color) {
+var debugLog = function(namespace, color) {
 	color = color || 'debug';
 	return function() {
 		if (Meteor.settings.public.debug) {
@@ -46,10 +47,15 @@ var debug = function(namespace, color) {
 // means debug for the package app-<key>
 var packages = ['feed', 'home', 'messaging', 'offers', 'users', 'utils'];
 Debug = {
-	log: debug('debug')
+	log: debugLog('debug'),
+	order: function(fileName) {
+		if (Meteor.settings.public.debug) {
+			log('Load: ' + fileName, 'order');
+		}
+	}
 };
 _.each(packages, function(package) {
-	Debug[package] = debug('app-' + package);
+	Debug[package] = debugLog('app-' + package);
 });
 
 if (Meteor.settings.public.debug) {
