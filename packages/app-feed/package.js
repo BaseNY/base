@@ -16,7 +16,7 @@ Package.on_use(function(api) {
 
 		'collection-hooks',
 		'simple-schema',
-		'check',
+		'collection2',
 
 		'app-setup',
 		'app-schemas',
@@ -25,7 +25,7 @@ Package.on_use(function(api) {
 	]);
 
 	api.add_files('collections/feeds.js', ['client', 'server']);
-	api.add_files('fixtures.js', 'server');
+	api.add_files('collections/fixtures.js', 'server');
 	api.add_files([
 		'views/feed.html',
 		'views/feed.js',

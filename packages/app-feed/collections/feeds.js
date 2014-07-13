@@ -1,7 +1,4 @@
 Schemas.Feed = new SimpleSchema({
-	_id: {
-		type: String
-	},
 	name: {
 		type: String
 	},
@@ -13,6 +10,28 @@ Schemas.Feed = new SimpleSchema({
 
 Feeds = new Meteor.Collection('feeds');
 
-Feeds.before.insert(function(userId, doc) {
-	check(doc, Schemas.Feed);
+Feeds.attachSchema(Schemas.Feed);
+
+/*
+Feeds.allow({
+	insert: function(userId, doc) {
+
+	},
+	update: function(userId, doc, fields, modifier) {
+
+	},
+	remove: function(userId, doc) {
+	}
+});*/
+
+Meteor.methods({
+	'_createFeed': function(name, icon) {
+		var feed = {
+			name: name
+		};
+		if (icon) {
+			feed.icon = icon;
+		}
+		return Feeds.insert(feed);
+	}
 });
