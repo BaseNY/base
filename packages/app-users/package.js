@@ -20,12 +20,12 @@ Package.on_use(function(api) {
 		'iron-router',
 		'fast-render',
 
-		'app-schemas',
-		'app-setup',
 		'app-fbgraph',
+		'app-schemas',
 		'app-utils',
+		'app-debug',
 
-		'app-debug'
+		'app-feed' // because of views/profile.html
 	]);
 
 	api.add_files([
@@ -34,5 +34,4 @@ Package.on_use(function(api) {
 		'publications.js'
 	], 'server');
 	api.add_files('views/profile.html', 'client');
-	api.add_files('router.js', ['client', 'server']);
 });

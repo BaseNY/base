@@ -1,6 +1,71 @@
-//=================== ROUTES ===================
+Router.configure({
+	layoutTemplate: 'layout',
+	waitOn: function() {
+		return [
+			Meteor.subscribe('feeds')
+			/*
+			Meteor.subscribe('notifs'),
+			Meteor.subscribe('userData'),
+			Meteor.subscribe('allUserData')*/
+		];
+	}
+});
+
+/*
+var BeforeHooks = {
+	isLoggedIn: function(pause) {
+		if (Meteor.isClient && !Meteor.isLoggedIn()) {
+			this.redirect('/');
+			pause();
+		}
+	}
+};
+
+Router.onBeforeAction(BeforeHooks.isLoggedIn, {only: ['messages', 'message']});
+*/
+
 
 Router.map(function() {
+	this.route('profile', {
+		path: '/profile/:id',
+		fastRender: true,
+		waitOn: function() {
+			var filter = {
+				sellerId: this.params.id
+			};
+
+			if (Meteor.isClient) {
+				var buy = Session.get('buy'),
+					sell = Session.get('sell');
+				if (!buy && !sell) {
+					filter = {_id: null};
+				} else if (!(buy && sell)) {
+					if (buy) {
+						filter.buy = {$exists: true};
+					} else if (sell) {
+						filter.buy = {$exists: false};
+					}
+				}
+			}
+
+			//return Meteor.subscribe('items', filter, {sort: {score: -1}, limit: Session.get('ftoiLimit')});
+		},
+		onAfterAction: function() {
+			document.title = Meteor.users.findOne({_id: this.params.id}).profile.name;
+		},
+		data: function() {
+			return {
+				user: Meteor.users.findOne({_id: this.params.id})
+			};
+		}
+	});
+});
+
+
+
+//=================== ROUTES ===================
+
+/*Router.map(function() {
 	this.route('about', {
 		path: '/about',
 		template: 'about'
@@ -82,4 +147,4 @@ Router.map(function() {
 			});
 		},
 	});
-});
+});*/

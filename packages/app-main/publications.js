@@ -1,6 +1,4 @@
-Meteor.publish('feeds', function() {
-	return Feeds.find();
-});
+Meteor.publish('feeds', Utils.defaultPublishFunction(Feeds));
 
 Meteor.publish('notifs', function() {
 	return Notifications.find({
