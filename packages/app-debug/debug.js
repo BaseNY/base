@@ -36,7 +36,6 @@ var debugLog = function(namespace, color) {
 				c += ' - ' + desc;
 			}
 
-			log();
 			log(c + ']', color);
 			log(obj);
 			log(c + ' end]', color);
@@ -59,5 +58,5 @@ _.each(packages, function(package) {
 });
 
 if (Meteor.settings.public.debug) {
-	Debug.log('Debug enabled');
+	log('Debug enabled', 'red');
 }
