@@ -64,6 +64,14 @@
 <template name="menuFeeds">
 	<h3 class="menu-label">Feeds</h3>
 	<ul class="menu-list">
+		<a href="/">
+			{{> menuItem type='feed' icon='sun-o' name='All'}}
+		</a>
+		{{#each feeds}}
+			<a href="/feeds/{{this._id}}">
+				{{> menuItem type='feed' value=this._id icon=this.icon name=this.name}}
+			</a>
+		{{/each}}
 	</ul>
 </template>
 
