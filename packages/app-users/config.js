@@ -6,8 +6,8 @@ ServiceConfiguration.configurations.remove({
 if (Meteor.settings.public.debug) {
 	ServiceConfiguration.configurations.insert({
 		service: 'facebook',
-		appId: "664363396976522",
-		secret: "18380703d340e5c4725e03992dfbf27d"
+		appId: '664363396976522',
+		secret: '18380703d340e5c4725e03992dfbf27d'
 	});
 } else {
 	ServiceConfiguration.configurations.insert({

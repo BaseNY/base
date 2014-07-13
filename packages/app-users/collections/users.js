@@ -56,6 +56,8 @@ Schemas.User = new SimpleSchema({
 	}
 });
 
+Meteor.users.attachSchema(Schemas.User);
+
 // TODO check that this matches for existing users
 Accounts.onCreateUser(function(options, user) {
 	var facebook = user.services.facebook;

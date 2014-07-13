@@ -11,25 +11,21 @@ Package.on_use(function(api) {
 		'npm',
 		'lodash',
 
-		'meteor',
-		'templating',
-
-		'iron-router',
-		'fast-render',
-
 		'accounts-base',
 		'service-configuration',
 
 		'simple-schema',
-		'check',
-		'collection-helpers',
+		'collection2',
 
-		'app-debug',
+		'iron-router',
+		'fast-render',
+
+		'app-schemas',
 		'app-setup',
 		'app-fbgraph',
 		'app-utils',
-		'app-schemas',
-		'app-feed'
+
+		'app-debug'
 	]);
 
 	api.add_files([
@@ -37,6 +33,6 @@ Package.on_use(function(api) {
 		'collections/users.js', // is server because Accounts.onCreateUser is only on server
 		'publications.js'
 	], 'server');
+	api.add_files('views/profile.html', 'client');
 	api.add_files('router.js', ['client', 'server']);
-	//api.add_files('fixtures.js', 'server');
 });

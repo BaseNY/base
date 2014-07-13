@@ -40,7 +40,6 @@ Package.on_use(function(api) {
 		'views/signup/referral.html',
 		'views/signup/signup.html',
 		'views/signup/signup.js',
-		'views/profile.html',
 
 		'views/header.html',
 		'views/main.html',
