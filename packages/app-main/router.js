@@ -1,15 +1,3 @@
-Router.configure({
-	layoutTemplate: 'layout',
-	waitOn: function() {
-		return [
-			Meteor.subscribe('feeds'),
-			Meteor.subscribe('notifs'),
-			Meteor.subscribe('userData'),
-			Meteor.subscribe('allUserData')
-		];
-	}
-});
-
 //=================== ROUTES ===================
 
 Router.map(function() {
@@ -30,12 +18,6 @@ Router.map(function() {
 			}
 		}
 	});
-	/*
-	   this.route('signup', {
-	   path: '/signup',
-	   template: 'pageSignup',
-	   });
-	   */
 	this.route('fbUpdate', {
 		path: '/receive/',
 		where: 'server',
