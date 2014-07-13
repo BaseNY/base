@@ -1,19 +1,32 @@
 var colors;
+var theme = {
+	debug: 'blue',
+	order: 'magenta'
+};
 if (Meteor.isServer) {
 	colors = Npm.require('colors');
-	colors.setTheme({
-		debug: 'blue',
-		order: 'magenta'
-	});
+	colors.setTheme(theme);
 }
 
 Meteor._ensure(Meteor, 'settings', 'public');
 
 var log = function(msg, color) {
-	if (msg && color && Meteor.isServer) {
-		msg = msg[color];
+	if (msg) {
+		if (color) {
+			if (Meteor.isClient) {
+				if (_.has(theme, color)) {
+					color = theme[color];
+				}
+				console.log('%c' + msg, 'color: ' + color);
+			} else if (Meteor.isServer) {
+				console.log(msg[color]);
+			}
+		} else {
+			console.log(msg);
+		}
+	} else {
+		console.log('');
 	}
-	console.log(msg || '');
 };
 
 var debugLog = function(namespace, color) {
