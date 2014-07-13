@@ -17,7 +17,8 @@
       "collection-helpers": {},
       "imagemagick": {},
       "phantomjs": {},
-      "ms-seo": {}
+      "ms-seo": {},
+      "handlebars-server": {}
     },
     "packages": {
       "iron-router": {
@@ -47,8 +48,8 @@
       },
       "easy-search": {
         "git": "https://github.com/matteodem/meteor-easy-search.git",
-        "tag": "v0.4.55",
-        "commit": "2c2a4d2d9a905530dd6f076b585bafbd0c40e5ca"
+        "tag": "v1.0.0",
+        "commit": "d32e13f396bc36560edf64b55a3c2dd17e22c9c7"
       },
       "collection-behaviours": {
         "git": "https://github.com/Sewdn/meteor-collection-behaviours.git",
@@ -82,8 +83,8 @@
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
-        "tag": "v0.2.9",
-        "commit": "912be6d15a59b9ee4519bf73000be70dd141b655"
+        "tag": "v0.3.0",
+        "commit": "842bd9343b19c0e45ae20ac9c63c8c356889959a"
       },
       "imagemagick": {
         "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
@@ -99,6 +100,11 @@
         "git": "https://github.com/DerMambo/ms-seo",
         "tag": "v0.2.6",
         "commit": "1a4ba31a1f6f29009d3941e9dd883829ff4e4b8b"
+      },
+      "handlebars-server": {
+        "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
+        "tag": "v1.2.0",
+        "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

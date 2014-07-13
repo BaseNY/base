@@ -15,6 +15,7 @@
     "collection-helpers": {},
     "imagemagick": {},
     "phantomjs": {},
-    "ms-seo": {}
+    "ms-seo": {},
+    "handlebars-server": {}
   }
 }

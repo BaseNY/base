@@ -9,7 +9,8 @@ Package.on_use(function(api) {
 		'collection-hooks',
 
 		'app-utils',
-		'app-schemas'
+		'app-schemas',
+		'app-email'
 	]);
 
 	api.add_files('collections/offers.js', ['client', 'server']);

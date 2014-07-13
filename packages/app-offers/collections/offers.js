@@ -86,7 +86,7 @@ Meteor.methods({
                 Messages.create(message, r, type);
                 if(Meteor.isServer) {
                     var email = Meteor.users.findOne({_id: item.sellerId}).profile.email;
-                    sendEmail(email,'You have received an offer for your posting: ' + item.title, myName + ' has given you an offer for your posting. Respond to him at http://base.us/messages/' + r);
+                    Email.sendEmail(email,'You have received an offer for your posting: ' + item.title, myName + ' has given you an offer for your posting. Respond to him at http://base.us/messages/' + r);
                 }
             });
         }
