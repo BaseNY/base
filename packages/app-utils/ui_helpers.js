@@ -1,3 +1,5 @@
+Debug.order('app-utils/ui_helpers.js');
+
 UI.helpers = function(helpers) {
 	_.each(helpers, function(func, name) {
 		UI.registerHelper(name, func);

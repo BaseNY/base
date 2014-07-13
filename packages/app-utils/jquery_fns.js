@@ -1,3 +1,5 @@
+Debug.order('app-utils/jquery_fns.js');
+
 $.fn.siblingHeight = function() {
 	var $this = $(this);
 	var siblingHeight = 0;
