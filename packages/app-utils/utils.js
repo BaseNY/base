@@ -152,7 +152,7 @@ Utils.readUrl = function(input, name) {
 				$('#' + name).attr('src', e.target.result);
 
 				Session.set('uploading', true);
-				s3ImageUpload(Meteor.userId(), newFile, function(r) {
+				S3.imageUpload(Meteor.userId(), newFile, function(r) {
 					$('#' + name).toggleClass('uploading');
 					Session.set('uploading', false);
 					Session.set('uploadUrl', r);

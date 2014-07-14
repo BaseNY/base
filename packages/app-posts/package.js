@@ -5,7 +5,9 @@ Package.describe({
 Package.on_use(function(api) {
 	api.use([
 		'app-debug',
-		'app-utils'
+		'app-utils',
+
+		'app-aws'
 	]);
 
 	api.use([

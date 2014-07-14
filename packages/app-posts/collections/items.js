@@ -15,7 +15,7 @@ Meteor.methods({
 		p.fbId = Meteor.user().profile.fbId;
 		p.time = new Date();
 		p.score = p.time.getTime();
-		//p.imageUrl = s3ImageUpload(this.userId, p.image);
+		//p.imageUrl = S3.imageUpload(this.userId, p.image);
 		var temp = Items.insert(p);
 		//	if (p.imageUrl == null)
 		//		return -1;

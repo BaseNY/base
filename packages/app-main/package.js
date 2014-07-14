@@ -12,7 +12,9 @@ Package.on_use(function(api) {
 		'app-debug',
 		'app-utils',
 
-		'app-email' // server
+		'app-email', // server
+
+		'app-fbgraph'
 	]);
 
 	api.add_files('collections/notifications.js', ['client', 'server']);
@@ -50,7 +52,6 @@ Package.on_use(function(api) {
 	], 'client');
 
 	api.add_files([
-		'lib/aws.js',
 		'lib/seo.js'
 	], ['client', 'server']);
 

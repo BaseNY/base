@@ -1,5 +1,23 @@
 Debug.order('app-home/feed_post_form.js');
 
+Template.feedPostForm.readUrl = function(input, name) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+			$('#' + name).attr('src', e.target.result);
+
+			Session.set('uploading', true);
+			S3.imageUpload(Meteor.userId(), input.files[0], function(r) {
+				$('#sell-preview').toggleClass('uploading');
+				Session.set('uploading', false);
+				Session.set('uploadUrl', r);
+			});
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+
 Template.feedPostFormHeader.events({
 	'change input:radio': function(e) {
 		var $target = $(e.currentTarget),
@@ -54,24 +72,6 @@ Template.feedPostFormFeedList.events({
 	}
 });
 
-Template.feedPostForm.readUrl = function(input, name) {
-	if (input.files && input.files[0]) {
-		var reader = new FileReader();
-
-		reader.onload = function(e) {
-			$('#' + name).attr('src', e.target.result);
-
-			Session.set('uploading', true);
-			s3ImageUpload(Meteor.userId(), input.files[0], function(r) {
-				$('#sell-preview').toggleClass('uploading');
-				Session.set('uploading', false);
-				Session.set('uploadUrl', r);
-			});
-		}
-		reader.readAsDataURL(input.files[0]);
-	}
-}
-
 //whoops defining a function here...shoot me
 var upload = function(e) {
 	if (Session.get('uploading') == true) {
@@ -93,7 +93,7 @@ var upload = function(e) {
 		temp.title = $('#sell-title').val();
 		temp.feeds = [];
 		if (Session.get('uploadUrl'))
-			temp.imageUrl = s3Url + Session.get('uploadUrl');
+			temp.imageUrl = S3.url + Session.get('uploadUrl');
 		if (Router.current().params.id) {
 			temp.feeds.push(Router.current().params.id);
 		} else {
@@ -105,7 +105,7 @@ var upload = function(e) {
 		   temp.condition = $('select[name=condition]').val();
 		   */
 		temp.description = $('#sell-description').val();
-		//temp.imageUrl = s3ImageUpload(Meteor.userId(), document.getElementById('image').files[0]);
+		//temp.imageUrl = S3.imageUpload(Meteor.userId(), document.getElementById('image').files[0]);
 		//temp.image = document.getElementById('image').files[0];
 		Debug.feed('temp item', temp);
 

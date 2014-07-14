@@ -10,7 +10,9 @@ Package.on_use(function(api, where) {
 
 		'templating',
 
-		'app-debug'
+		'app-debug',
+
+		'app-aws'
 	]);
 
 	api.add_files('utils.js', ['client', 'server']);

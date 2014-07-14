@@ -124,7 +124,7 @@ Template.messaging.sendMsg = function(e, cId) {
             });
         }
         if(imgUrl) {
-            Messages.create(s3Url + imgUrl, cId, 1, function(err) {
+            Messages.create(S3.url + imgUrl, cId, 1, function(err) {
                 if(err) {
                     console.log(err);
                 } else {
