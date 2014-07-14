@@ -1,12 +1,14 @@
 Feeds.route = {
-	waitOn: function() {
+	waitOn: function(filter) {
 		var subs = [
 			Meteor.subscribe('feeds')
 		];
 		if (Meteor.isClient) {
 			var user = Meteor.user();
 
-			var filter = {};
+			if (!filter) {
+				filter = {};
+			}
 
 			if (user && Session.equals('degree', 'friends')) {
 				filter.fbId = {$in: user.friendIds};

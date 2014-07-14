@@ -6,9 +6,8 @@ Router.configure({
 		return [
 			Meteor.subscribe('feeds'),
 			Meteor.subscribe('userData'),
-			Meteor.subscribe('allUserData')
-			/*
-			Meteor.subscribe('notifs')*/
+			Meteor.subscribe('allUserData'),
+			Meteor.subscribe('notifs')
 		];
 	}
 });
@@ -35,7 +34,7 @@ Router.map(function() {
 			var subs = Feeds.route.waitOn();
 			var user = Meteor.user();
 			if (Meteor.isClient && user) {
-				//subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
+				subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
 			}
 			return subs;
 		},
@@ -71,22 +70,8 @@ Router.map(function() {
 			var filter = {
 				sellerId: this.params.id
 			};
-
-			if (Meteor.isClient) {
-				var buy = Session.get('buy'),
-					sell = Session.get('sell');
-				if (!buy && !sell) {
-					filter = {_id: null};
-				} else if (!(buy && sell)) {
-					if (buy) {
-						filter.buy = {$exists: true};
-					} else if (sell) {
-						filter.buy = {$exists: false};
-					}
-				}
-			}
-
-			return Meteor.subscribe('items', filter, {sort: {score: -1}, limit: Session.get('ftoiLimit')});
+			var subs = Feeds.route.waitOn(filter);
+			return subs;
 		},
 		onAfterAction: function() {
 			var user = Meteor.users.findOne({_id: this.params.id});
@@ -95,9 +80,9 @@ Router.map(function() {
 			}
 		},
 		data: function() {
-			return {
-				user: Meteor.users.findOne(this.params.id)
-			};
+			var data = Feeds.route.data();
+			data.user = Meteor.users.findOne(this.params.id);
+			return data;
 		}
 	});
 });
