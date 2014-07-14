@@ -1635,6 +1635,9 @@ html.mm-opened.mm-black .mm-page {
   *:focus, *:before:focus, *:after:focus {
     outline: none; }
 
+html, .mm-page, .page {
+  height: 100%; }
+
 body {
   position: relative;
   height: 100%;

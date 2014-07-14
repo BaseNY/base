@@ -261,8 +261,12 @@ Template.offerBar.rendered = function() {
 
     //find current offer Id
     offerId = conv.offer.currentOfferId;
-        if(!offerId)
-            offerId = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0]._id;
+    if(!offerId) {
+    	var m = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0];
+    	if (m) {
+	        offerId = m._id;
+	    }
+    }
 
 
 
