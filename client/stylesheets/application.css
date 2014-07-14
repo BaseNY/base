@@ -3456,6 +3456,10 @@ fieldset.show, div.show {
   .messaging-sidebar-info:last-child {
     width: 63.2838673353%; }
 
+.messaging-no-conversations {
+  padding: 1em;
+  text-align: center; }
+
 .messaging-container, .messaging-sidebar, .messaging-conversation {
   height: 100%; }
 

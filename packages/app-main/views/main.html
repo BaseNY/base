@@ -29,14 +29,18 @@
 <template name="layout">
 	<div class="page">
 		{{> header}}
-		<div class="body">
-			{{> yield}}
-		</div>
+		{{> layoutBody}}
 		{{> loginModal}}
 		{{> feedSelectModal}}
 		{{> zipSelectModal}}
 	</div>
 	{{> menu}}
+</template>
+
+<template name="layoutBody">
+	<div class="body">
+		{{> yield}}
+	</div>
 </template>
 
 <template name="notification">

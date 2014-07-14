@@ -1,4 +1,4 @@
-Template.layout.events({
+Template.layoutBody.events({
 	'focus [contenteditable=true]': function(e) {
 		var $target = $(e.currentTarget);
 		if ($target.children('.placeholder').length !== 0) {
