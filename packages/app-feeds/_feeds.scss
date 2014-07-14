@@ -1,6 +1,7 @@
 @import "views/feed_post";
+@import "views/feed_post_form";
 
-.feed-page {
+.feed-body {
 	@include outer-container;
 	width: 100%;
 }

@@ -1,5 +1,17 @@
 <template name="feed">
-	<div class="feed-page">
+	{{> feedHeader}}
+	{{> feedPostForm}}
+	{{> feedBody}}
+</template>
+
+<template name="feedHeader">
+	{{#with feed}}
+		<h1>{{this.name}}</h1>
+	{{/with}}
+</template>
+
+<template name="feedBody">
+	<div class="feed-body">
 		{{#each posts}}
 			{{> feedPost}}
 		{{/each}}

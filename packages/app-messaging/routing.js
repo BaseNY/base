@@ -97,9 +97,12 @@ MessagingController = FastRender.RouteController.extend({
 			};
 		}
 	},
-        onAfterAction: function() {
-            document.title = this.data().conversation.name;
-        }
+	onAfterAction: function() {
+		var data = this.data();
+		if (data) {
+			document.title = data.conversation.name;
+		}
+	}
 });
 
 Router.map(function() {

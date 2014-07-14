@@ -57,12 +57,12 @@ var debugLog = function(namespace, color) {
 }
 
 // means debug for the package app-<key>
-var packages = ['feed', 'home', 'messaging', 'offers', 'users', 'utils'];
+var packages = ['feed', 'home', 'login', 'messaging', 'menu', 'offers', 'users', 'utils'];
 Debug = {
 	log: debugLog('debug'),
-	order: function(fileName) {
+	order: function(filename) {
 		if (Meteor.settings.public.debug) {
-			log('Load: ' + fileName, 'order');
+			log('Load: ' + filename, 'order');
 		}
 	}
 };

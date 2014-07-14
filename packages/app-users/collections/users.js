@@ -1,5 +1,6 @@
-// TODO check middle name
+Debug.order('app-users/collections/users.js');
 
+// TODO check middle name
 Schemas.UserProfile = new SimpleSchema({
 	email: {
 		type: String
@@ -56,7 +57,7 @@ Schemas.User = new SimpleSchema({
 	}
 });
 
-Meteor.users.attachSchema(Schemas.User);
+//Meteor.users.attachSchema(Schemas.User);
 
 // TODO check that this matches for existing users
 Accounts.onCreateUser(function(options, user) {
@@ -65,8 +66,7 @@ Accounts.onCreateUser(function(options, user) {
 		throw new Meteor.Error(400, "Create user - no Facebook data");
 	}
 
-	Debug.users('user', user);
-	Debug.users('options', options);
+	Debug.users('Accounts.onCreateUse', {user: user, options: options});
 
 	user.profile = {
 		email: facebook.email,
@@ -78,9 +78,7 @@ Accounts.onCreateUser(function(options, user) {
 	};
 	user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
 	user.lastOnline = null; //new Date();
-	console.log(Feeds.defaultIds);
 	user.subscribed = Feeds.defaultIds;
-	console.log(user.subscribed);
 	user.createdAt = new Date();
 	user.friendIds = [];
 	user.conversationIds = [];
@@ -89,25 +87,17 @@ Accounts.onCreateUser(function(options, user) {
 
 	// getting friends
 	// only adds the friends that have also authorized this app
-	FBGraph.setAccessToken(user.services.facebook.accessToken);
 	// TODO check if its necessary to add code for the pagination
-	var fbparams = {
-		limit: 10000
+	var fbParams = {
+		limit: 10000,
+		access_token: user.services.facebook.accessToken
 	};
-	Async.runSync(function(done) {
-		FBGraph.get('/' + user.services.facebook.id + '/friends', fbparams, function(err, result) {
-			_.each(result.data, function(friend) {
-				user.friendIds.push(friend.id);
-			});
-			done(err, result);
-		});
-	});
+	user.friendIds = FBGraph.getFriends(user.services.facebook.id, fbParams);
 
 	Debug.users("Created User", user);
 
-    console.log(user);
-    sendWelcomeEmail(user);
-	//check(user, Schemas.User);
+    Email.sendWelcomeEmail(user);
+
 	return user;
 });
 

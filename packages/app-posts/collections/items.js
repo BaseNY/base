@@ -1,3 +1,5 @@
+Debug.order('app-posts/items.js');
+
 Items = new Meteor.Collection('items');
 
 Meteor.methods({

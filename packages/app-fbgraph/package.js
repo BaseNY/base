@@ -5,6 +5,8 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
+	api.use('npm');
+
 	api.add_files('fbgraph.js', 'server');
 
 	api.export('FBGraph');

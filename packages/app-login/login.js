@@ -1,3 +1,5 @@
+Debug.order('app-login/login.js');
+
 Template.loginModalButton.rendered = function() {
 	RModal();
 };
@@ -48,8 +50,6 @@ Template.feedSelectModal.helpers({
 		if (Meteor.isLoggedIn()) {
 			var subscribed = Meteor.user().subscribed;
 			return Feeds.find({_id: {$in: subscribed}});
-		} else {
-			return null;
 		}
 	}
 });

@@ -1,3 +1,5 @@
+Debug.order('app-messaging/views/messaging.js');
+
 var scrollDownVel = function(elemTo, elemCont) { console.log("scrolling");
     elemTo.velocity('scroll', {
         container: elemCont,
@@ -222,21 +224,6 @@ if (group) {
 return groups;
 }
 
-Template.messagingConversation.rendered = function() {
-    $('#add-image').change(function() {
-        Utils.readUrl(this, 'add-preview');
-        $('#add-preview').toggleClass('filled uploading');
-    });
-
-    $('.body').autoFit();
-    var $messagesContainer = $(".messages-container");
-    $messagesContainer.autoFit();
-    $(window).resize();
-    $(window).bind("load", function() {
-        scrollDown($messagesContainer);
-    });
-}
-
 Template.messagingInfo.events({
     'click .x': function(e) {
         var id = $(e.currentTarget).attr('id').substring(1);
@@ -268,7 +255,9 @@ Template.offerBar.currentOffer = function() {
 Template.offerBar.rendered = function() {
     $accept = $('.ui-button.left');
     $deny = $('.ui-button.right');
-    conv = Router.current().data().conversation;
+    if (Router.current()) {
+	    conv = Router.current().data().conversation;
+	}
 
     //find current offer Id
     offerId = conv.offer.currentOfferId;
@@ -307,6 +296,19 @@ Template.offerBar.helpers({
 });
 
 Template.messagingConversation.rendered = function() {
+	$('#add-image').change(function() {
+	    Utils.readUrl(this, 'add-preview');
+	    $('#add-preview').toggleClass('filled uploading');
+	});
+
+	$('.body').autoFit();
+	var $messagesContainer = $(".messages-container");
+	$messagesContainer.autoFit();
+	$(window).resize();
+	$(window).bind("load", function() {
+	    scrollDown($messagesContainer);
+	});
+
     $('.offer-button').click(function() {
         var $message = $("#messaging-reply");
         if(!Session.get('making-offer')) {

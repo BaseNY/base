@@ -1,5 +1,4 @@
 .home-sidebar-content {
-    width:85%;
     h3 {
         color:grey;
         font-weight:normal;
@@ -45,15 +44,30 @@
 
 .home-sidebar {
     @include span-columns(3);
+    padding-left: 10px;
     padding-top: 24px;
 }
 
 .home-feed {
     @include span-columns(9);
+    padding-right: 10px;
 }
 
 .home-profile-name h2 {
     font-weight:normal;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+@media screen and (max-width: 700px) {
+	.home-sidebar {
+		display: none;
+	}
+	.home-feed {
+		@include span-columns(12);
+		padding-left: 10px;
+	}
+	.header-menu-icon {
+		display: inline-block;
+	}
 }

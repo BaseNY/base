@@ -1,3 +1,5 @@
+Debug.order('app-feeds/collections/fixtures.js');
+
 var defaultFeeds = [{
 	name: 'Sneakers',
 	icon: 'money'

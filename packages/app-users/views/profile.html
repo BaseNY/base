@@ -1,7 +1,7 @@
 <template name="profile">
 	<section class="body">
 		<div class="left-column">
-			{{> userInfo}}
+			{{> profileInfo}}
 		</div>
 		<div class="right-column profile">
 			<div>
@@ -11,15 +11,19 @@
 	</section>
 </template>
 
-<template name="userInfo">
-	<div class="userInfo">
-		<img src={{user.profile.img}} />
-		<h2>{{user.profile.name}}</h2>
-		<ul>
-			<a target="_blank" href='https://www.facebook.com/{{user.profile.fbId}}'>
-				<li class="fb"> <i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp; <b>View Facebook Profile</b>
-				</li>
-			</a>
-		</ul>
-	</div>
+<template name="profileInfo">
+	{{#with user}}
+		<div class="profile-info">
+			<img src="{{this.profile.img}}">
+			<h2>{{this.profile.name}}</h2>
+			<ul>
+				<a target="_blank" href='https://www.facebook.com/{{user.profile.fbId}}'>
+					<li class="fb">
+						<i class="fa fa-facebook"></i>
+						<b>View Facebook Profile</b>
+					</li>
+				</a>
+			</ul>
+		</div>
+	{{/with}}
 </template>

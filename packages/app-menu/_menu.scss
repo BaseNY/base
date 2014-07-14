@@ -42,6 +42,9 @@ $menu-hover-bg-color: #E6E6E6;
 		color: $menu-checked-color;
 		border-color: $menu-checked-color;
 		border-radius: 3px;
+		&:hover {
+			background-color: $menu-checked-bg-color;
+		}
 	}
 }
 

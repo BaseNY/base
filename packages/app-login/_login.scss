@@ -1,7 +1,8 @@
-@import"../responsive-modal/responsive-modal";
- #login-modal {
+@import "../responsive-modal/responsive-modal";
+
+#login-modal {
 	@include rmodal-breakpoint(350px);
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 	.rmodal-window {
 		width: 350px;
 		border-radius: 3px;
@@ -19,6 +20,7 @@
 		margin-top: 10px;
 	}
 }
+
 .fb-login {
 	background-color: #3E5C96;
 	text-align: center;
@@ -31,6 +33,7 @@
 		margin-right: 0.5em;
 	}
 }
+
 #feed-select-modal, #zip-select-modal {
 	.rmodal-title {
 		text-align: center;
@@ -75,17 +78,17 @@
 			background-color: #33B5E5;
 		}
 	}
-    input[type=text] {
-        border:1px solid lightgrey;
-        margin:0 auto;
-        text-align:center;
-        padding: 4px;
-        display: block;
-        width: 100px;
-        font-weight: 300;
-        font-size: 1.5em;
-        &:active {
-            border-color:#33B5E5;
-        }
-    }
+	input[type=text] {
+		border: 1px solid lightgrey;
+		margin: 0 auto;
+		text-align: center;
+		padding: 4px;
+		display: block;
+		width: 100px;
+		font-weight: 300;
+		font-size: 1.5em;
+		&:active {
+			border-color: #33B5E5;
+		}
+	}
 }

@@ -1,12 +1,14 @@
+Debug.order('app-main/router.js');
+
 Router.configure({
 	layoutTemplate: 'layout',
 	waitOn: function() {
 		return [
-			Meteor.subscribe('feeds')
-			/*
-			Meteor.subscribe('notifs'),
+			Meteor.subscribe('feeds'),
 			Meteor.subscribe('userData'),
-			Meteor.subscribe('allUserData')*/
+			Meteor.subscribe('allUserData')
+			/*
+			Meteor.subscribe('notifs')*/
 		];
 	}
 });
@@ -26,9 +28,45 @@ Router.onBeforeAction(BeforeHooks.isLoggedIn, {only: ['messages', 'message']});
 
 
 Router.map(function() {
+	this.route('home', {
+		path: '/',
+		template: 'home',
+		waitOn: function() {
+			var subs = Feeds.route.waitOn();
+			var user = Meteor.user();
+			if (Meteor.isClient && user) {
+				//subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
+			}
+			return subs;
+		},
+		data: function() {
+			var data = Feeds.route.data();
+			return data;
+		},
+		onAfterAction: function() {
+			document.title = 'Base';
+		}
+	});
+
+	this.route('feed', {
+		path: 'feeds/:id',
+		template: 'home',
+		waitOn: function() {
+			return Feeds.route.waitOn();
+		},
+		data: function() {
+			var data = Feeds.route.data();
+			data.feed = Feeds.findOne(this.params.id);
+			return data;
+		},
+		onAfterAction: function() {
+			document.title = this.data().feed.name;
+		}
+	});
+
 	this.route('profile', {
 		path: '/profile/:id',
-		fastRender: true,
+		template: 'profile',
 		waitOn: function() {
 			var filter = {
 				sellerId: this.params.id
@@ -48,14 +86,17 @@ Router.map(function() {
 				}
 			}
 
-			//return Meteor.subscribe('items', filter, {sort: {score: -1}, limit: Session.get('ftoiLimit')});
+			return Meteor.subscribe('items', filter, {sort: {score: -1}, limit: Session.get('ftoiLimit')});
 		},
 		onAfterAction: function() {
-			document.title = Meteor.users.findOne({_id: this.params.id}).profile.name;
+			var user = Meteor.users.findOne({_id: this.params.id});
+			if (user) {
+				document.title = user.profile.name;
+			}
 		},
 		data: function() {
 			return {
-				user: Meteor.users.findOne({_id: this.params.id})
+				user: Meteor.users.findOne(this.params.id)
 			};
 		}
 	});
@@ -65,7 +106,7 @@ Router.map(function() {
 
 //=================== ROUTES ===================
 
-/*Router.map(function() {
+Router.map(function() {
 	this.route('about', {
 		path: '/about',
 		template: 'about'
@@ -147,4 +188,4 @@ Router.map(function() {
 			});
 		},
 	});
-});*/
+});

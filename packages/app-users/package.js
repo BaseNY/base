@@ -8,30 +8,34 @@ Package.describe({
 
 Package.on_use(function(api) {
 	api.use([
-		'npm',
-		'lodash',
+		'app-debug'
+	]);
 
+	api.use('service-configuration');
+	api.add_files('config.js', 'server');
+
+	api.use([
 		'accounts-base',
-		'service-configuration',
-
 		'simple-schema',
 		'collection2',
 
-		'iron-router',
-		'fast-render',
-
 		'app-fbgraph',
-		'app-schemas',
-		'app-utils',
-		'app-debug',
-
-		'app-feed' // because of views/profile.html
+		'app-email',
+		'app-schemas'
 	]);
+	// is server because Accounts.onCreateUser is only on server
+	api.add_files('collections/users.js', 'server');
 
+	api.use([
+		'templating',
+		'blaze-layout',
+
+		'app-feeds'
+	]);
 	api.add_files([
-		'config.js',
-		'collections/users.js', // is server because Accounts.onCreateUser is only on server
-		'publications.js'
-	], 'server');
-	api.add_files('views/profile.html', 'client');
+		'views/profile.html',
+
+		'views/badges.html',
+		'views/badges.js'
+	], 'client');
 });

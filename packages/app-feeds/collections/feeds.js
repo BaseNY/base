@@ -1,3 +1,5 @@
+Debug.order('app-feeds/collections/feeds.js');
+
 Schemas.Feed = new SimpleSchema({
 	name: {
 		type: String

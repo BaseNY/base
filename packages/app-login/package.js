@@ -4,16 +4,17 @@ Package.describe({
 
 Package.on_use(function(api) {
 	api.use([
-		'jquery',
-
-		'templating',
-
-		'responsive-modal',
-
+		'app-debug',
 		'app-utils',
-		'app-users'
+		'app-users',
+		'app-feeds'
 	]);
 
+	api.use([
+		'jquery',
+		'templating',
+		'responsive-modal'
+	]);
 	api.add_files([
 		'views/login_modal.html',
 		'views/login_modal_button.html',

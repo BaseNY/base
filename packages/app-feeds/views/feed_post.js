@@ -1,3 +1,5 @@
+Debug.order('app-feeds/feed_post.js');
+
 Template.feedPost.helpers({
 	'imgUrl': function() {
 		var url = Meteor.users.findOne({

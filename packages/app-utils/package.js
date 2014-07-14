@@ -6,6 +6,7 @@ Package.on_use(function(api, where) {
 	api.use([
 		'jquery',
 		'lodash',
+		'moment',
 
 		'templating',
 

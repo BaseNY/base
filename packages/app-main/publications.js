@@ -1,12 +1,12 @@
+Debug.order('app-main/publications.js');
+
 Meteor.publish('users', Utils.defaultPublishFunction(Meteor.users));
 
 /**
  * Publishes data for the logged in user.
  */
 Meteor.publish('userData', function() {
-	return Meteor.users.find({
-		_id: this.userId
-	}, {
+	return Meteor.users.find(this.userId, {
 		fields: {
 			'_id': true,
 			'profile': true,
@@ -44,3 +44,5 @@ Meteor.publish('notifs', function() {
 		'limit': 10
 	});
 });
+
+Meteor.publish('items', Utils.defaultPublishFunction(Items));

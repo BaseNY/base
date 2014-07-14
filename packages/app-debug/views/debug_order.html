@@ -1,0 +1,7 @@
+<template name="debugOrder">
+	{{#if debugEnabled}}
+		<script>
+			Debug.order('{{filename}}');
+		</script>
+	{{/if}}
+</template>

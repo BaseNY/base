@@ -4,13 +4,20 @@ Package.describe({
 
 Package.on_use(function(api) {
 	api.use([
+		'app-debug',
+		'app-utils',
+
+		'iron-router'
+	]);
+	api.use([
 		'templating',
-		'spacebars',
 		'blaze-layout',
+		'spacebars',
 
 		'mmenu-scss',
 
-		'app-utils'
+		'app-users',
+		'app-feeds'
 	]);
 
 	api.add_files([

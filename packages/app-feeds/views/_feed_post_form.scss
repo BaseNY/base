@@ -1,0 +1,104 @@
+.feed-post-form {
+	@include outer-container;
+	@include boxes-default(10px);
+	width: 100%;
+	font-size: 1.5em;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding: 0px;
+	input[type=file], input[type=radio] {
+		display: none;
+	}
+	input[type=file] {
+		font-size: .7em;
+	}
+	input[type=text] {
+		width: 100%;
+		height: auto;
+		padding: 0.2em 0.5em;
+		border: 1px solid rgb(200, 200, 200);
+		font-weight: 200;
+		line-height: 1.5em;
+		font-size: 1em;
+	}
+	textarea {
+		overflow: auto;
+		display: block;
+		width: 100%;
+		height: auto;
+		border: 1px solid #C8C8C8;
+		font-size: 1em;
+		padding: 0.2em 0.5em;
+		background-color: white;
+		word-wrap: break-word;
+		font-weight: 200;
+		resize: none;
+		-webkit-writing-mode: horizontal-tb;
+	}
+	label {
+		display: inline-block;
+		cursor: pointer;
+		color: #33B5E5;
+	}
+	.button {
+		float: right;
+		padding: 0.4em 1em;
+		border-radius: 0px 0px 15px 0px;
+		font-size: .8em;
+	}
+}
+
+.feed-post-form-header {
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px solid #33B5E5;
+	> form {
+		display: inline-block;
+	}
+	label.checked {
+		font-weight: 600;
+	}
+}
+
+.feed-post-form-sell, .feed-post-form-buy {
+	@include clearfix;
+	padding-top: 10px;
+	display: none;
+	padding: 20px;
+	label {
+		padding: 4px;
+		border-radius: 2px;
+		&:hover {
+			background-color: $lightgray;
+		}
+		&.checked {
+			font-weight: normal;
+			background-color: #33B5E5;
+			color: white;
+		}
+	}
+}
+
+.feed-post-form-feed-list {
+	font-size: .8em;
+	margin-bottom: 10px;
+	> form {
+		display: inline;
+	}
+}
+
+#sell-image-label {
+	margin-top: 10px;
+	display: inline-block;
+}
+
+#sell-preview {
+	max-height: 100px;
+	max-width: 100px;
+	display: block;
+	&.filled {
+		border: 1px solid grey;
+	}
+	&.uploading {
+		opacity: .7;
+	}
+}

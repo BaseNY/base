@@ -5,6 +5,7 @@ $.fn.siblingHeight = function() {
 	var siblingHeight = 0;
 	$this.siblings().each(function() {
 		var $sibling = $(this);
+		Debug.log('sibling', $sibling);
 		if ($sibling.css('position') !== 'fixed' && $sibling.css('display') !== 'none') {
 			siblingHeight += $sibling.outerHeight(true);
 		}

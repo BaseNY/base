@@ -1,3 +1,5 @@
+Debug.order('app-menu/menu.js')
+
 Template.menu.created = function() {
 	Session.setDefault('degree', 'everyone');
 	Session.setDefault('buy', true);
@@ -27,6 +29,30 @@ Template.menuItem.events({
 
 Template.menuItem.helpers({
 	checked: function(type, value) {
-		return Session.equals(type, value) ? 'menu-checked' : '';
+		if (type === 'feed') {
+			var router = Router.current();
+			if (router) {
+				var params = router.params;
+				checked = params.id === value;
+			}
+		} else {
+			checked = Session.equals(type, value);
+		}
+		return checked ? 'menu-checked' : '';
+	}
+});
+
+Template.menuFeeds.helpers({
+	feeds: function() {
+		if (Meteor.isLoggedIn()) {
+			var feeds = Feeds.find({
+				_id: {$in: Meteor.user().subscribed},
+				name: {$ne: 'Others'}
+			}, {
+				sort: {name: 1}
+			}).fetch();
+			feeds.push(Feeds.findOne({name: 'Others'}));
+			return feeds;
+		}
 	}
 });

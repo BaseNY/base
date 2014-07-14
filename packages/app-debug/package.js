@@ -9,5 +9,11 @@ Package.on_use(function(api) {
 
 	api.add_files('debug.js', ['client', 'server']);
 
+	api.use('templating');
+	api.add_files([
+		'views/debug_order.html',
+		'views/debug_order.js'
+	], 'client');
+
 	api.export('Debug');
 });

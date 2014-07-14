@@ -1,3 +1,5 @@
+Debug.order('app-users/config.js');
+
 Meteor._ensure(Meteor, 'settings', 'public');
 
 ServiceConfiguration.configurations.remove({
