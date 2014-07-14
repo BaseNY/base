@@ -9,7 +9,7 @@ Template.menu.created = function() {
 Template.menu.rendered = function() {
 	this.$("#menu").mmenu({
 		isMenu: false
-	});
+	}).css('display', '');
 };
 
 Template.menuItem.events({
