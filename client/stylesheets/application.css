@@ -3271,7 +3271,7 @@ fieldset.show, div.show {
       display: inline-block;
       padding: 6px 8px;
       position: absolute;
-      width: 135px;
+      width: 140px;
       height: 100%; }
       .messaging-info footer .offer-bar .type-container i {
         color: #33B5E5; }
@@ -3283,7 +3283,7 @@ fieldset.show, div.show {
       float: left;
       display: block;
       width: auto;
-      margin-left: 135px;
+      margin-left: 140px;
       margin-right: 24px; }
     .messaging-info footer .offer-bar .ui-button {
       position: absolute;

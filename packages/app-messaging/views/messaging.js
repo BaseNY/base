@@ -32,7 +32,7 @@ Template.messagingPost.sendMsg = function() {
     var message = messageBox[0].innerText;
     var type = 0;
     if (messageBox.parent().children('messageType').children('typeCurrent').attr('label') == 'offer');
-        type = 2;
+    type = 2;
     Debug.messaging('Sending message with item', item);
     Offers.create(item, message, type, function(err, res) {
         if (err) {
@@ -70,18 +70,18 @@ Template.messagingPost.rendered = function() {
 
         var divChange = $(this).parent().parent().children('div[contenteditable]');
         if(curr.attr('label')=='offer')
-            divChange.attr('placeholder','Send an offer..');
+        divChange.attr('placeholder','Send an offer..');
         else
-            divChange.attr('placeholder','Send a message..');
-        setPlaceholder(divChange);
+        divChange.attr('placeholder','Send a message..');
+    setPlaceholder(divChange);
 
     });
 
     /*
-    $('.messageType').click(function() {
-        $(this).children('.typeDropdown').addClass('hide');
-    });
-    */
+       $('.messageType').click(function() {
+       $(this).children('.typeDropdown').addClass('hide');
+       });
+       */
 
 }
 
@@ -160,8 +160,8 @@ return false;
     },
     'isAccept': function() {
         if (this.type)
-            return this.type == 3;
-        return false;
+    return this.type == 3;
+return false;
     },
     'isDeny': function() {
         if (this.type)
@@ -229,9 +229,9 @@ Template.messagingInfo.events({
         var id = $(e.currentTarget).attr('id').substring(1);
         Meteor.call('clearSafety',id, function(e,r) {
             if(e)
-                console.log(e);
+            console.log(e);
             else
-                console.log(r);
+            console.log(r);
         });
     }
 });
@@ -249,69 +249,109 @@ Template.offerBar.currentOffer = function() {
     if(!retVal)
         retVal = Messages.find({type:2, conversationId: this._id, $or: [{accepted: {$exists: false}, accepted: true}]}).fetch().reverse()[0];
     return retVal;
-     
+
 }
 
+Template.offerBar.events({ 
+    'click .ui-button.left': function() {
+        if (Router.current()) {
+            conv = Router.current().data().conversation;
+        }
+        offerId = conv.offer.currentOfferId;
+        if(!offerId) {
+            var m = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0];
+            if (m) {
+                offerId = m._id;
+            }
+        }
+        Meteor.call('_offerReply', offerId, true);
+        Messages.create(' has accepted an offer: ' + Messages.findOne({_id: offerId}).text, conv._id, 3, function(err) {
+            if(err)
+            console.log(err);
+        });
+    },
+    'click .ui-button.right': function() {
+        if (Router.current()) {
+            conv = Router.current().data().conversation;
+        }
+        offerId = conv.offer.currentOfferId;
+        if(!offerId) {
+            var m = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0];
+            if (m) {
+                offerId = m._id;
+            }
+        }
+        Meteor.call('_offerReply', offerId, false);
+        Messages.create(' has declined your offer: ' + Messages.findOne({_id: offerId}).text, conv._id, 4, function(err) {
+            if(err)
+            console.log(err);
+        });
+    }
+});
 Template.offerBar.rendered = function() {
+    console.log('called');
+
     $accept = $('.ui-button.left');
     $deny = $('.ui-button.right');
     if (Router.current()) {
-	    conv = Router.current().data().conversation;
-	}
+        conv = Router.current().data().conversation;
+    }
 
     //find current offer Id
     offerId = conv.offer.currentOfferId;
     if(!offerId) {
-    	var m = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0];
-    	if (m) {
-	        offerId = m._id;
-	    }
+        var m = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0];
+        if (m) {
+            offerId = m._id;
+        }
     }
-
-
-
     $accept.mousedown(function() {
+        console.log('asodifhna');
         $('.ui-button.right').addClass('other-active');
     });
-    $accept.mouseup(function() {
-        Messages.update({_id: offerId}, {$set: {accepted: true}});
-        Messages.create(' has accepted your offer: ' + Messages.findOne({_id: offerId}).text, Router().current().data().conversation._id, 3, function(err) {
-            if(err)
-                console.log(err);
-        });
+    $accept.mousedown(function() {
         $('.ui-button.right').removeClass('other-active');
     });
-    $deny.click(function() {
-        Messages.create(' has declined your offer: ' + Messages.findOne({_id: offerId}).text, conv._id, 4, function(err) {
-            if(err)
-                console.log(err);
-        });
-    });
+}
+
+Template.offerBar.isAccepted = function() {
+    return this.accepted;
 }
 
 Template.offerBar.helpers({
     'isAccepted': function () {
-        console.log(this);
         return this.accepted;
     },
-    'isPending': function() {
-        return this.senderId == Meteor.userId();
-    },
+'isPending': function() {
+    return this.senderId == Meteor.userId();
+},
 });
 
-Template.messagingConversation.rendered = function() {
-	$('#add-image').change(function() {
-	    Utils.readUrl(this, 'add-preview');
-	    $('#add-preview').toggleClass('filled uploading');
-	});
+removeOfferStyle = function() {
+    var $message = $('#messaging-reply');
+    $('.offer-button').removeClass('active');
+    $message.html('');
+    $message.removeClass('offer-style');
+    $message.attr('placeholder','Message...');
+    $message.setPlaceholder();
+    $message.focus();
+    Session.set('making-offer', false);
 
-	$('.body').autoFit();
-	var $messagesContainer = $(".messages-container");
-	$messagesContainer.autoFit();
-	$(window).resize();
-	$(window).bind("load", function() {
-	    scrollDown($messagesContainer);
-	});
+}
+
+Template.messagingConversation.rendered = function() {
+    $('#add-image').change(function() {
+        Utils.readUrl(this, 'add-preview');
+        $('#add-preview').toggleClass('filled uploading');
+    });
+
+    $('.body').autoFit();
+    var $messagesContainer = $(".messages-container");
+    $messagesContainer.autoFit();
+    $(window).resize();
+    $(window).bind("load", function() {
+        scrollDown($messagesContainer);
+    });
 
     $('.offer-button').click(function() {
         var $message = $("#messaging-reply");
@@ -334,30 +374,30 @@ Template.messagingConversation.rendered = function() {
         }
     });
 
-        /*
-    $('.offer-button').click(function() {
-        if(!Session.get('making-offer')) {
-            $(this).attr('contenteditable','true');
-            $(this).velocity({width: '+=20%', height: '32px'});
+    /*
+       $('.offer-button').click(function() {
+       if(!Session.get('making-offer')) {
+       $(this).attr('contenteditable','true');
+       $(this).velocity({width: '+=20%', height: '32px'});
 //            $(this).children().velocity('fadeOut', {duration: 100, complete: function() {
-            //}});
-                Session.set('making-offer', true);    
-            $(this).focus();
-            $(this).addClass('active');
-        }
-    });
-        */
+//}});
+Session.set('making-offer', true);    
+$(this).focus();
+$(this).addClass('active');
+}
+});
+*/
 
-        /*
-    $('body').click(function(e) {
-        $container = $('.offer-button.active');
-        if(!$container.is(e.target) && $container.has(e.target).length==0){
-            Session.set('making-offer',false);
-            $container.children().velocity('reverse');
-            $container.attr('contenteditable',false).velocity("reverse").removeClass('active');
-        }
-    });
-    */
+/*
+   $('body').click(function(e) {
+   $container = $('.offer-button.active');
+   if(!$container.is(e.target) && $container.has(e.target).length==0){
+   Session.set('making-offer',false);
+   $container.children().velocity('reverse');
+   $container.attr('contenteditable',false).velocity("reverse").removeClass('active');
+   }
+   });
+   */
 }
 
 Template.messagingConversation.makingOffer = function() {

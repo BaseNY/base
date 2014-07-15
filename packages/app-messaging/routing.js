@@ -101,7 +101,10 @@ MessagingController = FastRender.RouteController.extend({
 		var data = this.data();
 		if (data) {
 			document.title = data.conversation.name;
-		}
+		};
+        Session.set('making-offer', false);
+        removeOfferStyle();
+        console.log(Template.offerBar.rendered());
 	}
 });
 

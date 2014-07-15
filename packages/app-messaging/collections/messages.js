@@ -122,6 +122,17 @@ Meteor.methods({
             Debug.messaging('_sendMessage', doc);
 
             return Messages.insert(doc);
+        },
+        _offerReply: function(messageId, decision) {
+            var msg = Messages.findOne({_id: messageId});
+            var conv = Conversations.findOne({_id: msg.conversationId});
+            var mId = Meteor.userId();
+            if(mId != msg.senderId && (conv.users[0]._id == Meteor.userId() || conv.users[1]._id == Meteor.userId())) {
+                Messages.update({_id: messageId, type: 2}, {$set: {accepted: decision}});
+                if(decision == false) {
+                    Offers.update({_id: conv.offerId}, {$set: {currentOfferId: false}});
+                }
+            }
         }
 });
 

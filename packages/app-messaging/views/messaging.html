@@ -126,10 +126,10 @@
         <span><b>Offer</b>: {{this.text}}</span>
         {{/if}}
         {{#if isAccept}}
-        {{this.name}}{{this.text}} 
+        <span><b>{{this.senderName}}</b>{{this.text}} </span>
         {{/if}}
         {{#if isDeny}}
-        {{this.name}}{{this.text}}
+        <span><b>{{this.senderName}}</b>{{this.text}}</span>
         {{/if}}
 
         {{/each}}
@@ -177,7 +177,7 @@
 </template>
 
 <template name="offerBar">
-<div class="offer-bar">
+<div class="offer-bar" id="offer-{{_id}}">
     {{#if currentOffer}}
     {{#with currentOffer}}
     {{#if isAccepted}}
