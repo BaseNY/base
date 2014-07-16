@@ -1,5 +1,5 @@
 <template name="feedPostForm">
-	<div class="feed-post-form">
+	<div id="feed-post-container" class="feed-post-form">
 		{{> feedPostFormHeader}}
 		{{> feedPostFormBuy}}
 		{{> feedPostFormSell}}
@@ -20,7 +20,7 @@
 </template>
 
 <template name="feedPostFormSell">
-	<form class="feed-post-form-sell">
+	<form class="feed-post-form-sell inner-form">
 		{{> feedPostFormFeedList type='sell'}}
 		<input id="sell-title" type="text" name="title" placeholder="What is your item called?">
 		<textarea id="sell-description" placeholder="Describe your item. Make sure you mention the starting offer/buyout price"></textarea>
@@ -34,7 +34,7 @@
 </template>
 
 <template name="feedPostFormBuy">
-	<form class="feed-post-form-buy">
+	<form class="feed-post-form-buy inner-form">
 		{{> feedPostFormFeedList type='buy'}}
 		<textarea id="buy-description" placeholder="What are you looking for?" class="post-message"></textarea>
 		<div id="buy-post" class="button">Post</div>
