@@ -347,8 +347,8 @@ removeOfferStyle = function() {
 }
 
 Template.messagingConversation.rendered = function() {
-	$('#add-image').change(function() {
-		Utils.readUrl(this, 'add-preview');
+	$('#add-image').change(function(e) {
+		Utils.readUrl(e.currentTarget, 'add-preview');
 		$('#add-preview').toggleClass('filled uploading');
 	});
 
