@@ -17,14 +17,13 @@ app-kadira
 
 app-debug
 app-utils
-app-schemas
+app-collections
 
 app-email
 
 app-feeds
 app-users
 app-posts
-app-offers
 app-home
 app-messaging
 app-login

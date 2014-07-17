@@ -14,17 +14,7 @@ Package.on_use(function(api) {
 	api.use('service-configuration');
 	api.add_files('config.js', 'server');
 
-	api.use([
-		'accounts-base',
-		'simple-schema',
-		'collection2',
-
-		'app-fbgraph',
-		'app-email',
-		'app-schemas'
-	]);
-	// is server because Accounts.onCreateUser is only on server
-	api.add_files('collections/users.js', 'server');
+	api.use('app-collections');
 
 	api.use([
 		'templating',

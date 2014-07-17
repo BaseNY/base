@@ -16,11 +16,8 @@ Package.on_use(function(api) {
 		'simple-schema',
 		'collection2',
 
-		'app-schemas'
+		'app-collections'
 	]);
-	api.use('app-posts', {unordered: true});
-	api.add_files('collections/feeds.js', ['client', 'server']);
-	api.add_files('collections/fixtures.js', 'server');
 
 	api.use([
 		'jquery',

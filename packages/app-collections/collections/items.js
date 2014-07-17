@@ -1,4 +1,4 @@
-Debug.order('app-posts/items.js');
+Debug.order('app-collections/collections/items.js');
 
 Items = new Meteor.Collection('items');
 

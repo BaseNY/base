@@ -14,10 +14,8 @@ Package.on_use(function(api) {
 		'simple-schema',
 		'collection2',
 
-		'app-schemas'
+		'app-collections'
 	]);
-	api.use('app-feeds', {unordered: true});
-	api.add_files('collections/items.js', ['client', 'server']);
 
 	api.use([
 		'jquery',

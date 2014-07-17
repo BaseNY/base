@@ -1,3 +1,5 @@
+Debug.order('app-collections/collections/notifications.js');
+
 Notifications = new Meteor.Collection('notifs');
 
 Meteor.methods({

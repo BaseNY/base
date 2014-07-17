@@ -1,3 +1,5 @@
+Debug.order('app-collections/collections/conversations.js');
+
 Schemas.ConversationUser = new SimpleSchema({
 	_id: {
 		type: String

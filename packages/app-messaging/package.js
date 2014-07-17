@@ -14,26 +14,14 @@ Package.on_use(function(api) {
 		'templating',
 		'blaze-layout',
 
-		'roles',
-		'simple-schema',
-		'collection2',
-		'collection-hooks',
-		'collection-helpers',
-		'check',
-
 		'iron-router',
 		'fast-render',
 
 		'app-debug',
 		'app-utils',
-		'app-schemas',
-		'app-offers'
+		'app-collections'
 	]);
 
-	api.add_files([
-		'collections/conversations.js',
-		'collections/messages.js',
-	], both);
 	api.add_files('server/publications.js', 'server');
 	api.add_files('routing.js', both);
 	api.add_files([

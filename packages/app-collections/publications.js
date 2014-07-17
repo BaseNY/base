@@ -46,3 +46,5 @@ Meteor.publish('notifs', function() {
 });
 
 Meteor.publish('items', Utils.defaultPublishFunction(Items));
+
+Meteor.publish('offers', Utils.defaultPublishFunction(Offers));

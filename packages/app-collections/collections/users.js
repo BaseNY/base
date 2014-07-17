@@ -1,4 +1,4 @@
-Debug.order('app-users/collections/users.js');
+Debug.order('app-collections/collections/users.js');
 
 // TODO check middle name
 Schemas.UserProfile = new SimpleSchema({

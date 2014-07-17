@@ -17,19 +17,16 @@ Package.on_use(function(api) {
 		'app-fbgraph'
 	]);
 
-	api.add_files('collections/notifications.js', ['client', 'server']);
-
 	api.use([
+		'app-collections',
 		'app-feeds',
 		'app-users',
 		'app-posts',
-		'app-offers',
 		'app-home',
 		'app-messaging',
 		'app-login',
 		'app-menu'
 	]);
-	api.add_files('publications.js', 'server');
 
 	api.add_files('server/server.js', 'server');
 

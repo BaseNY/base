@@ -1,3 +1,5 @@
+Debug.order('app-collections/collections/offers.js');
+
 /* Offer
    {
    createdAt:
@@ -14,22 +16,22 @@ Schemas.Offer = new SimpleSchema({
     createdAt: {
         type: Date
     },
-itemId: {
-    type: String
-},
-sellerId: {
-    type: String
-},
-seller: {
-    type: String
-},
-buyerId: {
-    type: String
-},
-buyer: {
-    type: String,
-optional: true
-}
+    itemId: {
+        type: String
+    },
+    sellerId: {
+        type: String
+    },
+    seller: {
+        type: String
+    },
+    buyerId: {
+        type: String
+    },
+    buyer: {
+        type: String,
+        optional: true
+    }
 });
 
 Offers = new Meteor.Collection('offers');
@@ -61,7 +63,7 @@ Meteor.methods({
 
         var doc = {
             itemId: item._id,
-    buyerId: this.userId
+            buyerId: this.userId
         };
         var offer = Offers.findOne(doc);
 
@@ -78,15 +80,20 @@ Meteor.methods({
         }
 
         myName = Meteor.user().profile.name;
-        var conv = Conversations.findOne({offerId: offer, 'users._id': doc.buyerId});
+        var conv = Conversations.findOne({
+            offerId: offer,
+            'users._id': doc.buyerId
+        });
         if (conv) {
             Messages.create(message, conv._id, type);
         } else {
-            conv = Meteor.call('_createConversation', [doc.sellerId, doc.buyerId], offer, function(e,r){
+            conv = Meteor.call('_createConversation', [doc.sellerId, doc.buyerId], offer, function(e, r) {
                 Messages.create(message, r, type);
-                if(Meteor.isServer) {
-                    var email = Meteor.users.findOne({_id: item.sellerId}).profile.email;
-                    Email.sendEmail(email,'You have received an offer for your posting: ' + item.title, myName + ' has given you an offer for your posting. Respond to him at http://base.us/messages/' + r);
+                if (Meteor.isServer) {
+                    var email = Meteor.users.findOne({
+                        _id: item.sellerId
+                    }).profile.email;
+                    Email.sendEmail(email, 'You have received an offer for your posting: ' + item.title, myName + ' has given you an offer for your posting. Respond to him at http://base.us/messages/' + r);
                 }
             });
         }

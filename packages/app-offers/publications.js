@@ -1,1 +1,0 @@
-Meteor.publish('offers', Utils.defaultPublishFunction(Offers));
