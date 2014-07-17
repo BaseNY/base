@@ -28,9 +28,6 @@ Package.on_use(function(api) {
 		'views/messaging.html',
 		'views/messaging.js'
 	], 'client');
-
-	api.export('Messages');
-	api.export('Conversations');
 });
 
 Package.on_test(function(api) {

@@ -32,6 +32,4 @@ Package.on_use(function(api) {
 		'fast-render'
 	]);
 	api.add_files('routing.js', ['client', 'server']);
-
-	api.export('Items');
 });

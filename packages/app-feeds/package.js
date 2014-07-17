@@ -40,6 +40,4 @@ Package.on_use(function(api) {
 		'fast-render'
 	]);
 	api.add_files('router.js', ['client', 'server']);
-
-	api.export('Feeds');
 });
