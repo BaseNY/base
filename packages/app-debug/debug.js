@@ -57,7 +57,7 @@ var debugLog = function(namespace, color) {
 }
 
 // means debug for the package app-<key>
-var packages = ['feed', 'home', 'login', 'messaging', 'menu', 'offers', 'users', 'utils'];
+var packages = ['feed', 'home', 'login', 'messaging', 'menu', 'offers', 'users', 'utils', 'collections'];
 Debug = {
 	log: debugLog('debug'),
 	order: function(filename) {

@@ -1,4 +1,4 @@
-Debug.order('app-feeds/collections/fixtures.js');
+Debug.order('app-collections/fixtures.js');
 
 var defaultFeeds = [{
 	name: 'Sneakers',
@@ -32,4 +32,4 @@ if (!Feeds.findOne()) {
 	});
 }
 
-Debug.feed('Default Feed Ids', Feeds.defaultIds);
+Debug.collections('Feeds.defaultIds', Feeds.defaultIds);

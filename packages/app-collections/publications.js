@@ -1,4 +1,4 @@
-Debug.order('app-main/publications.js');
+Debug.order('app-collections/publications.js');
 
 Meteor.publish('users', Utils.defaultPublishFunction(Meteor.users));
 
