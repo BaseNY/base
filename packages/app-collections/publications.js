@@ -45,7 +45,37 @@ Meteor.publish('notifs', function() {
 	});
 });
 
+Meteor.smartPublish('smartNotifs', function() {
+	this.addDependency('notifs', 'userId', function(notif) {
+		return Meteor.users.find(notif.actorId);
+	});
+	/*this.addDependency('notifs', 'postId', function(notif) {
+		return Items.find(notif.postId, {fields: {title: true}});
+	});*/
+	return Notifications.find({'userId': this.userId}, {'limit': 10});
+});
+
 Meteor.publish('items', Utils.defaultPublishFunction(Items));
+
+Meteor.smartPublish('smartPosts', function(filter, limit, lastScore) {
+	this.addDependency('items', 'sellerId', function(post){
+		return Meteor.users.find(post.sellerId);
+	});
+	this.addDependency('items', '_id', function(post){
+		return Comments.find({postId: post._id});
+	});
+	if (!filter) {
+		filter = {}
+	} else if (lastScore) {
+		_.extend(filter, {
+			score: {$lt: lastScore}
+		});
+	}
+	var items = Items.find(filter, {sort: {score: -1}, limit: 10});
+	Debug.log('lastscore', lastScore);
+	Debug.log('free items broski', items.fetch());
+	return items;
+});
 
 Meteor.publish('offers', Utils.defaultPublishFunction(Offers));
 

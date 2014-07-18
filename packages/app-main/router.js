@@ -6,8 +6,7 @@ Router.configure({
 		return [
 			Meteor.subscribe('feeds'),
 			Meteor.subscribe('userData'),
-			Meteor.subscribe('allUserData'),
-			Meteor.subscribe('notifs'),
+			Meteor.subscribe('smartNotifs')
 		];
 	}
 });
@@ -31,13 +30,13 @@ Router.map(function() {
 	this.route('home', {
 		path: '/',
 		template: 'home',
+		onRun: Feeds.newRoute.onRun,
 		waitOn: function() {
-			var subs = Feeds.route.waitOn();
+			var subs = [];
 			var user = Meteor.user();
 			if (Meteor.isClient && user) {
 				subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
 			}
-            subs.push(Meteor.subscribe('comments'));
 			return subs;
 		},
 		data: function() {
@@ -52,9 +51,12 @@ Router.map(function() {
 	this.route('feed', {
 		path: 'feeds/:id',
 		template: 'home',
-		waitOn: function() {
-			return Feeds.route.waitOn();
+		onRun: function() {
+			return Feeds.newRoute.onRun({'feeds': {$elemMatch: {$in: [this.params.id]}}});
 		},
+		/*waitOn: function() {
+			return Feeds.route.waitOn();
+		},*/
 		data: function() {
 			var data = Feeds.route.data();
 			data.feed = Feeds.findOne(this.params.id);
@@ -68,13 +70,16 @@ Router.map(function() {
 	this.route('profile', {
 		path: '/profile/:id',
 		template: 'profile',
-		waitOn: function() {
+		onRun: function() {
+			return Feeds.newRoute.onRun();
+		},
+		/*waitOn: function() {
 			var filter = {
 				sellerId: this.params.id
 			};
 			var subs = Feeds.route.waitOn(filter);
 			return subs;
-		},
+		},*/
 		onAfterAction: function() {
 			var user = Meteor.users.findOne({_id: this.params.id});
 			if (user) {

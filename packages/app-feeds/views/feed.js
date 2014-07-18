@@ -1,11 +1,12 @@
 Debug.order('app-feeds/feed.js');
 
-Template.feed.moreResults = function() {
-	return Items.find().count() >= Session.get('itemsLimit');
-}
+Template.feedBody.moreResults = function() {
+	var moreResults = Items.find().count() === Session.get('itemsLimit');
+	return moreResults;
+};
 
 // infinite scroll
-$(window).scroll(function showMoreVisible() {
+$(window).scroll(function() {
 	var threshold, target = $('#showMoreResults');
 	if (!target.length) return;
 	threshold = $(window).scrollTop() + $(window).height() - target.height();
@@ -13,6 +14,8 @@ $(window).scroll(function showMoreVisible() {
 		if (!target.data('visible')) {
 			target.data('visible', true);
 			Session.set('itemsLimit', Session.get('itemsLimit') + ITEMS_INCREMENT);
+			Meteor.subscribe('smartPosts', Session.get('itemsLimit'));
+			Meteor.subscribe('smartPosts', {}, 10, Items.findOne({}, {sort: {score:1}}).score);
 		}
 	} else {
 		if (target.data('visible')) {

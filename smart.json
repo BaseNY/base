@@ -4,7 +4,6 @@
     "fast-render": {},
     "nprogress": {},
     "npm": {},
-    "publish-with-relations": {},
     "easy-search": {},
     "collection-behaviours": {},
     "roles": {},
@@ -16,6 +15,7 @@
     "imagemagick": {},
     "phantomjs": {},
     "ms-seo": {},
-    "handlebars-server": {}
+    "handlebars-server": {},
+    "smart-publish": {}
   }
 }

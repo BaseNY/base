@@ -3,6 +3,9 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
+	api.use('session');
+	api.add_files('setup.js', 'client');
+
 	api.use([
 		'app-debug',
 		'app-utils',
