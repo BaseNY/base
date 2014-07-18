@@ -29,7 +29,6 @@ Template.feedPost.helpers({
 });
 
 Template.postComments.comments = function() {
-    console.log(this);
     return Comments.find({
         postId: this._id
     }, {sort: {time: 1}}).fetch();
@@ -80,7 +79,6 @@ Template.feedPost.events({
 
 Template.comment.helpers({
     'name': function() {
-        console.log(this);
         u = Meteor.users.findOne({
             _id: this.userId
         });
