@@ -13,6 +13,7 @@ AWS.config.update({
 
 S3 = {};
 S3.Url = 'http://d2rru2br826k2g.cloudfront.net/';
+S3.url = 'http://d2rru2br826k2g.cloudfront.net/';
 S3.imageUpload = function(Id, file, f) {
 	var d = new Date();
 	var s3 = new AWS.S3();

@@ -154,6 +154,7 @@ Utils.readUrl = function(input, name) {
             }
 
             reader.onload = function(e) {
+                console.log(file);
                 console.log('reader onload inside');
                 $('#' + name).attr('src', e.target.result);
 
