@@ -7,13 +7,14 @@ Router.configure({
 			Meteor.subscribe('feeds'),
 			Meteor.subscribe('userData'),
 			Meteor.subscribe('allUserData'),
-			Meteor.subscribe('notifs')
+			Meteor.subscribe('notifs'),
 		];
 	}
 });
 
 /*
-var BeforeHooks = {
+v
+r BeforeHooks = {
 	isLoggedIn: function(pause) {
 		if (Meteor.isClient && !Meteor.isLoggedIn()) {
 			this.redirect('/');
@@ -36,6 +37,7 @@ Router.map(function() {
 			if (Meteor.isClient && user) {
 				subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
 			}
+            subs.push(Meteor.subscribe('comments'));
 			return subs;
 		},
 		data: function() {

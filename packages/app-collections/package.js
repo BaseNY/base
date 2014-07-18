@@ -36,10 +36,11 @@ Package.on_use(function(api) {
 		'collections/messages.js',
 		'collections/offers.js',
 		'collections/items.js',
-		'collections/notifications.js'
+		'collections/notifications.js',
+		'collections/comments.js'
 	], both);
 
-	api.export(['Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications']);
+	api.export(['Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
 
 	// ========= PUBLICATIONS AND FIXTURES =========
 
