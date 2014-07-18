@@ -6,8 +6,14 @@ Package.describe({
 
 Package.on_use(function(api) {
 	// ========= SETUP =========
+	api.use('lodash');
 
-	api.use(['app-debug', 'app-utils']);
+	api.use([
+		'lodash',
+
+		'app-debug',
+		'app-utils'
+	]);
 
 	api.use([
 		'simple-schema',
