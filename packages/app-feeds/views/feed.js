@@ -1,7 +1,7 @@
 Debug.order('app-feeds/feed.js');
 
 Template.feedBody.moreResults = function() {
-	var moreResults = Items.find().count() === Session.get('itemsLimit');
+	var moreResults = Items.find().count() >= Session.get('itemsLimit');
 	return moreResults;
 };
 

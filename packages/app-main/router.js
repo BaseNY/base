@@ -35,7 +35,8 @@ Router.map(function() {
 			var subs = [];
 			var user = Meteor.user();
 			if (Meteor.isClient && user) {
-				subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
+				//subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
+				subs.push(Meteor.subscribe('smartConversations', {_id: {$in: user.conversationIds}}));
 			}
 			return subs;
 		},
@@ -71,7 +72,10 @@ Router.map(function() {
 		path: '/profile/:id',
 		template: 'profile',
 		onRun: function() {
-			return Feeds.newRoute.onRun();
+			var filter = {
+				sellerId: this.params.id
+			}
+			return Feeds.newRoute.onRun(filter);
 		},
 		/*waitOn: function() {
 			var filter = {

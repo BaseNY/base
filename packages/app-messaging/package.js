@@ -22,7 +22,6 @@ Package.on_use(function(api) {
 		'app-collections'
 	]);
 
-	api.add_files('server/publications.js', 'server');
 	api.add_files('routing.js', both);
 	api.add_files([
 		'views/messaging.html',
