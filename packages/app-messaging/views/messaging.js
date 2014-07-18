@@ -124,10 +124,12 @@ Template.messaging.sendMsg = function(e, cId) {
 			});
 		}
 		if(imgUrl) {
+            console.log('down here');
 			Messages.create(S3.url + imgUrl, cId, 1, function(err) {
 				if(err) {
 					console.log(err);
 				} else {
+                    Session.set('uploadUrl', null);
 					$('#add-preview').attr('src','');
 					$('#add-preview').removeClass('filled');
 					scrollDown($messagesContainer);

@@ -19,7 +19,8 @@ Package.on_use(function(api) {
 
 		'app-debug',
 		'app-utils',
-		'app-collections'
+		'app-collections',
+        'app-aws'
 	]);
 
 	api.add_files('server/publications.js', 'server');
