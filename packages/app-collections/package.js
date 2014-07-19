@@ -26,10 +26,16 @@ Package.on_use(function(api) {
 	api.add_files('schemas.js', both);
 	api.export('Schemas');
 
+	// ========= CONFIG =========
+
+	api.use('service-configuration');
+	api.add_files('config.js', 'server');
+
 	// ========= COLLECTIONS =========
 
 	api.use([
 		'accounts-base',
+		'accounts-facebook',
 		'app-fbgraph',
 		'app-email'
 	]);
