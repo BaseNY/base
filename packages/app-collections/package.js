@@ -40,7 +40,7 @@ Package.on_use(function(api) {
 		'app-email'
 	]);
 	// is server because Accounts.onCreateUser is only on server
-	api.add_files('collections/users.js', 'server');
+	api.add_files('collections/users.js', both);
 
 	api.add_files([
 		'collections/feeds.js',
@@ -52,7 +52,7 @@ Package.on_use(function(api) {
 		'collections/comments.js'
 	], both);
 
-	api.export(['Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
+	api.export(['Users', 'Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
 
 	// ========= PUBLICATIONS AND FIXTURES =========
 
@@ -62,4 +62,18 @@ Package.on_use(function(api) {
 		'publications.js',
 		'fixtures.js'
 	], 'server');
+});
+
+Package.on_test(function(api) {
+	api.use([
+		'app-collections',
+		'tinytest',
+		'test-helpers',
+
+		'accounts-base'
+	]);
+
+	api.add_files([
+		'tests/collections/users_test.js'
+	], both);
 });

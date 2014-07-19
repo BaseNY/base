@@ -1,48 +1,91 @@
 Debug.order('app-collections/collections/users.js');
 
+/**
+ * A function for generating an autoValue function for Facebook
+ * @param  {[type]}		field	The field to get from services.facebook or
+*	                         	a function that returns the value in the form:
+*                              	function(services) {
+*                              	}
+ * @return {function}			The autoValue function
+ */
+var autoValueFacebook = function(arg) {
+	return function() {
+		if (this.isInsert || this.isUpsert) {
+			var services = this.field('services').value;
+			var value;
+			if (_.isFunction(arg)) {
+				var func = arg;
+				value = func(services);
+			} else {
+				var fieldName = arg;
+				value = services.facebook[fieldName];
+			}
+
+			return Schemas.autoValue.insert(this, value);
+		}
+	};
+};
+
 // TODO check middle name
 Schemas.UserProfile = new SimpleSchema({
 	email: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook('email')
 	},
 	gender: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook('gender')
 	},
 	firstName: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook('first_name')
 	},
 	lastName: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook('last_name')
 	},
 	name: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook('name')
 	},
 	img: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook(function(services) {
+			return 'http://graph.facebook.com/' + services.facebook.id + '/picture?width=100&height=100';
+		})
 	},
 	fbId: {
-		type: String
+		type: String,
+		autoValue: autoValueFacebook('id')
 	}
 });
 
 Schemas.User = new SimpleSchema({
-	_id: {
-		type: String
-	},
+	_id: Schemas.defaults._id,
+	createdAt: Schemas.defaults.createdAt,
 	profile: {
 		type: Schemas.UserProfile
 	},
 	friendIds: {
-		type: [String]
+		type: [String],
+		autoValue: autoValueFacebook(function(services) {
+			return FBGraph.getFriends(services.facebook.id, {
+				limit: 10000,
+				access_token: services.facebook.accessToken
+			});
+		})
 	},
 	subscribed: {
-		type: [String]
+		type: [String],
+		autoValue: function() {
+			return Schemas.autoValue.insert(this, Feeds.defaultIds);
+		}
 	},
 	conversationIds: {
-		type: [String]
-	},
-	createdAt: {
-		type: Date
+		type: [String],
+		autoValue: function() {
+			return Schemas.autoValue.insert(this, []);
+		}
 	},
 	lastOnline: {
 		type: Date,
@@ -53,71 +96,89 @@ Schemas.User = new SimpleSchema({
 		blackbox: true
 	},
 	new: {
-		type: Number
+		type: Number,
+		autoValue: function() {
+			return Schemas.autoValue.insert(this, 2);
+		}
 	}
 });
 
-//Meteor.users.attachSchema(Schemas.User);
+Users = Meteor.users;
 
-// TODO check that this matches for existing users
-Accounts.onCreateUser(function(options, user) {
-	var facebook = user.services.facebook;
-	if (!facebook) {
-		throw new Meteor.Error(400, "Create user - no Facebook data");
+Users.attachSchema(Schemas.User);
+
+Users.allow({
+	update: function(userId, doc, fieldNames, modifier) {
+		return doc._id === userId && _.isEqual(fieldNames, ['subscribed']);
 	}
+});
 
-	Debug.users('Accounts.onCreateUse', {user: user, options: options});
+/*
+Users.helpers({
+	image: function() {
+		return this.profile.img;
+	}
+});*/
 
-	user.profile = {
-		email: facebook.email,
-		gender: facebook.gender,
-		firstName: facebook.first_name,
-		lastName: facebook.last_name,
-		name: facebook.name,
-		fbId: user.services.facebook.id // TODO see if this is needed
+if (Meteor.isClient) {
+	var loginWithFacebookOptions = {
+		requestPermissions: [
+			'email',
+			'user_about_me',
+			'user_birthday',
+			'user_location',
+			'user_friends'
+		]
 	};
-	user.profile.img = 'http://graph.facebook.com/' + user.services.facebook.id + '/picture?width=100&height=100';
-	user.lastOnline = null; //new Date();
-	user.subscribed = Feeds.defaultIds;
-	user.createdAt = new Date();
-	user.friendIds = [];
-	user.conversationIds = [];
 
-	user.new = 2;
-
-	// getting friends
-	// only adds the friends that have also authorized this app
-	// TODO check if its necessary to add code for the pagination
-	var fbParams = {
-		limit: 10000,
-		access_token: user.services.facebook.accessToken
+	Users.loginWithFacebook = function(callback) {
+		Meteor.loginWithFacebook(loginWithFacebookOptions, callback);
 	};
-	user.friendIds = FBGraph.getFriends(user.services.facebook.id, fbParams);
 
-	Debug.users("Created User", user);
-
-    Email.sendWelcomeEmail(user);
-
-	return user;
-});
-
-Accounts.onLogin(function(attempt) {
-	var user = attempt.user;
-	if (user && user.new) {
-		Meteor.users.update(user._id, {$inc: {new: -1}});
-		console.log(user.new);
+	Users.updateFeeds = function(feedIds, callback) {
+	    Users.update(Meteor.userId(), {
+	        $set: {
+	            subscribed: feedIds
+	        }
+	    }, callback);
 	}
+
+}
+
+Users.after.insert(function(userId, doc) {
+	Debug.users('Sending welcome email to: ', doc);
+
+	Email.sendWelcomeEmail(doc);
 });
+
+if (Meteor.isServer) {
+	Accounts.onCreateUser(function(options, user) {
+		var facebook = user.services.facebook;
+		if (!facebook) {
+			throw new Meteor.Error(400, "Create user - no Facebook data");
+		}
+		//Debug.users('Accounts.onCreateUser', {user: user, options: options});
+		return user;
+	});
+
+	Accounts.onLogin(function(attempt) {
+		var user = attempt.user;
+		//Debug.users('Accounts.onLogin', {user: user});
+		if (user && user.new) {
+			Meteor.users.update(user._id, {$inc: {new: -1}});
+		}
+	});
+}
 
 Meteor.methods({
 	'_updateUserFeeds': function(feedIds) {
 		return Meteor.users.update(this.userId, {$set: {subscribed: feedIds}});
 	},
-    '_fbgraph': function(activity,params) {
-        console.log(Meteor.user());
-        FBGraph.post(activity,params,function(e,r) {
-            if(e)
-                console.log(e);
-        });
-    }
+	'_fbgraph': function(activity,params) {
+		console.log(Meteor.user());
+		FBGraph.post(activity,params,function(e,r) {
+			if(e)
+				console.log(e);
+		});
+	}
 });
