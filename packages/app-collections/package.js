@@ -66,11 +66,15 @@ Package.on_use(function(api) {
 
 Package.on_test(function(api) {
 	api.use([
+		'app-debug',
+		'app-email',
+
 		'app-collections',
 		'tinytest',
 		'test-helpers',
 
-		'accounts-base'
+		'accounts-base',
+		'service-configuration'
 	]);
 
 	api.add_files([
