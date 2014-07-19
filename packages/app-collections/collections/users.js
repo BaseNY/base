@@ -135,15 +135,14 @@ if (Meteor.isClient) {
 	Users.loginWithFacebook = function(callback) {
 		Meteor.loginWithFacebook(loginWithFacebookOptions, callback);
 	};
+}
 
-	Users.updateFeeds = function(feedIds, callback) {
-	    Users.update(Meteor.userId(), {
-	        $set: {
-	            subscribed: feedIds
-	        }
-	    }, callback);
-	}
-
+Users.updateFeeds = function(feedIds, callback) {
+	Users.update(Meteor.userId(), {
+		$set: {
+			subscribed: feedIds
+		}
+	}, callback);
 }
 
 Users.after.insert(function(userId, doc) {
