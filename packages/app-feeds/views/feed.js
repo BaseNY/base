@@ -1,7 +1,7 @@
 Debug.order('app-feeds/feed.js');
 
 Template.feedBody.moreResults = function() {
-	var moreResults = Items.find().count() >= Session.get('itemsLimit');
+	var moreResults = Posts.find().count() >= Session.get('itemsLimit');
 	return moreResults;
 };
 
@@ -15,7 +15,7 @@ $(window).scroll(function() {
 			target.data('visible', true);
 			Session.set('itemsLimit', Session.get('itemsLimit') + ITEMS_INCREMENT);
 			Meteor.subscribe('smartPosts', Session.get('itemsLimit'));
-			Meteor.subscribe('smartPosts', {}, 10, Items.findOne({}, {sort: {score:1}}).score);
+			Meteor.subscribe('smartPosts', {}, 10, Posts.findOne({}, {sort: {score:1}}).score);
 		}
 	} else {
 		if (target.data('visible')) {

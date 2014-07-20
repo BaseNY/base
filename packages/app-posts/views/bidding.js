@@ -2,7 +2,7 @@
 Template.bidding.events({
 	'click #sendMsg': function() {
 		console.log(this);
-		var item = Items.findOne({_id: this._id});
+		var item = Posts.findOne({_id: this._id});
 		console.log("bidding item:");
 		console.log(item);
 		console.log();

@@ -1,6 +1,10 @@
 Debug.order('app-collections/collections/items.js');
 
-Items = new Meteor.Collection('items');
+Schemas.Post = new SimpleSchema({
+	time: Schemas.defaults.createdAt
+});
+
+Posts = new Meteor.Collection('items');
 
 Meteor.methods({
 	addPost: function(p) {
@@ -13,10 +17,9 @@ Meteor.methods({
 		}).profile.name;
 		p.sold = false;
 		p.fbId = Meteor.user().profile.fbId;
-		p.time = new Date();
 		p.score = p.time.getTime();
 		//p.imageUrl = S3.imageUpload(this.userId, p.image);
-		var temp = Items.insert(p);
+		var temp = Posts.insert(p);
 		//	if (p.imageUrl == null)
 		//		return -1;
 		if (p.title == null)
@@ -50,7 +53,7 @@ Meteor.methods({
 		return temp;
 	},
 	addPostImage: function(id, url) {
-		return Items.update({
+		return Posts.update({
 			_id: feed
 		}, {
 			$set: {
@@ -63,14 +66,13 @@ Meteor.methods({
 		p.seller = Meteor.users.findOne({
 			_id: Meteor.userId()
 		}).profile.name;
-		p.time = new Date();
 		p.score = p.time.getTime();
 		p.fbId = Meteor.user().profile.fbId;
 		if (p.description == null)
 			return -3;
 		else if (p.feeds == null)
 			return -4;
-		var temp = Items.insert(p);
+		var temp = Posts.insert(p);
 		_.each(p.feeds, function(feed) {
 			Feeds.update({
 				_id: feed
@@ -84,18 +86,18 @@ Meteor.methods({
 	},
 	deletePost: function(id) {
 		var user = Meteor.user();
-		var sellerId = Items.findOne({
+		var sellerId = Posts.findOne({
 			_id: id
 		}).sellerId;
 		if (!user || (!Roles.userIsInRole(user, 'admin') && Meteor.userId() != sellerId)) {
 			throw new Meteor.Error(403, "Access denied");
 		}
-		Items.remove({
+		Posts.remove({
 			_id: id
 		});
 	},
 	markSold: function(item) {
-		Items.update({
+		Posts.update({
 			_id: item._id
 		}, {
 			$set: {

@@ -71,7 +71,7 @@ Feeds.route = {
 		return subs;
 	},*/
 	data: function() {
-		var posts = Items.find().fetch();
+		var posts = Posts.find().fetch();
 		return {
 			posts: posts
 		};

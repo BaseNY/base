@@ -57,7 +57,7 @@ MessagingController = FastRender.RouteController.extend({
 				if (doc.offerId) {
 					doc.offer = Offers.findOne(doc.offerId, {
 						transform: function(doc) {
-							doc.item = Items.findOne(doc.itemId);
+							doc.item = Posts.findOne(doc.itemId);
 							return doc;
 						}
 					});

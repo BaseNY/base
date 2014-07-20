@@ -50,12 +50,12 @@ Meteor.smartPublish('smartNotifs', function() {
 		return Meteor.users.find(notif.actorId);
 	});
 	this.addDependency('notifs', 'postId', function(notif) {
-		return Items.find(notif.postId, {fields: {title: true}});
+		return Posts.find(notif.postId, {fields: {title: true}});
 	});
 	return Notifications.find({'userId': this.userId}, {limit: 10});
 });
 
-Meteor.publish('items', Utils.defaultPublishFunction(Items));
+Meteor.publish('items', Utils.defaultPublishFunction(Posts));
 
 Meteor.smartPublish('smartPosts', function(filter, limit, lastScore) {
 	this.addDependency('items', 'sellerId', function(post) {
@@ -71,7 +71,7 @@ Meteor.smartPublish('smartPosts', function(filter, limit, lastScore) {
 			score: {$lt: lastScore}
 		});
 	}
-	var items = Items.find(filter, {sort: {score: -1}, limit: 10});
+	var items = Posts.find(filter, {sort: {score: -1}, limit: 10});
 	Debug.log('lastscore', lastScore);
 	Debug.log('free items broski', items.fetch());
 	return items;

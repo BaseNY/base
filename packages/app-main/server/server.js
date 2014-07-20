@@ -89,7 +89,7 @@ Meteor.publish('adminAll', function() {
 			Meteor.users.find(),
 			Conversations.find(),
 			Messages.find(),
-			Items.find(),
+			Posts.find(),
 		];
 	} else {
 		throw new Meteor.Error(403, 'Access denied');

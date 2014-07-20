@@ -52,7 +52,7 @@ Package.on_use(function(api) {
 		'collections/comments.js'
 	], both);
 
-	api.export(['Users', 'Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
+	api.export(['Users', 'Feeds', 'Conversations', 'Messages', 'Offers', 'Posts', 'Notifications', 'Comments']);
 
 	// ========= PUBLICATIONS AND FIXTURES =========
 

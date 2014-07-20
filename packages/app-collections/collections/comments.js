@@ -17,7 +17,7 @@ Meteor.methods({
             url: url
         }
 
-        item = Items.findOne({_id: id});
+        item = Posts.findOne({_id: id});
 
 		var itemCommenters;
 		if (item.commenters)
@@ -30,7 +30,7 @@ Meteor.methods({
 
 		if (!this.userId)
 			return -1;
-		Items.update({
+		Posts.update({
 			_id: id
 		}, {
 			$set: {
@@ -117,7 +117,7 @@ Meteor.methods({
         return comment;
 	},
     changeComments: function() {
-        _.each(Items.find().fetch(), function(o) {
+        _.each(Posts.find().fetch(), function(o) {
             pId = o._id;
             _.each(o.comments, function(i) {
                 tempComment = {

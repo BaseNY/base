@@ -25,7 +25,7 @@ Template.messagingPost.sendMsg = function() {
 		return -1;
 	}
 
-	var item = Items.findOne({
+	var item = Posts.findOne({
 		_id: this._id
 	});
 	var messageBox = $('#message-' + this._id);
@@ -417,7 +417,7 @@ Template.messagingConversation.makingOffer = function() {
    if (this.offerId) {
    return Offers.findOne(this.offerId, {
    transform: function(doc) {
-   doc.item = Items.findOne(doc.itemId);
+   doc.item = Posts.findOne(doc.itemId);
    return doc;
    }
    });
