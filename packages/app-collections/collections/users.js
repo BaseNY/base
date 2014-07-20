@@ -100,6 +100,10 @@ Schemas.User = new SimpleSchema({
 		autoValue: function() {
 			return Schemas.autoValue.insert(this, 2);
 		}
+	},
+	roles: {
+		type: [String],
+		optional: true
 	}
 });
 

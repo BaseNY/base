@@ -22,14 +22,13 @@ var defaultFeeds = [{
 
 Feeds.defaultIds = [];
 
-if (!Feeds.findOne()) {
-	Feeds.defaultIds = _.map(defaultFeeds, function(feed) {
-		return Feeds.insert(feed);
-	});
-} else {
-	Feeds.defaultIds = _.map(defaultFeeds, function(feed) {
-		return Feeds.findOne({name: feed.name})._id;
-	});
-}
+Feeds.defaultIds = _.map(defaultFeeds, function(defaultFeed) {
+	var feed = Feeds.findOne(defaultFeed);
+	if (feed) {
+		return feed._id;
+	} else {
+		return Feeds.insert(defaultFeed);
+	}
+});
 
 Debug.collections('Feeds.defaultIds', Feeds.defaultIds);

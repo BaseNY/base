@@ -74,10 +74,12 @@ Package.on_test(function(api) {
 		'test-helpers',
 
 		'accounts-base',
-		'service-configuration'
+		'service-configuration',
+		'roles'
 	]);
 
 	api.add_files([
-		'tests/collections/users_test.js'
+		'tests/collections/users_test.js',
+		'tests/collections/feeds_test.js'
 	], both);
 });

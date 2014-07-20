@@ -52,7 +52,7 @@ if (Meteor.isClient) {
 	Tinytest.addAsync("Users - Login with Facebook", function(test, next) {
 		if (!Meteor.isLoggedIn()) {
 			Users.loginWithFacebook(function(err) {
-				test.isUndefined(err, 'Expected no error to occur: ' + err);
+				test.isUndefined(err, "Expected no error to occur: " + err);
 				var user = Users.findOne(Meteor.userId());
 				test.equal(user._id, Meteor.userId(), "Expected user to be found");
 				test.equal(Users.find().count(), 1, "Expected one user to be created");
@@ -80,9 +80,9 @@ if (Meteor.isClient) {
 		}
 	]);
 
-	Tinytest.addAsync("Users - User data subscription", function(test, next) {
+	Tinytest.addAsync("Users - Subscribe to user data", function(test, next) {
 		Meteor.subscribe('userData', function(err) {
-			test.isUndefined(err, 'Expected no error to occur: ' + err);
+			test.isUndefined(err, "Expected no error to occur: " + err);
 			test.isTrue(Meteor.user().subscribed instanceof Array, "Expected the user's feeds to be published");
 			next();
 		});
@@ -91,7 +91,7 @@ if (Meteor.isClient) {
 	Tinytest.addAsync("Users - Update subscribed feeds", function(test, next) {
 		var newFeeds = ['wotid', 'yoo'];
 		Users.updateFeeds(newFeeds, function(err, numModified) {
-			test.isUndefined(err, 'Expected no error to occur: ' + err);
+			test.isUndefined(err, "Expected no error to occur: " + err);
 			test.equal(numModified, 1, "Expected one document to be modified");
 			test.equal(Meteor.user().subscribed, newFeeds, "Expected user's feeds to be updated");
 			next();

@@ -1,6 +1,7 @@
 Debug.order('app-collections/collections/feeds.js');
 
 Schemas.Feed = new SimpleSchema({
+	createdAt: Schemas.defaults.createdAt,
 	name: {
 		type: String
 	},
@@ -14,26 +15,14 @@ Feeds = new Meteor.Collection('feeds');
 
 Feeds.attachSchema(Schemas.Feed);
 
-/*
 Feeds.allow({
 	insert: function(userId, doc) {
-
+		return userId && Roles.userIsInRole(userId, 'admin');
 	},
 	update: function(userId, doc, fields, modifier) {
-
+		return userId && Roles.userIsInRole(userId, 'admin');
 	},
 	remove: function(userId, doc) {
-	}
-});*/
-
-Meteor.methods({
-	'_createFeed': function(name, icon) {
-		var feed = {
-			name: name
-		};
-		if (icon) {
-			feed.icon = icon;
-		}
-		return Feeds.insert(feed);
+		return userId && Roles.userIsInRole(userId, 'admin');
 	}
 });
