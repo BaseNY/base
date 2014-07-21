@@ -121,7 +121,7 @@ if (Meteor.isClient) {
 			}, expect(function(err, numModified) {
 				testUpdate(test, err, numModified);
 				var post = Posts.findOne(postId);
-				test.equal(previousCompletedAt, post.completedAt, "Expected completedAt to not change if isCompleted is set to true two times in a row");
+				test.equal(previousCompletedAt, post.completedAt, "Expected completedAt to stay the same if isCompleted is set to true two times in a row");
 			}));
 		}
 	]);

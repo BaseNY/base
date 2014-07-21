@@ -73,7 +73,7 @@ Schemas.Post = new SimpleSchema({
 			var isCompleted = this.field('isCompleted');
 			if (isCompleted.isSet) {
 				if (isCompleted.value) {
-					//return new Date;
+					return new Date;
 				} else {
 					return null;
 				}
@@ -96,6 +96,16 @@ Posts.allow({
 	},
 	remove: function(userId, doc) {
 		return userId && (userId === doc.sellerId || Roles.userIsInRole(userId, 'admin'));
+	}
+});
+
+Posts.before.update(function(userId, doc, fieldNames, modifier, options) {
+	if (_.contains(fieldNames, 'isCompleted')) {
+		// if isCompleted was previously true and it is still set as true
+		// then set completedAt back to the original value
+		if (doc.isCompleted && modifier.$set.isCompleted) {
+			modifier.$set.completedAt = doc.completedAt;
+		}
 	}
 });
 
