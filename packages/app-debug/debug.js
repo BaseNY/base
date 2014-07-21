@@ -21,11 +21,9 @@ var log = function(msg, color) {
 			} else if (Meteor.isServer) {
 				console.log(msg[color]);
 			}
-		} else {
-			console.log(msg);
 		}
 	} else {
-		console.log('');
+		console.log(msg);
 	}
 };
 
