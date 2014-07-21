@@ -71,7 +71,7 @@ if (Meteor.isClient) {
 	// ========================== UPDATE TESTS ==========================
 
 	var postId;
-	Tinytest.addAsync("Posts - Update - Subscribe to posts", function(test, next) {
+	Tinytest.addAsync("Posts - Subscribe to posts", function(test, next) {
 		Meteor.subscribe('posts', function(err) {
 			test.isUndefined(err, "Expected subscription to succeed");
 			postId = Posts.findOne()._id;
