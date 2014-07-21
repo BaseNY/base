@@ -11,20 +11,18 @@ if (Meteor.isServer) {
 Meteor._ensure(Meteor, 'settings', 'public');
 
 var log = function(msg, color) {
-	if (msg) {
-		if (color) {
-			if (Meteor.isClient) {
-				if (_.has(theme, color)) {
-					color = theme[color];
-				}
-				console.log('%c' + msg, 'color: ' + color);
-			} else if (Meteor.isServer) {
-				console.log(msg[color]);
+	var args = [msg];
+	if (msg && color) {
+		if (Meteor.isClient) {
+			if (_.has(theme, color)) {
+				color = theme[color];
 			}
+			args = ['%c' + msg, 'color: ' + color];
+		} else if (Meteor.isServer) {
+			args = [msg[color]];
 		}
-	} else {
-		console.log(msg);
 	}
+	console.log.apply({}, args);
 };
 
 var debugLog = function(namespace, color) {
