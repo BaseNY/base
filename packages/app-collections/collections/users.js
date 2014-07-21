@@ -113,6 +113,9 @@ Users.attachSchema(Schemas.User);
 
 var allowedFieldNames = ['subscribed'];
 Users.allow({
+	insert: function(userId, doc) {
+		return Meteor.isServer;
+	},
 	update: function(userId, doc, fieldNames, modifier) {
 		return doc._id === userId && _.difference(fieldNames, allowedFieldNames).length === 0;
 	}

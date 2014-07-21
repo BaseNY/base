@@ -10,13 +10,22 @@ if (Meteor.isServer) {
 				_id: testUserId,
 				services: {
 					facebook: {
-						id: (new Meteor.Collection.ObjectID)._str,
-						email: 'email@email.com',
+						accessToken: 'CAAJcPChHT4oBAOgeHq84p0IT0VzoHITCaF19smYE377oZAfhQ9jKhC3ItdaZAU1qC7ZA8bDE2HQypvJVN2j2HPqwpSkBDnomXB16brAEvbNKvSq7V9vX0vzs4mmL3WZB1qhZCjKsxgpJI4elkOwZAjbuZAXtiJn1ONQFQmmZBZAZBEYFTS9zyVvN1ZAJ7yhjZCrUG6yW3uOe7a418AhCoBha447X',
+						expiresAt: 1411158228525,
+						id: '334283563393546',
+						email: 'dwlnalz_chengwitz_1404674155@tfbnw.net',
+						name: 'Rick Amdcegaegfhh Chengwitz',
+						first_name: 'Rick',
+						last_name: 'Chengwitz',
+						link: 'https://www.facebook.com/app_scoped_user_id/334283563393546/',
 						gender: 'male',
-						first_name: 'First',
-						last_name: 'Last',
-						name: 'First Last',
-						img: 'image url'
+						locale: 'en_US'
+					},
+					resume: {
+						loginTokens: [{
+							when: new Date('2014-07-21T20:23:49.956Z'),
+							hashedToken: 'MlHKkFs6C6FPjDwTYnmOViYW9JagREdLuYvuL+d8o+4='
+						}]
 					}
 				}
 			});
