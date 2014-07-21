@@ -22,7 +22,7 @@ var log = function(msg, color) {
 			args = [msg[color]];
 		}
 	}
-	console.log.apply({}, args);
+	console.log.apply(console, args);
 };
 
 var debugLog = function(namespace, color) {
