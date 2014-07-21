@@ -66,7 +66,7 @@ Feeds.route = {
 				}
 			}
 
-			subs.push(Meteor.subscribe('items', filter, {sort: {score: -1}, limit: Session.get('itemsLimit')}));
+			subs.push(Meteor.subscribe('posts', filter, {sort: {score: -1}, limit: Session.get('itemsLimit')}));
 		}
 		return subs;
 	},*/

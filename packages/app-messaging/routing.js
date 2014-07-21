@@ -23,7 +23,7 @@ MessagingController = FastRender.RouteController.extend({
 				conversationId: {$in: Meteor.user().conversationIds}
 			}),
 			Meteor.subscribe('offers'),
-			Meteor.subscribe('items')
+			Meteor.subscribe('posts')
 		];
 	},
 	data: function() {

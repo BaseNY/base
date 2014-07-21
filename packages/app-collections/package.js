@@ -47,7 +47,7 @@ Package.on_use(function(api) {
 		'collections/conversations.js',
 		'collections/messages.js',
 		'collections/offers.js',
-		'collections/items.js',
+		'collections/posts.js',
 		'collections/notifications.js',
 		'collections/comments.js'
 	], both);
@@ -80,6 +80,7 @@ Package.on_test(function(api) {
 
 	api.add_files([
 		'tests/collections/users_test.js',
-		'tests/collections/feeds_test.js'
+		'tests/collections/feeds_test.js',
+		'tests/collections/posts_test.js'
 	], both);
 });

@@ -68,14 +68,14 @@ if (Meteor.isClient) {
 			Users.update(Meteor.userId(), {
 				$set: {'friendIds': []}
 			}, expect(function(err, numModified) {
-				test.isTrue(err instanceof Meteor.Error, "Expected an error denying the update of this user because the modified fields aren't allowed");
+				test.isTrue(err instanceof Error, "Expected an error denying the update of this user because the modified fields aren't allowed");
 			}));
 		},
 		function(test, expect) {
 			Users.update(testUserId, {
 				$set: {'friendIds': []}
 			}, expect(function(err, numModified) {
-				test.isTrue(err instanceof Meteor.Error, "Expected an error denying the update of this user because this user is trying to update another user");
+				test.isTrue(err instanceof Error, "Expected an error denying the update of this user because this user is trying to update another user");
 			}));
 		}
 	]);

@@ -166,7 +166,7 @@ Router.map(function() {
 	});
 	this.route('itemResults', {
 		waitOn: function() {
-			return Meteor.subscribe('items', {});
+			return Meteor.subscribe('posts', {});
 		},
 		fastRender: true
 	});

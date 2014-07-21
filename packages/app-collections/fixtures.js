@@ -31,4 +31,4 @@ Feeds.defaultIds = _.map(defaultFeeds, function(defaultFeed) {
 	}
 });
 
-Debug.collections('Feeds.defaultIds', Feeds.defaultIds);
+//Debug.collections('Feeds.defaultIds', Feeds.defaultIds);

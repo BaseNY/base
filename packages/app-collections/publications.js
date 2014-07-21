@@ -55,7 +55,7 @@ Meteor.smartPublish('smartNotifs', function() {
 	return Notifications.find({'userId': this.userId}, {limit: 10});
 });
 
-Meteor.publish('items', Utils.defaultPublishFunction(Posts));
+Meteor.publish('posts', Utils.defaultPublishFunction(Posts));
 
 Meteor.smartPublish('smartPosts', function(filter, limit, lastScore) {
 	this.addDependency('items', 'sellerId', function(post) {
