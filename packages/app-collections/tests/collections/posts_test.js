@@ -55,6 +55,18 @@ if (Meteor.isClient) {
 		});
 	});
 
+	Tinytest.addAsync("Posts - Insert - Post without feeds", function(test, next) {
+		Meteor.subscribe('feeds', function(err) {
+			Posts.insert({
+				description: 'Buying iPhone 9',
+				type: 'buy'
+			}, function(err, _id) {
+				test.isUndefined(err, "Expected no error to occur: " + err);
+				next();
+			});
+		});
+	});
+
 	Tinytest.addAsync("Posts - Insert - Post with invalid type", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
 			Posts.insert({

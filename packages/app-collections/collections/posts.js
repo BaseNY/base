@@ -23,11 +23,7 @@ Schemas.Post = new SimpleSchema({
 	},
 	feeds: { // TODO should be feedIds
 		type: [String],
-		autoValue: function() {
-			if (!this.isSet && (this.isInsert || this.isUpsert)) {
-				return Schemas.autoValue.insert([]);
-			}
-		}
+		defaultValue: []
 	},
 	imageUrl: { // TODO should be [String], imageUrls
 		type: String,
@@ -49,10 +45,11 @@ Schemas.Post = new SimpleSchema({
 	score: {
 		type: Number,
 		autoValue: function() {
-			if (this.isInsert || this.isUpsert) {
-				var createdAt = this.field('time').value;
-				return Schemas.autoValue.insert(this, createdAt.getTime());
-			}
+			var context = this;
+			return Schemas.autoValue.insert(this, function() {
+				var createdAt = context.field('time').value;
+				return createdAt.getTime();
+			});
 		}
 	},
 	fbId: {
