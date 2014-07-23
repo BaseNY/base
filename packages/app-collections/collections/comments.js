@@ -1,4 +1,50 @@
+Schemas.Comment = new SimpleSchema({
+	time: Schemas.defaults.createdAt, // TODO should be createdAt
+	userId: {
+		type: String,
+		autoValue: function() {
+			return Schemas.autoValue.insert(this, this.userId);
+		}
+	},
+	url: { // TODO should use the user id to get the image of the user
+		type: String,
+		autoValue: function() {
+			var userId = this.userId;
+			return Schemas.autoValue.insert(this, function() {
+				var imageUrl = Users.findOne(userId).profile.img;
+				return imageUrl;
+			});
+		}
+	},
+	postId: {
+		type: String
+	},
+	text: {
+		type: String
+	}
+});
+
 Comments = new Meteor.Collection('comments');
+
+Comments.before.insert(function(userId, doc) {
+	/*Posts.update(doc.postId, {
+		$addToSet: {
+			commenters: userId
+		}
+	}, callback);
+	var post = Posts.findOne(doc.postId);
+	if (userId !== post.sellerId) {
+
+	}*/
+});
+
+Comments.addComment = function(postId, text, callback) {
+	var comment = {
+		postId: postId,
+		text: text
+	};
+	Comments.insert(comment, callback);
+};
 
 Meteor.methods({
 	addComment: function(t, id) {

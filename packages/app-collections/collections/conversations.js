@@ -14,9 +14,10 @@ Schemas.ConversationUser = new SimpleSchema({
 });
 
 Schemas.Conversation = new SimpleSchema({
-	_id: {
-		type: String,
-		optional: true
+	createdAt: Schemas.defaults.createdAt,
+	lastMessageAt: {
+		type: Date,
+		defaultValue: null
 	},
 	name: {
 		type: String,
@@ -32,17 +33,15 @@ Schemas.Conversation = new SimpleSchema({
 	},
 	users: {
 		type: [Schemas.ConversationUser],
-		minCount: 2
-	},
-	createdAt: {
-		type: Date
-	},
-	lastMessageAt: {
-		type: Date
+		minCount: 2/*,
+		custom: function() {
+		}*/
 	}
 });
 
 Conversations = new Meteor.Collection('conversations');
+
+Conversations.attachSchema(Schemas.Conversation);
 
 Conversations.helpers({
 	isGroup: function() {
@@ -50,20 +49,14 @@ Conversations.helpers({
 	}
 });
 
-//Conversations.attachSchema(Schemas.Conversation);
-
 Conversations.allow({
 	insert: function(userId, doc) {
-		if (userId) {
-			if (Roles.userIsInRole(userId, 'admin')) {
-				return true;
-			} else {
-				return _.some(doc.users, function(user) {
-					return user._id === userId;
-				});
-			}
-		}
-		return false;
+	    if (userId) {
+	        return Roles.userIsInRole(userId, 'admin') || _.some(doc.users, function(user) {
+	            return user._id === userId;
+	        });
+	    }
+	    return false;
 	},
 	update: function(userId, doc, fieldNames, modifier) {
 		return userId && Roles.userIsInRole(userId, 'admin');
@@ -104,13 +97,6 @@ Conversations.before.insert(function(userId, doc) {
 	} else if (doc.users.length === 1 && doc.users[0] === userId) {
 		throw new Meteor.Error(612, "You cannot send a message to yourself");
 	}*/
-
-	if (!_.has(doc, 'createdAt')) {
-		doc.createdAt = new Date();
-	}
-	if (!_.has(doc, 'lastMessageAt')) {
-		doc.lastMessageAt = new Date();
-	}
 
 	// doc.users should be an array of userIds if doc.processUsers is true
 	// after processing the results are added to convUsers
@@ -158,9 +144,7 @@ Conversations.before.insert(function(userId, doc) {
 		delete doc.processUsers;
 	}
 
-	Debug.messaging('Conversation', doc);
-
-	check(doc, Schemas.Conversation);
+	Debug.messaging('Conversations.before.insert', doc);
 });
 
 Conversations.after.insert(function(userId, doc) {

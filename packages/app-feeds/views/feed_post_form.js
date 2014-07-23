@@ -95,11 +95,6 @@ var upload = function(e) {
 		} else {
 			temp.feeds.push($('input[name=feed]:checked').val());
 		}
-		/*
-		   temp.so = $('input[name=so]').val();
-		   temp.bin = $('input[name=bin]').val();
-		   temp.condition = $('select[name=condition]').val();
-		   */
 		temp.description = $('#sell-description').val();
 		//temp.imageUrl = S3.imageUpload(Meteor.userId(), document.getElementById('image').files[0]);
 		//temp.image = document.getElementById('image').files[0];
@@ -108,21 +103,9 @@ var upload = function(e) {
 		// NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
 		$('.feed-post-form-sell').slideUp();
 
-		Meteor.call('addPost', temp, function(e, r) {
-			console.log("something");
-			if (e) {
-				alert(e);
-			} else {
-				if (r == -1)
-					alert('Need an image url!');
-				else if (r == -2)
-					alert('Need a title!');
-				else if (r == -3)
-					alert('Need a description!');
-				else if (r == -4)
-					alert('Pick a feed!');
-				console.log("done");
-				//	Router.go('/post/' + r);
+		Posts.create('sell', temp, function(err, res) {
+			if (err) {
+				console.log(err);
 			}
 		});
 	}
@@ -160,10 +143,9 @@ Template.feedPostFormBuy.events({
 
 		//NEED A CHECK TO SEE IF THE FIELDS ARE ALL FILLED
 		e.preventDefault();
-		Meteor.call('addRequest', temp, function(e, r) {
-			console.log("something");
-			if (e) {
-				alert(e);
+		Posts.create('buy', temp, function(err, res) {
+			if (err) {
+				console.log(err);
 			} else {
 				console.log("done");
 				Router.go('/');

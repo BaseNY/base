@@ -6,8 +6,6 @@ Package.describe({
 
 Package.on_use(function(api) {
 	// ========= SETUP =========
-	api.use('lodash');
-
 	api.use([
 		'lodash',
 
@@ -81,6 +79,7 @@ Package.on_test(function(api) {
 	api.add_files([
 		'tests/collections/users_test.js',
 		'tests/collections/feeds_test.js',
-		'tests/collections/posts_test.js'
+		'tests/collections/posts_test.js',
+		'tests/collections/offers_test.js'
 	], both);
 });

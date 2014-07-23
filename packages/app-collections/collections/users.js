@@ -114,7 +114,7 @@ Users.attachSchema(Schemas.User);
 var allowedFieldNames = ['subscribed'];
 Users.allow({
 	insert: function(userId, doc) {
-		return Meteor.isServer;
+		return false;
 	},
 	update: function(userId, doc, fieldNames, modifier) {
 		return doc._id === userId && _.difference(fieldNames, allowedFieldNames).length === 0;
@@ -153,7 +153,7 @@ Users.updateFeeds = function(feedIds, callback) {
 }
 
 Users.after.insert(function(userId, doc) {
-	Debug.users('Sending welcome email to: ', doc);
+	Debug.users('Sending welcome email', doc);
 
 	if (Meteor.isServer) {
 		Email.sendWelcomeEmail(doc);

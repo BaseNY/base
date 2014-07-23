@@ -3,12 +3,11 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Insert - Sell post with title", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
-			Posts.insert({
+			Posts.create('sell', {
 				title: 'iPhone 9',
 				description: 'So apple much cool',
-				feeds: [Feeds.findOne()._id],
-				type: 'sell'
-			}, function(err, _id) {
+				feeds: [Feeds.findOne()._id]
+			}, function(err) {
 				test.isUndefined(err, "Expected no error to occur because title is present: " + err);
 				next();
 			});
@@ -17,11 +16,10 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Insert - Sell post without title", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
-			Posts.insert({
+			Posts.create('sell', {
 				description: 'So apple much cool',
-				feeds: [Feeds.findOne()._id],
-				type: 'sell'
-			}, function(err, _id) {
+				feeds: [Feeds.findOne()._id]
+			}, function(err) {
 				test.isTrue(err instanceof Error, "Expected error to occur because title isn't present and title is required for a sell post: " + err);
 				next();
 			});
@@ -30,12 +28,11 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Insert - Buy post with title", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
-			Posts.insert({
+			Posts.create('buy', {
 				title: 'iPhone 9',
 				description: 'Buying iPhone 9',
-				feeds: [Feeds.findOne()._id],
-				type: 'buy'
-			}, function(err, _id) {
+				feeds: [Feeds.findOne()._id]
+			}, function(err) {
 				test.isUndefined(err, "Expected no error to occur: " + err);
 				next();
 			});
@@ -44,11 +41,10 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Insert - Buy post without title", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
-			Posts.insert({
+			Posts.create('buy', {
 				description: 'Buying iPhone 9',
-				feeds: [Feeds.findOne()._id],
-				type: 'buy'
-			}, function(err, _id) {
+				feeds: [Feeds.findOne()._id]
+			}, function(err) {
 				test.isUndefined(err, "Expected no error to occur: " + err);
 				next();
 			});
@@ -57,10 +53,9 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Insert - Post without feeds", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
-			Posts.insert({
-				description: 'Buying iPhone 9',
-				type: 'buy'
-			}, function(err, _id) {
+			Posts.create('buy', {
+				description: 'Buying iPhone 9'
+			}, function(err) {
 				test.isUndefined(err, "Expected no error to occur: " + err);
 				next();
 			});
@@ -69,11 +64,10 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Insert - Post with invalid type", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
-			Posts.insert({
+			Posts.create('wooot', {
 				description: 'Buying iPhone 9',
-				feeds: [Feeds.findOne()._id],
-				type: 'wooooot'
-			}, function(err, _id) {
+				feeds: [Feeds.findOne()._id]
+			}, function(err) {
 				test.isTrue(err instanceof Error, "Expected error to occur because the type is invalid");
 				next();
 			});
