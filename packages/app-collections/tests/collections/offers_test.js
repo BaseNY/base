@@ -1,7 +1,7 @@
 if (Meteor.isServer) {
 	Meteor.methods({
 		clearOffers: function() {
-			Offers.remove();
+			Offers.remove({});
 		}
 	});
 }
