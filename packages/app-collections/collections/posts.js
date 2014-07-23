@@ -120,19 +120,13 @@ Posts.delete = function(_id, callback) {
 	return Meteor.call('_deletePost', _id, callback);
 };
 
-Meteor.methods({
+Meteor.methodsRequireLogin({
 	_createPost: function(type, post) {
-		if (!this.userId) {
-			throw new Meteor.Error(403, "Access denied: you must be logged in");
-		}
 		post.sellerId = this.userId;
 		post.type = type;
 		return Posts.insert(post);
 	},
 	_deletePost: function(_id) {
-		if (!this.userId) {
-			throw new Meteor.Error(403, "Access denied: you must be logged in");
-		}
 		var sellerId = Posts.findOne(_id).sellerId;
 		if (this.userId != sellerId && !Roles.userIsInRole(this.userId, 'admin')) {
 			throw new Meteor.Error(600, "Access denied: this is not your post");

@@ -4,6 +4,19 @@ Meteor.isLoggedIn = function() {
     return !!Meteor.user();
 };
 
+// create meteor methods with a check for whether the user is logged in
+Meteor.methodsRequireLogin = function(methods) {
+	_.each(methods, function(func, name) {
+		methods[name] = function() {
+			if (!this.userId) {
+				throw new Meteor.Error(403, "Access denied: you must be logged in");
+			}
+			return func.call(this);
+		};
+	});
+	Meteor.methods(methods);
+};
+
 Utils = {
     // generates a publish function that simply allows selector and options pass through
     defaultPublishFunction: function(collection) {
