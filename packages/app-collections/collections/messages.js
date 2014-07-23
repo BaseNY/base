@@ -69,7 +69,7 @@ Messages.allow({
 // doc should be given text
 Messages.before.insert(function(userId, doc) {
     if (Meteor.isClient && !Meteor.isLoggedIn()) {
-        throw new Meteor.Error(403, "Access denied: not logged in");
+        throw new Meteor.Error(100, "Access denied: not logged in");
     }
 
     doc.createdAt = new Date();

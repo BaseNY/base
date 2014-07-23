@@ -9,7 +9,7 @@ Meteor.methodsRequireLogin = function(methods) {
 	_.each(methods, function(func, name) {
 		methods[name] = function() {
 			if (!this.userId) {
-				throw new Meteor.Error(403, "Access denied: you must be logged in");
+				throw new Meteor.Error(100, "Access denied: User not logged in");
 			}
 			return func.apply(this, arguments);
 		};

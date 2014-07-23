@@ -75,7 +75,7 @@ Conversations.allow({
 // which may or may not include the id of the current user
 Conversations.before.insert(function(userId, doc) {
 	if (Meteor.isClient && !Meteor.isLoggedIn()) {
-		throw new Meteor.Error(403, "Access denied: not logged in");
+		throw new Meteor.Error(100, "Access denied: not logged in");
 	}
 
 	// add current user if not in the doc.users array

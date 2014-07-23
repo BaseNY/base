@@ -65,24 +65,6 @@ Offers.allow({
 	}
 });
 
-Offers.before.insert(function(userId, doc) {
-	Debug.log("offer insert server", doc);
-
-	/*
-	var sub = Meteor.subscribe('offers');
-	var offer = Offers.findOne();
-	while (!sub.ready()) {
-	}
-	Debug.log("yo", Offers.find().fetch());
-	if (offer) {
-		throw new Meteor.Error(700, "Offer already exists");
-	}*/
-
-	Debug.offers('Before insert', doc);
-
-	//doc = {};
-});
-
 // TODO remove buyer and seller fields and just use this
 Offers.helpers({
 	sellerName: function() {
@@ -93,8 +75,26 @@ Offers.helpers({
 	}
 });
 
-Meteor.methods({
-	/*_createOffer: function(post, message, type) {
+Offers.create = function(post, callback) {
+	return Meteor.call('_createOffer', post, callback);
+};
+
+Meteor.methodsRequireLogin({
+	_createOffer: function(post) {
+		var doc = {
+			itemId: post._id,
+			buyerId: this.userId
+		};
+		var offer = Offers.findOne(doc);
+		if (offer) {
+			throw new Meteor.Error(600, "Offer already exists", 'Offer _id: ' + offer._id);
+		}
+		return Offers.insert(doc);
+	}
+});
+
+/*Meteor.methods({
+	_createOffer: function(post, message, type) {
 		if (!message) {
 			throw new Meteor.Error(600, "Invalid message");
 		}
@@ -139,20 +139,9 @@ Meteor.methods({
 			});
 		}
 		return offer;
-	}*/
-	_createOffer: function(post) {
-		var doc = {
-			itemId: post._id,
-			buyerId: this.userId
-		};
-		return Offers.insert(doc);
 	}
-});
+});*/
 /*
 Offers.create = function(post, message, type, callback) {
 	return Meteor.call('_createOffer', post, message, type, callback);
 };*/
-
-Offers.create = function(post, callback) {
-	return Meteor.call('_createOffer', post, callback);
-};

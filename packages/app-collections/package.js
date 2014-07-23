@@ -13,6 +13,8 @@ Package.on_use(function(api) {
 		'app-utils'
 	]);
 
+	api.add_files('collections.js', both);
+
 	api.use([
 		'simple-schema',
 		'collection2',
