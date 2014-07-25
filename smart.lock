@@ -6,7 +6,6 @@
       "fast-render": {},
       "nprogress": {},
       "npm": {},
-      "publish-with-relations": {},
       "easy-search": {},
       "collection-behaviours": {},
       "roles": {},
@@ -18,7 +17,8 @@
       "imagemagick": {},
       "phantomjs": {},
       "ms-seo": {},
-      "handlebars-server": {}
+      "handlebars-server": {},
+      "smart-publish": {}
     },
     "packages": {
       "iron-router": {
@@ -40,11 +40,6 @@
         "git": "https://github.com/arunoda/meteor-npm.git",
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
-      },
-      "publish-with-relations": {
-        "git": "https://github.com/erundook/meteor-publish-with-relations.git",
-        "tag": "v0.1.5",
-        "commit": "98213e9f056b139597c99fb9ec2884ae6be76d91"
       },
       "easy-search": {
         "git": "https://github.com/matteodem/meteor-easy-search.git",
@@ -78,8 +73,8 @@
       },
       "kadira": {
         "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.8",
-        "commit": "5f4437af113537def34484c7b7a2a5e4d60847a9"
+        "tag": "v2.4.9",
+        "commit": "8bb902989917522822a0897117672ae858c23427"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
@@ -106,6 +101,11 @@
         "tag": "v1.2.0",
         "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
       },
+      "smart-publish": {
+        "git": "https://github.com/yeputons/meteor-smart-publish.git",
+        "tag": "v0.1.4",
+        "commit": "9b0279927fa4f8042f8f56ba475ce9737ceaa8cf"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.4",
@@ -118,8 +118,8 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.5.1",
-        "commit": "a29956b34d03a4591dbd0eaed9d37009ef48b8db"
+        "tag": "v0.6.0",
+        "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
       }
     }
   }

@@ -6,8 +6,14 @@ Package.describe({
 
 Package.on_use(function(api) {
 	// ========= SETUP =========
+	api.use('lodash');
 
-	api.use(['app-debug', 'app-utils']);
+	api.use([
+		'lodash',
+
+		'app-debug',
+		'app-utils'
+	]);
 
 	api.use([
 		'simple-schema',
@@ -20,10 +26,16 @@ Package.on_use(function(api) {
 	api.add_files('schemas.js', both);
 	api.export('Schemas');
 
+	// ========= CONFIG =========
+
+	api.use('service-configuration');
+	api.add_files('config.js', 'server');
+
 	// ========= COLLECTIONS =========
 
 	api.use([
 		'accounts-base',
+		'accounts-facebook',
 		'app-fbgraph',
 		'app-email'
 	]);
@@ -43,6 +55,8 @@ Package.on_use(function(api) {
 	api.export(['Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
 
 	// ========= PUBLICATIONS AND FIXTURES =========
+
+	api.use('smart-publish');
 
 	api.add_files([
 		'publications.js',

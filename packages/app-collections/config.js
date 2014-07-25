@@ -1,4 +1,4 @@
-Debug.order('app-users/config.js');
+Debug.order('app-collections/config.js');
 
 Meteor._ensure(Meteor, 'settings', 'public');
 

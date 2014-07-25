@@ -11,9 +11,6 @@ Package.on_use(function(api) {
 		'app-debug'
 	]);
 
-	api.use('service-configuration');
-	api.add_files('config.js', 'server');
-
 	api.use('app-collections');
 
 	api.use([
