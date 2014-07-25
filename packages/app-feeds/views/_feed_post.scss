@@ -35,9 +35,9 @@
 
 .post-icons-container {
 	position: absolute;
-	top: 8px;
-	right: 16px;
-	font-size: 1.3em;
+    top:0px;
+    right:0px;
+    font-size:1em;
 	span {
 		vertical-align: top;
 		font-size: 14px;
@@ -45,6 +45,20 @@
 	.fa {
 		cursor: pointer;
 	}
+    .ui-button {
+       padding:8px 4px; 
+       border-top:0px;
+       border-right:0px;
+       float:left;
+       &:hover {
+            color:#33B5E5;
+            background-color:#f9f9f9;
+            cursor:pointer;
+       }
+       &:active {
+            background-color:white;
+       }
+    }
 }
 
 .post-title {
@@ -53,6 +67,8 @@
 	font-size: 1.5em;
 	font-weight: normal;
 	word-wrap: break-word;
+    width:80%;
+    width:calc(100% - 84px);
 }
 
 .post-timestamp {

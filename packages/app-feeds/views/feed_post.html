@@ -48,13 +48,18 @@
 <template name="feedIcons">
 	{{#if currentUser}}
 		<div class="post-icons-container">
-			<span>Interested? Send a message!</span>
-			<i class="fa fa-envelope-o toggleMessage"></i>
+			<div class="toggleMessage ui-button">
+                Make Offer
+            </div>
 			{{#if ownPost}}
+                <div class="ui-button">
 				<i class="fa fa-trash-o"></i>
+            </div>
 			{{else}}
 				{{#if isInRole 'admin'}}
+                <div class="ui-button">
 					<i class="fa fa-trash-o"></i>
+                </div>
 				{{/if}}
 			{{/if}}
 		</div>
