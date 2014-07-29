@@ -71,7 +71,7 @@ Feeds.route = {
 		return subs;
 	},*/
 	data: function() {
-		var posts = Items.find().fetch();
+		var posts = Items.find({}, {sort: {score: -1}}).fetch();
 		return {
 			posts: posts
 		};

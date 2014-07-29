@@ -49,19 +49,19 @@
 	{{#if currentUser}}
 		<div class="post-icons-container">
 			{{#unless ownPost}}
-			<div class="toggleMessage ui-button">
-                Make Offer
-            </div>
-            {{/unless}}
+				<div class="toggleMessage ui-button">
+					Make Offer
+				</div>
+			{{/unless}}
 			{{#if ownPost}}
-                <div class="ui-button">
-				<i class="fa fa-trash-o"></i>
-            </div>
+				<div class="ui-button">
+					<i class="fa fa-trash-o"></i>
+				</div>
 			{{else}}
 				{{#if isInRole 'admin'}}
-                <div class="ui-button">
-					<i class="fa fa-trash-o"></i>
-                </div>
+					<div class="ui-button">
+						<i class="fa fa-trash-o"></i>
+					</div>
 				{{/if}}
 			{{/if}}
 		</div>
@@ -74,7 +74,7 @@
 			{{#each comments}}
 				<li>{{> comment}}</li>
 			{{/each}}
-		</ul>	
+		</ul>
 		<div class="post-comments-input-container">
 			{{#if currentUser}}
 				<div class="comment-user-image">
