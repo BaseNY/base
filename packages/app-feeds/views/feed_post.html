@@ -48,9 +48,11 @@
 <template name="feedIcons">
 	{{#if currentUser}}
 		<div class="post-icons-container">
+			{{#unless ownPost}}
 			<div class="toggleMessage ui-button">
                 Make Offer
             </div>
+            {{/unless}}
 			{{#if ownPost}}
                 <div class="ui-button">
 				<i class="fa fa-trash-o"></i>
