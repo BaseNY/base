@@ -8,3 +8,4 @@ standard-app-packages
 iron-router
 
 app-main
+lodash
