@@ -41,7 +41,7 @@ var debugLog = function(namespace, color) {
 				obj = arguments[0];
 			}
 
-			var c = '[';
+			var c = '';
 			if (namespace) {
 				c += namespace;
 			}
@@ -49,15 +49,25 @@ var debugLog = function(namespace, color) {
 				c += ' - ' + desc;
 			}
 
-			log(c + ']', color);
+			log('[∨ ' + c + ' ∨]', color);
 			log(obj);
-			log(c + ' end]', color);
+			log('[∧ ' + c + ' ∧]', color);
 		}
 	}
 }
 
 // means debug for the package app-<key>
-var packages = ['feed', 'home', 'login', 'messaging', 'menu', 'offers', 'users', 'utils', 'collections'];
+var packages = [
+	'feed',
+	'home',
+	'login',
+	'messaging',
+	'menu',
+	'offers',
+	'users',
+	'utils',
+	'collections'
+];
 Debug = {
 	log: debugLog('debug'),
 	order: function(filename) {
