@@ -49,9 +49,9 @@ var debugLog = function(namespace, color) {
 				c += ' - ' + desc;
 			}
 
-			log('[∨ ' + c + ' ∨]', color);
+			log('[▼ ' + c + ' ▼]', color);
 			log(obj);
-			log('[∧ ' + c + ' ∧]', color);
+			log('[▲ ' + c + ' ▲]', color);
 		}
 	}
 }
