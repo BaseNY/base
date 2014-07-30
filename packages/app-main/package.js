@@ -15,8 +15,11 @@ Package.on_use(function(api) {
 
 	api.use('templating');
 	api.add_files([
+		'views/header.html',
 		'views/main.html',
-		'views/main.js'
+		'views/main.js',
+
+		'main.css'
 	], 'client');
 
 	api.use('iron-router');

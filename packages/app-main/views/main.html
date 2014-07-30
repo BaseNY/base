@@ -16,6 +16,9 @@
 
 <template name="layout">
 	<div class="page-container">
-		{{> yield}}
+		{{> header}}
+		<div class="page-body">
+			{{> yield}}
+		</div>
 	</div>
 </template>

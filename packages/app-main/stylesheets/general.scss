@@ -1,0 +1,14 @@
+@import 'bourbon/bourbon';
+
+// https://github.com/Schepp/box-sizing-polyfill
+*,
+*:before,
+*:after {
+	@include box-sizing(border-box);
+	*behavior: url("/scripts/boxsizing.htc");
+	padding: 0;
+	margin: 0;
+	&:focus {
+		outline: none;
+	}
+}
