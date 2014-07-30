@@ -4,29 +4,5 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-insecure
-accounts-base
-accounts-facebook
 
 iron-router
-simple-schema
-collection2
-
-app-fbgraph
-app-kadira
-
-app-debug
-app-utils
-app-collections
-
-app-email
-
-app-feeds
-app-users
-app-posts
-app-home
-app-messaging
-app-login
-app-menu
-
-app-main

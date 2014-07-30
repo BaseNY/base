@@ -2,124 +2,33 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "iron-router": {},
-      "fast-render": {},
-      "nprogress": {},
-      "npm": {},
-      "easy-search": {},
-      "collection-behaviours": {},
-      "roles": {},
-      "moment": {},
-      "collection2": {},
-      "lodash": {},
-      "kadira": {},
-      "collection-helpers": {},
-      "imagemagick": {},
-      "phantomjs": {},
-      "ms-seo": {},
-      "handlebars-server": {},
-      "smart-publish": {}
+      "iron-router": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.7.1",
-        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+        "tag": "v0.8.1",
+        "commit": "74e867557fd9cb81173e048e5f81cf4a0a1160a8"
       },
-      "fast-render": {
-        "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.8",
-        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
-      },
-      "nprogress": {
-        "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
-        "tag": "v0.0.5",
-        "commit": "bb88a057166e0f1386ab8bc0a1e080b48aa59159"
-      },
-      "npm": {
-        "git": "https://github.com/arunoda/meteor-npm.git",
-        "tag": "v0.2.6",
-        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
-      },
-      "easy-search": {
-        "git": "https://github.com/matteodem/meteor-easy-search.git",
-        "tag": "v1.0.0",
-        "commit": "d32e13f396bc36560edf64b55a3c2dd17e22c9c7"
-      },
-      "collection-behaviours": {
-        "git": "https://github.com/Sewdn/meteor-collection-behaviours.git",
-        "tag": "v0.1.4",
-        "commit": "9140c72983a19fabe099abd2c400b95d6a0997ba"
-      },
-      "roles": {
-        "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.2.10",
-        "commit": "7ccb35de0a6cb0c9a0c3666badd04757e39c09a6"
-      },
-      "moment": {
-        "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.6.0",
-        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
-      },
-      "collection2": {
-        "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.2",
-        "commit": "4ff4b707bec8be434919730bf101325adb215444"
-      },
-      "lodash": {
-        "git": "https://github.com/alethes/meteor-lodash.git",
-        "tag": "v0.7.1",
-        "commit": "57bbeb3e21c31b64641f9885bb2f390b84f8b925"
-      },
-      "kadira": {
-        "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.9",
-        "commit": "8bb902989917522822a0897117672ae858c23427"
-      },
-      "collection-helpers": {
-        "git": "https://github.com/dburles/meteor-collection-helpers.git",
-        "tag": "v0.3.0",
-        "commit": "842bd9343b19c0e45ae20ac9c63c8c356889959a"
-      },
-      "imagemagick": {
-        "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
-        "tag": "v0.1.2",
-        "commit": "d67bb926356d35cdff1a6d6c3c69750f3f54c059"
-      },
-      "phantomjs": {
-        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
-        "tag": "v0.0.2",
-        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
-      },
-      "ms-seo": {
-        "git": "https://github.com/DerMambo/ms-seo",
-        "tag": "v0.2.6",
-        "commit": "1a4ba31a1f6f29009d3941e9dd883829ff4e4b8b"
-      },
-      "handlebars-server": {
-        "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
-        "tag": "v1.2.0",
-        "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
-      },
-      "smart-publish": {
-        "git": "https://github.com/yeputons/meteor-smart-publish.git",
-        "tag": "v0.1.4",
-        "commit": "9b0279927fa4f8042f8f56ba475ce9737ceaa8cf"
+      "iron-layout": {
+        "git": "https://github.com/EventedMind/iron-layout.git",
+        "tag": "v0.2.0",
+        "commit": "4a2d53e35ba036b0c189c7ceca34be494d4c6c97"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.4",
-        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+        "tag": "v0.2.5",
+        "commit": "273e3ab7d005d91a1a59c71bd224533b4dae2fbd"
       },
-      "collection-hooks": {
-        "git": "https://github.com/matb33/meteor-collection-hooks.git",
-        "tag": "v0.7.2",
-        "commit": "261f61f07b371ae913463fba8964a9b93cab531b"
+      "iron-core": {
+        "git": "https://github.com/EventedMind/iron-core.git",
+        "tag": "v0.2.0",
+        "commit": "0e48b5dc50d03f01025b7b900fb5ce2f13d52cad"
       },
-      "simple-schema": {
-        "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.6.0",
-        "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
+      "iron-dynamic-template": {
+        "git": "https://github.com/EventedMind/iron-dynamic-template.git",
+        "tag": "v0.2.1",
+        "commit": "4dd1185c4d9d616c9abdb3f33e4a7d5a88db7e18"
       }
     }
   }

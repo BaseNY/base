@@ -1,21 +1,5 @@
 {
   "packages": {
-    "iron-router": {},
-    "fast-render": {},
-    "nprogress": {},
-    "npm": {},
-    "easy-search": {},
-    "collection-behaviours": {},
-    "roles": {},
-    "moment": {},
-    "collection2": {},
-    "lodash": {},
-    "kadira": {},
-    "collection-helpers": {},
-    "imagemagick": {},
-    "phantomjs": {},
-    "ms-seo": {},
-    "handlebars-server": {},
-    "smart-publish": {}
+    "iron-router": {}
   }
 }
