@@ -1,0 +1,21 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="/favicon.ico">
+	<title>Base</title>
+	<style>
+	@viewport {
+		zoom: 1.0;
+		width: device-width;
+	}
+	@-ms-viewport {
+		width: device-width;
+		zoom: 1.0;
+	}
+	</style>
+</head>
+
+<template name="layout">
+	<div class="page-container">
+		{{> yield}}
+	</div>
+</template>
