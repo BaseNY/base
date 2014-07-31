@@ -4,6 +4,18 @@
 			<a href="/" class="header-logo">
 				<img src="/images/logo.png" alt="base">
 			</a>
+			{{#if currentUser}}
+				{{> headerUser}}
+			{{/if}}
 		</div>
 	</header>
+</template>
+
+<template name="headerUser">
+	<div class="header-user-wrapper">
+		<img src="{{this.profile.img}}">
+		<a href="/" class="header-sign-out">
+			<i class="fa fa-sign-out"></i>
+		</a>
+	</div>
 </template>
