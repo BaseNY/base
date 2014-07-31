@@ -334,3 +334,13 @@ header {
   color: black;
   padding: 0.5em 1em;
   border-bottom: 2px solid #E6E6E6; }
+
+.header-content {
+  max-width: 890px;
+  height: 40px;
+  margin: 0 auto; }
+
+.header-logo {
+  height: 100%; }
+  .header-logo > img {
+    height: 100%; }
