@@ -92,11 +92,9 @@ Schemas.User = new SimpleSchema({
 		type: [String],
 		autoValue: autoValueFacebook(function(services) {
 			// TODO test fbgraph
-			/*return FBGraph.getFriends(services.facebook.id, {
-				limit: 10000,
+			return FBGraph.getFriends(services.facebook.id, {
 				access_token: services.facebook.accessToken
-			});*/
-			return [];
+			});
 		})
 	},
 	feedIds: { // TODO set feedIds at account creation modal

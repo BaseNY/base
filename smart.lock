@@ -10,7 +10,8 @@
       "collection-helpers": {},
       "roles": {},
       "handlebars-server": {},
-      "smart-publish": {}
+      "smart-publish": {},
+      "npm": {}
     },
     "packages": {
       "iron-router": {
@@ -57,6 +58,11 @@
         "git": "https://github.com/yeputons/meteor-smart-publish.git",
         "tag": "v0.1.4",
         "commit": "9b0279927fa4f8042f8f56ba475ce9737ceaa8cf"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

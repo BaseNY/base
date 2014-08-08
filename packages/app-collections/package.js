@@ -31,7 +31,7 @@ Package.on_use(function(api) {
 	api.use([
 		'accounts-base',
 		'accounts-facebook',
-		//'app-fbgraph',
+		'fbgraph',
 		'app-email'
 	]);
 	api.add_files('collections/users.js', both);
