@@ -3,18 +3,60 @@
   "dependencies": {
     "basePackages": {
       "iron-router": {},
-      "lodash": {}
+      "lodash": {},
+      "simple-schema": {},
+      "collection2": {},
+      "collection-hooks": {},
+      "collection-helpers": {},
+      "roles": {},
+      "handlebars-server": {},
+      "smart-publish": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.8.1",
-        "commit": "74e867557fd9cb81173e048e5f81cf4a0a1160a8"
+        "tag": "v0.8.2",
+        "commit": "05415a8891ea87a00fb1e2388585f2ca5a38e0da"
       },
       "lodash": {
         "git": "https://github.com/alethes/meteor-lodash.git",
         "tag": "v0.7.1",
         "commit": "57bbeb3e21c31b64641f9885bb2f390b84f8b925"
+      },
+      "simple-schema": {
+        "git": "https://github.com/aldeed/meteor-simple-schema.git",
+        "tag": "v0.6.0",
+        "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
+      },
+      "collection2": {
+        "git": "https://github.com/aldeed/meteor-collection2.git",
+        "tag": "v0.4.5",
+        "commit": "336903730249197b3358dac31b1bd5ed64fecc50"
+      },
+      "collection-hooks": {
+        "git": "https://github.com/matb33/meteor-collection-hooks.git",
+        "tag": "v0.7.2",
+        "commit": "261f61f07b371ae913463fba8964a9b93cab531b"
+      },
+      "collection-helpers": {
+        "git": "https://github.com/dburles/meteor-collection-helpers.git",
+        "tag": "v0.3.1",
+        "commit": "eff6c859cd91eae324f6c99ab755992d0f271d91"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.2.10",
+        "commit": "7ccb35de0a6cb0c9a0c3666badd04757e39c09a6"
+      },
+      "handlebars-server": {
+        "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
+        "tag": "v1.2.0",
+        "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
+      },
+      "smart-publish": {
+        "git": "https://github.com/yeputons/meteor-smart-publish.git",
+        "tag": "v0.1.4",
+        "commit": "9b0279927fa4f8042f8f56ba475ce9737ceaa8cf"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

@@ -1,6 +1,13 @@
 {
   "packages": {
     "iron-router": {},
-    "lodash": {}
+    "lodash": {},
+    "simple-schema": {},
+    "collection2": {},
+    "collection-hooks": {},
+    "collection-helpers": {},
+    "roles": {},
+    "handlebars-server": {},
+    "smart-publish": {}
   }
 }
