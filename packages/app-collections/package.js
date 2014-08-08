@@ -6,14 +6,9 @@ Package.describe({
 
 Package.on_use(function(api) {
 	// ========= SETUP =========
+	api.use('app-debug');
+
 	api.use('lodash');
-
-	api.use([
-		'lodash',
-
-		'app-debug',
-		'app-utils'
-	]);
 
 	api.add_files('schemas.js', both);
 	api.export('Schemas');
@@ -42,7 +37,7 @@ Package.on_use(function(api) {
 	api.add_files('collections/users.js', both);
 
 	api.add_files([
-		/*'collections/feeds.js',
+		'collections/feeds.js'/*,
 		'collections/conversations.js',
 		'collections/messages.js',
 		'collections/offers.js',
@@ -53,16 +48,20 @@ Package.on_use(function(api) {
 
 	//api.export(['Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
 	api.export([
-		'Users'
+		'Users',
+		'Feeds'
 	]);
 
 	// ========= PUBLICATIONS AND FIXTURES =========
 
-	api.use('smart-publish');
+	api.use([
+		'app-utils',
+		'smart-publish'
+	]);
 
 	api.add_files([
-		'publications.js'
-		//,'fixtures.js'
+		'publications.js',
+		'fixtures.js'
 	], 'server');
 });
 
@@ -81,8 +80,8 @@ Package.on_test(function(api) {
 	]);
 
 	api.add_files([
-		'tests/collections/users_test.js'/*,
-		'tests/collections/feeds_test.js',
+		'tests/collections/users_test.js',
+		'tests/collections/feeds_test.js'/*,
 		'tests/collections/posts_test.js',
 		'tests/collections/offers_test.js'*/
 	], both);

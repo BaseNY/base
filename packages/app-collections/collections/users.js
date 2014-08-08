@@ -101,10 +101,9 @@ Schemas.User = new SimpleSchema({
 	},
 	feedIds: { // TODO set feedIds at account creation modal
 		type: [String],
-		defaultValue: []
-		/*autoValue: function() {
+		autoValue: function() {
 			return Schemas.autoValue.insert(this, Feeds.defaultIds);
-		}*/
+		}
 	},
 	conversationIds: {
 		type: [String],
