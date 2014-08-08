@@ -64,6 +64,9 @@ Meteor.smartPublish('smartPosts', function(filter, limit, lastScore) {
 	this.addDependency('items', '_id', function(post){
 		return Comments.find({postId: post._id});
 	});
+    this.addDependency('comments', 'userId', function(comment) {
+        return Meteor.users.find(comment.userId);
+    });
 	if (!filter) {
 		filter = {}
 	} else if (lastScore) {

@@ -3,6 +3,19 @@ Debug.order('app-collections/collections/items.js');
 Items = new Meteor.Collection('items');
 
 Meteor.methods({
+    changeTimeMilli: function() {
+        _.each(Items.find().fetch(), function(t) {
+            if(t.score instanceof Date) {
+                console.log(Items.update({
+                    _id: t._id
+                },{
+                    $set: {
+                        score: t.score.getTime()
+                    }
+                }));
+            }
+        });
+    },
 	addPost: function(p) {
                 if(!Meteor.user())
                     return -1;
