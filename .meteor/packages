@@ -7,5 +7,5 @@ standard-app-packages
 
 iron-router
 
+app-collections
 app-main
-lodash
