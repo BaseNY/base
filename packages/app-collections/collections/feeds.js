@@ -6,6 +6,9 @@ Schemas.Feed = new SimpleSchema({
 		type: String
 	},
 	icon: {
+		type: String
+	},
+	user: { // the id of the user who created the feed
 		type: String,
 		optional: true
 	}
@@ -26,3 +29,23 @@ Feeds.allow({
 		return userId && Roles.userIsInRole(userId, 'admin');
 	}
 });
+
+if (Meteor.isServer) {
+	/**
+	 * Creates a feed with no user.
+	 * @param  {Object} feed The feed object in the form shown by the schema
+	 * @return {String}      The id of the inserted or found feed
+	 */
+	Feeds.createServerFeed = function(doc) {
+		doc.user = {
+			$exists: false
+		};
+		var feed = Feeds.findOne(feed);
+		if (feed) {
+			return feed._id;
+		} else {
+			delete doc.user;
+			return Feeds.insert(doc);
+		}
+	};
+}

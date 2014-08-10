@@ -7,6 +7,18 @@ if (Meteor.isServer) {
 			Roles.setUserRoles(userId, []);
 		}
 	});
+
+	Tinytest.add("Feeds - createServerFeed", function(test) {
+		var feedId = Feeds.createServerFeed({
+			name: 'Sneakers',
+			icon: 'money'
+		});
+		test.isUndefined(Feeds.findOne(feedId).user, "Expected no user to exist for the created feed");
+	});
+
+	Tinytest.add("Feeds - defaultIds", function(test) {
+		test.equal(Feeds.defaultIds.length, 6, "Expected 6 default feeds ids");
+	});
 }
 
 if (Meteor.isClient) {

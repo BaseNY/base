@@ -46,7 +46,7 @@ Package.on_use(function(api) {
 		'collections/comments.js'*/
 	], both);
 
-	//api.export(['Feeds', 'Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
+	//api.export(['Conversations', 'Messages', 'Offers', 'Items', 'Notifications', 'Comments']);
 	api.export([
 		'Users',
 		'Feeds'
@@ -58,7 +58,6 @@ Package.on_use(function(api) {
 		'app-utils',
 		'smart-publish'
 	]);
-
 	api.add_files([
 		'publications.js',
 		'fixtures.js'

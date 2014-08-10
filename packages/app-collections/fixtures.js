@@ -2,7 +2,7 @@ Debug.order('app-collections/fixtures.js');
 
 var defaultFeeds = [{
 	name: 'Sneakers',
-	icon: 'money'
+	icon: 'money',
 }, {
 	name: 'Electronics',
 	icon: 'laptop'
@@ -20,15 +20,11 @@ var defaultFeeds = [{
 	icon: 'random'
 }];
 
-Feeds.defaultIds = [];
-
+/**
+ * It's ok that Feeds.defaultIds isn't defined on the client because the client should never create users
+ */
 Feeds.defaultIds = _.map(defaultFeeds, function(defaultFeed) {
-	var feed = Feeds.findOne(defaultFeed);
-	if (feed) {
-		return feed._id;
-	} else {
-		return Feeds.insert(defaultFeed);
-	}
+	return Feeds.createServerFeed(defaultFeed);
 });
 
 //Debug.collections('Feeds.defaultIds', Feeds.defaultIds);
