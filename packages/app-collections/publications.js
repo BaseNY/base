@@ -19,3 +19,5 @@ Meteor.publish('currentUserData', function() {
 });
 
 Meteor.publish('feeds', Utils.defaultPublishFunction(Feeds));
+
+Meteor.publish('posts', Utils.defaultPublishFunction(Posts));
