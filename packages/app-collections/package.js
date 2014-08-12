@@ -20,6 +20,8 @@ Package.on_use(function(api) {
 
 	// ========= COLLECTIONS =========
 
+	api.add_files('collections.js', both);
+
 	api.use([
 		'simple-schema',
 		'collection2',

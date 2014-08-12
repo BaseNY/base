@@ -23,16 +23,8 @@ Offers = new Meteor.Collection('offers');
 
 Offers.attachSchema(Schemas.Offer);
 
-Offers.allow({
-	insert: function(userId, doc) {
-		return userId && (userId === doc.buyerId || Roles.userIsInRole(userId, 'admin'));
-	},
-	update: function(userId, doc, fields, modifier) {
-		return userId && (userId === doc.buyerId || Roles.userIsInRole(userId, 'admin'));
-	},
-	remove: function(userId, doc) {
-		return userId && (userId === doc.buyerId || Roles.userIsInRole(userId, 'admin'));
-	}
+Offers.allowAll(function(userId, doc) {
+	return userId && (userId === doc.buyerId || Roles.userIsInRole(userId, 'admin'));
 });
 
 Offers.helpers({

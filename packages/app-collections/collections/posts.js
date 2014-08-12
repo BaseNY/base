@@ -66,16 +66,8 @@ Posts = new Meteor.Collection('posts');
 
 Posts.attachSchema(Schemas.Post);
 
-Posts.allow({
-	insert: function(userId, doc) {
-		return userId && (userId === doc.sellerId || Roles.userIsInRole(userId, 'admin'));
-	},
-	update: function(userId, doc, fields, modifier) {
-		return userId && (userId === doc.sellerId || Roles.userIsInRole(userId, 'admin'));
-	},
-	remove: function(userId, doc) {
-		return userId && (userId === doc.sellerId || Roles.userIsInRole(userId, 'admin'));
-	}
+Posts.allowAll(function(userId, doc) {
+	return userId && (userId === doc.sellerId || Roles.userIsInRole(userId, 'admin'));
 });
 
 Posts.before.update(function(userId, doc, fieldNames, modifier, options) {

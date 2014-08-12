@@ -123,12 +123,11 @@ Users.attachSchema(Schemas.User);
 
 var allowedFieldNames = ['feedIds'];
 Users.allow({
-	insert: function(userId, doc) {
-		return false;
-	},
+	insert: Collections.allow.admin,
 	update: function(userId, doc, fieldNames, modifier) {
 		return doc._id === userId && _.difference(fieldNames, allowedFieldNames).length === 0;
-	}
+	},
+	remove: Collections.allow.admin
 });
 
 Users.helpers({
