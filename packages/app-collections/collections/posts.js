@@ -89,13 +89,8 @@ Posts.helpers({
 	}
 });
 
-Posts.create = function(type, post, callback) {
-	return Meteor.call('_createPost', type, post, callback);
-};
-
-Posts.delete = function(_id, callback) {
-	return Meteor.call('_deletePost', _id, callback);
-};
+Posts.create = Utils.forwardMeteorMethod('_createPost');
+Posts.delete = Utils.forwardMeteorMethod('_deletePost');
 
 Meteor.methodsRequireLogin({
 	_createPost: function(type, post) {

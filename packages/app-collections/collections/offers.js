@@ -36,9 +36,7 @@ Offers.helpers({
 	}
 });
 
-Offers.create = function(post, callback) {
-	return Meteor.call('_createOffer', post, callback);
-};
+Offers.create = Utils.forwardMeteorMethod('_createOffer');
 
 Meteor.methodsRequireLogin({
 	_createOffer: function(post) {

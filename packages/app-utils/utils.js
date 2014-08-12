@@ -37,5 +37,16 @@ Utils = {
 			}
 			return collection.find(selector, options);
 		};
+	},
+	forwardMeteorMethod: function(name) {
+		return function() {
+			var args = arguments;
+			var callback = _.last(args);
+			if (_.isFunction(callback)) {
+				return Meteor.apply(name, _.initial(args), callback);
+			} else {
+				return Meteor.apply(name, args);
+			}
+		};
 	}
 };
