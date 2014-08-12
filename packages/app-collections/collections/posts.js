@@ -104,7 +104,7 @@ Meteor.methodsRequireLogin({
 		return Posts.insert(post);
 	},
 	_deletePost: function(_id) {
-		if (this.userId != Posts.findOne(_id).userId && !Roles.userIsInRole(this.userId, 'admin')) {
+		if (this.userId != Posts.findOne(_id).userId) {
 			throw new Meteor.Error(601, "Access denied: This is not your post");
 		}
 		return Posts.remove(_id);
