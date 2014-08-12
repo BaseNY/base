@@ -14,6 +14,7 @@ if (Meteor.isClient) {
 		});
 	});
 
+	Meteor._suppress_log(1); // prevent's Meteor._debug from printing the error
 	Tinytest.addAsync("Posts - Insert - Sell post without title", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
 			Posts.create('sell', {
@@ -62,6 +63,7 @@ if (Meteor.isClient) {
 		});
 	});
 
+	Meteor._suppress_log(1);
 	Tinytest.addAsync("Posts - Insert - Post with invalid type", function(test, next) {
 		Meteor.subscribe('feeds', function(err) {
 			Posts.create('wooot', {
