@@ -60,7 +60,9 @@ var Profile = new SimpleSchema({
 	}
 });
 
-// marks whether each part of the signup is done
+/**
+ * Marks whether each part of the signup is done.
+ */
 var SignupProgression = new SimpleSchema({
 	zipcode: {
 		type: Boolean,
@@ -75,7 +77,7 @@ var SignupProgression = new SimpleSchema({
 Schemas.User = new SimpleSchema({
 	_id: Schemas.defaults._id,
 	createdAt: Schemas.defaults.createdAt,
-	lastOnlineAt: { // TODO lastOnline => lastOnlineAt
+	lastOnlineAt: {
 		type: Date,
 		autoValue: function() {
 			return Schemas.autoValue.insert(this, new Date);
@@ -91,7 +93,6 @@ Schemas.User = new SimpleSchema({
 	friendIds: {
 		type: [String],
 		autoValue: autoValueFacebook(function(services) {
-			// TODO test fbgraph
 			return FBGraph.getFriends(services.facebook.id, {
 				access_token: services.facebook.accessToken
 			});
@@ -107,7 +108,7 @@ Schemas.User = new SimpleSchema({
 		type: [String],
 		defaultValue: []
 	},
-	signupProgression: { // TODO new => loginProgression
+	signupProgression: {
 		type: SignupProgression
 	},
 	roles: {
@@ -162,7 +163,7 @@ Users.updateFeeds = function(feedIds, callback) {
 
 Users.after.insert(function(userId, doc) {
 	if (Meteor.isServer) {
-		Debug.collections('Users - Sending welcome email', doc);
+		Debug.collections('Users - Sending welcome email', doc.profile.name);
 		//Email.sendWelcomeEmail(doc); TODO
 	}
 });
