@@ -41,19 +41,20 @@ Package.on_use(function(api) {
 	api.add_files([
 		'collections/feeds.js',
 		'collections/posts.js',
-		'collections/offers.js'/*,
-		'collections/conversations.js',
+		'collections/offers.js',
+		'collections/conversations.js'/*,
 		'collections/messages.js',
 		'collections/notifications.js',
 		'collections/comments.js'*/
 	], both);
 
-	//api.export(['Conversations', 'Messages', 'Notifications', 'Comments']);
+	//api.export([, 'Messages', 'Notifications', 'Comments']);
 	api.export([
 		'Users',
 		'Feeds',
 		'Posts',
-		'Offers'
+		'Offers',
+		'Conversations'
 	]);
 
 	// ========= PUBLICATIONS AND FIXTURES =========
@@ -83,6 +84,7 @@ Package.on_test(function(api) {
 		'tests/collections/users_test.js',
 		'tests/collections/feeds_test.js',
 		'tests/collections/posts_test.js',
-		'tests/collections/offers_test.js'
+		'tests/collections/offers_test.js',
+		'tests/collections/conversations_test.js'
 	], both);
 });
