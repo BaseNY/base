@@ -28,3 +28,6 @@
 /phantomjs
 /handlebars-server
 /smart-publish
+/iron-layout
+/iron-core
+/iron-dynamic-template
