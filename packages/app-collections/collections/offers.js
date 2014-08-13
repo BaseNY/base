@@ -38,6 +38,8 @@ Offers.helpers({
 
 Offers.create = Utils.forwardMeteorMethod('_createOffer');
 
+// ======================= SERVER =======================
+
 Meteor.methodsRequireLogin({
 	_createOffer: function(post) {
 		var doc = {

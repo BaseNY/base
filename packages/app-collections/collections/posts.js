@@ -92,6 +92,8 @@ Posts.helpers({
 Posts.create = Utils.forwardMeteorMethod('_createPost');
 Posts.delete = Utils.forwardMeteorMethod('_deletePost');
 
+// ======================= SERVER =======================
+
 Meteor.methodsRequireLogin({
 	_createPost: function(type, post) {
 		post.userId = this.userId;
