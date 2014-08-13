@@ -13,6 +13,7 @@ MessagingController = FastRender.RouteController.extend({
 			Meteor.subscribe('smartConversations', {
 				_id: {$in: Meteor.user().conversationIds}
 			}),
+/*
 			Meteor.subscribe('users', this.userId, {
 				fields: {
 					profile: true,
@@ -24,6 +25,7 @@ MessagingController = FastRender.RouteController.extend({
 			}),
 			Meteor.subscribe('offers'),
 			Meteor.subscribe('items')
+            */
 		];
 	},
 	data: function() {

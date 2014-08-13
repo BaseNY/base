@@ -35,7 +35,7 @@ Meteor.methods({
 		}, {
 			$set: {
 				commenters: itemCommenters,
-                score: comment.time
+                score: comment.time.getTime()
 			}
 		});
 
