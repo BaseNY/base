@@ -7,17 +7,19 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
+	Deps.autorun(function() {
+		Meteor.subscribe('posts');
+	});
+
 	var post;
 	var createdOfferId;
 	Tinytest.addAsync("Offers - Insert - Create offer", function(test, next) {
 		Meteor.call('clearOffers', function(err, res) {
-			Meteor.subscribe('posts', function(err) {
-				post = Posts.findOne();
-				Offers.create(post, function(err, _id) {
-					test.isUndefined(err, "Expected no error to occur: " + err);
-					createdOfferId = _id;
-					next();
-				});
+			post = Posts.findOne();
+			Offers.create(post, function(err, _id) {
+				test.isUndefined(err, "Expected no error to occur: " + err);
+				createdOfferId = _id;
+				next();
 			});
 		});
 	});
@@ -36,4 +38,3 @@ if (Meteor.isClient) {
 		});
 	});
 }
-

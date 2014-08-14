@@ -25,7 +25,7 @@ if (Meteor.isServer) {
 						loginTokens: [{
 							when: new Date('2014-07-21T20:23:49.956Z'),
 							hashedToken: 'MlHKkFs6C6FPjDwTYnmOViYW9JagREdLuYvuL+d8o+4='
-						}]
+                        }]
 					}
 				}
 			});
@@ -73,21 +73,26 @@ if (Meteor.isClient) {
 	});
 
 	testAsyncMulti("Users - Allow update", [
-		function(test, expect) {
+
+        function(test, expect) {
 			Users.update(Meteor.userId(), {
-				$set: {'friendIds': []}
+				$set: {
+					'friendIds': []
+				}
 			}, expect(function(err, numModified) {
 				test.isTrue(err instanceof Error, "Expected an error denying the update of this user because the modified fields aren't allowed");
 			}));
-		},
-		function(test, expect) {
+        },
+        function(test, expect) {
 			Users.update(testUserId, {
-				$set: {'friendIds': []}
+				$set: {
+					'friendIds': []
+				}
 			}, expect(function(err, numModified) {
 				test.isTrue(err instanceof Error, "Expected an error denying the update of this user because this user is trying to update another user");
 			}));
-		}
-	]);
+        }
+    ]);
 
 	Tinytest.addAsync("Users - Subscribe to current user data", function(test, next) {
 		Meteor.subscribe('currentUserData', function(err) {

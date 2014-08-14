@@ -27,7 +27,7 @@ if (Meteor.isClient) {
 		Tinytest.addAsync("Feeds - " + type + " - Feed as regular user", function(test, next) {
 			Meteor.call('removeUserAsAdmin', Meteor.userId(), function() {
 				func(function(err, res) {
-					test.equal(err && err.error, 403, "Expected " + lowercase  + " to fail");
+					test.equal(err && err.error, 403, "Expected " + lowercase + " to fail");
 					next();
 				});
 			});
@@ -35,7 +35,7 @@ if (Meteor.isClient) {
 		Tinytest.addAsync("Feeds - " + type + " - Feed as admin", function(test, next) {
 			Meteor.call('setUserAsAdmin', Meteor.userId(), function() {
 				func(function(err, res) {
-					test.isUndefined(err, "Expected " + lowercase  + " to succeed");
+					test.isUndefined(err, "Expected " + lowercase + " to succeed");
 					next();
 				});
 			});
@@ -63,7 +63,9 @@ if (Meteor.isClient) {
 
 	testFeeds('Update', function(callback) {
 		testFeed.name = 'updated name';
-		Feeds.update(feedId, {$set: testFeed}, callback);
+		Feeds.update(feedId, {
+			$set: testFeed
+		}, callback);
 	});
 
 	testFeeds('Remove', function(callback) {

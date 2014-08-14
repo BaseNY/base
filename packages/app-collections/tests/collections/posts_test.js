@@ -1,78 +1,70 @@
 if (Meteor.isClient) {
+	Deps.autorun(function() {
+		Meteor.subscribe('feeds');
+	});
+
 	// ========================== INSERT TESTS ==========================
 
 	Tinytest.addAsync("Posts - Insert - Sell post with title", function(test, next) {
-		Meteor.subscribe('feeds', function(err) {
-			Posts.create('sell', {
-				title: 'iPhone 9',
-				description: 'So apple much cool',
-				feeds: [Feeds.findOne()._id]
-			}, function(err) {
-				test.isUndefined(err, "Expected no error to occur because title is present: " + err);
-				next();
-			});
+		Posts.create('sell', {
+			title: 'iPhone 9',
+			description: 'So apple much cool',
+			feeds: [Feeds.findOne()._id]
+		}, function(err) {
+			test.isUndefined(err, "Expected no error to occur because title is present: " + err);
+			next();
 		});
 	});
 
 	Meteor._suppress_log(1); // prevent's Meteor._debug from printing the error
 	Tinytest.addAsync("Posts - Insert - Sell post without title", function(test, next) {
-		Meteor.subscribe('feeds', function(err) {
-			Posts.create('sell', {
-				description: 'So apple much cool',
-				feeds: [Feeds.findOne()._id]
-			}, function(err) {
-				test.isTrue(err instanceof Error, "Expected error to occur because title isn't present and title is required for a sell post: " + err);
-				next();
-			});
+		Posts.create('sell', {
+			description: 'So apple much cool',
+			feeds: [Feeds.findOne()._id]
+		}, function(err) {
+			test.isTrue(err instanceof Error, "Expected error to occur because title isn't present and title is required for a sell post: " + err);
+			next();
 		});
 	});
 
 	Tinytest.addAsync("Posts - Insert - Buy post with title", function(test, next) {
-		Meteor.subscribe('feeds', function(err) {
-			Posts.create('buy', {
-				title: 'iPhone 9',
-				description: 'Buying iPhone 9',
-				feeds: [Feeds.findOne()._id]
-			}, function(err) {
-				test.isUndefined(err, "Expected no error to occur: " + err);
-				next();
-			});
+		Posts.create('buy', {
+			title: 'iPhone 9',
+			description: 'Buying iPhone 9',
+			feeds: [Feeds.findOne()._id]
+		}, function(err) {
+			test.isUndefined(err, "Expected no error to occur: " + err);
+			next();
 		});
 	});
 
 	Tinytest.addAsync("Posts - Insert - Buy post without title", function(test, next) {
-		Meteor.subscribe('feeds', function(err) {
-			Posts.create('buy', {
-				description: 'Buying iPhone 9',
-				feeds: [Feeds.findOne()._id]
-			}, function(err) {
-				test.isUndefined(err, "Expected no error to occur: " + err);
-				next();
-			});
+		Posts.create('buy', {
+			description: 'Buying iPhone 9',
+			feeds: [Feeds.findOne()._id]
+		}, function(err) {
+			test.isUndefined(err, "Expected no error to occur: " + err);
+			next();
 		});
 	});
 
 	Tinytest.addAsync("Posts - Insert - Post without feeds", function(test, next) {
-		Meteor.subscribe('feeds', function(err) {
-			Posts.create('buy', {
-				description: 'Buying iPhone 9'
-			}, function(err) {
-				test.isUndefined(err, "Expected no error to occur: " + err);
-				next();
-			});
+		Posts.create('buy', {
+			description: 'Buying iPhone 9'
+		}, function(err) {
+			test.isUndefined(err, "Expected no error to occur: " + err);
+			next();
 		});
 	});
 
 	Meteor._suppress_log(1);
 	Tinytest.addAsync("Posts - Insert - Post with invalid type", function(test, next) {
-		Meteor.subscribe('feeds', function(err) {
-			Posts.create('wooot', {
-				description: 'Buying iPhone 9',
-				feeds: [Feeds.findOne()._id]
-			}, function(err) {
-				test.isTrue(err instanceof Error, "Expected error to occur because the type is invalid");
-				next();
-			});
+		Posts.create('wooot', {
+			description: 'Buying iPhone 9',
+			feeds: [Feeds.findOne()._id]
+		}, function(err) {
+			test.isTrue(err instanceof Error, "Expected error to occur because the type is invalid");
+			next();
 		});
 	});
 
@@ -94,7 +86,9 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Update - Post", function(test, next) {
 		Posts.update(postId, {
-			$set: {title: 'new title'}
+			$set: {
+				title: 'new title'
+			}
 		}, function(err, numModified) {
 			testUpdate(test, err, numModified);
 			next();
@@ -103,7 +97,9 @@ if (Meteor.isClient) {
 
 	Tinytest.addAsync("Posts - Update - Post with completed false", function(test, next) {
 		Posts.update(postId, {
-			$set: {isCompleted: false}
+			$set: {
+				isCompleted: false
+			}
 		}, function(err, numModified) {
 			testUpdate(test, err, numModified);
 			var post = Posts.findOne(postId);
@@ -115,7 +111,9 @@ if (Meteor.isClient) {
 	testAsyncMulti("Posts - Update - Post with completed true", [
 		function(test, expect) {
 			Posts.update(postId, {
-				$set: {isCompleted: true}
+				$set: {
+					isCompleted: true
+				}
 			}, expect(function(err, numModified) {
 				testUpdate(test, err, numModified);
 				var post = Posts.findOne(postId);
@@ -125,7 +123,9 @@ if (Meteor.isClient) {
 		function(test, expect) {
 			var previousCompletedAt = Posts.findOne(postId).completedAt;
 			Posts.update(postId, {
-				$set: {isCompleted: true}
+				$set: {
+					isCompleted: true
+				}
 			}, expect(function(err, numModified) {
 				testUpdate(test, err, numModified);
 				var post = Posts.findOne(postId);
