@@ -26,6 +26,7 @@ Schemas.Conversation = new SimpleSchema({
 	createdAt: Schemas.defaults.createdAt,
 	lastMessageAt: {
 		type: Date,
+		optional: true,
 		defaultValue: null
 	},
 	name: {
@@ -84,7 +85,14 @@ Conversations.countUnread = function(userId) {
 	}).count();
 };
 
+Conversations.markRead = Utils.forwardMeteorMethod('_markConversationRead');
+Conversations.markUnread = Utils.forwardMeteorMethod('_markConversationRead');
+
 Conversations.create = Utils.forwardMeteorMethod('_createConversation');
+
+/*Conversations.updateName = function(name, callback) {
+	return Conversations.update()
+};*/
 
 // ======================= SERVER =======================
 
@@ -145,12 +153,46 @@ Meteor.methodsRequireLogin({
 			throw new Meteor.Error(630, "A conversation must have at least two users");
 		}
 		var conv = {
-			users: processUsers(userIds)
+			users: processUsers(this.userId, userIds)
 		};
 		if (offerId) {
 			conv.offerId = offerId;
 		}
 		return Conversations.insert(conv);
+	},
+	/**
+	 * Marks the conversation as read for the user who calls this method
+	 * @param  {String} conversationId The _id of the conversation
+	 * @return {Number}                The number of documents modified
+	 */
+	_markConversationRead: function(conversationId) {
+		return Conversations.update({
+			_id: conversationId,
+			'users._id': this.userId
+		}, {
+			$set: {
+				'users.$.read': true
+			}
+		});
+	},
+	// TODO test markUnread
+	_markConversationUnread: function(conversationId, senderId) {
+		return Conversations.update({
+			_id: conversationId,
+			'users': {
+				$elemMatch: {
+					_id: {
+						$ne: senderId
+					}
+				}
+			}
+		}, {
+			$set: {
+				'users.$.read': false
+			}
+		}, {
+			multi: true
+		});
 	}
 });
 

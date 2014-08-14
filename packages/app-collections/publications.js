@@ -4,7 +4,7 @@ Debug.order('app-collections/publications.js');
  * Publishes data for the logged in user.
  */
 Meteor.publish('currentUserData', function() {
-    return Meteor.users.find(this.userId, {
+    return Users.find(this.userId, {
         fields: {
             _id: true,
             createdAt: true,
@@ -21,3 +21,9 @@ Meteor.publish('currentUserData', function() {
 Meteor.publish('feeds', Utils.defaultPublishFunction(Feeds));
 
 Meteor.publish('posts', Utils.defaultPublishFunction(Posts));
+
+Meteor.publish('conversations', function() {
+	return Conversations.find({
+		'users._id': this.userId
+	});
+});
