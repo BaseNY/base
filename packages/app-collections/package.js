@@ -56,7 +56,6 @@ Package.on_use(function(api) {
 
 	// ========= PUBLICATIONS AND FIXTURES =========
 
-	api.use('smart-publish');
 
 	api.add_files([
 		'publications.js',

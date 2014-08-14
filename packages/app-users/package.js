@@ -15,7 +15,6 @@ Package.on_use(function(api) {
 
 	api.use([
 		'templating',
-		'blaze-layout',
 
 		'app-feeds'
 	]);

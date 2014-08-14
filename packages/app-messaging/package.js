@@ -12,7 +12,6 @@ Package.on_use(function(api) {
 
 		'meteor',
 		'templating',
-		'blaze-layout',
 
 		'iron-router',
 		'fast-render',

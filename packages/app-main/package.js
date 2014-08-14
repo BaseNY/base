@@ -33,7 +33,6 @@ Package.on_use(function(api) {
 	api.use([
 		'jquery',
 		'templating',
-		'blaze-layout'
 	]);
 	api.add_files([
 		'views/about/about.html',

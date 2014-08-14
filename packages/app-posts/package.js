@@ -20,7 +20,6 @@ Package.on_use(function(api) {
 	api.use([
 		'jquery',
 		'templating',
-		'blaze-layout',
 		'spacebars'
 	]);
 	api.add_files([

@@ -27,7 +27,6 @@ Package.on_use(function(api) {
 		'velocityjs',
 
 		'templating',
-		'blaze-layout'
 	]);
 	api.add_files([
 		'views/feed_post_form.html',
