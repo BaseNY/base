@@ -1,0 +1,97 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="application.css">
+<link type="text/css" rel="stylesheet" href="_start.css">
+<link type="text/css" rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+</head>
+<body>
+<div class="pageStart">
+    <div class="cover">
+        <footer>
+            <div class="arrow-button top-button">
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="text-container">
+            <h1>GET STARTED</h1>
+            <p>It's ridiculously easy to get started with buying and selling on Base. It's as simple as starting a conversation and meeting up with a friend.</p>
+            <div class="arrow-button bottom-button">
+                <i class="fa fa-angle-down"></i>
+            </div>
+        </div>
+        </footer>
+    </div>
+    <h1>What would you like to do?</h1>
+    <div class="bs-image">
+        <div class="bs-block buy active">
+            <img class="active-img" src="images/buy.png"/>
+            <img class="inactive-img" src="images/buy_dark.png"/>
+            <div class="active-arrow">
+                Arrow goes here
+            </div>
+        </div>
+        <div class="bs-block sell">
+            <img class="active-img" src="images/sell2.png"/>
+            <img class="inactive-img" src="images/sell_dark.png"/>
+            <div class="active-arrow">
+                Arrow goes here
+            </div>
+        </div>
+    </div>
+    <div class="instructions-container">
+    <div class="buy">
+        <ul>
+            <li class="row">
+                <div class="half">
+                    <h3><span class="numb">1</span> Search</h3>
+                    <p>Look for something you like. You can use our search system or feeds filters to help you with this.</p>
+                </div>
+                <div class="half">
+                    <div class="placeholder"></div>
+                </div>
+            </li>
+            <li class="row">
+                <div class="half">
+                    <div class="placeholder"></div>
+                </div>
+                <div class="half">
+                    <h3><span class="numb">2</span> Offer</h3>
+                    <p>Find someting you're interested in? Just send over a message or offer letting the seller know!</p>
+                </div>
+            </li>
+            <li class="row">
+                <div class="half">
+                    <h3><span class="numb">3</span> Negotiate</h3>
+                    <p>Talk to the seller until both of you agree on a price and meetup location. Make sure to choose a public area, or to bring a friend with you.</p>
+                </div>
+                <div class="half">
+                    <div class="placeholder"></div>
+                </div>
+            </li>
+            <li class="row">
+                <div class="half">
+                    <div class="placeholder"></div>
+                </div>
+                <div class="half">
+                    <h3><span class="numb">4</span> Meet Up</h3>
+                    <p>When it's time, just meet up at the spot you chose and finish the deal. </p>
+                </div>
+            </li>
+        </ul>
+     </div>
+    <div class="sell">
+        <ul>
+        </ul>
+    </div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+$('.bs-block').click(function() {
+    $('.bs-block').removeClass('active');
+    $(this).addClass('active');
+});
+});
+</script>
+</body>
+<html>
