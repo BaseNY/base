@@ -9,6 +9,7 @@ if (Meteor.isServer) {
 }
 
 Meteor._ensure(Meteor, 'settings', 'public');
+var debugEnabled = Meteor.settings.public.debug;
 
 var log = function(msg, color) {
 	if (msg) {
@@ -32,7 +33,7 @@ var log = function(msg, color) {
 var debugLog = function(namespace, color) {
 	color = color || 'debug';
 	return function() {
-		if (Meteor.settings.public.debug) {
+		if (debugEnabled) {
 			var desc, obj;
 			if (arguments.length === 2) {
 				desc = arguments[0];
@@ -58,20 +59,14 @@ var debugLog = function(namespace, color) {
 
 // means debug for the package app-<key>
 var packages = [
-	'feed',
-	'home',
-	'login',
-	'messaging',
-	'menu',
-	'offers',
-	'users',
 	'utils',
 	'collections'
 ];
 Debug = {
+	enabled: debugEnabled,
 	log: debugLog('debug'),
 	order: function(filename) {
-		if (Meteor.settings.public.debug) {
+		if (debugEnabled) {
 			log('Load: ' + filename, 'order');
 		}
 	}
@@ -80,6 +75,6 @@ _.each(packages, function(package) {
 	Debug[package] = debugLog('app-' + package);
 });
 
-if (Meteor.settings.public.debug) {
+if (debugEnabled) {
 	log('Debug enabled', 'red');
 }
