@@ -1,9 +1,9 @@
 if (Meteor.isServer) {
 	Meteor.methods({
-		setUserAsAdmin: function(userId) {
+		testSetUserAsAdmin: function(userId) {
 			Roles.addUsersToRoles(userId, 'admin');
 		},
-		removeUserAsAdmin: function(userId) {
+		testRemoveUserAsAdmin: function(userId) {
 			Roles.setUserRoles(userId, []);
 		}
 	});
@@ -25,7 +25,7 @@ if (Meteor.isClient) {
 	var testFeeds = function(type, func) {
 		var lowercase = type.toLowerCase();
 		Tinytest.addAsync("Feeds - " + type + " - Feed as regular user", function(test, next) {
-			Meteor.call('removeUserAsAdmin', Meteor.userId(), function() {
+			Meteor.call('testRemoveUserAsAdmin', Meteor.userId(), function() {
 				func(function(err, res) {
 					test.equal(err && err.error, 403, "Expected " + lowercase + " to fail");
 					next();
@@ -33,7 +33,7 @@ if (Meteor.isClient) {
 			});
 		});
 		Tinytest.addAsync("Feeds - " + type + " - Feed as admin", function(test, next) {
-			Meteor.call('setUserAsAdmin', Meteor.userId(), function() {
+			Meteor.call('testSetUserAsAdmin', Meteor.userId(), function() {
 				func(function(err, res) {
 					test.isUndefined(err, "Expected " + lowercase + " to succeed");
 					next();
