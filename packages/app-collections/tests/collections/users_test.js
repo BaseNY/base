@@ -64,7 +64,6 @@ if (Meteor.isClient) {
 				test.isUndefined(err, "Expected no error to occur: " + err);
 				var user = Users.findOne(Meteor.userId());
 				test.equal(user._id, Meteor.userId(), "Expected user to be found");
-				test.equal(Users.find().count(), 1, "Expected one user to be created");
 				next();
 			});
 		} else {
@@ -73,7 +72,6 @@ if (Meteor.isClient) {
 	});
 
 	testAsyncMulti("Users - Allow update", [
-
         function(test, expect) {
 			Users.update(Meteor.userId(), {
 				$set: {
