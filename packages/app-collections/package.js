@@ -57,6 +57,8 @@ Package.on_use(function(api) {
 	// ========= PUBLICATIONS AND FIXTURES =========
 
 
+	api.use('publish-with-relations');
+
 	api.add_files([
 		'publications.js',
 		'fixtures.js'
