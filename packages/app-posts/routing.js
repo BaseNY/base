@@ -1,7 +1,12 @@
 PostsController = FastRender.RouteController.extend({
 	template: 'postPage',
-	waitOn: function() {
-		return Meteor.subscribe('smartPosts', {_id: this.params._id});
+	onRun: function() {
+        console.log('subscribing');
+        var subs = [];
+        if (Meteor.isClient) {
+		subs.push(Meteor.subscribe('smartPosts', this.params._id, 10));
+        }
+        return subs;
 	},
 	data: function() {
 		var item = Items.findOne(this.params.id);

@@ -120,6 +120,10 @@ Router.map(function() {
 			}
 		}
 	});
+    this.route('start', {
+        path: '/getting-started',
+        template: 'gettingStarted'
+    });
 	this.route('fbUpdate', {
 		path: '/receive/',
 		where: 'server',

@@ -113,6 +113,12 @@ Meteor.publish('smartPosts', function(filter, limit, lastScore) {
         handle: this,
         collection: Items,
         filter: filter,
+        options: {
+            limit: 10,
+            sort: {
+                score: -1
+            }
+        },
         mappings: [{
             key: 'sellerId',
             collection: Meteor.users

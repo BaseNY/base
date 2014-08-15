@@ -7,7 +7,8 @@ Package.on_use(function(api) {
 		'app-debug',
 		'app-utils',
 
-		'app-aws'
+		'app-aws',
+        'iron-router'
 	]);
 
 	api.use([
