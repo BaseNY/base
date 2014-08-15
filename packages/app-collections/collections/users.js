@@ -164,7 +164,10 @@ Users.updateFeeds = function(feedIds, callback) {
 Users.after.insert(function(userId, doc) {
 	if (Meteor.isServer) {
 		Debug.collections('Users - Sending welcome email', doc.profile.name);
-		//Email.sendWelcomeEmail(doc); TODO
+		// TODO
+		/*if (!Debug.enabled) {
+			Email.sendWelcomeEmail(doc);
+		}*/
 	}
 });
 
