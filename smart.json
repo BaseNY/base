@@ -15,6 +15,7 @@
     "imagemagick": {},
     "phantomjs": {},
     "ms-seo": {},
-    "handlebars-server": {}
+    "handlebars-server": {},
+    "publish-with-relations": {}
   }
 }

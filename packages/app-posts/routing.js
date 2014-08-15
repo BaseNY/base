@@ -4,7 +4,7 @@ PostsController = FastRender.RouteController.extend({
 		return Meteor.subscribe('smartPosts', {_id: this.params._id});
 	},
 	data: function() {
-		var item = Items.findOne(this.params.id);
+		var item = Items.findOne(this.params._id);
 		return {
 			item: item,
 			seller: Meteor.users.findOne(item.sellerId)
@@ -13,7 +13,8 @@ PostsController = FastRender.RouteController.extend({
     onAfterAction: function() {
         if(!Meteor.isClient)
             return;
-        post = Items.findOne(this.params.id);
+
+        post = Items.findOne(this.params._id);
 
         /*
         SEO.set({
@@ -32,7 +33,9 @@ PostsController = FastRender.RouteController.extend({
         $('meta[property="og:description"]').attr('content',post.description);
         $('meta[property="og:title"]').attr('content',post.title);
         $('meta[property="description"]').attr('content',post.description);
-        document.title = post.title;
+        if (post.title) {
+        	document.title = post.title;
+        }
     }
 });
 

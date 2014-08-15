@@ -17,7 +17,8 @@
       "imagemagick": {},
       "phantomjs": {},
       "ms-seo": {},
-      "handlebars-server": {}
+      "handlebars-server": {},
+      "publish-with-relations": {}
     },
     "packages": {
       "iron-router": {
@@ -99,6 +100,11 @@
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
         "tag": "v1.2.0",
         "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
+      },
+      "publish-with-relations": {
+        "git": "https://github.com/erundook/meteor-publish-with-relations.git",
+        "tag": "v0.1.5",
+        "commit": "98213e9f056b139597c99fb9ec2884ae6be76d91"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
