@@ -1,4 +1,20 @@
 if (Meteor.isServer) {
+	Meteor.methods({
+		// set conversation read for all users
+		testSetConversationRead: function(conversationId, read) {
+			return Conversations.update({
+				_id: conversationId,
+				'users.read': !read
+			}, {
+				$set: {
+					'users.$.read': read
+				}
+			}, {
+				$multi: true
+			});
+		}
+	});
+
 	Meteor.publish('allUserData', function() {
 		return Users.find({}, {
 			fields: {
@@ -32,14 +48,49 @@ if (Meteor.isClient) {
 		});
 	});
 
+
+	// TODO test these with more users
 	Tinytest.addAsync("Conversations - Mark as read", function(test, next) {
-		Conversations.markRead(convId, function(err, numModified) {
-			test.isUndefined(err, "Expected no error to occur: " + err);
+		Meteor.call('testSetConversationRead', convId, false, function(err) {
 			var conv = Conversations.findOne(convId);
 			var readUsers = _.filter(conv.users, function(user) {
 				return user.read;
 			});
-			test.isTrue(readUsers.length === 1 && readUsers[0]._id === Meteor.userId(), "Expected only the current user to be marked read");
+			test.equal(readUsers.length, 0, "Expected all users to be unread");
+			Conversations.markRead(convId, function(err, numModified) {
+				test.isUndefined(err, "Expected no error to occur: " + err);
+				var conv = Conversations.findOne(convId);
+				var readUsers = _.filter(conv.users, function(user) {
+					return user.read;
+				});
+				test.isTrue(readUsers.length === 1 && readUsers[0]._id === Meteor.userId(), "Expected only the current user to be marked read");
+				Meteor.call('testSetConversationRead', convId, true, function(err) {
+					next();
+				});
+			});
+		});
+	});
+
+	Tinytest.addAsync("Conversations - Mark as unread", function(test, next) {
+		Meteor.call('testSetConversationRead', convId, true, function(err) {
+			var conv = Conversations.findOne(convId);
+			console.log(conv.users);
+			var unreadUsers = _.filter(conv.users, function(user) {
+				return !user.read;
+			});
+			test.equal(unreadUsers.length, 0, "Expected all users to be read");
+			/*Conversations.markUnread(convId, Meteor.userId(), function(err, numModified) {
+				test.isUndefined(err, "Expected no error to occur: " + err);
+				var conv = Conversations.findOne(convId);
+				console.log(convId);
+				console.log(numModified);
+				console.log(conv);
+				var readUsers = _.filter(conv.users, function(user) {
+					return user.read;
+				});
+				test.isTrue(readUsers.length === 1 && readUsers[0]._id === Meteor.userId(), "Expected only the current user to be marked read");
+				next();
+			});*/
 			next();
 		});
 	});

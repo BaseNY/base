@@ -5,6 +5,7 @@ Schemas.ConversationUser = new SimpleSchema({
 	/**
 	 * The name of the conversation for the user designated by the id.
 	 */
+	// TODO maybe generate the name instead of storing it
 	conversationName: {
 		type: String
 	},
@@ -86,7 +87,7 @@ Conversations.countUnread = function(userId) {
 };
 
 Conversations.markRead = Utils.forwardMeteorMethod('_markConversationRead');
-Conversations.markUnread = Utils.forwardMeteorMethod('_markConversationRead');
+Conversations.markUnread = Utils.forwardMeteorMethod('_markConversationUnread');
 
 Conversations.create = Utils.forwardMeteorMethod('_createConversation');
 
@@ -144,6 +145,7 @@ var processUsers = function(currentUserId, userIds) {
 };
 
 Meteor.methodsRequireLogin({
+	// TODO don't allow user to create a new conversation between 2 people if one already exists
 	_createConversation: function(userIds, offerId) {
 		// add current user if not in the userIds array
 		if (!_.contains(userIds, this.userId)) {
@@ -175,15 +177,19 @@ Meteor.methodsRequireLogin({
 			}
 		});
 	},
-	// TODO test markUnread
+	/**
+	 * Marks the conversation as unread for everyone except the person who sent the message.
+	 * This is used for notifying users that they have unread messages.
+	 * @param  {String} conversationId The _id of the conversation
+	 * @param  {String} senderId       The _id of the user who sent the message
+	 * @return {Number}                The number of documents modified
+	 */
 	_markConversationUnread: function(conversationId, senderId) {
 		return Conversations.update({
 			_id: conversationId,
-			'users': {
+			users: {
 				$elemMatch: {
-					_id: {
-						$ne: senderId
-					}
+					_id: {$ne: senderId}
 				}
 			}
 		}, {
