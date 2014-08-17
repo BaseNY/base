@@ -121,15 +121,7 @@ Users = Meteor.users;
 
 Users.attachSchema(Schemas.User);
 
-var allowedFieldNames = ['feedIds'];
-Users.allow({
-	insert: Collections.allow.admin,
-	// TODO move this to a Meteor.method
-	update: function(userId, doc, fieldNames, modifier) {
-		return doc._id === userId && _.difference(fieldNames, allowedFieldNames).length === 0;
-	},
-	remove: Collections.allow.admin
-});
+Users.allowAll(Collections.allow.admin);
 
 Users.helpers({
 	image: function(size) {
