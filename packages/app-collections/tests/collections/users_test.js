@@ -1,10 +1,11 @@
 var testUserId = 'e8e1043777c76b99a6fd728d';
+var otherTestUserId = '2312312d0s0weasd';
 
 if (Meteor.isServer) {
 	// set function to empty because don't want to send emails for tests
 	Email.sendWelcomeEmail = function() {};
 
-	Tinytest.add("Users - Insert test user", function(test) {
+	Tinytest.add("Users - Insert test users", function(test) {
 		if (!Users.findOne(testUserId)) {
 			Users.insert({
 				_id: testUserId,
@@ -17,7 +18,6 @@ if (Meteor.isServer) {
 						name: 'Rick Amdcegaegfhh Chengwitz',
 						first_name: 'Rick',
 						last_name: 'Chengwitz',
-						link: 'https://www.facebook.com/app_scoped_user_id/334283563393546/',
 						gender: 'male',
 						locale: 'en_US'
 					},
@@ -25,11 +25,28 @@ if (Meteor.isServer) {
 						loginTokens: [{
 							when: new Date('2014-07-21T20:23:49.956Z'),
 							hashedToken: 'MlHKkFs6C6FPjDwTYnmOViYW9JagREdLuYvuL+d8o+4='
-                        }]
+						}]
 					}
 				}
 			});
 			test.isTrue(Users.findOne(testUserId) instanceof Object, "Expected the test user to be created");
+		}
+
+		if (!Users.findOne(otherTestUserId)) {
+			Users.insert({
+				_id: otherTestUserId,
+				services: {
+					facebook: {
+						id: '2',
+						email: 'dwlnalz_chengwitz_1404674155@tfbnw.net',
+						name: 'First Dude',
+						first_name: 'First',
+						last_name: 'Dude',
+						gender: 'male',
+					}
+				}
+			});
+			test.isTrue(Users.findOne(otherTestUserId) instanceof Object, "Expected the other test user to be created");
 		}
 	});
 }
@@ -72,7 +89,7 @@ if (Meteor.isClient) {
 	});
 
 	testAsyncMulti("Users - Allow update", [
-        function(test, expect) {
+		function(test, expect) {
 			Users.update(Meteor.userId(), {
 				$set: {
 					'friendIds': []
@@ -80,8 +97,8 @@ if (Meteor.isClient) {
 			}, expect(function(err, numModified) {
 				test.isTrue(err instanceof Error, "Expected an error denying the update of this user because the modified fields aren't allowed");
 			}));
-        },
-        function(test, expect) {
+		},
+		function(test, expect) {
 			Users.update(testUserId, {
 				$set: {
 					'friendIds': []
@@ -89,8 +106,8 @@ if (Meteor.isClient) {
 			}, expect(function(err, numModified) {
 				test.isTrue(err instanceof Error, "Expected an error denying the update of this user because this user is trying to update another user");
 			}));
-        }
-    ]);
+		}
+	]);
 
 	Tinytest.addAsync("Users - Subscribe to current user data", function(test, next) {
 		Meteor.subscribe('currentUserData', function(err) {
