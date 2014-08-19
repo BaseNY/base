@@ -4,16 +4,19 @@ if (Meteor.isServer) {
 	// set function to empty because don't want to send emails for tests
 	Email.sendWelcomeEmail = function() {};
 
-	Accounts.registerLoginHandler(function(loginRequest) {
-		return {
-			userId: loginRequest.userId
+	Accounts.registerLoginHandler('testLogin', function(loginRequest) {
+		if (loginRequest.test) {
+			return {
+				userId: loginRequest.userId
+			}
 		}
 	});
 }
 if (Meteor.isClient) {
 	var testLogin = function(userId, callback) {
 		var loginRequest = {
-			userId: userId
+			userId: userId,
+			test: true
 		};
 		Accounts.callLoginMethod({
 			methodArguments: [loginRequest],
@@ -88,7 +91,7 @@ if (Meteor.isClient) {
 		}, 5000);
 	});
 
-	// TODO check if this is correct
+	// only runs once on test because it takes too long
 	if (!Meteor.isLoggedIn()) {
 		Tinytest.addAsync("Users - Login with Facebook", function(test, next) {
 			Users.loginWithFacebook(function(err) {
