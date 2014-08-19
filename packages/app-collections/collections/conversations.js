@@ -185,20 +185,25 @@ Meteor.methodsRequireLogin({
 	 * @return {Number}                The number of documents modified
 	 */
 	_markConversationUnread: function(conversationId, senderId) {
-		return Conversations.update({
-			_id: conversationId,
-			users: {
-				$elemMatch: {
-					_id: {$ne: senderId}
-				}
-			}
+		var conv = Conversations.findOne({
+			_id: conversationId
 		}, {
-			$set: {
-				'users.$.read': false
+			fields: {
+				'users._id': true
 			}
-		}, {
-			multi: true
 		});
+		// get users except for the sender
+		var userIds = _.without(_.pluck(conv.users, '_id'), senderId);
+		return _.reduce(userIds, function(numModified, userId) {
+			return numModified + Conversations.update({
+				_id: conversationId,
+				'users._id': userId
+			}, {
+				$set: {
+					'users.$.read': false
+				}
+			});
+		}, 0);
 	}
 });
 

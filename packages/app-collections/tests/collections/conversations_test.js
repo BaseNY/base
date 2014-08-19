@@ -48,8 +48,6 @@ if (Meteor.isClient) {
 		});
 	});
 
-
-	// TODO test these with more users
 	Tinytest.addAsync("Conversations - Mark as read", function(test, next) {
 		Meteor.call('testSetConversationRead', convId, false, function(err) {
 			var conv = Conversations.findOne(convId);
@@ -74,24 +72,20 @@ if (Meteor.isClient) {
 	Tinytest.addAsync("Conversations - Mark as unread", function(test, next) {
 		Meteor.call('testSetConversationRead', convId, true, function(err) {
 			var conv = Conversations.findOne(convId);
-			console.log(conv.users);
 			var unreadUsers = _.filter(conv.users, function(user) {
 				return !user.read;
 			});
 			test.equal(unreadUsers.length, 0, "Expected all users to be read");
-			/*Conversations.markUnread(convId, Meteor.userId(), function(err, numModified) {
+			var senderId = Meteor.userId();
+			Conversations.markUnread(convId, senderId, function(err, numModified) {
 				test.isUndefined(err, "Expected no error to occur: " + err);
 				var conv = Conversations.findOne(convId);
-				console.log(convId);
-				console.log(numModified);
-				console.log(conv);
 				var readUsers = _.filter(conv.users, function(user) {
 					return user.read;
 				});
-				test.isTrue(readUsers.length === 1 && readUsers[0]._id === Meteor.userId(), "Expected only the current user to be marked read");
+				test.isTrue(readUsers.length === 1 && readUsers[0]._id === senderId, "Expected only the current user to be marked read");
 				next();
-			});*/
-			next();
+			});
 		});
 	});
 }
