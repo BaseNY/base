@@ -36,7 +36,7 @@ Router.map(function() {
 			var user = Meteor.user();
 			if (Meteor.isClient && user) {
 				//subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
-				subs.push(Meteor.subscribe('smartConversations', {_id: {$in: user.conversationIds}}));
+				subs.push(Meteor.subscribe('conversations'));
 			}
 			return subs;
 		},

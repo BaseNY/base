@@ -194,4 +194,15 @@ Meteor.publish('smartConversations', function(filter) {
     });
 });
 
+Meteor.publish('conversations', function(filter) {
+    if(!filter) {
+        filter = {}
+    }
+
+    _.extend(filter, {
+        _id: {$in: Meteor.users.findOne({_id: this.userId}).conversationIds}
+    });
+    return Conversations.find(filter);
+});
+
 Meteor.publish('messages', Utils.defaultPublishFunction(Messages));
