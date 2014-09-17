@@ -36,6 +36,9 @@ Template.header.rendered = function() {
 			}
 		}
 	});
+        Meteor.call('getNotice', function(e, r) {
+            Session.set('notice', r);
+        });
 };
 
 Template.header.helpers({
@@ -66,7 +69,11 @@ Template.header.helpers({
 	},
 	'unreadConversations': function() {
 		return Conversations.countUnreadFor(Meteor.userId());
-	}
+	},
+        'notice': function() {
+                if(Session.get('notice'))
+                    return Session.get('notice');
+        }
 });
 
 Template.notification.helpers({

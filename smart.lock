@@ -48,8 +48,8 @@
       },
       "collection-behaviours": {
         "git": "https://github.com/Sewdn/meteor-collection-behaviours.git",
-        "tag": "v0.1.4",
-        "commit": "9140c72983a19fabe099abd2c400b95d6a0997ba"
+        "tag": "v0.1.6",
+        "commit": "0a6208eae8cbfbdf09ae6095e347c833caa5035d"
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
@@ -73,8 +73,8 @@
       },
       "kadira": {
         "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.13",
-        "commit": "1f3c1a427084af5a2eca2e299eb65bc01387df8a"
+        "tag": "v2.9.9",
+        "commit": "d29f3ee438dd8817f6b897db59ef8ca43c335173"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
@@ -118,8 +118,8 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.7.0",
-        "commit": "77d267aec4ba8a70f677e5d9ef9fb91fb0e3f0f6"
+        "tag": "v1.0.2",
+        "commit": "21a4ce06ae29bff2fb1203c44ea24e61f1c3edba"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

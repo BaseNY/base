@@ -166,7 +166,7 @@ Meteor.publish('smartConversations', function(filter) {
     }
 
     _.extend(filter, {
-        _id: {$in: Meteor.user().conversationIds}
+        _id: {$in: Meteor.users.findOne({_id: this.userId}).conversationIds}
     });
     Meteor.publishWithRelations({
         handle: this,

@@ -1,3 +1,5 @@
+headerNotice = 'We are aware of the issues with the messaging system. Please use an alternative, such as Facebook messenger, for now.';
+
 Meteor.methods({
 	updateLast: function() {
 		var temp = Meteor.users.findOne({_id: Meteor.userId()}).profile;
@@ -64,7 +66,10 @@ Meteor.methods({
 		graph.get('/' + Meteor.user().services.facebook.id, function(e, r) {
 			console.log(r);
 		});
-	}
+	},
+        getNotice: function() {
+            return headerNotice;
+        },
 });
 
 // Setting admin roles
