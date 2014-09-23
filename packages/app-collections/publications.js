@@ -109,7 +109,12 @@ Meteor.publish('smartPosts', function(filter, limit, lastScore) {
             score: {$lt: lastScore}
         });
     }
-    Meteor.publishWithRelations({
+
+    if(!limit)
+        limit = 1;
+
+    console.log(Items.findOne(filter));
+    return Meteor.publishWithRelations({
         handle: this,
         collection: Items,
         filter: filter,
@@ -168,7 +173,11 @@ Meteor.publish('smartConversations', function(filter) {
             collection: Meteor.users
         }, {
             key: 'offerId',
-            collection: Offers
+            collection: Offers,
+            mappings: [{
+                key: 'itemId',
+                collection: Items
+            }]
         }, {
             reverse: true,
             key:'conversationId',

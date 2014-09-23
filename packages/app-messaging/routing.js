@@ -109,7 +109,6 @@ MessagingController = FastRender.RouteController.extend({
 		};
         Session.set('making-offer', false);
         removeOfferStyle();
-        console.log(Template.offerBar.rendered());
 	}
 });
 
