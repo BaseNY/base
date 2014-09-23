@@ -6,13 +6,10 @@ MessagingController = FastRender.RouteController.extend({
 			Router.go('/');
 		}
 		// if route has a conversationId
-		return [
+		return Meteor.subscribe('smartConversations');
 			/*Meteor.subscribe('conversations', {
 				_id: {$in: Meteor.user().conversationIds}
 			}),*/
-			Meteor.subscribe('smartConversations', {
-				_id: {$in: Meteor.user().conversationIds}
-			}),
 /*
 			Meteor.subscribe('users', this.userId, {
 				fields: {
@@ -26,7 +23,6 @@ MessagingController = FastRender.RouteController.extend({
 			Meteor.subscribe('offers'),
 			Meteor.subscribe('items')
             */
-		];
 	},
 	data: function() {
 		if (!this.params.conversationId) {
