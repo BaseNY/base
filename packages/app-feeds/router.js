@@ -4,9 +4,7 @@ Feeds.newRoute = {
 		if (Meteor.isClient) {
 			var user = Meteor.user();
 
-			if (!filter) {
 				filter = {};
-			}
 
 			if (user && Session.equals('degree', 'friends')) {
 				filter.fbId = {$in: user.friendIds};
@@ -22,15 +20,18 @@ Feeds.newRoute = {
 				filter = {_id: null};
 			} else if (!(buy && sell)) {
 				if (buy) {
-					filter.buy = {$exists: true};
+                    _.extend(filter, {
+                        buy: {$exists: true}
+                    });
 				} else if (sell) {
-					filter.buy = {$exists: false};
+                    _.extend(filter, {
+                        buy: {$exists: false}
+                    });
 				}
 			}
 
-			subs.push(Meteor.subscribe('smartPosts', filter, 10));
+            return Meteor.subscribe('smartPosts', filter, 10);
 		}
-		return subs;
 	}
 }
 
