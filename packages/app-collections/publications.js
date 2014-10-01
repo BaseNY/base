@@ -108,12 +108,12 @@ Meteor.publish('smartPosts', function(filter, limit, lastScore) {
         _.extend(filter, {
             score: {$lt: lastScore}
         });
+        //filter.score = {$lt: lastScore};
     }
 
     if(!limit)
     limit = 1;
 
-console.log(Items.findOne(filter));
 return Meteor.publishWithRelations({
     handle: this,
        collection: Items,

@@ -12,9 +12,22 @@
 
 <template name="feedBody">
 	<div class="feed-body">
+        {{#if gridded}}
+            <div class="left">
+                {{#each leftPosts}}
+                    {{> feedPost}}
+                {{/each}}
+            </div>
+            <div class="right">
+                {{#each rightPosts}}
+                    {{> feedPost}}
+                {{/each}}
+            </div>
+        {{else}}
 		{{#each posts}}
 			{{> feedPost}}
 		{{/each}}
+        {{/if}}
 		{{#if moreResults}}
 			<div id="showMoreResults" style="margin-left: 25px;">
 				<span class="loading">Loading...</span>

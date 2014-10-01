@@ -4,6 +4,9 @@
 .feed-body {
 	@include outer-container;
 	width: 100%;
+    .left, .right {
+        @include span-columns(6 of 12, inline-block);
+    }
 }
 
 .post-header {
