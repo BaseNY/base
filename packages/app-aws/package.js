@@ -1,13 +1,9 @@
 Package.describe({
-	summary: "AWS"
+	summary: "AWS setup",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
-	api.use('app-debug');
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
 
-	api.use('aws');
-
-	api.add_files('aws.js', 'client');
-
-	api.export('S3');
 });
