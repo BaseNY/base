@@ -1,0 +1,24 @@
+<template name="feedSelectModal">
+	<div id="feed-select-modal" class="rmodal">
+		<div class="rmodal-window">
+			<div class="rmodal-header">
+				<h1 class="rmodal-title">Welcome to Base!</h1>
+			</div>
+			<div class="rmodal-body">
+				<p>You have been automatically subscribed to the following feeds. Please unsubscribe to any that you are not interested in.</p>
+				<ul id="feed-select-list">
+					{{#each feeds}}
+						<li name="{{this._id}}" class="feed-select-list-item checked">
+							<div class="left"><i class="fa fa-{{this.icon}}"></i>
+							</div>
+							<div class="right">{{this.name}}</div>
+						</li>
+					{{/each}}
+				</ul>
+				<div class="feed-select-button button">
+					Accept
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
