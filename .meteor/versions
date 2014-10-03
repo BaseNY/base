@@ -19,7 +19,6 @@ app-users@0.1.0
 app-utils@0.1.0
 application-configuration@1.0.2
 autoupdate@1.1.1
-aws@0.1.0
 base64@1.0.0
 binary-heap@1.0.0
 blaze-tools@1.0.0
@@ -85,6 +84,7 @@ service-configuration@1.0.1
 session@1.0.2
 spacebars-compiler@1.0.2
 spacebars@1.0.2
+stevezhu:aws-sdk@2.0.18
 stevezhu:fbgraph@1.1.0
 stevezhu:lodash@0.2.0
 stevezhu:velocity.js@0.1.0

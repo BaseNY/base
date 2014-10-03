@@ -8,7 +8,7 @@ Package.onUse(function(api) {
 
 	api.use('app-debug');
 
-	api.use('aws');
+	api.use('stevezhu:aws-sdk@2.0.18');
 	api.addFiles('aws.js', 'client'); // aws is available on both, but we're only using it on client
 	api.export('S3', 'client');
 });
