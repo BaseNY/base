@@ -1,7 +1,8 @@
 var both = ['client', 'server'];
 
 Package.describe({
-	summary: "Messaging"
+	summary: "Messaging",
+	version: "0.1.0"
 });
 
 Package.onUse(function(api) {
