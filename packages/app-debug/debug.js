@@ -1,77 +1,77 @@
 var _ = lodash;
 
-var colors;
 var theme = {
 	debug: 'blue',
 	order: 'magenta'
 };
 if (Meteor.isServer) {
-	colors = Npm.require('colors');
+	var colors = Npm.require('colors');
 	colors.setTheme(theme);
 }
 
 Meteor._ensure(Meteor, 'settings', 'public');
 
-var log = function(msg, color) {
-	if (msg) {
-		if (color) {
-			if (Meteor.isClient) {
-				if (_.has(theme, color)) {
-					color = theme[color];
-				}
-				console.log('%c' + msg, 'color: ' + color);
-			} else if (Meteor.isServer) {
-				console.log(msg[color]);
-			}
-		} else {
-			console.log(msg);
+var debugEnabled = Meteor.settings.public.debug;
+
+var logColor = function(msg, color) {
+	if (msg && color) {
+		if (_.has(theme, color)) {
+			color = theme[color];
+		}
+		if (Meteor.isClient) {
+			console.log('%c' + msg, 'color: ' + color);
+		} else if (Meteor.isServer) {
+			console.log(msg[color]);
 		}
 	} else {
-		console.log('');
+		console.log(msg);
 	}
 };
 
-var debugLog = function(namespace, color) {
-	color = color || 'debug';
-	return function() {
-		if (Meteor.settings.public.debug) {
-			var desc, obj;
-			if (arguments.length === 2) {
-				desc = arguments[0];
-				obj = arguments[1];
-			} else {
-				obj = arguments[0];
-			}
-
-			var c = '[';
-			if (namespace) {
-				c += namespace;
-			}
-			if (desc) {
-				c += ' - ' + desc;
-			}
-
-			log(c + ']', color);
-			log(obj);
-			log(c + ' end]', color);
-		}
+var logDebug = function(namespace, color) {
+	if (!debugEnabled) {
+		return function() {};
 	}
-}
+	color = color || 'debug'; // debug is the default color
+	return function() {
+		var desc, obj;
+		if (arguments.length === 2) {
+			desc = arguments[0];
+			obj = arguments[1];
+		} else {
+			obj = arguments[0];
+		}
 
+		var c = '';
+		if (namespace) {
+			c += namespace;
+		}
+		if (desc) {
+			c += ' - ' + desc;
+		}
+
+		logColor('[▼ ' + c + ' ▼]', color);
+		logColor(obj, color);
+		logColor('[▲ ' + c + ' ▲]', color);
+	};
+};
+
+Debug = {
+	enabled: debugEnabled,
+	log: logDebug('debug'),
+	order: function(filename) {
+		debugEnabled && logColor('Load: ' + filename, 'order');
+	}
+};
+
+// TODO delete this
 // means debug for the package app-<key>
 var packages = ['feed', 'home', 'login', 'messaging', 'menu', 'offers', 'users', 'utils', 'collections'];
-Debug = {
-	log: debugLog('debug'),
-	order: function(filename) {
-		if (Meteor.settings.public.debug) {
-			log('Load: ' + filename, 'order');
-		}
-	}
-};
 _.each(packages, function(package) {
-	Debug[package] = debugLog('app-' + package);
+	Debug[package] = logDebug('app-' + package);
 });
+// DELETE THIS END
 
-if (Meteor.settings.public.debug) {
-	log('Debug enabled', 'red');
+if (debugEnabled) {
+	logColor('Debug enabled', 'red');
 }
