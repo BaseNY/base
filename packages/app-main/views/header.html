@@ -1,0 +1,49 @@
+<template name="header">
+	<header>
+		<div class="content">
+			<a class="header-menu-icon" href="#menu"><i class="fa fa-bars"></i></a>
+			<a href="/" class="logo">
+				<img src="/images/logo.png" alt="BASE">
+			</a>
+			<!--<form action="/search">
+				<input name="q" type="text" placeholder="Search...">
+			</form>-->
+			{{#if currentUser}}
+				<div class="user-wrapper" id="user-wrapper">
+					<img src="{{profile.img}}">
+					<h2>{{user.name}}</h2>
+					<a href="/messages" class="link">
+						{{#if unreadConversations}}
+							<div class="notification-count">{{unreadConversations}}</div>
+						{{/if}}
+						<i class="fa fa-envelope"><span>{{newMsgs}}</span></i>
+					</a>
+					<a id="show-notifs" class="link">
+						<span class="notification-count">{{newNotifs}}</span>
+						<i class="fa fa-bell" target="notif-dropdown"></i>
+						<ul class="dropdown hide {{#if showNotifs}}show{{/if}}" id="notif-dropdown">
+							{{#if notifs}}
+								{{#each notifs}}
+									{{> notification}}
+								{{/each}}
+							{{else}}
+								<li>
+									<div class="text">You have no notifications. Do something first.</div>
+								</li>
+							{{/if}}
+						</ul>
+					</a>
+					<a href="/" class="link"><i class="fa fa-sign-out"></i></a>
+				</div>
+			{{else}}
+				{{> loginModalButton}}
+			{{/if}}
+			<!--<a href="{{pathFor 'about'}}" class="link">About</a>-->
+		</div>
+	</header>
+	{{#if currentUser}}
+		<div class="header-notice">
+			You are awesome. Thank you for using Base. You can find out about our referral program <a style="color:white" target="_blank" href="/referrals"><b>here</b></a>
+		</div>
+	{{/if}}
+</template>
