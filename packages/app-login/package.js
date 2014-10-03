@@ -9,6 +9,7 @@ Package.onUse(function(api) {
 	api.use([
 		'app-debug',
 		'app-utils',
+		'app-collections',
 		'app-users',
 		'app-feeds'
 	]);

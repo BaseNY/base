@@ -1,3 +1,5 @@
+var _ = lodash;
+
 var colors;
 var theme = {
 	debug: 'blue',

@@ -12,11 +12,11 @@ Package.onUse(function(api) {
 	]);
 	api.use([
 		'templating',
-		'blaze-layout',
 		'spacebars',
 
 		'mmenu-scss',
 
+		'app-collections',
 		'app-users',
 		'app-feeds'
 	]);

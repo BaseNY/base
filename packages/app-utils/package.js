@@ -18,7 +18,7 @@ Package.onUse(function(api) {
 		'app-aws'
 	]);
 
-	api.addFiles('util.js', ['client', 'server']);
+	api.addFiles('utils.js', ['client', 'server']);
 	api.addFiles([
 		'ui_helpers.js',
 		'jquery_fns.js'

@@ -1,0 +1,187 @@
+﻿$i-pad : 14px;
+.page-product {
+	margin: 50px auto 100px;
+	overflow: auto;
+	width: 80%;
+	h1 {
+		display: inline-block;
+	}
+	h3 {
+		display: inline-block;
+	}
+	div {
+		display: inline-block;
+		float: left;
+		width: calc(50% - 20px);
+		height: 100%;
+	}
+	div.info {
+		img {
+			display: block;
+			margin: 0 auto;
+			width: 300px;
+		}
+		div.user-info {
+			margin: 0 auto;
+			padding: 0px 10px;
+			width: calc(100% - 20px);
+			outline: 0px;
+			div {
+				padding: 10px 20px;
+				width: calc(100% - 40px);
+				outline: 0px;
+
+				background-color: #f0f0f0;
+				h2 {
+					margin: 0px;
+					text-align: left;
+
+				}
+			}
+		}
+	}
+	div.product-info {
+		padding: 0px 10px;
+		table {
+			border-spacing: 0px;
+			tbody {
+				tr {
+					td {
+						padding-right: 20px;
+					}
+				}
+			}
+		}
+		a {
+			text-align: center;
+		}
+	}
+}
+
+.steps {
+	margin:0 auto;
+	tbody {
+		tr {
+			td {
+				padding-right:50px;
+				padding-left: 50px;
+			}
+		}
+	}
+	margin-top:10px;
+	margin-bottom:-25px;
+}
+
+.step-circle {
+	width:100px;
+	height:100px;
+		line-height:80px;
+	border:10px solid lightgrey;
+	border-radius:100px;
+	display:inline-block;
+	background-color:white;
+		color:black;
+		text-decoration:none;
+	&.active {
+		border-color:white;
+	}
+	&.complete {
+		border-color:#3F9FE0;
+	}
+	h1 {
+		text-align:center;
+		font-size:4em;
+		margin:0;
+	}
+}
+
+.page-add-product {
+	margin-bottom: 100px;
+	height:auto;
+	overflow:auto;
+	width: 60%;
+	input, select,option, div[contenteditable] {
+		display: inline-block;
+		padding: $i-pad;
+		outline: 1px solid #eee;
+		border: 0px;
+		font-size: 1.2em;
+		height:53px;
+		&:focus {
+			outline-color: #3F9FE0;
+		}
+	}
+		input[type=radio] {
+			height:auto;
+			outline:0px;
+		}
+	input[type=text] {
+		margin-bottom: 10px;
+		width: calc(78% - 28px);
+	}
+	input[type=number] {
+		margin-right: 1.5%;
+		padding: 10px;
+		width: calc(20% - 30px);
+	}
+	select,option {
+		width: 20%;
+				background-color:white;
+	}
+	div[contenteditable] {
+			background-color:white;
+		display: block;
+		overflow-y: scroll;
+		width: calc(100% - $i-pad * 2) ;
+		height: 100px;
+		line-height: 1.2em;
+	}
+
+	span {
+		display: inline-block;
+		margin-left: 2%;
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+	.button {
+		padding: 14px;
+		width: calc(20% - 28px);
+		border-radius: 0 0 4px 0;
+	}
+
+	div.preview {
+		margin: 0 auto;
+		padding: 25px;
+		border: 1px solid;
+	}
+	.button {
+		display: inline-block;
+	}
+	h3 {
+		margin-bottom: 10px;
+	}
+	.describe {
+		.button {
+			float: right;
+		}
+	}
+	.condition {
+		option, div {
+			margin: 0 auto;
+		}
+	}
+	.button {
+		display:inline-block;
+		
+		&.left {
+			float:left;
+		}
+		&.right {
+			float:right;
+		}
+	}
+}
+
+fieldset.show , div.show {
+	display: block;
+}

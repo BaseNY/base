@@ -1,3 +1,5 @@
+var _ = lodash;
+
 Debug.order('app-collections/fixtures.js');
 
 var defaultFeeds = [{

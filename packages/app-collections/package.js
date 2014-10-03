@@ -56,7 +56,7 @@ Package.onUse(function(api) {
 
 	// ========= PUBLICATIONS AND FIXTURES =========
 
-	api.use('publish-with-relations');
+	api.use('mrt:publish-with-relations@0.1.5');
 
 	api.addFiles([
 		'publications.js',

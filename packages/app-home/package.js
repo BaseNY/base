@@ -19,8 +19,7 @@ Package.onUse(function(api) {
 	api.use([
 		'jquery',
 
-		'templating',
-		'blaze-layout'
+		'templating'
 	]);
 	api.addFiles([
 		'views/home.html',

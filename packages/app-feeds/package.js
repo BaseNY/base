@@ -28,6 +28,7 @@ Package.onUse(function(api) {
 		'stevezhu:velocity.js@0.1.0',
 
 		'templating',
+		'reactive-dict'
 	]);
 	api.addFiles([
 		'views/feed_post_form.html',
