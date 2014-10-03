@@ -1,8 +1,11 @@
 Package.describe({
-	summary: "Home"
+	summary: "Home",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use([
 		'app-debug',
 
@@ -10,16 +13,15 @@ Package.on_use(function(api) {
 		'app-feeds',
 		'app-menu',
 
-		'iron-router'
+		'iron:router@0.9.1',
 	]);
 
 	api.use([
 		'jquery',
 
-		'templating',
-		'blaze-layout'
+		'templating'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/home.html',
 		'views/home.js'
 	], 'client');

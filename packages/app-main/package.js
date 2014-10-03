@@ -1,12 +1,15 @@
 var both = ['client', 'server'];
 
 Package.describe({
-	summary: "Main package"
+	summary: "Main package",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use(['meteor', 'session']);
-	api.add_files('setup.js', 'client');
+	api.addFiles('setup.js', 'client');
 
 	api.use([
 		'app-debug',
@@ -14,7 +17,7 @@ Package.on_use(function(api) {
 
 		'app-email', // server
 
-		'app-fbgraph'
+		'stevezhu:fbgraph@1.1.0'
 	]);
 
 	api.use([
@@ -28,14 +31,13 @@ Package.on_use(function(api) {
 		'app-menu'
 	]);
 
-	api.add_files('server/server.js', 'server');
+	api.addFiles('server/server.js', 'server');
 
 	api.use([
 		'jquery',
-		'templating',
-		'blaze-layout'
+		'templating'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/about/about.html',
 		'views/signup/referral.html',
 		'views/signup/signup.html',
@@ -48,16 +50,15 @@ Package.on_use(function(api) {
 		'views/google_analytics.js'
 	], 'client');
 
-	api.add_files([
+	api.addFiles([
 		'lib/seo.js'
 	], ['client', 'server']);
 
 	api.use([
-		'iron-router',
-		'fast-render'
+		'iron:router@0.9.4',
+		'meteorhacks:fast-render@1.1.2'
 	]);
-	api.add_files([
+	api.addFiles([
 		'router.js'
 	], both);
-
 });

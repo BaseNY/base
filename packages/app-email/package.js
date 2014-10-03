@@ -1,19 +1,21 @@
 Package.describe({
-	summary: "Email"
+	summary: "Email",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use([
 		'email',
-		'handlebars-server',
+
+		'cmather:handlebars-server@2.0.0',
 
 		'app-debug'
 	]);
-
-	api.add_files([
+	api.addFiles([
 		'email.handlebars',
 		'email.js'
 	], 'server');
-
 	api.export('Email');
 });

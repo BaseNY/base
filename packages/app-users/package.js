@@ -3,23 +3,23 @@
 // because it is possible that the site is down when fb sends the post request
 
 Package.describe({
-	summary: "Users, account creation, login"
+	summary: "Users, account creation, login",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
-	api.use([
-		'app-debug'
-	]);
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
+	api.use('app-debug');
 
 	api.use('app-collections');
 
 	api.use([
 		'templating',
-		'blaze-layout',
 
 		'app-feeds'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/profile.html',
 
 		'views/badges.html',

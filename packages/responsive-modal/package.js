@@ -2,17 +2,19 @@ Package.describe({
 	summary: "A responsive modal"
 });
 
-Package.on_use(function(api, where) {
+Package.onUse(function(api, where) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use([
-		'lodash',
+		'stevezhu:lodash@0.2.0',
 		'jquery',
 
 		'bourbon',
 
-		'velocityjs'
+		'stevezhu:velocity.js@0.1.0'
 	]);
 
-	api.add_files([
+	api.addFiles([
 		'responsive-modal.js'
 	], 'client');
 });

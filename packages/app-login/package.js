@@ -1,11 +1,15 @@
 Package.describe({
-	summary: "Login"
+	summary: "Login",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use([
 		'app-debug',
 		'app-utils',
+		'app-collections',
 		'app-users',
 		'app-feeds'
 	]);
@@ -15,7 +19,7 @@ Package.on_use(function(api) {
 		'templating',
 		'responsive-modal'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/login_modal.html',
 		'views/login_modal_button.html',
 		'views/feed_select_modal.html',

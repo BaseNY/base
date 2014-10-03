@@ -1,12 +1,15 @@
 Package.describe({
-	summary: "Utils"
+	summary: "Utils",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api, where) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use([
 		'jquery',
-		'lodash',
-		'moment',
+		'stevezhu:lodash@0.2.0',
+		'mrt:moment@2.8.1',
 
 		'templating',
 
@@ -15,11 +18,10 @@ Package.on_use(function(api, where) {
 		'app-aws'
 	]);
 
-	api.add_files('utils.js', ['client', 'server']);
-	api.add_files([
+	api.addFiles('utils.js', ['client', 'server']);
+	api.addFiles([
 		'ui_helpers.js',
 		'jquery_fns.js'
 	], 'client');
-
 	api.export('Utils');
 });

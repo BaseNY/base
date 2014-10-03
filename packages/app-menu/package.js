@@ -1,26 +1,27 @@
 Package.describe({
-	summary: "Slide in menu and sidebar"
+	summary: "Slide in menu and sidebar",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
 	api.use([
 		'app-debug',
 		'app-utils',
 
-		'iron-router'
+		'iron:router@0.9.4',
 	]);
 	api.use([
 		'templating',
-		'blaze-layout',
 		'spacebars',
 
 		'mmenu-scss',
 
+		'app-collections',
 		'app-users',
 		'app-feeds'
 	]);
 
-	api.add_files([
+	api.addFiles([
 		'views/menu.html',
 		'views/menu.js'
 	], 'client');

@@ -1,35 +1,36 @@
 Package.describe({
-	summary: "Feed"
+	summary: "Feed",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use('session');
-	api.add_files('setup.js', 'client');
+	api.addFiles('setup.js', 'client');
 
 	api.use([
 		'app-debug',
 		'app-utils',
 
-		'app-aws',
-
-		'iron-router'
+		'app-aws'
 	]);
 
 	api.use([
-		'simple-schema',
-		'collection2',
+		'aldeed:simple-schema@1.0.3',
+		'aldeed:collection2@2.1.0',
 
 		'app-collections'
 	]);
 
 	api.use([
 		'jquery',
-		'velocityjs',
+		'stevezhu:velocity.js@0.1.0',
 
 		'templating',
-		'blaze-layout'
+		'reactive-dict'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/feed_post_form.html',
 		'views/feed_post_form.js',
 		'views/feed_post.html',
@@ -39,8 +40,8 @@ Package.on_use(function(api) {
 	], 'client');
 
 	api.use([
-		'iron-router',
-		'fast-render'
+		'iron:router@0.9.1',
+		'meteorhacks:fast-render@1.1.2'
 	]);
-	api.add_files('router.js', ['client', 'server']);
+	api.addFiles('router.js', ['client', 'server']);
 });

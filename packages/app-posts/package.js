@@ -1,8 +1,11 @@
 Package.describe({
-	summary: "Posts"
+	summary: "Posts",
+	version: "0.1.0"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use([
 		'app-debug',
 		'app-utils',
@@ -11,8 +14,8 @@ Package.on_use(function(api) {
 	]);
 
 	api.use([
-		'simple-schema',
-		'collection2',
+		'aldeed:simple-schema@1.0.3',
+		'aldeed:collection2@2.1.0',
 
 		'app-collections'
 	]);
@@ -20,16 +23,15 @@ Package.on_use(function(api) {
 	api.use([
 		'jquery',
 		'templating',
-		'blaze-layout',
 		'spacebars'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/post_page.html'
 	], 'client');
 
 	api.use([
-		'iron-router',
-		'fast-render'
+		'iron:router@0.9.4',
+		'meteorhacks:fast-render@1.1.2'
 	]);
-	api.add_files('routing.js', ['client', 'server']);
+	api.addFiles('routing.js', ['client', 'server']);
 });
