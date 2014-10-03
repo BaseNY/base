@@ -247,7 +247,7 @@ Template.messagingInfo.showSafety = function() {
 }
 
 Template.offerBar.currentOffer = function() {
-	retVal = Messages.findOne({_id: this.offer.currentOfferId});
+	retVal = Messages.findOne({_id: this.offerId});
 	if(!retVal)
 		retVal = Messages.find({type:2, conversationId: this._id, $or: [{accepted: {$exists: false}, accepted: true}]}).fetch().reverse()[0];
 	return retVal;
@@ -306,7 +306,7 @@ Template.offerBar.rendered = function() {
 
 	//find current offer Id
 	if (conv) {
-		offerId = conv.offer.currentOfferId;
+		offerId = conv.offerId;
 		if(!offerId) {
 			var m = Messages.find({type:2, conversationId: conv._id, accepted: {$exists: false}}).fetch().reverse()[0];
 			if (m) {

@@ -8,7 +8,7 @@
         <div label="message" class="typeDropdown hide">
             <i class="fa fa-envelope-o"></i>
         </div>
-    </div><div id="message-{{this._id}}" contenteditable="true" class="messageText" placeholder="Send an offer...">
+    </div><div id="message-{{_id}}" contenteditable="true" class="messageText" placeholder="Send an offer...">
     </div><a href=""><div class="messageSend"><i class="fa fa-chevron-right"></i></div></a>
 </div>
 </template>
@@ -23,31 +23,31 @@
 <template name="messagingSidebar">
 <div class="messaging-sidebar">
     {{#each conversations}}
-    <a href="/messages/{{this._id}}" class="messaging-sidebar-item {{#if this.current}}current{{/if}}">
+    <a href="/messages/{{_id}}" class="messaging-sidebar-item {{#if current}}current{{/if}}">
         <div class="messaging-sidebar-img">
-            <img src="{{this.otherUser.profile.img}}">
+            <img src="{{otherUser.profile.img}}">
         </div>
         <div class="messaging-sidebar-info">
-            <span class="name">{{#with this.otherUser}}{{> publicBadges}}{{/with}}{{this.name}}</span>
+            <span class="name">{{#with otherUser}}{{> publicBadges}}{{/with}}{{name}}</span>
             {{#with offer}}
             <br>
             <span>
                 Offer for:
-                <a href="/post/{{this.itemId}}">
-                    {{#if this.item.title}}
-                    {{this.item.title}}
+                <a href="/post/{{itemId}}">
+                    {{#if item.title}}
+                    {{item.title}}
                     {{else}}
-                    {{this.item.description}}
+                    {{item.description}}
                     {{/if}}
                 </a>
             </span>
             {{/with}}
-            {{#unless this.read}}
+            {{#unless read}}
             <br>
             <span>Unread</span>
             {{/unless}}
         </div>
-        <!--{{json this}}-->
+        <!--{{json }}-->
     </a>
     {{else}}
     	<div class="messaging-no-conversations">
@@ -112,24 +112,24 @@
         </h4>
         {{#each messages}}
         {{#if isText}}
-        <span>{{this.text}}</span>
+        <span>{{text}}</span>
         {{/if}}
         {{#if isPic}}
-        <a href="{{this.text}}" data-lightbox="image-{{this._id}}">
-            <img src="{{this.text}}" />
+        <a href="{{text}}" data-lightbox="image-{{_id}}">
+            <img src="{{text}}" />
         </a>
         {{/if}}
         {{#if isOffer}}
         <!--
         <span>Offer: {{this.text}} <i class="fa fa-check"></i><i class="fa fa-ban"></i></span>
         -->
-        <span><b>Offer</b>: {{this.text}}</span>
+        <span><b>Offer</b>: {{text}}</span>
         {{/if}}
         {{#if isAccept}}
-        <span><b>{{this.senderName}}</b>{{this.text}} </span>
+        <span><b>{{senderName}}</b>{{text}} </span>
         {{/if}}
         {{#if isDeny}}
-        <span><b>{{this.senderName}}</b>{{this.text}}</span>
+        <span><b>{{senderName}}</b>{{text}}</span>
         {{/if}}
 
         {{/each}}
@@ -144,17 +144,17 @@
 <div class="messaging-info">
     <div class="container">
         {{#with conversation}}
-        <a href="/profile/{{this.otherUser._id}}" class="messaging-info-name">
-            {{this.otherUser.profile.name}}
+        <a href="/profile/{{otherUser._id}}" class="messaging-info-name">
+            {{otherUser.profile.name}}
         </a>
         <div>
             {{#with offer}}
             Offer for:
-            <a href="/post/{{this.itemId}}">
-                {{#if this.item.title}}
-                {{this.item.title}}
+            <a href="/post/{{itemId}}">
+                {{#if item.title}}
+                {{item.title}}
                 {{else}}
-                {{this.item.description}}
+                {{item.description}}
                 {{/if}}
             </a>
             {{/with}}
@@ -167,7 +167,7 @@
         {{> offerBar}}
         {{#if showSafety}}
         <div class="safety">
-            <div id="x{{this._id}}" class="x">x</div>
+            <div id="x{{_id}}" class="x">x</div>
             <i class="fa fa-info-circle"></i> For your safety, remember to always set meetups for public areas, and try to bring a friend with you anywhere else.
         </div>
         {{/if}}
@@ -185,21 +185,21 @@
         <b><i class="fa fa-check"></i> Accepted Offer</b>
     </div>
     <div class="text-container">
-        {{this.text}}
+        {{text}}
     </div>
     {{else}} {{#if isPending}}
     <div class="type-container">
         <b><i class="fa fa-spinner"></i> Pending Offer</b>
     </div>
     <div class="text-container">
-        {{this.text}}
+        {{text}}
     </div>
     {{else}}
     <div class="type-container">
         <b><i class="fa fa-compass"></i> Current Offer</b>
     </div>
     <div class="text-container">
-        {{this.text}}
+        {{text}}
     </div>
     <div class="ui-button left">
         <i class="fa fa-check"></i>

@@ -25,6 +25,7 @@ MessagingController = FastRender.RouteController.extend({
             */
 	},
 	data: function() {
+            /*
 		if (!this.params.conversationId) {
 			var conv = Conversations.findOne({_id: {$in: Meteor.user().conversationIds}});
 			Debug.messaging('No conversationId: route is /messages, conv found', conv);
@@ -33,7 +34,9 @@ MessagingController = FastRender.RouteController.extend({
 				this.params.conversationId = conv._id;
 			}
 		}
+                */
 		Debug.messaging('Routing data', {conversationId: this.params.conversationId});
+
 		if (this.params.conversationId) {
 			Conversations.markRead(this.params.conversationId, Meteor.userId());
 
@@ -97,12 +100,17 @@ MessagingController = FastRender.RouteController.extend({
 				messages: messages
 			};
 		}
+                /*
+                return {
+                    conversationId: this.params.conversationId,
+                    conversation: Conversations.findOne(this.params.conversationId),
+                    conversations: Conversations.find().fetch(),
+                    messages: Messages.find({conversationId: this.params.conversationId})
+                }
+                */
 	},
 	onAfterAction: function() {
-		var data = this.data();
-		if (data) {
-			document.title = data.conversation.name;
-		};
+		document.title = this.data().conversation.name;
         Session.set('making-offer', false);
         removeOfferStyle();
 	}
