@@ -1,12 +1,15 @@
 var both = ['client', 'server'];
 
 Package.describe({
-	summary: "Main package"
+	summary: "Main package",
+	version: "0.1.0"
 });
 
 Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.9.3.1');
+
 	api.use(['meteor', 'session']);
-	api.add_files('setup.js', 'client');
+	api.addFiles('setup.js', 'client');
 
 	api.use([
 		'app-debug',
@@ -14,7 +17,7 @@ Package.onUse(function(api) {
 
 		'app-email', // server
 
-		'app-fbgraph'
+		'stevezhu:fbgraph@1.1.0'
 	]);
 
 	api.use([
@@ -59,5 +62,4 @@ Package.onUse(function(api) {
 	api.addFiles([
 		'router.js'
 	], both);
-
 });

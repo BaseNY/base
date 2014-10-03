@@ -1,5 +1,6 @@
 Package.describe({
-	summary: "Slide in menu and sidebar"
+	summary: "Slide in menu and sidebar",
+	version: "0.1.0"
 });
 
 Package.onUse(function(api) {
