@@ -1,0 +1,37 @@
+<template name="feed">
+	{{> feedHeader}}
+	{{> feedPostForm}}
+	{{> feedBody}}
+</template>
+
+<template name="feedHeader">
+	{{#with feed}}
+		<h1>{{this.name}}</h1>
+	{{/with}}
+</template>
+
+<template name="feedBody">
+	<div class="feed-body">
+        {{#if gridded}}
+            <div class="left">
+                {{#each leftPosts}}
+                    {{> feedPost}}
+                {{/each}}
+            </div>
+            <div class="right">
+                {{#each rightPosts}}
+                    {{> feedPost}}
+                {{/each}}
+            </div>
+        {{else}}
+		{{#each posts}}
+			{{> feedPost}}
+		{{/each}}
+        {{/if}}
+	</div>
+		{{#if moreResults}}
+			<div id="showMoreResults" style="margin-left: 25px;clear:both; display:block;">
+				<span class="loading">Loading...</span>
+			</div>
+		{{/if}}
+</template>
