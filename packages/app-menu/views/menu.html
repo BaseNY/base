@@ -1,0 +1,92 @@
+<template name="menu">
+	<nav id="menu" style="display: none;">
+		<ul>
+			{{> menuBody}}
+		</ul>
+	</nav>
+</template>
+
+<template name="menuBody">
+	{{> menuProfile}}
+	{{> menuLocation}}
+	{{> menuDegrees}}
+	{{> menuFilters}}
+	{{> menuFeeds}}
+    {{> helpLinks}}
+</template>
+
+<template name="helpLinks">
+    <div class="menu-help">
+    <a target="_blank" href="http://www.privacychoice.org/policy/mobile?policy=bf1225dfb49ee8cbd666a5c2e9ea630e">Privacy Policy</a>
+    </div>
+</template>
+
+<template name="menuProfile">
+	{{#with currentUser}}
+		<div class="menu-profile">
+			<div class="menu-profile-image">
+				<a href="/profile/{{this._id}}">
+					<img src="{{this.profile.img}}">
+				</a>
+			</div>
+			<div class="menu-profile-name">
+				<a href="/profile/{{this._id}}">
+					<h2>
+						{{> badges}} {{this.profile.name}}
+					</h2>
+				</a>
+			</div>
+		</div>
+	{{/with}}
+</template>
+
+<template name="menuLocation">
+	<li class="menu-label">Location</li>
+	<ul class="menu-list">
+		<li class="menu-item menu-checked">
+			<span class="menu-item-icon">
+				<i class="fa fa-building"></i>
+			</span>
+			<span class="menu-item-name">New York City</span>
+		</li>
+	</ul>
+</template>
+
+<template name="menuDegrees">
+	<h3 class="menu-label">Degrees</h3>
+	<ul class="menu-list">
+		{{> menuItem type='degree' value='everyone' icon='globe' name='Everyone'}}
+		{{> menuItem type='degree' value='friends' icon='group' name='Friends'}}
+	</ul>
+</template>
+
+<template name="menuFilters">
+	<h3 class="menu-label">Filters</h3>
+	<ul class="menu-list">
+		{{> menuItem type='buy' value=true icon='shopping-cart' name='Buy'}}
+		{{> menuItem type='sell' value=true icon='money' name='Sell'}}
+	</ul>
+</template>
+
+<template name="menuFeeds">
+	<h3 class="menu-label">Feeds</h3>
+	<ul class="menu-list">
+		<a href="/">
+			{{> menuItem type='feed' icon='sun-o' name='All'}}
+		</a>
+		{{#each feeds}}
+			<a href="/feeds/{{this._id}}">
+				{{> menuItem type='feed' value=this._id icon=this.icon name=this.name}}
+			</a>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="menuItem">
+	<li data-filter-type="{{type}}" data-filter-value="{{value}}" class="menu-item {{checked type value}}">
+		<span class="menu-item-icon">
+			<i class="fa fa-{{icon}}"></i>
+		</span>
+		<span class="menu-item-name">{{name}}</span>
+	</li>
+</template>

@@ -1,0 +1,20 @@
+<template name="home">
+	<section class="home-container">
+		{{> homeSidebar}}
+		{{> homeFeed}}
+	</section>
+</template>
+
+<template name="homeFeed">
+	<div class="home-feed">
+		{{> feed}}
+	</div>
+</template>
+
+<template name="homeSidebar">
+	<div class="home-sidebar">
+		<div class="home-sidebar-content">
+			{{> menuBody}}
+		</div>
+	</div>
+</template>
