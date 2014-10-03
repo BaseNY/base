@@ -25,7 +25,7 @@ Package.onUse(function(api) {
 		'templating',
 		'spacebars'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/post_page.html'
 	], 'client');
 
@@ -33,5 +33,5 @@ Package.onUse(function(api) {
 		'iron:router@0.9.4',
 		'meteorhacks:fast-render@1.1.2'
 	]);
-	api.add_files('routing.js', ['client', 'server']);
+	api.addFiles('routing.js', ['client', 'server']);
 });

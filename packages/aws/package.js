@@ -13,8 +13,8 @@ Package.describe({
 
 Package.onUse(function(api) {
 	api.versionsFrom('METEOR@0.9.0');
-	api.add_files('aws-sdk_client.js', 'client');
-	api.add_files('aws-sdk_server.js', 'server');
+	api.addFiles('aws-sdk_client.js', 'client');
+	api.addFiles('aws-sdk_server.js', 'server');
 	api.export('AWS', 'server'); // only on server because for some reason it messes up client
 });
 

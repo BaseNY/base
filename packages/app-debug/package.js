@@ -15,7 +15,7 @@ Package.onUse(function(api) {
 	api.export('Debug');
 
 	api.use('templating');
-	api.add_files([
+	api.addFiles([
 		'views/debug_order.html',
 		'views/debug_order.js'
 	], 'client');

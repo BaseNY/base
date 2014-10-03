@@ -18,7 +18,7 @@ Package.onUse(function(api) {
 		'templating',
 		'responsive-modal'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/login_modal.html',
 		'views/login_modal_button.html',
 		'views/feed_select_modal.html',

@@ -25,8 +25,8 @@ Package.onUse(function(api) {
         'app-aws'
 	]);
 
-	api.add_files('routing.js', both);
-	api.add_files([
+	api.addFiles('routing.js', both);
+	api.addFiles([
 		'views/messaging.html',
 		'views/messaging.js'
 	], 'client');
@@ -34,5 +34,5 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
 	api.use(['app-messaging', 'tinytest', 'test-helpers']);
-	api.add_files(['tests/conversations_test.js'], both);
+	api.addFiles(['tests/conversations_test.js'], both);
 });
