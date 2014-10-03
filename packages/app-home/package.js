@@ -13,7 +13,7 @@ Package.onUse(function(api) {
 		'app-feeds',
 		'app-menu',
 
-		'iron:router@0.9.4',
+		'iron:router@0.9.1',
 	]);
 
 	api.use([

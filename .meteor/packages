@@ -6,8 +6,8 @@
 meteor-platform
 insecure
 
-mrt:publish-with-relations
 iron:router
 
 app-main
+publish-with-relations
 

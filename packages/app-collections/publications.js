@@ -105,6 +105,7 @@ Meteor.publish('items', Utils.defaultPublishFunction(Items));
    */
 
 Meteor.publish('smartPosts', function(filter, limit, lastScore) {
+    console.log('publishing posts');
 	if (!filter) {
 		filter = {}
 	} else if (lastScore) {

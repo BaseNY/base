@@ -4,6 +4,7 @@ Feeds.newRoute = {
 		if (Meteor.isClient) {
 			var user = Meteor.user();
 
+                        if(!filter)
 				filter = {};
 
 			if (user && Session.equals('degree', 'friends')) {

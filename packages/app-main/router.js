@@ -30,13 +30,13 @@ Router.map(function() {
 	this.route('home', {
 		path: '/',
 		template: 'home',
-		onRun: Feeds.newRoute.onRun,
 		waitOn: function() {
 			var subs = [];
 			var user = Meteor.user();
 			if (Meteor.isClient && user) {
 				//subs.push(Meteor.subscribe('conversations', {_id: {$in: user.conversationIds}})); // TODO CHECK WHERE THIS SUBSCRIPTION IS USED
 				subs.push(Meteor.subscribe('smartConversations', {_id: {$in: user.conversationIds}}));
+                                subs.push(Feeds.newRoute.onRun());
 			}
 			return subs;
 		},
@@ -52,7 +52,7 @@ Router.map(function() {
 	this.route('feed', {
 		path: 'feeds/:id',
 		template: 'home',
-		onRun: function() {
+		waitOn: function() {
 			return Feeds.newRoute.onRun({'feeds': {$elemMatch: {$in: [this.params.id]}}});
 		},
 		/*waitOn: function() {

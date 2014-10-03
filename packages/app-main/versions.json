@@ -253,10 +253,6 @@
       "2.8.1"
     ],
     [
-      "mrt:publish-with-relations",
-      "0.1.5"
-    ],
-    [
       "oauth",
       "1.1.0"
     ],
@@ -271,6 +267,10 @@
     [
       "ordered-dict",
       "1.0.0"
+    ],
+    [
+      "publish-with-relations",
+      "0.0.0"
     ],
     [
       "random",

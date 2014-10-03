@@ -40,7 +40,7 @@ Package.onUse(function(api) {
 	], 'client');
 
 	api.use([
-		'iron:router@0.9.4',
+		'iron:router@0.9.1',
 		'meteorhacks:fast-render@1.1.2'
 	]);
 	api.addFiles('router.js', ['client', 'server']);
