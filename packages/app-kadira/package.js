@@ -6,5 +6,5 @@ Package.describe({
 Package.onUse(function(api) {
 	api.versionsFrom('METEOR@0.9.3.1');
 	api.use('meteorhacks:kadira@2.10.1');
-	api.add_files('kadira.js', 'server');
+	api.addFiles('kadira.js', 'server');
 });

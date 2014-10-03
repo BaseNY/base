@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 
 		'app-feeds'
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/profile.html',
 
 		'views/badges.html',

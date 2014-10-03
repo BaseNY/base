@@ -13,7 +13,7 @@ Package.onUse(function(api) {
 
 		'app-debug'
 	]);
-	api.add_files([
+	api.addFiles([
 		'email.handlebars',
 		'email.js'
 	], 'server');

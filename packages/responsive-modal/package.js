@@ -14,7 +14,7 @@ Package.onUse(function(api, where) {
 		'stevezhu:velocity.js@0.1.0'
 	]);
 
-	api.add_files([
+	api.addFiles([
 		'responsive-modal.js'
 	], 'client');
 });

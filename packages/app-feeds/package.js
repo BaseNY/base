@@ -7,7 +7,7 @@ Package.onUse(function(api) {
 	api.versionsFrom('METEOR@0.9.3.1');
 
 	api.use('session');
-	api.add_files('setup.js', 'client');
+	api.addFiles('setup.js', 'client');
 
 	api.use([
 		'app-debug',
@@ -29,7 +29,7 @@ Package.onUse(function(api) {
 
 		'templating',
 	]);
-	api.add_files([
+	api.addFiles([
 		'views/feed_post_form.html',
 		'views/feed_post_form.js',
 		'views/feed_post.html',
@@ -42,5 +42,5 @@ Package.onUse(function(api) {
 		'iron:router@0.9.4',
 		'meteorhacks:fast-render@1.1.2'
 	]);
-	api.add_files('router.js', ['client', 'server']);
+	api.addFiles('router.js', ['client', 'server']);
 });

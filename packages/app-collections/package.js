@@ -29,7 +29,7 @@ Package.onUse(function(api) {
 	// ========= CONFIG =========
 
 	api.use('service-configuration');
-	api.add_files('config.js', 'server');
+	api.addFiles('config.js', 'server');
 
 	// ========= COLLECTIONS =========
 
@@ -41,9 +41,9 @@ Package.onUse(function(api) {
 	api.imply('stevezhu:fbgraph@1.1.0');
 	api.use('stevezhu:fbgraph@1.1.0');
 	// is server because Accounts.onCreateUser is only on server
-	api.add_files('collections/users.js', 'server');
+	api.addFiles('collections/users.js', 'server');
 
-	api.add_files([
+	api.addFiles([
 		'collections/feeds.js',
 		'collections/conversations.js',
 		'collections/messages.js',
@@ -58,7 +58,7 @@ Package.onUse(function(api) {
 
 	api.use('publish-with-relations');
 
-	api.add_files([
+	api.addFiles([
 		'publications.js',
 		'fixtures.js'
 	], 'server');
