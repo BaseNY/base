@@ -1,0 +1,32 @@
+@import "stylesheets/conversation";
+@import "stylesheets/sidebar";
+
+.messaging-container, .messaging-sidebar, .messaging-conversation {
+	height: 100%;
+}
+
+.messaging-container {
+	@include outer-container;
+	max-width: 1000px;
+}
+
+.messaging-sidebar {
+	@include span-columns(3, block-collapse);
+	border: 1px solid #E6E6E6;
+	border-right: none;
+	border-top: none;
+	overflow: auto;
+	background-color: white;
+}
+
+.messaging-conversation {
+	@include span-columns(9, block-collapse);
+	@include reset-display;
+	border: 1px solid #E6E6E6;
+	border-top: none;
+}
+
+.messaging-empty {
+	margin: 20px;
+	text-align: center;
+}
