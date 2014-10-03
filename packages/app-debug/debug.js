@@ -21,7 +21,7 @@ var log = function(msg, color) {
 				}
 				console.log('%c' + msg, 'color: ' + color);
 			} else if (Meteor.isServer) {
-				console.log(msg[color]);
+				console.log(msg[theme[color]]); // TODO colors 1.0.0+ broke themes check to see if it works later
 			}
 		} else {
 			console.log(msg);
