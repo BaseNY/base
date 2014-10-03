@@ -1,9 +1,0 @@
-%link {
-	@include transition(background-color 0.2s);
-	padding: 0.2em 0.6em;
-	color: $link-color;
-	&:hover {
-		background-color: $link-color;
-		color: white;
-	}
-}

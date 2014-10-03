@@ -11,7 +11,10 @@ if (Meteor.isServer) {
 
 Meteor._ensure(Meteor, 'settings', 'public');
 
-var debugEnabled = Meteor.settings.public.debug;
+Debug = {};
+Debug.enabled = function() {
+	return Meteor.settings.public.debug;
+};
 
 var logColor = function(msg, color) {
 	if (msg && color) {
@@ -29,49 +32,37 @@ var logColor = function(msg, color) {
 };
 
 var logDebug = function(namespace, color) {
-	if (!debugEnabled) {
-		return function() {};
-	}
 	color = color || 'debug'; // debug is the default color
 	return function() {
-		var desc, obj;
-		if (arguments.length === 2) {
-			desc = arguments[0];
-			obj = arguments[1];
-		} else {
-			obj = arguments[0];
-		}
+		if (Debug.enabled()) {
+			var desc, obj;
+			if (arguments.length === 2) {
+				desc = arguments[0];
+				obj = arguments[1];
+			} else {
+				obj = arguments[0];
+			}
 
-		var c = '';
-		if (namespace) {
-			c += namespace;
-		}
-		if (desc) {
-			c += ' - ' + desc;
-		}
+			var c = '';
+			if (namespace) {
+				c += namespace;
+			}
+			if (desc) {
+				c += ' - ' + desc;
+			}
 
-		logColor('[▼ ' + c + ' ▼]', color);
-		logColor(obj, color);
-		logColor('[▲ ' + c + ' ▲]', color);
+			logColor('[▼ ' + c + ' ▼]', color);
+			logColor(obj, color);
+			logColor('[▲ ' + c + ' ▲]', color);
+		}
 	};
 };
 
-Debug = {
-	enabled: debugEnabled,
-	log: logDebug('debug'),
-	order: function(filename) {
-		debugEnabled && logColor('Load: ' + filename, 'order');
-	}
+Debug.order = function(filename) {
+	Meteor.settings.public.debug && logColor('Load: ' + filename, 'order');
 };
+Debug.log = logDebug('debug');
 
-// TODO delete this
-// means debug for the package app-<key>
-var packages = ['feed', 'home', 'login', 'messaging', 'menu', 'offers', 'users', 'utils', 'collections'];
-_.each(packages, function(package) {
-	Debug[package] = logDebug('app-' + package);
-});
-// DELETE THIS END
-
-if (debugEnabled) {
+if (Debug.enabled()) {
 	logColor('Debug enabled', 'red');
 }
