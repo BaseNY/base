@@ -1,0 +1,94 @@
+@import "../responsive-modal/responsive-modal";
+
+#login-modal {
+	@include rmodal-breakpoint(350px);
+	background-color: rgba(0, 0, 0, 0.5);
+	.rmodal-window {
+		width: 350px;
+		border-radius: 3px;
+		border: 1px solid #378CC5;
+		padding: 35px;
+	}
+	.rmodal-title {
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+	h5 {
+		text-align: center;
+		font-weight: normal;
+		margin-top: 10px;
+	}
+}
+
+.fb-login {
+	background-color: #3E5C96;
+	text-align: center;
+	width: 100%;
+	cursor: pointer;
+	color: #FFF;
+	padding: 0.8em;
+	border-radius: 3px;
+	.fa {
+		margin-right: 0.5em;
+	}
+}
+
+#feed-select-modal, #zip-select-modal {
+	.rmodal-title {
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+	p {
+		font-weight: 300;
+		font-size: 17px;
+		padding-bottom: 10px;
+	}
+	li {
+		cursor: pointer;
+		padding: 4px;
+		margin-bottom: 4px;
+		@include outer-container;
+		.left {
+			@include span-columns(1.5);
+		}
+		.right {
+			@include span-columns(10.5);
+			i {
+				float: right;
+			}
+		}
+		&:hover {
+			background-color: #E6E6E6;
+			cursor: pointer;
+		}
+		&.checked {
+			background-color: #33B5E5;
+			font-weight: bold;
+			color: white;
+		}
+	}
+	.button {
+		width: 100%;
+		border-radius: 3px;
+		margin-top: 6px;
+		padding: 0.6em;
+		&:hover {
+			background-color: #33B5E5;
+		}
+	}
+	input[type=text] {
+		border: 1px solid lightgrey;
+		margin: 0 auto;
+		text-align: center;
+		padding: 4px;
+		display: block;
+		width: 100px;
+		font-weight: 300;
+		font-size: 1.5em;
+		&:active {
+			border-color: #33B5E5;
+		}
+	}
+}
