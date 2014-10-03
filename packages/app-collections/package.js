@@ -8,12 +8,11 @@ Package.describe({
 Package.onUse(function(api) {
 	api.versionsFrom('METEOR@0.9.3.1');
 
-	api.use('stevezhu:lodash@0.2.0');
+	// ========= SETUP =========
 
-	api.use([
-		'app-debug',
-		'app-utils'
-	]);
+	api.use('app-standard');
+
+	api.use('app-utils');
 
 	api.use([
 		'aldeed:simple-schema@1.0.3',
