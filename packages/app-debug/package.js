@@ -12,14 +12,13 @@ Package.onUse(function(api) {
 
 	api.use('stevezhu:lodash@0.2.0');
 	api.addFiles('debug.js', ['client', 'server']);
+	api.export('Debug');
 
 	api.use('templating');
 	api.add_files([
 		'views/debug_order.html',
 		'views/debug_order.js'
 	], 'client');
-
-	api.export('Debug');
 });
 
 Package.onTest(function(api) {
