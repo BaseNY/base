@@ -59,7 +59,9 @@ var logDebug = function(namespace, color) {
 };
 
 Debug.order = function(filename) {
-	Meteor.settings.public.debug && logColor('Load: ' + filename, 'order');
+	if (Debug.enabled()) {
+		logColor('Load: ' + filename, 'order');
+	}
 };
 Debug.log = logDebug('debug');
 
