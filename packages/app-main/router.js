@@ -44,9 +44,6 @@ Router.map(function() {
 			var data = Feeds.route.data();
 			return data;
 		},
-		onAfterAction: function() {
-			document.title = 'Base';
-		}
 	});
 
 	this.route('feed', {
@@ -64,7 +61,12 @@ Router.map(function() {
 			return data;
 		},
 		onAfterAction: function() {
-			document.title = this.data().feed.name;
+                        SEO.set({
+                            title: this.data().feed.name,
+                            og: {
+                                title: this.data().feed.name,
+                            }
+                        });
 		}
 	});
 
@@ -87,7 +89,16 @@ Router.map(function() {
 		onAfterAction: function() {
 			var user = Meteor.users.findOne({_id: this.params.id});
 			if (user) {
-				document.title = user.profile.name;
+                            SEO.set({
+                                title: user.profile.name,
+                                meta: {
+                                    image: user.profile.img
+                                },
+                                og: {
+                                title: user.profile.name,
+                                    image: user.profile.img
+                                }
+                            });
 			}
 		},
 		data: function() {
@@ -109,7 +120,15 @@ Router.map(function() {
 	});
 	this.route('referral', {
 		path: '/referrals',
-		template: 'pageReferralCenter'
+		template: 'pageReferralCenter',
+                onAfterAction: function() {
+                    SEO.set({
+                        title: 'Referral Center',
+                        og: {
+                            title: 'Referral Center',
+                        }
+                    });
+                }
 	});
 	this.route('signup', {
 		path: '/signup',
@@ -118,7 +137,16 @@ Router.map(function() {
 			return {
 				refId: this.params.ref
 			}
-		}
+		},
+                onAfterAction: function() {
+                    SEO.set({
+                        title: 'Signup'
+                        og: {
+                            title: 'Signup'
+                        }
+                    });
+
+                }
 	});
 	this.route('fbUpdate', {
 		path: '/receive/',
@@ -154,23 +182,6 @@ distinct = function(c) {
 
 
 Router.map(function() {
-	this.route('submit', {
-		path: '/sell/:step',
-		action: function() {
-			this.render("pageAddProduct");
-			SH[this.params.step].call(this);
-		}
-	});
-	this.route('temp', {
-		path: '/temp',
-	});
-	this.route('itemResults', {
-		waitOn: function() {
-			return Meteor.subscribe('items', {});
-		},
-		fastRender: true
-	});
-
 	this.route('search', {
 		action: function() {
 			//console.log(this);

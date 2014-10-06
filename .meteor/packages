@@ -6,8 +6,9 @@
 meteor-platform
 insecure
 
-iron:router
 
 app-main
 publish-with-relations
+iron:router
+manuelschoebel:ms-seo
 

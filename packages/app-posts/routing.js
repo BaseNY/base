@@ -37,13 +37,21 @@ PostsController = FastRender.RouteController.extend({
             }
         });
         */
-        $('meta[property="og:image"]').attr('content',post.imageUrl);
-        $('meta[property="og:description"]').attr('content',post.description);
-        $('meta[property="og:title"]').attr('content',post.title);
-        $('meta[property="description"]').attr('content',post.description);
+        title = 'Buy';
         if (post.title) {
-        	document.title = post.title;
+            title = post.title;
         }
+        SEO.set({
+            title: title,
+            meta: {
+                image: post.imageUrl,
+                description: post.description,
+            }
+            og: {
+                title: post.title,
+                description: post.description
+            }
+        });
     }
 });
 
