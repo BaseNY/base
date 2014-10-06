@@ -5,8 +5,7 @@ Npm.depends({
 });
 
 Package.describe({
-	summary: "Debug",
-	version: "0.1.0"
+	summary: "Debug"
 });
 
 Package.onUse(function(api) {

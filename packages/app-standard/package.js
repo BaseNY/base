@@ -1,6 +1,5 @@
 Package.describe({
-	summary: "Collection of standard packages that will probably be used in every app package",
-	version: "0.1.0"
+	summary: "Collection of standard packages that will probably be used in every app package"
 });
 
 Package.onUse(function(api) {
