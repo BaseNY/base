@@ -16,11 +16,11 @@ Package.onUse(function(api) {
 	api.addFiles('debug.js', both);
 	api.export('Debug');
 
-	/*api.use('templating');
+	api.use('templating');
 	api.add_files([
 		'views/debug_order.html',
 		'views/debug_order.js'
-	], 'client');*/
+	], 'client');
 });
 
 Package.onTest(function(api) {
