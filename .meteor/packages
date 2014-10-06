@@ -11,4 +11,5 @@ app-main
 publish-with-relations
 iron:router
 manuelschoebel:ms-seo
+email
 

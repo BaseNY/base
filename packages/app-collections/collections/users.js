@@ -82,7 +82,7 @@ Accounts.onCreateUser(function(options, user) {
 	user.createdAt = new Date();
 	user.friendIds = [];
 	user.conversationIds = [];
-
+        user.verified = false;
 	user.new = 2;
 
 	// getting friends
@@ -119,5 +119,21 @@ Meteor.methods({
             if(e)
                 console.log(e);
         });
+    },
+    'sendVerificationEmail': function(id) {
+        if(!id)
+            id = Meteor.userId();
+        Accounts.sendVerificationEmail(id);
     }
 });
+
+Accounts.verifyEmail(Accounts._verifyEmailToken,function(e) {
+    if(e != null) {
+        //error action
+    }else{ 
+        /*
+         * how do i get the user back???
+        Email.sendWelcomeEmail
+        */
+    }
+}

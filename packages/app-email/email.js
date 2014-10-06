@@ -2,6 +2,8 @@ Debug.order('app-email/email.js');
 
 Meteor.startup(function() {
     process.env.MAIL_URL = 'smtp://postmaster@base.us:32e2y27sqr75@smtp.mailgun.org:587';
+    Accounts.emailTemplates.form = 'Base <messages.noreply@base.us>';
+    Accounts.emailTemplates.siteName = 'Base';
 });
 
 Meteor.methods({
